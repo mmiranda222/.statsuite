@@ -2,7 +2,7 @@
 title: Getting started
 subtitle: 
 comments: false
-weight: 1
+weight: 2
 
 ---
 
