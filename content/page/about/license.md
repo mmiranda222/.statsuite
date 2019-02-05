@@ -1,5 +1,5 @@
 ---
-title: How to contribute
+title: License
 subtitle: 
 comments: false
 weight: 12
