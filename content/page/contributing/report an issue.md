@@ -35,23 +35,23 @@ When suggesting a **feature**:
 Every open issue will follow the below process steps, in regards to the quality criteria and relevance of it assessed by the Project Management (PM) Team and the Technical Team.<br>
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
 
-**1. Review**<br>
+1. Review<br>
 The PM Team reviews the content of the opened issue and make sure it meets the minimal and expected quality criteria. If some part is not clear, the PM Team must contact (through comments) the person who reported the issue in order to clarify it.<br>
 A priority indication can be set to an issue once it meets the quality criteria acceptance.<br>
 The Technical Team reviews the issue and make sure that the fix/implementation that it requires is clear.<br>
 DoD: the issue is created, quality checked and prioritised. It has been validated by both the PM and the Technical Teams. It is ready for Implement.<br>
 
-**2. Implement**<br>
+2. Implement<br>
 The issue is being worked on by the Technical Team.<br>
 DoD: The development is implemented, including unit tests, and a pull request is submitted.<br>
 
-**3.Peer-review**<br>
+3. Peer-review<br>
 The pull request and underlying code is reviewed by a third-party member of the Technical Team.<br>
 DoD: Development meets the coding standards, unit tests are green and the pull request is merged to the master branch and deployed to the appropriate functional test environment (pre-production).<br>
 
-**4.QA**<br>
+4. QA<br>
 The PM Team tests the implementation of the issue in a pre-production environment.<br>
 DoD: the issue is fully tested and meets the user acceptance.<br>
 
-**5.Release**<br>
+5. Release<br>
 The issue is released as part of the latest production version of the code.<br>
