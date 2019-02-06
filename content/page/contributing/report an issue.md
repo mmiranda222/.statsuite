@@ -22,16 +22,16 @@ For each type, when creating the new issue, please add the related **gitlab labe
 If you want to fix a bug yourself, then please refer to [How to contribute](https://sis-cc.gitlab.io/dotstatsuite-documentation/page/contributing/how-to-contribute/).<br>
 
 ## Writing a good issue
-When reporting a **bug**:
- - Describe what went wrong and if necessary, what caused the problem.
- - If it s not obvious, list the steps to follow for someone else to reproduce the bug.
- - Screenshots are sometimes very helpful.
- - In some cases (server-side errors, API queries, etc.) F12 console details or logs will be extremely helpful.
+When reporting a **bug**:<br>
+ - Describe what went wrong and if necessary, what caused the problem.<br>
+ - If it s not obvious, list the steps to follow for someone else to reproduce the bug.<br>
+ - Screenshots are sometimes very helpful.<br>
+ - In some cases (server-side errors, API queries, etc.) F12 console details or logs will be extremely helpful.<br>
 
-When suggesting a **feature**:
- - Describe what you would expect to see as a user of the related application (e.g. "as a .Stat Data Explorer user, ...").
- - The full behavior and acceptance criteria will help understand the meaning of the feature.
- - Give a clear description of the purpose of the feature, what is the outcome and added-value to the user.
+When suggesting a **feature**:<br>
+ - Describe what you would expect to see as a user of the related application (e.g. "as a .Stat Data Explorer user, ...").<br>
+ - The full behavior and acceptance criteria will help understand the meaning of the feature.<br>
+ - Give a clear description of the purpose of the feature, what is the outcome and added-value to the user.<br>
 
 ## Issue process and Definitions of Done (DoD)
 Every open issue will follow the below process steps, in regards to the quality criteria and relevance of it assessed by the Project Management (PM) Team and the Technical Team.<br>
