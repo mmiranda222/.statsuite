@@ -15,7 +15,7 @@ Any new issue needs to be created in a specific .Stat Suite project. The list be
 
 There are two types of issues you can create: whether you want to report a **bug**, or you want to suggest a **significant change** (a new feature or an enhancement in a existing behavior).<br>
 For each type, when creating the new issue, please add the related **gitlab label**: *bug* or *feature*. <br>
-![Gitlab Issue with label](content/images/GitlabIssueLabel.png)
+![Gitlab Issue with label](https://gitlab.com/-/ide/project/sis-cc/dotstatsuite-documentation/blob/master/-/content/images/GitlabIssueLabel.png)
 
 If you want to fix a bug yourself, then please refer to [How to contribute](https://sis-cc.gitlab.io/dotstatsuite-documentation/page/contributing/how-to-contribute/).<br>
 
