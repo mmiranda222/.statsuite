@@ -5,4 +5,4 @@ comments: false
 weight: 13
 ---
 
-![Product roadmap](content/images/Data_Cycle_Roadmap.png)
+![Product roadmap](/images/Data_Cycle_Roadmap.png)
