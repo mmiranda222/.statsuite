@@ -16,7 +16,7 @@ pygmentCodeFences = true
 [Params]
   subtitle = "Hugo Blog Template for GitLab Pages"
   logo = "img/avatar-icon.png"
-  favicon = "static/favicon.ico"
+  favicon = "/static/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
   rss = true
