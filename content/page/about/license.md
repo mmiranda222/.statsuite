@@ -1,6 +1,6 @@
 ---
 title: License
-subtitle: 
+subtitle: MIT
 comments: false
 weight: 12
 ---
