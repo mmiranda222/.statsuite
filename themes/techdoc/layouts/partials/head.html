@@ -12,7 +12,7 @@
 <meta name="description" content="{{ .Site.Params.description }}">
 {{- end }}
 {{ .Hugo.Generator }}
-<link rel="icon" href="{{ .Site.Params.favicon }}" type="image/x-icon" />
+<link rel="icon" href="{{ .Site.Params.headUrl }}/{{ .Site.Params.favicon }}" type="image/x-icon" />
 <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="stylesheet" href="{{"css/theme.min.css" | absURL}}">
