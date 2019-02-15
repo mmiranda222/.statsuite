@@ -14,7 +14,7 @@ pygmentCodeFences = true
 #googleAnalytics = "XXX"
 
 [Params]
-  headUrl = dotstatsuite-documentation
+  headUrl = "dotstatsuite-documentation"
   subtitle = "Hugo Blog Template for GitLab Pages"
   logo = "img/avatar-icon.png"
   favicon = "/static/favicon.ico"
