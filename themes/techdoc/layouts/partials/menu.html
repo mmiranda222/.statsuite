@@ -21,9 +21,9 @@
 {{ if in .Site.Params.menu_exclusion .Section }}
 {{- else -}}
   {{- safeHTML .Params.head -}}
-<!-- <li class="{{ if .IsAncestor $currentNode }}parent{{ end }}{{ if eq .UniqueID $currentNode.UniqueID }} active{{ end }}{{ if .Params.alwaysopen }} parent{{ end }}"><a href="{{ .URL }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a>
+<li class="{{ if .IsAncestor $currentNode }}parent{{ end }}{{ if eq .UniqueID $currentNode.UniqueID }} active{{ end }}{{ if .Params.alwaysopen }} parent{{ end }}"><a href="{{ .URL }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a>
   {{- $numberOfPages := (add (len .Pages) (len .Sections)) -}}
-  {{if ne $numberOfPages 0}} -->
+  {{if ne $numberOfPages 0}}
 <ul class="{{ if .IsAncestor $currentNode }}sub-menu{{ end }}">
     {{- .Scratch.Set "pages" .Pages -}}
     {{- if .Sections -}}
@@ -46,8 +46,8 @@
       {{- end -}}
     {{- end}}
 </ul>
- <!--  {{end}}
-</li> -->
+  {{end}}
+</li>
 {{- end -}}
 {{- else -}}
   {{- if not .Params.Hidden -}}

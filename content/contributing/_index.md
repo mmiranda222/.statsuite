@@ -1,8 +1,8 @@
 ---
-title: Contributing guide
+title: "Contributing guide"
 subtitle: 
 comments: false
-weight: 3
+weight: 30
 
 ---
 

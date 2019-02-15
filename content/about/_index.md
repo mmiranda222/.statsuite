@@ -1,8 +1,8 @@
 ---
-title: About
+title: "About"
 subtitle: 
 comments: false
-weight: 1
+weight: 10
 
 ---
 
