@@ -33,27 +33,67 @@ When suggesting a **feature**:<br>
  - Give a clear description of the purpose of the feature, what is the outcome and added-value for the user.<br>
 
 ## Issue process and Definitions of Done (DoD)
-Every opened issue will follow the below process steps, in regards to the quality criteria and relevance of it assessed by the Project Management (PM) Team and the Technical Team.<br>
-In some cases steps can be skipped... <br>
+Every opened issue will follow the below process steps, in regards to quality criteria and relevance assessed by the Project Management (PM) Team and the Technical Team.<br>
+The whole workflow can go from PM, Design and Devevolpment, but of course in some cases steps are skipped, e.g. a bug will not go through Design steps. <br>
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
 
+
+
+### Project Management worflow
 1. Review<br>
-The PM Team reviews the content of the opened issue and make sure it meets the minimal and expected quality criteria. If some part is not clear, the PM Team must contact (through comments) the person who reported the issue in order to clarify it.<br>
-A priority indication can be set to an issue once it meets the quality criteria acceptance.<br>
-The Technical Team reviews the issue and make sure that the fix/implementation that it requires is clear.<br>
-**DoD**: the issue is created, quality checked and prioritised. It has been validated by both the PM and the Technical Teams. It is ready for Implement.<br>
+A member of the PM Team reviews the content of the opened issue and make sure it meets the minimal and expected quality criteria. If some parts are not clear, the PM Team member contacts (through comments) the person who reported the issue in order to clarify it.<br>
+**DoD**: the issue is created and quality checked. It has been validated by both the PM and the Technical Teams. It is ready for Implement.<br>
 
 2. Implement<br>
+n/a
+
+3. Peer-review<br>
+n/a
+
+4. Quality Assurance<br>
+The PM Team reviews the issue and sets a priority indication.<br>
+**DoD**: the issue meets the PM quality criteria, is prioritised and ready for Design (if relevant) or Implement.<br>
+
+5. Release<br>
+n/a
+
+### Design worflow
+6. Review<br>
+The Design Team reviews the description of the issue and make sure it is clear and understandable. If some parts are not clear, the Design Team contacts (through comments) the PM Team in order to clarify it.<br>
+**DoD**: the issue is quality checked and ready for Implement.<br>
+
+7. Implement<br>
+The issue is being worked on by the Design Team.<br>
+**DoD**: The design is completed, and a pull request is submitted.<br>
+
+8. Peer-review<br>
+The pull request and underlying code is reviewed by a third-party member of the Design Team.<br>
+**DoD**: Design meets the coding standards, the pull request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
+
+9. Quality Assurance<br>
+The PM Team tests the implementation of the design in the quality-assurance environment.<br>
+**DoD**: the design of the issue is fully tested and meets the user acceptance.<br>
+
+10. Release<br>
+n/a
+
+### Technical (Development) worflow
+11. Review<br>
+The Technical Team reviews the issue and make sure that the fix/implementation that it requires is clear.<br>
+If some parts are not clear, the Technical Team conatcts (through comments) the PM Team or Design Team.<br>
+**DoD**: the issue is quality checked. It has been validated by both the Technical Team and it is ready for Implement.<br>
+
+12. Implement<br>
 The issue is being worked on by the Technical Team.<br>
 **DoD**: The development is implemented, including unit tests, and a pull request is submitted.<br>
 
-3. Peer-review<br>
+13. Peer-review<br>
 The pull request and underlying code is reviewed by a third-party member of the Technical Team.<br>
-**DoD**: Development meets the coding standards, unit tests are green and the pull request is merged to the master branch and deployed to the appropriate functional test environment (pre-production).<br>
+**DoD**: Development meets the coding standards, unit tests are green and the pull request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
 
-4. QA<br>
-The PM Team tests the implementation of the issue in a pre-production environment.<br>
+14. Quality Assurance<br>
+The PM Team tests the implementation of the issue in the quality-assurance environment.<br>
 **DoD**: the issue is fully tested and meets the user acceptance.<br>
 
-5. Release<br>
+15. Release<br>
 The issue is released as part of the latest production version of the code.<br>
