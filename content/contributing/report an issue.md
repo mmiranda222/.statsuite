@@ -38,14 +38,16 @@ The full workflow goes from open to PM, Design and Devevolpment Teams, including
 In some cases of course steps are skipped, e.g. a bug will not go through Design steps.<br>
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
 
-```mermaid
+<!---```mermaid
 sequenceDiagram;
 open->>PM: all issues;
 PM->>Design: some features;
 PM->>Dev: all issues without design;
 Design->>Dev: all features with design;
 Dev-xclosed: all issues;
-```
+```--->
+
+
 
 ### Project Management worflow
 1. Review<br>
