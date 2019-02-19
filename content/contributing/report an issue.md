@@ -33,11 +33,19 @@ When suggesting a **feature**:<br>
  - Give a clear description of the purpose of the feature, what is the outcome and added-value for the user.<br>
 
 ## Issue process and Definitions of Done (DoD)
-Every opened issue will follow the below process steps, in regards to quality criteria and relevance assessed by the Project Management (PM) Team and the Technical Team.<br>
-The whole workflow can go from PM, Design and Devevolpment, but of course in some cases steps are skipped, e.g. a bug will not go through Design steps. <br>
+Every open issue will follow the below process steps, in regards to quality criteria and relevance assessed by the Project Management (PM) Team and the Technical Team.<br>
+The full workflow goes from open to PM, Design and Devevolpment Teams, including reviews, quality check, implementaiton, peer-review and tests.<br>
+In some cases of course steps are skipped, e.g. a bug will not go through Design steps.<br>
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
 
-
+```mermaid
+sequenceDiagram
+open ->> PM Team: all issues
+PM Team ->> Design: some features
+PM Team ->> Tech Team: all issues without design
+Design ->> Tech Team: all features with design
+Tech Team-x closed: all issues
+```
 
 ### Project Management worflow
 1. Review<br>
@@ -45,17 +53,17 @@ A member of the PM Team reviews the content of the opened issue and make sure it
 **DoD**: the issue is created and quality checked. It has been validated by both the PM and the Technical Teams. It is ready for Implement.<br>
 
 2. Implement<br>
-n/a
+_skipped_
 
 3. Peer-review<br>
-n/a
+_skipped_
 
 4. Quality Assurance<br>
 The PM Team reviews the issue and sets a priority indication.<br>
 **DoD**: the issue meets the PM quality criteria, is prioritised and ready for Design (if relevant) or Implement.<br>
 
 5. Release<br>
-n/a
+_skipped_
 
 ### Design worflow
 6. Review<br>
@@ -75,7 +83,7 @@ The PM Team tests the implementation of the design in the quality-assurance envi
 **DoD**: the design of the issue is fully tested and meets the user acceptance.<br>
 
 10. Release<br>
-n/a
+_skipped_
 
 ### Technical (Development) worflow
 11. Review<br>
