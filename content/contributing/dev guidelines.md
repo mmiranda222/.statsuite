@@ -2,7 +2,7 @@
 title: Development guidelines
 subtitle: 
 comments: false
-weight: 33
+weight: 32
 ---
 
 # Git-flow
