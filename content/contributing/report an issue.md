@@ -40,11 +40,11 @@ If at some point an issue has a very low activity after 12 months, it should the
 
 ```mermaid
 sequenceDiagram;
-open ->> PM Team: all issues;
-PM Team ->> Design: some features;
-PM Team ->> Tech Team: all issues without design;
-Design ->> Tech Team: all features with design;
-Tech Team-x closed: all issues;
+open->>PM: all issues;
+PM->>Design: some features;
+PM->>Dev: all issues without design;
+Design->>Dev: all features with design;
+Dev-xclosed: all issues;
 ```
 
 ### Project Management worflow
