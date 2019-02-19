@@ -33,9 +33,9 @@ When suggesting a **feature**:<br>
  - Give a clear description of the purpose of the feature, what is the outcome and added-value for the user.<br>
 
 ## Issue process and Definitions of Done (DoD)
-Every open issue will follow the below process steps, in regards to quality criteria and relevance assessed by the Project Management (PM) Team and the Technical Team.<br>
-The full workflow goes from open to PM, Design and Devevolpment Teams, including reviews, quality check, implementaiton, peer-review and tests.<br>
-In some cases of course steps are skipped, e.g. a bug will not go through Design steps.<br>
+Every open issue will follow the below process steps, in regards to quality criteria and relevance assessed by the Project Management (PM) Team and the Technical (Dev) Team.<br>
+The full workflow goes from open to PM, Design and Dev Teams, including reviews, quality check, implementation, peer-review and unit tests.<br>
+In some cases of course some steps are skipped, e.g. a bug will not go through Design steps.<br>
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
 
 <!---```mermaid
@@ -52,8 +52,8 @@ Dev-xclosed: all issues;
 
 ### Project Management worflow
 1. Review<br>
-A member of the PM Team reviews the content of the opened issue and make sure it meets the minimal and expected quality criteria. If some parts are not clear, the PM Team member contacts (through comments) the person who reported the issue in order to clarify it.<br>
-**DoD**: the issue is created and quality checked. It has been validated by both the PM and the Technical Teams. It is ready for Implement.<br>
+A member of the PM Team reviews the content of the opened issue and make sure it meets the minimal and expected quality criteria. If some parts are not clear, the PM Team member contacts (through comments) the person who has reported the issue in order to clarify it.<br>
+**DoD**: the issue is created and quality checked.<br>
 
 2. Implement<br>
 _skipped_
@@ -63,48 +63,48 @@ _skipped_
 
 4. Quality Assurance<br>
 The PM Team reviews the issue and sets a priority indication.<br>
-**DoD**: the issue meets the PM quality criteria, is prioritised and ready for Design (if relevant) or Implement.<br>
+**DoD**: the issue meets the PM quality criteria, is prioritised and ready for Design (if relevant) or Implementation.<br>
 
 5. Release<br>
 _skipped_
 
 ### Design worflow
-6. Review<br>
+1. Review<br>
 The Design Team reviews the description of the issue and make sure it is clear and understandable. If some parts are not clear, the Design Team contacts (through comments) the PM Team in order to clarify it.<br>
-**DoD**: the issue is quality checked and ready for Implement.<br>
+**DoD**: the issue is quality checked and ready for Implementation.<br>
 
-7. Implement<br>
+2. Implement<br>
 The issue is being worked on by the Design Team.<br>
 **DoD**: The design is completed, and a merge request is submitted.<br>
 
-8. Peer-review<br>
-The pull request and underlying code is reviewed by a third-party member of the Design Team.<br>
-**DoD**: Design meets the coding standards, the merge request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
+3. Peer-review<br>
+The merge request and underlying code is reviewed by a third-party member of the Design Team.<br>
+**DoD**: the design meets the coding standards, the merge request is merged to the dev branch and deployed to the appropriate test environment (quality-assurance).<br>
 
-9. Quality Assurance<br>
+4. Quality Assurance<br>
 The PM Team tests the implementation of the design in the quality-assurance environment.<br>
 **DoD**: the design of the issue is fully tested and meets the user acceptance.<br>
 
-10. Release<br>
+5. Release<br>
 _skipped_
 
-### Technical (Development) worflow
-11. Review<br>
-The Technical Team reviews the issue and make sure that the fix/implementation that it requires is clear.<br>
-If some parts are not clear, the Technical Team conatcts (through comments) the PM Team or Design Team.<br>
-**DoD**: the issue is quality checked. It has been validated by both the Technical Team and it is ready for Implement.<br>
+### Technical (Dev) worflow
+1. Review<br>
+The Dev Team reviews the issue and make sure that the fix/implementation/solution that it requires is clear.<br>
+If some parts are not clear, the Technical Team contacts (through comments) the PM Team or Design Team.<br>
+**DoD**: the issue is quality checked. It has been validated by both PM and Technical Teams and it is ready for Implementation.<br>
 
-12. Implement<br>
+2. Implement<br>
 The issue is being worked on by the Technical Team.<br>
 **DoD**: The development is implemented, including unit tests, and a merge request is submitted.<br>
 
-13. Peer-review<br>
-The pull request and underlying code is reviewed by a third-party member of the Technical Team.<br>
+3. Peer-review<br>
+The merge request and underlying code is reviewed by a third-party member of the Technical Team.<br>
 **DoD**: Development meets the coding standards, unit tests are green and the merge request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
 
-14. Quality Assurance<br>
+4. Quality Assurance<br>
 The PM Team tests the implementation of the issue in the quality-assurance environment.<br>
 **DoD**: the issue is fully tested and meets the user acceptance.<br>
 
-15. Release<br>
+5. Release<br>
 The issue is released as part of the latest production version of the code.<br>
