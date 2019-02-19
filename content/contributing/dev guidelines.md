@@ -8,6 +8,7 @@ weight: 33
 # Git-flow
 ## overview
 Each project's repository has the following branches:<br>
+
 - master (name=master)
     - represents the production state
     - should always be deployable
