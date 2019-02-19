@@ -47,6 +47,7 @@ Design->>Dev: all features with design;
 Dev-xclosed: all issues;
 ```--->
 
+![Issue process workflow overview](/images/IssueProcessWorkflow.png)
 
 
 ### Project Management worflow
