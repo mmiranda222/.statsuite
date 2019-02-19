@@ -64,11 +64,11 @@ The Design Team reviews the description of the issue and make sure it is clear a
 
 7. Implement<br>
 The issue is being worked on by the Design Team.<br>
-**DoD**: The design is completed, and a pull request is submitted.<br>
+**DoD**: The design is completed, and a merge request is submitted.<br>
 
 8. Peer-review<br>
 The pull request and underlying code is reviewed by a third-party member of the Design Team.<br>
-**DoD**: Design meets the coding standards, the pull request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
+**DoD**: Design meets the coding standards, the merge request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
 
 9. Quality Assurance<br>
 The PM Team tests the implementation of the design in the quality-assurance environment.<br>
@@ -85,11 +85,11 @@ If some parts are not clear, the Technical Team conatcts (through comments) the 
 
 12. Implement<br>
 The issue is being worked on by the Technical Team.<br>
-**DoD**: The development is implemented, including unit tests, and a pull request is submitted.<br>
+**DoD**: The development is implemented, including unit tests, and a merge request is submitted.<br>
 
 13. Peer-review<br>
 The pull request and underlying code is reviewed by a third-party member of the Technical Team.<br>
-**DoD**: Development meets the coding standards, unit tests are green and the pull request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
+**DoD**: Development meets the coding standards, unit tests are green and the merge request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
 
 14. Quality Assurance<br>
 The PM Team tests the implementation of the issue in the quality-assurance environment.<br>
