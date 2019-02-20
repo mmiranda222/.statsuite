@@ -6,7 +6,7 @@ weight: 40
 
 ---
 
-To include:
+includes:
 
-- Architecture
-- API documentation
+* [Architecture](/framework/architecture)
+* [APIs documentation](/framework/api)
