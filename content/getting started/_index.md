@@ -6,9 +6,9 @@ weight: 20
 
 ---
 
-To include:
+includes:
 
-- Installation
-- Configuration
-- Packages
-- FAQs
+* [Installation](/getting-started/installation)
+* [Configuration](/getting-started/configuration)
+* [Packages](/getting-started/packages)
+* [FAQs](/getting-started/faqs)
