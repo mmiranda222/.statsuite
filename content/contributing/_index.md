@@ -6,10 +6,11 @@ weight: 30
 
 ---
 
-To include:
+includes:
 
-- How to contribute
-- Report an issue
-- Development guidelines
-- Code of conduct
+* [How to contribute](/contributing/how-to-contribute)
+* [Development guidelines](/contributing/dev-guidelines)
+* [Report an issue](/contributing/report-an-issue)
+* [Code of conduct](/contributing/code-of-conduct)
+
 
