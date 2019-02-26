@@ -45,7 +45,9 @@ PM->>Design: some features;
 PM->>Dev: all issues without design;
 Design->>Dev: all features with design;
 Dev-xclosed: all issues;
+PM--xclosed: some issues;
 ```--->
+
 
 ![Issue process workflow overview](/images/IssueProcessWorkflow.png)
 
@@ -68,22 +70,22 @@ The PM Team reviews the issue and sets a priority indication.<br>
 5. Release<br>
 _skipped_
 
-### Design worflow
+### Graphical Design worflow
 1. Review<br>
-The Design Team reviews the description of the issue and make sure it is clear and understandable. If some parts are not clear, the Design Team contacts (through comments) the PM Team in order to clarify it.<br>
+The Graphical Design Team reviews the description of the issue and make sure it is clear and understandable. If some parts are not clear, the Design Team contacts (through comments) the PM Team in order to clarify it.<br>
 **DoD**: the issue is quality checked and ready for Implementation.<br>
 
 2. Implement<br>
-The issue is being worked on by the Design Team.<br>
-**DoD**: The design is completed, and a merge request is submitted.<br>
+The issue is being worked on by the Graphical Design Team.<br>
+**DoD**: The graphical design is completed, and a merge request is submitted.<br>
 
 3. Peer-review<br>
-The merge request and underlying code is reviewed by a third-party member of the Design Team.<br>
-**DoD**: the design meets the coding standards, the merge request is merged to the dev branch and deployed to the appropriate test environment (quality-assurance).<br>
+The merge request and underlying code is reviewed by a third-party member of the Graphical Design Team.<br>
+**DoD**: the graphical design meets the coding standards, the merge request is merged to the dev branch and deployed to the appropriate test environment (quality-assurance).<br>
 
 4. Quality Assurance<br>
-The PM Team tests the implementation of the design in the quality-assurance environment.<br>
-**DoD**: the design of the issue is validated and meets the user acceptance.<br>
+The PM Team tests the implementation of the graphical design in the quality-assurance environment.<br>
+**DoD**: the graphical design of the issue is validated and meets the user acceptance.<br>
 
 5. Release<br>
 _skipped_
@@ -91,7 +93,7 @@ _skipped_
 ### Technical (Dev) worflow
 1. Review<br>
 The Dev Team reviews the issue and make sure that the fix/implementation/solution that it requires is clear.<br>
-If some parts are not clear, the Technical Team contacts (through comments) the PM Team or Design Team.<br>
+If some parts are not clear, the Technical Team contacts (through comments) the PM Team or Graphical Design Team.<br>
 **DoD**: the issue is quality checked. It has been validated by both PM and Technical Teams and it is ready for Implementation.<br>
 
 2. Implement<br>
