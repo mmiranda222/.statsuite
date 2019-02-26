@@ -62,18 +62,22 @@ The Technical (Dev) Team is here declined by back-end and front-end technology.
 
 ### Project Management worflow
 1. Review<br>
-A member of the PM Team reviews the content of the opened issue and make sure it meets the minimal and expected quality criteria. If some parts are not clear, the PM Team member contacts (through comments) the person who has reported the issue in order to clarify it.<br>
+A member of the PM Team reviews the content of the opened issue and makes sure it meets the minimal and expected quality criteria. If some parts are not clear, the PM Team member contacts (through comments) the person who has reported the issue in order to clarify it.<br>
+A bug's type must be clear enough to identify and reproduce it.<br>
+A feature's type must have a clear detail of the functional (or technical) requirements.<br>
 **DoD**: the issue is created and quality checked.<br>
 
 2. Implement<br>
-_skipped_
+For a bug: _skipped_<br>
+For a feature: a member of the PM Team defines and describes the functional specifications out of the requirements.<br>
+**DoD**: the issue is quality checked and functional specifications for a feature are described.<br>
 
 3. Peer-review<br>
 _skipped_
 
 4. Quality Assurance<br>
 The PM Team reviews the issue and sets a priority indication.<br>
-**DoD**: the issue meets the PM quality criteria, is prioritised and ready for Design (if relevant) or Implementation.<br>
+**DoD**: the issue meets the PM quality criteria, is prioritised and ready for Graphical Design (if relevant) or Implementation.<br>
 
 5. Release<br>
 _skipped_
@@ -111,10 +115,12 @@ The issue is being worked on by the Technical Team.<br>
 3. Peer-review<br>
 The merge request and underlying code is reviewed by a third-party member of the Technical Team.<br>
 **DoD**: Development meets the coding standards, unit tests are green and the merge request is merged to the dev branch and deployed to the appropriate functional test environment (quality-assurance).<br>
+The code is documented.<br>
 
 4. Quality Assurance<br>
 The PM Team tests the implementation of the issue in the quality-assurance environment.<br>
 **DoD**: the issue is fully tested and meets the user acceptance.<br>
+The feature is documented.<br>
 
 5. Release<br>
 The issue is released as part of the latest production version of the code.<br>
