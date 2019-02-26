@@ -33,21 +33,28 @@ When suggesting a **feature**:<br>
  - Give a clear description of the purpose of the feature, what is the outcome and added-value for the user.<br>
 
 ## Issue process and Definitions of Done (DoD)
-Every open issue will follow the below process steps, in regards to quality criteria and relevance assessed by the Project Management (PM) Team and the Technical (Dev) Team.<br>
-The full workflow goes from open to PM, Design and Dev Teams, including reviews, quality check, implementation, peer-review and unit tests.<br>
-In some cases of course some steps are skipped, e.g. a bug will not go through Design steps.<br>
+Every open issue will follow the agreed and below defined production cycle, in regards to quality criteria and relevance assessed by the Project Management (PM) Team and the Technical (Dev) Team.<br>
+The full workflow goes from open to PM, Design and Dev Teams (back-end and front-end), including review, quality check, implementation, peer-review, unit test and release, then finally closed.<br>
+In some cases of course some steps are skipped, e.g. a bug will not go through Graphical Design steps.<br>
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
+
+### Production Cycle
 
 <!---```mermaid
 sequenceDiagram;
 open->>PM: all issues;
 PM->>Design: some features;
-PM->>Dev: all issues without design;
-Design->>Dev: all features with design;
-Dev-xclosed: all issues;
+PM->>DevBackEnd: without design but with back-end;
+PM->>DevFrontEnd: without design nor back-end;
+Design->>DevBackEnd: with design & back-end;
+Design->>DevFrontEnd: with design but without back-end;
+DevBackEnd->>DevFrontEnd: with back-end & front-end;
+DevBackEnd-xclosed: with back-end but without front-end;
+DevFrontEnd-xclosed: with front-end;
 PM--xclosed: some issues;
 ```--->
 
+The below diagram gives an overview of the Production cycle ran for each of the opened issues and according to the acceptance criteria, and for all types of issues (bugs or features). The Technical (Dev) Team is here declined by back-end and front-end technology.
 
 ![Issue process workflow overview](/images/IssueProcessWorkflow.png)
 
