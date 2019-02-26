@@ -54,7 +54,8 @@ DevFrontEnd-xclosed: with front-end;
 PM--xclosed: some issues;
 ```--->
 
-The below diagram gives an overview of the Production cycle ran for each of the opened issues and according to the acceptance criteria, and for all types of issues (bugs or features). The Technical (Dev) Team is here declined by back-end and front-end technology.
+The below diagram gives an overview of the Production cycle ran for each of the opened issues and according to the acceptance criteria, and for all types of issues (bugs or features).<br>
+The Technical (Dev) Team is here declined by back-end and front-end technology.
 
 ![Issue process workflow overview](/images/IssueProcessWorkflow.png)
 
@@ -100,7 +101,7 @@ _skipped_
 ### Technical (Dev) worflow
 1. Review<br>
 The Dev Team reviews the issue and make sure that the fix/implementation/solution that it requires is clear.<br>
-If some parts are not clear, the Technical Team contacts (through comments) the PM Team or Graphical Design Team.<br>
+If some parts are not clear, the Technical Team contacts (through comments) the PM Team or Graphical Design Team (or the back-end Dev Team when the review is made on an issue delt by the front-end Team and previously worked by back-end Team).<br>
 **DoD**: the issue is quality checked. It has been validated by both PM and Technical Teams and it is ready for Implementation.<br>
 
 2. Implement<br>
@@ -117,3 +118,4 @@ The PM Team tests the implementation of the issue in the quality-assurance envir
 
 5. Release<br>
 The issue is released as part of the latest production version of the code.<br>
+**NOTE**: at this stage, some issues are worked on by both back-end and front-end Dev Teams (see Production Cycle diagram). In these cases, the Dev workflow is applied once by the back-end Dev Team, then the issue is "released" to the front-end Dev Team for review and the same workflow is followed a second time until final release.<br> 
