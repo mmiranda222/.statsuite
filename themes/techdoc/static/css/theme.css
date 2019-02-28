@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../images/fonts/fontawesome-webfont.eot?v=4.4.0');
+  src: url('../images/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('../images/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('../images/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('../images/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('../images/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 /*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -34,8 +43,12 @@ section {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
+  
   margin: 0.67em 0;
+  color: #444;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 /* Grouping content
@@ -415,20 +428,26 @@ template {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-rendering: optimizelegibility;
+    font-family: 'Open sans', 'Raleway', Helvetica, Arial sans-serif;
+    color: #686868;
+    
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-feature-settings: 'pwid';
-  font-feature-settings: 'pwid';
+  font-feature-settings: 'pwid';*/
   line-height: 1.9;
-  background: #fafafa;
+  background: #fff;
   margin: 0;
 }
 
 a {
-  color: #2e7eb3;
+  color: #337ab7;
+  text-decoration: none;
 }
 
 a:hover {
   color: #38a0e4;
+  text-decoration: underline;
 }
 
 p {
@@ -738,17 +757,53 @@ main {
 }
 
 header {
-  background: #000;
-  padding: .2rem 1.2rem;
+  padding: 2rem 3rem 2rem 25%;
+  background: #303030;
+  position: relative;
 }
-
 header h1 {
   color: #fff;
-  font-size: 140%;
+  font-size: 150%;
   display: inline-block;
   margin: 0;
+  padding-left: 2em;
+  line-height: 1em !important;
+  padding-top: 5px;
 }
-
+header div {
+	float: right;
+}
+header a {
+	display: inline-block;
+	color: #fff;
+	padding: 2px 9px;
+	margin-left: 5px;
+}
+header a:hover {
+	background: #009ef8;
+	color: #fff;
+}
+@media screen and (max-width: 768px) {
+	header {
+		padding: 1rem 1rem 1rem 0;
+		text-align: left;
+		background: #303030;
+	}
+	header h1 {
+		line-height: 1.9em;
+		padding-left: 70px;
+		font-size: 130%;
+		text-align: right;
+		display: block;
+	}
+	header div {
+		float: right;
+		padding-left: 62px;
+	}
+	header a {
+		margin-left: 19px;
+	}
+}
 header .version {
   color: #fff;
   font-size: 80%;
@@ -762,6 +817,34 @@ header .github {
 
 header .github:hover {
   color: #fff;
+}
+.lg, .xs {
+	display: none;
+}
+.logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	padding:0;
+	margin:0;
+}
+.logo:hover {
+	background: none;
+	
+}
+@media screen and (min-width: 768px) {
+	.logo .lg {
+		display: block;
+	}
+}
+@media screen and (max-width: 767px) {
+	.logo .xs {
+		display: block;
+	}
+	.logo {
+		top: 20px;
+		left: 15px;
+	}
 }
 
 .description {
@@ -864,42 +947,82 @@ main {
 
 .sidebar {
   font-size: 90%;
-  background: #f9f9f9;
-  border-right: 1px solid #eee;
+  border-right: 0px solid #eee;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  background: #eee;
+  font-weight: bold;
+}
+.sidebar ul li ul {
+	background: #fff;
+	font-weight: normal;
 }
 
 .sidebar ul ul ul {
-  margin-left: 1rem;
+  margin: 0 -15px;
 }
 
 .sidebar a {
-  display: block;
-  color: #404040;
+  display: inline-block;
   text-decoration: none;
-  padding: .2rem 1.2rem;
-  border-left: solid 4px #f9f9f9;
-  border-bottom: solid 1px #eee;
+  padding: 7px 15px;
+  /*border-left: solid 4px #f9f9f9;
+  border-bottom: solid 1px #ddd;*/
+  width: calc(100% - 31px);
 }
 
 .sidebar a:hover {
-  color: #404040;
-  background: #eee;
-  border-left: solid 4px #ccc;
+  text-decoration: underline;
+  /*background: #eee;
+  border-left: solid 4px #ccc;*/
 }
 
 .sidebar li li a {
-  padding-left: 2rem;
+  /*padding-left: 2rem;*/
+}
+.sidebar li {
+	border-top: 1px solid #ddd;
+	position: relative;
+}
+.sidebar li li {
+    padding: 0px 15px;
+    background-color: #fff;
+    border: none;
+    border-top: 1px solid #ddd;
+    font-weight: normal;
+}
+.sidebar li li:before {
+    content: '\f105';
+    font-family: 'FontAwesome';
+    color: #686868;
+    position: absolute;
+    top: 7.5px;
+}
+.sidebar li li li {
+
+}
+.sidebar li li li:before {
+    content: '\f105 \f105';
+    font-family: 'FontAwesome';
+    color: #686868;
+    position: absolute;
+    top: 7.5px;
+}
+.sidebar .active {
+  background: #ddd;
+  /*border-left: solid 4px #ccc;*/
+  color: #666;
 }
 
-.sidebar .active > a {
-  background: #eee;
-  border-left: solid 4px #ccc;
+.sidebar .active > a, .sidebar .active > a:hover {
+  /*background: #eee;
+  border-left: solid 4px #ccc;*/
+  color: #666;
+  text-decoration: none;
 }
 
 .sidebar-footer {
@@ -925,4 +1048,5 @@ footer {
   font-size: 80%;
   text-align: right;
   color: #999;
+  
 }
