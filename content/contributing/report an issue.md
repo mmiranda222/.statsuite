@@ -70,14 +70,15 @@ A feature's type must have a clear detail of the functional or non-functional re
 2. Implement<br>
 For a bug: _skipped_<br>
 For a feature: a member of the PM Team defines and describes the functional specifications based on the requirements.<br>
-**DoD**: the issue is quality checked and functional specifications for a feature are described.<br>
+For all types of issue, the PM Team sets a priority indication.<br>
+**DoD**: the issue is quality checked, prioritised, and functional specifications for a feature are described.<br>
 
 3. Peer-review<br>
-_skipped_
+The PM Team reviews the issue and its priority indication.<br>
+**DoD**: the issue meets the PM quality criteria and it is ready for Graphical Design (if relevant) or Dev Team review.<br>
 
 4. Quality Assurance<br>
-The PM Team reviews the issue and sets a priority indication.<br>
-**DoD**: the issue meets the PM quality criteria, is prioritised and ready for Graphical Design (if relevant) or Dev Team.<br>
+_skipped_
 
 5. Release<br>
 _skipped_
