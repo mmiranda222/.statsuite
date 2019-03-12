@@ -2,6 +2,12 @@
 
 > Dashboard for dotstatsuite applications and components, gitlab `Operations` only works for public repositories.
 
+## services
+
+|name|status|coverage|
+|---|---|---|
+|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/coverage.svg?style=flat-square)|
+
 ## web applications
 
 |name|status|coverage|
