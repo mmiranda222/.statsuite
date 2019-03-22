@@ -2,7 +2,7 @@
 title: Code of conduct
 subtitle: 
 comments: false
-weight: 34
+weight: 35
 ---
 
 ## Our pledge
