@@ -34,7 +34,7 @@ The Technical (Dev) Team is here divided into back-end and front-end technology.
 
 ### Common rules
 - An issue can go through several iterations of the process cycle through Product Management, Graphical Design, Back-End Dev and Front-End Dev teams.
-- At any step of a process, an issue can be put on hold or be retrogated.
+- At any step of a process, an issue can be put on hold ovr be retrogated.
 - A Definition of Done (DoD) of a process step must be met and completed before an issue goes to any next step of the workflow.
 
 ### Product Management workflow
@@ -108,21 +108,21 @@ The issue is released as part of the latest production version of the code.<br>
 ### Technical (FEDev) workflow (wip)
 
 <!---```mermaid
-sequenceDiagram
-    participant Review
-    participant Implement
-    participant PeerReview
-    participant QA
-    participant Release
-
-    Note right of Review: no git
-    Note right of PeerReview: technical (code, merge)
-
-    Review->>Implement: clear on specs
-    Review-->>Implement: bug/patch/feature = new branch from develop
-    Review-->>Implement: production related = new branch from master
-
-    Implement->>PeerReview: development done
+sequenceDiagram;
+    participant Review;
+    participant Implement;
+    participant PeerReview;
+    participant QA;
+    participant Release;
+    Note right of Review: no git;
+    Note right of PeerReview: technical (code, merge);
+    Review->>Implement: clear on specs;
+    Review-->>Implement: bug/patch/feature = new branch from develop;
+    Review-->>Implement: production related = new branch from master;
+    Implement->>PeerReview: development done;
 ```--->
+
+![Issue process workflow overview](/images/IssueProcessWorkflowFE.png)
+
 
 
