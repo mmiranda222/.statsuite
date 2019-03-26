@@ -109,17 +109,17 @@ The issue is released as part of the latest production version of the code.<br>
 
 <!---```mermaid
 sequenceDiagram;
-    participant Review;
-    participant Implement;
-    participant PeerReview;
-    participant QA;
-    participant Release;
-    Note right of Review: no git;
-    Note right of PeerReview: technical (code, merge);
-    Review->>Implement: clear on specs;
-    Review-->>Implement: bug/patch/feature = new branch from develop;
-    Review-->>Implement: production related = new branch from master;
-    Implement->>PeerReview: development done;
+participant Review;
+participant Implement;
+participant PeerReview;
+participant QA;
+participant Release;
+Note right of Review: no git;
+Note right of PeerReview: technical (code, merge);
+Review->>Implement: clear on specs;
+Review->Implement: bug/patch/feature = new branch from develop;
+Review->Implement: production related = new branch from master;
+Implement->>PeerReview: development done;
 ```--->
 
 ![Issue process workflow overview](/images/IssueProcessWorkflowFE.png)
