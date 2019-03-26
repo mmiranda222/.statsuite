@@ -37,9 +37,11 @@ graph LR
 
 ```mermaid
 graph LR
-    subgraph master
+    subgraph all branches
     setup --> unit-tests
     unit-tests --> build
+    end
+    subgraph only tags
     build --> publish
     end
 ```
