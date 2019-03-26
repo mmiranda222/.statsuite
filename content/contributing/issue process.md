@@ -107,7 +107,7 @@ The issue is released as part of the latest production version of the code.<br>
 
 ### Technical (FEDev) workflow (wip)
 
-```mermaid
+<!---```mermaid
 sequenceDiagram
     participant Review
     participant Implement
@@ -123,6 +123,6 @@ sequenceDiagram
     Review-->>Implement: production related = new branch from master
 
     Implement->>PeerReview: development done
-```
+```-->
 
 
