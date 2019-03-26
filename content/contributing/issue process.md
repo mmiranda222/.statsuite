@@ -107,18 +107,22 @@ The issue is released as part of the latest production version of the code.<br>
 
 ### Technical (FEDev) workflow (wip)
 
-> just a memo to let you know that inline charts from mermaid are available (and easy to maintain compare to an image)
-
 ```mermaid
 sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->John: Hello John, how are you?
-    loop Healthcheck
-        John->John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail...
-    John-->Alice: Great!
-    John->Bob: How about you?
-    Bob-->John: Jolly good!
+    participant Review
+    participant Implement
+    participant PeerReview
+    participant QA
+    participant Release
+
+    Note right of Review: no git
+    Note right of PeerReview: technical (code, merge)
+
+    Review->>Implement: clear on specs
+    Review-->>Implement: bug/patch/feature = new branch from develop
+    Review-->>Implement: production related = new branch from master
+
+    Implement->>PeerReview: development done
 ```
+
+
