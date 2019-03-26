@@ -103,4 +103,22 @@ The feature is documented.<br>
 
 5. Release<br>
 The issue is released as part of the latest production version of the code.<br>
-**NOTE**: at this stage, when an issue needs to be implemented by both back-end and front-end Dev Teams (see Production Cycle diagram): the Dev workflow is applied once by the back-end Team, then it is "released" to the front-end Team for review. The issue goes again through the same workflow until final release.<br> 
+**NOTE**: at this stage, when an issue needs to be implemented by both back-end and front-end Dev Teams (see Production Cycle diagram): the Dev workflow is applied once by the back-end Team, then it is "released" to the front-end Team for review. The issue goes again through the same workflow until final release.<br>
+
+### Technical (FEDev) workflow (wip)
+
+> just a memo to let you know that inline charts from mermaid are available (and easy to maintain compare to an image)
+
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->John: Hello John, how are you?
+    loop Healthcheck
+        John->John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->Alice: Great!
+    John->Bob: How about you?
+    Bob-->John: Jolly good!
+```
