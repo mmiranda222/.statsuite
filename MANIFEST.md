@@ -34,3 +34,12 @@ graph LR
 ```
 
 ## package
+
+```mermaid
+graph LR
+    subgraph master
+    setup --> unit-tests
+    unit-tests --> build
+    build --> publish
+    end
+```
