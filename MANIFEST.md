@@ -15,11 +15,19 @@
 |package|[ui-header](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/coverage.svg?style=flat-square)|
 |package|[ui-footer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/coverage.svg?style=flat-square)|
 
-# Pipelines
+# DevOps
+
+## git-flow
+
+> it's a way to address common code-related tasks of a project
+
+see [git-flow](http://nvie.com/posts/a-successful-git-branching-model/)
+
+## pipelines
 
 > pipelines are defined in `.gitlab-ci.yml`, each repository has its own pipeline definition
 
-## webapp
+### webapp
 
 ```mermaid
 graph LR
@@ -41,7 +49,8 @@ graph LR
     setup --> unit-tests
     unit-tests --> build
     end
-    subgraph only tags
+    subgraph only tags*
     build --> publish
     end
 ```
+*tags are only on commits in master
