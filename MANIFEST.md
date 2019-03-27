@@ -5,6 +5,8 @@
 |kind|name|status|coverage|
 |---|---|---|---|
 |service|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/coverage.svg?style=flat-square)|
+|service|[sdmx-faceted-search](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/coverage.svg?style=flat-square)|
+|service|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/coverage.svg?style=flat-square)|
 |webapp|[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)|
 |webapp|[data-explorer-legacy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer-legacy)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer-legacy/badges/dev/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer-legacy/badges/dev/coverage.svg?style=flat-square)|
 |webapp|[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)|
@@ -14,6 +16,12 @@
 |package|[d3-charts](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/coverage.svg?style=flat-square)|
 |package|[ui-header](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/coverage.svg?style=flat-square)|
 |package|[ui-footer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/coverage.svg?style=flat-square)|
+
+```mermaid
+graph LR
+    subgraph kube-rp cluster on GCP
+    end
+```
 
 # DevOps
 
@@ -25,7 +33,7 @@ see [git-flow](http://nvie.com/posts/a-successful-git-branching-model/)
 
 > pipelines are defined in `.gitlab-ci.yml`, each repository has its own pipeline definition
 
-### webapp
+### webapp/service
 
 ```mermaid
 graph LR
@@ -57,11 +65,11 @@ graph LR
 
 ```mermaid
 graph TB
-    subgraph REVIEW
+    subgraph 1 REVIEW
     O[brainstorm specs] -->|clear specs| P{is production?}
     end
     
-    subgraph IMPLEMENT branch
+    subgraph 2 IMPLEMENT branch
     P -->|no, branch out from develop| C[code]
     C -->|push commits| Z((CI pipeline))
     Z --> X{done and pass?}
@@ -69,20 +77,20 @@ graph TB
     X -->|no| C
     end
     
-    subgraph PEER REVIEW branch
+    subgraph 3 PEER REVIEW branch
     G -->|pull locally| L[code review]
     L --> M{acceptable?}
     M -->|yes| I[apply merge request]
     M -->|no| C
     end
     
-    subgraph QA develop
+    subgraph 4 QA develop
     I --> Y((CI and CD pipeline))
     Y --> Q{acceptable?}
     Q -->|no| O
     end
     
-    subgraph RELEASE master
+    subgraph 5 RELEASE master
     Q -->|yes, merge develop into master| W((CI and CD pipeline))
     end
 ```
