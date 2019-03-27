@@ -78,8 +78,10 @@ graph LR
 
 ## kanban
 
+### flow
+
 ```mermaid
-graph LR
+graph TB
     subgraph 1 REVIEW
     O[brainstorm specs] -->|clear specs| P{is production?}
     end
@@ -128,10 +130,12 @@ graph LR
 - QA by JB
 - release branches are used as buffers to avoid freezing develop when the release is big
 
-|---|---|---|---|
-|index|step|actions|decisions|
-|1|review|brainstorm specs| is production?|
-|2|implement|code, handle merge request|is done?|
-|3|peer review|code review, apply merge request|is acceptable|
-|4|qa|feature review|is acceptable|
-|5|release|monitor|-|
+### summary
+
+|index|step|actions|decisions|git branch|
+|---|---|---|---|---|
+|1|review|brainstorm specs| is production?|feature|
+|2|implement|code, handle merge request|is done?|feature|
+|3|peer review|code review, apply merge request|is acceptable?|feature|
+|4|qa|feature review|is acceptable?|develop|
+|5|release|monitor, rollback|is acceptable?|master|
