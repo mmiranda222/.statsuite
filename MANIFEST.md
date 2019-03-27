@@ -79,7 +79,7 @@ graph LR
 ## kanban
 
 ```mermaid
-graph TB
+graph LR
     subgraph 1 REVIEW
     O[brainstorm specs] -->|clear specs| P{is production?}
     end
@@ -101,12 +101,18 @@ graph TB
     
     subgraph 4 QA develop
     I --> Y((CI and CD pipeline))
-    Y --> Q{acceptable?}
+    Y --> J[feature review]
+    J --> Q{acceptable?}
     Q -->|no| O
     end
     
     subgraph 5 RELEASE master
     Q -->|yes, merge develop into master| W((CI and CD pipeline))
+    W --> U[monitor]
+    U --> id1{acceptable?}
+    id1 -->|yes| O
+    id1 -->|no| id2[rollback]
+    id2 --> O
     end
 ```
 
@@ -121,3 +127,11 @@ graph TB
 - PEER REVIEW by nico
 - QA by JB
 - release branches are used as buffers to avoid freezing develop when the release is big
+
+|---|---|---|---|
+|index|step|actions|decisions|
+|1|review|brainstorm specs| is production?|
+|2|implement|code, handle merge request|is done?|
+|3|peer review|code review, apply merge request|is acceptable|
+|4|qa|feature review|is acceptable|
+|5|release|monitor|-|
