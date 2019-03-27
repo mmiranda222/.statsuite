@@ -119,4 +119,4 @@ graph TB
 |2|implement|code, handle merge request|is done?|feature|FE team|
 |3|peer review|code review, apply merge request|is acceptable?|feature|nico|
 |4|qa|feature review|is acceptable?|develop|JB|
-|5|release|monitor, rollback|is acceptable?|master|nico|
+|5|release|monitor, rollback|is acceptable?|master|JB+nico|
