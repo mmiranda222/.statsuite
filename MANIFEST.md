@@ -56,7 +56,7 @@ graph LR
 ## kanban
 
 ```mermaid
-graph LR
+graph TB
     subgraph REVIEW
     O[brainstorm specs] -->|clear specs| P{is production?}
     end
