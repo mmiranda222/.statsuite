@@ -71,11 +71,12 @@ graph LR
 ```mermaid
 graph TB
     subgraph 1 REVIEW
-    O[brainstorm specs] -->|clear specs| P{is production?}
+    O[brainstorm specs] -->|clear specs| P{production?}
     end
     
     subgraph 2 IMPLEMENT branch
     P -->|no, branch out from develop| C[code]
+    P -->|yes, branch out from master| C[code]
     C -->|push commits| Z((CI pipeline))
     Z --> X{done and pass?}
     X -->|yes| G["create/update merge request"]
@@ -85,12 +86,14 @@ graph TB
     subgraph 3 PEER REVIEW branch
     G -->|pull locally| L[code review]
     L --> M{acceptable?}
-    M -->|yes| I[apply merge request]
+    M -->|yes| id4{production?}
+    id4 -->|no| id5[apply merge request to develop]
+    id4 -->|yes| id6[apply merge request to master]
     M -->|no| C
     end
     
     subgraph 4 QA develop
-    I --> Y((CI and CD pipeline))
+    id5 --> Y((CI and CD pipeline))
     Y --> J[feature review]
     J --> Q{acceptable?}
     Q -->|no| O
@@ -98,9 +101,12 @@ graph TB
     
     subgraph 5 RELEASE master
     Q -->|yes, merge develop into master| W((CI and CD pipeline))
+    id6 --> W
     W --> U[monitor]
     U --> id1{acceptable?}
-    id1 -->|yes| O
+    id1 -->|yes| id7{production?}
+    id7 -->|yes| id5
+    id7 -->|no| O
     id1 -->|no| id2[rollback]
     id2 --> O
     end
