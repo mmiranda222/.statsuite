@@ -19,8 +19,6 @@
 
 ## git-flow
 
-> it's a way to address common code-related tasks of a project
-
 see [git-flow](http://nvie.com/posts/a-successful-git-branching-model/)
 
 ## pipelines
@@ -31,26 +29,72 @@ see [git-flow](http://nvie.com/posts/a-successful-git-branching-model/)
 
 ```mermaid
 graph LR
-    subgraph all branches
+    subgraph CI all branches
     setup --> unit-tests
     unit-tests --> build
     end
-    subgraph only develop & master
+    subgraph CD only develop & master
     build --> release
     release --> deploy
     end
 ```
 
-## package
+### package
 
 ```mermaid
 graph LR
-    subgraph all branches
+    subgraph CI all branches
     setup --> unit-tests
     unit-tests --> build
     end
-    subgraph only tags*
+    subgraph CD only tags*
     build --> publish
     end
 ```
 *tags are only on commits in master
+
+## kanban
+
+```mermaid
+graph LR
+    subgraph REVIEW
+    O[brainstorm specs] -->|clear specs| P{is production?}
+    end
+    
+    subgraph IMPLEMENT branch
+    P -->|no, branch out from develop| C[code]
+    C -->|push commits| Z((CI pipeline))
+    Z --> X{done and pass?}
+    X -->|yes| G["create/update merge request"]
+    X -->|no| C
+    end
+    
+    subgraph PEER REVIEW branch
+    G -->|pull locally| L[code review]
+    L --> M{acceptable?}
+    M -->|yes| I[apply merge request]
+    M -->|no| C
+    end
+    
+    subgraph QA develop
+    I --> Y((CI and CD pipeline))
+    Y --> Q{acceptable?}
+    Q -->|no| O
+    end
+    
+    subgraph RELEASE master
+    Q -->|yes, merge develop into master| W((CI and CD pipeline))
+    end
+```
+
+**legend:**
+- rectangle: action
+- circle: automated action
+- diamond: decision
+
+**notes:**
+- REVIEW by JB and/or Mike and/or Dimitri and/or Nico
+- IMPLEMENT by Mike, Dimitri or Nico
+- PEER REVIEW by nico
+- QA by JB
+- release branches are used as buffers to avoid freezing develop when the release is big
