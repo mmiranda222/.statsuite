@@ -17,9 +17,24 @@
 |package|[ui-header](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/coverage.svg?style=flat-square)|
 |package|[ui-footer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/coverage.svg?style=flat-square)|
 
+# architecture
+
 ```mermaid
 graph LR
+    A[browser] --> B((internet))
+    B --> C[proxy nodejs]
     subgraph kube-rp cluster on GCP
+    C -->|assets| D[config nodejs]
+    C -->|app & tenant| E((x))
+    E --> F[data-explorer nodejs]
+    E --> G[sdmx-faceted-search nodejs]
+    E --> H[share nodejs]
+    F -->|config| D
+    G -->|config| D
+    H -->|config| D
+    G --> I[solr]
+    G --> J[redis]
+    H --> K[mongodb]
     end
 ```
 
