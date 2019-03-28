@@ -27,7 +27,7 @@ graph LR
     H -->|config| D
     G --> I[solr]
     G --> J[redis]
-    H --> K[mongodb]
+    H --> K[redis]
     end
 ```
 
