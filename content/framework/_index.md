@@ -8,5 +8,5 @@ weight: 40
 
 includes:
 
-* [Architecture](/framework/architecture)
+* [Architectures](/framework/architecture)
 * [APIs documentation](/framework/api)

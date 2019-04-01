@@ -1,8 +1,8 @@
 ---
-title: db architecture
+title: Database architecture
 subtitle: 
 comments: false
-weight: 46
+weight: 42
 ---
 
-Test...
+To be filled...

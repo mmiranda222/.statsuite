@@ -1,7 +1,7 @@
 ---
-title: .Stat Suite framework architectures
+title: Architectures
 subtitle: 
 comments: false
-weight: 45
+weight: 41
 
 ---
