@@ -3,7 +3,7 @@ title: db architecture
 subtitle: 
 comments: false
 weight: 42
-menu:
+menu: 'framework'
 parent: 'architecture'
 ---
 
