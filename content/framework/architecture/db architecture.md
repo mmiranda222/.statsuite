@@ -2,9 +2,7 @@
 title: db architecture
 subtitle: 
 comments: false
-weight: 42
-menu: 'framework'
-parent: 'architecture'
+weight: 46
 ---
 
 Test...
