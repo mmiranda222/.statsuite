@@ -4,7 +4,7 @@ subtitle:
 comments: false
 weight: 42
 menu:
-    parent: 'architecture'
+parent: 'architecture'
 ---
 
 Test...
