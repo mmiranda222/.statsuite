@@ -3,6 +3,8 @@
 
 > [List of front-end repositories](https://gitlab.com/dashboard/projects?tag=front-end).
 
+> Sandbox (only within the OECD): [data-lifecycle-manager](http://vs-dotstattest.main.oecd.org/FrontEndDemo/sandbox/data-lifecycle-manager) - [chart-generator](http://vs-dotstattest.main.oecd.org/FrontEndDemo/sandbox/chart-generator)
+
 |kind|name|status|coverage|
 |---|---|---|---|
 |service|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/coverage.svg?style=flat-square)|
