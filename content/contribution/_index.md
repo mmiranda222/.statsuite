@@ -8,7 +8,7 @@ weight: 30
 
 includes:
 
-* [Report an issue](/contributing/report-an-issue)
-* [Issue process & Definition of Done](/contributing/issue-process)
-* [How to contribute (development guidelines)](/contributing/how-to-contribute)
+* [Report an issue](/contribution/report-an-issue)
+* [Issue process & Definition of Done](/contribution/issue-process)
+* [How to contribute (development guidelines)](/contribution/how-to-contribute)
 
