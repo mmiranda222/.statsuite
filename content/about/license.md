@@ -2,7 +2,7 @@
 title: License
 subtitle: MIT
 comments: false
-weight: 12
+weight: 11
 ---
 
 MIT License

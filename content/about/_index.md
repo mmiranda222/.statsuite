@@ -8,6 +8,6 @@ weight: 10
 
 includes:
 
-* [Open Source community](/about/opensource)
 * [License](/about/license)
 * [Product overview and roadmap](/about/product-overview)
+* [Code of Conduct](/about/code-of-conduct)
