@@ -8,7 +8,9 @@ weight: 20
 
 includes:
 
+* [.Stat Suite Open Source Framework](/getting-started/framework)
 * [Installation](/getting-started/installation)
-* [Configuration](/getting-started/configuration)
-* [Packages](/getting-started/packages)
+>* [As a Service](/getting-started/installation/as-a-service)
+>* [As Container(s)](/getting-started/installation/as-container)
+>* [As a Code Base](/getting-started/installation/as-a-code-base)
 * [FAQs](/getting-started/faqs)
