@@ -1,5 +1,5 @@
 ---
-title: Issue process and Definitions of Done(DoD)
+title: Issue process and Definitions of Done (DoD)
 subtitle: 
 comments: false
 weight: 32
