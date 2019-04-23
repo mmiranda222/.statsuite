@@ -1,6 +1,8 @@
 # Frontend Manifest
 > Dashboard for dotstatsuite applications and components, gitlab `Operations` only works for public repositories.
 
+> [architecture description](https://gitlab.com/snippets/1847834)
+
 > [List of front-end repositories](https://gitlab.com/dashboard/projects?tag=front-end).
 
 > Sandbox (only within the OECD): [data-lifecycle-manager](http://vs-dotstattest.main.oecd.org/FrontEndDemo/sandbox/data-lifecycle-manager) - [chart-generator](http://vs-dotstattest.main.oecd.org/FrontEndDemo/sandbox/chart-generator)
@@ -25,62 +27,6 @@
 |package|[components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/coverage.svg?style=flat-square)|
 |package|[ui-components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/coverage.svg?style=flat-square)|
 |package|[d3-charts](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/coverage.svg?style=flat-square)|
-
-# architecture
-```mermaid
-graph LR
-    A[browser] --> B((internet))
-    B --> C[proxy nodejs]
-    subgraph kube-rp cluster on GCP
-    C -->|assets| D[config nodejs]
-    C -->|app & tenant| E((x))
-    E --> F[data-explorer nodejs]
-    E --> G[sdmx-faceted-search nodejs]
-    E --> H[share nodejs]
-    F -->|config| D
-    G -->|config| D
-    H -->|config| D
-    G --> I[solr]
-    G --> J[redis]
-    H --> K[redis]
-    end
-```
-
-# DevOps
-
-## git-flow
-see [git-flow](http://nvie.com/posts/a-successful-git-branching-model/)
-
-## pipelines
-> pipelines are defined in `.gitlab-ci.yml`, each repository has its own pipeline definition
-
-### webapp/service
-```mermaid
-graph LR
-    subgraph CI all branches
-    setup --> unit-tests
-    unit-tests --> build
-    end
-    subgraph CD only develop & master
-    build --> release
-    release --> deploy
-    end
-    deploy -->|develop| id1((update staging))
-    deploy -->|master| id2((update qa))
-```
-
-### package
-```mermaid
-graph LR
-    subgraph CI all branches
-    setup --> unit-tests
-    unit-tests --> build
-    end
-    subgraph CD only tags*
-    build --> publish
-    end
-```
-*tags are only on commits in master
 
 ## kanban
 
