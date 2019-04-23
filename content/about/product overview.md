@@ -19,23 +19,28 @@ Revised as of March 2019. Current projected roadmap open to adjustment depending
 * **SDMX services** (NSI Web Service that is part of the SDMX Reference Infrastructure) expose sdmx flows for structure, data, attributes, and referential metadata.
 
 ### .Stat DLM
-* **Model** by defining SDMX data Structures:
-- Multi-dimensional cube (DSD)<br>
-- Dimension names (Concepts)<br>
-- Views on sub-cubes (Dataflows + Allowed Content Constraints)<br>
-- Onwership (Agencies)<br>
-- Topics/themes (Categories)<br>
-- Data mapping rules (Structure Sets)<br>
-- Referential Metadata (MSD)<br>
-* **Get**:
-- Data import, transfer, export with and without structure mappings from various sources
-- Data capture (surveys/collection/scraping; online/offline)
-* **Edit** by grid data editing
-* **Calculate**:
-- Data validations and reports
-- Data calculations (conversions, aggregations, estimations, indicator calculations) with VTL
-* **Flow**, **Script**, **Track**
-* **Analyse** (find, understand, reuse data (internal)) and **disseminate** (manage embargo)
+**Model** by defining SDMX data Structures:
+* Multi-dimensional cube (DSD)
+* Dimension names (Concepts)
+* Views on sub-cubes (Dataflows + Allowed Content Constraints)
+* Onwership (Agencies)
+* Topics/themes (Categories)
+* Data mapping rules (Structure Sets)
+* Referential Metadata (MSD)
+
+**Get**:
+* Data import, transfer, export with and without structure mappings from various sources
+* Data capture (surveys/collection/scraping; online/offline)
+
+**Edit** by grid data editing <br>
+
+**Calculate**:
+* Data validations and reports
+* Data calculations (conversions, aggregations, estimations, indicator calculations) with VTL
+
+**Flow**, **Script**, **Track** <br>
+
+**Analyse** (find, understand, reuse data (internal)) and **disseminate** (manage embargo)
 
 ### .Stat Data Explorer (DE)
 * **Landing page** with access to free-text search or to browsing by configurable concepts (e.g. browse by topics, referance area, data source).
