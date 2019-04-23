@@ -20,6 +20,7 @@ Revised as of March 2019. Current projected roadmap open to adjustment depending
 
 ### .Stat DLM
 **Model** by defining SDMX data Structures:<br>
+
 * Multi-dimensional cube (DSD)
 * Dimension names (Concepts)
 * Views on sub-cubes (Dataflows + Allowed Content Constraints)
@@ -29,12 +30,14 @@ Revised as of March 2019. Current projected roadmap open to adjustment depending
 * Referential Metadata (MSD)
 
 **Get**:<br>
+
 * Data import, transfer, export with and without structure mappings from various sources
 * Data capture (surveys/collection/scraping; online/offline)
 
 **Edit** by grid data editing <br>
 
 **Calculate**:<br>
+
 * Data validations and reports
 * Data calculations (conversions, aggregations, estimations, indicator calculations) with VTL
 
