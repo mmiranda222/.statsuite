@@ -19,7 +19,7 @@ Revised as of March 2019. Current projected roadmap open to adjustment depending
 * **SDMX services** (NSI Web Service that is part of the SDMX Reference Infrastructure) expose sdmx flows for structure, data, attributes, and referential metadata.
 
 ### .Stat DLM
-**Model** by defining SDMX data Structures:
+**Model** by defining SDMX data Structures:<br>
 * Multi-dimensional cube (DSD)
 * Dimension names (Concepts)
 * Views on sub-cubes (Dataflows + Allowed Content Constraints)
@@ -28,13 +28,13 @@ Revised as of March 2019. Current projected roadmap open to adjustment depending
 * Data mapping rules (Structure Sets)
 * Referential Metadata (MSD)
 
-**Get**:
+**Get**:<br>
 * Data import, transfer, export with and without structure mappings from various sources
 * Data capture (surveys/collection/scraping; online/offline)
 
 **Edit** by grid data editing <br>
 
-**Calculate**:
+**Calculate**:<br>
 * Data validations and reports
 * Data calculations (conversions, aggregations, estimations, indicator calculations) with VTL
 
