@@ -1,7 +1,7 @@
 # Frontend Manifest
 > Dashboard for dotstatsuite applications and components, gitlab `Operations` only works for public repositories.
 
-> [architecture description](https://gitlab.com/snippets/1847834)
+> [Architecture description](https://gitlab.com/snippets/1847834)
 
 > [List of front-end repositories](https://gitlab.com/dashboard/projects?tag=front-end).
 
