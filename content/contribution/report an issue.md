@@ -3,6 +3,7 @@ title: Report an issue
 subtitle: 
 comments: false
 weight: 31
+lastmod: 2006-01-02
 ---
 
 
@@ -11,7 +12,7 @@ weight: 31
 If you want to report an issue for any of the .Stat Suite applications, then you need to **open a new issue** into [Gitlab sis-cc/.stat-suite/issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues).<br>
 You can first try to find out if your issue (a bug, a new feature or a feature enhancement) has already been recorded.<br>
 
-Any new issue needs to be created in a specific .Stat Suite project. The list being quite long, if you don't know to which specific service, tool or application to refer to, then go for the simplest, e.g. *dotstatsuite-data-explorer*.<br>
+Any new issue needs to be created in a specific .Stat Suite project. The list being quite long, if you don't know to which specific service, tool or application to refer to, then go for the simplest, e.g. *dotstatsuite-data-explorer* or *dotstatsuite-data-lifecycle-manager*.<br>
 
 There are two types of issues you can create: whether you want to report a **bug**, or you want to suggest a **change** (a new feature or an improvement of an existing behavior).<br>
 For each type, when creating the new issue, please add the related **gitlab label**: *bug* or *feature*. <br>
