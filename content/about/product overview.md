@@ -8,8 +8,10 @@ weight: 12
 
 ![Product roadmap](/images/Product_Roadmap.png)
 
-## .Stat Core
 ---
+
+## .Stat Core
+
 Highly performing and secure [SDMX](http://sdmx.org/) back-end based on standard protocols to store, process and retrieve statistical data, structural and referential metadata, data process information and security settings.<br>
 **Store** structural artefacts (DSDs, codelists, Category Schemes, etc.), shared charts and tables configurations, data and attributes values, and referential metadata.<br>
 **Secure** through strong encryption methods, choose a preffered authentication provider, manage user roles and permissions.<br>
@@ -17,8 +19,10 @@ Highly performing and secure [SDMX](http://sdmx.org/) back-end based on standard
 **Query** from search services allowing to expose Dataflows in a detailed (as results) and aggregated ways (facets), ordered by relevance, and responding to the user queries (free text and faceted searches).<br>
 **SDMX services** ([NSI Web Service](https://ec.europa.eu/eurostat/web/sdmx-web-services) that is part of the SDMX Reference Infrastructure) exposing SDMX flows for structure, data, attributes, and referential metadata.<br>
 
-## .Stat DLM
 ---
+
+## .Stat DLM
+
 **Model** by defining SDMX data Structures:<br>
 
 * Multi-dimensional cubes (DSDs)
@@ -45,8 +49,10 @@ Highly performing and secure [SDMX](http://sdmx.org/) back-end based on standard
 
 **Analyse** (find, understand, reuse data (internal)) and **disseminate** (manage embargo)
 
-## .Stat Data Explorer (DE)
 ---
+
+## .Stat Data Explorer (DE)
+
 **Landing page** with access to free-text search or to browsing by configurable concepts (e.g. browse by topic, referance area, data source).<br>
 **Search result page** with access to browsing by content types and indexed concepts, instant drill-down within search results (through dynamic filtering), and direct download (e.g. full .csv data files).<br>
 **Visualisation page** with automated (metadata-driven) selections of dimensions, instant data pre-view in easily comprehensive basic table formats and basic chart types, allow for continued drill-down and selection changes, configurable or automated table and chart layout options, downloads, share and Open Data API (SDMX query generator) features.<br>
