@@ -6,6 +6,36 @@ weight: 40
 
 ---
 
+### April 25, 2019
+Major changes:
+* 
+
+Minor changes:
+*
+
+Bug fixes:
+*
+
+### April 17, 2019
+Major changes:
+* 
+
+Minor changes:
+*
+
+Bug fixes:
+*
+
+### April 11, 2019
+Major changes:
+* 
+
+Minor changes:
+*
+
+Bug fixes:
+*
+
 ### Release v0.5 - March 2019
 Release notes and known limitations in [Github](https://github.com/cis-itn-oecd/dotstat-services/tree/development/docs/Release%20v0.5%20-%20March%202019)
 
