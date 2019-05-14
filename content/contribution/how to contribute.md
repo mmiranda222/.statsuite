@@ -11,24 +11,24 @@ weight: 33
 
 The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) have the following branches:
 - master (name=master)
->- represents the production state
->- should always be deployable
+    - represents the production state
+    - should always be deployable
 - dev (name=dev)
->- developer's hub
->- should always be developable (ie can be buggy as soons as it does not block developers)
+    - developer's hub
+    - should always be developable (ie can be buggy as soons as it does not block developers)
 - feature branches (name=feature/*)
->- new features/experiments
->- should be synced with dev from time to time
+    - new features/experiments
+    - should be synced with dev from time to time
 - patch branches (name=patch/*)
->- fixing/enhancing/refactoring existing features
->- similar to feature branches flow
+    - fixing/enhancing/refactoring existing features
+    - similar to feature branches flow
 - release branches (name=release/*)
->- transitional snapshot between dev and master
->- should be used for demo
->- allows dev branch to receive next release features
+    - transitional snapshot between dev and master
+    - should be used for demo
+    - allows dev branch to receive next release features
 - hotfix branches (name=hotfix/*)
->- fixing critical bug(s) in production
->- avoid blocking dev while fxing master
+    - fixing critical bug(s) in production
+    - avoid blocking dev while fxing master
 
 #### Rules
 
