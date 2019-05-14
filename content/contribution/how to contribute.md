@@ -10,6 +10,7 @@ weight: 33
 #### Overview
 
 The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) have the following branches:
+
 - master (name=master)
     - represents the production state
     - should always be deployable
@@ -42,9 +43,9 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
 #### Good practices
 
 - perform atomic commits (ie commit a lot)
->- git history is detailed
->- allows efficient time travel in past
->- branches are squashed into dev, so dev history is not flooded
+    - git history is detailed
+    - allows efficient time travel in past
+    - branches are squashed into dev, so dev history is not flooded
 - push often, like twice a day at least
->- backup your work (commits are local)
->- share your work
+    - backup your work (commits are local)
+    - share your work
