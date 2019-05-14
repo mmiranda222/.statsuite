@@ -50,8 +50,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - backup your work (commits are local)
     - share your work
 
-#### Use cases
-##### git-feature
+#### Use case of a git-feature
 lifecycle of a feature (morebanana).<br>
 
 ```
@@ -90,7 +89,7 @@ $ git branch -d feature/morebanana
 $ git push
 ```
 
-##### git-conflict
+#### Use case of a git-conflict
 I am working on a new feature, while updating my feature branch with dev, I get a conflict.<br>
 
 ```
@@ -104,9 +103,10 @@ The merge failed because there is a conflict.<br>
 $ git mergetool
 ```
 The above command will launch your default editor in a diffing mode with 3 versions of the conflicted file:
-* the remote version
-* the reconciliated version
-* the local version
+
+- the remote version
+- the reconciliated version
+- the local version
 
 The essence of resolving a conflict is to help git by writing the reconciliated version from the remote and the local versions.<br>
 A merge can have more than one conflict. <br>
