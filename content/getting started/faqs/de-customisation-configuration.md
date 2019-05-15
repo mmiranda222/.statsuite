@@ -22,7 +22,7 @@ Define your website name and logo.<br>
 }
 ```
 
-**add image**
+[Site title and logo](/image/faq-site-title-logo.png)
 
 ### Common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
@@ -39,13 +39,16 @@ Define the common logos in the header, subheader, footer and homepage of the web
 ```
 
 * header:<br>
-**add image**
+[Site logo header](/image/faq-site-logo-header.png)
+
 * subheader:<br>
-**add image**
+[Site logo subheader](/image/faq-site-logo-subheader.png)
+
 * footer:<br>
-**add image**
+[Site logo footer](/image/faq-site-logo-footer.png)
+
 * splash:<br>
-**add image**
+[Site logo splash](/image/faq-site-logo-splash.png)
 
 ### Homepage facets
 Define the IDs and number of facets that are returned under the homepage "browse by".<br>
@@ -58,7 +61,7 @@ You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
 "homeFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
 ```
 
-**add image**
+[Homepage facets](/image/faq-homepage-facets.png)
 
 ### Search results page pinned facets 
 Define the facets that are always displayed in the search result page.<br>
@@ -70,7 +73,7 @@ These facets will be displayed always at first top positions and their labels ar
 "pinnedFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
 ```
 
-**add image**
+[Search result pinned facets](/image/faq-pinned-facets.png)
 
 ### Search results page excluded facets
 Define the facets that will always be excluded from the search result page.<br> 
@@ -101,7 +104,7 @@ Define the minimum and maximum values of the time period range in the visualisat
 }
 ```
 
-**add image**
+[Time period boundaries](/image/faq-period-boundaries.png)
 
 ### Default time period
 Define the default time period selection of the visualisation page views, according to data availability.<br>
@@ -115,7 +118,7 @@ Define the default time period selection of the visualisation page views, accord
 }
 ```
 
-**add image**
+[Time period default range](/image/faq-period-default.png)
 
 ### Maximum number of observation values
 
