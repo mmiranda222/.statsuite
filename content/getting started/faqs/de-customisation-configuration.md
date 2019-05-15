@@ -105,7 +105,7 @@ Define the minimum and maximum values of the time period range in the visualisat
 
 ### Default time period
 Define the default time period selection of the visualisation page views, according to data availability.<br>
-:warning: Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
+**Warning** Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
