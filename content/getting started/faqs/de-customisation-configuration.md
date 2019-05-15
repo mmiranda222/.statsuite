@@ -24,6 +24,8 @@ Define your website name and logo.<br>
 
 ![Site title and logo](/images/faq-site-title-logo.png)
 
+---
+
 ### Common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
 
@@ -50,6 +52,8 @@ Define the common logos in the header, subheader, footer and homepage of the web
 * splash:<br>
 ![Site logo splash](/images/faq-site-logo-splash.png)
 
+---
+
 ### Homepage facets
 Define the IDs and number of facets that are returned under the homepage "browse by".<br>
 You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
@@ -63,6 +67,8 @@ You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
 
 ![Homepage facets](/images/faq-homepage-facets.png)
 
+---
+
 ### Search results page pinned facets 
 Define the facets that are always displayed in the search result page.<br>
 These facets will be displayed always at first top positions and their labels are prefixed with a [*].<br>
@@ -75,6 +81,8 @@ These facets will be displayed always at first top positions and their labels ar
 
 ![Search result pinned facets](/images/faq-pinned-facets.png)
 
+---
+
 ### Search results page excluded facets
 Define the facets that will always be excluded from the search result page.<br> 
 
@@ -84,6 +92,8 @@ Define the facets that will always be excluded from the search result page.<br>
 "excludedFacetIds": ["survey"]
 ```
 
+---
+
 ### Search result page: number of results per page
 Define the number of result displayed per page in the search result pages.<br>
 
@@ -92,6 +102,8 @@ Define the number of result displayed per page in the search result pages.<br>
 ```
 "defaultRows": 10
 ```
+
+---
 
 ### Time period boundaries
 Define the minimum and maximum values of the time period range in the visualisation page views.<br> 
@@ -106,6 +118,8 @@ Define the minimum and maximum values of the time period range in the visualisat
 
 ![Time period boundaries](/images/faq-period-boundaries.png)
 
+---
+
 ### Default time period
 Define the default time period selection of the visualisation page views, according to data availability.<br>
 **Warning** Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
@@ -119,6 +133,8 @@ Define the default time period selection of the visualisation page views, accord
 ```
 
 ![Time period default range](/images/faq-period-default.png)
+
+---
 
 ### Maximum number of observation values
 
