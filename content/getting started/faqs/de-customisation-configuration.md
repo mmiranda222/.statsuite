@@ -48,7 +48,7 @@ Define the common logos in the header, subheader, footer and homepage of the web
 **add image**
 
 ### Homepage facets
-Define the IDs and number of facets should be returned on the homepage "browse by".<br>
+Define the IDs and number of facets that are returned under the homepage "browse by".<br>
 You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
 **If none**, then all indexed ConceptSchemes are returned as facets.<br>
 
@@ -89,4 +89,66 @@ Define the number of result displayed per page in the search result pages.<br>
 ```
 "defaultRows": 10
 ```
+
+### Time period boundaries
+Define the minimum and maximum values of the time period range in the visualisation page views.<br> 
+
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"period": {
+  "boundaries": [1970, 2020]
+}
+```
+
+**add image**
+
+### Default time period
+Define the default time period selection of the visualisation page views, according to data availability.<br>
+:warning: Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
+
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"period": {
+  "default": [2018, 2018]
+}
+```
+
+**add image**
+
+### Maximum number of observation values
+
+
+### Preferred scale attribute
+
+
+### Decimals rule attribute
+
+
+### Coded attributes returned as flags
+
+
+### Coded and uncoded attributes returned as footnotes
+
+
+### Table and chart footer logo
+
+
+### Table and chart footer terms and conditions
+
+
+### API documentation hyperlink
+
+
+### Contact us hyperlink
+
+
+### Privacy Policy hyperlink
+
+
+### Charts default look and feel settings
+
+
+### Localised observation values separators for thousands and decimals
 
