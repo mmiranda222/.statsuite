@@ -11,7 +11,8 @@ These configurations are tasks to be performed by Administrators with access to 
 Some of the whished configurations or settings (e.g. how to add a new sdmx public endpoint) are not available from here because they must happen in a previous step or they are refering to server-side decisions, and you should therfore refer to the [installation guides](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/installation/).
 
 ### Site title and logo
-Define your website name and logo.
+Define your website name and logo.<br>
+
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 ```
 "app": {
@@ -22,7 +23,8 @@ Define your website name and logo.
 **add image**
 
 ### Common site logos
-Define the common logos in the header, subheader, footer and homepage of the website.
+Define the common logos in the header, subheader, footer and homepage of the website.<br>
+
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 ```
 "assets": {
@@ -45,6 +47,7 @@ Define the common logos in the header, subheader, footer and homepage of the web
 Define the IDs and number of facets should be returned on the homepage "browse by".<br>
 You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
 **If none**, then all indexed ConceptSchemes are returned as facets.<br>
+
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 ```
 "homeFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
@@ -54,6 +57,7 @@ You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
 ### Search results page pinned facets 
 Define the facets that are always displayed in the search result page.<br>
 These facets will be displayed always at first top positions and their labels are prefixed with a [*].<br>
+
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 ```
 "pinnedFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
@@ -62,6 +66,7 @@ These facets will be displayed always at first top positions and their labels ar
 
 ### Search results page excluded facets
 Define the facets that will always be excluded from the search result page.<br> 
+
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 ```
 "excludedFacetIds": ["survey"]
@@ -69,6 +74,7 @@ Define the facets that will always be excluded from the search result page.<br>
 
 ### Search result page: number of results per page
 Define the number of result displayed per page in the search result pages.<br>
+
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 ```
 "defaultRows": 10
