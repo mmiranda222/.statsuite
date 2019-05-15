@@ -14,18 +14,21 @@ Some of the whished configurations or settings (e.g. how to add a new sdmx publi
 Define your website name and logo.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
 ```
 "app": {
   "title": "OECD Data Explorer",
   "favicon": "/assets/siscc/data-explorer/images/favicon.ico"
 }
 ```
+
 **add image**
 
 ### Common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
 ```
 "assets": {
   "header": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
@@ -34,6 +37,7 @@ Define the common logos in the header, subheader, footer and homepage of the web
   "splash": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
 }
 ```
+
 * header:<br>
 **add image**
 * subheader:<br>
@@ -49,9 +53,11 @@ You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
 **If none**, then all indexed ConceptSchemes are returned as facets.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
 ```
 "homeFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
 ```
+
 **add image**
 
 ### Search results page pinned facets 
@@ -59,15 +65,18 @@ Define the facets that are always displayed in the search result page.<br>
 These facets will be displayed always at first top positions and their labels are prefixed with a [*].<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
 ```
 "pinnedFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
 ```
+
 **add image**
 
 ### Search results page excluded facets
 Define the facets that will always be excluded from the search result page.<br> 
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
 ```
 "excludedFacetIds": ["survey"]
 ```
@@ -76,6 +85,7 @@ Define the facets that will always be excluded from the search result page.<br>
 Define the number of result displayed per page in the search result pages.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
 ```
 "defaultRows": 10
 ```
