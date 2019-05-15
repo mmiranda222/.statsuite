@@ -22,7 +22,7 @@ Define your website name and logo.<br>
 }
 ```
 
-![Site title and logo](faqs/image/faq-site-title-logo.png)
+![Site title and logo](faqs/images/faq-site-title-logo.png)
 
 ### Common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
