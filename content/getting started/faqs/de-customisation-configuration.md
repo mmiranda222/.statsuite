@@ -235,16 +235,52 @@ Define the name and hyperlink in the footer of the table and chart views behind 
 ---
 
 ### API documentation hyperlink
+Define the hyperlink for the API documentation.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"api": {
+  "doc": "https://data.oecd.org/api/sdmx-json-documentation/"
+}
+```
+
+![API documentation](/images/faq-api-documentation.png)
+
+---
 
 ### Contact us hyperlink
+Define the hyperlink for the "Contact us" feature.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-### Privacy Policy hyperlink
+```
+"api": {
+  "contact": "https://stats.oecd.org/FAQAndContact.aspx"
+}
+```
 
+![Contact us](/images/faq-contact-us.png)
 
-### Charts default look and feel settings
-
+---
 
 ### Localised observation values separators for thousands and decimals
+Define the localised thousands and decimals separators of the observaiton values when required in the table and chart views.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"i18n": {
+"localeId": "en",
+"locales": {
+  "en": {
+    "id": "en",
+    "delimiters": { "thousands": ",", "decimal": "."  }
+  },
+  "fr": {
+    "id": "fr",
+    "delimiters": { "thousands": " ", "decimal": ","  }
+  },
+  }
+}
+```
