@@ -172,7 +172,7 @@ It applies the Decimal Attribute value when defined in the data source, and thus
 ---
 
 ### Coded attributes returned as flags
-Define the supported coded attributes displayed as flags at the observaion value level in the table and chart views.<br>
+Define the supported coded attributes displayed as flags at the observation value level in the table and chart views.<br>
 The code is shown next to the observaiton value, and the label is displayed in a mouse-over feature.<br>
 You can define more than one type of attributes to be displayed as flags.<br>
 **Warning**: if the value ID of an attribute that is defined as flag is **longer than 4 characters**, then this value will not be displayed as flag but as **footnote**.<br>
@@ -187,9 +187,20 @@ You can define more than one type of attributes to be displayed as flags.<br>
 
 ---
 
-
 ### Coded and uncoded attributes returned as footnotes
+Define the supported coded or uncoded attributes displayed as footnotes at the observaiton value level in the table and chart views.<br>
+An asterisk icon is shown next to the observation value, and the attribute value is displayed in a mouse-over feature.<br>
+You can define more than one type of attributes to be displayed as footnotes.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"footnotes": ["TIME_FORMAT"]
+```
+
+![Attributes footnotes](/images/faq-footnotes.png)
+
+---
 
 ### Table and chart footer logo
 
