@@ -137,15 +137,55 @@ Define the default time period selection of the visualisation page views, accord
 ---
 
 ### Maximum number of observation values
+Limit the number of observations values returned in the table and chart views.<br>
+If set to [0, 1], then only 1 observation is returned. If set to [0, 0], then nothing is returned.<br>
+This configuration does not impact the full data download.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"range": [0, 1000]
+```
+
+---
 
 ### Preferred scale attribute
+It applies the calculation over the observation values when the Preferred Scale Attribute is used in the data source.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"prefscale": "PREF_SCALE"
+```
+
+---
 
 ### Decimals rule attribute
+It applies the Decimal Attribute value when defined in the data source, and thus adapts the observation value display.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"decimals": "DECIMALS"
+```
+
+---
 
 ### Coded attributes returned as flags
+Define the supported coded attributes displayed as flags at the observaion value level in the table and chart views.<br>
+The code is shown next to the observaiton value, and the label is displayed in a mouse-over feature.<br>
+You can define more than one type of attributes to be displayed as flags.<br>
+**Warning**: if the value ID of an attribute that is defined as flag is **longer than 4 characters**, then this value will not be displayed as flag but as **footnote**.<br>
+
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"flags": ["OBS_STATUS"]
+```
+
+![Attributes flags](/images/faq-flags.png)
+
+---
 
 
 ### Coded and uncoded attributes returned as footnotes
