@@ -203,10 +203,36 @@ You can define more than one type of attributes to be displayed as footnotes.<br
 ---
 
 ### Table and chart footer logo
+Define the logo of the organisation in the footer of the table and chart views.<br>
+The source can be a binary image or a link.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"viewer": {
+    "logo": "dotstat-suite-config/data/prod/assets/oecd-logo.png",
+}
+```
+
+![viewer footer logo](/images/faq-viewer-logo.png)
+
+---
 
 ### Table and chart footer terms and conditions
+Define the name and hyperlink in the footer of the table and chart views behind the "c" copyright icon.<br>
 
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```
+"terms": {
+  "label": "Terms & Conditions",
+  "link": "http://www.oecd.org/termsandconditions/"
+}
+```
+
+![Terms and Conditions](/images/faq-terms-conditions.png)
+
+---
 
 ### API documentation hyperlink
 
