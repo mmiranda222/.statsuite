@@ -19,7 +19,7 @@ For each type, when creating the new issue, please add the related **gitlab labe
 
 ![Gitlab Issue with label](/images/GitlabIssueLabel.png)
 
-If you want to fix a bug yourself, then please refer to [How to contribute](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/how-to-contribute/).<br>
+If you want to fix a bug yourself, then please refer to the [Development guidelines](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-guidelines/).<br>
 
 ## Writing a good issue
 When reporting a **bug**:<br>
