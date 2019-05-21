@@ -9,7 +9,7 @@ weight: 33
 
 #### Overview
 
-The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) have the following branches:
+The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite){="_blank"} have the following branches:
 
 - master (name=master)
     - represents the production state
