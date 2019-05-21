@@ -10,6 +10,39 @@ This page is a guide on how to setup, configure, customise and interact with mos
 These configurations are tasks to be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.<br>
 Some of the whished configurations or settings (e.g. how to add a new sdmx public endpoint) are not available from here because they must happen in a previous step or they are refering to server-side decisions, and you should therfore refer to the [installation guides](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/installation/).
 
+---
+---
+
+### Main Theme
+It is possible to change the default layout theme of the application, including four properties.<br>
+You can add new entries in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json` and it will replace the default customisation. <br>
+The default theme is applied if there is no theme added to the settings.json file.<br>
+
+* "theme":"layout" corresponds to the homepage background color and default font
+* "theme":"searchHeader" corresponds to colored header banner of the search and visualisation pages
+* "theme":splash" corresponds to the text color under the homepage splash logo
+* "theme":"searchDataflow" corresponds to the text color of Dataflow titles in the list of the search result page
+
+```
+"theme":  {
+    "layout": {
+      "fontFamily": "Arial, 'sans-serif'",
+      "background": "#c5e0dc"
+    },
+    "searchHeader": {
+      "background": "#c5e0dc"
+    },
+    "splash": {
+      "color": "black"
+    },
+    "searchDataflow": {
+      "colorTitle": "#0088cc !important"
+    }
+  }
+  ```
+
+---
+
 ### Site title and logo
 Define your website name and logo.<br>
 
