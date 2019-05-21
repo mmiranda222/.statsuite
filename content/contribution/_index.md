@@ -10,5 +10,5 @@ includes:
 
 * [Report an issue](/contribution/report-an-issue)
 * [Issue process & Definitions of Done](/contribution/issue-process)
-* [How to contribute (development guidelines)](/contribution/how-to-contribute)
+* [Development guidelines](/contribution/development-guidelines)
 
