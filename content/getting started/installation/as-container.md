@@ -18,5 +18,5 @@ A good practice is to use the same image in different environments/containers.<b
 
 ![container and docker infrastructure](/images/container-docker-infrastructure.png)
 
-Use **Docker** to build containers, each one dependent form the others. Multiples servcies (database, transfer API, share, config., etc...) implies scaling to multiple containers. Docker is installed in line with the [official Dockerinstallation guidelines](https://docs.docker.com/install/overview/).<br>
+Use **Docker** to build containers, each one dependent form the others. Multiples servcies (database, transfer API, share, config., etc...) implies scaling to multiple containers. Docker is installed in line with the [official Docker installation guidelines](https://docs.docker.com/install/overview/).<br>
 Use **Docker Compose** to define and run a multi-container Docker application's services. Docker Compose is installed in line with the [official Docker Compose installation guidelines](https://docs.docker.com/compose/install/).<br>
