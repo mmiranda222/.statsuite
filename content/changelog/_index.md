@@ -6,6 +6,30 @@ weight: 40
 
 ---
 
+### June 4, 2019
+Major changes:
+
+- [dotstatsuite-data-explorer#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/23) Time period range seleciton with annual and non-annual frequencies. This new feature of the Data Explorer visualisaiton page is **replacing the time range slider** and enables the end-user to select a time frequency and an according range of time period values for a given dataflow view.<br>
+![Time Period Selector](/images/TimePeriodSelector.png)
+
+- [dotstatsuite-data-explorer#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/26) Share API and publication workflow. The new Share service for table and chart sharing (including url and embedded codes) relies on a email validation workflow process detailed [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#publication-workflow).<br>
+The end-user needs to provide a valid email address in order to receive a validaiotn email along with the url and embedded code of the shared table or chart view.<br>
+![Share email](/images/ShareMail)
+
+Minor changes:
+
+- [dotstatsuite-data-explorer#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/66)Theme SETTINGS. The new configuraiton file settings.json can include configuration for DataExplorer layout, saerch header or splash logo. If this is added to the settings.json file, then it supersedes the default configuration. See More details in the [FAQ note](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/faqs/de-customisation-configuration/).
+- [dotstatsuite-data-explorer#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/38) Chart configs (new configs + chnages in the Rules Driver API)
+- [dotstatsuite-data-explorer#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/27) **_Legacy_** Fix apiqueries links
+- [dotstatsuite-data-explorer#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/25) **_Legacy_** Fix visualisation reset state
+
+Bug fixes:
+
+- [dotstatsuite-data-explorer#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/22) Issues and remaining adaptations in the new search, configuration services and architecture.
+- [dotstatsuite-data-explorer#68](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/68) Update label in scope list
+
+---
+
 ### May 17, 2019
 Major changes:
 
