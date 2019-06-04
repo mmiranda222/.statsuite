@@ -14,7 +14,7 @@ Major changes:
 
 - [dotstatsuite-data-explorer#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/26) Share API and publication workflow. The new Share service for table and chart sharing (including url and embedded codes) relies on a email validation workflow process detailed [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#publication-workflow).<br>
 The end-user needs to provide a valid email address in order to receive a validaiotn email along with the url and embedded code of the shared table or chart view.<br>
-![Share email](/images/ShareMail)
+![Share email](/images/ShareMail.png)
 
 Minor changes:
 
