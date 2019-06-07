@@ -9,7 +9,9 @@ We can propose a cloud computing solution of the .Stat Suite and delivered as a 
 No need for locally hosting servers, building complex infrastructures or worrying about security plans:<br>
 - The services are cloud computed and all applications and accesses are centrally maintained;
 - The model is designed to seamlessly integrate additional services into the stack when needed;
-- Costs and resources are minimised.
+- Costs and resources are minimised.<br>
+
+![.Stat Suite as a Service](/images/as-a-service.png)
 
 ## How to jump in?
 [Contact us](contact@siscc.org) for further information and to define together the best architecture plan for your business case.
