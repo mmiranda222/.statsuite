@@ -12,5 +12,5 @@ includes:
 * [Installation](/getting-started/installation)<br>
 > [As a Service](/getting-started/installation/as-a-service)<br>
 > [As Container(s)](/getting-started/installation/as-container)<br>
-> [As a Code Base](/getting-started/installation/as-a-code-base)
+> [As from source code](/getting-started/installation/as-a-code-base)
 * [FAQs](/getting-started/faqs)

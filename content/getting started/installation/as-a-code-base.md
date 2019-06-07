@@ -1,5 +1,5 @@
 ---
-title: Installation as a Code Base
+title: Installation from source code
 subtitle: 
 comments: false
 weight: 27
@@ -9,6 +9,7 @@ This section describes how to install .Stat Suite services from source code.
 
 ## Description of the Dotstatsuite components
 The technical description of each of the components can be accessed from each Gitlab repository:<br>
+
 - [Database](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/blob/master/README.md)
 - [Sdmxri Nsi plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/blob/master/readme.md)
 - [Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/blob/master/README.md)
