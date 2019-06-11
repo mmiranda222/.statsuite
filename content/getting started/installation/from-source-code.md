@@ -29,7 +29,7 @@ We describe the more frequent use cases for running a set of services, and we wi
 ### Installing the .Stat Suite full stack with one internal database
 This topology contains the full stack of .Stat Suite services, including one internal dataspace (database).<br>
 
-![.Stat Suite full stack](/images/One_Internal_Space.png)
+![.Stat Suite full stack](/content/images/One_Internal_Space.png)
 
 The installation must be done in the following order: <br>
 
@@ -50,7 +50,7 @@ The installation must be done in the following order: <br>
 ### Installing an instance of .Stat Data Explorer plugged to a pre-existing sdmx webservice
 This topology contains the client-side services running for the Data Explorer. As a **pre-requisite**, a pre-configured (public or internal) sdmx endpoint is available.<br>
 
-![.Stat Suite client-side](/images/External_SDMX.png)
+![.Stat Suite client-side](/content/images/External_SDMX.png)
 
 The installation must be done in the following order:<br>
 
