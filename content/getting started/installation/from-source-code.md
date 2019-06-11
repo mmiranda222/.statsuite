@@ -13,13 +13,13 @@ The technical description of each of the services can be accessed from each Gitl
 - [Database](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/blob/master/README.md)
 - [Sdmxri Nsi plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/blob/master/readme.md)
 - [Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/blob/master/README.md)
-- *ToDo* [Proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/blob/master/README.md)
-- *ToDo* [Configuration service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/master/README.md)
-- *ToDo* [Sdmx Search service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/blob/master/README.md)
-- *ToDo* [Share service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/blob/master/README.md)
-- *ToDo* [Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/blob/master/README.md)
-- *ToDo* [Data Viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/blob/master/README.md)
-- *ToDo* [Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/blob/master/README.md)
+- [Proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/blob/develop/README.md)
+- [Configuration service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/README.md)
+- [Sdmx Search service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/blob/develop/README.md)
+- [Share service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/blob/develop/README.md)
+- [Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/blob/develop/README.md)
+- [Data Viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/blob/develop/README.md)
+- [Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/blob/develop/README.md)
 
 
 ## Topologies
