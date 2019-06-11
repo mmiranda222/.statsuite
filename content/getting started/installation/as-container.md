@@ -11,7 +11,7 @@ This section describes how to install .Stat Suite services as container(s) using
 ## Principles
 
 Containers ease developers' code and services' deployment in order to produce Docker images.<br>
-Install Docker, then create containers hosting an application and its dependencies (e.g. lib and bins).<br>
+Install Docker, then create containers hosting an application (a set of services) and its dependencies (e.g. lib and bins).<br>
 Split your services into micro-services, isolate applications from each others, and Docker will help you packing and deploying the image(s) in an automated way.<br>
 Create an image from a container. An image is a snapshot of your service(s). Images can be stored in a registry and IT operator can pick an image for deployment (to Dev, Staging or Prod).<br>
 A good practice is to use the same image in different environments/containers.<br>
