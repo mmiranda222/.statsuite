@@ -1,0 +1,31 @@
+---
+title: Team members
+subtitle: 
+comments: false
+weight: 34
+---
+
+#### Core team of .Stat Suite developers
+
+- Aleksei Arhipov [@Aleksei-oecd](https://gitlab.com/aleksei-oecd)
+- Balazs Szilagyi [@balazs82](https://gitlab.com/balazs82)
+- Dimitri Roncoli [@RedPDRoncoli](https://gitlab.com/RedPDRoncoli)
+- Marco Oksman [@moksman](https://gitlab.com/moksman)
+- Mike Velluet [@mike.velluet](https://gitlab.com/mike.velluet)
+- Nicolas Briemant [@nicolas-briemant](https://gitlab.com/nicolas-briemant)
+- Pedro Carranza [@pedroacarranza](https://gitlab.com/pedroacarranza)
+- Peter Takacs [@ptakacs79](https://gitlab.com/ptakacs79)
+- Zsolt Lenart [@ZsoltLenart](https://gitlab.com/ZsoltLenart)
+
+
+#### Core team of .Stat Suite Product Owners
+
+- Betti Vainküla [@Bettivaink](https://gitlab.com/Bettivaink)
+- jean-baptiste nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
+- Jens Dossé [@dosse](https://gitlab.com/dosse)
+- Sandrine Phelipot-Souflis [@SSandrine](https://gitlab.com/SSandrine)
+
+
+### Core team of .Stat Suite Graphical Designers
+
+- Orsolya Zajtai [@zajtaiorsolya](https://gitlab.com/zajtaiorsolya)
