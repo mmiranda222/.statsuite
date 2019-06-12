@@ -40,6 +40,13 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
 - hotfix branches are created from master (after a merge in master)
 - hotfix branches must be merged back into dev and master
 
+### Process
+
+- All changes to the code are done via merge requests. No one ever pushes directly to master. This applies to all core developers and community contributors.
+    - All changes to code need to be approved by a member of the core technical team. A member cannot approve her own code.
+- All changes to code must meet the published guidelines on code style and version control practices.
+- Merge requests are configured with CI/CD for all required security checks. If any checks fails, then the core team must request fixes to the merge request. 
+
 #### Good practices
 
 - perform atomic commits (ie commit a lot)
