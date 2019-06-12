@@ -2,7 +2,7 @@ baseurl = "https://sis-cc.gitlab.io/dotstatsuite-documentation"
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
-title = ".Stat Suite documentation"
+title = ".Stat Suite documentation (BETA)"
 canonifyurls  = true
 
 DefaultContentLanguage = "en"
