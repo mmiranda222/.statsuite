@@ -21,7 +21,7 @@ weight: 34
 #### Core team of .Stat Suite Product Owners
 
 - Betti Vainküla [@Bettivaink](https://gitlab.com/Bettivaink)
-- jean-baptiste nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
+- Jean-Baptiste Nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
 - Jens Dossé [@dosse](https://gitlab.com/dosse)
 - Sandrine Phelipot-Souflis [@SSandrine](https://gitlab.com/SSandrine)
 
