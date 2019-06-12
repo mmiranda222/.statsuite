@@ -1,7 +1,11 @@
-## .Stat Suite "Integrating statistics and data cycle"
+![homepage statement](/images/home_statement.png)
 
-This is the documentation for the latest version of the .Stat Suite applications and services.<br>
-Find out more about source code in [Gitlab](https://gitlab.com/sis-cc).
+## What is .Stat Suite?
 
+**An environment to manage the data lifecycle for official stats** (design, collect, process, disseminate).<br>
+
+**An environment to explore data** and develop various reporting and dissemination experiences.<br>
+
+**An ‘SDMX-native’ environment**, building on best practices in statistical data modelling.<br>
 
 ![homepage splash](/images/home_splash.png)
