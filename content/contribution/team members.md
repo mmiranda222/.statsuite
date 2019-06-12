@@ -18,7 +18,7 @@ weight: 34
 - Zsolt Lenart [@ZsoltLenart](https://gitlab.com/ZsoltLenart)
 
 
-#### Core team of .Stat Suite Product Owners
+#### Core team of .Stat Suite product owners
 
 - Betti Vainküla [@Bettivaink](https://gitlab.com/Bettivaink)
 - Jean-Baptiste Nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
@@ -26,6 +26,6 @@ weight: 34
 - Sandrine Phelipot-Souflis [@SSandrine](https://gitlab.com/SSandrine)
 
 
-### Core team of .Stat Suite Graphical Designers
+#### Core team of .Stat Suite graphical designers
 
 - Orsolya Zajtai [@zajtaiorsolya](https://gitlab.com/zajtaiorsolya)
