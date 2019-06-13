@@ -5,7 +5,7 @@ comments: false
 weight: 34
 ---
 
-#### Core team of .Stat Suite developers
+#### .Stat Suite developers
 
 - Aleksei Arhipov [@Aleksei-oecd](https://gitlab.com/aleksei-oecd)
 - Balazs Szilagyi [@balazs82](https://gitlab.com/balazs82)
@@ -18,7 +18,7 @@ weight: 34
 - Zsolt Lenart [@ZsoltLenart](https://gitlab.com/ZsoltLenart)
 
 
-#### Core team of .Stat Suite product owners
+#### .Stat Suite product owners
 
 - Betti Vainküla [@Bettivaink](https://gitlab.com/Bettivaink)
 - Jean-Baptiste Nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
@@ -26,6 +26,10 @@ weight: 34
 - Sandrine Phelipot-Souflis [@SSandrine](https://gitlab.com/SSandrine)
 
 
-#### Core team of .Stat Suite graphical designers
+#### .Stat Suite graphical designer
 
 - Orsolya Zajtai [@zajtaiorsolya](https://gitlab.com/zajtaiorsolya)
+
+
+### .Stat Suite community manager
+- Jonathan Challener [@ChallenerSJ](https://gitlab.com/ChallenerSJ)
