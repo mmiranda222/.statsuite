@@ -10,7 +10,7 @@ weight: 12
 
 ---
 
-## .Stat Core
+### .Stat Core
 
 Highly performing and secure [SDMX](http://sdmx.org/) back-end based on standard protocols to store, process and retrieve statistical data, structural and referential metadata, data process information and security settings.<br>
 **Store** structural artefacts (DSDs, codelists, Category Schemes, etc.), shared charts and tables configurations, data and attributes values, and referential metadata.<br>
@@ -21,7 +21,7 @@ Highly performing and secure [SDMX](http://sdmx.org/) back-end based on standard
 
 ---
 
-## .Stat Data Lifecycle Manager (DLM)
+### .Stat Data Lifecycle Manager (DLM)
 
 **Model** by defining SDMX data Structures:<br>
 
@@ -51,7 +51,7 @@ Highly performing and secure [SDMX](http://sdmx.org/) back-end based on standard
 
 ---
 
-## .Stat Data Explorer (DE)
+### .Stat Data Explorer (DE)
 
 **Landing page** with access to free-text search or to browsing by configurable concepts (e.g. browse by topic, referance area, data source).<br>
 **Search result page** with access to browsing by content types and indexed concepts, instant drill-down within search results (through dynamic filtering), and direct download (e.g. full .csv data files).<br>
