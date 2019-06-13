@@ -1,5 +1,7 @@
 ![homepage statement](/images/home_statement.png)
 
+<strong>Test</strong>
+
 ## What is .Stat Suite?
 
 **An environment to manage the data lifecycle for official stats** (design, collect, process, disseminate).<br>
