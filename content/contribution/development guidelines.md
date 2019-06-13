@@ -129,13 +129,16 @@ No need to enter a message neither to add reconciliated (and thus updated) files
 ---
 
 ### Coding standards
-We are using JavaScript (Node.js) and .Net:<br>
+
+We are using JavaScript (Node.js) and .Net.<br>
+
 - [ECMAScript 6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) is used to standardise JavaScript (Node.js) code
-- 
+- to fill... for .Net code
 
 ---
 
 ### Linting utilities
-[ESlint](https://eslint.org/) is used on JavaScript (Node.js) for checking code's consistency and reporting on security patterns.<br>
-.Net  ...
+
+- [ESlint](https://eslint.org/) is used on JavaScript (Node.js) for checking code's consistency and reporting on security patterns.<br>
+- to fill for .Net...
 
