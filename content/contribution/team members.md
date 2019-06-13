@@ -31,5 +31,5 @@ weight: 34
 - Orsolya Zajtai [@zajtaiorsolya](https://gitlab.com/zajtaiorsolya)
 
 
-### .Stat Suite community manager
+#### .Stat Suite community manager
 - Jonathan Challener [@ChallenerSJ](https://gitlab.com/ChallenerSJ)
