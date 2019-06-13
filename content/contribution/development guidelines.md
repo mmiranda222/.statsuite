@@ -40,13 +40,6 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
 - hotfix branches are created from master (after a merge in master)
 - hotfix branches must be merged back into dev and master
 
-### Process
-
-- All changes to the code are done via merge requests. No one ever pushes directly to master. This applies to all core developers and community contributors.
-    - All changes to code need to be approved by a member of the core technical team. A member cannot approve her own code.
-- All changes to code must meet the published guidelines on code style and version control practices.
-- Merge requests are configured with CI/CD for all required security checks. If any checks fails, then the core team must request fixes to the merge request. 
-
 #### Good practices
 
 - perform atomic commits (ie commit a lot)
@@ -124,4 +117,25 @@ $ git commit
 ```
 No need to enter a message neither to add reconciliated (and thus updated) files to the stage, git does automatically (conflicted state).
 
+---
+
+### Process
+
+- All changes to the code are done via merge requests. No one ever pushes directly to master. This applies to all core developers and community contributors.
+    - All changes to code need to be approved by a member of the core technical team. A member cannot approve her own code.
+- All changes to code must meet the published guidelines on code style and version control practices.
+- Merge requests are configured with CI/CD for all required security checks. If any check fails, then the core team must request fixes to the merge request. 
+
+---
+
+### Coding standards
+We are using JavaScript (Node.js) and .Net:<br>
+- [ECMAScript 6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) is used to standardise JavaScript (Node.js) code
+- 
+
+---
+
+### Linting utilities
+[ESlint](https://eslint.org/) is used on JavaScript (Node.js) for checking code's consistency and reporting on security patterns.<br>
+.Net  ...
 

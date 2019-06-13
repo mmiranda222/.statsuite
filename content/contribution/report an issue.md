@@ -8,7 +8,7 @@ lastmod: 2006-01-03
 
 
 
-## New issue
+### New issue
 If you want to report an issue for any of the .Stat Suite applications, then you need to **open a new issue** into [Gitlab sis-cc/.stat-suite/issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues).<br>
 You can first try to find out if your issue (a bug, a new feature or a feature enhancement) has already been recorded.<br>
 
@@ -21,7 +21,7 @@ For each type, when creating the new issue, please add the related **gitlab labe
 
 If you want to fix a bug yourself, then please refer to the [Development guidelines](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-guidelines/).<br>
 
-## Writing a good issue
+### Writing a good issue
 When reporting a **bug**:<br>
  - Describe what went wrong, what is the expected behavior and if relevant, what caused the problem;<br>
  - If it is not obvious, then list the steps to follow for someone else to reproduce the bug;<br>
