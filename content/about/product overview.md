@@ -21,7 +21,7 @@ Highly performing and secure [SDMX](http://sdmx.org/) back-end based on standard
 
 ---
 
-## .Stat DLM
+## .Stat Data Lifecycle Manager (DLM)
 
 **Model** by defining SDMX data Structures:<br>
 
