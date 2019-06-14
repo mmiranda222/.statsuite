@@ -132,31 +132,23 @@ The following technologies are used for the development of the **.Stat Core** co
 ### non-technical overview
 ```mermaid
 graph LR;
-id0{user};
-id1((data-explorer));
-id6((data-viewer));
-id2[share service];
-id3[config service];
-id4[search service];
-id5(sdmx public endpoint);
-id0-->id1;
-id2-->id6;
-id0-->id6;
-id1-->id2;
-id1-->id3;
-id1-->id4;
-id4-->id3;
-id2-->id3;
-id6-->id3;
-id1-->id5;
-```
-
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
+  id0{user};
+  id1((data-explorer));
+  id6((data-viewer));
+  id2[share service];
+  id3[config service];
+  id4[search service];
+  id5(sdmx public endpoint);
+  id0-->id1;
+  id2-->id6;
+  id0-->id6;
+  id1-->id2;
+  id1-->id3;
+  id1-->id4;
+  id4-->id3;
+  id2-->id3;
+  id6-->id3;
+  id1-->id5;
 ```
 
 
@@ -259,21 +251,21 @@ This web app is a compagnon GUI for (external) users to display user-defined dat
 ### architecture
 ```mermaid
 graph LR
-id0[ExpressJS + evtX]
-id2[SolR]
-id4[redis]
-id5[config]
-id7((user))
-id9((admin))
+  id0[ExpressJS + evtX]
+  id2[SolR]
+  id4[redis]
+  id5[config]
+  id7((user))
+  id9((admin))
 
-id0 -->|GET| id7
-id9 -->|POST| id0
-id0 --- id4
-id0 --- id5
-id0 --- id2
-subgraph sdmx-faceted-search
-id0
-end
+  id0 -->|GET| id7
+  id9 -->|POST| id0
+  id0 --- id4
+  id0 --- id5
+  id0 --- id2
+  subgraph sdmx-faceted-search
+    id0
+  end
 ```
 
 ### technical aspects
@@ -315,9 +307,10 @@ end
 
 |tenant|specs|url|
 |---|---|---|
-|oecd|sdmx ilo endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com|
-|ilo|sdmx ilo endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=ilo|
-|rp|sdmx ilo endpoint, rp design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=rp|
+|oecd|sdmx oecd staging endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com|
+|ilo|sdmx ilo test endpoint, ilo design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=ilo|
+|istat|sdmx istat sistanhub endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=istat|
+
 
 ### technical overview
 ```mermaid
@@ -379,17 +372,130 @@ end
 1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
 
 
-## DevOps implementation
+# .Stat Core module
 
-### technical environment (cloud)
-- 1 cluster of 3 nodes with 2 namespaces (qa and staging) on google cloud platform
-- https
-- probes
-- kubernetes, how to update topology, not automated
-- repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp
-  - hold kubernetes configuration files
+### technical overview
+```mermaid
+graph LR
+id1(de/viewer)
+id2(dlm)
+id3[sdmx/nsi]
+id4[sdmx/nsi plugin]
+id5[transfer]
+id6[data-access]
+id7[common]
+id8((structure-db))
+id9((data-db))
+id10[auth-management]
+id11((auth-log-db))
 
-### flow
+id1 --> id3
+id2 --> id3
+id2 --> id5
+id2 --> id10
+subgraph sdmx-ri / eurostat
+  id3 --> id8
+end
+subgraph .stat core
+  id3 --> id4
+  id4 --> id6
+  id4 --> id7
+  id5 --> id6
+  id5 --> id7
+  id6 --> id9
+  id6 --> id11
+  id10 --> id11
+end
+
+```
+
+## Transfer service
+
+### short description
+This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores.
+
+### demo (light)
+1. go to http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html (tenant: oecd, env: qa)
+
+### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-transfer
+
+
+## SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
+
+### short description
+This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store.
+
+### demo (light)
+1. go to http://nsi.qa.core.oecd.redpelicans.com/ (tenant: oecd, env: qa)
+
+### technical aspects
+- **repository**: https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi
+
+
+## Plugin for SDMX service (also named SDMX-RI NSI web service (c) Eurostat) to access the .Stat Core Data Store
+
+### short description
+This plugin is used by the SDMX service to retrieve statistical data structures from a .Stat Core Data Store.
+
+### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
+- 
+
+## Data Access library to access the .Stat Core Data Store
+
+### short description
+This library is used by the SDMX service plugin and by the Transfer service to retrieve or upload statistical data structures from and to a .Stat Core Data Store.
+
+### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access
+
+
+## Core Common library
+
+### short description
+This library is used for shared code in the .Stat Core components.
+
+### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common
+
+
+## Authorisation service
+
+### short description
+This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
+
+### demo (light)
+1. go to ? (tenant: oecd, env: qa)
+
+### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-auth-management
+
+
+# DevOps implementation
+
+## technical environment (cloud)
+* .Stat Data Explorer components
+  - 1 cluster of 3 nodes with 2 namespaces (qa and staging) on google cloud platform
+  - https
+  - probes
+  - kubernetes, how to update topology, not automated
+  - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp
+    - holds kubernetes configuration files
+* .Stat Core components
+  - 1 cluster of 3 nodes with 2 namespaces (qa and staging) on google cloud platform
+  - https
+  - probes
+  - kubernetes, how to update topology, not automated
+  - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp
+    - holds kubernetes configuration files
+
+
+
+## flow
 ```mermaid
 graph TB
 id0[gitlab repositories]
@@ -413,16 +519,16 @@ id2 -. pull image .-> id4
 id5 -. pull code .-> id4
 ```
 
-### mapping
+## mapping
 |env|git branch|cluster namespace|
 |---|---|---|
-|staging|develop|staging|
-|qa|master|qa|
+|qa|develop|qa|
+|staging|master|staging|
 
-### git
+## git
 - see [git-flow](http://nvie.com/posts/a-successful-git-branching-model/)
 
-### gitlab
+## gitlab
 - all repositories are under https://gitlab.com/sis-cc/.stat-suite
 - each repository defines its pipelines in `gitlab-ci.yml` file
 - 2 types of pipeline:
@@ -440,7 +546,7 @@ release --> deploy
 end
 ```
 
-npm package
+npm/nuget package
 ```mermaid
 graph LR
 subgraph CI all branches
@@ -452,19 +558,27 @@ build --> publish
 end
 ```
 
-#### npm
+## npm
 - npm packages are published under https://www.npmjs.com/settings/sis-cc/packages
 - tags are only on commits in master and trigger a publish
 
-#### list of webapps/services/packages
+## nuget
+- nuget packages are published under https://www.nuget.org/profiles/SIS-CC
+- tags are only on commits in master and trigger a publish
+
+## list of webapps/services/packages
 |kind|name|status|coverage|
 |---|---|---|---|
-|infra|[kubernetes](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp)|-|-|
+|infra|[kubernetes de](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp)|-|-|
+|infra|[kubernetes core](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp)|-|-|
 |-|-|-|-|
 |service|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/coverage.svg?style=flat-square)|
 |service|[sdmx-faceted-search](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/coverage.svg?style=flat-square)|
 |service|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/coverage.svg?style=flat-square)|
 |service|[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/coverage.svg?style=flat-square)|
+|-|-|-|-|
+|service|[core-auth-management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)|
+|service|[core-transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)|
 |-|-|-|-|
 |webapp|[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)|
 |webapp|[data-explorer-legacy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer-legacy)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer-legacy/badges/dev/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer-legacy/badges/dev/coverage.svg?style=flat-square)|
@@ -478,13 +592,18 @@ end
 |package|[components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/coverage.svg?style=flat-square)|
 |package|[ui-components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/coverage.svg?style=flat-square)|
 |package|[d3-charts](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/coverage.svg?style=flat-square)|
+|-|-|-|-|
+|package|[core-data-access](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/badges/master/coverage.svg?style=flat-square)|
+|package|[core-common](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/coverage.svg?style=flat-square)|
+|package|[core-sdmxri-nsi-plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/coverage.svg?style=flat-square)|
 
-#### docker
+
+## docker
 - all images are under https://cloud.docker.com/u/siscc/repository/list
 - tags are latest, develop and commit hash
 
 
-### helpers
+# Contributing to an open source repository
 
 https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/
 
