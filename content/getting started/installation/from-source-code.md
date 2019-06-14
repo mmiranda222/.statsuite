@@ -22,7 +22,7 @@ The technical description of each of the services can be accessed from each Gitl
 - [Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/blob/develop/README.md)
 
 
-###Topologies
+### Topologies
 The most common topologies for installing the .Stat Suite services is described below.<br>
 We describe the more frequent use cases for running a set of services, and we will continue contributing to this section with each of the new use cases we meet. 
 
