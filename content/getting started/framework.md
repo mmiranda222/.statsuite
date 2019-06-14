@@ -20,7 +20,7 @@ The .Stat Suite has three **main modules**:
 ![homepage splash](/images/home_splash.png)
 
 Each main module (as well as their components) can be used together or separately.
-In the following are a few typical use cases on how an organisation can make use of these modules:
+In the following are a few **typical use cases** on how an organisation can make use of these modules:
 
 
 **A) Adding the Data Explorer to an existing fully-fledshed back-end solution**
@@ -127,7 +127,7 @@ The following technologies are used for the development of the **.Stat Core** co
 </table>
 
 
-# Data Explorer module
+# .Stat Data Explorer module
 
 ### non-technical overview
 ```mermaid
@@ -154,6 +154,9 @@ id1 --> id5
 
 ## Data Explorer app
 
+### short description
+This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
+
 ### demo (light)
 1. go to http://data-explorer.staging.oecd.redpelicans.com (tenant: oecd, env: staging)
 1. home page
@@ -172,6 +175,9 @@ id1 --> id5
 
 
 ## Share service
+
+### short description
+This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.
 
 ### demo
 1. go to http://webapp.staging.oecd.redpelicans.com/?tenant=oecd
@@ -213,6 +219,9 @@ id2 -->|7. redirect user|id4
 
 
 ## Share-Viewer App
+
+### short description
+This web app is a compagnon GUI for (external) users to display user-defined data tables and charts e.g. in embedded views or through shared links.
 
 ### demo (light)
 1. go to ? (tenant: oecd, env: staging)
@@ -259,7 +268,7 @@ id0
 end
 ```
 
-### technical aspect
+### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-sdmx-faceted-search
 - a static schema is defined in the config
