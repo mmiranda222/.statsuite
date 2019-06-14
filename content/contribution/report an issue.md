@@ -5,8 +5,6 @@ comments: false
 weight: 31
 ---
 
-
-
 ### New issue
 If you want to report an issue for any of the .Stat Suite applications, then you need to **open a new issue** into [Gitlab sis-cc/.stat-suite/issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues).<br>
 You can first try to find out if your issue (a bug, a new feature or a feature enhancement) has already been recorded.<br>
