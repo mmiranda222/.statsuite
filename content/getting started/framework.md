@@ -131,25 +131,24 @@ The following technologies are used for the development of the **.Stat Core** co
 
 ### non-technical overview
 ```mermaid
-graph LR
-id0{user}
-id1((data-explorer))
-id6((data-viewer))
-id2[share service]
-id3[config service]
-id4[search service]
-id5(sdmx public endpoint)
-
-id0 --> id1
-id2 --> id6
-id0 --> id6
-id1 --> id2
-id1 --> id3
-id1 --> id4
-id4 --> id3
-id2 --> id3
-id6 --> id3
-id1 --> id5
+graph LR;
+id0{user};
+id1((data-explorer));
+id6((data-viewer));
+id2[share service];
+id3[config service];
+id4[search service];
+id5(sdmx public endpoint);
+id0-->id1;
+id2-->id6;
+id0-->id6;
+id1-->id2;
+id1-->id3;
+id1-->id4;
+id4-->id3;
+id2-->id3;
+id6-->id3;
+id1-->id5;
 ```
 
 ## Data Explorer app
