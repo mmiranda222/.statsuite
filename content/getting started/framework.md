@@ -151,6 +151,15 @@ id6-->id3;
 id1-->id5;
 ```
 
+```mermaid
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+```
+
+
 ## Data Explorer app
 
 ### short description
