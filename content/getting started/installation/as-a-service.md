@@ -13,5 +13,5 @@ No need for locally hosting servers, building complex infrastructures or worryin
 
 ![.Stat Suite as a Service](/images/as-a-service.png)
 
-## How to jump in?
+### How to jump in?
 [Contact us](mailto:contact@siscc.org) for further information and to define together the best architecture plan for your business case.
