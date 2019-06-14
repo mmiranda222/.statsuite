@@ -7,8 +7,7 @@ weight: 33
 
 ### Git-flow
 
-#### Overview
-
+**Overview** <br>
 The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) have the following branches:
 
 - master (name=master)
@@ -31,8 +30,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - fixing critical bug(s) in production
     - avoid blocking dev while fxing master
 
-#### Rules
-
+**Rules**<br>
 - feature/patch branches are created from dev (after a merge in dev)
 - feature/patch branches must be merged back into dev when the feature is done
 - release branches are created from dev (after a merge in dev)
@@ -40,8 +38,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
 - hotfix branches are created from master (after a merge in master)
 - hotfix branches must be merged back into dev and master
 
-#### Good practices
-
+**Good practices**<br>
 - perform atomic commits (ie commit a lot)
     - git history is detailed
     - allows efficient time travel in past
@@ -50,7 +47,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - backup your work (commits are local)
     - share your work
 
-#### Use case of a git-feature
+**Use case of a git-feature**<br>
 lifecycle of a feature (morebanana).<br>
 
 ```
@@ -89,7 +86,7 @@ $ git branch -d feature/morebanana
 $ git push
 ```
 
-#### Use case of a git-conflict
+**Use case of a git-conflict**<br>
 I am working on a new feature, while updating my feature branch with dev, I get a conflict.<br>
 
 ```
