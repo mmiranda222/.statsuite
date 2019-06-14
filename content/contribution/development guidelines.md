@@ -130,15 +130,14 @@ No need to enter a message neither to add reconciliated (and thus updated) files
 
 ### Coding standards
 
-We are using JavaScript (Node.js) and .Net.<br>
+We are using JavaScript (Node.js), SQL and .NET.<br>
 
-- [ECMAScript 6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) is used to standardise JavaScript (Node.js) code
-- to fill... for .Net code
+- [ECMAScript 6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) is used to standardise JavaScript (Node.js) code.
+- [Jetbrains' Resharper](https://www.jetbrains.com/resharper/features/code_analysis.html) is a plugin used on SQL and .NET code that checks in real-time standardised common practices.
 
 ---
 
 ### Linting utilities
 
 - [ESlint](https://eslint.org/) is used on JavaScript (Node.js) for checking code's consistency and reporting on security patterns.<br>
-- to fill for .Net...
-
+- [Chekmarx](https://www.checkmarx.com/) is used for SQL and .NET code.
