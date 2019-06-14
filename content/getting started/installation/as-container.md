@@ -33,7 +33,7 @@ Use **Docker Compose** to define and run a multi-container Docker application's 
 
 All Docker images are under https://cloud.docker.com/u/siscc/repository/list.<br>
 
-#### NSI web service
+**NSI web service**<br>
 SDMX compliant REST web service developed by [Eurostat](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/README.md?at=refs%2Fheads%2Fdevelop) and enriched with OECD data retieval. NSI web servcie allows data and structural metadata and submisison of structural metadata. Plugin docker image is using a vanilla Eurostat NSI service as a [base image](https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi).<br>
 **Links**:<br>
 - Docker image with plugin https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi<br>
@@ -42,7 +42,7 @@ SDMX compliant REST web service developed by [Eurostat](https://webgate.ec.europ
 - Eurostat git https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse?at=refs%2Fheads%2Fdevelop<br>
 **Configuration** see details [here](https://gitlab.com/snippets/1851148#configuration)
 
-#### Transfer service
+**Transfer service**<br>
 The Transfer service provides an API for:<br>
 - Import of SDMX data files (csv, xml) into dissemination database<br>
 - Import of mapped Excel files with data into dissemination database<br>
@@ -54,25 +54,25 @@ For the simple UI once service is running navigate to http://transfer-service-ur
 - git https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/tree/develop<br>
 **Configuration** see details [here](https://gitlab.com/snippets/1851148#configuration-1)
 
-#### Dependency: common nugget
+**Dependency: common nugget**<br>
 Common library contains methods and classes shared between other projects and servcies. These inlude logs, localisation and configuration.<br>
 **Links**:<br>
 - repository https://www.nuget.org/packages/DotStat.Common/<br>
 - git https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/tree/develop
 
-#### Dependency: data access nugget
+**Dependency: data access nugget**<br>
 Data access library contains database specific logic shared by NSI web service plugin and Transfer service.<br>
 **Links**:<br>
 - repository https://www.nuget.org/packages/DotStat.DataAccess.NuGet/<br>
 - git https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/tree/develop
 
-#### Data Explorer
+**Data Explorer**<br>
 Is forked from https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-webapp (boilerplate to help crafting web application fully integrated within dotstat-data-explorer-suite). It is server-side rendered (configuration is injected in index.html)no request required from the client to get the configuration. Client bundle expects configuration in `window.SETTINGS`, `window.I18N`and `window.CONFIG`for those who want to directly use the static files.<br>
 **Links**:<br>
 - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer<br>
 - docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-data-explorer
 
-#### Share service
+**Share service**<br>
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:<br>
 - tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed<br>
 - share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code<br>
@@ -81,19 +81,19 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share<br>
 - docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
 
-#### Proxy
+**Proxy**<br>
 The Proxy handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct tager application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.<br>
 **Links**:<br>
 - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy<br>
 - docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
 
-#### Configuration
+**Configuration service**<br>
 The Configuration service centralises all configuration resources used by other services. It is a web server providing requested configuration, not exposed to users. based on git versioned configuration data.<br>
 **Links**:<br>
 - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config<br>
 - docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-config-dev
 
-#### Search service
+**Search service**<br>
 The Search service named SDMX Faceted Search (sfs) is a JSON http server offering faceted search on SDMX dataflows. A static schema is defined in the config. A dynamic schema is derivated from dataflows.<br>
 **Links**:<br>
 - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search<br>
