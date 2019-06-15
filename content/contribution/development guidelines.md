@@ -139,6 +139,7 @@ We are using JavaScript (Node.js), SQL and C# (on .NET framework).<br>
 - [ESlint](https://eslint.org/) is used on JavaScript (Node.js) for checking code's consistency and reporting on security patterns.<br>
 - [Chekmarx](https://www.checkmarx.com/) is used for SQL and C# (on .NET framework) code.
 
+---
 
 ### Contributing to an open source repository
 
