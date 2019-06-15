@@ -137,7 +137,7 @@ The following technologies are used for the development of the **.Stat Core** co
 # .Stat Data Explorer module
 
 ### non-technical overview
-![de non-technical overview](/images/de non-technical overview.png)
+![de non-technical overview](/images/de_non-technical_overview.png)
 ```mermaid
 graph LR;
   id0{user};
@@ -198,7 +198,7 @@ This service (and related database) is used to store and retrieve user-defined d
 1. check the shared chart
 
 ### flow
-![share service flow](/images/share service flow.png)
+![share service flow](/images/share_service_flow.png)
 ```mermaid
 graph LR
 id0[user]
@@ -258,7 +258,7 @@ This web app is a compagnon GUI for (external) users to display user-defined, sh
 - [negate search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
 
 ### architecture
-![search architecture](/images/search architecture.png)
+![search architecture](/images/search_architecture.png)
 ```mermaid
 graph LR
   id0[ExpressJS + evtX]
@@ -381,7 +381,7 @@ Is a lib of components for the parsing of SDMX-JSON messages. [*more discription
 
 
 ### technical overview
-![multi-tenant architecture](/images/multi-tenant architecture.png)
+![multi-tenant architecture](/images/multi-tenant_architecture.png)
 ```mermaid
 graph LR
 id1(browser)
@@ -460,7 +460,7 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 # .Stat Core module
 
 ### technical overview
-![core technical overview](/images/core technical overview.png)
+![core technical overview](/images/core_technical_overview.png)
 ```mermaid
 graph LR
 id1((de & share-viewer))
@@ -586,7 +586,7 @@ This library is used for shared code in the .Stat Core components. These inlude 
 
 
 ## flow
-![devops flow](/images/devops flow.png)
+![devops flow](/images/devops_flow.png)
 ```mermaid
 graph TB
 id0[gitlab repositories]
@@ -624,7 +624,7 @@ id5 -. pull code .-> id4
 - each repository defines its pipelines in `gitlab-ci.yml` file
 - 2 types of pipeline:
 
-![gitlab pipelines](/images/gitlab pipelines.png)
+![gitlab pipelines](/images/gitlab_pipelines.png)
 
 webapp/service
 ```mermaid
