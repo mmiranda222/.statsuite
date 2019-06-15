@@ -22,7 +22,7 @@ The .Stat Suite has three **main modules**:
 
 ### The high-level technical architecture can be schematised as follow:
 
-![.Stat_Suite_high-level_architecture](/images/.Stat_Suite_high-level_architecture.png)
+![Stat Suite high-level architecture](/images/high-level_architecture.png)
 
 
 Each main module (as well as their components) can be used together or separately.
