@@ -14,23 +14,23 @@ These pages will help developers and implementers to understand and install the 
 
 * [Installation](/getting-started/installation)  
 
-  Landing page for the navigation within installation instructions.
+  Landing page for the navigation within installation instructions. The .Stat Suite platform and its modules and components are made available in the following 3 ways:
 
-  * [As a Service](/getting-started/installation/as-a-service)  
+  * [As a fully-functional, ready-made service installation](/getting-started/installation/as-a-service)  
 
-    Provides information on how to easily deploy the .Stat Suite platform based on a fully-functional, ready-to-use service package, using a multi-tenant architecture. This eases cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes. Using this approach, we also provide cloud-hosting for SIS-CC member organisations and their partners for test, demo and pilot purposes.
+    This page provides information on how to easily deploy the .Stat Suite platform based on a fully-functional, ready-to-use service package, using a multi-tenant architecture. This eases cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes. Using this approach, we also provide cloud-hosting for SIS-CC member organisations and their partners for test, demo and pilot purposes.
     
     This approach doesn't require developer skills, but limits configuration options.
 
-  * [As Container(s)](/getting-started/installation/as-container)  
+  * [As deployable containers](/getting-started/installation/as-container)  
 
-    Provides a short intro to the Docker technology, and information about the ready-to-use .Stat Suite docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
+    This page provides a short intro to the Docker technology, and information about the ready-to-use .Stat Suite docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
     
     This approach requires knowledge of docker technology and orchestration (e.g. kubernetes technology).
 
-  * [From source code](/getting-started/installation/from-source-code)  
+  * [As source code](/getting-started/installation/from-source-code)  
 
-    Provides example topologies and the related required .Stat Suite platform components (applications, services, libraries), which can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure. Also the links to the related instructions for installations starting from the source code are included.
+    This page provides example topologies and the related required .Stat Suite platform components (applications, services, libraries), which can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure. Also the links to the related instructions for installations starting from the source code are included.
     
     This approach requires solid technical knowledge of the underlying ecosystems (.Net, MS SQL Server, JS, OS) but offers most flexibility for topologies and configuration.
 
