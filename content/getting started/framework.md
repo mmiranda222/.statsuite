@@ -186,6 +186,11 @@ This web app is the main GUI for (external) users to find, understand and use th
 
 ### short description
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.
+A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
+
+* tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed
+* share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
+* POST body are size limited to `maxChartSize`
 
 ### demo
 1. go to http://webapp.staging.oecd.redpelicans.com/?tenant=oecd
@@ -245,6 +250,9 @@ This web app is a compagnon GUI for (external) users to display user-defined, sh
 
 ## Search service
 
+### short description
+This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows categorised and accessible in one or more SDMX end points and to execute faceted search queries on these SDMX dataflows.
+
 ### features/demos
 - free-text faceted search
 - results are sorted by relevance and paginated
@@ -293,6 +301,10 @@ graph LR
 
 ## Proxy Service
 
+### short description
+
+The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct tager application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
+
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
@@ -302,6 +314,10 @@ graph LR
 
 
 ## Config Service
+
+### short description
+
+The Configuration service centralises all configuration resources used by other services. It is a web server providing requested configuration, not exposed to users. Based on git versioned configuration data.
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config
@@ -512,6 +528,7 @@ This web service is used for statistical data (and later referential metadata) f
 
 ### short description
 This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store.
+It is based on the SDMX compliant REST web service developed by Eurostat and (through a plugin - see below) enriched with an access to a .Stat Core data storage. The web service allows for retrieval of data structures and data and for submission of data structures. 
 
 ### demo (light)
 1. go to http://nsi.qa.core.oecd.redpelicans.com/ (tenant: oecd, env: qa)
@@ -519,7 +536,7 @@ This web service is used for statistical data structures for their upload and do
 ### technical aspects
 - **repository**: https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi
-
+- **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
 
 ## Plugin for SDMX service (also named SDMX-RI NSI web service (c) Eurostat) to access the .Stat Core Data Store
 
