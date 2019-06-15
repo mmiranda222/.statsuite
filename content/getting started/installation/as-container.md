@@ -9,7 +9,7 @@ Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main m
 
 This section describes where to find and how to use the .Stat Suite Docker images.
 
-> **Note**: Docker technology is a commonly used containerisation technology, and we will mainly explain here our most common scenarios using Docker Compose and our specific services and libraries.
+> **Note**: Docker technology is a commonly used containerisation technology, and we will mainly list here our ready-to-use Docker images.
 
 ---
 
@@ -140,7 +140,71 @@ This web service is used for statistical data (and later referential metadata) f
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-transfer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
 
-*Configuration* see details [here](https://gitlab.com/snippets/1851148#configuration-1)
+##### Configuration
+
+Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/tree/develop/DotStatServices.Transfer/config).
+All files with *.json extension are considered as configuration files. The name of the file is not important (except log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
+
+* example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config
+
+    * [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config/log4net.config)
+    > log configuration
+    * [dataspaces.private.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config/dataspaces.private.json)
+    > dataspaces configuration with connection strings to Structure, Management & Data databases. At least 1 dataspace is required.
+    * [localization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config/localization.json)
+    > Localized messages returned back to a user
+    
+* sample usage of docker (provided log4net.config instructs to write to a file in /app/logs directory):
+
+```yaml
+docker run -it --rm -p 80:80 \
+-v /path-to/my/config:/app/config \
+-v /path-to/my/logs:/app/logs \
+--name transfer \
+siscc/dotstatsuite-core-transfer
+```
+
+* docker with connection strings from environment variables:
+
+```yaml
+docker run -it --rm -p 80:80 \
+-v /path-to/my/config:/app/config \
+-v /path-to/my/logs:/app/logs \
+--name transfer \
+-e spacesInternal:0:msConnectionString=my-structure-db-connection \
+-e spacesInternal:0:managementConnectionString=my-managemenet-db-connection \
+-e spacesInternal:0:dataStoreConnectionStrings:0:connectionString=my-data-db-connection \
+siscc/dotstatsuite-core-transfer
+```
+
+Schema:
+
+![transfer service architecture](/images/transfer_architecture.png)
+```mermaid
+graph LR
+
+dlm((dlm))
+transfer[transfer]
+common-nuget[common]
+access-nuget[data-access]
+ms_db(structure-db)
+data_db(data-db)
+auth-log-db(auth-log-db)
+
+dlm-->transfer
+
+subgraph transfer backend
+transfer--> common-nuget
+transfer--> access-nuget
+end
+
+subgraph database layer
+access-nuget--> ms_db
+access-nuget--> auth-log-db
+access-nuget --> data_db
+end
+
+```
 
 
 #### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
@@ -153,7 +217,71 @@ This web service is used for statistical data structures for their upload and do
 - **repository of .Stat Core plugin**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
 - **repository of original Eurostat SDMX-RI NSI web service**: https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 
-*Configuration* see details [here](https://gitlab.com/snippets/1851148#configuration)
+##### Configuration
+
+Configuration is loaded from **config** directory located in the [root of application](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config?at=refs%2Fheads%2Fdevelop).
+All files with *.json extension are considered as configuration files. The name of the file is not important (except app.config & log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
+
+* example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config
+
+    * [app.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/app.config)
+    > nsi web service main configuration, more info [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/CONFIGURATION.md?at=refs%2Fheads%2Fdevelop)
+    > In addition to default Eurostat configuration there 2 new values in the appSettings, that are needed for Data plugin
+    
+    > **DataspaceId** - what dataspace is used by NSI for data retrieval  
+    > **ConfigDirectory** - where to find Plugin *.json configuration files, by default located in the same directory as NSI configs themselves.
+    * [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/log4net.config)
+    > log configuration
+    * [dataspaces.private.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/dataspaces.private.json)
+    > dataspaces configuration with connection strings to Structure, Management & Data databases. 
+    * [localization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/localization.json)
+    > Localized messages returned back to a user
+    
+* sample usage of docker (provided log4net.config instructs to write to a file in /app/logs directory):
+
+```yaml
+docker run -it --rm -p 80:80 \
+-v /path-to/my/config:/app/config \
+-v /path-to/my/logs:/app/logs \
+--name nsi-ws \
+siscc/dotstatsuite-core-sdmxri-nsi
+```
+ 
+Schema:
+
+![sdmx/nsi service architecture](/images/nsi_architecture.png)
+```mermaid
+graph LR
+
+dlm((dlm))
+de((data explorer))
+nsi[sdmx/nsi]
+plugin[sdmx/nsi plugin]
+common-nuget[common]
+access-nuget[data-access]
+ms_db(structure-db)
+data_db(data-db)
+auth-log-db(auth-log-db)
+
+dlm-->nsi
+de-->nsi
+
+subgraph sdmx-ri / eurostat
+nsi --> plugin
+end
+
+subgraph nuget packages
+plugin --> common-nuget
+plugin --> access-nuget
+end
+
+subgraph database layer
+access-nuget--> ms_db
+access-nuget--> auth-log-db
+access-nuget --> data_db
+end
+
+```
 
 
 #### Authorisation service
@@ -163,6 +291,72 @@ This web service is used for managing user access rights to data structures and 
 - **demo**: [*to come*]
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-auth-management
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
+
+---
+
+
+## Docker-compose example(s)
+
+[Docker Compose](https://docs.docker.com/compose/overview/) is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. To learn more about all the features of Compose, see [the list of features](https://docs.docker.com/compose/overview/#features).
+
+Compose works in all environments: production, staging, development, testing, as well as CI workflows. You can learn more about each case in [Common Use Cases](https://docs.docker.com/compose/overview/#common-use-cases).
+
+A .Stat Docker compose example for developers and contributors combining all apps and services and one .Stat Core Data Storage is currently in development and will be available soon. 
+
+A first preview of a Docker compose yaml file with .Stat Core services is here:
+
+```yaml
+version: "3"
+
+services:
+  nsi-ws:
+    image: siscc/dotstatsuite-core-sdmxri-nsi:7.2.0
+    container_name: nsi-ws
+    ports:
+      - "85:80"
+    volumes:
+      - "./nsi-config:/app/config"
+      - "./logs:/app/logs"
+    networks:
+      - back-network
+    depends_on:
+      - db
+
+  transfer:
+    image: siscc/dotstatsuite-core-transfer:latest
+    container_name: transfer
+    ports:
+      - "86:80"
+    volumes:
+      - "./transfer-config:/app/config"
+      - "./logs:/app/logs"
+    networks:
+      - back-network
+    depends_on:
+      - db
+
+  db:
+    build: ./mssql/docker
+    image: siscc/mssql-with-init
+    container_name: mssql
+    ports:
+      - "1434:1433"
+    volumes:
+      - "db-data:/var/opt/mssql/data"
+      - "./mssql/init:/docker-entrypoint-initdb.d"
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: My-Mssql-Pwd-123
+      MSSQL_PID: Developer
+    networks:
+      - back-network
+
+volumes:
+  db-data:
+
+networks:
+  back-network:
+```
 
 
 
