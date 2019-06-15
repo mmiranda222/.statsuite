@@ -23,7 +23,7 @@ Each main module (as well as their components) can be used together or separatel
 In the following are a few **typical use cases** on how an organisation can make use of these modules:
 
 
-**A) Adding the Data Explorer to an existing fully-fledshed back-end solution**
+**A) Adding the Data Explorer to an existing fully-fledged back-end solution**
 
 *Pre-requisites*: A statistical database with its own data management features and with a public SDMX API (SDMX 2.1 Rest incl. SDMX-JSON); hardware (see the system requirements in the installation guides)
 
@@ -195,7 +195,7 @@ graph LR
 id0[user]
 id1((share-requester))
 id2[share service]
-id3(share DB)
+id3(share db)
 id4((share-viewer))
 
 id0 --- id1
@@ -221,10 +221,10 @@ id2 -->|7. redirect user|id4
 ## Share-Viewer App
 
 ### short description
-This web app is a compagnon GUI for (external) users to display user-defined data tables and charts e.g. in embedded views or through shared links.
+This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
 ### demo (light)
-1. go to ? (tenant: oecd, env: staging)
+1. go to http://data-viewer.staging.oecd.redpelicans.com/?chartId=3 (tenant: oecd, env: staging)
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
@@ -301,15 +301,73 @@ graph LR
 - git versioned configuration data
 
 
+## Dependencies
+
+### (Dependency) sis-footer
+
+#### short description
+A footer view component for Table and Charts.
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer
+- **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-ui-footer
+
+### (Dependency) rcw-charts
+
+#### short description
+Set of configurable charts based on d3.
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts
+- **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-d3-charts
+
+### (Dependency) visions
+
+#### short description
+Visions is a lib of React components. The goal is to handle interfaces and very limited logic.
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components
+- **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-ui-components
+
+### (Dependency) sis-header
+
+#### short description
+A header view component for Table and Charts.
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header
+- **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-ui-header
+
+### (Dependency) dotstatsuite components
+
+#### short description
+Is a lib of components. [*more discription to come*]
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components
+- **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-components
+
+### (Dependency) dotstatsuite-sdmxjs
+
+#### short description
+Is a lib of components for the parsing of SDMX-JSON messages. [*more discription to come*]
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs
+- **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-sdmxjs
+
+
 ## Multi-tenant architecture
 
 ### demo (staging)
 
 |tenant|specs|url|
 |---|---|---|
-|oecd|sdmx oecd staging endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com|
-|ilo|sdmx ilo test endpoint, ilo design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=ilo|
-|istat|sdmx istat sistanhub endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=istat|
+|oecd|own sdmx oecd staging endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com|
+|ilo|independent external sdmx ilo test endpoint, ilo design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=ilo|
+|istat|independent external sdmx istat sistanhub endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=istat|
+|cam|independent external sdmx cambodia pilot endpoint, cam design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=cam|
 
 
 ### technical overview
@@ -327,7 +385,7 @@ id8[solr]
 id9[redis]
 id10[redis]
 id11((x))
-id13[nsi]
+id13[sdmx/nsi]
 id14[transfer]
 id15[mssql]
 
@@ -370,6 +428,22 @@ end
 1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
 1. update the app
 1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
+
+
+# .Stat Data Lifecycle Manager module
+
+
+## Data Data Lifecycle Manager app
+
+### short description
+This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
+
+### demo (light)
+1. go to [*to come*] (tenant: oecd, env: qa)
+
+### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
+- **docker**: [*to come*]
 
 
 # .Stat Core module
@@ -442,24 +516,6 @@ This plugin is used by the SDMX service to retrieve statistical data structures 
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
-- 
-
-## Data Access library to access the .Stat Core Data Store
-
-### short description
-This library is used by the SDMX service plugin and by the Transfer service to retrieve or upload statistical data structures from and to a .Stat Core Data Store.
-
-### technical aspects
-- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access
-
-
-## Core Common library
-
-### short description
-This library is used for shared code in the .Stat Core components.
-
-### technical aspects
-- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common
 
 
 ## Authorisation service
@@ -473,6 +529,27 @@ This web service is used for managing user access rights to data structures and 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-auth-management
+
+
+## Dependencies
+
+### (Dependency) Data Access library to access the .Stat Core Data Store
+
+#### short description
+This library is used by the SDMX/NSI service plugin and by the Transfer service to retrieve or upload statistical data structures from and to a .Stat Core Data Store.
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access
+- **package**: https://www.nuget.org/packages/DotStat.DataAccess.NuGet
+
+### (Dependency) Core Common library
+
+#### short description
+This library is used for shared code in the .Stat Core components. These inlude logs, localisation and configuration.
+
+#### technical aspects
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common
+- **package**: https://www.nuget.org/packages/DotStat.Common
 
 
 # DevOps implementation
@@ -492,7 +569,8 @@ This web service is used for managing user access rights to data structures and 
   - kubernetes, how to update topology, not automated
   - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp
     - holds kubernetes configuration files
-
+* .Stat Data Lifecycle Manager components
+  - [*to come*]
 
 
 ## flow
@@ -597,10 +675,6 @@ end
 |package|[core-common](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/coverage.svg?style=flat-square)|
 |package|[core-sdmxri-nsi-plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/coverage.svg?style=flat-square)|
 
-
-## docker
-- all images are under https://cloud.docker.com/u/siscc/repository/list
-- tags are latest, develop and commit hash
 
 
 # Contributing to an open source repository
