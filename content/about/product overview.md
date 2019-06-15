@@ -217,7 +217,7 @@ Requires features for import, create, edit, transfer & export of data structures
 * data grid data editing
 * referential metadata edting
 
-##### **Calculate**:<br>
+##### **Calculate**
 
 * Data validations and reports
 * Data calculations (conversions, aggregations, estimations, indicator calculations) with VTL
