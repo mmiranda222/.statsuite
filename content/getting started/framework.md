@@ -17,11 +17,18 @@ The .Stat Suite has three **main modules**:
  
 * **.Stat Data Explorer**: A front-office application for easy finding, understanding and using of data through an efficient well-tuned navigation and search approach, appropriate data previews and contextual metadata, and download in standard formats, APIs or share features.
 
-![homepage splash](/images/home_splash.png)
+![3 main modules](/images/home_splash.png)
+
+
+### The high-level technical architecture can be schematised as follow:
+
+![.Stat_Suite_high-level_architecture](/images/.Stat_Suite_high-level_architecture.png)
+
 
 Each main module (as well as their components) can be used together or separately.
-In the following are a few **typical use cases** on how an organisation can make use of these modules:
 
+
+### In the following are a few **typical use cases** on how an organisation can make use of these modules:
 
 **A) Adding the Data Explorer to an existing fully-fledged back-end solution**
 
@@ -130,11 +137,12 @@ The following technologies are used for the development of the **.Stat Core** co
 # .Stat Data Explorer module
 
 ### non-technical overview
+![de non-technical overview](/images/de non-technical overview.png)
 ```mermaid
 graph LR;
   id0{user};
   id1((data-explorer));
-  id6((data-viewer));
+  id6((share-viewer));
   id2[share service];
   id3[config service];
   id4[search service];
@@ -190,6 +198,7 @@ This service (and related database) is used to store and retrieve user-defined d
 1. check the shared chart
 
 ### flow
+![share service flow](/images/share service flow.png)
 ```mermaid
 graph LR
 id0[user]
@@ -249,11 +258,12 @@ This web app is a compagnon GUI for (external) users to display user-defined, sh
 - [negate search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
 
 ### architecture
+![search architecture](/images/search architecture.png)
 ```mermaid
 graph LR
   id0[ExpressJS + evtX]
   id2[SolR]
-  id4[redis]
+  id4(redis)
   id5[config]
   id7((user))
   id9((admin))
@@ -371,23 +381,24 @@ Is a lib of components for the parsing of SDMX-JSON messages. [*more discription
 
 
 ### technical overview
+![multi-tenant architecture](/images/multi-tenant architecture.png)
 ```mermaid
 graph LR
 id1(browser)
 id2((internet))
 id3[proxy]
-id4[data-explorer]
-id12[data-viewer]
+id4((data-explorer))
+id12((share-viewer))
 id5[search]
 id6[share]
 id7[config]
 id8[solr]
-id9[redis]
-id10[redis]
+id9(redis)
+id10(redis)
 id11((x))
 id13[sdmx/nsi]
 id14[transfer]
-id15[mssql]
+id15(mssql)
 
 id1 --> id2
 id2 --> id3
@@ -449,19 +460,20 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 # .Stat Core module
 
 ### technical overview
+![core technical overview](/images/core technical overview.png)
 ```mermaid
 graph LR
-id1(de/viewer)
-id2(dlm)
+id1((de & share-viewer))
+id2((dlm))
 id3[sdmx/nsi]
 id4[sdmx/nsi plugin]
 id5[transfer]
 id6[data-access]
 id7[common]
-id8((structure-db))
-id9((data-db))
+id8(structure-db)
+id9(data-db)
 id10[auth-management]
-id11((auth-log-db))
+id11(auth-log-db)
 
 id1 --> id3
 id2 --> id3
@@ -480,7 +492,7 @@ subgraph .stat core
   id6 --> id11
   id10 --> id11
 end
-
+id6 --> id8
 ```
 
 ## Transfer service
@@ -574,6 +586,7 @@ This library is used for shared code in the .Stat Core components. These inlude 
 
 
 ## flow
+![devops flow](/images/devops flow.png)
 ```mermaid
 graph TB
 id0[gitlab repositories]
@@ -610,6 +623,8 @@ id5 -. pull code .-> id4
 - all repositories are under https://gitlab.com/sis-cc/.stat-suite
 - each repository defines its pipelines in `gitlab-ci.yml` file
 - 2 types of pipeline:
+
+![gitlab pipelines](/images/gitlab pipelines.png)
 
 webapp/service
 ```mermaid
