@@ -59,9 +59,9 @@ This web app is the main GUI for (external) users to find, understand and use th
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.  
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
 
-* tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed
-* share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
-* POST body are size limited to `maxChartSize`
+- tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed
+- share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
+- POST body are size limited to `maxChartSize`  
 
 - **demo**: http://share.staging.oecd.redpelicans.com/api/charts/3
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
@@ -132,9 +132,9 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 
 This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores: 
 
-* Upload of SDMX data files (csv, xml) into a .Stat Core data store
-* Upload of Excel data files (using a specific data mapping definition) into a .Stat Core data store
-* Transfer of data between two .Stat Core data stores
+- Upload of SDMX data files (csv, xml) into a .Stat Core data store
+- Upload of Excel data files (using a specific data mapping definition) into a .Stat Core data store
+- Transfer of data between two .Stat Core data stores  
 
 - **demo**: http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-transfer
