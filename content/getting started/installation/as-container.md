@@ -1,101 +1,168 @@
 ---
-title: Installation as Container(s)
+title: Installation based on ready-to-use container images
 subtitle: 
 comments: false
 weight: 26
 ---
 
-This section describes how to install .Stat Suite services as container(s) using [Docker](https://www.docker.com/).<br>
+Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** [to come] and **.Stat Core** or their components are containerised as ready-to-use container images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
 
-> **Note**: containerisation is commonly done with Docker containers and we will only explain here our most common scenarios using Docker Compose and our specific services and libraries.
+This section describes where to find and how to use the .Stat Suite Docker images.
+
+> **Note**: Docker technology is a commonly used containerisation technology, and we will mainly explain here our most common scenarios using Docker Compose and our specific services and libraries.
 
 ---
 
-### Principles
+## Short intro to Docker
 
-Containers ease developers' code and services' deployment in order to produce Docker images.<br>
-Install Docker, then create containers hosting an application (a set of services) and its dependencies (e.g. lib and bins).<br>
-Split your services into micro-services, isolate applications from each others, and Docker will help you packing and deploying the image(s) in an automated way.<br>
-Create an image from a container. An image is a snapshot of your service(s). Images can be stored in a registry and IT operator can pick an image for deployment (to Dev, Staging or Prod).<br>
-A good practice is to use the same image in different environments/containers.<br>
+Docker is an open platform for developers and sysadmins for developing, shipping, deploying, and running applications with containers. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
+
+A Docker **image** is a read-only template with instructions for creating a Docker container. You might create your own images or you might only use those created by others and published in a registry. To build your own image, you create a Dockerfile with a simple syntax for defining the steps needed to create the image and run it. Each instruction in a Dockerfile creates a layer in the image. When you change the Dockerfile and rebuild the image, only those layers which have changed are rebuilt. This is part of what makes images so lightweight, small, and fast, when compared to other virtualization technologies.
+
+A Docker **container** is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state. By default, a container is relatively well isolated from other containers and its host machine. You can control how isolated a container’s network, storage, or other underlying subsystems are from other containers or from the host machine. A container is defined by its image as well as any configuration options you provide to it when you create or start it. When a container is removed, any changes to its state that are not stored in persistent storage disappear.
 
 ![container and docker infrastructure](/images/container-docker-infrastructure.png)
 
----
-
-### References
-
-Use **Docker** to build containers, each one dependent form the others. Multiples services (database, transfer API, share, config., etc...) implies scaling to multiple containers. Docker is installed in line with the [official Docker installation guidelines](https://docs.docker.com/install/overview/).<br>
-Use **Docker Compose** to define and run a multi-container Docker application's services. Docker Compose is installed in line with the [official Docker Compose installation guidelines](https://docs.docker.com/compose/install/).<br>
+See the full Docker overview [here](https://docs.docker.com/engine/docker-overview/).
 
 ---
 
-### .Stat Suite Docker images
+## Next steps
 
-All Docker images are under https://cloud.docker.com/u/siscc/repository/list.<br>
+Read about installing [Docker](https://docs.docker.com/install/overview/).  
+Get hands-on experience with the Getting started with [Docker tutorial](https://docs.docker.com/engine/getstarted/).  
+Check out examples and deep dive topics in the [Docker Engine user guide](https://docs.docker.com/engine/userguide/).  
 
-**NSI web service**<br>
-SDMX compliant REST web service developed by [Eurostat](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/README.md?at=refs%2Fheads%2Fdevelop) and enriched with OECD data retieval. NSI web servcie allows data and structural metadata and submisison of structural metadata. Plugin docker image is using a vanilla Eurostat NSI service as a [base image](https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi).<br>
-*Links*:<br>
-- Docker image with plugin https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi<br>
-- Original Eurostat's docker https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi<br>
-- Plugin git https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/tree/develop<br>
-- Eurostat git https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse?at=refs%2Fheads%2Fdevelop<br>
-*Configuration* see details [here](https://gitlab.com/snippets/1851148#configuration)
+---
 
-**Transfer service**<br>
-The Transfer service provides an API for:<br>
-- Import of SDMX data files (csv, xml) into dissemination database<br>
-- Import of mapped Excel files with data into dissemination database<br>
-- Transfer of data between databases
-For a full list of API methods and parameters, see the autogenerated Swagger [documentation](http://transfer-service-url/swagger/v1.0/swagger.json).<br>
-For the simple UI once service is running, navigate [here](http://transfer-service-url/swagger).<br>
-*Links*:<br>
-- docker https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-transfer<br>
-- git https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/tree/develop<br>
+<br>
+<br>
+
+All **.Stat Suite Docker images** are located under https://cloud.docker.com/u/siscc/repository/list. Please see each repository for detailed information on how to use these.
+
+---
+
+
+## .Stat Data Explorer components
+
+#### Data Explorer app
+
+This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
+
+- **demo**: http://data-explorer.staging.oecd.redpelicans.com
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-data-explorer
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer
+
+
+#### Share service
+
+This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.  
+A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
+
+* tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed
+* share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
+* POST body are size limited to `maxChartSize`
+
+- **demo**: http://share.staging.oecd.redpelicans.com/api/charts/3
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
+
+
+#### Share-Viewer App
+
+This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
+
+- **demo**: http://data-viewer.staging.oecd.redpelicans.com/?chartId=3
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-data-viewer
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
+- server-side rendered (configuration is injected in index.html), no request required from the client to get the configuration
+- client bundle expects configuration in `window.SETTINGS`, `window.I18N` and `window.CONFIG` for those who want to use directly the static files
+
+
+#### Search service
+
+This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows categorised and accessible in one or more SDMX end points and to execute faceted search queries on these SDMX dataflows. A static schema is defined in the config. A dynamic schema is derivated from the indexed SDMX dataflows.
+
+- **demo**: http://sfs.staging.oecd.redpelicans.com/api/config
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-sdmx-faceted-search
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
+
+Limitations:
+
+- reconciliate sdmx and search data (e.g. dataset order, facet value order) -> cache server
+- datasources & config
+- perf (benchmark to do)
+- how to index (e.g. individual dataset = SDMX dataflow)
+
+
+#### Proxy service
+
+The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct tager application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
+
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
+
+
+#### Config Service
+
+The Configuration service centralises all configuration resources used by other services. It is a web server providing requested configuration, not exposed to users. Based on git versioned configuration data.
+
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-config-dev
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config
+
+---
+
+
+## .Stat Data Lifecycle Manager components
+
+#### Data Lifecycle Manager app
+
+This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
+
+- **demo**: [*to come*]
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
+- **docker**: [*to come*]
+
+---
+
+## .Stat Core components
+
+
+#### Transfer service
+
+This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores: 
+
+* Upload of SDMX data files (csv, xml) into a .Stat Core data store
+* Upload of Excel data files (using a specific data mapping definition) into a .Stat Core data store
+* Transfer of data between two .Stat Core data stores
+
+- **demo**: http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-transfer
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
+
 *Configuration* see details [here](https://gitlab.com/snippets/1851148#configuration-1)
 
-**Dependency: common nugget**<br>
-Common library contains methods and classes shared between other projects and servcies. These inlude logs, localisation and configuration.<br>
-*Links*:<br>
-- repository https://www.nuget.org/packages/DotStat.Common/<br>
-- git https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/tree/develop
 
-**Dependency: data access nugget**<br>
-Data access library contains database specific logic shared by NSI web service plugin and Transfer service.<br>
-*Links*:<br>
-- repository https://www.nuget.org/packages/DotStat.DataAccess.NuGet/<br>
-- git https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/tree/develop
+#### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
 
-**Data Explorer**<br>
-Is forked from [webapp](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-webapp) (boilerplate to help crafting web application fully integrated within dotstat-data-explorer-suite). It is server-side rendered (configuration is injected in index.html)no request required from the client to get the configuration. Client bundle expects configuration in `window.SETTINGS`, `window.I18N`and `window.CONFIG`for those who want to directly use the static files.<br>
-*Links*:<br>
-- repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer<br>
-- docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-data-explorer
+This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store. The docker image is using a vanilla Eurostat NSI web service image as a base image. It is enriched with a special .Stat Core plugin used to retrieve statistical data structures from a .Stat Core Data Store.
 
-**Share service**<br>
-A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:<br>
-- tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed<br>
-- share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code<br>
-- POST body are size limited to `maxChartSize` <br>
-*Links*:<br>
-- repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share<br>
-- docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
+- **demo**: http://nsi.qa.core.oecd.redpelicans.com/
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi
+- **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
+- **repository of .Stat Core plugin**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
+- **repository of original Eurostat SDMX-RI NSI web service**: https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 
-**Proxy**<br>
-The Proxy handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct tager application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.<br>
-*Links*:<br>
-- repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy<br>
-- docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
+*Configuration* see details [here](https://gitlab.com/snippets/1851148#configuration)
 
-**Configuration service**<br>
-The Configuration service centralises all configuration resources used by other services. It is a web server providing requested configuration, not exposed to users. based on git versioned configuration data.<br>
-*Links*:<br>
-- repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config<br>
-- docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-config-dev
 
-**Search service**<br>
-The Search service named SDMX Faceted Search (sfs) is a JSON http server offering faceted search on SDMX dataflows. A static schema is defined in the config. A dynamic schema is derivated from dataflows.<br>
-*Links*:<br>
-- repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search<br>
-- docker: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-sdmx-faceted-search
+#### Authorisation service
+
+This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
+
+- **demo**: [*to come*]
+- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-auth-management
+- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
+
+
+
