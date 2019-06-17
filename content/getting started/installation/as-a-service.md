@@ -40,7 +40,8 @@ The kubernetes cluster definitions implement a "multi-tenant architecture" that 
 
 ### technical overview
 ![multi-tenant architecture](/images/multi-tenant_architecture.png)
-```mermaid
+
+<!---```mermaid
 graph LR
 id1(browser)
 id2((internet))
@@ -58,42 +59,42 @@ id13[sdmx/nsi]
 id14[transfer]
 id15(mssql)
 
-id1 --> id2
-id2 --> id3
+id1 -> id2
+id2 -> id3
 subgraph oecd cluster on GCP
-id3 -->|app & tenant| id11
-id3 -->|assets| id7
-id11 --> id4
-id11 --> id5
-id11 --> id6
-id11 --> id12
-id4 --> id7
-id5 --> id7
-id5 --> id8
-id5 --> id9
-id6 --> id7
-id6 --> id10
-id12 --> id7
+id3 ->|app & tenant| id11
+id3 ->|assets| id7
+id11 -> id4
+id11 -> id5
+id11 -> id6
+id11 -> id12
+id4 -> id7
+id5 -> id7
+id5 -> id8
+id5 -> id9
+id6 -> id7
+id6 -> id10
+id12 -> id7
 end
-id2 --> id13
-id2 --> id14
+id2 -> id13
+id2 -> id14
 subgraph oecd cluster on GCP
-id13 --> id15
-id14 --> id15
+id13 -> id15
+id14 -> id15
 end
-```
+```--->
 
 ### demo: add/update a tenant
 
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
 1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
-1. check the tenant at http://data-explorer.staging.oecd.redpelicans.com/?tenant=<tenant>
+1. check the tenant at http://data-explorer.staging.oecd.redpelicans.com/?tenant=`<tenant>`
 1. update something in the configuration and check the update
 
 ### demo: add/update an app for the tenant (see sis-cc workshop hands-on)
 
-1. fork from wepapp
+1. fork from webpapp
 1. inject pre-coded app (to create)
 1. declare it somewhere
 1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
