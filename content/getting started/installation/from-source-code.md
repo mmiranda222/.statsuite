@@ -10,7 +10,7 @@ The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager**
 This section describes where to find and how to install .Stat Suite framework components (applications, services, libraries) starting from the source code.
 
 For the general purpose of the .Stat Suite framework components and technical architecture, please refer to the [.Stat Suite Open Source Framework
-Introduction](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/framework/)
+Introduction](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/framework/).
 
 ---
 
