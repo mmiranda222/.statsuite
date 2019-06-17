@@ -65,9 +65,9 @@ Each main module (as well as their components) can be used together or separatel
 
 *Approach*: Define specific topology for your needs using all .Stat Suite components or partially
 
+---
 
 # Technical stack
-
 
 The following technologies are used for the development of the **.Stat Data Explorer** components and the **.Stat Data Lifecycle Manager** components:
 
@@ -133,12 +133,14 @@ The following technologies are used for the development of the **.Stat Core** co
 </tbody>
 </table>
 
+---
 
 # .Stat Data Explorer module
 
 ### non-technical overview
 ![de non-technical overview](/images/de_non-technical_overview.png)
-```mermaid
+
+<!---```mermaid
 graph LR;
   id0{user};
   id1((data-explorer));
@@ -147,17 +149,17 @@ graph LR;
   id3[config service];
   id4[search service];
   id5(sdmx public endpoint);
-  id0-->id1;
-  id2-->id6;
-  id0-->id6;
-  id1-->id2;
-  id1-->id3;
-  id1-->id4;
-  id4-->id3;
-  id2-->id3;
-  id6-->id3;
-  id1-->id5;
-```
+  id0->id1;
+  id2->id6;
+  id0->id6;
+  id1->id2;
+  id1->id3;
+  id1->id4;
+  id4->id3;
+  id2->id3;
+  id6->id3;
+  id1->id5;
+```--->
 
 
 ## Data Explorer app
@@ -204,7 +206,8 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 
 ### flow
 ![share service flow](/images/share_service_flow.png)
-```mermaid
+
+<!---```mermaid
 graph LR
 id0[user]
 id1((share-requester))
@@ -213,14 +216,14 @@ id3(share db)
 id4((share-viewer))
 
 id0 --- id1
-id1 -->|1. share chart request| id2
-id2 -->|2. returns id and chart url| id1
-id2 -->|3. chart temporary stored| id3
-id2 -->|4. confirmation email| id0
-id0 -->|5. user confirmation| id2
-id2 -->|6. chart confirmed| id3
-id2 -->|7. redirect user|id4
-```
+id1 ->|1. share chart request| id2
+id2 ->|2. returns id and chart url| id1
+id2 ->|3. chart temporary stored| id3
+id2 ->|4. confirmation email| id0
+id0 ->|5. user confirmation| id2
+id2 ->|6. chart confirmed| id3
+id2 ->|7. redirect user|id4
+```--->
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
@@ -267,7 +270,8 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 
 ### architecture
 ![search architecture](/images/search_architecture.png)
-```mermaid
+
+<!---```mermaid
 graph LR
   id0[ExpressJS + evtX]
   id2[SolR]
@@ -276,15 +280,15 @@ graph LR
   id7((user))
   id9((admin))
 
-  id0 -->|GET| id7
-  id9 -->|POST| id0
+  id0 ->|GET| id7
+  id9 ->|POST| id0
   id0 --- id4
   id0 --- id5
   id0 --- id2
   subgraph sdmx-faceted-search
     id0
   end
-```
+```--->
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
@@ -398,7 +402,8 @@ Is a lib of components for the parsing of SDMX-JSON messages. [*more discription
 
 ### technical overview
 ![multi-tenant architecture](/images/multi-tenant_architecture.png)
-```mermaid
+
+<!---```mermaid
 graph LR
 id1(browser)
 id2((internet))
@@ -416,30 +421,30 @@ id13[sdmx/nsi]
 id14[transfer]
 id15(mssql)
 
-id1 --> id2
-id2 --> id3
+id1 -> id2
+id2 -> id3
 subgraph oecd cluster on GCP
-id3 -->|app & tenant| id11
-id3 -->|assets| id7
-id11 --> id4
-id11 --> id5
-id11 --> id6
-id11 --> id12
-id4 --> id7
-id5 --> id7
-id5 --> id8
-id5 --> id9
-id6 --> id7
-id6 --> id10
-id12 --> id7
+id3 ->|app & tenant| id11
+id3 ->|assets| id7
+id11 -> id4
+id11 -> id5
+id11 -> id6
+id11 -> id12
+id4 -> id7
+id5 -> id7
+id5 -> id8
+id5 -> id9
+id6 -> id7
+id6 -> id10
+id12 -> id7
 end
-id2 --> id13
-id2 --> id14
+id2 -> id13
+id2 -> id14
 subgraph oecd cluster on GCP
-id13 --> id15
-id14 --> id15
+id13 -> id15
+id14 -> id15
 end
-```
+```--->
 
 ### demo: add/update a tenant
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
@@ -456,9 +461,9 @@ end
 1. update the app
 1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
 
+---
 
 # .Stat Data Lifecycle Manager module
-
 
 ## Data Data Lifecycle Manager app
 
@@ -472,12 +477,14 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
 - **docker**: [*to come*]
 
+---
 
 # .Stat Core module
 
 ### technical overview
 ![core technical overview](/images/core_technical_overview.png)
-```mermaid
+
+<!---```mermaid
 graph LR
 id1((de & share-viewer))
 id2((dlm))
@@ -491,25 +498,25 @@ id9(data-db)
 id10[auth-management]
 id11(auth-log-db)
 
-id1 --> id3
-id2 --> id3
-id2 --> id5
-id2 --> id10
+id1 -> id3
+id2 -> id3
+id2 -> id5
+id2 -> id10
 subgraph sdmx-ri / eurostat
-  id3 --> id8
+  id3 -> id8
 end
 subgraph .stat core
-  id3 --> id4
-  id4 --> id6
-  id4 --> id7
-  id5 --> id6
-  id5 --> id7
-  id6 --> id9
-  id6 --> id11
-  id10 --> id11
+  id3 -> id4
+  id4 -> id6
+  id4 -> id7
+  id5 -> id6
+  id5 -> id7
+  id6 -> id9
+  id6 -> id11
+  id10 -> id11
 end
-id6 --> id8
-```
+id6 -> id8
+```--->
 
 ## Transfer service
 
@@ -580,6 +587,7 @@ This library is used for shared code in the .Stat Core components. These inlude 
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common
 - **package**: https://www.nuget.org/packages/DotStat.Common
 
+---
 
 # DevOps implementation
 
@@ -604,7 +612,8 @@ This library is used for shared code in the .Stat Core components. These inlude 
 
 ## flow
 ![devops flow](/images/devops_flow.png)
-```mermaid
+
+<!---```mermaid
 graph TB
 id0[gitlab repositories]
 id1[gitlab pipelines]
@@ -615,17 +624,17 @@ id6[kubectl]
 id7((developer))
 id9((admin))
 
-id7 --> id0
-id0 -->|1. push code| id1
-id1 -->|2. push image| id2
-id1 -->|3. connect gcloud| id6
-id6 -->|4. deploy image| id4
-id9 -->|A. connect gcloud| id6
-id6 -->|B. update topology| id4
-id9 -->|C. push code| id5
+id7 -> id0
+id0 ->|1. push code| id1
+id1 ->|2. push image| id2
+id1 ->|3. connect gcloud| id6
+id6 ->|4. deploy image| id4
+id9 ->|A. connect gcloud| id6
+id6 ->|B. update topology| id4
+id9 ->|C. push code| id5
 id2 -. pull image .-> id4
 id5 -. pull code .-> id4
-```
+```--->
 
 ## mapping
 |env|git branch|cluster namespace|
@@ -643,16 +652,16 @@ id5 -. pull code .-> id4
 
 ![gitlab pipelines](/images/gitlab_pipelines.png)
 
-webapp/service
+<!---webapp/service
 ```mermaid
 graph LR
 subgraph CI all branches
-setup --> unit-tests
-unit-tests --> build
+setup -> unit-tests
+unit-tests -> build
 end
 subgraph CD only develop & master
-build --> release
-release --> deploy
+build -> release
+release -> deploy
 end
 ```
 
@@ -660,13 +669,13 @@ npm/nuget package
 ```mermaid
 graph LR
 subgraph CI all branches
-setup --> unit-tests
-unit-tests --> build
+setup -> unit-tests
+unit-tests -> build
 end
 subgraph CD only tags*
-build --> publish
+build -> publish
 end
-```
+```--->
 
 ## npm
 - npm packages are published under https://www.npmjs.com/settings/sis-cc/packages
@@ -707,7 +716,7 @@ end
 |package|[core-common](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/coverage.svg?style=flat-square)|
 |package|[core-sdmxri-nsi-plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/coverage.svg?style=flat-square)|
 
-
+---
 
 # Contributing to an open source repository
 
