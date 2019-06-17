@@ -89,12 +89,12 @@ end
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
 1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
-1. check the tenant at http://data-explorer.staging.oecd.redpelicans.com/?tenant=`<tenant>`
+1. check the tenant at http://data-explorer.staging.oecd.redpelicans.com/?tenant=`tenant`
 1. update something in the configuration and check the update
 
 ### demo: add/update an app for the tenant (see sis-cc workshop hands-on)
 
-1. fork from webpapp
+1. fork from webapp
 1. inject pre-coded app (to create)
 1. declare it somewhere
 1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
