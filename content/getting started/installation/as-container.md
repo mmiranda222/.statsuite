@@ -180,7 +180,8 @@ siscc/dotstatsuite-core-transfer
 Schema:
 
 ![transfer service architecture](/images/transfer_architecture.png)
-```mermaid
+
+<!---```mermaid
 graph LR
 
 dlm((dlm))
@@ -191,20 +192,19 @@ ms_db(structure-db)
 data_db(data-db)
 auth-log-db(auth-log-db)
 
-dlm-->transfer
+dlm->transfer
 
 subgraph transfer backend
-transfer--> common-nuget
-transfer--> access-nuget
+transfer-> common-nuget
+transfer-> access-nuget
 end
 
 subgraph database layer
-access-nuget--> ms_db
-access-nuget--> auth-log-db
-access-nuget --> data_db
+access-nuget-> ms_db
+access-nuget-> auth-log-db
+access-nuget -> data_db
 end
-
-```
+```--->
 
 
 #### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
@@ -227,7 +227,6 @@ All files with *.json extension are considered as configuration files. The name 
     * [app.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/app.config)
     > nsi web service main configuration, more info [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/CONFIGURATION.md?at=refs%2Fheads%2Fdevelop)
     > In addition to default Eurostat configuration there 2 new values in the appSettings, that are needed for Data plugin
-    
     > **DataspaceId** - what dataspace is used by NSI for data retrieval  
     > **ConfigDirectory** - where to find Plugin *.json configuration files, by default located in the same directory as NSI configs themselves.
     * [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/log4net.config)
@@ -250,7 +249,8 @@ siscc/dotstatsuite-core-sdmxri-nsi
 Schema:
 
 ![sdmx/nsi service architecture](/images/nsi_architecture.png)
-```mermaid
+
+<!---```mermaid
 graph LR
 
 dlm((dlm))
@@ -262,26 +262,24 @@ access-nuget[data-access]
 ms_db(structure-db)
 data_db(data-db)
 auth-log-db(auth-log-db)
-
-dlm-->nsi
-de-->nsi
+dlm->nsi
+de->nsi
 
 subgraph sdmx-ri / eurostat
-nsi --> plugin
+nsi -> plugin
 end
 
 subgraph nuget packages
-plugin --> common-nuget
-plugin --> access-nuget
+plugin -> common-nuget
+plugin -> access-nuget
 end
 
 subgraph database layer
-access-nuget--> ms_db
-access-nuget--> auth-log-db
-access-nuget --> data_db
+access-nuget-> ms_db
+access-nuget-> auth-log-db
+access-nuget -> data_db
 end
-
-```
+```--->
 
 
 #### Authorisation service
