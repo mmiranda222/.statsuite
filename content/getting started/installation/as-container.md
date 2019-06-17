@@ -40,8 +40,6 @@ Check out examples and deep dive topics in the [Docker Engine user guide](https:
 
 All **.Stat Suite Docker images** are located under https://cloud.docker.com/u/siscc/repository/list. Please see each repository for detailed information on how to use these.
 
----
-
 
 ## .Stat Data Explorer components
 
@@ -291,7 +289,6 @@ This web service is used for managing user access rights to data structures and 
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
 
 ---
-
 
 ## Docker-compose example(s)
 
