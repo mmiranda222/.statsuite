@@ -1,4 +1,4 @@
-Powered by [Hugo] website using GitLab Pages.<br>
+Powered by [Hugo](https://gohugo.io/) website using GitLab Pages.<br>
 The theme used is adapted from http://themes.gohugo.io/beautifulhugo/.<br>
 
 Learn more about GitLab Pages at https://pages.gitlab.io and the official
