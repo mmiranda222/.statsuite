@@ -1,5 +1,5 @@
 ---
-title: NuGet dependencies and licenses of .Stat Core module
+title: Licenses of NuGet dependencies of .Stat Core module
 subtitle: 
 comments: false
 weight: 14
