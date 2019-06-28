@@ -1,4 +1,9 @@
-# NuGet dependencies of .StatCore components #
+---
+title: NuGet dependencies and licenses of .Stat Core module
+subtitle: 
+comments: false
+weight: 14
+---
 
 ## dotstatsuite-core-common ##
 

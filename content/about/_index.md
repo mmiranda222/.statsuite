@@ -8,7 +8,7 @@ weight: 10
 
 includes:
 
-* [License](/content/about/license.md)
-* [Product overview and roadmap](/content/about/product%20overview.md)
-* [Code of Conduct](/content/about/code%20of%20conduct.md)
-* [Licenses of NuGet dependencies of .StatCore components](/content/about/dotstat-core-nuget-dependency-licenses.md)
+* [License](/content/about/license)
+* [Product overview and roadmap](/content/about/product-overview)
+* [Code of Conduct](/content/about/code-of-conduct)
+    * [Licenses of NuGet dependencies of .Stat Core module](/content/about/dotstat-core-nuget-dependency-licenses)
