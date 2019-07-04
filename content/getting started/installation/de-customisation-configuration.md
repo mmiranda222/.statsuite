@@ -23,22 +23,22 @@ The default theme is applied if there is no theme added to the settings.json fil
 * "theme":"searchDataflow" corresponds to the text color of Dataflow titles in the list of the search result page
 
 ```
-"theme":  {
-    "layout": {
-      "fontFamily": "Arial, 'sans-serif'",
-      "background": "#c5e0dc"
-    },
-    "searchHeader": {
-      "background": "#c5e0dc"
-    },
-    "splash": {
-      "color": "black"
-    },
-    "searchDataflow": {
-      "colorTitle": "#0088cc !important"
-    }
-  }
-  ```
+    "theme":  {
+        "layout": {
+            "fontFamily": "Arial, 'sans-serif'",
+            "background": "#c5e0dc"
+        },
+        "searchHeader": {
+            "background": "#c5e0dc"
+        },
+        "splash": {
+            "color": "black"
+        },
+        "searchDataflow": {
+            "colorTitle": "#0088cc !important"
+        }
+      }
+```
 
 ---
 
