@@ -48,10 +48,10 @@ Define your website name and logo.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"app": {
-  "title": "OECD Data Explorer",
-  "favicon": "/assets/siscc/data-explorer/images/favicon.ico"
-}
+    "app": {
+          "title": "OECD Data Explorer",
+          "favicon": "/assets/siscc/data-explorer/images/favicon.ico"
+    }
 ```
 
 ![Site title and logo](/images/faq-site-title-logo.png)
@@ -64,12 +64,12 @@ Define the common logos in the header, subheader, footer and homepage of the web
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"assets": {
-  "header": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
-  "subheader": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png",
-  "footer": "/assets/siscc/data-explorer/images/sis-cc-icon.png",
-  "splash": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
-}
+    "assets": {
+        "header": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
+        "subheader": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png",
+        "footer": "/assets/siscc/data-explorer/images/sis-cc-icon.png",
+        "splash": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
+    }
 ```
 
 * header:<br>
@@ -143,9 +143,9 @@ Define the minimum and maximum values of the time period range in the visualisat
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"period": {
-  "boundaries": [1970, 2020]
-}
+    "period": {
+        "boundaries": [1970, 2020]
+    }
 ```
 
 ![Time period boundaries](/images/faq-period-boundaries.png)
@@ -159,9 +159,9 @@ Define the default time period selection of the visualisation page views, accord
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"period": {
-  "default": [2018, 2018]
-}
+    "period": {
+        "default": [2018, 2018]
+    }
 ```
 
 ![Time period default range](/images/faq-period-default.png)
@@ -241,9 +241,9 @@ The source can be a binary image or a link.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"viewer": {
-    "logo": "dotstat-suite-config/data/prod/assets/oecd-logo.png",
-}
+    "viewer": {
+        "logo": "dotstat-suite-config/data/prod/assets/oecd-logo.png",
+    }
 ```
 
 ![viewer footer logo](/images/faq-viewer-logo.png)
@@ -256,10 +256,10 @@ Define the name and hyperlink in the footer of the table and chart views behind 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"terms": {
-  "label": "Terms & Conditions",
-  "link": "http://www.oecd.org/termsandconditions/"
-}
+    "terms": {
+        "label": "Terms & Conditions",
+        "link": "http://www.oecd.org/termsandconditions/"
+    }
 ```
 
 ![Terms and Conditions](/images/faq-terms-conditions.png)
@@ -272,9 +272,9 @@ Define the hyperlink for the API documentation.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"api": {
-  "doc": "https://data.oecd.org/api/sdmx-json-documentation/"
-}
+    "api": {
+        "doc": "https://data.oecd.org/api/sdmx-json-documentation/"
+    }
 ```
 
 ![API documentation](/images/faq-api-documentation.png)
@@ -287,9 +287,9 @@ Define the hyperlink for the "Contact us" feature.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"api": {
-  "contact": "https://stats.oecd.org/FAQAndContact.aspx"
-}
+    "api": {
+        "contact": "https://stats.oecd.org/FAQAndContact.aspx"
+    }
 ```
 
 ![Contact us](/images/faq-contact-us.png)
@@ -302,17 +302,17 @@ Define the localised thousands and decimals separators of the observaiton values
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"i18n": {
-"localeId": "en",
-"locales": {
-  "en": {
-    "id": "en",
-    "delimiters": { "thousands": ",", "decimal": "."  }
-  },
-  "fr": {
-    "id": "fr",
-    "delimiters": { "thousands": " ", "decimal": ","  }
-  },
-  }
-}
+    "i18n": {
+    "localeId": "en",
+    "locales": {
+        "en": {
+          "id": "en",
+          "delimiters": { "thousands": ",", "decimal": "."  }
+        },
+        "fr": {
+          "id": "fr",
+          "delimiters": { "thousands": " ", "decimal": ","  }
+        },
+        }
+    }
 ```
