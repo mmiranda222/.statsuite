@@ -89,7 +89,7 @@ Define the common logos in the header, subheader, footer and homepage of the web
 ### Homepage facets
 Define the IDs and number of facets that are returned under the homepage "browse by".<br>
 You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
-**If none**, then all indexed ConceptSchemes are returned as facets.<br>
+If it is **empty**, then zero facet is returned in the homepage.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
