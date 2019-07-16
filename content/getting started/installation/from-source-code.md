@@ -87,3 +87,64 @@ Install these .Stat Data Explorer components in this order:
 1. [Install the Share Viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-viewer.yml) for a topology configuration example.
 1. Optional for multi-tenant architectures: [Install the Proxy service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/proxy.yaml) for a topology configuration example.
 1. [Install the Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-explorer.yaml) for a topology configuration example.
+
+###### (beta) from artifacts
+> slightly different than the codebase approach; git is not mandatory anymore and side-effects related to dependencies are avoided
+
+**pre-requisites:**
+- (reminder) an accessible (CORS-enabled, anonymous access enabled) SDMX v6.x endpoint
+- nodejs and npm installed
+- git installed (https://gitforwindows.org/); only to enhance cmd.exe with git bash
+- solr installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
+- redis downloaded and running on port 6379 (default)
+
+*notes:*
+- solr core name can be freely picked, default configuration targets sdmx-facet-search
+- ports can be freely picked, if different than defaults they should be specified when launching services
+
+**setup**
+- (temporary) `npm i -g cross-env`
+- create folders as follow:
+```
+.
+├── dotstatsuite
+│   ├── config
+│   ├── proxy
+│   ├── search
+│   ├── data-explorer
+```
+
+**config (service)**
+- download artifact archives and package.json file from gitlab:
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/raw/develop/package.json?inline=false)
+- extract archives and organize folders/files as follow:
+```
+.
+├── config
+│   ├── node_modules                       # from setup artifact
+│   ├── dist                               # from build artifact
+│   ├── configs                            # https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
+│   │   ├── datasources.json
+│   │   ├── tenants.json
+│   │   │   ├── <tenant_id>
+│   │   │   │   ├── <app_id>
+│   │   │   │   │   ├── i18n
+│   │   │   │   │   ├── settings.json
+│   ├── assets                             # https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
+│   │   ├── <tenant_id>
+│   │   │   ├── <app_id>
+│   │   │   │   │   ├── images
+│   │   │   │   │   ├── styles*
+│   ├── package.json
+```
+- `SERVER_PORT=5007 npm run dist:run` OR `set SERVER_PORT=5007&&npm run dist:run` (windows)
+
+
+
+
+
+
+
+
