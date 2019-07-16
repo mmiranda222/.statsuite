@@ -91,18 +91,18 @@ Install these .Stat Data Explorer components in this order:
 ###### (beta) from artifacts
 > slightly different than the codebase approach; git is not mandatory anymore and side-effects related to dependencies are avoided
 
-**pre-requisites:**
+**pre-requisites:**  
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) SDMX v6.x endpoint
 - nodejs and npm installed
 - git installed (https://gitforwindows.org/); only to enhance cmd.exe with git bash
 - solr installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - redis downloaded and running on port 6379 (default)
 
-*notes:*
+*notes:*  
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
 - ports can be freely picked, if different than defaults they should be specified when launching services
 
-**setup**
+**setup**  
 - (temporary) `npm i -g cross-env`
 - create folders as follow:
 ```
@@ -114,7 +114,7 @@ Install these .Stat Data Explorer components in this order:
 │   ├── data-explorer
 ```
 
-**config (service)**
+**config (service)**  
 - download artifact archives and package.json file from gitlab:
   - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=setup)
   - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=build)
