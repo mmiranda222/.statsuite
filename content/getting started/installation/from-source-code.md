@@ -97,7 +97,7 @@ Install these .Stat Data Explorer components in this order:
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) SDMX v6.x endpoint
 - nodejs and npm installed
-- git installed (https://gitforwindows.org/); only to enhance cmd.exe with git bash
+- git installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
 - solr installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - redis downloaded and running on port 6379 (default)
 
@@ -123,9 +123,9 @@ Install these .Stat Data Explorer components in this order:
 
 1. download artifact archives and package.json file from gitlab:
 
-- [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=setup)
-- [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=build)
-- [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/raw/develop/package.json?inline=false)
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/raw/develop/package.json?inline=false)
 
 2. extract archives and organize folders/files as follow:
 ```
@@ -160,11 +160,11 @@ notes:
 
 **3. proxy service**
 
-1. download artifact archives, routes.json and package.json files from gitlab:
+1. download artifact archives and package.json files from gitlab:
 
-- [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=setup)
-- [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=build)
-- [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/raw/develop/package.json?inline=false)
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/raw/develop/package.json?inline=false)
 
 2. create a routes.json file as follow:
 ```
@@ -198,6 +198,37 @@ notes:
 4. start the service (with git bash): `PORT=3008 CONFIG_URL=http://localhost:5007 npm run dist:run`
 
 5. check if everything is fine: http://localhost:3008/_healthcheck_
+
+**4. search service**
+
+1. download artifact archives and package.json files from gitlab:
+
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/raw/develop/package.json?inline=false)
+
+2. extract archives and organize folders/files as follow:
+```
+.
+├── dotstatsuite
+│   ├── search
+│   │   ├── node_modules                       # from setup artifact
+│   │   ├── dist                               # from build artifact
+│   │   ├── package.json
+```
+
+4. start the service (with git bash): `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
+
+note: process variables are SOLR_HOST, SOLR_PORT, REDIS_HOST, REDIS_PORT, CONFIG_URL and PORT
+**warning:** (temporary) PORT is not available yet, to override the default port, edit the 1st line of dist/params/production.js as follow:
+```
+const server = { host: '0.0.0.0', port: 3007 };
+```
+
+5. check if everything is fine: http://localhost:3007/healthcheck
+
+
+
 
 
 
