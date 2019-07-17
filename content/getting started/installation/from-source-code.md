@@ -154,12 +154,52 @@ notes:
 - a: [see configs samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs)
 - b: [see assets samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets)
 
-3. start the service:
-
-- `SERVER_PORT=5007 npm run dist:run`
-- (windows) `set SERVER_PORT=5007&&npm run dist:run`
+3. start the service (with git bash): `PORT=5007 npm run dist:run`
 
 4. check if everything is fine: http://localhost:5007/healthcheck
+
+**3. proxy service**
+
+1. download artifact archives, routes.json and package.json files from gitlab:
+
+- [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=setup)
+- [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=build)
+- [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/raw/develop/package.json?inline=false)
+
+2. create a routes.json file as follow:
+```
+[
+  {
+    "host": "localhost:3009",
+    "target": "http://localhost:3008",
+    "tenant": "oecd"
+  }
+]
+```
+
+notes:
+
+- host is the user url, it can be an url under any domain like data-explorer.oecd.org
+- target is the entry point of the architecture, the proxy service
+- tenant is the oecd of the default tenant for the host
+
+3. extract archives and organize folders/files as follow:
+```
+.
+├── dotstatsuite
+│   ├── proxy
+│   │   ├── node_modules                       # from setup artifact
+│   │   ├── dist                               # from build artifact
+│   │   ├── data
+│   │   │   ├── routes.json                    # routes definition
+│   │   ├── package.json
+```
+
+4. start the service (with git bash): `PORT=3008 CONFIG_URL=http://localhost:5007 npm run dist:run`
+
+5. check if everything is fine: http://localhost:3008/_healthcheck_
+
+
 
 
 
