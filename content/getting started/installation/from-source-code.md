@@ -184,7 +184,7 @@ Install these .Stat Data Explorer components in this order:
 - host is the user url, it can be an url under any domain like data-explorer.oecd.org
 - port 3000 is used to avoid collision with 80
 - target is the mapping between user url and internal app url
-- tenant is the oecd of the default tenant for the host
+- tenant is the default tenant for the host
 
 3. extract archives and organize folders/files as follow:
 ```
