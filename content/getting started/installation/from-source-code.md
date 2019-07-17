@@ -90,7 +90,8 @@ Install these .Stat Data Explorer components in this order:
 
 ---
 
-**(beta) from artifacts**
+**(beta) from gitlab artifacts**
+
 *slightly different than the codebase approach; git is not mandatory anymore and side-effects related to dependencies are avoided*.
 
 **pre-requisites:**
@@ -140,7 +141,7 @@ Install these .Stat Data Explorer components in this order:
 │   │   │   │   ├── <tenant_id>
 │   │   │   │   │   ├── <app_id>
 │   │   │   │   │   │   ├── i18n
-│   │   │   │   │   │   ├── settings.json
+│   │   │   │   │   │   ├── settings.json      # search endpoint is set here (among other things, for data-explorer app)
 │   │   ├── assets                             # see note b
 │   │   │   ├── <tenant_id>
 │   │   │   │   ├── <app_id>
@@ -149,14 +150,15 @@ Install these .Stat Data Explorer components in this order:
 │   │   ├── package.json
 ```
 
-notes:
+*notes:*
 
 - a: [see configs samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs)
 - b: [see assets samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets)
 
-3. start the service (with git bash): `PORT=5007 npm run dist:run`
+3. start the service:
 
-4. check if everything is fine: http://localhost:5007/healthcheck
+- (in git bash) run `PORT=5007 npm run dist:run`
+- check if everything is fine: http://localhost:5007/healthcheck
 
 **3. proxy service**
 
@@ -170,17 +172,18 @@ notes:
 ```
 [
   {
-    "host": "localhost:3009",
-    "target": "http://localhost:3008",
+    "host": "localhost:3008",
+    "target": "http://localhost:3009",
     "tenant": "oecd"
   }
 ]
 ```
 
-notes:
+*notes:*
 
 - host is the user url, it can be an url under any domain like data-explorer.oecd.org
-- target is the entry point of the architecture, the proxy service
+- port 3000 is used to avoid collision with 80
+- target is the mapping between user url and internal app url
 - tenant is the oecd of the default tenant for the host
 
 3. extract archives and organize folders/files as follow:
@@ -195,9 +198,10 @@ notes:
 │   │   ├── package.json
 ```
 
-4. start the service (with git bash): `PORT=3008 CONFIG_URL=http://localhost:5007 npm run dist:run`
+4. start the service:
 
-5. check if everything is fine: http://localhost:3008/_healthcheck_
+- (in git bash) run `PORT=3008 CONFIG_URL=http://localhost:5007 npm run dist:run`
+- check if everything is fine: http://localhost:3008/_healthcheck_
 
 **4. search service**
 
@@ -217,25 +221,47 @@ notes:
 │   │   ├── package.json
 ```
 
-4. start the service (with git bash): `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
+4. start the service:
 
-note: process variables are SOLR_HOST, SOLR_PORT, REDIS_HOST, REDIS_PORT, CONFIG_URL and PORT
-**warning:** (temporary) PORT is not available yet, to override the default port, edit the 1st line of dist/params/production.js as follow:
+- (temporary) edit the 1st line of dist/params/production.js as follow:
 ```
 const server = { host: '0.0.0.0', port: 3007 };
 ```
+- (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
+- check if everything is fine: http://localhost:3007/healthcheck
+- check if the config (mostly datasources) is fine: http://localhost:3007/api/config
 
-5. check if everything is fine: http://localhost:3007/healthcheck
+*notes:*
 
+- process variables are SOLR_HOST, SOLR_PORT, REDIS_HOST, REDIS_PORT, CONFIG_URL and PORT
+- PORT is not available yet, which explain why dist/params/production.js should be updated
+- if the config is not fine, update the datasources.json and/or settings.json file(s) in the config service, restart the config service then restart the search service
+- the search service is not coupled with its clients, the search endpoint is configurable from settings.json of the data-explorer app in the config service
 
+**5. data-explorer app**
 
+1. download artifact archives and package.json files from gitlab:
 
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/raw/develop/package.json?inline=false)
 
+2. extract archives and organize folders/files as follow:
+```
+.
+├── dotstatsuite
+│   ├── data-explorer
+│   │   ├── node_modules                       # from setup artifact
+│   │   ├── dist                               # from build artifact (server files)
+│   │   ├── build                              # from build artifact (client bundle)
+│   │   ├── package.json
+```
 
+4. start the service:
 
+- (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 npm run start:run`
+- check if everything is fine: http://localhost:3008 (proxy with a route mapped to data-explorer)
 
+**summary**
 
-
-
-
-
+![from gitlab artifacts summary](/images/from_gitlab_artifacts.png)
