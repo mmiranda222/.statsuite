@@ -12,3 +12,5 @@ You can find out more about the Community on our [web site](https://siscc.org). 
 **An ‘SDMX-native’ environment**, building on best practices in statistical data modelling.<br>
 
 ![homepage splash](/images/home_splash.png)
+
+[![Mentioned in Awesome Official Statistics ](https://awesome.re/mentioned-badge.svg)](http://www.awesomeofficialstatistics.org)
