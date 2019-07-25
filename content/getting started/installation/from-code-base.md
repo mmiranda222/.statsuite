@@ -7,14 +7,14 @@ weight: 27
 
 The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure.
 
-This section describes where to find and how to install .Stat Suite framework components (applications, services, libraries) starting from the source code.
+This section describes where to find and how to install .Stat Suite framework components (applications, services, libraries) starting from the code base.
 
 For the general purpose of the .Stat Suite framework components and technical architecture, please refer to the [.Stat Suite Open Source Framework
 Introduction](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/framework/).
 
 ---
 
-### Source code of the components of each .Stat Suite main module  
+### Code base of the components of each .Stat Suite main module  
 
 The technical description of each of the services can be accessed from each Gitlab's repository:<br>
 
