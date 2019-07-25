@@ -22,7 +22,7 @@ The .Stat Suite platform and its modules and components are made available in th
 
 * [As code base](/getting-started/installation/from-code-base)  
 
-  This page provides example topologies and the related required .Stat Suite platform components (applications, services, libraries), which can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure. Also the links to the related instructions for installations starting from the source code are included.
+  This page provides example topologies and the related required .Stat Suite platform components (applications, services, libraries), which can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure. Also the links to the related instructions for installations starting from the code base are included.
     
   This approach requires solid technical knowledge of the underlying ecosystems (.Net, MS SQL Server, JS, OS) but offers most flexibility for topologies and configuration.
 
