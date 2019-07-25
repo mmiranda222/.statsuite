@@ -1,5 +1,5 @@
 ---
-title: Installation from source code
+title: Installation from code base
 subtitle: 
 comments: false
 weight: 27
