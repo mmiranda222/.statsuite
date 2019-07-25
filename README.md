@@ -37,8 +37,8 @@ This project is used for publishing the official .Stat Suite documentation to th
 │   │   |   ├── _index.md
 │   │   |   ├── as-a-service.md
 │   │   |   ├── as-container.md
+│   │   |   ├── from-code-base.md
 │   │   |   ├── de-customisation-configuration.md
-│   │   |   ├── from-source-code.md
 │   │   ├── _index.md
 │   │   ├── framework.md
 │   ├── images
