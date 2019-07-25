@@ -20,7 +20,7 @@ The .Stat Suite platform and its modules and components are made available in th
     
   This approach requires knowledge of docker technology and orchestration (e.g. kubernetes technology).
 
-* [From code base](/getting-started/installation/from-code-base)  
+* [As code base](/getting-started/installation/from-code-base)  
 
   This page provides example topologies and the related required .Stat Suite platform components (applications, services, libraries), which can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure. Also the links to the related instructions for installations starting from the source code are included.
     
