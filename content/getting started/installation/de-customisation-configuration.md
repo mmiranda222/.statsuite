@@ -87,9 +87,10 @@ Define the common logos in the header, subheader, footer and homepage of the web
 ---
 
 ### Homepage facets
-Define the IDs and number of facets that are returned under the homepage "browse by".<br>
-You must enter the ID of an indexed ConcepScheme, e.g. ref_area.<br>
-If it is **empty**, then zero facet is returned in the homepage.<br>
+Define the facets, that are displayed on the homepage below "browse by", by ID and in the appropriate order.  
+In the property "homeFacetIds", you must enter the ID of an indexed CategoryScheme, e.g. "cas_subject", ConceptScheme, e.g. ref_area, or "datasource_id" for the Data Source facet.  
+If it is **empty**, then no facet is displayed on the homepage.  
+If it is **missing**, then all available facets are displayed on the homepage.  
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
