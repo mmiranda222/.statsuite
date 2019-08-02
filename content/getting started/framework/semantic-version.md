@@ -1,5 +1,5 @@
 ---
-title: Semantic versioning of backend components and services
+title: Semantic versioning of .Stat Suite CORE components and services
 subtitle: 
 comments: false
 weight: 25
@@ -99,4 +99,4 @@ dotnet nuget locals all --clear
 ## Links
 
 - Semantic version manifesto https://semver.org/
-- Nuget, used in DotStat BE for semver auto generation https://github.com/AArnott/Nerdbank.GitVersioning
+- Nuget, used in .Stat Suite CORE for semver auto generation https://github.com/AArnott/Nerdbank.GitVersioning
