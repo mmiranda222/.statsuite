@@ -1,4 +1,10 @@
-# Infrastructure requirements
+--
+title: Infrastructure requirements
+subtitle: 
+comments: false
+weight: 25
+---
+
 ## .Stat Core Data Store
 ### Software requirements:
 *  **SQL server 2017** or higher

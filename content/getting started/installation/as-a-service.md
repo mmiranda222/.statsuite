@@ -2,7 +2,7 @@
 title: Installation based on a fully-functional, ready-to-use service package
 subtitle: 
 comments: false
-weight: 25
+weight: 26
 ---
 
 The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** [*to come*] and **.Stat Core** are containerised and packaged as fully-functional, ready-to-use services using Kubernetes technology, which can be freely re-used by anyone in its own cloud or premises.

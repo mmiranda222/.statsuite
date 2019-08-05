@@ -2,7 +2,7 @@
 title: Installation based on ready-to-use container images
 subtitle: 
 comments: false
-weight: 26
+weight: 27
 ---
 
 Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** [to come] and **.Stat Core** or their components are containerised as ready-to-use container images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
