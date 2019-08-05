@@ -288,6 +288,8 @@ This web service is used for managing user access rights to data structures and 
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-auth-management
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
 
+>  See more about the **[Recommended infrastructure requirements](/getting-started/requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**.
+
 ---
 
 ## Docker-compose example(s)
