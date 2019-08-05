@@ -12,6 +12,7 @@ These pages will help developers and implementers to understand and install the 
  
   Provides a technical introduction to the.Stat Suite platform, the high-level technical architecture,  few typical use cases (topologies), the technical stack, detailed information about the components and their technical architecture, and finally detailed information about our DevOps implementation.
 
+* [Infrastructure requirements](/getting-started/requirements)
 * [Installation](/getting-started/installation)  
 
   Landing page for the navigation within installation instructions. The .Stat Suite platform and its modules and components are made available in the following 3 ways:
