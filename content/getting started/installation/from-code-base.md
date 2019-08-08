@@ -59,7 +59,7 @@ The installation must be done in the following order:
 1. [Install the Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/blob/develop/docs/installation/CodeBaseApproach.md). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/blob/master/qa/transfer.yaml) for a topology configuration example.
 1. [*to come*] [Install the Authentication Management service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)
 
->  See more about the **[Recommended infrastructure requirements](/getting-started/installation/infrastructure-requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**. 
+>  See more about the **[Recommended infrastructure requirements](/getting-started/installation/infrastructure_requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**. 
 
 **II. Install the .Stat Data Explorer components**  
 
