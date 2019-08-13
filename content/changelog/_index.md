@@ -6,6 +6,39 @@ weight: 40
 
 ---
 
+### August 13, 2019
+Major changes:
+
+- [dotstatsuite-data-explorer#89](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/89) **Drag&Drop feature** is restricted to minimum of 1 dimension on row. The last dimension set to Row cannot be removed. <br>
+![RowLimit1](/images/RowLimit1.png)
+- [dotstatsuite-data-explorer#71](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/71) Extend the behavior of the **DEFAULT filter selections** by applying also items from search ; the sdmx DEFAULT annotation rule is combined with the end-user's selections from the search result page.
+
+Minor changes:
+
+- [dotstatsuite-data-explorer#81](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/81) **Time-Range selector** missing filter title and navigation bar
+- [dotstatsuite-core-transfer#9](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/9) **Performance test** scaling resources for Transfer and NSI webservices
+- [dotstatsuite-data-explorer#88](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/88) The number of selected items of the **Time-Range selector** filter is displayed in the visualisation page.
+- [dotstatsuite-share#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/issues/2) Style, content and layout enhancements of the content of the **Share email** validation request
+- [dotstatsuite-data-explorer#73](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/73) Change "Code" option in "Label format" to "Identifier" <br>
+![Identifier](/images/Identifier.png)
+
+Bug fixes:
+
+- [dotstatsuite-core-common#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/5) Services do not return JSON but string and add a BOM as first character of the body
+- [dotstatsuite-data-explorer#97](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/97) Incorrect count number in the used filter area
+- [dotstatsuite-core-common#53](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/53) **Security fixes** for Heap Inspection and Improper Resource Shutdown or Release
+- [dotstatsuite-data-explorer#103](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/103) dataquery with several frequencies is not possible (e.g. select Annual AND Monthly from search result and display related dataflow result)
+- [dotstatsuite-data-explorer#104](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/104) LAYOUT_ROW and LAYOUT_COLUMN are not respected for some dataflow cases
+- [dotstatsuite-data-explorer#78](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/78) In the data table view, do not scroll the table header row containing the row dimension labels
+- [dotstatsuite-data-explorer#92](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/92) Dataflow description is not displayed in the search result when using the 'browse by' feature from the homepage
+- [dotstatsuite-data-explorer#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/19) Not possible to open a visualisation page in a new tab from the search result
+- [dotstatsuite-data-explorer#106](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/106) API queries are incorrect
+- [dotstatsuite-data-explorer#91](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/91) Wrong data retieval queries in visualisation page
+- [dotstatsuite-data-explorer#107](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/107) Filename of CSV download is too long in some cases and fails to open in Excel ; solution is implemented to cut and limit the downloaded filenames to 184 characters max (before the Excel limit of 185 characters).
+- [dotstatsuite-data-explorer#100](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/100) Issue in range header configuration (from the settings.json file)
+
+---
+
 ### July 11, 2019
 Major changes:
 
