@@ -91,6 +91,7 @@ Install these .Stat Data Explorer components in this order:
 1. [Install the Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-explorer.yaml) for a topology configuration example.
 
 ---
+---
 
 **(beta) from gitlab artifacts**
 
@@ -120,6 +121,8 @@ Install these .Stat Data Explorer components in this order:
 │   ├── proxy
 │   ├── search
 │   ├── data-explorer
+│   ├── data-viewer
+│   ├── share
 ```
 
 **2. config service**
@@ -184,7 +187,7 @@ Install these .Stat Data Explorer components in this order:
 *notes:*
 
 - host is the user url, it can be an url under any domain like data-explorer.oecd.org
-- port 3000 is used to avoid collision with 80
+- port 3008 is used to avoid collision with 80
 - target is the mapping between user url and internal app url
 - tenant is the default tenant for the host
 
@@ -240,6 +243,29 @@ const server = { host: '0.0.0.0', port: 3007 };
 - if the config is not fine, update the datasources.json and/or settings.json file(s) in the config service, restart the config service then restart the search service
 - the search service is not coupled with its clients, the search endpoint is configurable from settings.json of the data-explorer app in the config service
 
+**4. share service**
+
+1. download artifact archives and package.json files from gitlab:
+
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/raw/develop/package.json?inline=false)
+
+2. extract archives and organize folders/files as follow:
+```
+.
+├── dotstatsuite
+│   ├── share
+│   │   ├── node_modules                       # from setup artifact
+│   │   ├── dist                               # from build artifact
+│   │   ├── package.json
+```
+
+4. start the service:
+
+- (in git bash) run `PORT=3006 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SITE_URL=http://localhost:3006  npm run dist:run`
+- check if everything is fine: http://localhost:3006/healthcheck
+
 **5. data-explorer app**
 
 1. download artifact archives and package.json files from gitlab:
@@ -263,6 +289,29 @@ const server = { host: '0.0.0.0', port: 3007 };
 
 - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 npm run start:run`
 - check if everything is fine: http://localhost:3008 (proxy with a route mapped to data-explorer)
+
+**5. data-viewer app**
+
+1. download artifact archives and package.json files from gitlab:
+
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/raw/develop/package.json?inline=false)
+
+2. extract archives and organize folders/files as follow:
+```
+.
+├── dotstatsuite
+│   ├── data-viewer
+│   │   ├── node_modules                       # from setup artifact
+│   │   ├── dist                               # from build artifact (server files)
+│   │   ├── build                              # from build artifact (client bundle)
+│   │   ├── package.json
+```
+
+4. start the service:
+
+- (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
 
 **summary**
 
