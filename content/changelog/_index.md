@@ -6,6 +6,21 @@ weight: 40
 
 ---
 
+### August 20, 2019
+Major changes:
+
+- [dotstatsuite-core-common#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/13) and [dotstatsuite-data-explorer#67](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/67) **SDMX-JSON structure and data messages** retrieve all localised elements (names, descriptions, texts) according to the latest publicly released SDMX-JSON message format version with the new localised text elements (see sdmx references of both [structure](https://github.com/sdmx-twg/sdmx-json/blob/develop/structure-message/docs/1-sdmx-json-field-guide.md#localised-text-elements) and [data](https://github.com/sdmx-twg/sdmx-json/blob/master/data-message/docs/1-sdmx-json-field-guide.md#localised-text-elements) messages).
+
+Minor changes:
+
+- [dotstatsuite-core-common#37](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/37) Adding script for the scheduled update of table statistics and rebuilding indexes; the related technical [documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access#index-maintenance-and-optimization) is updated accordingly.
+
+Bug fixes:
+
+- [dotstatsuite-core-common#1](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/1) **.Stat DLM** Wrong response when querying for an empty dataflow
+
+---
+
 ### August 13, 2019
 Major changes:
 
