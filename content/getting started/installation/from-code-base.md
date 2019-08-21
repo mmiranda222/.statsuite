@@ -118,7 +118,6 @@ Install these .Stat Data Explorer components in this order:
 .
 ├── dotstatsuite
 │   ├── config
-│   ├── proxy
 │   ├── search
 │   ├── data-explorer
 │   ├── data-viewer
@@ -165,50 +164,7 @@ Install these .Stat Data Explorer components in this order:
 - (in git bash) run `PORT=5007 npm run dist:run`
 - check if everything is fine: http://localhost:5007/healthcheck
 
-**3. proxy service**
-
-1. download artifact archives and package.json files from gitlab:
-
-  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=setup)
-  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/jobs/artifacts/develop/download?job=build)
-  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/raw/develop/package.json?inline=false)
-
-2. create a routes.json file as follow:
-```
-[
-  {
-    "host": "localhost:3008",
-    "target": "http://localhost:3009",
-    "tenant": "oecd"
-  }
-]
-```
-
-*notes:*
-
-- host is the user url, it can be an url under any domain like data-explorer.oecd.org
-- port 3008 is used to avoid collision with 80
-- target is the mapping between user url and internal app url
-- tenant is the default tenant for the host
-
-3. extract archives and organize folders/files as follow:
-```
-.
-├── dotstatsuite
-│   ├── proxy
-│   │   ├── node_modules                       # from setup artifact
-│   │   ├── dist                               # from build artifact
-│   │   ├── data
-│   │   │   ├── routes.json                    # routes definition
-│   │   ├── package.json
-```
-
-4. start the service:
-
-- (in git bash) run `PORT=3008 CONFIG_URL=http://localhost:5007 npm run dist:run`
-- check if everything is fine: http://localhost:3008/_healthcheck_
-
-**4. search service**
+**3. search service**
 
 1. download artifact archives and package.json files from gitlab:
 
@@ -290,7 +246,7 @@ const server = { host: '0.0.0.0', port: 3007 };
 - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 npm run start:run`
 - check if everything is fine: http://localhost:3008 (proxy with a route mapped to data-explorer)
 
-**5. data-viewer app**
+**6. data-viewer app**
 
 1. download artifact archives and package.json files from gitlab:
 
