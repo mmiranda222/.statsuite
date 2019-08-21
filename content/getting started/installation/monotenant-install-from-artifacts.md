@@ -20,6 +20,10 @@ weight: 29
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
 - ports can be freely picked, if different than defaults they should be specified when launching services
 
+**summary**
+
+![from gitlab artifacts summary](/images/from_gitlab_artifacts.png)
+
 **1. setup**
 
 1. (temporary) `npm i -g cross-env`
@@ -193,7 +197,3 @@ weight: 29
 4. start the service:
 
 - (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
-
-**summary**
-
-![from gitlab artifacts summary](/images/from_gitlab_artifacts.png)
