@@ -103,14 +103,14 @@ weight: 29
 │   │   ├── package.json
 ```
 
-4. start the service:
+3. start the service:
 
 - (temporary) edit the 1st line of dist/params/production.js as follow: `const server = { host: '0.0.0.0', port: 3007 };`
 - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
 - check if everything is fine: http://localhost:3007/healthcheck
 - check if the config (mostly to check datasources) is fine: http://localhost:3007/api/config
 
-5. handle index (that are indexable):
+4. handle index (that are indexable):
 
 - get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret`
 - index dataflows: `curl -X POST http://localhost:3007/admin/dataflows?api-key=secret -d {}`
