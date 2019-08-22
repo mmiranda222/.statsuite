@@ -2,7 +2,7 @@
 title: Mono-tenant update from gitlab pipeline artifacts
 subtitle: 
 comments: false
-weight: 30
+weight: 29
 ---
 
 **pre-requisites:**

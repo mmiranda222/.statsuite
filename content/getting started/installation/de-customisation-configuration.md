@@ -2,7 +2,7 @@
 title: .Stat DE customisation and configuration
 subtitle: 
 comments: false
-weight: 29
+weight: 30
 ---
 
 This page is a guide on how to setup, configure, customise and interact with most of the .Stat Data Explorer client-side configurations, look and feel and (sdmx) business rules.<br>
