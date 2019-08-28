@@ -20,7 +20,6 @@ weight: 34
 
 #### .Stat Suite product owners
 
-- Betti Vainküla [@Bettivaink](https://gitlab.com/Bettivaink)
 - Jean-Baptiste Nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
 - Jens Dossé [@dosse](https://gitlab.com/dosse)
 - Sandrine Phelipot-Souflis [@SSandrine](https://gitlab.com/SSandrine)
