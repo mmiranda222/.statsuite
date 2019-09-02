@@ -2,8 +2,63 @@
 title: .Stat DevOps implementation
 subtitle: 
 comments: false
-weight: 50
+weight: 20
 ---
+
+## business requirements
+
+### quality assurance (**qa**) environment
+
+- Automated update triggered by **Dev** branch merge (part of “peer-review” Kanban step) 
+- Used by **Product Management team** to:
+  -	directly test through API/Swagger candidate .Stat CORE services:
+    - **NSI ws with stable content** (upgraded database) called 'stable'
+    - **NSI ws with re-initialised content** (new database) called 'reset'
+    - **Transfer ws**
+    - **Authorisation ws**
+  - test **'PM' tenant**  of candidate **DE** plugged to: 
+    - SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable' 
+    - SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'
+  - test **'PM' tenant**  of candidate **DLM** plugged to: 
+    - SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable' 
+    - SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'
+    - SIS-CC Demo-related staging instance of Transfer ws
+    - SIS-CC Demo-related staging instance of Authorisation ws
+
+
+### pre-production (**staging**) environment
+
+- Automated update triggered by **Master** branch merge (part of “release” Kanban step)
+- Hosting stable instances for **OECD Practice Building team** of: 
+  - **NSI ws with stable content** (upgraded database) called 'OECD-design'
+  - **NSI ws with stable content** (upgraded database) called 'OECD-staging'
+  - **Transfer ws**
+  - **Authorisation ws**
+  - **'OECD' tenant** of **DE** plugged to:
+    - stable NSI ws with stable content (upgraded database) called 'OECD-design'
+    - stable NSI ws with stable content (upgraded database) called 'OECD-staging'
+  - **'OECD' tenant** of **DLM** plugged to:
+    - stable NSI ws with stable content (upgraded database) called 'OECD-design'
+    - stable NSI ws with stable content (upgraded database) called 'OECD-staging'
+    - stable Transfer ws
+    - stable Authorisation ws
+- Hosting stable instances for SIS-CC (for Demo purposes) of:
+  - **NSI ws with stable content** (upgraded database) called 'SIS-CC-stable'
+  - **NSI ws with re-initialised content** (new  database) called 'SIS-CC-reset'
+  - **Transfer ws**
+  - **Authorisation ws**
+  - **'SIS-CC' tenant** of **DE** plugged to:
+    - stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'
+    - stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'
+  - **'SIS-CC' tenant** of **DLM** plugged to:
+    - stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'
+    - stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'
+    - stable Transfer ws
+    - stable Authorisation ws
+- Other tenants of DE and DLM for specific SIS-CC members 
+  - either plugged to their own SDMX APIs (currently we have ILO and ISTAT)
+  - or plugged into above mentioned SIS-CC Demo-related instances of .Stat CORE services
+
 
 ## technical environment (cloud)
 * .Stat Data Explorer components
