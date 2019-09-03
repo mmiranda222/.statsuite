@@ -5,25 +5,25 @@ comments: false
 weight: 20
 ---
 
-## business requirements
+## open-source development business requirements
 
 ### quality assurance (**qa**) environment
 
 - Automated update triggered by **Dev** branch merge (part of “peer-review” Kanban step) 
-- Used by **Product Management team** to:
-  -	directly test through API/Swagger candidate .Stat CORE services:
-    - **NSI ws with stable content** (upgraded database) called 'stable'
-    - **NSI ws with re-initialised content** (new database) called 'reset'
-    - **Transfer ws**
-    - **Authorisation ws**
-  - test **'PM' tenant**  of candidate **DE** plugged to: 
-    - SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable' 
-    - SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'
-  - test **'PM' tenant**  of candidate **DLM** plugged to: 
-    - SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable' 
-    - SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'
-    - SIS-CC Demo-related staging instance of Transfer ws
-    - SIS-CC Demo-related staging instance of Authorisation ws
+- Used by **Product Management team** to:  
+  -	directly test through API/Swagger candidate .Stat CORE services:  
+    ° **NSI ws with stable content** (upgraded database) called 'stable'  
+    ° **NSI ws with re-initialised content** (new database) called 'reset'  
+    ° **Transfer ws**  
+    ° **Authorisation ws**  
+  - test **'PM' tenant**  of candidate **DE** plugged to:  
+    ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
+    ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
+  - test **'PM' tenant**  of candidate **DLM** plugged to:  
+    ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
+    ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
+    ° SIS-CC Demo-related staging instance of Transfer ws  
+    ° SIS-CC Demo-related staging instance of Authorisation ws  
 
 
 ### pre-production (**staging**) environment
@@ -34,49 +34,81 @@ weight: 20
   - **NSI ws with stable content** (upgraded database) called 'OECD-staging'
   - **Transfer ws**
   - **Authorisation ws**
-  - **'OECD' tenant** of **DE** plugged to:
-    - stable NSI ws with stable content (upgraded database) called 'OECD-design'
-    - stable NSI ws with stable content (upgraded database) called 'OECD-staging'
-  - **'OECD' tenant** of **DLM** plugged to:
-    - stable NSI ws with stable content (upgraded database) called 'OECD-design'
-    - stable NSI ws with stable content (upgraded database) called 'OECD-staging'
-    - stable Transfer ws
-    - stable Authorisation ws
-- Hosting stable instances for SIS-CC (for Demo purposes) of:
+  - **'OECD' tenant** of **DE** plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
+  - **'OECD' tenant** of **DLM** plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
+    ° stable Transfer ws  
+    ° stable Authorisation ws  
+- Hosting stable instances for **SIS-CC (for Demo purposes)** of:
   - **NSI ws with stable content** (upgraded database) called 'SIS-CC-stable'
   - **NSI ws with re-initialised content** (new  database) called 'SIS-CC-reset'
   - **Transfer ws**
   - **Authorisation ws**
-  - **'SIS-CC' tenant** of **DE** plugged to:
-    - stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'
-    - stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'
-  - **'SIS-CC' tenant** of **DLM** plugged to:
-    - stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'
-    - stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'
-    - stable Transfer ws
-    - stable Authorisation ws
+  - **'SIS-CC' tenant** of **DE** plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'  
+    ° stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'  
+  - **'SIS-CC' tenant** of **DLM** plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'  
+    ° stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'  
+    ° stable Transfer ws  
+    ° stable Authorisation ws  
 - Other tenants of DE and DLM for specific SIS-CC members 
   - either plugged to their own SDMX APIs (currently we have ILO and ISTAT)
   - or plugged into above mentioned SIS-CC Demo-related instances of .Stat CORE services
 
+## technical stack
+
+The following technologies and cloud services are used for the DevOps implementation:
+
+<table>
+<thead>
+<tr>
+<td align="center" colspan=5><a href="https://docs.gitlab.com/ee/ci/pipelines.html">gitlab: open-source code repository and automation pipelines</a></td>
+</tr>
+<tr>
+<td align="center" colspan=5><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" height="40" /></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="https://www.npmjs.com">npmjs: public JS libary repositories</a></td">
+<td align="center"><a href="https://www.nuget.org/">nuget: public .Net Core library repositories</a></td>
+<td align="center"><a href="https://www.docker.com">docker-hub: public JS & .Net Core application container image repositories</a></td>
+<td align="center"><a href="https://cloud.google.com">gcp: hosting public qa & staging infrastructure</a></td>
+<td align="center"><a href="https://kubernetes.io">kubernetes: container deployment orchestration</a></td>
+</tr>
+<tr>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1280px-Npm-logo.svg.png" height="40" /></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/220px-NuGet_project_logo.svg.png" height="40" /></td>
+<td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" height="40" /></td>
+<td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" height="40" /></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/en/0/00/Kubernetes_%28container_engine%29.png" height="40" /></td>
+</tr>
+</tbody>
+</table>
+
 
 ## technical environment (cloud)
-* .Stat Data Explorer components
+
+* .Stat Data Explorer components and .Stat Data Lifecycle Manager
   - 1 cluster of 3 nodes with 2 namespaces (qa and staging) on google cloud platform
   - https
   - probes
   - kubernetes, how to update topology, not automated
-  - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp
-    - holds kubernetes configuration files
+  - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp  
+    ° holds kubernetes configuration files
 * .Stat Core components
   - 1 cluster of 3 nodes with 2 namespaces (qa and staging) on google cloud platform
   - https
   - probes
   - kubernetes, how to update topology, not automated
-  - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp
-    - holds kubernetes configuration files
-* .Stat Data Lifecycle Manager components
-  - [*to come*]
+  - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp  
+    ° holds kubernetes configuration files
+
+---
 
 
 ## flow
