@@ -14,12 +14,12 @@ weight: 20
   -	directly test through API/Swagger candidate .Stat CORE services:  
     ° **NSI ws with stable content** (upgraded database) called 'stable'  
     ° **NSI ws with re-initialised content** (new database) called 'reset'  
-    ° **Transfer ws**  
+    ° [**Transfer ws**](http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html)  
     ° **Authorisation ws**  
-  - test **'PM' tenant**  of candidate **DE** plugged to:  
+  - test [**'PM' tenant**  of candidate **DE**](http://data-explorer.qa.oecd.redpelicans.com/) plugged to:  
     ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
     ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
-  - test **'PM' tenant**  of candidate **DLM** plugged to:  
+  - test [**'PM' tenant**  of candidate **DLM**](http://data-lifecycle-manager.qa.oecd.redpelicans.com/) plugged to:  
     ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
     ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
     ° SIS-CC Demo-related staging instance of Transfer ws  
