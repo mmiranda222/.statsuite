@@ -332,10 +332,10 @@ The formatted dates are using the v1.9.0 of the [date-fns](https://date-fns.org/
 |  | MMM | Jan, Feb, ..., Dec | 
 |  | MMMM | January, February, ..., December | 
 
-Examples:
-* 'YYYY MMM' displays '2010 Jan'
-* 'YYYY-MMM'displays '2010-Jan'
-* 'MMMM-YYYY' displays 'January-2010'
+Examples:  
+* 'YYYY MMM' displays '2010 Jan'  
+* 'YYYY-MMM'displays '2010-Jan'  
+* 'MMMM-YYYY' displays 'January-2010'  
 
 By default, if no configuration for a given localised format is added, then the default applied date format is 'YYYY MMM', e.g. in English '2010 Jan'.
 
