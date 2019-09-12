@@ -321,8 +321,8 @@ Define the localised thousands and decimals separators of the observaiton values
 ---
 
 ### Localised time period values for monthly frequency
-Define the localised date format and labels for monthly frequency, and replacing the original SDMX codes.  
-The formatted dates are using the v1.9.0 of the [date-fns](https://date-fns.org/v1.9.0/docs/format) library, and it displays the localised labels according to the following table:
+Define the localised date format and labels for monthly frequency, and replacing the original SDMX codes (SDMX objects for Monthly frequencies do not have labels).  
+The formatted dates are using the v1.9.0 of the [date-fns](https://date-fns.org/v1.9.0/docs/format) library, in which all supported languages and related labels are stored, and it displays the localised labels according to the following table:
 
 | Unit | Token | Result examples |
 |---|---|---|
@@ -337,7 +337,7 @@ Examples:
 * 'YYYY-MMM'displays '2010-Jan'
 * 'MMMM-YYYY' displays 'January-2010'
 
-By default, if no configuration for a given localised format is added, then the default applied date format is 'YYYY MMMM', e.g. in English 2010 January.
+By default, if no configuration for a given localised format is added, then the default applied date format is 'YYYY MMM', e.g. in English '2010 Jan'.
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
