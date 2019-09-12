@@ -36,6 +36,7 @@ The technical description of each of the services can be accessed from each Gitl
 - [Database](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)
 - [Sdmxri Nsi plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)
 - [Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)
+- [Authorisation management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)
 
 ---
 
