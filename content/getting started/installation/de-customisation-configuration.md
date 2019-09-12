@@ -333,6 +333,7 @@ The formatted dates are using the v1.9.0 of the [date-fns](https://date-fns.org/
 |  | MMMM | January, February, ..., December | 
 
 Examples:  
+
 * 'YYYY MMM' displays '2010 Jan'  
 * 'YYYY-MMM'displays '2010-Jan'  
 * 'MMMM-YYYY' displays 'January-2010'  
