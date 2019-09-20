@@ -32,10 +32,7 @@ The kubernetes cluster definitions implement a "multi-tenant architecture" that 
 
 |tenant|specs|url|
 |---|---|---|
-|oecd|own sdmx oecd staging endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com|
-|ilo|independent external sdmx ilo test endpoint, ilo design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=ilo|
-|istat|independent external sdmx istat sistanhub endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=istat|
-|cam|independent external sdmx cambodia pilot endpoint, cam design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=cam|
+|oecd|own sdmx oecd qa endpoint, siscc design|http://data-explorer.qa.oecd.redpelicans.com/|
 
 
 ### technical overview

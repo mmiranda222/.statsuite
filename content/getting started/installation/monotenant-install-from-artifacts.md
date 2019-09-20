@@ -10,10 +10,10 @@ weight: 29
 **pre-requisites:**
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) SDMX v6.x endpoint
-- nodejs 12.x and npm 6.x installed
-- git installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
-- solr 7.x installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
-- redis downloaded and running on port 6379 (default)
+- [nodejs 12.x](https://nodejs.org/fr/download/current/) and [npm 6.x](https://www.npmjs.com/package/npm) installed
+- [git](https://gitforwindows.org/) installed ; only to use git bash instead of cmd.exe for process variables
+- [solr 7.x](https://lucene.apache.org/solr/downloads.html) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
+- [redis](https://redis.io/download) downloaded and running on port 6379 (default)
 
 *notes:*
 
