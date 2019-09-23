@@ -19,7 +19,7 @@ The default theme is applied if there is no theme added to the settings.json fil
 
 * "theme":"layout" corresponds to the homepage background color and default font
 * "theme":"searchHeader" corresponds to colored header banner of the search and visualisation pages
-* "theme":splash" corresponds to the text color under the homepage splash logo
+* "theme":"splash" corresponds to the text color under the homepage splash logo
 * "theme":"searchDataflow" corresponds to the text color of Dataflow titles in the list of the search result page
 
 ```
@@ -95,7 +95,9 @@ If it is **missing**, then all available facets are displayed on the homepage.
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"homeFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
+    "search": {
+        "homeFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
+    }
 ```
 
 ![Homepage facets](/images/faq-homepage-facets.png)
@@ -109,7 +111,9 @@ These facets will be displayed always at first top positions and their labels ar
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"pinnedFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
+    "search": {
+        "pinnedFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
+    }
 ```
 
 ![Search result pinned facets](/images/faq-pinned-facets.png)
@@ -122,7 +126,9 @@ Define the facets that will always be excluded from the search result page.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"excludedFacetIds": ["survey"]
+    "search": {
+        "excludedFacetIds": ["survey"]
+    }
 ```
 
 ---
@@ -133,7 +139,9 @@ Define the number of result displayed per page in the search result pages.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"defaultRows": 10
+    "search": {
+        "defaultRows": 10
+    }
 ```
 
 ---
@@ -177,7 +185,9 @@ This configuration does not impact the full data download.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"range": [0, 1000]
+    "sdmx": {
+        "range": [0, 1000]
+    }
 ```
 
 ---
@@ -188,7 +198,11 @@ It applies the calculation over the observation values when the Preferred Scale 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"prefscale": "PREF_SCALE"
+   "sdmx": {
+        "attributes": {
+        "prefscale": "PREF_SCALE", 
+    },
+    }
 ```
 
 ---
@@ -199,7 +213,11 @@ It applies the Decimal Attribute value when defined in the data source, and thus
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"decimals": "DECIMALS"
+   "sdmx": {
+        "attributes": {
+        "decimals": "DECIMALS", 
+    },
+    }
 ```
 
 ---
@@ -213,7 +231,11 @@ You can define more than one type of attributes to be displayed as flags.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"flags": ["OBS_STATUS"]
+   "sdmx": {
+        "attributes": {
+        "flags": ["OBS_STATUS"], 
+    },
+    }
 ```
 
 ![Attributes flags](/images/faq-flags.png)
@@ -228,7 +250,11 @@ You can define more than one type of attributes to be displayed as footnotes.<br
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-"footnotes": ["TIME_FORMAT"]
+   "sdmx": {
+        "attributes": {
+        "footnotes": ["TIME_FORMAT"], 
+    },
+    }
 ```
 
 ![Attributes footnotes](/images/faq-footnotes.png)
@@ -257,9 +283,11 @@ Define the name and hyperlink in the footer of the table and chart views behind 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-    "terms": {
-        "label": "Terms & Conditions",
-        "link": "http://www.oecd.org/termsandconditions/"
+    "viewer": {
+        "terms": {
+            "label": "Terms & Conditions",
+            "link": "http://www.oecd.org/termsandconditions/",
+    }
     }
 ```
 
@@ -273,8 +301,10 @@ Define the hyperlink for the API documentation.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-    "api": {
-        "doc": "https://data.oecd.org/api/sdmx-json-documentation/"
+    "viewer": {
+        "api": {
+            "doc": "https://data.oecd.org/api/sdmx-json-documentation/",
+    }
     }
 ```
 
@@ -288,8 +318,10 @@ Define the hyperlink for the "Contact us" feature.<br>
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
-    "api": {
-        "contact": "https://stats.oecd.org/FAQAndContact.aspx"
+    "viewer": {
+        "api": {
+            "contact": "https://stats.oecd.org/FAQAndContact.aspx",
+    }
     }
 ```
 
