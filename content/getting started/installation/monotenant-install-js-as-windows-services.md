@@ -6,15 +6,15 @@ weight: 30
 ---
 
 TOC
-[prerequisites](#prerequisites)
-[folders](#folders)
-[nssm](#nssm)
-[solr](#solr)
-[solr core](#solr-core)
-[redis](#redis)
-[dotstatesuitejs](#dotstatesuitejs)
-[artefacts](#artefacts)
-[indexation](#indexation)
+- [prerequisites](#prerequisites)
+- [folders](#folders)
+- [nssm](#nssm)
+- [solr](#solr)
+- [solr core](#solr-core)
+- [redis](#redis)
+- [dotstatesuitejs](#dotstatesuitejs)
+- [artefacts](#artefacts)
+- [indexation](#indexation)
 
 # prerequisites
 - git bash
