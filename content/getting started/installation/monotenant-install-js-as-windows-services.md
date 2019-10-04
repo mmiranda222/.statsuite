@@ -5,14 +5,14 @@ comments: false
 weight: 30
 ---
 
-TOC
+# TOC
 - [prerequisites](#prerequisites)
 - [folders](#folders)
 - [nssm](#nssm)
 - [solr](#solr)
 - [solr core](#solr-core)
 - [redis](#redis)
-- [dotstatesuitejs](#dotstatesuitejs)
+- [dotstatsuitejs](#dotstatsuitejs)
 - [artefacts](#artefacts)
 - [indexation](#indexation)
 
@@ -20,9 +20,9 @@ TOC
 - git bash
   - https://gitforwindows.org/
   - during installation:
-    - use git and optional unix tools from the command prompt
-    - checkout as-is, commit as-is
-    - enable symbolic links
+    * use git and optional unix tools from the command prompt
+    * checkout as-is, commit as-is
+    * enable symbolic links
   - check:
     - open git bash
     - run `git --version` v2.23.0 and above
