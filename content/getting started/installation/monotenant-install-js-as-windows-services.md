@@ -17,27 +17,30 @@ weight: 30
 - [indexation](#indexation)
 
 # prerequisites
-- git bash
-  - https://gitforwindows.org/
-  - during installation:
-    * use git and optional unix tools from the command prompt
-    * checkout as-is, commit as-is
-    * enable symbolic links
-  - check:
-    - open git bash
-    - run `git --version` v2.23.0 and above
-- nodejs & npm
-  - https://nodejs.org/en/download/current
-  - check chocolatey during installation
-  - check:
-    - open git bash
-    - run `node --version` v12.x and above
-    - run `npm --version` v6.11.x and above
-- java v8 (for solr)
-  - https://www.java.com/fr/download/windows-64bit.jsp
-  - check:
-    - open git bash
-    - run `which java`
+
+git bash
+- https://gitforwindows.org/
+- during installation:
+  - use git and optional unix tools from the command prompt
+  - checkout as-is, commit as-is
+  - enable symbolic links
+- check:
+  - open git bash
+  - run `git --version` v2.23.0 and above
+
+nodejs & npm
+- https://nodejs.org/en/download/current
+- check chocolatey during installation
+- check:
+  - open git bash
+  - run `node --version` v12.x and above
+  - run `npm --version` v6.11.x and above
+
+java v8 (for solr)
+- https://www.java.com/fr/download/windows-64bit.jsp
+- check:
+  - open git bash
+  - run `which java`
 
 # folders
 > hint: folders should not contain user specific
