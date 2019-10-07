@@ -27,7 +27,6 @@ The .Stat Suite has three **main modules**:
 
 
 ### The high-level technical architecture can be schematised as follow:
-
 ![Stat Suite high-level architecture](/images/architecture.png)
 
 
@@ -35,7 +34,6 @@ Each main module (as well as their components) can be used together or separatel
 
 
 ### In the following are a few **typical use cases** on how an organisation can make use of these modules:
-
 **A) Adding the Data Explorer to an existing fully-fledged back-end solution**
 
 *Pre-requisites*: A statistical database with its own data management features and with a public SDMX API (SDMX 2.1 Rest incl. SDMX-JSON); hardware (see the system requirements in the installation guides)
@@ -141,6 +139,7 @@ The following technologies are used for the development of the **.Stat Core** co
 ---
 
 # .Stat Data Explorer module
+
 ### non-technical overview
 ![de non-technical overview](/images/de_non-technical_overview.png)
 
@@ -468,6 +467,7 @@ end
 ---
 
 # .Stat Data Lifecycle Manager module
+
 ## Data Data Lifecycle Manager app
 
 ### short description
@@ -483,6 +483,7 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 ---
 
 # .Stat Core module
+
 ### technical overview
 ![core technical overview](/images/core_technical_overview.png)
 
