@@ -6,17 +6,17 @@ weight: 20
 ---
 
 # Table of Content
-- [open-source development business requirements](##open-source-development-business-requirements)
-- [technical stack](##technical-stack)
-- [technical environment (cloud)](##technical-environment-(cloud))
-- [flow](##flow)
-- [process](##process)
-- [mapping](##mapping)
-- [git](##git)
-- [gitlab](##gitlab)
-- [npm](##npm)
-- [nuget](##nugget)
-- [list of webapps/services/packages](##list-of-webapps/services/packages)
+- [open-source development business requirements](#open-source-development-business-requirements)
+- [technical stack](#technical-stack)
+- [technical environment (cloud)](#technical-environment-(cloud))
+- [flow](#flow)
+- [process](#process)
+- [mapping](#mapping)
+- [git](#git)
+- [gitlab](#gitlab)
+- [npm](#npm)
+- [nuget](#nugget)
+- [list of webapps/services/packages](#list-of-webapps/services/packages)
 
 ## open-source development business requirements
 
