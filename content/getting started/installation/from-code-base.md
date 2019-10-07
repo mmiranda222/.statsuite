@@ -5,6 +5,13 @@ comments: false
 weight: 28
 ---
 
+# Table of Content
+- [intro](#intro)
+- [code base of the components of each .stat suite main module](#code-base-of-the-components-of-each-stat-suite-main-module)
+- [example topologies](#example-topologies)
+
+### intro
+
 The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure.
 
 This section describes where to find and how to install .Stat Suite framework components (applications, services, libraries) starting from the code base.
