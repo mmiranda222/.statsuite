@@ -5,6 +5,11 @@ comments: false
 weight: 12
 ---
 
+# Table of Content
+- [introduction](#introduction)
+- [details about the main .stat suite modules](#details-about-the-main-stat-suite-modules)
+- [tentative high-level .stat suite product roadmap](#tentative-high-level-stat-suite-product-roadmap)
+
 ## Introduction
 
 The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
