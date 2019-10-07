@@ -16,7 +16,7 @@ weight: 30
 - [search result page: number of results per page](#search-result-page-number-of-results-per-page)
 - [time period boundaries](#time-period-boundaries)
 - [default time period](#default-time-period)
-- [maximum number of observation values](#manimum-number-of-observation-values)
+- [maximum number of observation values](#maximum-number-of-observation-values)
 - [preferred scale attribute](#preferred-scale-attribute)
 - [decimals rule attribute](#decimals-rule-attribute)
 - [coded attributes returned as flags](#coded-attributes-returned-as-flags)
