@@ -58,7 +58,6 @@ weight: 30
 - download solr 7.x: https://lucene.apache.org/solr/downloads.html
 - unzip it in dotstasuitejs/solr
   - result: dotstasuitejs/solr/solr-7.7.2
-- run git bash as administrator
 - go to dotstasuitejs/nssm/nssm-2.24/win64
 - run `./nssm.exe install solr772`
 - in the nssm window:
@@ -102,8 +101,7 @@ weight: 30
   - ? Set PM2_SERVICE_PM2_DIR C:\Users\Nico\AppData\Roaming\npm\node_modules\pm2\index.js
 
 # artefacts
-> hint: you need a token in order to script the artefacts download  
-> hint: you need the IP of the machine if you want to access services externally
+> hint: you need a token in order to script the artefacts download
 
 - in dotstatsuitejs folder
 - open git bash
