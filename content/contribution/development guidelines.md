@@ -5,6 +5,13 @@ comments: false
 weight: 33
 ---
 
+# Table of Content
+- [git-flow](#git-flow)
+- [process](#process)
+- [coding standards](#coding-standards)
+- [linting utilities](#linting-utilities)
+- [contributing to an open source repository](#contributing-to-an-open-source-repository)
+
 ### Git-flow
 
 **Overview** <br>
