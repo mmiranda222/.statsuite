@@ -9,7 +9,7 @@ weight: 27
 - [short intro to docker](#short-intro-to-docker)
 - [next steps](#next-steps)
 - [.stat data explorer components](#stat-data-explorer-components)
-- [.stat data lifecycle manager components](stat-data-lifecycle-manager-components)
+- [.stat data lifecycle manager components](#stat-data-lifecycle-manager-components)
 - [.stat core components](#stat-core-components)
 - [docker compose example(s)](#docker-compose-example-s)
 
