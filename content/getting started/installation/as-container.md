@@ -117,7 +117,7 @@ The Configuration service centralises all configuration resources used by other 
 
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
-- **demo**: [*to come*]
+- **demo**: http://data-lifecycle-manager.qa.oecd.redpelicans.com/
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-lifecycle-manager
 
