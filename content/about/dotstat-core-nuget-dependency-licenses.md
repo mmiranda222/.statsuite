@@ -5,7 +5,14 @@ comments: false
 weight: 14
 ---
 
-## dotstatsuite-core-common ##
+# Table of Content
+- [dotstatsuite-core-common](#dotstatsuite-core-common)
+- [dotstatsuite-core-data-access](#dotstatsuite-core-data-access)
+- [dotstatsuite-core-transfer](#dotstatsuite-core-transfer)
+- [dotstatsuite-core-sdmxri-nsi-plugin](#dotstatsuite-core-sdmxri-nsi-plugin)
+- [dotstatsuite-core-auth-management](#dotstatsuite-core-auth-management)
+
+## dotstatsuite-core-common
 
 | NuGet package | Author | License |
 |---|---|---|
@@ -20,7 +27,7 @@ weight: 14
 | [NUnit](https://www.nuget.org/packages/NUnit/) | Charlie Poole, Rob Prouse | [MIT](https://github.com/nunit/nunit/blob/master/LICENSE.txt) | 
 | [NUnit3TestAdapter](https://www.nuget.org/packages/NUnit3TestAdapter/) | Charlie Poole, Terje Sandstrom | [MIT](https://github.com/nunit/nunit3-vs-adapter/blob/master/LICENSE.txt) | 
 
-## dotstatsuite-core-data-access ##
+## dotstatsuite-core-data-access
 
 | NuGet package | Author | License |
 |---|---|---|
@@ -62,7 +69,7 @@ weight: 14
 | [XObjects](https://www.nuget.org/packages/XObjects/) | European Commission (Eurostat) | [LGPL-3.0-only](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/sdmxsource.net/browse/licence.txt) |
 
 
-## dotstatsuite-core-transfer ##
+## dotstatsuite-core-transfer
 
 | NuGet package | Author | License |
 |---|---|---|
@@ -113,7 +120,7 @@ weight: 14
 | [Swashbuckle.AspNetCore.SwaggerUI](https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerUI/) | Swashbuckle.AspNetCore.SwaggerUI | [MIT](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/LICENSE) | 
 | [XObjects](https://www.nuget.org/packages/XObjects/) | European Commission (Eurostat) | [LGPL-3.0-only](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/sdmxsource.net/browse/licence.txt) |
 
-## dotstatsuite-core-sdmxri-nsi-plugin ##
+## dotstatsuite-core-sdmxri-nsi-plugin
 
 | NuGet package | Author | License |
 |---|---|---|
@@ -150,7 +157,7 @@ weight: 14
 | [Microsoft.Extensions.Configuration.Json](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/) | Microsoft | [Apache License Version 2.0.](https://github.com/aspnet/Extensions/blob/master/LICENSE.txt) | 
 | [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) | James Newton-King | [MIT](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md) | 
 
-## dotstatsuite-core-auth-management ##
+## dotstatsuite-core-auth-management
 
 | NuGet package | Author | License |
 |---|---|---|
