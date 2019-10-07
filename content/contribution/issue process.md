@@ -5,7 +5,16 @@ comments: false
 weight: 32
 ---
 
+# Table of Content
+- [intro](#intro)
+- [production cycle](#production-cycle)
+- [common rules](#common-rules)
+- [product owner workflow](#product-owner-workflow)
+- [graphical design workflow](#graphical-design-workflow)
+- [technical (dev) workflow](#technical-dev-workflow)
+- [technical (fedev) workflow (wip)](#technical-fedev-workflow-wip)
 
+### intro
 Every opened issue (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/) how to report a new issue) will follow the agreed and below defined production cycle, in regards to quality criteria and relevance assessed by the Product Owner (PO) Team and the Technical (Dev) Team.<br>
 The full workflow goes from open to PO, Graphical Design and Dev Teams (back-end and front-end), including review, quality check, implementation, peer-review, quality assurance and release, then finally closed.<br>
 In some cases of course some steps are skipped, e.g. a bug will not go through Graphical Design steps.<br>
