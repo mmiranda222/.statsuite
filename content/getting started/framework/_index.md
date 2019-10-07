@@ -7,10 +7,10 @@ weight: 22
 
 # Table of Content
 - [introduction](#Introduction)
-- [technical stack](#Technical stack)
-- [.stat data explorer module](#.Stat Data Explorer module)
-- [.stat data lifecycle manager module](#.Stat Data Lifecycle Manager module)
-- [.stat core module](#.Stat Core module)
+- [technical stack](#Technical-stack)
+- [.stat data explorer module](#.Stat-Data-Explorer-module)
+- [.stat data lifecycle manager module](#.Stat-Data-Lifecycle-Manager-module)
+- [.stat core module](#.Stat-Core-module)
 
 # Introduction
 
