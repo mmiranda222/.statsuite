@@ -5,6 +5,31 @@ comments: false
 weight: 30
 ---
 
+# Table of Content
+- [intro](#intro)
+- [main theme](#main-theme)
+- [site title and logo](#site-title-and-logo)
+- [common site logos](#common-site-logos)
+- [homepage facets](#homepage-facets)
+- [search results page pinned facets](#search-results-page-pinned-facets)
+- [search results page excluded facets](#search-results-page-excluded-facets)
+- [search result page: number of results per page](#search-result-page-number-of-results-per-page)
+- [time period boundaries](#time-period-boundaries)
+- [default time period](#default-time-period)
+- [maximum number of observation values](#manimum-number-of-observation-values)
+- [preferred scale attribute](#preferred-scale-attribute)
+- [decimals rule attribute](#decimals-rule-attribute)
+- [coded attributes returned as flags](#coded-attributes-returned-as-flags)
+- [coded and uncoded attributes returned as footnotes](#coded-and-uncoded-attributes-returned-as-footnotes)
+- [table and chart footer logo](#table-and-chart-footer-logo)
+- [table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
+- [api documentation hyperlink](#api-documentation-hyperlink)
+- [contact us hyperlink](#contact-us-hyperlink)
+- [localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
+- [localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
+
+
+### intro
 This page is a guide on how to setup, configure, customise and interact with most of the .Stat Data Explorer client-side configurations, look and feel and (sdmx) business rules.<br>
 
 These configurations are tasks to be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.<br>
