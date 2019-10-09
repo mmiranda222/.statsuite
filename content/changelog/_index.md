@@ -7,7 +7,7 @@ weight: 40
 ---
 
 ### October 08, 2019
-**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite (aka front-end services) and is compatible with the NSI WS from v7.xx to v7.8. <br>
+**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from v7.xx to v7.8. <br>
 
 Major changes:
 
