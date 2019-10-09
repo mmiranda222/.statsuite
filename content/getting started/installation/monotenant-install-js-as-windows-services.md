@@ -28,6 +28,7 @@ weight: 30
   - run `git --version` v2.23.0 and above
 
 #### nodejs & npm
+- close git bash
 - https://nodejs.org/en/download/current
 - check chocolatey during installation
 - check:
@@ -36,6 +37,7 @@ weight: 30
   - run `npm --version` v6.11.x and above
 
 #### java v8 (for solr)
+- close git bash
 - https://www.java.com/fr/download/windows-64bit.jsp
 - check:
   - open git bash
@@ -58,12 +60,14 @@ weight: 30
 - download solr 7.x: https://lucene.apache.org/solr/downloads.html
 - unzip it in dotstasuitejs/solr
   - result: dotstasuitejs/solr/solr-7.7.2
+- open git bash
 - go to dotstasuitejs/nssm/nssm-2.24/win64
 - run `./nssm.exe install solr772`
 - in the nssm window:
   - set path as dotstasuitejs/solr/solr-7.7.2/bin/solr
   - set as arguments `start -f -p 8983`
   - click on install service
+- close git bash
 - start the service from services
 - go in chrome to http://localhost:8983
 
@@ -82,6 +86,7 @@ weight: 30
 - during the installation:
   - add the redis installation folder to the path
 - (the service Redis should be running)
+- close git bash
 - check:
   - open git bash
   - run `redis-cli ping`
@@ -98,16 +103,19 @@ weight: 30
   - ? PM2_HOME value: c:\dotstatsuitejs\pm2
   - ? Set PM2_SERVICE_SCRIPTS (the list of start-up scripts for pm2)? No
   - ? Set PM2_SERVICE_PM2_DIR? Yes
-  - ? Set PM2_SERVICE_PM2_DIR C:\Users\Nico\AppData\Roaming\npm\node_modules\pm2\index.js
+  - ? Set PM2_SERVICE_PM2_DIR C:\Users\Nico\AppData\Roaming\npm\node_modules\pm2\index.js (push enter)
+- close git bash
+
 
 # artefacts
 > hint: you need a token in order to script the artefacts download
-
+- download artefact and pm2 scripts https://gitlab.com/sis-cc/dotstatsuite-documentation/tree/master/dotstatsuitejs
+- move the both files into dotstatsuitejs
 - in dotstatsuitejs folder
 - open git bash
-- run `./dotstatsuitejs-artefacts.sh` *download and unzip artefacts from gitlab (develop branch)*
+- run `./dotstatsuitejs_artefacts.sh YOUR_TOKEN` *download and unzip artefacts from gitlab (develop branch)* / *[How create a Token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)*
 - **get assets and configs from http://206.189.58.70 and put it in dotstatsuitejs/config**
-- run `./dotstatsuitejs-pm2.sh` *start services, save pm2 dump and delete all services*
+- run `./dotstatsuitejs_pm2.sh` *start services, save pm2 dump and delete all services*
 - in windows services, start dotstatsuitejs
 - checks:
   - config: http://localhost:5007/healthcheck
