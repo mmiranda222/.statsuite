@@ -112,8 +112,8 @@ weight: 30
 - download artefact and pm2 scripts https://gitlab.com/sis-cc/dotstatsuite-documentation/tree/master/dotstatsuitejs
 - move the both files into dotstatsuitejs
 - in dotstatsuitejs folder
-- open git bash
-- run `./dotstatsuitejs_artefacts.sh YOUR_TOKEN` *download and unzip artefacts from gitlab (develop branch)* / *[How create a Token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)*
+- open git bash  
+- run `./dotstatsuitejs_artefacts.sh YOUR_TOKEN` *download and unzip artefacts from gitlab (develop branch)* / *[How create a Token]  (https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)*  
 - **get assets and configs from http://206.189.58.70 and put it in dotstatsuitejs/config**
 - run `./dotstatsuitejs_pm2.sh` *start services, save pm2 dump and delete all services*
 - in windows services, start dotstatsuitejs
