@@ -6,7 +6,7 @@ weight: 40
 
 ---
 
-### October 08, 2019
+### October 08, 2019 [Release .stat suite JS v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/2)
 **NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from v7.xx to v7.8. <br>
 
 Major changes:
