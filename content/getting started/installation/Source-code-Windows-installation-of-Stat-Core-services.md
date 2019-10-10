@@ -5,7 +5,6 @@ comments: false
 weight: 28
 ---
 
-# Source code Windows installation example of .Stat Core services 
 The following example, contains the list of steps required to deploy a **[specific topology](# Topology)** of the dotstatsuit-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
 
 ## Disclaimer
@@ -17,28 +16,28 @@ The following example, contains the list of steps required to deploy a **[specif
 
 ## Pre-requisites
 Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.
-* **SQL server 2017** or higher
-  * SQL authentication enabled
-  * Named pipe enable
-  * SQL browser service running
-  * SQL Server Agent running
-  * User and password with **sysadmin** role
-* **Microsoft .NET**
-  * Microsoft .NET Core Runtime - 2.2.\*
-  * Microsoft .NET Core 2.2.\* 
-  * Microsoft .NET Core SDK 2.2.\* 
-  * Microsoft .NET Framework 4.5.\*
-* **IIS Web server**
-  * IIS server 7.5 or later
-  * ASP.Net application roles/features enabled
-  * Microsoft Visual C++ 2015 Redistributable
-* **Git for windows** [download](https://git-scm.com/download/win).
-* **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**
+- **SQL server 2017** or higher
+  - SQL authentication enabled
+  - Named pipe enable
+  - SQL browser service running
+  - SQL Server Agent running
+  - User and password with **sysadmin** role
+- **Microsoft .NET**
+  - Microsoft .NET Core Runtime - 2.2.\*
+  - Microsoft .NET Core 2.2.\* 
+  - Microsoft .NET Core SDK 2.2.\* 
+  - Microsoft .NET Framework 4.5.\*
+- **IIS Web server**
+  - IIS server 7.5 or later
+  - ASP.Net application roles/features enabled
+  - Microsoft Visual C++ 2015 Redistributable
+- **Git for windows** [download](https://git-scm.com/download/win).
+- **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**
 
 > **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**
 ## Topology
 
-<img src="/content/images/.Stat%20Core%20topology%20two%20spaces.PNG" title=".Stat Core topology two spaces" height="600"/> 
+<img src="/images/.Stat%20Core%20topology%20two%20spaces.PNG" title=".Stat Core topology two spaces" height="600"/> 
 
 ## Installation overview
 1.   [Download the source code](#1-download-the-source-code)
@@ -115,7 +114,7 @@ dotnet publish /c/git/dotstatsuite-core-transfer
 
 ## 3.  Initialize the databases
 For this step you will need the Microsoft SQL sysadmin user and password.
-### Initialize the **DotStatSuiteCore_Common** database.  <img src="/content/images/.Stat%20Core%20topology%20common.PNG" title="Stat Core topology Common" width="150" height="100" align="right"/>                 
+### Initialize the **DotStatSuiteCore_Common** database.  <img src="/images/.Stat%20Core%20topology%20common.PNG" title="Stat Core topology Common" width="150" height="100" align="right"/>                 
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the DotStatSuiteCore_Common database.
 
@@ -123,7 +122,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ```sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Design DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%20designData.PNG" title="Stat Core topology designData" width="150" height="100" align="right"/>                 
+### Initialize one **Design DotStatSuiteCore_Data** database.  <img src="/images/.Stat%20Core%20topology%20designData.PNG" title="Stat Core topology designData" width="150" height="100" align="right"/>                 
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize Design DotStatSuiteCore_Data database.
 
@@ -131,7 +130,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ``` sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Disseminate DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%20disseminateData.PNG" title="Stat Core topology disseminateData" width="150" height="100" align="right"/>                 
+### Initialize one **Disseminate DotStatSuiteCore_Data** database.  <img src="/images/.Stat%20Core%20topology%20disseminateData.PNG" title="Stat Core topology disseminateData" width="150" height="100" align="right"/>                 
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the Disseminate DotStatSuiteCore_Data database.
 
@@ -177,7 +176,7 @@ powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_USER#
 powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_PASSWORD#', 'SA_PASSWORD' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
 ```
 
-### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db).  <img src="/content/images/.Stat%20Core%20topology%20designStruct.PNG" title="Stat Core topology designStruct" width="150" height="100" align="right"/>                 
+### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db).  <img src="/images/.Stat%20Core%20topology%20designStruct.PNG" title="Stat Core topology designStruct" width="150" height="100" align="right"/>                 
 
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
@@ -196,7 +195,7 @@ dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=De
 dotnet Estat.Sri.Mapping.Tool.dll init -m DesignStructDb -f 
 ```
 
-### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  <img src="/content/images/.Stat%20Core%20topology%20disseminateStruct.PNG" title="Stat Core topology disseminateStruct" width="150" height="100" align="right"/>                 
+### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  <img src="/images/.Stat%20Core%20topology%20disseminateStruct.PNG" title="Stat Core topology disseminateStruct" width="150" height="100" align="right"/>                 
 
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
@@ -215,7 +214,7 @@ dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=Di
 dotnet Estat.Sri.Mapping.Tool.dll init -m DisseminateStructDb -f 
 ```
 
-## 4.  Deploy the Transfer service  <img src="/content/images/.Stat%20Core%20topology%20transfer.PNG" title="Stat Core topology transfer" width="150" height="100" align="right"/>
+## 4.  Deploy the Transfer service  <img src="/images/.Stat%20Core%20topology%20transfer.PNG" title="Stat Core topology transfer" width="150" height="100" align="right"/>
 
 **Step 1.** Create a new folder to create the web service 
 
@@ -337,7 +336,7 @@ Open a web browser and open the url localhost:83/health
 ```
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\transfer-service\logs\
 
-## 5.  Deploy the Design NSI web service in port 81  <img src="/content/images/.Stat%20Core%20topology%20nsiwsDesign.PNG" title="Stat Core topology nsiwsDesign" width="150" height="100" align="right"/>
+## 5.  Deploy the Design NSI web service in port 81  <img src="/images/.Stat%20Core%20topology%20nsiwsDesign.PNG" title="Stat Core topology nsiwsDesign" width="150" height="100" align="right"/>
 
 **Step 1.** Create a new folder to create the web service 
 
@@ -430,7 +429,7 @@ Open a web browser and open the url localhost:81
 
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\nsiws-design\logs\
 
-## 6.  Deploy the Disseminate NSI web service in port 80  <img src="/content/images/.Stat%20Core%20topology%20nsiwsDisseminate.PNG" title="Stat Core topology nsiwsDisseminate" width="150" height="100" align="right"/>
+## 6.  Deploy the Disseminate NSI web service in port 80  <img src="/images/.Stat%20Core%20topology%20nsiwsDisseminate.PNG" title="Stat Core topology nsiwsDisseminate" width="150" height="100" align="right"/>
 
 **Step 1.** Create a new folder to create the web service 
 
