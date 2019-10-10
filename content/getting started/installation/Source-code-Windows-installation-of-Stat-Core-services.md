@@ -94,23 +94,23 @@ git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 
 ## 2.  Compile the source code
 
-  1.  Compile the dotstatsuite-core-dbup tool
+  1 .  Compile the dotstatsuite-core-dbup tool
 ```sh
 dotnet publish /c/git/dotstatsuite-core-dbup
 ```
-  2.  Compile the maapi.net tool
+  2 .  Compile the maapi.net tool
 ```sh
 dotnet publish /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/Estat.Sri.Mapping.Tool.csproj
 ```
-  3.  Compile the NSI web service
+  3 .  Compile the NSI web service
 ```sh
 dotnet publish /c/git/nsiws.net/NSIWebServices.sln
 ```
-  4.  Compile the dotstatsuite-core-sdmxri-nsi-plugin
+  4 .  Compile the dotstatsuite-core-sdmxri-nsi-plugin
 ```sh
 dotnet publish /c/git/dotstatsuite-core-sdmxri-nsi-plugin
 ```
-  5.  Compile the dotstatsuite-core-transfer
+  5 .  Compile the dotstatsuite-core-transfer
 ```sh
 dotnet publish /c/git/dotstatsuite-core-transfer
 ```
