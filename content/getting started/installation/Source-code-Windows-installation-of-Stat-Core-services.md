@@ -15,24 +15,24 @@ The following example, contains the list of steps required to deploy a **specifi
 >  **This information is publicly available, making your deployment vulnerable.**
 
 ## Pre-requisites
-Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.
-- **SQL server 2017** or higher
-  - SQL authentication enabled
-  - Named pipe enable
-  - SQL browser service running
-  - SQL Server Agent running
-  - User and password with **sysadmin** role
-- **Microsoft .NET**
-  - Microsoft .NET Core Runtime - 2.2.\*
-  - Microsoft .NET Core 2.2.\* 
-  - Microsoft .NET Core SDK 2.2.\* 
-  - Microsoft .NET Framework 4.5.\*
-- **IIS Web server**
-  - IIS server 7.5 or later
-  - ASP.Net application roles/features enabled
-  - Microsoft Visual C++ 2015 Redistributable
-- **Git for windows** [download](https://git-scm.com/download/win).
-- **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**
+Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.  
+- **SQL server 2017** or higher  
+  - SQL authentication enabled  
+  - Named pipe enable  
+  - SQL browser service running  
+  - SQL Server Agent running  
+  - User and password with **sysadmin** role  
+- **Microsoft .NET**  
+  - Microsoft .NET Core Runtime - 2.2.\*  
+  - Microsoft .NET Core 2.2.\*   
+  - Microsoft .NET Core SDK 2.2.\*   
+  - Microsoft .NET Framework 4.5.\*  
+- **IIS Web server**  
+  - IIS server 7.5 or later  
+  - ASP.Net application roles/features enabled  
+  - Microsoft Visual C++ 2015 Redistributable  
+- **Git for windows** [download](https://git-scm.com/download/win).  
+- **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
 
 > **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
 
@@ -131,7 +131,7 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publis
 ```
 ### Initialize one **Design DotStatSuiteCore_Data** database  
 
-![.Stat Core topology designData](/images/.Stat-Core-topology-designData.PNG)  
+![.Stat Core topology designData](/images/stat-core-topology-designData.PNG)  
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize Design DotStatSuiteCore_Data database.
 
