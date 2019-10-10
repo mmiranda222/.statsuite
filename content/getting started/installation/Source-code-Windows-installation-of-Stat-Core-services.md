@@ -55,20 +55,20 @@ Make sure that the windows machine which will be used in this installation proce
 6.   [Deploy the Disseminate NSI web service](#6-deploy-the-disseminate-nsi-web-service-in-port-80)
 
 ## 1.  Download the source code
-  1.  Open Git Bash with **admin rights** from the windows start menu
-  2.  Create a new folder *C:/git* to store the source code
+  1 .  Open Git Bash with **admin rights** from the windows start menu
+  2 .  Create a new folder *C:/git* to store the source code
 ```sh 
 mkdir /c/git
 ```
-  3.  Move to the new folder
+  3 .  Move to the new folder
 ```sh 
 cd /c/git
 ```
-  4.  Clone the dotstatsuite-core-dbup repository.- *This tool will be used to create and initialize the common and data databases.*
+  4 .  Clone the dotstatsuite-core-dbup repository.- *This tool will be used to create and initialize the common and data databases.*
 ```sh 
 git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
-  5.  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
+  5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
 
 This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
 ```sh 
