@@ -35,7 +35,7 @@ These pages will help developers and implementers to understand and install the 
     
     This approach requires solid technical knowledge of the underlying ecosystems (.Net, MS SQL Server, JS, OS) but offers most flexibility for topologies and configuration.
 
-  * [Source code Windows installation example of .Stat Core services](/getting-started/installation/Source-code-Windows-installation-of-Stat-Core-services)  
+  * [Source code Windows installation example of .Stat Core services](/getting-started/installation/source-code-windows-installation-of-stat-core-services/)  
 
     This page provides the list of steps required to deploy a specific topology of the dotstatsuit-core components.
     
