@@ -123,7 +123,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ```sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Design DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%designData.PNG" title="Stat Core topology designData" width="150" height="100" align="right"/>                 
+### Initialize one **Design DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%20designData.PNG" title="Stat Core topology designData" width="150" height="100" align="right"/>                 
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize Design DotStatSuiteCore_Data database.
 
@@ -131,7 +131,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ``` sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Disseminate DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%disseminateData.PNG" title="Stat Core topology disseminateData" width="150" height="100" align="right"/>                 
+### Initialize one **Disseminate DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%20disseminateData.PNG" title="Stat Core topology disseminateData" width="150" height="100" align="right"/>                 
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the Disseminate DotStatSuiteCore_Data database.
 
@@ -177,7 +177,7 @@ powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_USER#
 powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_PASSWORD#', 'SA_PASSWORD' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
 ```
 
-### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db).  <img src="/content/images/.Stat%20Core%20topology%designStruct.PNG" title="Stat Core topology designStruct" width="150" height="100" align="right"/>                 
+### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db).  <img src="/content/images/.Stat%20Core%20topology%20designStruct.PNG" title="Stat Core topology designStruct" width="150" height="100" align="right"/>                 
 
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
@@ -196,7 +196,7 @@ dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=De
 dotnet Estat.Sri.Mapping.Tool.dll init -m DesignStructDb -f 
 ```
 
-### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  <img src="/content/images/.Stat%20Core%20topology%disseminateStruct.PNG" title="Stat Core topology disseminateStruct" width="150" height="100" align="right"/>                 
+### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  <img src="/content/images/.Stat%20Core%20topology%20disseminateStruct.PNG" title="Stat Core topology disseminateStruct" width="150" height="100" align="right"/>                 
 
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
@@ -215,7 +215,8 @@ dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=Di
 dotnet Estat.Sri.Mapping.Tool.dll init -m DisseminateStructDb -f 
 ```
 
-## 4.  Deploy the Transfer service ![.Stat Core topology transfer](/images/.Stat Core topology transfer.PNG)
+## 4.  Deploy the Transfer service  <img src="/content/images/.Stat%20Core%20topology%20transfer.PNG" title="Stat Core topology transfer" width="150" height="100" align="right"/>
+
 **Step 1.** Create a new folder to create the web service 
 
 ```sh
@@ -336,7 +337,8 @@ Open a web browser and open the url localhost:83/health
 ```
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\transfer-service\logs\
 
-## 5.  Deploy the Design NSI web service in port 81 ![.Stat Core topology nsiwsDesign](/images/.Stat Core topology nsiwsDesign.PNG)
+## 5.  Deploy the Design NSI web service in port 81  <img src="/content/images/.Stat%20Core%20topology%20nsiwsDesign.PNG" title="Stat Core topology nsiwsDesign" width="150" height="100" align="right"/>
+
 **Step 1.** Create a new folder to create the web service 
 
 ```sh
@@ -428,7 +430,8 @@ Open a web browser and open the url localhost:81
 
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\nsiws-design\logs\
 
-## 6.  Deploy the Disseminate NSI web service in port 80 ![.Stat Core topology nsiwsDisseminate](/images/.Stat Core topology nsiwsDisseminate.PNG)
+## 6.  Deploy the Disseminate NSI web service in port 80  <img src="/content/images/.Stat%20Core%20topology%20nsiwsDisseminate.PNG" title="Stat Core topology nsiwsDisseminate" width="150" height="100" align="right"/>
+
 **Step 1.** Create a new folder to create the web service 
 
 ```sh
