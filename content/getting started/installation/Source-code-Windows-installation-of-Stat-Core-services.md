@@ -5,7 +5,7 @@ comments: false
 weight: 28
 ---
 
-The following example, contains the list of steps required to deploy a **[specific topology](# Topology)** of the dotstatsuit-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
+The following example, contains the list of steps required to deploy a **specific topology** of the dotstatsuite-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
 
 ## Disclaimer
 
@@ -34,10 +34,11 @@ Make sure that the windows machine which will be used in this installation proce
 - **Git for windows** [download](https://git-scm.com/download/win).
 - **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**
 
-> **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**
+> **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
+
 ## Topology
 
-<img src="/images/.Stat%20Core%20topology%20two%20spaces.PNG" title=".Stat Core topology two spaces" height="600"/> 
+![.Stat Core topology two spaces](/images/.Stat-Core-topology-two-spaces.PNG)
 
 ## Installation overview
 1.   [Download the source code](#1-download-the-source-code)
@@ -46,7 +47,7 @@ Make sure that the windows machine which will be used in this installation proce
      * [DotStatSuiteCore_Common database](#initialize-the-dotstatsuitecore_common-database)
      * [Design DotStatSuiteCore_Data database](#initialize-one-design-dotstatsuitecore_data-database)
      * [Disseminate DotStatSuiteCore_Data database](#initialize-one-disseminate-dotstatsuitecore_data-database)
-     * [Configure the maapi.net tool](#configure-the-maapinet-tool)
+     * [Configure the maapi.net tool](#configure-the-maapi-net-tool)
      * [Design DotStatSuiteCore_Struct database (mappingstore db)](#initialize-one-design-dotstatsuitecore_struct-database-mappingstore-db)
      * [Disseminate DotStatSuiteCore_Struct database (mappingstore db)](#initialize-one-disseminate-dotstatsuitecore_struct-database-mappingstore-db)
 4.   [Deploy the Transfer service](#4-deploy-the-transfer-service)
@@ -75,22 +76,24 @@ git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YO
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/msdb.sql.git maapi.net/src/Estat.Sri.Mapping.MappingStore/resources
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 ```
-  6.  Clone the NSI web service repository
+  6 .  Clone the NSI web service repository
 
 This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
 ```sh
 git clone -b master --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
 ```
-  7.  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
+  7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
 
 ```sh
 git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
 ```
-  8.  Clone the dotstatsuite-core-transfer repository
+  8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
 git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
+
 ## 2.  Compile the source code
+
   1.  Compile the dotstatsuite-core-dbup tool
 ```sh
 dotnet publish /c/git/dotstatsuite-core-dbup
@@ -113,8 +116,12 @@ dotnet publish /c/git/dotstatsuite-core-transfer
 ```
 
 ## 3.  Initialize the databases
-For this step you will need the Microsoft SQL sysadmin user and password.
-### Initialize the **DotStatSuiteCore_Common** database.  <img src="/images/.Stat%20Core%20topology%20common.PNG" title="Stat Core topology Common" width="150" height="100" align="right"/>                 
+
+For this step you will need the Microsoft SQL sysadmin user and password.  
+
+### Initialize the **DotStatSuiteCore_Common** database.  
+
+![.Stat Core topology Common](/images/.Stat-Core-topology-common.PNG)  
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the DotStatSuiteCore_Common database.
 
@@ -122,7 +129,9 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ```sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Design DotStatSuiteCore_Data** database.  <img src="/images/.Stat%20Core%20topology%20designData.PNG" title="Stat Core topology designData" width="150" height="100" align="right"/>                 
+### Initialize one **Design DotStatSuiteCore_Data** database.  
+
+![.Stat Core topology designData](/images/.Stat-Core-topology-designData.PNG)  
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize Design DotStatSuiteCore_Data database.
 
@@ -130,7 +139,9 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ``` sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Disseminate DotStatSuiteCore_Data** database.  <img src="/images/.Stat%20Core%20topology%20disseminateData.PNG" title="Stat Core topology disseminateData" width="150" height="100" align="right"/>                 
+### Initialize one **Disseminate DotStatSuiteCore_Data** database.  
+
+![.Stat Core topology disseminateData](/images/.Stat-Core-topology-disseminateData.PNG)  
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the Disseminate DotStatSuiteCore_Data database.
 
@@ -140,10 +151,12 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publis
 ```
 
 ### Configure the maapi.net tool. 
+
 The maapi.net tool is used to initialize DotStatSuiteCore_Struct (mappingStore) databases. In this example we will use it to initialize two DotStatSuiteCore_Struct databases (design and disseminate).
 
-The  tool requires a pre-configured list of connection strings of each of the databases that will be created and/or updated. This information should be added to the Estat.Sri.Mapping.Tool.dll.config file, under the section "\<connectionStrings\>". 
+The  tool requires a pre-configured list of connection strings of each of the databases that will be created and/or updated. This information should be added to the Estat.Sri.Mapping.Tool.dll.config file, under the section "\<connectionStrings\>".  
 >  **[See more about the maapi.net tool](DotStatSuiteCore_Struct )**
+
 ```xml
 ...
   <!--app.config -->
@@ -176,7 +189,9 @@ powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_USER#
 powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_PASSWORD#', 'SA_PASSWORD' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
 ```
 
-### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db).  <img src="/images/.Stat%20Core%20topology%20designStruct.PNG" title="Stat Core topology designStruct" width="150" height="100" align="right"/>                 
+### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db)  
+
+![.Stat Core topology designStruct](/images/.Stat-Core-topology-designStruct.PNG)
 
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
@@ -195,8 +210,10 @@ dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=De
 dotnet Estat.Sri.Mapping.Tool.dll init -m DesignStructDb -f 
 ```
 
-### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  <img src="/images/.Stat%20Core%20topology%20disseminateStruct.PNG" title="Stat Core topology disseminateStruct" width="150" height="100" align="right"/>                 
+### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  
 
+![.Stat Core topology disseminateStruct](/images/.Stat-Core-topology-disseminateStruct.PNG)
+   
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
 **Step 1.** Create the empty database using the dotstatsuite-core-dbup tool.
@@ -214,7 +231,9 @@ dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=Di
 dotnet Estat.Sri.Mapping.Tool.dll init -m DisseminateStructDb -f 
 ```
 
-## 4.  Deploy the Transfer service  <img src="/images/.Stat%20Core%20topology%20transfer.PNG" title="Stat Core topology transfer" width="150" height="100" align="right"/>
+## 4.  Deploy the Transfer service  
+
+![.Stat Core topology transfer](/images/.Stat-Core-topology-transfer.PNG)
 
 **Step 1.** Create a new folder to create the web service 
 
@@ -229,25 +248,28 @@ icacls "C:\dotstatsuite-website\transfer-service" /grant:r "IUSR":"(OI)(CI)F"
 icacls "C:\dotstatsuite-website\transfer-service" /grant:r "IIS_IUSRS":"(OI)(CI)F"
 ```
 **Step 3.** Copy the compiled binaries to the new folder 
+
 ```sh
 cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netcoreapp2.2/publish/.* /c/dotstatsuite-website/transfer-service/
 ```
 
-**Step 5.** Create a new IIS application called **transfer-service** in port 83, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
+**Step 4.** Create a new IIS application called **transfer-service** in port 83, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
 >  Make sure git bash is running in admin mode.
 ```sh
 /c/Windows/System32/inetsrv/appcmd add site /name:transfer-service /physicalPath:C:\\dotstatsuite-website\\transfer-service /bindings:http/*:83:
 ```
 
-**Step 6.** Create a new IIS application pool (TransferServiceAppPool) 
+**Step 5.** Create a new IIS application pool (TransferServiceAppPool) 
 ```sh
 /c/Windows/System32/inetsrv/appcmd add apppool /name:TransferServiceAppPool /managedRuntimeVersion:"No Managed Code" /managedPipelineMode:Integrated
 ```
-*  Add the transfer-service application to the newly created application pool
+*  Add the transfer-service application to the newly created application pool  
+
 ```sh
 /c/Windows/System32/inetsrv/appcmd set app "transfer-service/" /applicationPool:TransferServiceAppPool
 ```
-**Step 7.** Configure the transfer service
+
+**Step 6.** Configure the transfer service
 
 There are two options to configure the transfer service: 
 1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.
@@ -283,17 +305,17 @@ For this example we will use the second option:
 ```
 >  Note: You will notice the extra character "\\" in  the value for Password (testLogin(`\`!)Password). This is because for the appcmd tool,  "**!**" is a special character that needs to be escaped using "**\\**". 
 
-**Step 8.** Start the new application
+**Step 7.** Start the new application
 ```sh
 /c/Windows/System32/inetsrv/appcmd start site /site.name:transfer-service
 ```
 
-**Step 9.** Test that the application is up and running
+**Step 8.** Test that the application is up and running  
 *  **Using curl**
 ```sh
 curl localhost:83/health
 ```
-*  **Using a web browser**
+*  **Using a web browser**  
 Open a web browser and open the url localhost:83/health
 
 **You should see the following result:**
@@ -336,7 +358,9 @@ Open a web browser and open the url localhost:83/health
 ```
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\transfer-service\logs\
 
-## 5.  Deploy the Design NSI web service in port 81  <img src="/images/.Stat%20Core%20topology%20nsiwsDesign.PNG" title="Stat Core topology nsiwsDesign" width="150" height="100" align="right"/>
+## 5.  Deploy the Design NSI web service in port 81  
+
+![.Stat Core topology nsiwsDesign](/images/.Stat-Core-topology-nsiwsDesign.PNG)
 
 **Step 1.** Create a new folder to create the web service 
 
@@ -390,21 +414,21 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 ```sh
 /c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDesignAppPool /managedRuntimeVersion:"No Managed Code" /managedPipelineMode:Integrated
 ```
-*  Add the nsiws-design application to the newly created application pool
+*  Add the nsiws-design application to the newly created application pool  
 ```sh
 /c/Windows/System32/inetsrv/appcmd set app "nsiws-design/" /applicationPool:NSIWSDesignAppPool
 ```
 
 **Step 9.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
 
-There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin: 
-1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.
+There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
+1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.  
 2.  Saving the configuration setting as environment variables for the IIS AppPool (NSIWSDesignAppPool). `Recommended`
 
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).
+>  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).  
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
-For this example we will use the second option: 
+For this example we will use the second option:  
 *  Set the design dataspace values:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
@@ -421,15 +445,17 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd start site /site.name:nsiws-design
 ```
 
-**Step 11.** Test that the application is up and running
-*  **Using a web browser**
+**Step 11.** Test that the application is up and running  
+*  **Using a web browser**  
 Open a web browser and open the url localhost:81
 
 **You should see a page with a banner of the European commission**
 
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\nsiws-design\logs\
 
-## 6.  Deploy the Disseminate NSI web service in port 80  <img src="/images/.Stat%20Core%20topology%20nsiwsDisseminate.PNG" title="Stat Core topology nsiwsDisseminate" width="150" height="100" align="right"/>
+## 6.  Deploy the Disseminate NSI web service in port 80  
+
+![.Stat Core topology nsiwsDisseminate](/images/.Stat-Core-topology-nsiwsDisseminate.PNG)
 
 **Step 1.** Create a new folder to create the web service 
 
@@ -460,8 +486,8 @@ mkdir -p /c/dotstatsuite-website/nsiws-disseminate/Plugins/
 cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp2.2/publish/.* /c/dotstatsuite-website/nsiws-disseminate/Plugins
 ```
 
-**Step 6.** Configure the nsi web service 
-From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:
+**Step 6.** Configure the nsi web service  
+From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:  
 *  *nsiws-disseminate-app.config* to the file */config/app.config* 
 
 >  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
@@ -470,7 +496,7 @@ From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the followin
 cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-disseminate-app.config /c/dotstatsuite-website/nsiws-disseminate/config/app.config
 ```
 
-**Step 7.** Create a new IIS application called **nsiws-disseminate** in port 80, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
+**Step 7.** Create a new IIS application called **nsiws-disseminate** in port 80, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)  
 >  Make sure git bash is running in admin mode.
 ```sh
 /c/Windows/System32/inetsrv/appcmd add site /name:nsiws-disseminate /physicalPath:C:\\dotstatsuite-website\\nsiws-disseminate /bindings:http/*:80:
@@ -479,7 +505,8 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 **Step 8.** Create a new IIS application pool (NSIWSDisseminateAppPool) 
 ```sh
 /c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDisseminateAppPool /managedRuntimeVersion:"No Managed Code" /managedPipelineMode:Integrated
-```
+```  
+
 *  Add the nsiws-disseminate application to the newly created application pool
 ```sh
 /c/Windows/System32/inetsrv/appcmd set app "nsiws-disseminate/" /applicationPool:NSIWSDisseminateAppPool
@@ -487,14 +514,14 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 **Step 9.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
 
-There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin: 
-1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.
+There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
+1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.  
 2.  Saving the configuration setting as environment variables for the IIS AppPool (NSIWSDisseminateAppPool). `Recommended`
 
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).
+>  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).  
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
-For this example we will use the second option: 
+For this example we will use the second option:  
 *  Set the disseminate dataspace values:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__Id',value='disseminate']" /commit:apphost
@@ -513,7 +540,7 @@ For this example we will use the second option:
 
 **Step 11.** Test that the application is up and running
 
-*  **Using a web browser**
+*  **Using a web browser**  
 Open a web browser and open the url localhost:80/health
 
 **You should see a page with a banner of the European commission**
