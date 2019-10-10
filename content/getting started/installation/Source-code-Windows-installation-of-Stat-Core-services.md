@@ -38,7 +38,7 @@ Make sure that the windows machine which will be used in this installation proce
 > **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**
 ## Topology
 
-![.Stat Core topology two spaces](/images/.Stat Core topology two spaces.PNG)
+<img src="/content/images/.Stat%20Core%20topology%20two%20spaces.PNG" title=".Stat Core topology two spaces" height="600"/> 
 
 ## Installation overview
 1.   [Download the source code](#1-download-the-source-code)
@@ -115,14 +115,15 @@ dotnet publish /c/git/dotstatsuite-core-transfer
 
 ## 3.  Initialize the databases
 For this step you will need the Microsoft SQL sysadmin user and password.
-### Initialize the **DotStatSuiteCore_Common** database. ![.Stat Core topology common](/images/.Stat Core topology common.PNG)
+### Initialize the **DotStatSuiteCore_Common** database.  <img src="/content/images/.Stat%20Core%20topology%20common.PNG" title="Stat Core topology Common" width="150" height="100" align="right"/>                 
+
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the DotStatSuiteCore_Common database.
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Design DotStatSuiteCore_Data** database ![.Stat Core topology designData](/images/.Stat Core topology designData.PNG)
+### Initialize one **Design DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%designData.PNG" title="Stat Core topology designData" width="150" height="100" align="right"/>                 
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize Design DotStatSuiteCore_Data database.
 
@@ -130,7 +131,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ``` sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(!)Password" --force
 ```
-### Initialize one **Disseminate DotStatSuiteCore_Data** database ![.Stat Core topology disseminateData](/images/.Stat Core topology disseminateData.PNG)
+### Initialize one **Disseminate DotStatSuiteCore_Data** database.  <img src="/content/images/.Stat%20Core%20topology%disseminateData.PNG" title="Stat Core topology disseminateData" width="150" height="100" align="right"/>                 
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the Disseminate DotStatSuiteCore_Data database.
 
@@ -176,7 +177,8 @@ powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_USER#
 powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_PASSWORD#', 'SA_PASSWORD' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
 ```
 
-### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db) ![.Stat Core topology designStruct](/images/.Stat Core topology designStruct.PNG)
+### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db).  <img src="/content/images/.Stat%20Core%20topology%designStruct.PNG" title="Stat Core topology designStruct" width="150" height="100" align="right"/>                 
+
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
 **Step 1.** Create the empty database using the dotstatsuite-core-dbup tool.
@@ -194,7 +196,8 @@ dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=De
 dotnet Estat.Sri.Mapping.Tool.dll init -m DesignStructDb -f 
 ```
 
-### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db) ![.Stat Core topology disseminateStruct](/images/.Stat Core topology disseminateStruct.PNG)
+### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  <img src="/content/images/.Stat%20Core%20topology%disseminateStruct.PNG" title="Stat Core topology disseminateStruct" width="150" height="100" align="right"/>                 
+
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
 **Step 1.** Create the empty database using the dotstatsuite-core-dbup tool.
