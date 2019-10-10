@@ -35,6 +35,14 @@ These pages will help developers and implementers to understand and install the 
     
     This approach requires solid technical knowledge of the underlying ecosystems (.Net, MS SQL Server, JS, OS) but offers most flexibility for topologies and configuration.
 
+  * [Source code Windows installation example of .Stat Core services](/getting-started/installation/Source-code-Windows-installation-of-Stat-Core-services)  
+
+    This page provides the list of steps required to deploy a specific topology of the dotstatsuit-core components.
+    
+    This example provides predefined configuration values to ease the installation process. 
+	
+	The installation process is based on Git Bash commands as a way to standardize and reduce the installation steps.
+	
   * [Data Explorer customisation and configuration](/getting-started/installation/de-customisation-configuration)
 
     This page currently contains a guide on how to setup, configure, customise and interact with most of the .Stat Data Explorer client-side configurations, look and feel and (sdmx) business rules. More information on customising the .Stat Data Lifecycle Manager will be added in the future.
