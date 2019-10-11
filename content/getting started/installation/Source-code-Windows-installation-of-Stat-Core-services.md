@@ -180,13 +180,6 @@ Estat.Sri.Mapping.Tool.dll.config
 ```sh
 cp -r -f /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/maapi-app.config Estat.Sri.Mapping.Tool.dll.config 
 ```
-- Replace sysadmin credentials in the Estat.Sri.Mapping.Tool.dll.config file
-
-`Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
-```sh
-powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_USER#', 'SA_USER' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
-powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_PASSWORD#', 'SA_PASSWORD' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
-```
 
 ### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db)  
 
