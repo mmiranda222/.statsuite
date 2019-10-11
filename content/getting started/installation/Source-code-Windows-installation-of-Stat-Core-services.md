@@ -295,7 +295,6 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DataImportTimeOutInMinutes',value='60']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
->  Note: You will notice the extra character "\\" in  the value for Password (testLogin(`\`!)Password). This is because for the appcmd tool,  "**!**" is a special character that needs to be escaped using "**\\**". 
 
 **Step 7.** Start the new application
 ```sh
@@ -430,8 +429,6 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
 
->  Note: You will notice the extra character "\\" in  the value for Password (testLogin(`\`!)Password). This is because for the appcmd tool,  "**!**" is a special character that needs to be escaped using "**\\**". 
-
 **Step 10.** Start the new application
 ```sh
 /c/Windows/System32/inetsrv/appcmd start site /site.name:nsiws-design
@@ -522,8 +519,6 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
-
->  Note: You will notice the extra character "\\" in  the value for Password (testLogin(`\`!)Password). This is because for the appcmd tool,  "**!**" is a special character that needs to be escaped using "**\\**". 
 
 **Step 10.** Start the new application
 ```sh
