@@ -180,13 +180,6 @@ Estat.Sri.Mapping.Tool.dll.config
 ```sh
 cp -r -f /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/maapi-app.config Estat.Sri.Mapping.Tool.dll.config 
 ```
-- Replace sysadmin credentials in the Estat.Sri.Mapping.Tool.dll.config file
-
-`Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
-```sh
-powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_USER#', 'SA_USER' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
-powershell -Command "(gc Estat.Sri.Mapping.Tool.dll.config) -replace '#SQL_PASSWORD#', 'SA_PASSWORD' | Out-File -encoding UTF8 Estat.Sri.Mapping.Tool.dll.config"
-```
 
 ### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db)  
 
@@ -302,7 +295,6 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DataImportTimeOutInMinutes',value='60']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
->  Note: You will notice the extra character "\\" in  the value for Password (testLogin(`\`!)Password). This is because for the appcmd tool,  "**!**" is a special character that needs to be escaped using "**\\**". 
 
 **Step 7.** Start the new application
 ```sh
@@ -437,8 +429,6 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
 
->  Note: You will notice the extra character "\\" in  the value for Password (testLogin(`\`!)Password). This is because for the appcmd tool,  "**!**" is a special character that needs to be escaped using "**\\**". 
-
 **Step 10.** Start the new application
 ```sh
 /c/Windows/System32/inetsrv/appcmd start site /site.name:nsiws-design
@@ -529,8 +519,6 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
-
->  Note: You will notice the extra character "\\" in  the value for Password (testLogin(`\`!)Password). This is because for the appcmd tool,  "**!**" is a special character that needs to be escaped using "**\\**". 
 
 **Step 10.** Start the new application
 ```sh
