@@ -6,6 +6,29 @@ weight: 40
 
 ---
 
+### October 11, 2019 Release .Stat Suite CORE services (GitLab milestone [Release BE 1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/3))
+
+Major changes:
+
+- [dotstatsuite-core-common#10](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/10) Implementation of the **Point In Time** release (see the PIT methods [documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#new-methods))
+- [dotstatsuite-core-data-access#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/13) Point In Time: configuration option to remove the ability to access PIT data on a per-service basis
+- [dotstatsuite-core-common#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/6) Porting of code from .NET Framework to **.NET Core**
+- [dotstatsuite-core-transfer#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/2) Database structure performance improvement
+
+Minor changes:
+
+- [dotstatsuite-kube-core-rp#1](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/issues/1) **DevOps** *(confidential)* Manage ports, logins and passwords
+- [dotstatsuite-core-common#36](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/36) Health check call in Transfer Service 
+- [dotstatsuite-core-transfer#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/25) **DevOps** Create docker-compose files for all services (files of two topologies + variables are available [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/blob/master/docker-compose%20Examples/README.md#file-overview))
+
+Bug fixes:
+
+- [dotstatsuite-core-sdmxri-nsi-plugin#16](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/16) DotStatRetrieverFactory Constructor does not work with newer NSI Services
+- [dotstatsuite-core-transfer#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/12) & [dotstatsuite-core-data-access#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/5) *(confidential)* Security fixes
+- [dotstatsuite-core-data-access#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/25) Moderate Data-Retrieval load causes "Error writing response" problems
+
+---
+
 ### October 08, 2019 [Release .stat suite JS v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/2)
 **NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **v7.xx to v7.8**. <br>
 
