@@ -200,7 +200,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ``` sh
-dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDesignStruct --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDesignStruct --loginPwd "testLogin(\!)Password" --force
 ```
 
 **Step 2.**   Initialize the database using the maapi.net tool
@@ -221,7 +221,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
-dotnet DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDisseminateStruct --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDisseminateStruct --loginPwd "testLogin(\!)Password" --force
 ```
 
 **Step 2.**   Initialize the database using the maapi.net tool
