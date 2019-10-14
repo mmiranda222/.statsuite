@@ -23,15 +23,21 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
 - **Microsoft .NET**  
-    - Microsoft .NET Core Runtime - 2.2.\*  [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-    - Microsoft .NET Core 2.2.\* - Windows Server Hosting  [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
-    - Microsoft .NET Core SDK 2.2.\*   [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-    - Microsoft .NET Framework 4.5.\*  [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
+    - Microsoft .NET Core Runtime - 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+
+    - Microsoft .NET Core 2.2.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
+
+    - Microsoft .NET Core SDK 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+
+    - Microsoft .NET Framework 4.5.\* [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
+
 - **IIS Web server**  
     - IIS server 7.5 or later  
     - ASP.Net application roles/features enabled  
     - Microsoft Visual C++ 2015 Redistributable [download](https://www.microsoft.com/en-US/download/details.aspx?id=52685) 
+
 - **Git for windows** [download](https://git-scm.com/download/win).  
+
 - **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
 
 > **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
@@ -276,8 +282,13 @@ For this example we will use the second option:
 *  Set the common database connection string:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
-
 ```
+
+*  Disable authentication:
+```sh
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__enabled',value='false']" /commit:apphost
+```
+
 *  Set the design dataspace values:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
