@@ -23,14 +23,14 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
 - **Microsoft .NET**  
-    - Microsoft .NET Core Runtime - 2.2.\*  
-    - Microsoft .NET Core 2.2.\*   
-    - Microsoft .NET Core SDK 2.2.\*   
-    - Microsoft .NET Framework 4.5.\*  
+    - Microsoft .NET Core Runtime - 2.2.\*  [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+    - Microsoft .NET Core 2.2.\* - Windows Server Hosting  [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
+    - Microsoft .NET Core SDK 2.2.\*   [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+    - Microsoft .NET Framework 4.5.\*  [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
 - **IIS Web server**  
     - IIS server 7.5 or later  
     - ASP.Net application roles/features enabled  
-    - Microsoft Visual C++ 2015 Redistributable  
+    - Microsoft Visual C++ 2015 Redistributable [download](https://www.microsoft.com/en-US/download/details.aspx?id=52685) 
 - **Git for windows** [download](https://git-scm.com/download/win).  
 - **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
 
@@ -253,7 +253,7 @@ cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netco
 
 **Step 5.** Create a new IIS application pool (TransferServiceAppPool) 
 ```sh
-/c/Windows/System32/inetsrv/appcmd add apppool /name:TransferServiceAppPool /managedRuntimeVersion:"No Managed Code" /managedPipelineMode:Integrated
+/c/Windows/System32/inetsrv/appcmd add apppool /name:TransferServiceAppPool /managedRuntimeVersion:"" /managedPipelineMode:Integrated
 ```
 *  Add the transfer-service application to the newly created application pool  
 
@@ -275,25 +275,25 @@ For this example we will use the second option:
 
 *  Set the common database connection string:
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
 
 ```
 *  Set the design dataspace values:
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignStructDb;User ID=testLoginDesignStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignStructDb;User ID=testLoginDesignStruct;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignDataDb;User ID=testLoginDesignData;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 
 ```
 *  Set the disseminate dataspace values:
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__Id',value='disseminate']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateStructDb;User ID=testLoginDisseminateStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__1__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__Id',value='disseminate']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateStructDb;User ID=testLoginDisseminateStruct;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__DataImportTimeOutInMinutes',value='60']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
 
 **Step 7.** Start the new application
@@ -403,7 +403,7 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 **Step 8.** Create a new IIS application pool (NSIWSDesignAppPool) 
 ```sh
-/c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDesignAppPool /managedRuntimeVersion:"No Managed Code" /managedPipelineMode:Integrated
+/c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDesignAppPool /managedRuntimeVersion:"" /managedPipelineMode:Integrated
 ```
 *  Add the nsiws-design application to the newly created application pool  
 ```sh
@@ -422,11 +422,11 @@ There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:
 For this example we will use the second option:  
 *  Set the design dataspace values:
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignStructDb;User ID=testLoginDesignStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignStructDb;User ID=testLoginDesignStruct;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignDataDb;User ID=testLoginDesignData;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
 
 **Step 10.** Start the new application
@@ -493,7 +493,7 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 **Step 8.** Create a new IIS application pool (NSIWSDisseminateAppPool) 
 ```sh
-/c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDisseminateAppPool /managedRuntimeVersion:"No Managed Code" /managedPipelineMode:Integrated
+/c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDisseminateAppPool /managedRuntimeVersion:"" /managedPipelineMode:Integrated
 ```  
 
 *  Add the nsiws-disseminate application to the newly created application pool
@@ -513,11 +513,11 @@ There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:
 For this example we will use the second option:  
 *  Set the disseminate dataspace values:
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__Id',value='disseminate']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateStructDb;User ID=testLoginDisseminateStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config -section:system.applicationHost/applicationPools /+"[name='TransferServiceAppPool'].environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='disseminate']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateStructDb;User ID=testLoginDisseminateStruct;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
 ```
 
 **Step 10.** Start the new application
