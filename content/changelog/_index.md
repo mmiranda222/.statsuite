@@ -2,7 +2,7 @@
 title: "Changelog"
 subtitle: 
 comments: false
-weight: 40
+weight: 120
 
 ---
 

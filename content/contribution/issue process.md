@@ -2,7 +2,7 @@
 title: Issue process and Definitions of Done (DoD)
 subtitle: 
 comments: false
-weight: 32
+weight: 92
 ---
 
 # Table of Content

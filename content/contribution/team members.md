@@ -2,7 +2,7 @@
 title: Team members
 subtitle: 
 comments: false
-weight: 34
+weight: 94
 ---
 
 #### .Stat Suite developers
