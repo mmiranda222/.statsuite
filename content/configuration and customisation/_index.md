@@ -1,5 +1,5 @@
 --
-title: "Configuration and Customisation"
+title: Configuration and Customisation
 subtitle: 
 comments: false
 weight: 70
