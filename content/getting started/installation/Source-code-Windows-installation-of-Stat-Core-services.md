@@ -271,9 +271,7 @@ cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netco
 
 There are two options to configure the transfer service: 
 1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.
-2.  Saving the configuration setting as environment variables for the IIS AppPool (TransferServiceAppPool). `Recommended`
-
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).
+2.  Saving the configuration setting as environment variables for the IIS site (transfer-service). `Recommended`
 
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration).
 
@@ -425,9 +423,8 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
 1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.  
-2.  Saving the configuration setting as environment variables for the IIS AppPool (NSIWSDesignAppPool). `Recommended`
+2.  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
 
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).  
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
 For this example we will use the second option:  
@@ -516,9 +513,8 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
 1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.  
-2.  Saving the configuration setting as environment variables for the IIS AppPool (NSIWSDisseminateAppPool). `Recommended`
+2.  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
 
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).  
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
 For this example we will use the second option:  
