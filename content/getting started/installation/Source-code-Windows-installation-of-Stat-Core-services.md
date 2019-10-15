@@ -23,15 +23,21 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
 - **Microsoft .NET**  
-    - Microsoft .NET Core Runtime - 2.2.\*  [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-    - Microsoft .NET Core 2.2.\* - Windows Server Hosting  [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
-    - Microsoft .NET Core SDK 2.2.\*   [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-    - Microsoft .NET Framework 4.5.\*  [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
+    - Microsoft .NET Core Runtime - 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+
+    - Microsoft .NET Core 2.2.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
+
+    - Microsoft .NET Core SDK 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+
+    - Microsoft .NET Framework 4.5.\* [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
+
 - **IIS Web server**  
     - IIS server 7.5 or later  
     - ASP.Net application roles/features enabled  
     - Microsoft Visual C++ 2015 Redistributable [download](https://www.microsoft.com/en-US/download/details.aspx?id=52685) 
+
 - **Git for windows** [download](https://git-scm.com/download/win).  
+
 - **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
 
 > **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
@@ -265,9 +271,7 @@ cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netco
 
 There are two options to configure the transfer service: 
 1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.
-2.  Saving the configuration setting as environment variables for the IIS AppPool (TransferServiceAppPool). `Recommended`
-
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).
+2.  Saving the configuration setting as environment variables for the IIS site (transfer-service). `Recommended`
 
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration).
 
@@ -276,8 +280,13 @@ For this example we will use the second option:
 *  Set the common database connection string:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
-
 ```
+
+*  Disable authentication:
+```sh
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__enabled',value='false']" /commit:apphost
+```
+
 *  Set the design dataspace values:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
@@ -414,9 +423,8 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
 1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.  
-2.  Saving the configuration setting as environment variables for the IIS AppPool (NSIWSDesignAppPool). `Recommended`
+2.  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
 
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).  
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
 For this example we will use the second option:  
@@ -505,9 +513,8 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
 1.  Json config file.- By adding the file /config/dataspaces.private.json to the deployment folder.  
-2.  Saving the configuration setting as environment variables for the IIS AppPool (NSIWSDisseminateAppPool). `Recommended`
+2.  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
 
->  [See more about the environment variables for the IIS AppPool](https://docs.microsoft.com/en-us/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe).  
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
 For this example we will use the second option:  
