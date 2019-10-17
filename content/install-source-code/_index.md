@@ -13,7 +13,7 @@ This approach requires solid technical knowledge of the underlying ecosystems (.
 Please see each page for more details:
 
 * [Full source code installation](/install-source-code/source-code)
-* [Source code Windows installation example of .Stat Core services](/install-source-code/Windows-Stat-Core-Services)
+* [Source code Windows installation example of .Stat Core services](/install-source-code/windows-stat-core-services)
 * [Mono-tenant installation of .Stat DE services](/install-source-code/monotenant-install-from-artifacts)
 * [Mono-tenant update of .Stat DE services](/install-source-code/monotenant-update-from-artifacts)
 * [Mono-tenant update of .Stat DE services as Windows services](/install-source-code/monotenant-install-js-as-windows-services)
