@@ -1,5 +1,5 @@
 ---
-title: Report an issue
+title: "Report an issue"
 subtitle: 
 comments: false
 weight: 91

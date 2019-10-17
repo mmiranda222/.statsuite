@@ -1,5 +1,5 @@
 ---
-title: Development guidelines
+title: "Development guidelines"
 subtitle: 
 comments: false
 weight: 93
