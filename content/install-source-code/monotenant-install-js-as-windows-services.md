@@ -2,7 +2,7 @@
 title: "monotenant-install-js-as-windows-services"
 subtitle: 
 comments: false
-weight: 37
+weight: 47
 ---
 
 # Table of Content

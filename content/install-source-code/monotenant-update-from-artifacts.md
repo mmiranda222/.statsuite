@@ -2,7 +2,7 @@
 title: "Mono-tenant update from gitlab pipeline artifacts"
 subtitle: 
 comments: false
-weight: 36
+weight: 46
 ---
 
 **pre-requisites:**
