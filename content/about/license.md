@@ -1,5 +1,5 @@
 ---
-title: License
+title: "License"
 subtitle: MIT
 comments: false
 weight: 11

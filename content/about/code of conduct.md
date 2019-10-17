@@ -1,5 +1,5 @@
 ---
-title: Code of conduct
+title: "Code of conduct"
 subtitle: 
 comments: false
 weight: 13
