@@ -1,8 +1,8 @@
 ---
-title: Installation based on ready-to-use container images
+title: Installation based on ready-to-use Docker images
 subtitle: 
 comments: false
-weight: 27
+weight: 52
 ---
 
 # Table of Content
@@ -14,7 +14,7 @@ weight: 27
 - [docker compose example(s)](#docker-compose-example-s)
 
 
-Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** [to come] and **.Stat Core** or their components are containerised as ready-to-use container images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
+Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
 
 This section describes where to find and how to use the .Stat Suite Docker images.
 
