@@ -10,4 +10,4 @@ includes:
 
 * [.Stat Data Explorer customisation](/configurations/de-customisation)
 * [.Stat Data Explorer configuration](/configurations/de-configuration)
-* more to come...
+* *more to come...*
