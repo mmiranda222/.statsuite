@@ -2,7 +2,7 @@
 title: "Source code installation"
 subtitle: 
 comments: false
-weights: 40
+weight: 40
 
 ---
 
