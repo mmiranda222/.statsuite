@@ -1,11 +1,11 @@
 ---
-title: "Mono-tenant installation from gitlab pipeline artifacts"
+title: "Mono-tenant installation of .Stat DE services from gitlab pipeline artifacts"
 subtitle: 
 comments: false
 weight: 45
 ---
 
-*slightly different than the codebase approach; git is not mandatory anymore and side-effects related to dependencies are avoided*.
+*slightly different than the source code approach; git is not mandatory anymore and side-effects related to dependencies are avoided*.
 
 **pre-requisites:**
 

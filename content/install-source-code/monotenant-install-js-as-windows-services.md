@@ -1,5 +1,5 @@
 ---
-title: "Monotenant-install-js-as-windows-services"
+title: "Mono-tenant installation of .Stat DE as Windows services"
 subtitle: 
 comments: false
 weight: 47
