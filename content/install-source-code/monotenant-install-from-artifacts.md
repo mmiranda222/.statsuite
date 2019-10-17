@@ -1,8 +1,8 @@
 ---
-title: Mono-tenant installation from gitlab pipeline artifacts
+title: "Mono-tenant installation from gitlab pipeline artifacts"
 subtitle: 
 comments: false
-weight: 29
+weight: 35
 ---
 
 *slightly different than the codebase approach; git is not mandatory anymore and side-effects related to dependencies are avoided*.

@@ -1,8 +1,8 @@
 ---
-title: Source code Windows installation example of .Stat Core services 
+title: "Source code Windows installation example of .Stat Core services"
 subtitle: 
 comments: false
-weight: 28
+weight: 34
 ---
 
 The following example, contains the list of steps required to deploy a **specific topology** of the dotstatsuite-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
