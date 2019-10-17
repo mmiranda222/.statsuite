@@ -1,5 +1,5 @@
 ---
-title: "monotenant-install-js-as-windows-services"
+title: "Monotenant-install-js-as-windows-services"
 subtitle: 
 comments: false
 weight: 47
