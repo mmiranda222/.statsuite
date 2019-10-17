@@ -1,8 +1,8 @@
 ---
-title: .Stat DevOps implementation
+title: ".Stat DevOps implementation"
 subtitle: 
 comments: false
-weight: 20
+weight: 33
 ---
 
 # Table of Content

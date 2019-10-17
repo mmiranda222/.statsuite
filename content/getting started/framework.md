@@ -1,8 +1,8 @@
 ---
-title: .Stat Suite Open Source Framework
+title: ".Stat Suite Open Source Framework"
 subtitle: 
 comments: false
-weight: 22
+weight: 32
 ---
 
 # Table of Content

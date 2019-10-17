@@ -1,8 +1,8 @@
 ---
-title: Semantic versioning of .Stat Suite CORE components and services
+title: "Semantic versioning of CORE services"
 subtitle: 
 comments: false
-weight: 25
+weight: 34
 ---
 
 # Table of Content
