@@ -6,14 +6,14 @@ weight: 62
 ---
 
 # Table of Content
-- [intro](#intro)
-- [multi-tenant architecture](#multi-tenant-architecture)
+- [Intro](#intro)
+- [Multi-tenant architecture](#multi-tenant-architecture)
 - [Cloud-hosting for SIS-CC member organisations and their partners for test, demo and pilot purposes](#cloud-hosting-for-sis-cc-member-organisations-and-their-partners-for-test-demo-and-pilot-purposes)
 - [Cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes](#cloud-hosting-by-any-organisation-for-their-own-partners-for-test-demo-pilot-or-full-production-purposes)
 
 ## Intro
 
-The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** [*to come*] and **.Stat Core** are containerised and packaged as fully-functional, ready-to-use services using [Kubernetes)(https://kubernetes.io/docs/home/) technology, which can be freely re-used by anyone in its own cloud or premises.
+The three .Stat Suite main modules **Data Explorer**, **.Stat Core** and **Data Lifecycle Manager** [*to come*] are containerised and packaged as fully-functional, ready-to-use services using [Kubernetes](https://kubernetes.io/docs/home/) technology, which can be freely re-used by anyone in its own cloud or premises.
 
 The **kubernetes cluster definitions** are located in the following repositories:
 
