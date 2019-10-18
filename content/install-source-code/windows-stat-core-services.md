@@ -50,7 +50,7 @@ Make sure that the windows machine which will be used in this installation proce
 1.   [Download the source code](#1-download-the-source-code)
 2.   [Compile the source code](#2-compile-the-source-code)
 3.   [Initialize the databases](#3-initialize-the-databases)
-     * [DotStatSuiteCore_Common database](#initialize-the-dotstatsuitecore_common-database)
+     * [DotStatSuiteCore_Common database](#initialize-the-dotstatsuitecore-common-database)
      * [Design DotStatSuiteCore_Data database](#initialize-one-design-dotstatsuitecore_data-database)
      * [Disseminate DotStatSuiteCore_Data database](#initialize-one-disseminate-dotstatsuitecore_data-database)
      * [Configure the maapi.net tool](#configure-the-maapi-net-tool)
@@ -139,7 +139,7 @@ dotnet publish /c/git/dotstatsuite-core-transfer
 
 For this step you will need the Microsoft SQL sysadmin user and password.  
 
-### Initialize the **DotStatSuiteCore_Common** database  
+### Initialize the DotStatSuiteCore_Common database  
 
 ![.Stat Core topology Common](/images/stat-core-topology-common.PNG)  
 
