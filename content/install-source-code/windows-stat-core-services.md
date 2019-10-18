@@ -463,7 +463,7 @@ For this example we will use the second option:
 *  **Using a web browser**  
 Open a web browser and open the url localhost:81
 
-**You should see a page with a banner of the European commission**
+**You should see a page with a banner of the European Commission**
 
 >  Note: By default all the logs will be stored at C:/ProgramData/Eurostat/logs/
 
@@ -524,10 +524,10 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 **Step 8.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
-1.  Json config file.- `NOT RECOMMENDED`
+  1 .  Json config file.- `NOT RECOMMENDED`
 >  Copy the sample file dataspaces-disseminate.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-disseminate\config). 
 
-2.  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
+  2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
 
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
@@ -551,6 +551,6 @@ For this example we will use the second option:
 *  **Using a web browser**  
 Open a web browser and open the url localhost:80
 
-**You should see a page with a banner of the European commission**
+**You should see a page with a banner of the European Commission**
 
 >  Note: By default all the logs will be stored at C:/ProgramData/Eurostat/logs/
