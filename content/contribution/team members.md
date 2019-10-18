@@ -14,7 +14,6 @@ weight: 94
 - Mike Velluet [@mike.velluet](https://gitlab.com/mike.velluet)
 - Nicolas Briemant [@nicolas-briemant](https://gitlab.com/nicolas-briemant)
 - Pedro Carranza [@pedroacarranza](https://gitlab.com/pedroacarranza)
-- Peter Takacs [@ptakacs79](https://gitlab.com/ptakacs79)
 - Zsolt Lenart [@ZsoltLenart](https://gitlab.com/ZsoltLenart)
 
 
