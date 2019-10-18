@@ -437,10 +437,10 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 **Step 8.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
-1.  Json config file.- `NOT RECOMMENDED`
+ 1.  Json config file.- `NOT RECOMMENDED`
 >  Copy the sample file dataspaces-design.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-design\config). 
 
-2.  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
+ 2.  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
 
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
