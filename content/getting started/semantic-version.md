@@ -45,7 +45,7 @@ Locally, a new nuget package can be created with any of the following methods:
 
 ## Referencing Nuget package in other projects 
 
-During development of a new feature in a web service (Transfer service, NSI plugin etc) it is common that changes are required in nuget dependency (Common, DataAccess etc). In this case while testing it is recommended to create local package as described [here](#locals) with prerelease versions (containing git commit ID). 
+During development of a new feature in a web service (Transfer service, NSI plugin etc) it is common that changes are required in nuget dependency (Common, DataAccess etc). In this case while testing it is recommended to create local package as described above with prerelease versions (containing git commit ID). 
 
 **N.B.** Once the feature is done it's important to follow the order of creating a pull request/merging with a develop branch. Order should be starting from the bottom dependency and going Up. For every pull-request iteration the steps are:
 
