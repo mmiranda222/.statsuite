@@ -6,12 +6,12 @@ weight: 52
 ---
 
 # Table of Content
-- [short intro to docker](#short-intro-to-docker)
-- [next steps](#next-steps)
-- [.stat data explorer components](#stat-data-explorer-components)
-- [.stat data lifecycle manager components](#stat-data-lifecycle-manager-components)
-- [.stat core components](#stat-core-components)
-- [docker compose example(s)](#docker-compose-example-s)
+- [Short intro to docker](#short-intro-to-docker)
+- [Next steps](#next-steps)
+- [.Stat Data Explorer components](#stat-data-explorer-components)
+- [.Stat Data Lifecycle Manager components](#stat-data-lifecycle-manager-components)
+- [.Stat Core components](#stat-core-components)
+- [Docker compose example(s)](#docker-compose-example-s)
 
 
 Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
@@ -45,14 +45,13 @@ Check out examples and deep dive topics in the [Docker Engine user guide](https:
 ---
 
 <br>
-<br>
 
 All **.Stat Suite Docker images** are located under https://hub.docker.com/u/siscc. Please see each repository for detailed information on how to use these.
 
 
 ## .Stat Data Explorer components
 
-#### Data Explorer app
+### Data Explorer app
 
 This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
 
@@ -61,7 +60,7 @@ This web app is the main GUI for (external) users to find, understand and use th
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer
 
 
-#### Share service
+### Share service
 
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.  
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
@@ -70,12 +69,14 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 - share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
 - POST body are size limited to `maxChartSize`  
 
+<br>
+
 - **demo**: http://share.staging.oecd.redpelicans.com/api/charts/3
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-share
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
 
 
-#### Share-Viewer App
+### Share-Viewer App
 
 This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
@@ -86,7 +87,7 @@ This web app is a compagnon GUI for (external) users to display user-defined, sh
 - client bundle expects configuration in `window.SETTINGS`, `window.I18N` and `window.CONFIG` for those who want to use directly the static files
 
 
-#### Search service
+### Search service
 
 This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows categorised and accessible in one or more SDMX end points and to execute faceted search queries on these SDMX dataflows. A static schema is defined in the config. A dynamic schema is derivated from the indexed SDMX dataflows.
 
@@ -102,7 +103,7 @@ Limitations:
 - how to index (e.g. individual dataset = SDMX dataflow)
 
 
-#### Proxy service
+### Proxy service
 
 The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct tager application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
 
@@ -110,7 +111,7 @@ The Proxy service handles route request depending on urls (`https://<app>.<env>.
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
 
 
-#### Config Service
+### Config Service
 
 The Configuration service centralises all configuration resources used by other services. It is a web server providing requested configuration, not exposed to users. Based on git versioned configuration data.
 
@@ -122,7 +123,7 @@ The Configuration service centralises all configuration resources used by other 
 
 ## .Stat Data Lifecycle Manager components
 
-#### Data Lifecycle Manager app
+### Data Lifecycle Manager app
 
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
@@ -134,8 +135,7 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 
 ## .Stat Core components
 
-
-#### Transfer service
+### Transfer service
 
 This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores: 
 
@@ -143,11 +143,13 @@ This web service is used for statistical data (and later referential metadata) f
 - Upload of Excel data files (using a specific data mapping definition) into a .Stat Core data store
 - Transfer of data between two .Stat Core data stores  
 
+<br>
+
 - **demo**: http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-transfer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
 
-##### Configuration
+#### Configuration
 
 Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/tree/develop/DotStatServices.Transfer/config).
 All files with *.json extension are considered as configuration files. The name of the file is not important (except log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
@@ -214,7 +216,7 @@ end
 ```--->
 
 
-#### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
+### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
 
 This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store. The docker image is using a vanilla Eurostat NSI web service image as a base image. It is enriched with a special .Stat Core plugin used to retrieve statistical data structures from a .Stat Core Data Store.
 
@@ -224,7 +226,7 @@ This web service is used for statistical data structures for their upload and do
 - **repository of .Stat Core plugin**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
 - **repository of original Eurostat SDMX-RI NSI web service**: https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 
-##### Configuration
+#### Configuration
 
 Configuration is loaded from **config** directory located in the [root of application](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config?at=refs%2Fheads%2Fdevelop).
 All files with *.json extension are considered as configuration files. The name of the file is not important (except app.config & log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
@@ -289,7 +291,7 @@ end
 ```--->
 
 
-#### Authorisation service
+### Authorisation service
 
 This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
 
@@ -297,7 +299,7 @@ This web service is used for managing user access rights to data structures and 
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-auth-management
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
 
->  See more about the **[Recommended infrastructure requirements](/getting-started/installation/infrastructure_requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**.
+>  See more about the **[Recommended infrastructure requirements](/getting-started/infrastructure-requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**.
 
 ---
 
