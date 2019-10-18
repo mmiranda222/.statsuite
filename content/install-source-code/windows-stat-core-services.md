@@ -149,7 +149,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ```sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(\!)Password" --force
 ```
-### Initialize one **Design DotStatSuiteCore_Data** database  
+### Initialize one Design DotStatSuiteCore_Data database  
 
 ![.Stat Core topology designData](/images/stat-core-topology-designData.PNG)  
 
@@ -159,7 +159,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ``` sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(\!)Password" --force
 ```
-### Initialize one **Disseminate DotStatSuiteCore_Data** database  
+### Initialize one Disseminate DotStatSuiteCore_Data database  
 
 ![.Stat Core topology disseminateData](/images/stat-core-topology-disseminateData.PNG)  
 
@@ -201,7 +201,7 @@ Estat.Sri.Mapping.Tool.dll.config
 cp -r -f /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/maapi-app.config Estat.Sri.Mapping.Tool.dll.config 
 ```
 
-### Initialize one **Design DotStatSuiteCore_Struct** database (MappingStore db)  
+### Initialize one Design DotStatSuiteCore_Struct database (MappingStore db)  
 
 ![.Stat Core topology designStruct](/images/stat-core-topology-designStruct.PNG)
 
@@ -222,7 +222,7 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publis
 dotnet Estat.Sri.Mapping.Tool.dll init -m DesignStructDb -f 
 ```
 
-### Initialize one **Disseminate DotStatSuiteCore_Struct** database (MappingStore db)  
+### Initialize one Disseminate DotStatSuiteCore_Struct database (MappingStore db)  
 
 ![.Stat Core topology disseminateStruct](/images/stat-core-topology-disseminateStruct.PNG)
    
