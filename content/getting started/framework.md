@@ -6,11 +6,11 @@ weight: 32
 ---
 
 # Table of Content
-- [introduction](#introduction)
-- [technical stack](#technical-stack)
-- [.stat data explorer module](#stat-data-explorer-module)
-- [.stat data lifecycle manager module](#stat-data-lifecycle-manager-module)
-- [.stat core module](#stat-core-module)
+- [Introduction](#introduction)
+- [Technical stack](#technical-stack)
+- [.Stat Data Explorer module](#stat-data-explorer-module)
+- [.Stat Data Lifecycle Manager module](#stat-data-lifecycle-manager-module)
+- [.Stat Core module](#stat-core-module)
 
 # Introduction
 The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
@@ -91,7 +91,7 @@ The following technologies are used for the development of the **.Stat Data Expl
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/en/0/00/Kubernetes_%28container_engine%29.png" height="40" /></td>
+<td align="center"><img src="https://github.com/kubernetes/kubernetes/blob/master/logo/logo.svg" height="40" /></td>
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" height="40" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Surface1.png" height="40" /></td>
@@ -123,12 +123,12 @@ The following technologies are used for the development of the **.Stat Core** co
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/en/0/00/Kubernetes_%28container_engine%29.png" height="40" /></td>
+<td align="center"><img src="https://github.com/kubernetes/kubernetes/blob/master/logo/logo.svg" height="40" /></td>
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" height="40" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" height="40" /></td>
 <td align="center"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" height="40" /></td>
-<td align="center"><img src="https://png2.kisspng.com/sh/39c747fbc7e22e6852674b446be2fe51/L0KzQYm3V8EyN5JBR91yc4Pzfri0jflkepD4h9h9LYP0fH76hgJ3baMye9H2cIX3dcO0kBVzfpZ3i598cXywg7b5lvVzNZ4yiAN1LXzyd7E0VfI1PpJofqtsN0HmR4S1VMU3OGg7Tak6NUO0Q4aBVMU4QGI6TpD5bne=/kisspng-microsoft-sql-server-computer-servers-sql-server-m-sql-logo-5b46acf9c71c73.4560765715313584578156.png" height="40" /></td>
+<td align="center"><img src="https://fr-wiki.ikoula.com/images/5/55/Sqlserver.pngg" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/150px-.NET_Core_Logo.svg.png" height="40" /></td>
 <td align="center"><img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/04/BrandVisualStudioWin2019.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/220px-NuGet_project_logo.svg.png" height="40" /></td>
@@ -244,7 +244,7 @@ id2 ->|7. redirect user|id4
 This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
 ### demo (light)
-1. go to http://data-viewer.staging.oecd.redpelicans.com/?chartId=3 (tenant: oecd, env: staging)
+1. Go to http://data-viewer.staging.oecd.redpelicans.com/?chartId=3 (tenant: oecd, env: staging)
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
@@ -474,11 +474,11 @@ end
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
 ### demo (light)
-1. go to [*to come*] (tenant: oecd, env: qa)
+1. go to http://data-lifecycle-manager.qa.oecd.redpelicans.com/
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
-- **docker**: [*to come*]
+- **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-lifecycle-manager
 
 ---
 
@@ -563,7 +563,7 @@ This plugin is used by the SDMX service to retrieve statistical data structures 
 This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
 
 ### demo (light)
-1. go to ? (tenant: oecd, env: qa)
+1. go to [*to come*]
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
@@ -594,7 +594,7 @@ This library is used for shared code in the .Stat Core components. These inlude 
 
 # DevOps implementation
 
-See: [.Stat DevOps implementation](/getting-started/framework/devops) 
+See: [.Stat DevOps implementation](/getting-started/devops) 
 
 ---
 
