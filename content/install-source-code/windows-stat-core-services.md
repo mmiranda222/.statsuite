@@ -117,7 +117,7 @@ dotnet publish /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/Estat.Sri.Mapping.Too
 ```
   3 .  Compile the NSI web service
 
-*WARNNING:* The nsi webservice requires a long list of libraries that are downloaded during the build time. Sometimes a single build is not enough to download all these libraries, therefore *Make sure all resources are downloaded at build time, otherwise run the build command multiple times*
+*WARNING:* The nsi webservice requires a long list of libraries that are downloaded during the build time. Sometimes a single build is not enough to download all these libraries, therefore *Make sure all resources are downloaded at build time, otherwise run the build command multiple times*
 
 ```sh
 dotnet build /c/git/nsiws.net/NSIWebServices.sln
@@ -328,10 +328,12 @@ For this example we will use the second option:
 ```
 
 **Step 8.** Test that the application is up and running  
+
 *  **Using curl**
 ```sh
 curl localhost:83/health
 ```
+
 *  **Using a web browser**  
 Open a web browser and open the url localhost:83/health
 
