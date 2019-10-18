@@ -62,18 +62,22 @@ Make sure that the windows machine which will be used in this installation proce
 
 ## 1.  Download the source code
   1 .  Open Git Bash with **admin rights** from the windows start menu
+
   2 .  Create a new folder *C:/git* to store the source code
 ```sh 
 mkdir /c/git
 ```
+
   3 .  Move to the new folder
 ```sh 
 cd /c/git
 ```
+
   4 .  Clone the dotstatsuite-core-dbup repository.- *This tool will be used to create and initialize the common and data databases.*
 ```sh 
 git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
+
   5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
 
 This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
@@ -82,17 +86,20 @@ git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YO
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/msdb.sql.git maapi.net/src/Estat.Sri.Mapping.MappingStore/resources
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 ```
+
   6 .  Clone the NSI web service repository
 
 This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
 ```sh
 git clone -b master --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
 ```
+
   7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
 
 ```sh
 git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
 ```
+
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
 git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
