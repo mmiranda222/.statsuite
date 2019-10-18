@@ -10,7 +10,7 @@ weight: 47
 - [folders](#folders)
 - [nssm](#nssm)
 - [solr](#solr)
-- [solr core](#solr-core)
+- [solr core](#create-a-solr-core)
 - [redis](#redis)
 - [dotstatsuitejs](#dotstatsuitejs)
 - [artefacts](#artefacts)
@@ -108,7 +108,8 @@ weight: 47
 
 
 # artefacts
-> hint: you need a token in order to script the artefacts download
+> hint: you need a token in order to script the artefacts download  
+
 - download artefact and pm2 scripts https://gitlab.com/sis-cc/dotstatsuite-documentation/tree/master/dotstatsuitejs
 - move the both files into dotstatsuitejs
 - in dotstatsuitejs folder
