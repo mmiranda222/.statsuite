@@ -246,7 +246,7 @@ end
 ## nuget
 - nuget packages are published under https://www.nuget.org/profiles/SIS-CC
 - tags are only on commits in master and trigger a publish
-- this page provides information about [Usage of semantic versioning in .Stat Suite CORE components and services](semantic-version)
+- this page provides information about [Usage of semantic versioning in .Stat Suite CORE components and services](/getting-started/semantic-version)
 
 ## list of webapps/services/packages
 |kind|name|status master|status dev|coverage|
