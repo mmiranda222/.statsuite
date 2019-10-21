@@ -81,11 +81,15 @@ git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
   5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
 
 This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
+
 ```sh 
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
-git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/msdb.sql.git maapi.net/src/Estat.Sri.Mapping.MappingStore/resources
-git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 ```
+
+> **WARNINNG!** - This repository has two git submodules (msdb.sql and authdb.sql) that are clonned with the command "--recurse-submodules". If you are behind a network security firewall, these submodules might not be cloned. To clone them manually use the commands:
+>  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/msdb.sql.git maapi.net/src/Estat.Sri.Mapping.MappingStore/resources
+>  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
+
 
   6 .  Clone the NSI web service repository
 
