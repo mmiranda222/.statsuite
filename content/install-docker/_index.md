@@ -1,5 +1,5 @@
 ---
-title: "Docker Compose installation"
+title: "Installation with Docker Compose"
 subtitle: 
 comments: false
 weight: 50

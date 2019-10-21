@@ -1,5 +1,5 @@
 ---
-title: "Ready-made service installation"
+title: "Installation from ready-made service package"
 subtitle: 
 comments: false
 weight: 60

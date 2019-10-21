@@ -1,5 +1,5 @@
 ---
-title: "Source code installation"
+title: "Installation from source code"
 subtitle: 
 comments: false
 weight: 40
