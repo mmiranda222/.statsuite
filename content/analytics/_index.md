@@ -1,5 +1,5 @@
 ---
-title: "analytics"
+title: "Analytics"
 subtitle: 
 comments: false
 weight: 130
