@@ -24,11 +24,11 @@ weight: 33
 
 - Automated update triggered by **Dev** branch merge (part of “peer-review” Kanban step) 
 - Used by **Product Management team** to:  
-  -	directly test through API/Swagger candidate .Stat CORE services:  
-    ° **NSI ws with stable content** (upgraded database) called 'stable'  
-    ° **NSI ws with re-initialised content** (new database) called 'reset'  
-    ° [**Transfer ws**](http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html)  
-    ° **Authorisation ws**  
+  -	directly test through API/Swagger/Postman candidate .Stat CORE services:  
+    ° [**NSI ws with stable content** (upgraded database) called 'stable'](http://nsi-stable-qa-oecd.redpelicans.com/)  
+    ° [**NSI ws with re-initialised content** (new database) called 'reset'](http://nsi-reset-qa-oecd.redpelicans.com/)  
+    ° [**Transfer ws**](http://transfer-qa-oecd.redpelicans.com/swagger/index.html)  
+    ° [**Authorisation ws**](http://authz-qa-oecd.redpelicans.com/swagger/index.html)  
   - test [**'PM' tenant**  of candidate **DE**](http://data-explorer.qa.oecd.redpelicans.com/) plugged to:  
     ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
     ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
