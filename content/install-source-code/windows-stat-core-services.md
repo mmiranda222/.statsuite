@@ -23,6 +23,7 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
 - **Microsoft .NET**  
+
     - Microsoft .NET Core Runtime - 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 
     - Microsoft .NET Core 2.2.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
@@ -399,10 +400,19 @@ icacls "C:\dotstatsuite-website\nsiws-design" /grant:r "IIS_IUSRS":"(OI)(CI)F"
 cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp2.2/publish/* /c/dotstatsuite-website/nsiws-design/
 ```
 
-**Step 4.** Copy the dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Design DotStatSuiteCore_Data database.
+**Step 4.** Copy the following dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Design DotStatSuiteCore_Data database.
+
+- DotStat.Common.dll
+- DotStat.DB.dll
+- DotStat.Domain.dll
+- DotStat.MappingStore.dll
+- DotStat.NSI.DataRetriever.dll
+- DotStat.NSI.RetrieverFactory.deps.json
+- DotStat.NSI.RetrieverFactory.dll
+- MicroKnights.Log4NetAdoNetAppender.dll
 
 ```sh
-cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp2.2/publish/.* /c/dotstatsuite-website/nsiws-design/Plugins
+cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp2.2/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,DotStat.NSI.DataRetriever.dll,DotStat.NSI.RetrieverFactory.deps.json,DotStat.NSI.RetrieverFactory.dll,MicroKnights.Log4NetAdoNetAppender.dll} /c/dotstatsuite-website/nsiws-design/Plugins
 ```
 
 **Step 5.** Configure the nsi web service 
@@ -489,10 +499,20 @@ icacls "C:\dotstatsuite-website\nsiws-disseminate" /grant:r "IIS_IUSRS":"(OI)(CI
 cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp2.2/publish/* /c/dotstatsuite-website/nsiws-disseminate/
 ```
 
-**Step 4.** Copy the dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Disseminate DotStatSuiteCore_Data database.
+**Step 4.** Copy the following dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Disseminate DotStatSuiteCore_Data database.
+
+- DotStat.Common.dll
+- DotStat.DB.dll
+- DotStat.Domain.dll
+- DotStat.MappingStore.dll
+- DotStat.NSI.DataRetriever.dll
+- DotStat.NSI.RetrieverFactory.deps.json
+- DotStat.NSI.RetrieverFactory.dll
+- MicroKnights.Log4NetAdoNetAppender.dll
+
 
 ```sh
-cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp2.2/publish/.* /c/dotstatsuite-website/nsiws-disseminate/Plugins
+cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp2.2/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,DotStat.NSI.DataRetriever.dll,DotStat.NSI.RetrieverFactory.deps.json,DotStat.NSI.RetrieverFactory.dll,MicroKnights.Log4NetAdoNetAppender.dll} /c/dotstatsuite-website/nsiws-disseminate/Plugins
 ```
 
 **Step 5.** Configure the nsi web service  
