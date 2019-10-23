@@ -38,6 +38,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - avoid blocking dev while fxing master
 
 **Rules**<br>
+
 - feature/patch branches are created from dev (after a merge in dev) <br>
 - feature/patch branches must be merged back into dev when the feature is done <br>
 - release branches are created from dev (after a merge in dev) <br>
