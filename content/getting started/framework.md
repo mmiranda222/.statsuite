@@ -91,7 +91,7 @@ The following technologies are used for the development of the **.Stat Data Expl
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="https://github.com/kubernetes/kubernetes/blob/master/logo/logo.svg" height="40" /></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Kubernetes_%28container_engine%29.png" height="40" /></td>
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" height="40" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Surface1.png" height="40" /></td>
@@ -123,12 +123,12 @@ The following technologies are used for the development of the **.Stat Core** co
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="https://github.com/kubernetes/kubernetes/blob/master/logo/logo.svg" height="40" /></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Kubernetes_%28container_engine%29.png" height="40" /></td>
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" height="40" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" height="40" /></td>
 <td align="center"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" height="40" /></td>
-<td align="center"><img src="https://fr-wiki.ikoula.com/images/5/55/Sqlserver.pngg" height="40" /></td>
+<td align="center"><img src="https://fr-wiki.ikoula.com/images/5/55/Sqlserver.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/150px-.NET_Core_Logo.svg.png" height="40" /></td>
 <td align="center"><img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/04/BrandVisualStudioWin2019.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/220px-NuGet_project_logo.svg.png" height="40" /></td>
