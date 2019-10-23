@@ -46,6 +46,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
 - hotfix branches must be merged back into dev and master <br>
 
 **Good practices**<br>
+
 - perform atomic commits (ie commit a lot) <br>
     - git history is detailed <br>
     - allows efficient time travel in past <br>
