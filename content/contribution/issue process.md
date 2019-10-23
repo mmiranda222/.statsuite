@@ -18,7 +18,7 @@ weight: 92
 Every opened issue (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/) how to report a new issue) will follow the agreed and below defined production cycle, in regards to quality criteria and relevance assessed by the Product Owner (PO) Team and the Technical (Dev) Team.<br>
 The full workflow goes from open to PO, Graphical Design and Dev Teams (.NET/SQL and JavaScript), including review, quality check, implementation, peer-review, quality assurance and release, then finally closed.<br>
 In some cases of course some steps are skipped, e.g. a bug will not go through Graphical Design steps.<br>
-If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
+If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.  <br>
 
 ### Production Cycle
 
