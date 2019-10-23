@@ -96,7 +96,7 @@ git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YO
 
 This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
 ```sh
-git clone -b master --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
+git clone -b 7.10.0 --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
 ```
 
   7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
