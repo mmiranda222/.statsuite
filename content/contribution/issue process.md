@@ -12,11 +12,11 @@ weight: 92
 - [product owner workflow](#product-owner-workflow)
 - [graphical design workflow](#graphical-design-workflow)
 - [technical (dev) workflow](#technical-dev-workflow)
-- [technical (fedev) workflow (wip)](#technical-fedev-workflow-wip)
+- [technical (javascriptdev) workflow (wip)](#technical-javascriptdev-workflow-wip)
 
 ### intro
 Every opened issue (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/) how to report a new issue) will follow the agreed and below defined production cycle, in regards to quality criteria and relevance assessed by the Product Owner (PO) Team and the Technical (Dev) Team.<br>
-The full workflow goes from open to PO, Graphical Design and Dev Teams (back-end and front-end), including review, quality check, implementation, peer-review, quality assurance and release, then finally closed.<br>
+The full workflow goes from open to PO, Graphical Design and Dev Teams (.NET/SQL and JavaScript), including review, quality check, implementation, peer-review, quality assurance and release, then finally closed.<br>
 In some cases of course some steps are skipped, e.g. a bug will not go through Graphical Design steps.<br>
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.<br>
 
@@ -26,23 +26,23 @@ If at some point an issue has a very low activity after 12 months, it should the
 sequenceDiagram;
 open->>PO: all issues;
 PO->>Design: all features with UI impact;
-PO->>DevBackEnd: without UI impact but with back-end;
-PO->>DevFrontEnd: without UI impact nor back-end;
-Design->>DevBackEnd: with back-end;
-Design->>DevFrontEnd: without back-end;
-DevBackEnd->>DevFrontEnd: with front-end;
-DevBackEnd-xclosed: without front-end;
-DevFrontEnd-xclosed: ;
+PO->>Dev.NET/SQL: without UI impact but with .NET/SQL;
+PO->>DevJavaScript: without UI impact nor .NET/SQL;
+Design->>Dev.NET/SQL: with .NET/SQL;
+Design->>DevJavaScript: without .NET/SQL;
+Dev.NET/SQL->>DevJavaScript: with JavaScript;
+Dev.NET/SQL-xclosed: without JavaScript;
+DevJavaScript-xclosed: ;
 PO--xclosed: rejected issues;
 ```--->
 
 The below diagram gives an overview of the Production cycle ran for each of the opened issues and according to the acceptance criteria, and for all types of issues (bugs or features).<br>
-The Technical (Dev) Team is here divided into back-end and front-end technology.
+The Technical (Dev) Team is here divided into .NET/SQL and JavaScript technologies.
 
 ![Issue process workflow overview](/images/IssueProcessWorkflow.png)
 
 ### Common rules
-- An issue can go through several iterations of the process cycle through Product Owner, Graphical Design, Back-End Dev and Front-End Dev teams.
+- An issue can go through several iterations of the process cycle through Product Owner, Graphical Design, .NET/SQL Dev and JavaScript Dev teams.
 - At any step of a process, an issue can be put on hold ovr be retrogated.
 - A Definition of Done (DoD) of a process step must be met and completed before an issue goes to any next step of the workflow.
 
@@ -92,7 +92,7 @@ _skipped_
 ### Technical (Dev) workflow
 1. Review<br>
 The Dev Team reviews the issue and make sure that the expected outcome of the fix/implementation/solution is clear, feasible and appropriate.<br>
-If some parts are not clear, then the Technical Team contacts (e.g. through comments) the previous team (PO Team, Graphical Design Team or back-end Dev Team).<br>
+If some parts are not clear, then the Technical Team contacts (e.g. through comments) the previous team in the process (PO Team, Graphical Design Team or .NET.SQL Dev Team).<br>
 **DoD**: the issue is quality checked. It has been validated by both PO and Technical Teams and it is ready for Implementation.<br>
 
 2. Implement<br>
@@ -112,9 +112,9 @@ The feature is documented.<br>
 
 5. Release<br>
 The issue is released as part of the latest production version of the code.<br>
-**NOTE**: at this stage, when an issue needs to be implemented by both back-end and front-end Dev Teams (see Production Cycle diagram): the Dev workflow is applied once by the back-end Team, then it is "released" to the front-end Team for review. The issue goes again through the same workflow until final release.<br>
+**NOTE**: at this stage, when an issue needs to be implemented by both .NET/SQL and JavaScript Dev Teams (see Production Cycle diagram): the Dev workflow is applied once by the .NET/SQL Dev Team, then it goes to the JavaScript Dev Team for review. The issue goes again through the same workflow until final release.<br>
 
-### Technical (FEDev) workflow (wip)
+### Technical (JavaScriptDev) workflow (wip)
 
 <!---```mermaid
 sequenceDiagram;
