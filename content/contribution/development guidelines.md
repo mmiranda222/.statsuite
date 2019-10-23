@@ -38,21 +38,21 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - avoid blocking dev while fxing master
 
 **Rules**<br>
-- feature/patch branches are created from dev (after a merge in dev)
-- feature/patch branches must be merged back into dev when the feature is done
-- release branches are created from dev (after a merge in dev)
-- release must be merged back into dev and master
-- hotfix branches are created from master (after a merge in master)
-- hotfix branches must be merged back into dev and master
+- feature/patch branches are created from dev (after a merge in dev) <br>
+- feature/patch branches must be merged back into dev when the feature is done <br>
+- release branches are created from dev (after a merge in dev) <br>
+- release must be merged back into dev and master <br>
+- hotfix branches are created from master (after a merge in master) <br>
+- hotfix branches must be merged back into dev and master <br>
 
 **Good practices**<br>
-- perform atomic commits (ie commit a lot)
-    - git history is detailed
-    - allows efficient time travel in past
-    - branches are squashed into dev, so dev history is not flooded
-- push often, like twice a day at least
-    - backup your work (commits are local)
-    - share your work
+- perform atomic commits (ie commit a lot) <br>
+    - git history is detailed <br>
+    - allows efficient time travel in past <br>
+    - branches are squashed into dev, so dev history is not flooded <br>
+- push often, like twice a day at least <br>
+    - backup your work (commits are local) <br>
+    - share your work <br>
 
 **Use case of a git-feature**<br>
 lifecycle of a feature (morebanana).<br>
