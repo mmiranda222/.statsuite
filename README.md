@@ -23,26 +23,47 @@ This project is used for publishing the official .Stat Suite documentation to th
 │   ├── about
 │   │   ├── _index.md
 │   │   ├── code of conduct.md
+│   │   ├── dotstat-core-nuget-dependency-licenses.md
 │   │   ├── license.md
 │   │   ├── product overview.md
 │   ├── changelog
 │   │   ├── _index.md
+│   ├── configurations
+│   │   ├── _index.md
+│   │   ├── de-configuraiton.md
+│   │   ├── de-customisation.md
 │   ├── contribution
 │   │   ├── _index.md
 │   │   ├── development guidelines.md
 │   │   ├── issue process.md
+│   │   ├── report an issue.md
 │   │   ├── team members.md
 │   ├── getting started
-│   │   ├── installation
-│   │   |   ├── _index.md
-│   │   |   ├── as-a-service.md
-│   │   |   ├── as-container.md
-│   │   |   ├── from-code-base.md
-│   │   |   ├── de-customisation-configuration.md
 │   │   ├── _index.md
+│   │   ├── devops.md
 │   │   ├── framework.md
+│   │   ├── infrastructure-requirements.md
+│   │   ├── semantic-version.md
 │   ├── images
-|   ├── _index.md
+|   |   ├── fonts
+|   |   ├── ...
+│   ├── install-docker
+│   │   ├── _index.md
+│   │   ├── as-container.md
+│   ├── install-service
+│   │   ├── _index.md
+│   │   ├── as-a-service.md
+│   ├── install-source-code
+│   │   ├── _index.md
+│   │   ├── monotenant-install-from-artifacts.md
+│   │   ├── monotenant-install-js-as-windows-services.md
+│   │   ├── monotenant-update-from-artifacts.md
+│   │   ├── source-code.md
+│   │   ├── windows-stat-core-services.md
+│   ├── _index.md
+├── dotstatsuitejs
+|   ├── artefacts-sh
+|   ├── pm2.sh
 ├── static
 |   ├── favicon.ico
 ├── themes
