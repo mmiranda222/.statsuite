@@ -193,7 +193,7 @@ This web app is the main GUI for (external) users to find, understand and use th
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
 
-* tables/charts are temporary stored only during `redisChartTTL` seconds before being deleted unless confirmed via email link
+* tables/charts are only temporarily stored for `redisChartTTL` seconds before being deleted unless confirmed via email link
 * share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
 * POST bodies are limited in size to `maxChartSize`
 
@@ -233,7 +233,7 @@ id2 ->|7. redirect user|id4
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
 - a redis database is used to store shared charts
 - share server is not auth protected, so any robot can spam it; to avoid that, many mechanisms are in place:
-  - charts are temporary stored only during `redisChartTTL` seconds before being deleted unless confirmed via email link
+  - charts are only temporarily stored for `redisChartTTL` seconds before being deleted unless confirmed via email link
   - share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
   - POST bodies are limited in size to `maxChartSize`
 
