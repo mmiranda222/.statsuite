@@ -12,7 +12,7 @@ weight: 43
 
 ### intro
 
-The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components can be freely re-used to compose a new topology (system architecture) by anyone in its own infrastructure.
+The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components can be freely re-used to compose a new topology (system architecture) by anyone on their own infrastructure.
 
 This section describes where to find and how to install .Stat Suite framework components (applications, services, libraries) starting from the code base.
 

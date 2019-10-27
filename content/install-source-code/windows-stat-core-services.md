@@ -9,27 +9,25 @@ The following example, contains the list of steps required to deploy a **specifi
 
 ## Disclaimer
 
-> **`This example SHOULD NOT be used as such for production deployments.`**
+> **`This example SHOULD NOT be used as is for production deployments.`**
 > 
 > In this installation example all sensitive information is set to use default values, including connection strings, SQL users and passwords, database names, application folders, among others. 
->  **This information is publicly available, making your deployment vulnerable.**
+>  **This information is publically available, making your deployment vulnerable.**
 
 ## Pre-requisites
-Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.  
-- **SQL server 2017** or higher  
+Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.
+
+- **SQL server 2017** or higher
+
     - SQL authentication enabled  
-    - Named pipe enable  
+    - Named pipes enabled  
     - SQL browser service running  
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
-- **Microsoft .NET**  
-
+- **Microsoft .NET**
     - Microsoft .NET Core Runtime - 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-
     - Microsoft .NET Core 2.2.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
-
     - Microsoft .NET Core SDK 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-
     - Microsoft .NET Framework 4.5.\* [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
 
 - **IIS Web server**  
@@ -41,7 +39,7 @@ Make sure that the windows machine which will be used in this installation proce
 
 - **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
 
-> **`STOP!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
+> **`WARNING!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
 
 ## Topology
 
@@ -81,20 +79,20 @@ git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 
   5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
 
-This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
+This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
 
 ```sh 
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
 ```
 
-> **WARNINNG!** - This repository has two git submodules (msdb.sql and authdb.sql) that are clonned with the command "--recurse-submodules". If you are behind a network security firewall, these submodules might not be cloned. To clone them manually use the commands:
+> **WARNING!** - This repository has two git submodules (msdb.sql and authdb.sql) that are cloned with the command "--recurse-submodules". If you are behind a network security firewall, these submodules might not be cloned. To clone them manually use the commands:
 >  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/msdb.sql.git maapi.net/src/Estat.Sri.Mapping.MappingStore/resources
 >  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 
 
   6 .  Clone the NSI web service repository
 
-This is a private eurostat's repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
+This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
 ```sh
 git clone -b 7.10.0 --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
 ```
@@ -122,7 +120,7 @@ dotnet publish /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/Estat.Sri.Mapping.Too
 ```
   3 .  Compile the NSI web service
 
-*WARNING:* The nsi webservice requires a long list of libraries that are downloaded during the build time. Sometimes a single build is not enough to download all these libraries, therefore *Make sure all resources are downloaded at build time, otherwise run the build command multiple times*
+*WARNING:* The nsi webservice requires a long list of libraries that are downloaded at build time. Sometimes a single build is not enough to download all these libraries, therefore *make sure all resources are downloaded at build time, otherwise run the build command multiple times*
 
 ```sh
 dotnet build /c/git/nsiws.net/NSIWebServices.sln
@@ -196,6 +194,7 @@ The  tool requires a pre-configured list of connection strings of each of the da
 ```
 
 To simplify the process, we will use the configuration example maapi-app.config, from the dotstatsuite-core-sdmxri-nsi-plugin repository.
+
 -  Move to the maapi.net folder
 ```sh
 cd /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/bin/Debug/netcoreapp2.2/publish/
@@ -289,7 +288,9 @@ cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netco
 **Step 6.** Configure the transfer service
 
 There are two options to configure the transfer service: 
+
 1.  Json config files.- `NOT RECOMMENDED`
+
 >  Copy the sample file dataspaces.private.json and auth.private.json from C:\git\dotstatsuite-core-transfer\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\transfer-service\config). 
 
 2.  Saving the configuration setting as environment variables for the IIS site (transfer-service). `Recommended`
@@ -434,7 +435,9 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 
 **Step 6.** Create a new IIS application called **nsiws-design** in port 81, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
+
 >  Make sure git bash is running in admin mode.
+
 ```sh
 /c/Windows/System32/inetsrv/appcmd add site /name:nsiws-design /physicalPath:C:\\dotstatsuite-website\\nsiws-design /bindings:http/*:81:
 ```
@@ -452,13 +455,15 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
   1 .  Json config file.- `NOT RECOMMENDED`
+
 >  Copy the sample file dataspaces-design.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-design\config). 
 
   2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
 
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
-For this example we will use the second option:  
+For this example we will use the second option: 
+
 *  Set the design dataspace values:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
@@ -473,7 +478,8 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd start site /site.name:nsiws-design
 ```
 
-**Step 10.** Test that the application is up and running  
+**Step 10.** Test that the application is up and running
+
 *  **Using a web browser**  
 Open a web browser and open the url localhost:81
 
@@ -521,6 +527,7 @@ cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bi
 
 **Step 5.** Configure the nsi web service  
 From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:  
+
 *  *nsiws-disseminate-app.config* to the file */config/app.config* 
 
 >  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
@@ -530,7 +537,9 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 ```
 
 **Step 6.** Create a new IIS application called **nsiws-disseminate** in port 80, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)  
+
 >  Make sure git bash is running in admin mode.
+
 ```sh
 /c/Windows/System32/inetsrv/appcmd add site /name:nsiws-disseminate /physicalPath:C:\\dotstatsuite-website\\nsiws-disseminate /bindings:http/*:80:
 ```
@@ -549,6 +558,7 @@ cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/
 
 There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
   1 .  Json config file.- `NOT RECOMMENDED`
+
 >  Copy the sample file dataspaces-disseminate.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-disseminate\config). 
 
   2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
@@ -556,7 +566,9 @@ There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:
 >  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
 
 For this example we will use the second option:  
+
 *  Set the disseminate dataspace values:
+
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='disseminate']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateStructDb;User ID=testLoginDisseminateStruct;Password=testLogin(\!)Password']" /commit:apphost
