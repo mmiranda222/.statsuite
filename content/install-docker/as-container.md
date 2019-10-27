@@ -14,7 +14,7 @@ weight: 52
 - [Docker compose example(s)](#docker-compose-example-s)
 
 
-Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in its own cloud or premises.
+Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in their own cloud or premises.
 
 This section describes where to find and how to use the .Stat Suite Docker images.
 
@@ -38,9 +38,9 @@ See the full Docker overview [here](https://docs.docker.com/engine/docker-overvi
 
 ## Next steps
 
-Read about installing [Docker](https://docs.docker.com/install/overview/).  
-Get hands-on experience with the Getting started with [Docker tutorial](https://docs.docker.com/engine/getstarted/).  
-Check out examples and deep dive topics in the [Docker Engine user guide](https://docs.docker.com/engine/userguide/).  
+- Read about installing [Docker](https://docs.docker.com/install/overview/).  
+- Get hands-on experience with the Getting started with [Docker tutorial](https://docs.docker.com/engine/getstarted/).  
+- Check out examples and deep dive topics in the [Docker Engine user guide](https://docs.docker.com/engine/userguide/).  
 
 ---
 
@@ -65,9 +65,9 @@ This web app is the main GUI for (external) users to find, understand and use th
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.  
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
 
-- tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed
-- share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
-- POST body are size limited to `maxChartSize`  
+- tables/charts are only temporarily stored for `redisChartTTL` seconds before being deleted unless confirmed via email link
+- share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
+- POST bodies are limited in size to `maxChartSize`
 
 <br>
 
@@ -99,13 +99,13 @@ Limitations:
 
 - reconciliate sdmx and search data (e.g. dataset order, facet value order) -> cache server
 - datasources & config
-- perf (benchmark to do)
+- performance (benchmark to do)
 - how to index (e.g. individual dataset = SDMX dataflow)
 
 
 ### Proxy service
 
-The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct tager application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
+The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct target application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
 
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-kube-proxy
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
