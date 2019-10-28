@@ -26,14 +26,14 @@ weight: 73
 This page is a guide on how to setup, configure and interact with most of the .Stat Data Explorer client-side configurations and (sdmx) business rules.<br>
 
 These configurations are tasks to be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.<br>
-Some of the whished configurations or settings (e.g. how to add a new sdmx public endpoint) are not available from here because they must happen in a previous step or they are refering to server-side decisions, and you should therefore refer to the installation guides.
+Some of the desired configurations or settings (e.g. how to add a new sdmx public endpoint) are not available from here because they must happen in a previous step or they are refering to server-side decisions, and you should therefore refer to the installation guides.
 
 ---
 
 ### Homepage facets
-Define the facets, that are displayed on the homepage below "browse by", by ID and in the appropriate order.  
+Define the facets that are displayed on the homepage below "browse by", by ID and in the order in which you want them to appear.  
 In the property "homeFacetIds", you must enter the ID of an indexed CategoryScheme, e.g. "cas_subject", ConceptScheme, e.g. ref_area, or "datasource_id" for the Data Source facet.  
-If it is **empty**, then no facet is displayed on the homepage.  
+If the setting exists but is **empty**, then no facet is displayed on the homepage.  
 If it is **missing**, then all available facets are displayed on the homepage.  
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
@@ -78,7 +78,7 @@ Define the facets that will always be excluded from the search result page.<br>
 ---
 
 ### Search result page: number of results per page
-Define the number of result displayed per page in the search result pages.<br>
+Define the number of results displayed per page in the search result pages.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
@@ -107,7 +107,8 @@ Define the minimum and maximum values of the time period range in the visualisat
 
 ### Default time period
 Define the default time period selection of the visualisation page views, according to data availability.<br>
-**Warning** Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
+
+> **Warning** Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
@@ -144,8 +145,8 @@ It applies the calculation over the observation values when the Preferred Scale 
 ```
    "sdmx": {
         "attributes": {
-        "prefscale": "PREF_SCALE", 
-    },
+            "prefscale": "PREF_SCALE", 
+        },
     }
 ```
 
@@ -159,8 +160,8 @@ It applies the Decimal Attribute value when defined in the data source, and thus
 ```
    "sdmx": {
         "attributes": {
-        "decimals": "DECIMALS", 
-    },
+            "decimals": "DECIMALS", 
+        },
     }
 ```
 
@@ -168,17 +169,18 @@ It applies the Decimal Attribute value when defined in the data source, and thus
 
 ### Coded attributes returned as flags
 Define the supported coded attributes displayed as flags at the observation value level in the table and chart views.<br>
-The code is shown next to the observaiton value, and the label is displayed in a mouse-over feature.<br>
-You can define more than one type of attributes to be displayed as flags.<br>
-**Warning**: if the value ID of an attribute that is defined as flag is **longer than 4 characters**, then this value will not be displayed as flag but as **footnote**.<br>
+The code is shown next to the observation value, and the label is displayed in a mouse-over feature.<br>
+You can define more than one type of attribute to be displayed as flags.<br>
+
+> **Warning**: if the value ID of an attribute that is defined as flag is **longer than 4 characters**, then this value will not be displayed as a flag but as a **footnote**.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
    "sdmx": {
         "attributes": {
-        "flags": ["OBS_STATUS"], 
-    },
+            "flags": ["OBS_STATUS"], 
+        },
     }
 ```
 
@@ -187,7 +189,7 @@ You can define more than one type of attributes to be displayed as flags.<br>
 ---
 
 ### Coded and uncoded attributes returned as footnotes
-Define the supported coded or uncoded attributes displayed as footnotes at the observaiton value level in the table and chart views.<br>
+Define the supported coded or uncoded attributes displayed as footnotes at the observation value level in the table and chart views.<br>
 An asterisk icon is shown next to the observation value, and the attribute value is displayed in a mouse-over feature.<br>
 You can define more than one type of attributes to be displayed as footnotes.<br>
 
@@ -196,8 +198,8 @@ You can define more than one type of attributes to be displayed as footnotes.<br
 ```
    "sdmx": {
         "attributes": {
-        "footnotes": ["TIME_FORMAT"], 
-    },
+            "footnotes": ["TIME_FORMAT"], 
+        },
     }
 ```
 
@@ -206,22 +208,22 @@ You can define more than one type of attributes to be displayed as footnotes.<br
 ---
 
 ### Localised observation values separators for thousands and decimals
-Define the localised thousands and decimals separators of the observaiton values when required in the table and chart views.<br>
+Define the localised thousands and decimals separators of the observation values when required in the table and chart views.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```
     "i18n": {
-    "localeId": "en",
-    "locales": {
-        "en": {
-          "id": "en",
-          "delimiters": { "thousands": ",", "decimal": "."  }
-        },
-        "fr": {
-          "id": "fr",
-          "delimiters": { "thousands": " ", "decimal": ","  }
-        },
+        "localeId": "en",
+        "locales": {
+            "en": {
+                "id": "en",
+                "delimiters": { "thousands": ",", "decimal": "."  }
+            },
+            "fr": {
+                "id": "fr",
+                "delimiters": { "thousands": " ", "decimal": ","  }
+            },
         }
     }
 ```

@@ -105,17 +105,17 @@ weight: 45
 
 3. start the service:
 
-- (temporary) edit the 1st line of dist/params/production.js as follow: `const server = { host: '0.0.0.0', port: 3007 };`
-- (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
-- check if everything is fine: http://localhost:3007/healthcheck
-- check if the config (mostly to check datasources) is fine: http://localhost:3007/api/config
+  - (temporary) edit the 1st line of dist/params/production.js as follow: `const server = { host: '0.0.0.0', port: 3007 };`
+  - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
+  - check if everything is fine: http://localhost:3007/healthcheck
+  - check if the config (mostly to check datasources) is fine: http://localhost:3007/api/config
 
 4. handle index (that are indexable):
 
-- get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret`
-- index dataflows: `curl -X POST http://localhost:3007/admin/dataflows?api-key=secret -d {}`
-- get report: `curl -X GET http://localhost:3007/admin/report?api-key=secret`
-- delete dataflows and config: `curl -X DELETE http://localhost:3007/admin/config?api-key=secret`
+  - get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret`
+  - index dataflows: `curl -X POST http://localhost:3007/admin/dataflows?api-key=secret -d {}`
+  - get report: `curl -X GET http://localhost:3007/admin/report?api-key=secret`
+  - delete dataflows and config: `curl -X DELETE http://localhost:3007/admin/config?api-key=secret`
 
 *notes:*
 
@@ -142,10 +142,10 @@ weight: 45
 │   │   ├── package.json
 ```
 
-4. start the service:
+3. start the service:
 
-- (in git bash) run `PORT=3006 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SITE_URL=http://localhost:3006  npm run dist:run`
-- check if everything is fine: http://localhost:3006/healthcheck
+  - (in git bash) run `PORT=3006 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SITE_URL=http://localhost:3006  npm run dist:run`
+  - check if everything is fine: http://localhost:3006/healthcheck
 
 *notes:*
 
@@ -170,10 +170,10 @@ weight: 45
 │   │   ├── package.json
 ```
 
-4. start the service:
+3. start the service:
 
-- (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 npm run start:run`
-- check if everything is fine: http://localhost:3008 (proxy with a route mapped to data-explorer)
+  - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 npm run start:run`
+  - check if everything is fine: http://localhost:3008 (proxy with a route mapped to data-explorer)
 
 **6. data-viewer app**
 
@@ -196,4 +196,4 @@ weight: 45
 
 4. start the service:
 
-- (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
+  - (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`

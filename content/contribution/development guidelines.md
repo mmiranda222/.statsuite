@@ -22,7 +22,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - should always be deployable
 - dev (name=dev)
     - developer's hub
-    - should always be developable (ie can be buggy as soons as it does not block developers)
+    - should always be developable (ie can be buggy as long as it does not block developers)
 - feature branches (name=feature/*)
     - new features/experiments
     - should be synced with dev from time to time
@@ -35,7 +35,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - allows dev branch to receive next release features
 - hotfix branches (name=hotfix/*)
     - fixing critical bug(s) in production
-    - avoid blocking dev while fxing master
+    - avoid blocking dev while fixing master
 
 **Rules**<br>
 
@@ -71,7 +71,7 @@ $ git commit -m 'add a banana'
 $ git commit -m 'add another banana'
 $ git push
 ```
-It is important, to commit and push code to backup it.  
+It is important to commit and push code to back it up.  
 If you are not working alone on a feature, do a `git pull` before pushing.  
 If the feature is big, keep it up to date with dev to limit conflicts:
 ```
@@ -128,7 +128,7 @@ No need to enter a message neither to add reconciliated (and thus updated) files
 ### Process
 
 - All changes to the code are done via merge requests. No one ever pushes directly to master. This applies to all core developers and community contributors.
-    - All changes to code need to be approved by a member of the core technical team. A member cannot approve her own code.
+    - All changes to code need to be approved by a member of the core technical team. A member cannot approve their own code.
 - All changes to code must meet the published guidelines on code style and version control practices.
 - Merge requests are configured with CI/CD for all required security checks. If any check fails, then the core team must request fixes to the merge request. 
 
@@ -136,17 +136,17 @@ No need to enter a message neither to add reconciliated (and thus updated) files
 
 ### Coding standards
 
-We are using JavaScript (Node.js), SQL and C# (on .NET framework).<br>
+We are using JavaScript (Node.js), SQL and C# (on .NET Core).<br>
 
 - [ECMAScript 6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) is used to standardise JavaScript (Node.js) code.
-- [Jetbrains' Resharper](https://www.jetbrains.com/resharper/features/code_analysis.html) is a plugin used on SQL and C# (on .NET framework) code checking in real-time standardisation and common practices.
+- [Jetbrains' Resharper](https://www.jetbrains.com/resharper/features/code_analysis.html) is a plugin used on SQL and C# (on .NET Core) code checking in real-time standardisation and common practices.
 
 ---
 
 ### Linting utilities
 
 - [ESlint](https://eslint.org/) is used on JavaScript (Node.js) for checking code's consistency and reporting on security patterns.<br>
-- [Chekmarx](https://www.checkmarx.com/) is used for SQL and C# (on .NET framework) code.
+- [Checkmarx](https://www.checkmarx.com/) is used for SQL and C# (on .NET Core) code.
 
 ---
 

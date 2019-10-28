@@ -31,7 +31,7 @@ The .Stat Suite has three **main modules**:
 
 ### .Stat Data Explorer (DE)
 
-**Functional vision from the user's perspective**: “*Let me easily access the organisation’s statistical data. Let me find, understand and use the data I need.*”
+**Functional vision from the user's perspective**: *“Let me easily access the organisation’s statistical data. Let me find, understand and use the data I need.”*
 
 **Data user's needs**:
 
@@ -71,7 +71,7 @@ The .Stat Suite has three **main modules**:
 
 ### .Stat Data Lifecycle Manager (DLM)
 
-**Functional vision from the user's perspective**: “*Let me easily produce the organisation’s statistical data.Let me define, run, automate, control and evaluate the data processes I need.*”
+**Functional vision from the user's perspective**: *“Let me easily produce the organisation’s statistical data. Let me define, run, automate, control and evaluate the data processes I need.”*
 
 **Statistical data producer's needs**:
 
@@ -85,18 +85,18 @@ The .Stat Suite has three **main modules**:
 
 * **...an adaptive back-office...** 
 
-  1. The Data Lifecycle Manager (DLM) has the possibility of building the ‘*Enterprise resource planning (ERP) of official statistics*’ for usage around the globe
-  1. But while functional requirements seem converging across the board in statistical organisations, and across the different steps of the data lifecycle, there exists *wide gaps in statistical and data modelling skills* under users, who have therefore *diverging levels of needs for guidance, terminology and automation or hiding of more advanced choices*. Indeed, methodology advisers (who usually are SDMX experts) need access to very advanced data modelling options, while many statisticians, especially in countries with lower capacity are more used to mainly deal with ad-hoc data tables.
-  1. The DLM takes the huge challenge to provide features, approaches and terminologies that adapt to the strongly diverging needs of the users.
+  1. The Data Lifecycle Manager (DLM) has the possibility of building the *‘Enterprise resource planning (ERP) of official statistics’* for usage around the globe
+  1. But while functional requirements seem converging across the board in statistical organisations, and across the different steps of the data lifecycle, there exists *wide gaps in statistical and data modelling skills* under users, who have therefore *diverging levels of needs for guidance, terminology and automation or hiding of more advanced choices*. Indeed, methodology advisers (who usually are SDMX experts) need access to very advanced data modelling options, while many statisticians, especially in countries with lower capacity are more used to mainly dealing with ad-hoc data tables.
+  1. The DLM takes on the huge challenge to provide features, approaches and terminologies that adapt to the strongly diverging needs of the users.
 
-  Note: Enterprise resource planning (ERP) is defined as the ability to deliver an integrated suite of applications.     ERP tools share a common process and data model, covering the broad and deep end-to-end processes
+  Note: Enterprise resource planning (ERP) is defined as the ability to deliver an integrated suite of applications. ERP tools share a common process and data model, covering the broad and deep end-to-end processes
 
 * **...for statisticians, statistical assistants, data reporters, database managers, data scientists, economists/analysts, methodology advisers and release officers...**
 
 * **...to efficiently and timely...**
 
-  1. User efficiency is directly impacted by *user-friendliness* and the degree of *autonomy* that the user interface allows for. It must be intuitive, clear, pro-active, guiding & well-termed. Whenever possible, integration of well-known and appreciated tools (e.g. Excel, R) takes precedence over redevelopment of features. Times for training and user support can so be minimized.
-  1. In the past, highest deficiencies of many tools were observed in the domains of data structure modelling and data collection (agreement of structures, entering/exchange of data). These should be the main areas to focus on.
+  1. User efficiency is directly impacted by *user-friendliness* and the degree of *autonomy* that the user interface allows for. It must be intuitive, clear, pro-active, guiding & well-termed. Whenever possible, integration of well-known and appreciated tools (e.g. Excel, R) takes precedence over redevelopment of features. Time for training and user support can thus be minimized.
+  1. In the past, the greatest deficiencies of many tools were observed in the domains of data structure modelling and data collection (agreement of structures, entering/exchange of data). These should be the main areas to focus on.
   1. Timeliness refers to how quickly the data are available after the event or phenomenon they describe within the time period that permits the data to be of value and still acted upon. Currently, and with many private data providers emerging in this new digitalised economy, the speed with which statistical organisations deliver their data becomes mission critical. 
   1. Both efficiency and timeliness can be optimised by implementing a maximum degree of *automation* especially of lower-level tasks performed by users, as well as *high computing and algorithmic performance*.
 
@@ -130,8 +130,8 @@ The .Stat Suite has three **main modules**:
       * *Data mapping rules* (Structure Sets);
       * Referential metadata (MSD).
     To foster harmonisation, all users within the organisation should have a general structure read access.
-  1. In the future, *SDMX 3.0* should allow to fully model also *disaggregated data* (microdata) and its *geospatial location*, which will allow for extending the coverage of the data lifecycle towards original data collection. The appropriate management of confidentiality to protect privacy and personally identifiable information will then be very important.
-  1. Users need to be able to easily *import, create, edit, transfer* and *export* these data structures. The underlying statistical business process in GSBPM is *design*.
+  1. In the future, *SDMX 3.0* should also allow fully modelling *disaggregated data* (microdata) and its *geospatial location*, which will allow for extending the coverage of the data lifecycle towards original data collection. The appropriate management of confidentiality to protect privacy and personally identifiable information will then be very important.
+  1. Users need to be able to easily *import, create, edit, transfer* and *export* these data structures. The underlying statistical business process in GSBPM is *design*.
 
 * **...by defining,...**
 
@@ -143,7 +143,7 @@ The .Stat Suite has three **main modules**:
       * What should happen with the output data? In which way and where should they be stored? Who can *access* the output data and when?
       * What are the success/failure criteria for the data process?
   1. Special users should have the possibility to *limit certain actions* to certain (types/groups of) *users*.
-  1. The user should be able to *store* the definition, so that it can be used at later or be reused by others. Due to the increasing amount of those definitions, they should be easily *manageable*.
+  1. The user should be able to *store* the definition, so that it can be used at later or be reused by others. Due to the increasing amount of those definitions, they should be easily *manageable*.
 
 * **...running,...**
 
@@ -154,9 +154,9 @@ The .Stat Suite has three **main modules**:
 
 * **...automating,...**
 
-  1. Today’s statistical data production is globally still very much manual. Statisticians and other users execute most of the tasks themselves, including editing and moving of files, sending/receiving data per email, entering or uploading data into the system, etc. This can, and needs to be addressed and progressively replaced by automated executions. It is pre-conditioned by the availability and large widespread of tools like the DLM and so through a ground-breaking technology upgrade, but also by a change of standards and habits from organisational to the personal level. With automation, the role of the user changes from an executor to a definer and controller: defining and controlling the execution of processes are indeed more added-value tasks than executing them manually. Therefore more time can be spent on quality aspects of the data production.
+  1. Today’s statistical data production globally is still very much manual. Statisticians and other users execute most of the tasks themselves, including editing and moving of files, sending/receiving data via email, entering or uploading data into the system, etc. This can, and needs to be addressed and progressively replaced by automated executions. It is dependent on the availability and widespread uptake of tools like the DLM and so on a ground-breaking technology upgrade, but also by a change of standards and habits from organisational to the personal level. With automation, the role of the user changes from an executor to a definer and controller: defining and controlling the execution of processes are indeed more added-value tasks than executing them manually. Therefore more time can be spent on quality aspects of the data production.
   1. Automation requires the *definition of a trigger* for the automated execution of an already defined *data process*. It could be a specific *time schedule* or the *successful achievement of another* (preceding) *data process*, maybe combined with *a specific state of its output data* (so-called “metadata-driven” workflow). Indeed, this strong need contributed to empowering the ‘Metadata Management’ to an overarching GSBPM process.
-  1. In automated scenarios, it is not appropriate that the user gets systematically informed about a full success. Here the “*management by exception*” principle applies allowing the user to get disturbed and be invited to intervene only when things go wrong.
+  1. In automated scenarios, it is not appropriate that the user gets systematically informed about a full success. Here the *“management by exception”* principle applies allowing the user to get disturbed and be invited to intervene only when things go wrong.
 
 * **...controlling,...** 
 
@@ -193,9 +193,9 @@ The .Stat Suite has three **main modules**:
 * **...powered by the .Stat Suite.**
 
   1. The DLM is one of the major components of the .Stat Suite, an open-source, *SDMX-based*, *web-based* modular platform covering the complete end-to-end data lifecycle.
-  1. The DLM is composed of a set of back office modules and combines all data lifecycle management activities into *one user interface*. It is relying on a strong, robust and efficient SDMX backbone (.Stat CORE) through *standard protocols*. Due to the nature of the application, web accessibility and responsiveness are not prioritised, but some future modules, e.g. for data collection, might have stronger accessibility requirements. *Cloud-readiness* is mandatory.
-  1. Different data versions throughout the statistical production process (e.g. test data, collected non-validated data, validated data not ready for dissemination, staging data, disseminated data, etc.) are managed through *data spaces*, which are logically fully separated SDMX endpoints/databases. These data spaces need to be defined to a high-level of flexibly depending on the specific needs of the instance of a statistical business process or organisational needs. It is very important that the user is always very clear about the data space (s)he is currently dealing with.
-  1. The .Stat Suite is modular and open (architecture) by design. *Reusability* is also a key architectural principle. Thus, components such as *.Stat Data Explorer* should be reused also in the DLM to cover user needs when they are similar. Some adaption/configuration might be necessary to clarify the context.
+  1. The DLM is composed of a set of back office modules and combines all data lifecycle management activities into *one user interface*. It relies on a strong, robust and efficient SDMX backbone (.Stat CORE) through *standard protocols*. Due to the nature of the application, web accessibility and responsiveness are not prioritised, but some future modules, e.g. for data collection, might have stronger accessibility requirements. *Cloud-readiness* is mandatory.
+  1. Different data versions throughout the statistical production process (e.g. test data, collected non-validated data, validated data not ready for dissemination, staging data, disseminated data, etc.) are managed through *data spaces*, which are logically fully separated SDMX endpoints/databases. These data spaces need to be defined to a high-level of flexibility depending on the specific needs of the instance of a statistical business process or organisational needs. It is very important that the user is always very clear about the data space they are currently dealing with.
+  1. The .Stat Suite is modular and open (architecture) by design. *Reusability* is also a key architectural principle. Thus, components such as *.Stat Data Explorer* should be reused also in the DLM to cover user needs when they are similar. Some adaption/configuration might be necessary to clarify the context.
 
 
 **The .Stat Data Lifecycle Manager will consist of several functional modules**:

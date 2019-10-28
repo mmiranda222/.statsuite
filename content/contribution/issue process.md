@@ -18,7 +18,7 @@ weight: 92
 Every opened issue (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/) how to report a new issue) will follow the agreed and below defined production cycle, in regards to quality criteria and relevance assessed by the Product Owner (PO) Team and the Technical (Dev) Team.<br>
 The full workflow goes from open to PO, Graphical Design and Dev Teams (.NET/SQL and JavaScript), including review, quality check, implementation, peer-review, quality assurance and release, then finally closed.<br>
 In some cases of course some steps are skipped, e.g. a bug will not go through Graphical Design steps.<br>
-If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing for it.  <br>
+If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing to work on it.  <br>
 
 ### Production Cycle
 
@@ -43,7 +43,7 @@ The Technical (Dev) Team is here divided into .NET/SQL and JavaScript technologi
 
 ### Common rules
 - An issue can go through several iterations of the process cycle through Product Owner, Graphical Design, .NET/SQL Dev and JavaScript Dev teams.
-- At any step of a process, an issue can be put on hold ovr be retrogated.
+- At any step of a process, an issue can be put on hold or be returned to an earlier step.
 - A Definition of Done (DoD) of a process step must be met and completed before an issue goes to any next step of the workflow.
 
 ### Product Owner workflow
@@ -91,7 +91,7 @@ _skipped_
 
 ### Technical (Dev) workflow
 1. Review<br>
-The Dev Team reviews the issue and make sure that the expected outcome of the fix/implementation/solution is clear, feasible and appropriate.<br>
+The Dev Team reviews the issue and makes sure that the expected outcome of the fix/implementation/solution is clear, feasible and appropriate.<br>
 If some parts are not clear, then the Technical Team contacts (e.g. through comments) the previous team in the process (PO Team, Graphical Design Team or .NET.SQL Dev Team).<br>
 **DoD**: the issue is quality checked. It has been validated by both PO and Technical Teams and it is ready for Implementation.<br>
 
@@ -107,7 +107,7 @@ The code is documented.<br>
 
 4. Quality Assurance<br>
 The PO Team tests the implementation of the issue in the quality-assurance environment.<br>
-**DoD**: the issue is fully tested and meets the user acceptance.<br>
+**DoD**: the issue is fully tested and meets the user acceptance criteria.<br>
 The feature is documented.<br>
 
 5. Release<br>

@@ -193,9 +193,9 @@ This web app is the main GUI for (external) users to find, understand and use th
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
 
-* tables/charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed
-* share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
-* POST body are size limited to `maxChartSize`
+* tables/charts are only temporarily stored for `redisChartTTL` seconds before being deleted unless confirmed via email link
+* share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
+* POST bodies are limited in size to `maxChartSize`
 
 ### demo
 1. go to http://webapp.staging.oecd.redpelicans.com/?tenant=oecd
@@ -233,15 +233,15 @@ id2 ->|7. redirect user|id4
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
 - a redis database is used to store shared charts
 - share server is not auth protected, so any robot can spam it; to avoid that, many mechanisms are in place:
-  - charts are temporary stored only during `redisChartTTL` seconds before beeing deleted unless beeing confirmed
-  - share server check POST calls rates, over `maxRatePerIP` per second, POST calls, per IP, are rejected with a 419 HTTP code
-  - POST body are size limited to `maxChartSize`
+  - charts are only temporarily stored for `redisChartTTL` seconds before being deleted unless confirmed via email link
+  - share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
+  - POST bodies are limited in size to `maxChartSize`
 
 
 ## Share-Viewer App
 
 ### short description
-This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
+This web app is a companion GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
 ### demo (light)
 1. Go to http://data-viewer.staging.oecd.redpelicans.com/?chartId=3 (tenant: oecd, env: staging)
@@ -262,9 +262,9 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 ### features/demos
 - free-text faceted search
 - results are sorted by relevance and paginated
-- free-text search hit: highlight of first occurance of all search terms 
+- free-text search hit: highlight the first occurance of all search terms 
 - handles hierarchical facet content (from SDMX codelists)
-- multilang
+- multi-language enabled
 - [single term search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status): `Unemployment rate by sex and disability status` 2 results
 - [phrase term search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=%22Unemployment%20rate%20by%20sex%20and%20disability%20status%22): `"Unemployment rate by sex and disability status"` 1 result
 - [tagged search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series): `name:seasonally adjusted series`
@@ -297,12 +297,12 @@ graph LR
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-sdmx-faceted-search
 - a static schema is defined in the config
-- a dynamic schema is derivated from dataflows
+- a dynamic schema is derived from dataflows
 
 ### limitations
 - reconciliate sdmx and search data (e.g. dataset order, facet value order) -> cache server
 - datasources & config
-- perf (benchmark to do)
+- performance (benchmark to do)
 - how to index (e.g. individual dataset = SDMX dataflow)
 
 
@@ -310,14 +310,14 @@ graph LR
 
 ### short description
 
-The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct tager application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
+The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct target application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
 - handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`)
 - set tenant headers depending on host to instruct target application
-- `<tenant>.redpelicans.com` could be replaced by a dedicaded DNS entry, ie `https://<app>.<env>.oecd.org`
+- `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, ie `https://<app>.<env>.oecd.org`
 
 
 ## Config Service
@@ -357,7 +357,7 @@ Set of configurable charts based on d3.
 ### (Dependency) visions
 
 #### short description
-Visions is a lib of React components. The goal is to handle interfaces and very limited logic.
+Visions is a library of React components. The goal is to handle interfaces and very limited logic.
 
 #### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components
@@ -366,7 +366,7 @@ Visions is a lib of React components. The goal is to handle interfaces and very 
 ### (Dependency) sis-header
 
 #### short description
-A header view component for Table and Charts.
+A header view component for Tables and Charts.
 
 #### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header
@@ -375,7 +375,7 @@ A header view component for Table and Charts.
 ### (Dependency) dotstatsuite components
 
 #### short description
-Is a lib of components. [*more discription to come*]
+Is a library of components. [*more discription to come*]
 
 #### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components
@@ -384,7 +384,7 @@ Is a lib of components. [*more discription to come*]
 ### (Dependency) dotstatsuite-sdmxjs
 
 #### short description
-Is a lib of components for the parsing of SDMX-JSON messages. [*more discription to come*]
+Is a library of components for the parsing of SDMX-JSON messages. [*more discription to come*]
 
 #### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs
