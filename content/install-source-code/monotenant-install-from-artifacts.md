@@ -80,7 +80,7 @@ weight: 45
 - b: [see assets samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/master/data/prod/assets)
 - in settings, assets should contain the whole path, ie http://localhost:5007/assets/... because the proxy is not used in a mono-tenant approach
 
-3. start the service:
+3 . start the service:
 
 - (in git bash) run `PORT=5007 npm run dist:run`
 - check if everything is fine: http://localhost:5007/healthcheck
