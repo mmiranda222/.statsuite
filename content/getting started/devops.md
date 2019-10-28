@@ -29,24 +29,28 @@ weight: 33
     ° [**NSI ws with re-initialised content** (new database) called 'reset'](http://nsi-reset-qa-oecd.redpelicans.com/)  
     ° [**Transfer ws**](http://transfer-qa-oecd.redpelicans.com/swagger/index.html)  
     ° [**Authorisation ws**](http://authz-qa-oecd.redpelicans.com/swagger/index.html)  
-  - test [**'PM' tenant**  of candidate **DE**](http://data-explorer.qa.oecd.redpelicans.com/) plugged to:  
+  - test [**'PM' tenant**  of candidate **DE**](http://de-qa-oecd.redpelicans.com/) plugged to:  
     ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
     ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
-  - test [**'PM' tenant**  of candidate **DLM**](http://data-lifecycle-manager.qa.oecd.redpelicans.com/) plugged to:  
+  - test [**'PM' tenant**  of candidate **DLM**](http://dlm-qa-oecd.redpelicans.com/) plugged to:  
     ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
     ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
     ° SIS-CC Demo-related staging instance of Transfer ws  
     ° SIS-CC Demo-related staging instance of Authorisation ws  
-
+- Other links:
+  - [User identity management](http://keycloak.qa.oecd.redpelicans.com)
+  - [Share ws](http://share-qa-oecd.redpelicans.com/healthcheck)
+  - [Search ws](http://sfs-qa-oecd.redpelicans.com/healthcheck)
+  - [Data viewer app](http://dv-qa-oecd.redpelicans.com/)
 
 ### pre-production (**staging**) environment
 
 - Automated update triggered by **Master** branch merge (part of “release” Kanban step)
 - Hosting stable instances for **OECD Practice Building team** of: 
-  - **NSI ws with stable content** (upgraded database) called 'OECD-design'
-  - **NSI ws with stable content** (upgraded database) called 'OECD-staging'
-  - **Transfer ws**
-  - **Authorisation ws**
+  - [**NSI ws with stable content** (upgraded database) called 'OECD-design'](http://nsi-design-oecd.redpelicans.com/)
+  - [**NSI ws with stable content** (upgraded database) called 'OECD-staging'](http://nsi-staging-oecd.redpelicans.com/)
+  - [**Transfer ws**](http://transfer-siscc.redpelicans.com/swagger)
+  - [**Authorisation ws**](http://authz-siscc.redpelicans.com/swagger)
   - **'OECD' tenant** of **DE** plugged to:  
     ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
     ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
@@ -56,10 +60,10 @@ weight: 33
     ° stable Transfer ws  
     ° stable Authorisation ws  
 - Hosting stable instances for **SIS-CC (for Demo purposes)** of:
-  - **NSI ws with stable content** (upgraded database) called 'SIS-CC-stable'
-  - **NSI ws with re-initialised content** (new  database) called 'SIS-CC-reset'
-  - **Transfer ws**
-  - **Authorisation ws**
+  - [**NSI ws with stable content** (upgraded database) called 'SIS-CC-stable'](http://nsi-stable-siscc.redpelicans.com/)
+  - [**NSI ws with re-initialised content** (new  database) called 'SIS-CC-reset'](http://nsi-reset-siscc.redpelicans.com/)
+  - [**Transfer ws**](http://transfer-siscc.redpelicans.com/swagger)
+  - [**Authorisation ws**](http://authz-siscc.redpelicans.com/swagger)
   - **'SIS-CC' tenant** of **DE** plugged to:  
     ° stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'  
     ° stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'  
