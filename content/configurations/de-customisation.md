@@ -14,6 +14,7 @@ weight: 72
 - [table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
 - [api documentation hyperlink](#api-documentation-hyperlink)
 - [contact us hyperlink](#contact-us-hyperlink)
+- [map chart configuration](#map-chart-configuration)
 
 
 ### intro
@@ -162,4 +163,86 @@ Define the hyperlink for the "Contact us" feature.<br>
 ```
 
 ![Contact us](/images/faq-contact-us.png)
+
+---
+
+### Map Chart Configuration
+
+Displaying data in a geographical map representation in the Data Explorer visualisation pages, will rely on the providing of one or several maps (regarding the needs) to the application.<br>
+
+**Prerequisites**<br>
+It is first required to produce these maps as `topojson` files. To learn more about `topojson` format, you can read: https://github.com/topojson/topojson-specification/blob/master/README.md <br>
+You can also learn more about `topojson` files generation from [here](https://github.com/topojson/topojson). <br>
+<br>
+From here and further in the configuration, it is assumed that one can produce `topojson` files for his needs.<br>
+<br>
+
+**First steps**
+Starting with the specifications of the `topojson` file format. Following is provided a '**world_map.json**' file as example.<br>
+As `topojson` standard specifes, areas are defined in `objects` entry. Since the SDMX dimension representing the Reference Areas may be a hierarchical one, it is possible for the Data Explorer to have several maps choice corresponding to the different hierarchy levels, for only one `topojson` file. All you need is regrouping your areas definition into several entries inside your `objects` entry.<br>
+So for instance, for 2 levels of a hierarchy, e.g. `continents` and `countries`, the following 2 entries are defined in the **world_map.json** file as `objects`:
+```
+{
+    "objects": {
+        "continents": {
+            "type": 'GeometryCollection',
+            "geometries": [(...)]
+        },
+        "countries": {
+            "type": 'GeometryCollection',
+            "geometries": [(...)]
+        }
+    }
+}
+```
+**Note**: in case of a flat area dimension, there is still a need for areas to be put under a level in the file.<br>
+<br>
+Then each of the areas will be collected in one of the `geometries` arrays, as follows:
+```
+area = {
+    "type": "",
+    "arcs": [],
+    "properties": { "id": SDMX_AREA_ID }
+}
+```
+In the above example, `type` and `arcs` are pure topojson generated entries and serving the computing of the draw. <br>
+The `properties` entry serves as the metadata entry of the area. <br>
+The engine only requires an `id` entry (**Note** that any other entry will be ignored, and it is strongly suggested to not overload the file -in case of a large number of areas- for performance purpose). <br>
+It is highly important that `id` perfectly matches the corresponding SDMX id defined in the areas codelist, for the mapping between SDMX datas and geographical data to work.
+<br>
+<br>
+**Second step** The `topojson` file needs to be added in the following path `dotstatsuite/data/<env>/assets/<tenant>/data-explorer/maps/world_map.json`<br>
+
+**Third step** Then it needs to be referenced in Data Explorer settings in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`:
+```
+{
+    "chart": {
+        "maps": {
+            "world_map": {
+                "id": "world_map",
+                "projection": ,
+                "path": "/assets/<tenant>/data-explorer/maps/world_map.json",
+                "levels": ["continents", "countries"],
+                "scale": ,
+            }
+        }
+    }
+}
+```
+A very important aspect here above is about `projection` and `scale` entries. Both are linked to the api specification of the D3 library for map rendering. Detailed specifications of D3 projection mechanism are to be found [here](https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md). 
+Keep in mind that `projection` stands for the specific D3 projection you want to use (e.g. `mercator` for `d3.geo.mercator`).<br>
+<br>
+
+**Last step** is to make sure that each area level of the map has its label properly put in the translation files.<br>
+For the English example of the world map, it should look like:
+`dotstatsuite/data/<env>/configs/<tenant>/data-explorer/i18n/en.json`
+```
+{
+    "chart.choropleth": "Map of {map}",
+    "map.world_map.continents": "Continents",
+    "map.world_map.countries": "Countries"
+}
+```
+
+This example above will result with 2 options (in the menu of the Data Explorer chart drop-down feature) labelled in English: "Map of Continents" and "Map of Countries".
 
