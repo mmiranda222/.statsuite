@@ -17,3 +17,5 @@ Please see each page for more details:
 * [Mono-tenant installation of .Stat DE services](/install-source-code/monotenant-install-from-artifacts)
 * [Mono-tenant update of .Stat DE services](/install-source-code/monotenant-update-from-artifacts)
 * [Mono-tenant update of .Stat DE services as Windows services](/install-source-code/monotenant-install-js-as-windows-services)
+
+You can also have a look at the [Delivery stream's diagram](/getting-started/index/#delivery-streams-and-support-diagram) for a better understanding of the installation approach.
