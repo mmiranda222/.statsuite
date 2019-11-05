@@ -10,4 +10,5 @@ includes:
 
 * [.Stat Data Explorer customisation](/configurations/de-customisation)
 * [.Stat Data Explorer configuration](/configurations/de-configuration)
+* [SolR Optimisation](/configurations/solr-optimisation)
 * *more to come...*
