@@ -28,10 +28,16 @@ This project is used for publishing the official .Stat Suite documentation to th
 │   │   ├── product overview.md
 │   ├── changelog
 │   │   ├── _index.md
+│   ├── cms-integration
+│   │   ├── _index.md
+│   │   ├── ckan.md
+│   │   ├── drupal.md
+│   │   ├── worpress.md
 │   ├── configurations
 │   │   ├── _index.md
 │   │   ├── de-configuraiton.md
 │   │   ├── de-customisation.md
+│   │   ├── solr-optimisation.md
 │   ├── contribution
 │   │   ├── _index.md
 │   │   ├── development guidelines.md
@@ -80,5 +86,6 @@ config.toml
 ### Contributing to the documentation
 
 - All the documentation content is written in **Markdown** syntax.
-- Follow the existing **menu structure**. If relevant, you can submit a new menu folder/section/sub-section.
-- Follow our **[Gitflow](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-guidelines/) process** to submit new entries in the documentation.
+- If you want to **edit the documentation** web page, fork [this project](https://gitlab.com/sis-cc/dotstatsuite-documentation), make your changes there, and submit a merge request.
+- Please follow the existing **menu structure**. If relevant, you can submit a new menu folder/section/sub-section.
+- Your merge request will be reviewed according to our **[Gitflow](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-guidelines/) process**.
