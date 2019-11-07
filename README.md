@@ -35,7 +35,7 @@ This project is used for publishing the official .Stat Suite documentation to th
 │   │   ├── worpress.md
 │   ├── configurations
 │   │   ├── _index.md
-│   │   ├── de-configuraiton.md
+│   │   ├── de-configuration.md
 │   │   ├── de-customisation.md
 │   │   ├── solr-optimisation.md
 │   ├── contribution
