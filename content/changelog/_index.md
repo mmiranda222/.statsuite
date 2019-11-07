@@ -6,6 +6,34 @@ weight: 120
 
 ---
 
+### November XX, 2019 [Release .Stat Suite .NET v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=all&milestone_title=Release%20.Stat%20Suite%20.NET%20v2.0.0)
+>This new release includes a new verison of the **.NET/SQL services** the .Stat Suite. It also includes **NSI WS v.xx.xx**. <br>
+
+
+Major changes:
+
+- [dotstatsuite-core-common#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/50) **Generic OpenID Connect authentication** mechanism in the NSI WebService withint .Stat Suite
+- [dotstatsuite-core-sdmxri-nsi-ws#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/4) and [dotstatsuite-core-common#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/96) Add configuration to authentication to disable SSL and token issuer (required for OpenID Connect [#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/50))
+
+Minor changes:
+
+- [dotstatsuite-core-common#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/46) Refactoring the logging mechanism for the .Stat instances of SDMX-RI web service and Transfer service.
+- [dotstatsuite-core-sdmxri-nsi-ws#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/2) **DevOps** Create a pipeline to build on-demand "vanilla" NSI WS Docker image directly from the Eurostat repository
+- [dotstatsuite-core-transfer#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/34) **DevOps** Add SMTP server to the Docker image of the Transfer service in order to enable the email mechanism for .Stat DLM
+- [dotstatsuite-core-auth-management#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/4) and [dotstatsuite-core-transfer#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/24) **DevOps** Build the pipelines and Docker files for the Auth-management and Transfer services
+- [dotstatsuite-core-transfer#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/39), [dotstatsuite-core-auth-management#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/5) and [dotstatsuite-core-data-access#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/29) **DevOps** Auth-management, Transfer and Data-access services: Update pipelines to push images with "latest" for master branch and "develop" for develop branch
+- [dotstatsuite-core-common#74](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/74) **Test** Increase of Unit Test coverage
+- [dotstatsuite-core-data-access#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/27) **Test** Integration tests with database inited from dbup scripts, in order to increase test coverage to at least 50%
+
+Bug fixes:
+
+- [dotstatsuite-core-transfer#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/17) InvalidCastException in SqlToSqlTransferManager
+- [dotstatsuite-core-transfer#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/5) Dimension/Group attribute issues depending on the order of series keys reported in SDMX-ML and CSV files
+- [dotstatsuite-core-transfer#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/40) SqlBulkCopy error
+- [dotstatsuite-core-data-access#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/28) Missing rights for service account(s)
+
+---
+
 ### October 11, 2019 Release .Stat Suite CORE services (GitLab milestone [Release BE 1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/3))
 
 Major changes:
