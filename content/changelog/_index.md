@@ -6,8 +6,8 @@ weight: 120
 
 ---
 
-### November XX, 2019 [Release .Stat Suite .NET v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=all&milestone_title=Release%20.Stat%20Suite%20.NET%20v2.0.0)
->This new release includes a new verison of the **.NET/SQL services** the .Stat Suite. It also includes **NSI WS v.xx.xx**. <br>
+### November 13, 2019 [Release .Stat Suite .NET v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=all&milestone_title=Release%20.Stat%20Suite%20.NET%20v2.0.0)
+>This new release includes a new version of the **.NET/SQL services** the .Stat Suite. <br>
 
 
 Major changes:
