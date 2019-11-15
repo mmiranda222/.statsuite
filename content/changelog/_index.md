@@ -7,19 +7,22 @@ weight: 120
 ---
 
 ### November XX, 2019 [Release .stat suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
-**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **XXXXXXXXXXXXXX**. <br>
+>This new release concerns the **JavaScript JS** part of the .Stat Suite, and is **compatible with the NSI WebService from vX.XX to v7.10.XX**. <br>
 
 Major changes:
 
-- [dotstatsuite-data-explorer#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/8) **Footnote Attributes can be displayed at the always highest possible level in the .Stat DE data table**.<br>
-Depending on the scenario, whenever the attribute value is the same in a section of the table, and inorder to not repeat unnecessary information, a given attribute will be displayed in a footnote at the observation value level, time series level, grouping of dimension members level or datalow level. 
-- [dotstatsuite-data-explorer#98](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/98) **Download data in Excel** from the .Stat Data Explorer. This first version of the Excel download feature allows users to download the data view table as it is shown in their selection. It includes the layout, but not yet the colors of the table view from .Stat DE. Flags and footnotes are also included in the downloaded Excel file as internal links into a second sheet with exactly the same layout but without any values and with flags in the cells instead of values.
-- [dotstatsuite-data-explorer#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/35) The **NOT_DISPLAYED SDMX annotation** allows to hide whther dimensions, dimension values, attributes or attribute values from the .Stat Data Explorer table representations and chart representations, and including filters or not.
-- [dotstatsuite-data-explorer#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/45) Add a UI feature for **changing the lastNObservations parameter**. See details in [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/45) and [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/33) on the behavior fo the LastNObservations feature.
+- [dotstatsuite-data-explorer#98](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/98) **Download data in Excel** from the .Stat Data Explorer.<br>
+This first version of the Excel download feature allows the users to download a data table view as it is shown from their selection. It is triggered in the visualisation page from the drop-down "Download" option (in addition to the .csv formats).<br>
+It includes the layout, but not yet the colors ([#171](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/171)).<br>
+Flags and footnotes are also included in the downloaded Excel file as internal links into a second sheet with exactly the same layout but without any values and with flags in the cells instead of values.
+- [dotstatsuite-data-explorer#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/8) **Attributes in footnotes can be displayed at the always highest possible level in the .Stat DE data table**.<br>
+Depending on the scenario and whenever the attribute value is the same in a section of the table, and in order to not repeat an unnecessary same information, then an attribute will be displayed in a footnote at the observation value level, or time series level, or grouping of dimension members level, or dataflow level. 
+- [dotstatsuite-data-explorer#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/35) The **NOT_DISPLAYED SDMX annotation** allows to hide dimensions, or dimension values, or attributes, or attribute values from the .Stat Data Explorer table and chart representations, and including in the filters or not.
+- [dotstatsuite-data-explorer#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/45) Add a UI feature for **changing the LastNObservations parameter**. See details [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/45) and [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/33) about the behavior fo the LastNObservations feature.
 
 Minor changes:
 
-- [dotstatsuite-data-explorer#125](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/125) Reintroducing the **choropleth map chart** to .Stat Data Explorer, including writing the instructions for the setup and configuraiton of a chart map. Documentation is available [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#map-chart-configuration).
+- [dotstatsuite-data-explorer#125](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/125) Reintroducing the **choropleth map chart** to .Stat Data Explorer, including writing the instructions for the setup and configuration of a chart map. Documentation is available [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#map-chart-configuration).
 - [dotstatsuite-data-explorer#62](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/62) Integrate the **Time Period selections into the Used Filters area** of the .Stat Data Explorer visualisation pages.
 - [dotstatsuite-data-explorer#165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/165) (*Refactoring*) Modify accept header to still allow retrieving urn in structure requests
 - [dotstatsuite-data-explorer#155](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/155) **DevOps / Documentation** Implement, test and document the installation process of .Stat DE and its components in a persistent mode on a Windows server. The new documentation is available [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/monotenant-install-js-as-windows-services/). 
@@ -27,10 +30,10 @@ Minor changes:
 
 Bug fixes:
 
-- [dotstatsuite-data-explorer#168](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/168) Bug in **time range filter** where frequency, start year and end year are not shown
-- [dotstatsuite-data-viewer#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/issues/7) Viewer google Analytics undefined
+- [dotstatsuite-data-explorer#168](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/168) Bug in the **time range filter** where frequency, start year and end year are not shown
+- [dotstatsuite-data-viewer#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/issues/7) Viewer Google Analytics undefined
 - [dotstatsuite-ui-components#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/issues/7) Text color in the Frequency & Time Period filters is not coherent with the other components
-- [dotstatsuite-data-explorer#162](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/162) Data Explorer **CSV download** does not include the labels/codes option anymore
+- [dotstatsuite-data-explorer#162](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/162) .Stat Data Explorer **CSV download** does not include the labels/codes option anymore
 - [dotstatsuite-data-explorer#156](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/156) **Subsequent new filter selections** are not taken into account while the data retrieval from the previous selection is still executing
 - [dotstatsuite-data-explorer#154](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/154) Footnotes are not shown completely especially towards end of table 
 
@@ -90,7 +93,7 @@ Bug fixes:
 ---
 
 ### October 08, 2019 [Release .stat suite JS v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/2)
-**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **v7.xx to v7.8**. <br>
+>**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **v7.xx to v7.8**. <br>
 
 Major changes:
 
