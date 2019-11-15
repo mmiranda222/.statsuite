@@ -44,9 +44,8 @@ The kubernetes cluster definitions implement a "multi-tenant architecture" that 
 
 
 ### technical overview
-![multi-tenant architecture](/images/multi-tenant_architecture.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph LR
 id1(browser)
 id2((internet))
@@ -87,7 +86,7 @@ subgraph oecd cluster on GCP
 id13 -> id15
 id14 -> id15
 end
-```--->
+{{< /mermaid >}}
 
 ### demo: add/update a tenant
 
