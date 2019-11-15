@@ -140,7 +140,6 @@ id5[dotstatsuite-kube-rp]
 id6[kubectl]
 id7((developer))
 id9((admin))
-
 id7 -> id0
 id0 ->|1. push code| id1
 id1 ->|2. push image| id2
@@ -171,7 +170,6 @@ id14[kubernetes cluster: staging environment];
 id11[gitlab dotstatsuite-kube-rp/dotstatsuite-kube-core-rp repositories: master branch]
 id12[kubectl]
 id13((admin))
-
 id0 ->|A1. merge code| id4;
 id0 ->|B1. merge code| id1;
 id0 ->|C1. merge code| id2;
@@ -182,7 +180,6 @@ id6 ->|A4. create & push package| id8;
 id6 ->|A3. build, test| id7;
 id5 ->|BC3. build, test| id7;
 id5 ->|BC4. create & push docker image| id9;
-
 id5 ->|BC5. connect gcloud| id12
 id12 ->|B6. deploy image| id10
 id13 ->|1. connect gcloud| id12
@@ -191,7 +188,6 @@ id13 ->|3. push code| id11
 id8 -. pull package .-> id10
 id9 -. pull image .-> id10
 id11 -. pull code .-> id10
-
 id12 ->|C6. deploy image| id14
 id12 ->|2. update topology| id14
 id8 -. pull package .-> id14
@@ -215,6 +211,7 @@ id11 -. pull code .-> id14
 - 2 types of pipeline:
 
 webapp/service<br>
+
 {{< mermaid align="left" >}}
 graph LR
 subgraph CI all branches
@@ -228,6 +225,7 @@ end
 {{< /mermaid >}}
 
 npm/nuget package<br>
+
 {{< mermaid align="left" >}}
 graph LR
 subgraph CI all branches
