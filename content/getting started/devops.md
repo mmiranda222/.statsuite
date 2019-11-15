@@ -230,7 +230,6 @@ end
 
 npm/nuget package
 ```mermaid
-{{< mermaid align="left" >}}
 graph LR
 subgraph CI all branches
 setup -> unit-tests
