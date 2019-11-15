@@ -6,6 +6,30 @@ weight: 120
 
 ---
 
+### November XX, 2019 [Release .stat suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
+**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **XXXXXXXXXXXXXX**. <br>
+
+Major changes:
+
+- [dotstatsuite-data-explorer#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/8) **Footnote Attributes can be displayed at the always highest possible level in the .Stat DE data table**.<br>
+Depending on the scenario, whenever the attribute value is the same in a section of the table, and inorder to not repeat unnecessary information, a given attribute will be displayed in a footnote at the observation value level, time series level, grouping of dimension members level or datalow level. 
+- [dotstatsuite-data-explorer#98](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/98) **Download data in Excel** from the .Stat Data Explorer. This first version of the Excel download feature allows users to download the data view table as it is shown in their selection. It includes the layout, but not yet the colors of the table view from .Stat DE. Flags and footnotes are also included in the downloaded Excel file as internal links to a second sheet with exactly the same layout but without any values and with flags in the cells instead of values. 
+- []() 
+
+Minor changes:
+
+- []() 
+- []() 
+- []() 
+
+Bug fixes:
+
+- []() 
+- []() 
+- []() 
+
+---
+
 ### November 13, 2019 [Release .Stat Suite .NET v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=all&milestone_title=Release%20.Stat%20Suite%20.NET%20v2.0.0)
 >This new release includes a new version of the **.NET/SQL services** the .Stat Suite. <br>
 
