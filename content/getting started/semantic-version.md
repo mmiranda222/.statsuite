@@ -58,14 +58,14 @@ During development of a new feature in a web service (Transfer service, NSI plug
 
 Pull request order for example dependency graph 
 
-```mermaid
+{{< mermaid align="left" >}}
 graph RL
 n1[Common]
 n2[Data Access]
 n3[Transfer service]
 n3-->n2
 n2-->n1
-```
+{{< /mermaid >}}
 
 1. Common nuget
 2. DataAccess nuget
