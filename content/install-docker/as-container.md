@@ -188,7 +188,9 @@ siscc/dotstatsuite-core-transfer
 
 Schema:<br>
 
-{{< mermaid align="left" >}}
+![transfer service architecture](/images/transfer_architecture.png)
+
+<!---```mermaid
 graph LR
 
 dlm((dlm))
@@ -211,7 +213,7 @@ access-nuget-> ms_db
 access-nuget-> auth-log-db
 access-nuget -> data_db
 end
-{{< /mermaid >}}
+```--->
 
 
 ### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
@@ -253,9 +255,11 @@ docker run -it --rm -p 80:80 \
 siscc/dotstatsuite-core-sdmxri-nsi
 ```
  
-Schema:<br>
+Schema:
 
-{{< mermaid align="left" >}}
+![sdmx/nsi service architecture](/images/nsi_architecture.png)
+
+<!---```mermaid
 graph LR
 
 dlm((dlm))
@@ -284,7 +288,7 @@ access-nuget-> ms_db
 access-nuget-> auth-log-db
 access-nuget -> data_db
 end
-{{< /mermaid >}}
+```--->
 
 
 ### Authorisation service
