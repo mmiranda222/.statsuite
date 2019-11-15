@@ -129,9 +129,8 @@ The following technologies and cloud services are used for the DevOps implementa
 
 
 ## flow
-![devops flow](/images/devops_flow.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph TB
 id0[gitlab repositories]
 id1[gitlab pipelines]
@@ -152,12 +151,11 @@ id6 ->|B. update topology| id4
 id9 ->|C. push code| id5
 id2 -. pull image .-> id4
 id5 -. pull code .-> id4
-```--->
+{{< /mermaid >}}
 
 ## process
-![devops process](/images/DevOps_Process.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph TD;
 id0((peer-reviewer/code guard));
 id1[gitlab application repository: dev branch];
@@ -199,7 +197,7 @@ id12 ->|2. update topology| id14
 id8 -. pull package .-> id14
 id9 -. pull image .-> id14
 id11 -. pull code .-> id14
-```--->
+{{< /mermaid >}}
 
 
 ## mapping
@@ -216,10 +214,8 @@ id11 -. pull code .-> id14
 - each repository defines its pipelines in `gitlab-ci.yml` file
 - 2 types of pipeline:
 
-![gitlab pipelines](/images/gitlab_pipelines.png)
-
-<!---webapp/service
-```mermaid
+webapp/service<br>
+{{< mermaid align="left" >}}
 graph LR
 subgraph CI all branches
 setup -> unit-tests
@@ -229,10 +225,10 @@ subgraph CD only develop & master
 build -> release
 release -> deploy
 end
-```
+{{< /mermaid >}}
 
-npm/nuget package
-```mermaid
+npm/nuget package<br>
+{{< mermaid align="left" >}}
 graph LR
 subgraph CI all branches
 setup -> unit-tests
@@ -241,7 +237,7 @@ end
 subgraph CD only tags*
 build -> publish
 end
-```--->
+{{< /mermaid >}}
 
 ## npm
 - npm packages are published under https://www.npmjs.com/settings/sis-cc/packages

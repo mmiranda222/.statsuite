@@ -22,7 +22,10 @@ If at some point an issue has a very low activity after 12 months, it should the
 
 ### Production Cycle
 
-<!---```mermaid
+The below diagram gives an overview of the Production cycle ran for each of the opened issues and according to the acceptance criteria, and for all types of issues (bugs or features).<br>
+The Technical (Dev) Team is here divided into .NET/SQL and JavaScript technologies.
+
+{{< mermaid align="left" >}}
 sequenceDiagram;
 open->>PO: all issues;
 PO->>Design: all features with UI impact;
@@ -34,12 +37,7 @@ Dev.NET/SQL->>DevJavaScript: with JavaScript;
 Dev.NET/SQL-xclosed: without JavaScript;
 DevJavaScript-xclosed: ;
 PO--xclosed: rejected issues;
-```--->
-
-The below diagram gives an overview of the Production cycle ran for each of the opened issues and according to the acceptance criteria, and for all types of issues (bugs or features).<br>
-The Technical (Dev) Team is here divided into .NET/SQL and JavaScript technologies.
-
-![Issue process workflow overview](/images/IssueProcessWorkflow.png)
+{{< /mermaid >}}
 
 ### Common rules
 - An issue can go through several iterations of the process cycle through Product Owner, Graphical Design, .NET/SQL Dev and JavaScript Dev teams.
@@ -116,7 +114,7 @@ The issue is released as part of the latest production version of the code.<br>
 
 ### Technical (JavaScriptDev) workflow (wip)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 sequenceDiagram;
 participant Review;
 participant Implement;
@@ -129,9 +127,7 @@ Review->>Implement: clear on specs;
 Review->Implement: bug/patch/feature = new branch from develop;
 Review->Implement: production related = new branch from master;
 Implement->>PeerReview: development done;
-```--->
-
-![Issue process workflow overview](/images/IssueProcessWorkflowFE.png)
+{{< /mermaid >}}
 
 
 

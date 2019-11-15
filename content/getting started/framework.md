@@ -141,9 +141,8 @@ The following technologies are used for the development of the **.Stat Core** co
 # .Stat Data Explorer module
 
 ### non-technical overview
-![de non-technical overview](/images/de_non-technical_overview.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph LR;
   id0{user};
   id1((data-explorer));
@@ -162,7 +161,7 @@ graph LR;
   id2->id3;
   id6->id3;
   id1->id5;
-```--->
+{{< /mermaid >}}
 
 
 ## Data Explorer app
@@ -208,9 +207,8 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 1. check the shared chart
 
 ### flow
-![share service flow](/images/share_service_flow.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph LR
 id0[user]
 id1((share-requester))
@@ -226,7 +224,7 @@ id2 ->|4. confirmation email| id0
 id0 ->|5. user confirmation| id2
 id2 ->|6. chart confirmed| id3
 id2 ->|7. redirect user|id4
-```--->
+{{< /mermaid >}}
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
@@ -272,9 +270,8 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 - [negate search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
 
 ### architecture
-![search architecture](/images/search_architecture.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph LR
   id0[ExpressJS + evtX]
   id2[SolR]
@@ -291,7 +288,7 @@ graph LR
   subgraph sdmx-faceted-search
     id0
   end
-```--->
+{{< /mermaid >}}
 
 ### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
@@ -404,9 +401,8 @@ Is a library of components for the parsing of SDMX-JSON messages. [*more discrip
 
 
 ### technical overview
-![multi-tenant architecture](/images/multi-tenant_architecture.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph LR
 id1(browser)
 id2((internet))
@@ -447,7 +443,7 @@ subgraph oecd cluster on GCP
 id13 -> id15
 id14 -> id15
 end
-```--->
+{{< /mermaid >}}
 
 ### demo: add/update a tenant
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
@@ -485,9 +481,8 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 # .Stat Core module
 
 ### technical overview
-![core technical overview](/images/core_technical_overview.png)
 
-<!---```mermaid
+{{< mermaid align="left" >}}
 graph LR
 id1((de & share-viewer))
 id2((dlm))
@@ -519,7 +514,7 @@ subgraph .stat core
   id10 -> id11
 end
 id6 -> id8
-```--->
+{{< /mermaid >}}
 
 ## Transfer service
 
