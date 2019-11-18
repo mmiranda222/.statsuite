@@ -6,8 +6,9 @@ weight: 120
 
 ---
 
-### November XX, 2019 [Release .stat suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
->This new release concerns the **JavaScript JS** part of .Stat Suite and is **compatible with the NSI WebService from vX.XX to v7.10.XX**. <br>
+### November 19, 2019 [Release .stat suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
+>This new release concerns the **JavaScript JS** part of .Stat Suite, especially the data-explorer, data-viewer and config. applications.<br>
+This release has been tested with the **NSI WebService v7.10.1 and v7.10.3**. <br>
 
 Major changes:
 
