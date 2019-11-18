@@ -25,7 +25,6 @@ Depending on the scenario and whenever the attribute value is the same in a sect
 Minor changes:
 
 - [dotstatsuite-data-explorer#165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/165) (*Refactoring*) Modify accept header to still allow retrieving urn in structure requests.
-- [dotstatsuite-data-explorer#155](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/155) **DevOps / Documentation** Implement, test and document the installation process of .Stat DE and its components in a persistent mode on a Windows server. The new documentation is available [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/monotenant-install-js-as-windows-services/). 
 - [dotstatsuite-data-explorer#127](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/127) Dimension labels on COLUMN is not the same style as the labels on ROW. All dimension labels are now displayed in bold in the table views.
 
 Bug fixes:
