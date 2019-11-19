@@ -6,33 +6,66 @@ weight: 120
 
 ---
 
+### November 19, 2019 [Release .stat suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
+>This new release concerns the **JavaScript JS** part of .Stat Suite, especially the data-explorer, data-viewer and config. applications.<br>
+This release has been tested with the **NSI WebService v7.10.1 and v7.10.3**. <br>
+
+Major changes:
+
+- [dotstatsuite-data-explorer#98](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/98) **Download data in Excel** from the .Stat Data Explorer data views.<br>
+This first version of the Excel download feature allows the users to download their current filtered and customised data view into an Excel table (.xlsx extension format). It is triggered from the visualisation page's drop-down "Download" option (in addition to the .csv formats and in both table and chart views).<br>
+It includes the layout of the table view, but not yet the colors in the table (to be done with [#171](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/171)).<br>
+Attributes in flags and footnotes are also included in the downloaded Excel file, as internal links into a second sheet with exactly the same layout, but without any of the values and with flags in the cells instead of the values.
+- [dotstatsuite-data-explorer#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/8) **Attributes in footnotes can be displayed at the always highest possible level in the .Stat DE data table**.<br>
+Depending on the scenario and whenever the attribute value is the same in a section of the table, and in order to not repeat an unnecessary same information, then an attribute will be displayed in a footnote at the observation value level, time series level, grouping of dimension members level, or dataflow level. 
+- [dotstatsuite-data-explorer#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/35) The **NOT_DISPLAYED SDMX annotation** allows to hide dimensions, dimension values, attributes, or attribute values from the .Stat Data Explorer table and chart representations, including from the dimension filters when relevant.
+- [dotstatsuite-data-explorer#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/45) Add a UI feature for **changing the LastNObservations parameter**. See details [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/45) and [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/33) about the behavior of the LastNObservations feature.
+- [dotstatsuite-data-explorer#125](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/125) Reintroducing the **choropleth map chart** to .Stat Data Explorer, including writing the instructions for the setup and configuration of a chart map. Documentation is available [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#map-chart-configuration).
+- [dotstatsuite-data-explorer#62](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/62) Integrate the **Time Period selections into the Used Filters area** of the .Stat Data Explorer visualisation pages.
+
+Minor changes:
+
+- [dotstatsuite-data-explorer#165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/165) (*Refactoring*) Modify accept header to still allow retrieving urn in structure requests.
+- [dotstatsuite-data-explorer#127](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/127) Dimension labels on COLUMN is not the same style as the labels on ROW. All dimension labels are now displayed in bold in the table views.
+
+Bug fixes:
+
+- [dotstatsuite-data-explorer#168](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/168) Bug in the **time range filter** where frequency, start year and end year are not shown.
+- [dotstatsuite-data-viewer#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/issues/7) Viewer Google Analytics undefined.
+- [dotstatsuite-ui-components#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/issues/7) Text color in the Frequency & Time Period filters is not coherent with the other components.
+- [dotstatsuite-data-explorer#162](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/162) .Stat Data Explorer **CSV download** does not include the labels/codes option anymore.
+- [dotstatsuite-data-explorer#156](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/156) **Subsequent new filter selections** are not taken into account while the data retrieval from the previous selection is still executing.
+- [dotstatsuite-data-explorer#154](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/154) Footnotes are not shown completely especially towards end of table.
+
+---
+
 ### November 13, 2019 [Release .Stat Suite .NET v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=all&milestone_title=Release%20.Stat%20Suite%20.NET%20v2.0.0)
 >This new release includes a new version of the **.NET/SQL services** the .Stat Suite. <br>
 
 
 Major changes:
 
-- [dotstatsuite-core-common#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/50) **Generic OpenID Connect authentication** mechanism in the NSI WebService withint .Stat Suite
-- [dotstatsuite-core-sdmxri-nsi-ws#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/4) and [dotstatsuite-core-common#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/96) Add configuration to authentication to disable SSL and token issuer (required for OpenID Connect [#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/50))
+- [dotstatsuite-core-common#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/50) **Generic OpenID Connect authentication** mechanism in the NSI WebService withint .Stat Suite.
+- [dotstatsuite-core-sdmxri-nsi-ws#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/4) and [dotstatsuite-core-common#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/96) Add configuration to authentication to disable SSL and token issuer (required for OpenID Connect [#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/50)).
 
 Minor changes:
 
 - [dotstatsuite-core-common#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/46) Refactoring the logging mechanism for the .Stat instances of SDMX-RI web service and Transfer service.
-- [dotstatsuite-core-sdmxri-nsi-ws#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/2) **DevOps** Create a pipeline to build on-demand "vanilla" NSI WS Docker image directly from the Eurostat repository
-- [dotstatsuite-core-transfer#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/34) **DevOps** Add SMTP server to the Docker image of the Transfer service in order to enable the email mechanism for .Stat DLM
-- [dotstatsuite-core-auth-management#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/4) and [dotstatsuite-core-transfer#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/24) **DevOps** Build the pipelines and Docker files for the Auth-management and Transfer services
-- [dotstatsuite-core-transfer#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/39), [dotstatsuite-core-auth-management#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/5) and [dotstatsuite-core-data-access#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/29) **DevOps** Auth-management, Transfer and Data-access services: Update pipelines to push images with "latest" for master branch and "develop" for develop branch
-- [dotstatsuite-core-common#74](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/74) **Test** Increase of Unit Test coverage
-- [dotstatsuite-core-data-access#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/27) **Test** Integration tests with database inited from dbup scripts, in order to increase test coverage to at least 50%
+- [dotstatsuite-core-sdmxri-nsi-ws#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/2) **DevOps** Create a pipeline to build on-demand "vanilla" NSI WS Docker image directly from the Eurostat repository.
+- [dotstatsuite-core-transfer#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/34) **DevOps** Add SMTP server to the Docker image of the Transfer service in order to enable the email mechanism for .Stat DLM.
+- [dotstatsuite-core-auth-management#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/4) and [dotstatsuite-core-transfer#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/24) **DevOps** Build the pipelines and Docker files for the Auth-management and Transfer services.
+- [dotstatsuite-core-transfer#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/39), [dotstatsuite-core-auth-management#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/5) and [dotstatsuite-core-data-access#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/29) **DevOps** Auth-management, Transfer and Data-access services: Update pipelines to push images with "latest" for master branch and "develop" for develop branch.
+- [dotstatsuite-core-common#74](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/74) **Test** Increase of Unit Test coverage.
+- [dotstatsuite-core-data-access#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/27) **Test** Integration tests with database inited from dbup scripts, in order to increase test coverage to at least 50%.
 
 Bug fixes:
 
-- [dotstatsuite-core-transfer#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/17) InvalidCastException in SqlToSqlTransferManager
-- [dotstatsuite-core-transfer#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/5) Dimension/Group attribute issues depending on the order of series keys reported in SDMX-ML and CSV files
-- [dotstatsuite-core-transfer#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/40) SqlBulkCopy error
-- [dotstatsuite-core-data-access#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/28) Missing rights for service account(s)
-- [dotstatsuite-core-data-access#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/19) Log table, Include update scripts
-- [dotstatsuite-core-transfer#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/38) Transfer from external source feature is missing from .Stat DLM
+- [dotstatsuite-core-transfer#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/17) InvalidCastException in SqlToSqlTransferManager.
+- [dotstatsuite-core-transfer#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/5) Dimension/Group attribute issues depending on the order of series keys reported in SDMX-ML and CSV files.
+- [dotstatsuite-core-transfer#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/40) SqlBulkCopy error.
+- [dotstatsuite-core-data-access#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/28) Missing rights for service account(s).
+- [dotstatsuite-core-data-access#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/19) Log table, Include update scripts.
+- [dotstatsuite-core-transfer#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/38) Transfer from external source feature is missing from .Stat DLM.
 
 ---
 
@@ -60,7 +93,7 @@ Bug fixes:
 ---
 
 ### October 08, 2019 [Release .stat suite JS v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/2)
-**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **v7.xx to v7.8**. <br>
+>**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **v7.xx to v7.8**. <br>
 
 Major changes:
 
