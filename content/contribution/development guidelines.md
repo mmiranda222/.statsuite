@@ -12,6 +12,9 @@ weight: 93
 - [linting utilities](#linting-utilities)
 - [contributing to an open source repository](#contributing-to-an-open-source-repository)
 
+> **NOTE**: these guidelines describe how the .Stat Suite developer team members are applying the git-flow process and what coding standards are followed. <br>
+**As an external contributor** of the project, you can directly jump in the very well described [contributing to an open source repository](https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/), where it is explained how to contribute to an open-source project by submitting Merge Requests to the project maintainers.
+
 ### Git-flow
 
 **Overview** <br>
