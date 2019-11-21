@@ -1,14 +1,14 @@
 ---
-title: "Installation from ready-made service package"
+title: "Installing .Stat Suite as a service"
 subtitle: 
 comments: false
 weight: 60
 
 ---
 
-The following page provides information on how to easily deploy the .Stat Suite platform based on a fully-functional, ready-to-use service package, using a multi-tenant architecture.  
+The following pages provide information on how to easily deploy the .Stat Suite platform based on a fully-functional, ready-to-use service package, using a multi-tenant architecture.  
 This eases cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes. Using this approach, we also provide cloud-hosting for [SIS-CC](https://siscc.org/) member organisations and their partners for test, demo and pilot purposes.  
 
 This approach does not require developer skills, but it limits the configuration options. <br>
 
-You can also have a look at the [Delivery stream's diagram](/getting-started/index/#delivery-streams-and-support-diagram) for a better understanding of the installation approach.
+You can also have a look at the [Delivery and support streams' diagram](/getting-started/index/#delivery-and-support-streams-diagram) for a better understanding of the installation approach.
