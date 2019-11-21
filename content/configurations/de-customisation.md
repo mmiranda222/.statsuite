@@ -9,6 +9,7 @@ weight: 72
 - [intro](#intro)
 - [main theme](#main-theme)
 - [site title and logo](#site-title-and-logo)
+- [homepage background image](#homepage-background-image)
 - [common site logos](#common-site-logos)
 - [table and chart footer logo](#table-and-chart-footer-logo)
 - [table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
@@ -67,6 +68,12 @@ Define your website name and logo.<br>
 ```
 
 ![Site title and logo](/images/faq-site-title-logo.png)
+
+---
+
+### Homepage background image
+
+- TO BE DESCRIBED
 
 ---
 
