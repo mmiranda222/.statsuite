@@ -141,7 +141,27 @@ The following technologies are used for the development of the **.Stat Core** co
 # .Stat Data Explorer module
 
 ### non-technical overview
-![de non-technical overview](/images/de_non-technical_overview.png)
+
+{{< mermaid align="left" >}}
+graph LR;
+  id0{user};
+  id1((data-explorer));
+  id6((share-viewer));
+  id2[share service];
+  id3[config service];
+  id4[search service];
+  id5(sdmx public endpoint);
+  id0-->id1;
+  id2-->id6;
+  id0-->id6;
+  id1-->id2;
+  id1-->id3;
+  id1-->id4;
+  id4-->id3;
+  id2-->id3;
+  id6-->id3;
+  id1-->id5;
+{{< /mermaid >}}
 
 <!---```mermaid
 graph LR;
@@ -208,7 +228,24 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 1. check the shared chart
 
 ### flow
-![share service flow](/images/share_service_flow.png)
+
+{{< mermaid align="left" >}}
+graph LR
+id0[user]
+id1((share-requester))
+id2[share service]
+id3(share db)
+id4((share-viewer))
+
+id0 --- id1
+id1 -->|1. share chart request| id2
+id2 -->|2. returns id and chart url| id1
+id2 -->|3. chart temporary stored| id3
+id2 -->|4. confirmation email| id0
+id0 -->|5. user confirmation| id2
+id2 -->|6. chart confirmed| id3
+id2 -->|7. redirect user|id4
+{{< /mermaid >}}
 
 <!---```mermaid
 graph LR
@@ -272,7 +309,25 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 - [negate search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
 
 ### architecture
-![search architecture](/images/search_architecture.png)
+
+{{< mermaid align="left" >}}
+graph LR
+  id0[ExpressJS + evtX]
+  id2[SolR]
+  id4(redis)
+  id5[config]
+  id7((user))
+  id9((admin))
+
+  id0 -->|GET| id7
+  id9 -->|POST| id0
+  id0 --- id4
+  id0 --- id5
+  id0 --- id2
+  subgraph sdmx-faceted-search
+    id0
+  end
+{{< /mermaid >}}
 
 <!---```mermaid
 graph LR
@@ -404,7 +459,49 @@ Is a library of components for the parsing of SDMX-JSON messages. [*more discrip
 
 
 ### technical overview
-![multi-tenant architecture](/images/multi-tenant_architecture.png)
+
+{{< mermaid align="left" >}}
+graph LR
+id1(browser)
+id2((internet))
+id3[proxy]
+id4((data-explorer))
+id12((share-viewer))
+id5[search]
+id6[share]
+id7[config]
+id8[solr]
+id9(redis)
+id10(redis)
+id11((x))
+id13[sdmx/nsi]
+id14[transfer]
+id15(mssql)
+
+id1 --> id2
+id2 --> id3
+subgraph oecd cluster on GCP
+id3 -->|app & tenant| id11
+id3 -->|assets| id7
+id11 --> id4
+id11 --> id5
+id11 --> id6
+id11 --> id12
+id4 --> id7
+id5 --> id7
+id5 --> id8
+id5 --> id9
+id6 --> id7
+id6 --> id10
+id12 --> id7
+end
+id2 --> id13
+id2 --> id14
+subgraph oecd cluster on GCP
+id13 --> id15
+id14 --> id15
+end
+{{< /mermaid >}}
 
 <!---```mermaid
 graph LR
@@ -485,7 +582,40 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 # .Stat Core module
 
 ### technical overview
-![core technical overview](/images/core_technical_overview.png)
+
+{{< mermaid align="left" >}}
+graph LR
+id1((de & share-viewer))
+id2((dlm))
+id3[sdmx/nsi]
+id4[sdmx/nsi plugin]
+id5[transfer]
+id6[data-access]
+id7[common]
+id8(structure-db)
+id9(data-db)
+id10[auth-management]
+id11(auth-log-db)
+
+id1 --> id3
+id2 --> id3
+id2 --> id5
+id2 --> id10
+subgraph sdmx-ri / eurostat
+  id3 --> id8
+end
+subgraph .stat core
+  id3 --> id4
+  id4 --> id6
+  id4 --> id7
+  id5 --> id6
+  id5 --> id7
+  id6 --> id9
+  id6 --> id11
+  id10 --> id11
+end
+id6 --> id8
+{{< /mermaid >}}
 
 <!---```mermaid
 graph LR

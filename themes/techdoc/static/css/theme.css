@@ -1050,3 +1050,7 @@ footer {
   color: #999;
   
 }
+div.mermaid
+{
+  font-family: 'trebuchet ms', verdana, arial;
+}
