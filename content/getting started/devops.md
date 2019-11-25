@@ -152,28 +152,6 @@ id2 -. pull image .-> id4
 id5 -. pull code .-> id4
 {{< /mermaid >}}
 
-<!---```mermaid
-
-graph TB
-id0[gitlab repositories]
-id1[gitlab pipelines]
-id2[docker registry]
-id4[kubernetes cluster]
-id5[dotstatsuite-kube-rp]
-id6[kubectl]
-id7((developer))
-id9((admin))
-id7 -> id0
-id0 ->|1. push code| id1
-id1 ->|2. push image| id2
-id1 ->|3. connect gcloud| id6
-id6 ->|4. deploy image| id4
-id9 ->|A. connect gcloud| id6
-id6 ->|B. update topology| id4
-id9 ->|C. push code| id5
-id2 -. pull image .-> id4
-id5 -. pull code .-> id4
-```--->
 
 ## process
 
@@ -218,47 +196,6 @@ id9 -. pull image .-> id14
 id11 -. pull code .-> id14
 {{< /mermaid >}}
 
-<!---```mermaid
-graph TD;
-id0((peer-reviewer/code guard));
-id1[gitlab application repository: dev branch];
-id2[gitlab application repository: master branch];
-id4[gitlab library repository: master branch];
-id5[gitlab application repository: pipeline];
-id6[gitlab library repository: pipeline];
-id7[test environment];
-id8[library registry npm/nuget];
-id9[docker registry];
-id10[kubernetes cluster: qa environment];
-id14[kubernetes cluster: staging environment];
-id11[gitlab dotstatsuite-kube-rp/dotstatsuite-kube-core-rp repositories: master branch]
-id12[kubectl]
-id13((admin))
-id0 ->|A1. merge code| id4;
-id0 ->|B1. merge code| id1;
-id0 ->|C1. merge code| id2;
-id4 ->|A2. triggers launch| id6;
-id1 ->|B2. triggers launch| id5;
-id2 ->|C2. triggers launch| id5;
-id6 ->|A4. create & push package| id8;
-id6 ->|A3. build, test| id7;
-id5 ->|BC3. build, test| id7;
-id5 ->|BC4. create & push docker image| id9;
-id5 ->|BC5. connect gcloud| id12
-id12 ->|B6. deploy image| id10
-id13 ->|1. connect gcloud| id12
-id12 ->|2. update topology| id10
-id13 ->|3. push code| id11
-id8 -. pull package .-> id10
-id9 -. pull image .-> id10
-id11 -. pull code .-> id10
-id12 ->|C6. deploy image| id14
-id12 ->|2. update topology| id14
-id8 -. pull package .-> id14
-id9 -. pull image .-> id14
-id11 -. pull code .-> id14
-```--->
-
 
 ## mapping
 |env|git branch|cluster namespace|
@@ -299,30 +236,6 @@ build --> publish
 end
 {{< /mermaid >}}
 
-<!---webapp/service
-```mermaid
-graph LR
-subgraph CI all branches
-setup -> unit-tests
-unit-tests -> build
-end
-subgraph CD only develop & master
-build -> release
-release -> deploy
-end
-```
-
-npm/nuget package
-```mermaid
-graph LR
-subgraph CI all branches
-setup -> unit-tests
-unit-tests -> build
-end
-subgraph CD only tags*
-build -> publish
-end
-```--->
 
 ## npm
 - npm packages are published under https://www.npmjs.com/settings/sis-cc/packages

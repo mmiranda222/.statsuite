@@ -213,31 +213,6 @@ access-nuget --> data_db
 end
 {{< /mermaid >}}
 
-<!---```mermaid
-graph LR
-
-dlm((dlm))
-transfer[transfer]
-common-nuget[common]
-access-nuget[data-access]
-ms_db(structure-db)
-data_db(data-db)
-auth-log-db(auth-log-db)
-
-dlm->transfer
-
-subgraph transfer backend
-transfer-> common-nuget
-transfer-> access-nuget
-end
-
-subgraph database layer
-access-nuget-> ms_db
-access-nuget-> auth-log-db
-access-nuget -> data_db
-end
-```--->
-
 
 ### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
 
@@ -310,37 +285,6 @@ access-nuget--> auth-log-db
 access-nuget --> data_db
 end
 {{< /mermaid >}}
-
-<!---```mermaid
-graph LR
-
-dlm((dlm))
-de((data explorer))
-nsi[sdmx/nsi]
-plugin[sdmx/nsi plugin]
-common-nuget[common]
-access-nuget[data-access]
-ms_db(structure-db)
-data_db(data-db)
-auth-log-db(auth-log-db)
-dlm->nsi
-de->nsi
-
-subgraph sdmx-ri / eurostat
-nsi -> plugin
-end
-
-subgraph nuget packages
-plugin -> common-nuget
-plugin -> access-nuget
-end
-
-subgraph database layer
-access-nuget-> ms_db
-access-nuget-> auth-log-db
-access-nuget -> data_db
-end
-```--->
 
 
 ### Authorisation service
