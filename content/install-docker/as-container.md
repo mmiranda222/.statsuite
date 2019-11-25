@@ -188,7 +188,30 @@ siscc/dotstatsuite-core-transfer
 
 Schema:<br>
 
-![transfer service architecture](/images/transfer_architecture.png)
+{{< mermaid align="left" >}}
+graph LR
+
+dlm((dlm))
+transfer[transfer]
+common-nuget[common]
+access-nuget[data-access]
+ms_db(structure-db)
+data_db(data-db)
+auth-log-db(auth-log-db)
+
+dlm-->transfer
+
+subgraph transfer backend
+transfer--> common-nuget
+transfer--> access-nuget
+end
+
+subgraph database layer
+access-nuget--> ms_db
+access-nuget--> auth-log-db
+access-nuget --> data_db
+end
+{{< /mermaid >}}
 
 <!---```mermaid
 graph LR
@@ -257,7 +280,36 @@ siscc/dotstatsuite-core-sdmxri-nsi
  
 Schema:
 
-![sdmx/nsi service architecture](/images/nsi_architecture.png)
+{{< mermaid align="left" >}}
+graph LR
+
+dlm((dlm))
+de((data explorer))
+nsi[sdmx/nsi]
+plugin[sdmx/nsi plugin]
+common-nuget[common]
+access-nuget[data-access]
+ms_db(structure-db)
+data_db(data-db)
+auth-log-db(auth-log-db)
+dlm-->nsi
+de-->nsi
+
+subgraph sdmx-ri / eurostat
+nsi --> plugin
+end
+
+subgraph nuget packages
+plugin --> common-nuget
+plugin --> access-nuget
+end
+
+subgraph database layer
+access-nuget--> ms_db
+access-nuget--> auth-log-db
+access-nuget --> data_db
+end
+{{< /mermaid >}}
 
 <!---```mermaid
 graph LR
