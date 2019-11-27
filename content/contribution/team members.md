@@ -16,6 +16,9 @@ weight: 94
 - Pedro Carranza [@pedroacarranza](https://gitlab.com/pedroacarranza)
 - Zsolt Lenart [@ZsoltLenart](https://gitlab.com/ZsoltLenart)
 
+### .Stat Suite developer advocate
+
+- Ben Ashley [@benashley](https://gitlab.com/benashley)
 
 #### .Stat Suite product owners
 
