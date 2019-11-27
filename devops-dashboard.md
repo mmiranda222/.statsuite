@@ -2,34 +2,94 @@
 
 <table>
 <thead>
-<tr><th>name/repo</th><th>env/branch</th><th>status</th><th>coverage</th><th>subdomain(s)</th><th>endpoint(s)</th></tr>
+<tr><th>name/repo</th><th>env/branch</th><th>status</th><th>coverage</th><th>subdomain(s)</th><th>endpoint(s)</th><th>note(s)</th></tr>
 </thead>
 <body>
 <tr>
-<td rowspan="2">[nsi](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)</td>
+<td rowspan="6">[nsi](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)</td>
 <td rowspan="2">qa/develop</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/build.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/coverage.svg?style=flat-square)</td>
 <td>nsi-stable-qa-oecd</td>
 <td>[health](http://nsi-stable-qa-oecd.redpelicans.com/health)</td>
-</tr>
+<td>-</td>
 <tr>
 <td>nsi-reset-qa-oecd</td>
 <td>[health](http://nsi-reset-qa-oecd.redpelicans.com/health)</td>
+<td>-</td>
+</tr>
+<tr>
+<td rowspan="4">staging/master</td>
+<td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/coverage.svg?style=flat-square)</td>
+<td>nsi-design-oecd</td>
+<td>[health](http://nsi-design-oecd.redpelicans.com/health)</td>
+<td>not automatically deployed</td>
+</tr>
+<tr>
+<td>nsi-staging-oecd</td>
+<td>[health](http://nsi-staging-oecd.redpelicans.com/health)</td>
+<td>not automatically deployed</td>
+</tr>
+<tr>
+<td>nsi-stable-siscc</td>
+<td>[health](http://nsi-stable-siscc.redpelicans.com/health)</td>
+<td>not automatically deployed</td>
+</tr>
+<tr>
+<td>nsi-reset-siscc</td>
+<td>[health](http://nsi-reset-siscc.redpelicans.com/health)</td>
+<td>not automatically deployed</td>
+</tr>
+<tr>
+<td rowspan="4">[transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/build.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="2">transfer-qa-oecd</td>
+<td>[health](http://transfer-qa-oecd.redpelicans.com/health)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>[swagger](http://transfer-qa-oecd.redpelicans.com/swagger)</td>
+<td>-</td>
+</tr>
+<tr>
+<td rowspan="2">staging/master</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="2">transfer-siscc</td>
+<td>[health](http://transfer-siscc.redpelicans.com/health)</td>
+<td>not automatically deployed</td>
+</tr>
+<tr>
+<td>[swagger](http://transfer-siscc.redpelicans.com/swagger)</td>
+<td>not automatically deployed</td>
+</tr>
+<tr>
+<td rowspan="4">[authz](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/build.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="2">authz-qa-oecd</td>
+<td>[health](http://transfer-qa-oecd.redpelicans.com/health)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>[swagger](http://transfer-qa-oecd.redpelicans.com/swagger)</td>
+<td>-</td>
+</tr>
+<tr>
+<td rowspan="2">staging/master</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="2">authz-siscc</td>
+<td>[health](http://transfer-siscc.redpelicans.com/health)</td>
+<td>not automatically deployed</td>
+</tr>
+<tr>
+<td>[swagger](http://transfer-siscc.redpelicans.com/swagger)</td>
+<td>not automatically deployed</td>
 </tr>
 </body>
 </table>
-
-|name|env|subdomain(s)|endpoint(s)|branch|status|coverage|
-|---|---|---|---|---|---|---|
-|[nsi](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)|qa|nsi-stable-qa-oecd<br />nsi-reset-qa-oecd|[health stable](http://nsi-stable-qa-oecd.redpelicans.com/health)<br />[health reset](http://nsi-reset-qa-oecd.redpelicans.com/health)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/coverage.svg?style=flat-square)|
-|[transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)|qa|transfer-qa-oecd|[health](http://transfer-qa-oecd.redpelicans.com/health)<br />[swagger](http://transfer-qa-oecd.redpelicans.com/swagger)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)|
-|[authz](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)|qa|authz-qa-oecd|[health](http://authz-qa-oecd.redpelicans.com/health)<br />[swagger](http://authz-qa-oecd.redpelicans.com/swagger)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)
-|[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|qa|de-qa-oecd|[website](http://de-qa-oecd.redpelicans.com)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)
-|[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)|qa|dv-qa-oecd|*indirect*|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/coverage.svg?style=flat-square)
-|[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|qa|dlm-qa-oecd|[website](http://dlm-qa-oecd.redpelicans.com)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)
-|[sdmx-faceted-search](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|qa|sfs-qa-oecd|[health](http://sfs-qa-oecd.redpelicans.com/healthcheck)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/coverage.svg?style=flat-square)
-|[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)|qa|share-qa-oecd|[health](http://share-qa-oecd.redpelicans.com/healthcheck)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/coverage.svg?style=flat-square)
-|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|qa|*internal*|*internal*|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/coverage.svg?style=flat-square)
-|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|qa|*internal*|*internal*|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/coverage.svg?style=flat-square)
-|[keycloak](https://gitlab.com/sis-cc/.stat-suite/keycloak)|qa<br />staging|keycloak-oecd|[admin](http://keycloak-oecd.redpelicans.com)|develop<br />master|![status](https://gitlab.com/sis-cc/.stat-suite/keycloak/badges/develop/build.svg?style=flat-square)|*no test required*
