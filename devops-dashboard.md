@@ -1,5 +1,25 @@
 # devops dashboard
 
+<table>
+<thead>
+<tr><th>name/repo</th><th>env/branch</th><th>status</th><th>coverage</th><th>subdomain(s)</th><th>endpoint(s)</th></tr>
+</thead>
+<body>
+<tr>
+<td rowspan="2">[nsi](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/build.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/coverage.svg?style=flat-square)</td>
+<td>nsi-stable-qa-oecd</td>
+<td>[health](http://nsi-stable-qa-oecd.redpelicans.com/health)</td>
+</tr>
+<tr>
+<td>nsi-reset-qa-oecd</td>
+<td>[health](http://nsi-reset-qa-oecd.redpelicans.com/health)</td>
+</tr>
+</body>
+</table>
+
 |name|env|subdomain(s)|endpoint(s)|branch|status|coverage|
 |---|---|---|---|---|---|---|
 |[nsi](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)|qa|nsi-stable-qa-oecd<br />nsi-reset-qa-oecd|[health stable](http://nsi-stable-qa-oecd.redpelicans.com/health)<br />[health reset](http://nsi-reset-qa-oecd.redpelicans.com/health)|develop|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/coverage.svg?style=flat-square)|
