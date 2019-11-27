@@ -32,18 +32,18 @@ weight: 33
   - test [**'PM' tenant**  of candidate **DE**](http://de-qa-oecd.redpelicans.com/) plugged to:  
     ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
     ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
+    ° [Data viewer app](http://dv-qa-oecd.redpelicans.com/)
   - test [**'PM' tenant**  of candidate **DLM**](http://dlm-qa-oecd.redpelicans.com/) plugged to:  
     ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
     ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
     ° SIS-CC Demo-related staging instance of Transfer ws  
     ° SIS-CC Demo-related staging instance of Authorisation ws  
 - Other links:
-  - [User identity management](http://keycloak.qa.oecd.redpelicans.com)
+  - [User identity management](http://keycloak-oecd.redpelicans.com)
   - [Share ws](http://share-qa-oecd.redpelicans.com/healthcheck)
   - [Search ws](http://sfs-qa-oecd.redpelicans.com/healthcheck)
-  - [Data viewer app](http://dv-qa-oecd.redpelicans.com/)
 
-### pre-production (**staging**) environment
+### functional pre-production (**staging**) environment
 
 - Automated update triggered by **Master** branch merge (part of “release” Kanban step)
 - Hosting stable instances for **OECD Practice Building team** of: 
@@ -51,10 +51,11 @@ weight: 33
   - [**NSI ws with stable content** (upgraded database) called 'OECD-staging'](http://nsi-staging-oecd.redpelicans.com/)
   - [**Transfer ws**](http://transfer-siscc.redpelicans.com/swagger)
   - [**Authorisation ws**](http://authz-siscc.redpelicans.com/swagger)
-  - **'OECD' tenant** of **DE** plugged to:  
+  - [**'OECD' tenant** of **DE**](http://de-staging-oecd.redpelicans.com/) plugged to:  
     ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
     ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
-  - **'OECD' tenant** of **DLM** plugged to:  
+    ° [Data viewer app](http://dv-staging-oecd.redpelicans.com/)
+  - [**'OECD' tenant** of **DLM**](http://dlm-staging-oecd.redpelicans.com/) plugged to:  
     ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
     ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
     ° stable Transfer ws  
@@ -64,16 +65,21 @@ weight: 33
   - [**NSI ws with re-initialised content** (new  database) called 'SIS-CC-reset'](http://nsi-reset-siscc.redpelicans.com/)
   - [**Transfer ws**](http://transfer-siscc.redpelicans.com/swagger)
   - [**Authorisation ws**](http://authz-siscc.redpelicans.com/swagger)
-  - **'SIS-CC' tenant** of **DE** plugged to:  
+  - [**'SIS-CC' tenant** of **DE**](http://de-staging-siscc.redpelicans.com/) plugged to:  
     ° stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'  
     ° stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'  
-  - **'SIS-CC' tenant** of **DLM** plugged to:  
+    ° [Data viewer app](http://dv-staging-siscc.redpelicans.com/)
+  - [**'SIS-CC' tenant** of **DLM**](http://dlm-staging-siscc.redpelicans.com/) plugged to:  
     ° stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'  
     ° stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'  
     ° stable Transfer ws  
     ° stable Authorisation ws  
+- Other links:
+  - [User identity management](http://keycloak-oecd.redpelicans.com)
+  - [Share ws](http://share-staging-oecd.redpelicans.com/healthcheck)
+  - [Search ws](http://sfs-staging-oecd.redpelicans.com/healthcheck)
 - Other tenants of DE and DLM for specific SIS-CC members 
-  - either plugged to their own SDMX APIs (currently we have ILO and ISTAT)
+  - either plugged to their own SDMX APIs
   - or plugged into above mentioned SIS-CC Demo-related instances of .Stat CORE services
 
 ## technical stack
@@ -263,7 +269,6 @@ end
 |webapp|[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)|
 |webapp|[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/coverage.svg?style=flat-square)|
 |webapp|[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)|
-|webapp|[chart-generator-legacy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/badges/dev/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/badges/dev/coverage.svg?style=flat-square)|
 |-|-|-|-|-|
 |package|[ui-footer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/coverage.svg?style=flat-square)|
 |package|[ui-header](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/coverage.svg?style=flat-square)|
