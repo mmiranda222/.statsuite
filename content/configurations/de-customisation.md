@@ -73,7 +73,23 @@ Define your website name and logo.<br>
 
 ### Homepage background image
 
-- TO BE DESCRIBED
+> **Prerequisite**: you need basic `HTML` and `CSS` knowledge before going further.
+
+**Go to** your Data Explorer homepage > right-click and select Inspect (Ctrl+Shift+I). <br>
+**Find and copy** from the Elements the name of the class corresponding to the background body. <br>
+![DE Inspect](/images/de-background01.png)
+
+**Go to** `dotstatsuite/data/<env>/configs/assets/<tenant>/data-explorer/styles/styles.css`.<br>
+**Add** a new entry in the file in order to overide the default background. Paste the copied class and add the url of a publicly available image, or the path of an image stored in `/assets/<tenant>/data-explorer/images`:<br>
+```CSS
+.css-xn1wur {
+ background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_3082832_1280.jpg');
+ }
+```
+
+![DE new background](/images/de-background02.png)
+<br>
+**Note** that some additional CSS properties can be required in order to correctly display the background in a responsive and adaptive mode depending on the original size of your image. 
 
 ---
 
