@@ -6,15 +6,26 @@ weight: 120
 
 ---
 
-### November 28, 2019 [Release .stat suite JS vXXXXXXXX](XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX)
+### November 28, 2019 [Release .Stat Suite JS vXXXXXXXX](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/7)
 >This new release concerns the **JavaScript JS** part of .Stat Suite, especially the data-explorer, data-viewer and config. applications.<br>
 This release has been tested with the **NSI WebService v7.10.1 and v7.10.3**. <br>
 
 Major changes:
 
-- [dotstatsuite-data-explorer#128](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/128) **Additional downloads for external resources** can be added at the Dataflow level using the SDMX annotation type **EXT_RESOURCE**.  
-It is possible to relate, in the SDMX Dataflow structure definition, a specific dataflow to one or more than one material (any type of file format) that are stored externally (outside the .Stat Suite). The feature is supported by the SDMX annotaiton EXT_RESOURCE type
-- [dotstatsuite-data-explorer#171](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/171) **Excel download with styles and colors** applied from the original .Stat DE table view.
+- [dotstatsuite-data-explorer#171](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/171) **Excel download with styles and colors** applied from the original Data Explorer table view.
+- [dotstatsuite-data-explorer#128](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/128) **Additional downloads for external resources** can be added at the Dataflow level by using the SDMX annotation type **EXT_RESOURCE**.<br>
+It is possible to relate a specific dataflow, in the SDMX Dataflow structure definition, to one or several materials (any type of file format) that are stored externally (outside .Stat Suite). The feature is supported by the SDMX annotation EXT_RESOURCE type, that is localised and defined at the dataflow level.<br>
+<br>
+
+**In the following example**, the dataflow structure definition contains 3 annotations of EXT_RESOURCE type for localised (in English and French) externally stored files to link to the datalfow. Each hyperlink can be enriched with a link to an image for its display as an icon of the link in the final representation: <br>
+
+![Dataflow structure with external resources](/images/changelog_ext_res01.png)
+
+Once published in the Data Explorer, the external resources related to the dataflow are available from the visualisation page (table and chart views) under the "Download" option, and in addition to the default data download links:
+
+![Dataflow display with external sources](/images/changelog_ext_res02/png)
+
+Switching the language of the Data Explorer from English to French will make the localised external files available for download (acccording to the dataflow structure definition).
 
 Bug fixes:
 
@@ -22,13 +33,13 @@ Bug fixes:
 - [dotstatsuite-data-explorer#180](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/180) NOT_DISPLAYED annotation is not applied to Dimension when it is defined at the dimension level.
 - [dotstatsuite-data-explorer#181](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/181) NOT_DISPLAYED annotation is not applied to Dimension values when it is defined in the codelist.
 - [dotstatsuite-data-explorer#178](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/178) Frequency missing case (issue found when a dataflow has no Frequency dimension).
-- [dotstatsuite-data-explorer#179](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/179) First default selection is not applied in .Stat DE visualisation page.
+- [dotstatsuite-data-explorer#179](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/179) **First default selection** is not applied in .Stat DE visualisation page.
 - [dotstatsuite-data-explorer#184](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/184) Hierarchical codelists are displayed as flat facets in the search result page.
-- [dotstatsuite-data-explorer#154](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/154) and [dotstatsuite-data-explorer#183](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/183) Tooltips in .Stat DE table views are not completely shown in some edge cases.
+- [dotstatsuite-data-explorer#154](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/154) and [dotstatsuite-data-explorer#183](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/183) **Tooltips** in .Stat DE table views are not completely shown in some edge cases.
 
 ---
 
-### November 19, 2019 [Release .stat suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
+### November 19, 2019 [Release .Stat Suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
 >This new release concerns the **JavaScript JS** part of .Stat Suite, especially the data-explorer, data-viewer and config. applications.<br>
 This release has been tested with the **NSI WebService v7.10.1 and v7.10.3**. <br>
 
