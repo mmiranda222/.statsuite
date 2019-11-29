@@ -96,7 +96,7 @@ Define your website name and logo.<br>
 <br>
 
 **Notes:**
-* the class name is likely to change from time to time in the source code, depending on the version of the Data Explorer components, and you will thus need to update your configuration accordingly. 
+* The class name is likely to change from time to time in the source code, depending on the version of the Data Explorer components, and you will thus need to update your configuration accordingly. 
 * Some additional CSS properties can be required in order to correctly display the background in a responsive and adaptive mode depending on the original size of your image. 
 
 ---
