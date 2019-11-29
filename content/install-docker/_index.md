@@ -1,5 +1,5 @@
 ---
-title: "Installing .Stat Suite as containers"
+title: "Installing .Stat Suite from containers"
 subtitle: 
 comments: false
 weight: 50
