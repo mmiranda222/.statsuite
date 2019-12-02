@@ -16,7 +16,7 @@ weight: 47
 - [artefacts](#artefacts)
 - [indexation](#indexation)
 
-# prerequisites
+# Prerequisites
 #### git bash
 - https://gitforwindows.org/
 - during installation:
@@ -43,20 +43,20 @@ weight: 47
   - open git bash
   - run `which java`
 
-# folders
+# Folders
 > hint: folders should not contain user specific
 
 - open git bash
 - run `cd && cd /c && mkdir dotstatsuitejs && cd dotstatsuitejs && mkdir pm2 nssm redis solr config search share explorer viewer && ll`
 
-# nssm
+# NSSM
 > hint: use to have solr as a windows service
 
 - download nssm: https://nssm.cc/download at version 2.24
 - unzip in dotstasuitejs/nssm
   - result: dotstasuitejs/nssm/nssm-2.24
 
-# solr
+# Solr
 - download solr 7.x: https://lucene.apache.org/solr/downloads.html
 - unzip it in dotstasuitejs/solr
   - result: dotstasuitejs/solr/solr-7.7.2
@@ -71,7 +71,7 @@ weight: 47
 - start the service from services
 - go in chrome to http://localhost:8983
 
-# create a solr core
+# Create a solr core
 > hint: use powershell to avoid apache cli error
 
 - open powershell
@@ -79,7 +79,7 @@ weight: 47
 - run `.\solr create -c sdmx-facet-search -p 8983`
 - check in chrome to http://localhost:8983/solr/#/sdmx-facet-search/core-overview
 
-# redis
+# Redis
 > hint: the msi setup redis as a windows service
 
 - download redis: https://github.com/microsoftarchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi
@@ -91,7 +91,7 @@ weight: 47
   - open git bash
   - run `redis-cli ping`
 
-# dotstatsuitejs
+# Dotstatsuitejs
 > hint: pm2 is a tool that monitors nodejs services  
 > pm2-service-install makes it run as a windows service
 
@@ -107,7 +107,7 @@ weight: 47
 - close git bash
 
 
-# artefacts
+# Artefacts
 > hint: you need a token in order to script the artefacts download  
 
 - download artefact and pm2 scripts https://gitlab.com/sis-cc/dotstatsuite-documentation/tree/master/dotstatsuitejs
@@ -125,7 +125,7 @@ weight: 47
   - explorer: http://localhost:3009
   - viewer: http://localhost:3005 (no id)
 
-# indexation
+# Indexation
 > hint: default api-key value is secret
 
 - get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret`
