@@ -1054,3 +1054,23 @@ div.mermaid
 {
   font-family: 'trebuchet ms', verdana, arial;
 }
+
+div.sidebar>nav>ul>li {
+  display: block;
+}
+
+div.sidebar li.parent>ul>li{
+  display:block;
+}
+
+div.sidebar li.active>ul>li {
+  display: block;
+}
+div.sidebar li.active {
+  display: block;
+}
+
+
+div.sidebar li {
+  display: none;
+}
