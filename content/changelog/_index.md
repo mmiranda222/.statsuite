@@ -6,9 +6,8 @@ weight: 120
 
 ---
 
-### December 02, 2019 [Release .Stat Suite JS vXXXXXXXX](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/7)
->This new release concerns the **JavaScript JS** part of .Stat Suite, especially the data-explorer, data-viewer and config. applications.<br>
-This release has been tested with the **NSI WebService v7.10.1 and v7.10.3**. <br>
+### December 02, 2019 [Release .Stat Suite JS milestone 7](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/7)
+>This new release concerns the **JavaScript JS** part of .Stat Suite, exclusively the **data-explorer** application.<br>
 
 Major changes:
 
@@ -29,6 +28,7 @@ Switching the language of the Data Explorer from English to French will make the
 
 Bug fixes:
 
+- [dotstatsuite-data-explorer#190](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/190) Time Period displayed in table view is incorrect (not matching with SDMX response) when time period values are non-ordered.
 - [dotstatsuite-data-explorer#189](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/189) NOT_DISPLAYED annotation is not applied to Attribute when it is defined at the dataflow level.
 - [dotstatsuite-data-explorer#180](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/180) NOT_DISPLAYED annotation is not applied to Dimension when it is defined at the dimension level.
 - [dotstatsuite-data-explorer#181](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/181) NOT_DISPLAYED annotation is not applied to Dimension values when it is defined in the codelist.
