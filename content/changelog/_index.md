@@ -22,7 +22,7 @@ It is possible to relate a specific dataflow, in the SDMX Dataflow structure def
 
 Once published in the Data Explorer, the external resources related to the dataflow are available from the visualisation page (table and chart views) under the "Download" option, and in addition to the default data download links:
 
-![Dataflow display with external sources](/images/changelog_ext_res02/png)
+![Dataflow display with external sources](/images/changelog_ext_res02.png)
 
 Switching the language of the Data Explorer from English to French will make the localised external files available for download (acccording to the dataflow structure definition).
 
