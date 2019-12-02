@@ -1,14 +1,27 @@
 ---
-title: "Installing .Stat Suite as a service"
+title: ".Stat Suite cloud hosting"
 subtitle: 
 comments: false
 weight: 60
 
 ---
 
-The following pages provide information on how to easily deploy the .Stat Suite platform based on a fully-functional, ready-to-use service package, using a multi-tenant architecture.  
-This eases cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes. Using this approach, we also provide cloud-hosting for [SIS-CC](https://siscc.org/) member organisations and their partners for test, demo and pilot purposes.  
+## Cloud-hosting for SIS-CC member organisations and their partners for test, demo and pilot purposes
 
-This approach does not require developer skills, but it limits the configuration options. <br>
+Using our DevOps environment with the "multi-tenant architecture", we can propose to our collaboration partners an out-of-the-box, easy-to-setup cloud hosting of the .Stat Suite for test, demo or pilot purposes.<br>
+No need for locally hosting servers, building complex infrastructures or worrying about security plans:
 
-You can also have a look at the [Delivery and support streams' diagram](/getting-started/index/#delivery-and-support-streams-diagram) for a better understanding of the installation approach.
+* The apps and services are cloud-hosted and all components and accesses are centrally maintained;
+* The model allows for seamlessly integrating additional tenants into the stack when needed;
+* The DevOps chain automatically keeps installations up-to-date with the latest .Stat Suite version (dev or master), thus organisations can easily test and use the latest features;
+* Costs and resources are minimised.
+
+![.Stat Suite as a Service](/images/as-a-service.png)
+
+[Contact us](mailto:contact@siscc.org) for further information and to set up a new tenant for you.
+
+
+## Cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes
+
+Our kubernetes cluster definitions with the "multi-tenant architecture" can be freely re-used and adapted by any organisation wishing to provide their own out-of-the-box, easy-to-setup cloud hosting of the .Stat Suite for their partner organisations.
+ 

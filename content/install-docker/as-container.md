@@ -1,5 +1,5 @@
 ---
-title: Installation based on ready-to-use Docker images
+title: Description of .Stat Suite Docker images
 subtitle: 
 comments: false
 weight: 52
