@@ -8,7 +8,7 @@
 <tr>
 <td rowspan="6">[nsi](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)</td>
 <td rowspan="2">qa/develop</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/coverage.svg?style=flat-square)</td>
 <td>nsi-stable-qa-oecd</td>
 <td>[health](http://nsi-stable-qa-oecd.redpelicans.com/health)</td>
@@ -20,7 +20,7 @@
 </tr>
 <tr>
 <td rowspan="4">staging/master</td>
-<td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/coverage.svg?style=flat-square)</td>
 <td>nsi-design-oecd</td>
 <td>[health](http://nsi-design-oecd.redpelicans.com/health)</td>
@@ -44,7 +44,7 @@
 <tr>
 <td rowspan="4">[transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)</td>
 <td rowspan="2">qa/develop</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)</td>
 <td rowspan="2">transfer-qa-oecd</td>
 <td>[health](http://transfer-qa-oecd.redpelicans.com/health)</td>
@@ -56,7 +56,7 @@
 </tr>
 <tr>
 <td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">transfer-siscc</td>
 <td>[health](http://transfer-siscc.redpelicans.com/health)</td>
@@ -69,7 +69,7 @@
 <tr>
 <td rowspan="4">[authz](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)</td>
 <td rowspan="2">qa/develop</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
 <td rowspan="2">authz-qa-oecd</td>
 <td>[health](http://transfer-qa-oecd.redpelicans.com/health)</td>
@@ -81,7 +81,7 @@
 </tr>
 <tr>
 <td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">authz-siscc</td>
 <td>[health](http://transfer-siscc.redpelicans.com/health)</td>
@@ -94,7 +94,7 @@
 <tr>
 <td rowspan="3">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
 <td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
 <td>de-qa-oecd</td>
 <td>[website](http://de-qa-oecd.redpelicans.com)</td>
@@ -102,7 +102,7 @@
 </tr>
 <tr>
 <td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
 <td>de-staging-oecd</td>
 <td>[website](http://de-staging-oecd.redpelicans.com)</td>
@@ -116,7 +116,7 @@
 <tr>
 <td rowspan="3">[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)</td>
 <td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/coverage.svg?style=flat-square)</td>
 <td>dv-qa-oecd</td>
 <td>[website](http://dv-qa-oecd.redpelicans.com)</td>
@@ -124,7 +124,7 @@
 </tr>
 <tr>
 <td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/coverage.svg?style=flat-square)</td>
 <td>dv-staging-oecd</td>
 <td>[website](http://dv-staging-oecd.redpelicans.com)</td>
@@ -138,7 +138,7 @@
 <tr>
 <td rowspan="3">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
 <td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
 <td>dlm-qa-oecd</td>
 <td>[website](http://dlm-qa-oecd.redpelicans.com)</td>
@@ -146,7 +146,7 @@
 </tr>
 <tr>
 <td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/build.svg?style=flat-square)</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/coverage.svg?style=flat-square)</td>
 <td>dlm-staging-oecd</td>
 <td>[website](http://dlm-staging-oecd.redpelicans.com)</td>
@@ -160,7 +160,7 @@
 <tr>
 <td rowspan="2">[sdmx-faceted-search](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)</td>
 <td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/coverage.svg?style=flat-square)</td>
 <td>sfs-qa-oecd</td>
 <td>[health](http://sfs-qa-oecd.redpelicans.com/healthcheck)</td>
@@ -168,7 +168,7 @@
 </tr>
 <tr>
 <td>staging/master</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/master/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/master/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/master/coverage.svg?style=flat-square)</td>
 <td>sfs-staging-oecd</td>
 <td>[health](http://sfs-staging-oecd.redpelicans.com/healthcheck)</td>
@@ -177,7 +177,7 @@
 <tr>
 <td rowspan="2">[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)</td>
 <td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/coverage.svg?style=flat-square)</td>
 <td>share-qa-oecd</td>
 <td>[health](http://share-qa-oecd.redpelicans.com/healthcheck)</td>
@@ -185,7 +185,7 @@
 </tr>
 <tr>
 <td>staging/master</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/master/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/master/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/master/coverage.svg?style=flat-square)</td>
 <td>share-staging-oecd</td>
 <td>[health](http://share-staging-oecd.redpelicans.com/healthcheck)</td>
@@ -194,7 +194,7 @@
 <tr>
 <td rowspan="2">[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)</td>
 <td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/coverage.svg?style=flat-square)</td>
 <td>-</td>
 <td>-</td>
@@ -202,7 +202,7 @@
 </tr>
 <tr>
 <td>staging/master</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/master/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/master/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/master/coverage.svg?style=flat-square)</td>
 <td>-</td>
 <td>-</td>
@@ -211,7 +211,7 @@
 <tr>
 <td rowspan="2">[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)</td>
 <td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/coverage.svg?style=flat-square)</td>
 <td>-</td>
 <td>-</td>
@@ -219,7 +219,7 @@
 </tr>
 <tr>
 <td>staging/master</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/master/build.svg?style=flat-square)</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/master/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/master/coverage.svg?style=flat-square)</td>
 <td>-</td>
 <td>-</td>
