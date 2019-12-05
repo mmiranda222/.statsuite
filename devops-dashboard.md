@@ -92,7 +92,7 @@
 <td>not automatically deployed</td>
 </tr>
 <tr>
-<td rowspan="3">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
+<td rowspan="7">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
 <td>qa/develop</td>
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
@@ -101,9 +101,9 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="6">staging/master</td>
+<td rowspan="6">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
+<td rowspan="6">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
 <td>de-staging-oecd</td>
 <td>[website](http://de-staging-oecd.redpelicans.com)</td>
 <td>-</td>
@@ -112,6 +112,26 @@
 <td>de-staging-siscc</td>
 <td>[website](http://de-staging-siscc.redpelicans.com)</td>
 <td>-</td>
+</tr>
+<tr>
+<td>de-staging-abs</td>
+<td>[website](http://de-staging-abs.redpelicans.com)</td>
+<td>only de</td>
+</tr>
+<tr>
+<td>de-staging-astat</td>
+<td>[website](http://de-staging-astat.redpelicans.com)</td>
+<td>only de (on OECDCS1 of SIS-CC-stable)</td>
+</tr>
+<tr>
+<td>de-staging-statec</td>
+<td>[website](http://de-staging-statec.redpelicans.com)</td>
+<td>only de (on OECDCS1 of SIS-CC-stable)</td>
+</tr>
+<tr>
+<td>de-staging-statsnz</td>
+<td>[website](http://de-staging-statsnz.redpelicans.com)</td>
+<td>only de (on OECDCS1 of SIS-CC-stable)</td>
 </tr>
 <tr>
 <td rowspan="3">[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)</td>
