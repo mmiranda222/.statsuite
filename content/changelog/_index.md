@@ -6,6 +6,25 @@ weight: 120
 
 ---
 
+### December 5, 2019 [Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)
+>This new release includes a new version of the **.NET/SQL services** the .Stat Suite. <br>
+This release has been tested with and is using the **NSI WebService v7.10.3**.<br>
+Both **source-code** and **Docker images** are concerned by this release. <br>
+
+Minor changes:
+
+- [dotstatsuite-core-common#98](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/98) *(Refactoring)* Common location of localization.json.
+- [dotstatsuite-core-transfer#43](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/43) Enhance logging mechanism with option for stdout.
+
+Bug fixes:
+
+- [dotstatsuite-core-transfer#42](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/42) Cannot upload data when dataflow is not final.
+- [dotstatsuite-data-lifecycle-manager#90](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/90) "Retrieve the number of observations" is not working correctly. 
+- [dotstatsuite-core-transfer#44](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/44) Transfer projects appear to allow old version of Common Nuget.
+- [dotstatsuite-core-common#60](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/60) Generic solution for "An invalid column length from the bcp client for colid" error.
+
+---
+
 ### December 02, 2019 [Release .Stat Suite JS milestone 7](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/7)
 >This new release concerns the **JavaScript JS** part of .Stat Suite, exclusively the **data-explorer** application.<br>
 
