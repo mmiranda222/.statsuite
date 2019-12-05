@@ -7,9 +7,9 @@ weight: 120
 ---
 
 ### December 5, 2019 [Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)
->This new release includes a new version of the **.NET/SQL services** the .Stat Suite. <br>
-This release has been tested with and is using the **NSI WebService v7.10.3**.<br>
-Both **source-code** and **Docker images** are concerned by this release. <br>
+>This new release includes a new version of the **.NET/SQL services** the .Stat Suite.  
+This release has been tested with and is using the **NSI WebService v7.10.3**.  
+Both **source-code** and **Docker images** are concerned by this release.  
 
 Minor changes:
 
