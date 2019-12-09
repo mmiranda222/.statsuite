@@ -170,12 +170,12 @@
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/coverage.svg?style=flat-square)</td>
 <td>dlm-staging-oecd</td>
 <td>[website](http://dlm-staging-oecd.redpelicans.com)</td>
-<td>git issue to solve in master for badges</td>
+<td>-</td>
 </tr>
 <tr>
 <td>dlm-staging-siscc</td>
 <td>[website](http://dlm-staging-siscc.redpelicans.com)</td>
-<td>git issue to solve in master for badges</td>
+<td>-</td>
 </tr>
 <tr>
 <td rowspan="2">[sdmx-faceted-search](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)</td>
