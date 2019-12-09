@@ -1,5 +1,7 @@
 # devops dashboard
 
+## services
+
 <table>
 <thead>
 <tr><th>name/repo</th><th>env/branch</th><th>status</th><th>coverage</th><th>subdomain(s)</th><th>endpoint(s)</th><th>note(s)</th></tr>
@@ -265,3 +267,16 @@
 </tr>
 </body>
 </table>
+
+## packages
+
+|kind|name|status|coverage|demo|note(s)|
+|-|-|-|-|-|-|
+|npm package|[sdmxjs](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/badges/master/coverage.svg?style=flat-square)|[sdmxjs](http://sdmxjs-qa-oecd.redpelicans.com/)|:muscle: @RedPDRoncoli|
+|npm package|[visions](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/badges/master/coverage.svg?style=flat-square)|[visions](http://visions-qa-oecd.redpelicans.com/)|:sparkles: @mike.velluet|
+|npm package|[ui-footer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/coverage.svg?style=flat-square)|-|will be included visions|
+|npm package|[ui-header](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/coverage.svg?style=flat-square)|-|will be included visions|
+|npm package|[components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/coverage.svg?style=flat-square)|-|test in scattered inside|
+|npm package|[ui-components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/coverage.svg?style=flat-square)|-|will be merged with visions|
+|npm package|[d3-charts](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/coverage.svg?style=flat-square)|-|complex to test|
+
