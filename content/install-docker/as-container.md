@@ -5,12 +5,13 @@ comments: false
 weight: 52
 ---
 
-# Table of Content
+#### Table of Content
 - [.Stat Data Explorer components](#stat-data-explorer-components)
 - [.Stat Data Lifecycle Manager components](#stat-data-lifecycle-manager-components)
 - [.Stat Core components](#stat-core-components)
 - [Docker compose example(s)](#docker-compose-example-s)
 
+---
 
 Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use Docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in their own cloud or premises.
 

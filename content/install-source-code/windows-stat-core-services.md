@@ -5,6 +5,20 @@ comments: false
 weight: 44
 ---
 
+#### Table of Content
+- [Disclaimer](#disclaimer)
+- [Pre-requisites](#pre-requisites)
+- [Topology](#topology)
+- [Installation overview](#installation-overview)
+- [1. Download the source code](#1-download-the-source-code)
+- [2. Compile the source code](#2-compile-the-source-code)
+- [3. Initialize the databases](#3-initialize-the-databases)
+- [4. Deploy the Transfer service](#4-deploy-the-transfer-service)
+- [5. Deploy the Design NSI web service in port 81](#5-deploy-the-design-nsi-web-service-in-port-81)
+- [6. Deploy the Disseminate NSI web service in port 80](#6-deploy-the-disseminate-nsi-web-service-in-port-80)
+
+---
+
 The following example, contains the list of steps required to deploy a **specific topology** of the dotstatsuite-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
 
 ## Disclaimer

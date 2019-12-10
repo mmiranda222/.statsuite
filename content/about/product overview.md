@@ -5,10 +5,12 @@ comments: false
 weight: 12
 ---
 
-# Table of Content
+#### Table of Content
 - [introduction](#introduction)
 - [details about the main .stat suite modules](#details-about-the-main-stat-suite-modules)
 - [tentative high-level .stat suite product roadmap](#tentative-high-level-stat-suite-product-roadmap)
+
+---
 
 ## Introduction
 
