@@ -5,7 +5,7 @@ comments: false
 weight: 73
 ---
 
-# Table of Content
+#### Table of Content
 - [intro](#intro)
 - [homepage facets](#homepage-facets)
 - [search results page pinned facets](#search-results-page-pinned-facets)
@@ -21,6 +21,7 @@ weight: 73
 - [localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
 - [localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
 
+---
 
 ### intro
 This page is a guide on how to setup, configure and interact with most of the .Stat Data Explorer client-side configurations and (sdmx) business rules.<br>

@@ -5,7 +5,7 @@ comments: false
 weight: 92
 ---
 
-# Table of Content
+#### Table of Content
 - [intro](#intro)
 - [production cycle](#production-cycle)
 - [common rules](#common-rules)
@@ -13,6 +13,8 @@ weight: 92
 - [graphical design workflow](#graphical-design-workflow)
 - [technical (dev) workflow](#technical-dev-workflow)
 - [technical (javascriptdev) workflow (wip)](#technical-javascriptdev-workflow-wip)
+
+---
 
 ### intro
 Every opened issue (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/) how to report a new issue) will follow the agreed and below defined production cycle, in regards to quality criteria and relevance assessed by the Product Owner (PO) Team and the Technical (Dev) Team.<br>

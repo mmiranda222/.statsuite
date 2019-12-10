@@ -5,12 +5,14 @@ comments: false
 weight: 43
 ---
 
-# Table of Content
+#### Table of Content
 - [intro](#intro)
 - [source code of the components of each .Stat Suite main module](#source-code-of-the-components-of-each-stat-suite-main-module)
 - [example topologies](#example-topologies)
 
-### intro
+---
+
+## intro
 
 The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components can be freely re-used to compose a new topology (system architecture) by anyone on their own infrastructure.
 
@@ -21,7 +23,7 @@ Introduction](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-starte
 
 ---
 
-### Source code of the components of each .Stat Suite main module  
+## Source code of the components of each .Stat Suite main module  
 
 The technical description of each of the services can be accessed from each Gitlab's repository:<br>
 
@@ -47,13 +49,13 @@ The technical description of each of the services can be accessed from each Gitl
 
 ---
 
-### Example topologies  
+## Example topologies  
 
 Installations for frequent usages of the .Stat Suite platform components are described below.  
 More topologies will be added in the future as needed.
 
 
-#### A) Installing the .Stat Suite platform full stack with one .Stat Core Data Store
+### A) Installing the .Stat Suite platform full stack with one .Stat Core Data Store
 This topology contains the full stack of .Stat Suite platform, including one instance of the .Stat Core Data Store and its SDMX API.  
 
 ![.Stat Suite full stack](/images/One_Internal_Space.png)
@@ -83,7 +85,7 @@ The installation must be done in the following order:
 1. [Install the Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager). Topology configuration example [*to come*].
 
 
-#### B) Installing an instance of .Stat Data Explorer plugged to a existing SDMX web service
+### B) Installing an instance of .Stat Data Explorer plugged to a existing SDMX web service
 This topology contains all .Stat Data Explorer components to be plugged to an existing SDMX web service.  
 **Pre-requisite**: a fully-functioning freely accessible (CORS-enabled, anonymous access enabled) SDMX end point is required.  
 

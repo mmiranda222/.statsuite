@@ -5,7 +5,7 @@ comments: false
 weight: 72
 ---
 
-# Table of Content
+#### Table of Content
 - [intro](#intro)
 - [main theme](#main-theme)
 - [site title and logo](#site-title-and-logo)
@@ -17,6 +17,7 @@ weight: 72
 - [contact us hyperlink](#contact-us-hyperlink)
 - [map chart configuration](#map-chart-configuration)
 
+---
 
 ### intro
 This page is a guide on how to customise and interact with some of the .Stat Data Explorer look and feel and layout features.<br>

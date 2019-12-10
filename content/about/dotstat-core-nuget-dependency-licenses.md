@@ -5,12 +5,14 @@ comments: false
 weight: 14
 ---
 
-# Table of Content
+#### Table of Content
 - [dotstatsuite-core-common](#dotstatsuite-core-common)
 - [dotstatsuite-core-data-access](#dotstatsuite-core-data-access)
 - [dotstatsuite-core-transfer](#dotstatsuite-core-transfer)
 - [dotstatsuite-core-sdmxri-nsi-plugin](#dotstatsuite-core-sdmxri-nsi-plugin)
 - [dotstatsuite-core-auth-management](#dotstatsuite-core-auth-management)
+
+---
 
 ## dotstatsuite-core-common
 
