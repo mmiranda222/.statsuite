@@ -2,7 +2,7 @@
 title: "Semantic versioning of CORE services"
 subtitle: 
 comments: false
-weight: 34
+weight: 36
 ---
 
 # Table of Content
