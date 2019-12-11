@@ -394,4 +394,4 @@ The following table contains total time taken the 3 concurrent data queries and 
 |2|51|49898|0.831633|48000|X1.04|
 |3|61|53897|0.898283|48000|X1.12|
 
-**In the following excel file, you will find all the collected information from the performance tests.** [Performance_results.xlsx](/uploads/9fec13aaa877c529e7983c1e78bcbd26/Performance_results.xlsx)
+**In the following excel file, you will find all the collected information from the performance tests.** [Performance_results.xlsx](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/uploads/9fec13aaa877c529e7983c1e78bcbd26/Performance_results.xlsx)
