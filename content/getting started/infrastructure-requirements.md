@@ -40,3 +40,17 @@ Although the requirements could vary depending on the size of your data and the 
 
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
 - ports can be freely picked, if different than defaults they should be specified when launching services
+
+### .Stat Data Lifecycle Manager
+**pre-requisites**
+
+- (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
+- **nodejs 12.x** and **npm 6.x** installed
+- **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
+- **keycloak 7.x** installed and running on port 8080 (default)
+- **postgres 12.x** installed and running on port 5432 (default)
+
+*notes:*
+
+- keycloak realm name can be freely picked, default configuration targets oecd
+- ports can be freely picked, if different than defaults they should be specified when launching services
