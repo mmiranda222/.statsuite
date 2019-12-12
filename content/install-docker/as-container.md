@@ -9,7 +9,7 @@ weight: 52
 - [.Stat Data Explorer components](#stat-data-explorer-components)
 - [.Stat Data Lifecycle Manager components](#stat-data-lifecycle-manager-components)
 - [.Stat Core components](#stat-core-components)
-- [Docker compose example(s)](#docker-compose-example-s)
+- [Docker compose example(s)](#docker-compose-examples)
 
 ---
 
