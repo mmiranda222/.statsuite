@@ -7,14 +7,14 @@ weight: 120
 ---
 
 ### January 8, 2020 [Release .Stat Suite .NET v2.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/8)
->This new release includes a new version of the **.NET/SQL services** .Stat Suite.  
+>This new release includes a new version of the .Stat Suite **.NET/SQL services**.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
 Major changes:
 
-- [dotstatsuite-core-transfer#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/21) **Improved error message content** sent to user via e-mail. <br>
-E-mail notifications received from the transfer service for data transfer activities made by .Stat DLM users are made with clearer and well-formulated information. <br>
-The following two groupings/categories now describe the issue, its origin and it identifies responsibility or who may be concerned by the type of issue:
+- [dotstatsuite-core-transfer#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/21) **Improved error message content** sent to user via e-mail.  <br>
+E-mail notifications from the transfer service for data transfer activities and made by .Stat DLM users are received with clearer and well-formulated information.  <br>
+The following two groupings/categories now describe the issue, its origin and it also identifies responsibility or who may be concerned by the type of issue:
 > * Type of issues
 >> * System transaction
 >> * Database connection
@@ -25,8 +25,8 @@ The following two groupings/categories now describe the issue, its origin and it
 >> * WARNING
 >> * ERROR <br>
 
-More details can be found [**here**](https://gitlab.com/snippets/1908874) (descriptive types of known issues, causes and solutions). <br>
-Few several tasks remain to be done for providing some of the messages with more comprehensive, non-technical descriptions of the cause, and descriptions of the possible remedy solutions in case of failure.
+More details can be found [**here**](https://gitlab.com/snippets/1908874) (descriptive types of known issues, causes and solutions).  <br>
+Several tasks remain to be done for providing some of the messages with more comprehensive, non-technical descriptions of the cause, and descriptions of the possible remedy solutions in case of failure.
 - [dotstatsuite-core-data-access#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/15) **Stress testing** of NSI and Transfer for upload and download. See the test report [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/performance-review/).  
 
 Minor changes:
