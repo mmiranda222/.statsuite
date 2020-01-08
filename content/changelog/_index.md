@@ -12,8 +12,10 @@ Both **source-code** and **Docker images** are concerned by this release.
 
 Major changes:
 
-- [dotstatsuite-core-transfer#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/21) **Improved error message content** sent to user via e-mail.  <br>
-E-mail notifications from the transfer service for data transfer activities and made by .Stat DLM users are received with clearer and well-formulated information.  <br>
+- [dotstatsuite-core-transfer#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/21) **Improved error message content** sent to user via e-mail.
+
+E-mail notifications from the transfer service for data transfer activities and made by .Stat DLM users are received with clearer and well-formulated information.
+
 The following two groupings/categories now describe the issue, its origin and it also identifies responsibility or who may be concerned by the type of issue:
 > * Type of issues
 >> * System transaction
@@ -25,7 +27,8 @@ The following two groupings/categories now describe the issue, its origin and it
 >> * WARNING
 >> * ERROR <br>
 
-More details can be found [**here**](https://gitlab.com/snippets/1908874) (descriptive types of known issues, causes and solutions).  <br>
+More details can be found [**here**](https://gitlab.com/snippets/1908874) (descriptive types of known issues, causes and solutions).
+
 Several tasks remain to be done for providing some of the messages with more comprehensive, non-technical descriptions of the cause, and descriptions of the possible remedy solutions in case of failure.
 - [dotstatsuite-core-data-access#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/15) **Stress testing** of NSI and Transfer for upload and download. See the test report [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/performance-review/).  
 
