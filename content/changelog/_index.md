@@ -6,8 +6,45 @@ weight: 120
 
 ---
 
+### January 8, 2020 [Release .Stat Suite .NET v2.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/8)
+>This new release includes a new version of the **.NET/SQL services** .Stat Suite.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+Major changes:
+
+- [dotstatsuite-core-transfer#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/21) **Improved error message content** sent to user via e-mail. <br>
+E-mail notifications received from the transfer service for data transfer activities made by .Stat DLM users are made with clearer and well-formulated information. <br>
+The following two groupings/categories now describe the issue, its origin and it identifies responsibility or who may be concerned by the type of issue:
+> * Type of issues
+>> * System transaction
+>> * Database connection
+>> * Database structure
+>> * User Import/Transfer
+>> * Data Modelling
+> * Level of issues
+>> * WARNING
+>> * ERROR <br>
+
+More details can be found [**here**](https://gitlab.com/snippets/1908874) (descriptive types of known issues, causes and solutions). <br>
+Few several tasks remain to be done for providing some of the messages with more comprehensive, non-technical descriptions of the cause, and descriptions of the possible remedy solutions in case of failure.
+- [dotstatsuite-core-data-access#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/15) **Stress testing** of NSI and Transfer for upload and download. See the test report [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/performance-review/).  
+
+Minor changes:
+- [dotstatsuite-core-data-access#36](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/36) *(Test)* Create a nuget for shared test classes and unit test sample files.
+- [dotstatsuite-core-transfer#55](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/55) *(DevOps)* Latest docker image misses the localization.json in a config folder.
+- [dotstatsuite-core-data-access#33](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/33) (*Refactoring*) Refactor SdmxObservationReader & ObservationValidator.
+
+Bug fixes:
+
+- [dotstatsuite-core-transfer#49](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/49) Import from URL (of SDMX web service) doesn't work anymore.
+- [dotstatsuite-core-transfer#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/47) Wrong row id in the data transfer error log.
+- [dotstatsuite-core-data-access#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/32) SdmxObservationReader writes dimensions into db with wrong order when order of dimensions in serieskey do not match structure.
+- [dotstatsuite-core-transfer#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/4) Issues when importing data from SDMX-ML files (*Eurostat issue ID SDMXRI-1093*).
+
+---
+
 ### December 5, 2019 [Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)
->This new release includes a new version of the **.NET/SQL services** the .Stat Suite.  
+>This new release includes a new version of the **.NET/SQL services** .Stat Suite.  
 This release has been tested with and is using the **NSI WebService v7.10.3**.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
