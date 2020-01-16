@@ -16,6 +16,7 @@ weight: 72
 - [api documentation hyperlink](#api-documentation-hyperlink)
 - [contact us hyperlink](#contact-us-hyperlink)
 - [map chart configuration](#map-chart-configuration)
+- [add icons for facet values](#add-icons-for-facet-values)
 
 ---
 
@@ -278,3 +279,20 @@ For the English example of the world map, it should look like:
 
 This example above will result with 2 options (in the menu of the Data Explorer chart drop-down feature) labelled in English: "Map of Continents" and "Map of Countries".
 
+### add icons for facet values
+
+You can add new entries in `dotstatsuite-config/data/\<env>/configs/\<tenant>/data-explorer/setting.json` as following:
+
+key of the facet will be always in **lowercase "ref_area"** and key for facet value will be always in **uppercase "ASIKHM"**.
+
+The key "ASIKHM" has a value. This value must be an **SVG path segment**. and only that nothing else.
+
+```json
+"sdmx": {
+  ...others keys,
+  "valueIcons": {
+    "ref_area": {
+      "ASIKHM": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    } 
+  }
+}
