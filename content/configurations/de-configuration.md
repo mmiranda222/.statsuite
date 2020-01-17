@@ -39,7 +39,7 @@ If it is **missing**, then all available facets are displayed on the homepage.
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "search": {
         "homeFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
     }
@@ -55,7 +55,7 @@ These facets will be displayed always at first top positions and their labels ar
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "search": {
         "pinnedFacetIds": ["datasource_id", "cas_subject","ref_area", "dsb"]
     }
@@ -70,7 +70,7 @@ Define the facets that will always be excluded from the search result page.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "search": {
         "excludedFacetIds": ["survey"]
     }
@@ -83,7 +83,7 @@ Define the number of results displayed per page in the search result pages.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "search": {
         "defaultRows": 10
     }
@@ -96,7 +96,7 @@ Define the minimum and maximum values of the time period range in the visualisat
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "period": {
         "boundaries": [1970, 2020]
     }
@@ -113,7 +113,7 @@ Define the default time period selection of the visualisation page views, accord
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "period": {
         "default": [2018, 2018]
     }
@@ -130,7 +130,7 @@ This configuration does not impact the full data download.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "sdmx": {
         "range": [0, 1000]
     }
@@ -143,7 +143,7 @@ It applies the calculation over the observation values when the Preferred Scale 
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
    "sdmx": {
         "attributes": {
             "prefscale": "PREF_SCALE", 
@@ -158,7 +158,7 @@ It applies the Decimal Attribute value when defined in the data source, and thus
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
    "sdmx": {
         "attributes": {
             "decimals": "DECIMALS", 
@@ -177,7 +177,7 @@ You can define more than one type of attribute to be displayed as flags.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
    "sdmx": {
         "attributes": {
             "flags": ["OBS_STATUS"], 
@@ -196,7 +196,7 @@ You can define more than one type of attributes to be displayed as footnotes.<br
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
    "sdmx": {
         "attributes": {
             "footnotes": ["TIME_FORMAT"], 
@@ -213,7 +213,7 @@ Define the localised thousands and decimals separators of the observation values
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "i18n": {
         "localeId": "en",
         "locales": {
@@ -253,7 +253,7 @@ By default, if no configuration for a given localised format is added, then the 
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
   "i18n": {
     "localeId": "en",
     "locales": {

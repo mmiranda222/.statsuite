@@ -37,7 +37,7 @@ The default theme is applied if there is no theme added to the settings.json fil
 * "theme":"splash" corresponds to the text color under the homepage splash logo
 * "theme":"searchDataflow" corresponds to the text color of Dataflow titles in the list of the search result page
 
-```
+```json
     "theme":  {
         "layout": {
             "fontFamily": "Arial, 'sans-serif'",
@@ -62,7 +62,7 @@ Define your website name and logo.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "app": {
           "title": "OECD Data Explorer",
           "favicon": "/assets/siscc/data-explorer/images/favicon.ico"
@@ -108,7 +108,7 @@ Define the common logos in the header, subheader, footer and homepage of the web
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "assets": {
         "header": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
         "subheader": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png",
@@ -137,7 +137,7 @@ The source can be a binary image or a link.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "viewer": {
         "logo": "dotstat-suite-config/data/prod/assets/oecd-logo.png",
     }
@@ -152,7 +152,7 @@ Define the name and hyperlink in the footer of the table and chart views behind 
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "viewer": {
         "terms": {
             "label": "Terms & Conditions",
@@ -170,7 +170,7 @@ Define the hyperlink for the API documentation.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "viewer": {
         "api": {
             "doc": "https://data.oecd.org/api/sdmx-json-documentation/",
@@ -187,7 +187,7 @@ Define the hyperlink for the "Contact us" feature.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
-```
+```json
     "viewer": {
         "api": {
             "contact": "https://stats.oecd.org/FAQAndContact.aspx",
@@ -214,7 +214,7 @@ From here and further in the configuration, it is assumed that one can produce `
 Starting with the specifications of the `topojson` file format. Following is provided a '**world_map.json**' file as example.<br>
 As `topojson` standard specifes, areas are defined in `objects` entry. Since the SDMX dimension representing the Reference Areas may be a hierarchical one, it is possible for the Data Explorer to have several maps choice corresponding to the different hierarchy levels, for only one `topojson` file. All you need is regrouping your areas definition into several entries inside your `objects` entry.<br>
 So for instance, for 2 levels of a hierarchy, e.g. `continents` and `countries`, the following 2 entries are defined in the **world_map.json** file as `objects`:
-```
+```json
 {
     "objects": {
         "continents": {
@@ -231,7 +231,7 @@ So for instance, for 2 levels of a hierarchy, e.g. `continents` and `countries`,
 **Note**: in case of a flat area dimension, there is still a need for areas to be put under a level in the file.<br>
 <br>
 Then each of the areas will be collected in one of the `geometries` arrays, as follows:
-```
+```json
 area = {
     "type": "",
     "arcs": [],
@@ -247,7 +247,7 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
 **Second step** The `topojson` file needs to be added in the following path `dotstatsuite/data/<env>/assets/<tenant>/data-explorer/maps/world_map.json`<br>
 
 **Third step** Then it needs to be referenced in Data Explorer settings in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`:
-```
+```json
 {
     "chart": {
         "maps": {
@@ -269,7 +269,7 @@ Keep in mind that `projection` stands for the specific D3 projection you want to
 **Last step** is to make sure that each area level of the map has its label properly put in the translation files.<br>
 For the English example of the world map, it should look like:
 `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/i18n/en.json`
-```
+```json
 {
     "chart.choropleth": "Map of {map}",
     "map.world_map.continents": "Continents",
