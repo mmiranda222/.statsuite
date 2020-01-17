@@ -73,7 +73,7 @@ Make sure that the windows machine which will be used in this installation proce
 5.   [Deploy the Design NSI web service](#5-deploy-the-design-nsi-web-service-in-port-81)
 6.   [Deploy the Disseminate NSI web service](#6-deploy-the-disseminate-nsi-web-service-in-port-80)
 
-## 1.  Download the source code
+## 1.Download the source code
   1 .  Open Git Bash with **admin rights** from the windows start menu
 
   2 .  Create a new folder *C:/git* to store the source code
@@ -122,7 +122,7 @@ git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
-## 2.  Compile the source code
+## 2.Compile the source code
 
   1 .  Compile the dotstatsuite-core-dbup tool
 ```sh
@@ -152,7 +152,7 @@ dotnet publish /c/git/dotstatsuite-core-sdmxri-nsi-plugin
 dotnet publish /c/git/dotstatsuite-core-transfer
 ```
 
-## 3.  Initialize the databases
+## 3.Initialize the databases
 
 For this step you will need the Microsoft SQL sysadmin user and password.  
 
@@ -261,7 +261,7 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publis
 dotnet Estat.Sri.Mapping.Tool.dll init -m DisseminateStructDb -f 
 ```
 
-## 4.  Deploy the Transfer service  
+## 4.Deploy the Transfer service  
 
 ![.Stat Core topology transfer](/images/stat-core-topology-transfer.PNG)
 
@@ -397,7 +397,7 @@ Open a web browser and open the url localhost:83/health
 ```
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\transfer-service\logs\
 
-## 5.  Deploy the Design NSI web service in port 81  
+## 5.Deploy the Design NSI web service in port 81  
 
 ![.Stat Core topology nsiwsDesign](/images/stat-core-topology-nsiwsDesign.PNG)
 
@@ -501,7 +501,7 @@ Open a web browser and open the url localhost:81
 
 >  Note: By default all the logs will be stored at C:/ProgramData/Eurostat/logs/
 
-## 6.  Deploy the Disseminate NSI web service in port 80  
+## 6.Deploy the Disseminate NSI web service in port 80  
 
 ![.Stat Core topology nsiwsDisseminate](/images/stat-core-topology-nsiwsDisseminate.PNG)
 

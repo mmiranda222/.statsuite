@@ -5,7 +5,7 @@ comments: false
 weight: 33
 ---
 
-# Table of Content
+#### Table of Content
 - [open-source development business requirements](#open-source-development-business-requirements)
 - [technical stack](#technical-stack)
 - [technical environment (cloud)](#technical-environment-cloud)

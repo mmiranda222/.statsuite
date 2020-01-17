@@ -5,7 +5,7 @@ comments: false
 weight: 36
 ---
 
-# Table of Content
+#### Table of Content
 - [semantic version](#semantic-version)
 - [nuget generation](#nuget-generation)
 - [referencing nuget package in other projects](#referencing-nuget-package-in-other-projects)
@@ -26,14 +26,14 @@ More information on a version generation can be found [here](https://github.com/
 
 ## Nuget generation
 
-#### In gitlab pipeline
+### In gitlab pipeline
 
 For any successful run the pipeline generates and pushes the nuget package with semantic version corresponding to a git commit into nuget server.
 For master & develop branch it will push to nuget.org, for feature branch it will push to a private feed (To be setup)
 
 **N.B.** Curently Pipeline pushes generated nuget from any branch to nuget.org as no private nuget feed exists.
 
-#### Locally
+### Locally
 
 Locally, a new nuget package can be created with any of the following methods:
 

@@ -5,12 +5,12 @@ comments: false
 weight: 38
 ---
 
-# Table of Content
+#### Table of Content
 - [.stat core data store](#stat-core-data-store)
 - [.stat data explorer](#stat-data-explorer)
 - [.stat data lifecycle manager](#stat-data-lifecycle-manager)
 
-### .Stat Core Data Store
+## .Stat Core Data Store
 **Software requirements**
 
 - **SQL server 2017** or higher 
@@ -28,7 +28,7 @@ Although the requirements could vary depending on the size of your data and the 
 - **vCPUs:** 8 CPU @ 2.4 GHz
 - **Disk:** 250 GB         
 
-### .Stat Data Explorer
+## .Stat Data Explorer
 **pre-requisites**
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
@@ -42,7 +42,7 @@ Although the requirements could vary depending on the size of your data and the 
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
 - ports can be freely picked, if different than defaults they should be specified when launching services
 
-### .Stat Data Lifecycle Manager
+## .Stat Data Lifecycle Manager
 **pre-requisites**
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
