@@ -8,6 +8,7 @@ weight: 38
 # Table of Content
 - [.stat core data store](#stat-core-data-store)
 - [.stat data explorer](#stat-data-explorer)
+- [.stat data lifecycle manager](#stat-data-lifecycle-manager)
 
 ### .Stat Core Data Store
 **Software requirements**
