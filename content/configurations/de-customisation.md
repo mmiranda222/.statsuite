@@ -16,7 +16,7 @@ weight: 72
 - [api documentation hyperlink](#api-documentation-hyperlink)
 - [contact us hyperlink](#contact-us-hyperlink)
 - [map chart configuration](#map-chart-configuration)
-- [add icons for facet values](#add-icons-for-facet-values)
+- [add icons to specific facet values](#add-icons-to-specific-facet-values)
 
 ---
 
@@ -279,20 +279,32 @@ For the English example of the world map, it should look like:
 
 This example above will result with 2 options (in the menu of the Data Explorer chart drop-down feature) labelled in English: "Map of Continents" and "Map of Countries".
 
-### add icons for facet values
+---
 
-You can add new entries in `dotstatsuite-config/data/\<env>/configs/\<tenant>/data-explorer/setting.json` as following:
+### Add icons to specific facet values
 
-key of the facet will be always in **lowercase "ref_area"** and key for facet value will be always in **uppercase "ASIKHM"**.
+You can define individual icons that are to be displayed with specific facets values in the DE home and search result pages.<br>
 
-The key "ASIKHM" has a value. This value must be an **SVG path segment**. and only that nothing else.
+This is a new entry of the configuration, and is supporting the **SVG path segment** format ONLY. <br>
+SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.<br>
+
+* in `dotstatsuite-config/data/\<env>/configs/\<tenant>/data-explorer/setting.json`
 
 ```json
 "sdmx": {
   ...others keys,
   "valueIcons": {
-    "ref_area": {
-      "ASIKHM": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    "topics": {
+      "EDU": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
     } 
   }
 }
+```
+
+Note: the key of the facet is always in **lowercase e.g. "topics"**, and the key of the facet value is always in **uppercase e.g. "EDU"**.<br>
+
+The result is as follows:
+
+![facet icon 1](/images/faq-facet-icon-1.png)
+
+![facet icon 2](/images/faq-facet-icon-2.png)
