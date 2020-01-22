@@ -30,7 +30,7 @@ The following two groupings/categories now describe the issue, its origin and it
 More details can be found [**here**](https://gitlab.com/snippets/1908874) (descriptive types of known issues, causes and solutions).
 
 Several tasks remain to be done for providing some of the messages with more comprehensive, non-technical descriptions of the cause, and descriptions of the possible remedy solutions in case of failure.
-- [dotstatsuite-core-data-access#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/15) **Stress testing** of NSI and Transfer for upload and download. See the test report [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/performance-review/).  
+- [dotstatsuite-core-data-access#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/15) **Stress testing** of NSI and Transfer for upload and download. See the test report [here](https://community.oecd.org/docs/DOC-166958).  
 
 Minor changes:
 - [dotstatsuite-core-data-access#36](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/36) *(Test)* Create a nuget for shared test classes and unit test sample files.
