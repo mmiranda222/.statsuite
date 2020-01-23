@@ -1,5 +1,5 @@
 ---
-title: "Contribution"
+title: "Contributing"
 subtitle: 
 comments: false
 weight: 90
