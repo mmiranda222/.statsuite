@@ -2,7 +2,7 @@
 title: "Delete data"
 subtitle: 
 comments: false
-weight 310
+weight: 310
 
 ---
 
