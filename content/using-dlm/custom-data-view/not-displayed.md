@@ -6,6 +6,11 @@ weight: 345
 
 ---
 
+#### ToC
+- [Hide information of a data view](#hide-information-of-a-data-view)
+- [Automatic hide of specific values](#automatic-hide-of-specific-values)
+
+## Hide information of a data view
 You can decide to hide some specific information of a dataflow in its visual representations.
 
 To do so, you can define the SDMX annotation of type `NOT_DISPLAYED` to be used for hiding a dimension, dimension values (from a Codelist), an attribute or attribute values (from a Codelist) in certain circumstances that are described in the following scenarios.
@@ -68,3 +73,20 @@ In this attached example, one code of a Codelist is defined with the `NOT_DISPLA
 Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1 compliant's backoffice system) for Data Explorer dissemination, it will result hiding the value from the sub-title of the dataflow when this value is selected form the filter.
 
 ![Example of NOT_DISPLAYED annotation](/files/NOT_DISPLAYED.png)
+
+
+## Automatic hide of specific values
+By default, the following special values (codes of a Codelist) are hidden in the dataflow sub-title in the Data Explorer visualisation page:
+* _L (Local extension)
+* _T (Total)
+* _Z (Not applicable)
+
+The case occurs when the code is the only available value, or when it is the only selection made in the given dimension.
+
+### Example
+In the following illustrations:
+* When I select "Overnight visitors" from the filter, the selection appears in the sub-title of the dataflow;
+* When I select **ONLY** "Total" from the same filter, the selection is applied to the view BUT the selection is NOT displayed in the sub-title of the dataflow.
+<br>
+
+![Example of hidden special value](/files/HIDE_SPECIAL_VALUES.png)
