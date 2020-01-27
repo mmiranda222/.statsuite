@@ -26,22 +26,22 @@
 <td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/master/coverage.svg?style=flat-square)</td>
 <td>nsi-design-oecd</td>
 <td>[health](http://nsi-design-oecd.redpelicans.com/health)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td>nsi-staging-oecd</td>
 <td>[health](http://nsi-staging-oecd.redpelicans.com/health)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td>nsi-stable-siscc</td>
 <td>[health](http://nsi-stable-siscc.redpelicans.com/health)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td>nsi-reset-siscc</td>
 <td>[health](http://nsi-reset-siscc.redpelicans.com/health)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td rowspan="4">[transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)</td>
@@ -62,11 +62,11 @@
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">transfer-siscc</td>
 <td>[health](http://transfer-siscc.redpelicans.com/health)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td>[swagger](http://transfer-siscc.redpelicans.com/swagger)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td rowspan="4">[authz](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)</td>
@@ -87,11 +87,11 @@
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">authz-siscc</td>
 <td>[health](http://transfer-siscc.redpelicans.com/health)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td>[swagger](http://transfer-siscc.redpelicans.com/swagger)</td>
-<td>not automatically deployed</td>
+<td>-</td>
 </tr>
 <tr>
 <td rowspan="7">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
