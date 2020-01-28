@@ -14,7 +14,7 @@ Major changes:
 - [dotstatsuite-data-lifecycle-manager#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/50) Download selected data in Excel format (with simple layout).  
 The .Stat Suite is here enhanced with a new component **DLM Excel-Addin**.  
 The **DLM Excel-Addin** is delivered as a ClickOnce application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).  
-Access the installation files from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin).  
+Access the installation files from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin). Best practice is to install it on a shared network folder.  
 The DLM Excel-Addin is developed to fully configure connection endpoints, in order to retrieve data within Excel tables with simple layout. You can find more information about deployment, setting up and configuration [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/blob/master/README.md).
 
 ![DLM Excel-Addin](/images/dlm-wizard-01.png)
