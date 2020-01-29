@@ -59,4 +59,4 @@ In this attached example, several dimension IDs are defined in the dataflow defi
 
 Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1 compliant's backoffice system) for Data Explorer dissemination, it will result in displaying the dataflow in the following default data table representation:<br>
 
-![Example of LAYOUT annotations](/files/LAYOUT.png)
+![Example of LAYOUT annotations](/using-dlm/files/LAYOUT.png)
