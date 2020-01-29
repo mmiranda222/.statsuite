@@ -7,8 +7,8 @@ weight: 12
 
 #### Table of Content
 - [introduction](#introduction)
-- [details about the main .stat suite modules](#details-about-the-main-stat-suite-modules)
-- [tentative high-level .stat suite product roadmap](#tentative-high-level-stat-suite-product-roadmap)
+- [details about the main .Stat Suite modules](#details-about-the-main-stat-suite-modules)
+- [tentative high-level .Stat Suite product roadmap](#tentative-high-level-stat-suite-product-roadmap)
 
 ---
 
