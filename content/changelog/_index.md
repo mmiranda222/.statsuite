@@ -7,16 +7,16 @@ weight: 120
 ---
 
 ### January 28, 2020 [Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)
->**Disclaimer**: this release contains breaking changes with a new entry in the `dataspaces.private.json` and the introduction of `localization.json` via the Dotstat.config nuget package ([dotstatsuite-core-common#102](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/102)).  
+>**Disclaimer**: This release contains breaking changes with a new entry in the `dataspaces.private.json` and the introduction of `localization.json` via the Dotstat.config nuget package.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
 Major changes:
 
 - [dotstatsuite-data-lifecycle-manager#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/50) Download selected data in Excel format (with simple layout).  
-The original scope of this issue was extended in order to deliver a new component of the .Stat Suite: **DLM Excel-Addin**.  
+The original scope of this issue was extended in order to deliver a new component of the .Stat Suite: the **.Stat DLM Excel-Addin**.  
 The **DLM Excel-Addin** is delivered as a ClickOnce application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).  
-Access the installation files from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin). A best practice is to install it on a shared network folder.  
-The DLM Excel-Addin is made for the configuration of connection endpoints in order to retrieve data within Excel tables with simple layout (first step).  
+You can access the installation files from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin). A best practice is to install it on a shared network folder.  
+The DLM Excel-Addin is made for configuring a single or multiple connection endpoints, in order to retrieve data within Excel tables with simple layout. This first version supports **flat**, **time series down**, and **time series across** layouts.  
 You can find more information about deployment, set up and configuration [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/blob/master/README.md).  
 
 ![DLM Excel-Addin](/images/dlm-wizard-01.png)
@@ -53,7 +53,8 @@ When adding the annotation type **`MAXTEXTATTRIBUTELENGTH`** to a DSD definition
                  <common:Name xml:lang="en">Attribute test dsd scenario with TIME_FORMAT attribute relationship on dimensions ETA and SESSO</common:Name>  
                  <structure:DataStructureComponents>
 ```
-Then the textual attribute value can be longer in its display than the default length. The user is also notified through the email of the transfer action in the DLM:  
+Then the textual attribute value can be longer in its display than the default length.  
+The user is also notified through the email of the transfer action in the DLM:  
 
 ![MaxTexAttributeLength message](/images/maxtextattributelength.png)
 
