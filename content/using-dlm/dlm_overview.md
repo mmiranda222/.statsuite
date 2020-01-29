@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "DLM homepage overview"
 subtitle: 
 comments: false
-weight: 75
+weight: 230
+
 ---
 
 *under construction...*

@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "Upload data from EDD and Excel files"
 subtitle: 
 comments: false
-weight: 75
+weight: 290
+
 ---
 
 *under construction...*

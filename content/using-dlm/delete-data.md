@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "Delete data"
 subtitle: 
 comments: false
-weight: 75
+weight: 310
+
 ---
 
 *under construction...*

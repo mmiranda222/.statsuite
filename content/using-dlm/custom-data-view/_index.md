@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "Customise data views"
 subtitle: 
 comments: false
-weight: 75
+weight: 330
+
 ---
 
 *under construction...*

@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: ".Stat DLM configuration"
 subtitle: 
 comments: false
-weight: 75
+weight: 74
+
 ---
 
 *under construction...*

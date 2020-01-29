@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "Delete data structures"
 subtitle: 
 comments: false
-weight: 75
+weight: 250
+
 ---
 
 *under construction...*

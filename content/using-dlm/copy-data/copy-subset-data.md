@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "Copy a subset of data"
 subtitle: 
 comments: false
-weight: 75
+weight: 420
+
 ---
 
 *under construction...*

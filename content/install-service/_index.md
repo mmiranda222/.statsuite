@@ -1,5 +1,5 @@
 ---
-title: ".Stat Suite cloud hosting"
+title: "Hosting .Stat Suite in the cloud"
 subtitle: 
 comments: false
 weight: 60

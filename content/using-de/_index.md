@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "Using .Stat Data Explorer"
 subtitle: 
 comments: false
-weight: 75
+weight: 1000
+
 ---
 
 *under construction...*

@@ -1,8 +1,9 @@
 ---
-title: "SolR optimisation"
+title: "Preview data"
 subtitle: 
 comments: false
-weight: 75
+weight: 320
+
 ---
 
 *under construction...*
