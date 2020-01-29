@@ -44,6 +44,6 @@ In this attached example, several codes of codelists are defined in the dataflow
 
 Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1 compliant's backoffice system) for Data Explorer dissemination, it will result in displaying the dataflow with the following default filters' selections:  <br>
 
-![Example of DEFAULT annotations](/files/DEFAULT.png)
+![Example of DEFAULT annotations](/using-dlm/files/DEFAULT.png)
 
 Note that, in this given example, the default selection of the time period and the start and end years are due to the configuration of the Data Explorer instance (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#default-time-period)).

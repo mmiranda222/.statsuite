@@ -41,9 +41,9 @@ In the below screenshot, the dataflow structure definition contains 3 annotation
 
 Each hyperlink is enriched with a link to an image for its display as an icon of each link in the Data Explorer final representation.
 
-![Example of EXT_RESOURCE structure annotation](/files/EXTERNAL-RESOURCES-01.png)
+![Example of EXT_RESOURCE structure annotation](/using-dlm/files/EXTERNAL-RESOURCES-01.png)
 
 Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1 compliant's backoffice system) for Data Explorer dissemination, the external resources related to the dataflow are available from the visualisation page under the "Download" option, and in addiiton to the default data downloads links:
 
-![Example of EXT_RESOURCE annotation download](/files/EXTERNAL-RESOURCES-02.png)
+![Example of EXT_RESOURCE annotation download](/using-dlm/files/EXTERNAL-RESOURCES-02.png)
 
