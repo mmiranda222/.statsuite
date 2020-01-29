@@ -7,15 +7,17 @@ weight: 120
 ---
 
 ### January 28, 2020 [Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)
->Both **source-code** and **Docker images** are concerned by this release.  
+>**Disclaimer**: this release contains breaking changes with a new entry in the `dataspaces.private.json` and the introduction of `localization.json` via the Dotstat.config nuget package ([dotstatsuite-core-common#102](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/102)).  
+Both **source-code** and **Docker images** are concerned by this release.  
 
 Major changes:
 
 - [dotstatsuite-data-lifecycle-manager#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/50) Download selected data in Excel format (with simple layout).  
-The .Stat Suite is here enhanced with a new component **DLM Excel-Addin**.  
+The original scope of this issue was extended in order to deliver a new component of the .Stat Suite: **DLM Excel-Addin**.  
 The **DLM Excel-Addin** is delivered as a ClickOnce application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).  
-Access the installation files from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin). Best practice is to install it on a shared network folder.  
-The DLM Excel-Addin is developed to fully configure connection endpoints, in order to retrieve data within Excel tables with simple layout. You can find more information about deployment, setting up and configuration [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/blob/master/README.md).
+Access the installation files from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin). A best practice is to install it on a shared network folder.  
+The DLM Excel-Addin is made for the configuration of connection endpoints in order to retrieve data within Excel tables with simple layout (first step).  
+You can find more information about deployment, set up and configuration [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/blob/master/README.md).  
 
 ![DLM Excel-Addin](/images/dlm-wizard-01.png)
 
