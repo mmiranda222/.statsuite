@@ -107,7 +107,8 @@ Bug fixes:
 
 ---
 
-### December 5, 2019 [Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)
+### December 5, 2019
+### [Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)
 >This new release includes a new version of the **.NET/SQL services** .Stat Suite.  
 This release has been tested with and is using the **NSI WebService v7.10.3**.  
 Both **source-code** and **Docker images** are concerned by this release.  
