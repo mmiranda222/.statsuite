@@ -6,6 +6,8 @@ weight: 355
 
 ---
 
+>Released in [December 02, 2019 Release .Stat Suite JS milestone 7](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-02-2019)
+
 Additional downloads of external resources can be added to a dataflow and be made available in the "Download" option of the Data Explorer visualisation page.
 
 To do so, you can use the SDMX `EXT_RESOURCE` annotation to define one or several materials (any type of file format) that are stored externally (outside .Stat Suite storage).
