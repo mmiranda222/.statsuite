@@ -11,6 +11,24 @@ ToC
 - [January 28, 2020](#january-28-2020)
 - [January 8, 2020](#january-8-2020)
 - [December 5, 2019](#december-5-2019)
+- [December 02, 2019](#december-02-2019)
+- [November 19, 2019](#november-19-2019)
+- [November 13, 2019](#november-13-2019)
+- [October 11, 2019](#october-11-2019)
+- [October 08, 2019](#october-08-2019)
+- [August 20, 2019](#august-20-2019)
+- [August 13, 2019](#august-13-2019)
+- [July 11, 2019](#july-11-2019)
+- [June 4, 2019](#june-4-2019)
+- [May 17, 2019](#may-17-2019)
+- [April 25, 2019](#april-25-2019)
+- [April 17, 2019](#april-17-2019)
+- [April 11, 2019](#april-11-2019)
+- [Release v0.5 - March 2019](#release-v05-march-2019)
+- [Release v0.4 - February 2019](#release-v04-february-2019)
+- [Release 14.12.2018](#release-14122018)
+- [Release 28.09.2018](#release-28092018)
+- [Release 10.07.2018](#release-10072018)
  -->
 
 ### January 28, 2020
@@ -129,7 +147,8 @@ Bug fixes:
 
 ---
 
-### December 02, 2019 [Release .Stat Suite JS milestone 7](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/7)
+### December 02, 2019
+**[Release .Stat Suite JS milestone 7](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/7)**
 >This new release concerns the **JavaScript JS** part of .Stat Suite, exclusively the **data-explorer** application.<br>
 
 Major changes:
@@ -162,7 +181,8 @@ Bug fixes:
 
 ---
 
-### November 19, 2019 [Release .Stat Suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)
+### November 19, 2019
+**[Release .Stat Suite JS v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/6)**
 >This new release concerns the **JavaScript JS** part of .Stat Suite, especially the data-explorer, data-viewer and config. applications.<br>
 This release has been tested with the **NSI WebService v7.10.1 and v7.10.3**. <br>
 
@@ -195,7 +215,8 @@ Bug fixes:
 
 ---
 
-### November 13, 2019 [Release .Stat Suite .NET v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=all&milestone_title=Release%20.Stat%20Suite%20.NET%20v2.0.0)
+### November 13, 2019
+**[Release .Stat Suite .NET v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=all&milestone_title=Release%20.Stat%20Suite%20.NET%20v2.0.0)**
 >This new release includes a new version of the **.NET/SQL services** the .Stat Suite. <br>
 
 
@@ -225,7 +246,8 @@ Bug fixes:
 
 ---
 
-### October 11, 2019 Release .Stat Suite CORE services (GitLab milestone [Release BE 1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/3))
+### October 11, 2019
+**Release .Stat Suite CORE services (GitLab milestone [Release BE 1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/3))**
 
 Major changes:
 
@@ -248,7 +270,8 @@ Bug fixes:
 
 ---
 
-### October 08, 2019 [Release .stat suite JS v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/2)
+### October 08, 2019
+**[Release .stat suite JS v2.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/2)**
 >**NSI WS compatible versions**: this new release concerns only the JavaScript JS part of the .Stat Suite and is compatible with the NSI WS versions from **v7.xx to v7.8**. <br>
 
 Major changes:
@@ -364,7 +387,7 @@ This new feature of the Data Explorer visualisation page is **replacing the time
 ![Time Period Selector](/images/TimePeriodSelector.png)
 - [dotstatsuite-data-explorer#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/26) **Share API** and publication workflow.<br>
 The new Share service for table and chart sharing views (including url and embedded codes) relies on a **email validation workflow** process detailed [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#publication-workflow).<br>
-The end-user needs to provide a valid email address in order to receive a validation email along with the url and embedded code of the shared table or chart view.<br>
+The end-user needs to provide a valid email address in order to receive a validation email along with the url and embedded code of the shared table or chart view.<br>  
 ![Share email](/images/ShareMail.png)
 - [dotstatsuite-data-explorer#33](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/33) **LastNObservations** default setting allowing to define a default number of latest time series observations per time series returned for table and chart views.<br>
 This is implemented as an sdmx annotation parameter, but it should then be enhanced with a UI feature allowing the end-user to change this default parameter.

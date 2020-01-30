@@ -6,7 +6,7 @@ weight: 245
 
 ---
 
->Released in [January 28, 2020 Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)
+>Released in [January 28, 2020 Release .Stat Suite .NET v2.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-28-2020)
 
 You can specify, at the Dataflow Structure Definition (DSD) level, to allow uploading data with **long textual attribute values**.  
 By default, the maximum length for textual attribute values is set to **150**. In order to extend this limit, you need to define a SDMX annotation of type **`MAXTEXTATTRIBUTELENGTH`** with a value superior to 150 in the DSD definition.
