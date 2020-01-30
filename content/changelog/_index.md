@@ -13,7 +13,8 @@ ToC
 - [December 5, 2019](#December-5-2019)
  -->
 
-### January 28, 2020 [Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)
+### January 28, 2020
+**[Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)**  
 >**Disclaimer**: This release contains breaking changes in the dotstatsuite-core-transfer service with a new entry in the `dataspaces.private.json` and the introduction of `localization.json` via the Dotstat.config nuget package.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
@@ -67,7 +68,8 @@ The user is also notified through the email of the transfer action in the DLM:
 
 ---
 
-### January 8, 2020 [Release .Stat Suite .NET v2.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/8)
+### January 8, 2020
+**[Release .Stat Suite .NET v2.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/8)**  
 >This new release includes a new version of the .Stat Suite **.NET/SQL services**.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
@@ -108,7 +110,7 @@ Bug fixes:
 ---
 
 ### December 5, 2019
-### [Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)
+**[Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)**  
 >This new release includes a new version of the **.NET/SQL services** .Stat Suite.  
 This release has been tested with and is using the **NSI WebService v7.10.3**.  
 Both **source-code** and **Docker images** are concerned by this release.  
