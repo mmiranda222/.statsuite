@@ -6,6 +6,12 @@ weight: 120
 
 ---
 
+<!-- 
+ToC
+- [January 28, 2020](#January-28-2020)
+
+ -->
+
 ### January 28, 2020 [Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)
 >**Disclaimer**: This release contains breaking changes in the dotstatsuite-core-transfer service with a new entry in the `dataspaces.private.json` and the introduction of `localization.json` via the Dotstat.config nuget package.  
 Both **source-code** and **Docker images** are concerned by this release.  
