@@ -9,7 +9,8 @@ weight: 120
 <!-- 
 ToC
 - [January 28, 2020](#January-28-2020)
-
+- [January 8, 2020](#January-8-2020)
+- [December 5, 2019](#December-5-2019)
  -->
 
 ### January 28, 2020 [Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)
