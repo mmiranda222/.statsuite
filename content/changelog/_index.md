@@ -8,9 +8,9 @@ weight: 120
 
 <!-- 
 ToC
-- [January 28, 2020](#January-28-2020)
-- [January 8, 2020](#January-8-2020)
-- [December 5, 2019](#December-5-2019)
+- [January 28, 2020](#january-28-2020)
+- [January 8, 2020](#january-8-2020)
+- [December 5, 2019](#december-5-2019)
  -->
 
 ### January 28, 2020
@@ -109,7 +109,7 @@ Bug fixes:
 
 ---
 
-### December 5, 2019
+### December 5 2019
 **[Release .Stat Suite .NET v2.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/5?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v2.1.0)**  
 >This new release includes a new version of the **.NET/SQL services** .Stat Suite.  
 This release has been tested with and is using the **NSI WebService v7.10.3**.  
