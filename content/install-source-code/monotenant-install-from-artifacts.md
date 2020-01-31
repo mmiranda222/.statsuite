@@ -14,6 +14,7 @@ weight: 45
 - [git](https://gitforwindows.org/) installed ; only to use git bash instead of cmd.exe for process variables
 - [solr 7.x](https://lucene.apache.org/solr/downloads.html) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - [redis](https://redis.io/download) downloaded and running on port 6379 (default)
+- [keycloak 7.x](https://www.keycloak.org/downloads.html) downloaded and running on port 8080 (default)
 
 *notes:*
 
