@@ -174,7 +174,7 @@ weight: 45
 3. start the service:
 
   - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 npm run start:run`
-  - check if everything is fine: http://localhost:3008 (proxy with a route mapped to data-explorer)
+  - check if everything is fine: http://localhost:3009 (proxy with a route mapped to data-explorer)
 
 **6. data-viewer app**
 
