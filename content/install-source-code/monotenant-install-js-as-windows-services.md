@@ -12,6 +12,7 @@ weight: 47
 - [solr](#solr)
 - [solr core](#create-a-solr-core)
 - [redis](#redis)
+- [keycloak](#keycloak)
 - [dotstatsuitejs](#dotstatsuitejs)
 - [artefacts](#artefacts)
 - [indexation](#indexation)
@@ -32,7 +33,6 @@ weight: 47
 #### nodejs & npm
 - close git bash
 - https://nodejs.org/en/download/current
-- check chocolatey during installation
 - check:
   - open git bash
   - run `node --version` v12.x and above
@@ -49,35 +49,35 @@ weight: 47
 > hint: folders should not contain user specific
 
 - open git bash
-- run `cd && cd /c && mkdir dotstatsuitejs && cd dotstatsuitejs && mkdir pm2 nssm redis solr config search share explorer viewer && ll`
+- run `cd && cd /c && mkdir dotstatsuitejs && cd dotstatsuitejs && mkdir pm2 nssm keycloak redis solr config search share explorer viewer dlm && ll`
 
 ## NSSM
 > hint: use to have solr as a windows service
 
 - download nssm: https://nssm.cc/download at version 2.24
-- unzip in dotstasuitejs/nssm
-  - result: dotstasuitejs/nssm/nssm-2.24
+- unzip in dotstatsuitejs/nssm
+  - result: dotstatsuitejs/nssm/nssm-2.24
 
 ## Solr
 - download solr 7.x: https://lucene.apache.org/solr/downloads.html
-- unzip it in dotstasuitejs/solr
-  - result: dotstasuitejs/solr/solr-7.7.2
+- unzip it in dotstatsuitejs/solr
+  - result: dotstatsuitejs/solr/solr-7.7.2
 - open git bash
-- go to dotstasuitejs/nssm/nssm-2.24/win64
+- go to dotstatsuitejs/nssm/nssm-2.24/win64
 - run `./nssm.exe install solr772`
 - in the nssm window:
-  - set path as dotstasuitejs/solr/solr-7.7.2/bin/solr
+  - set path as dotstatsuitejs/solr/solr-7.7.2/bin/solr (don't copy past use "..." for find the solr bin )
   - set as arguments `start -f -p 8983`
   - click on install service
 - close git bash
-- start the service from services
+- start the service from services (solr772)
 - go in chrome to http://localhost:8983
 
 ## Create a solr core
 > hint: use powershell to avoid apache cli error
 
 - open powershell
-- go to dotstasuitejs\solr\solr-7.7.2\bin
+- go to dotstatsuitejs\solr\solr-7.7.2\bin
 - run `.\solr create -c sdmx-facet-search -p 8983`
 - check in chrome to http://localhost:8983/solr/#/sdmx-facet-search/core-overview
 
@@ -93,6 +93,29 @@ weight: 47
   - open git bash
   - run `redis-cli ping`
 
+## Keycloak
+
+- download keycloak: https://downloads.jboss.org/keycloak/7.0.0/keycloak-7.0.0.zip
+- unzip it in dotstatsuitejs/keycloak
+  - result: dotstatsuitejs/keycloak/keycloak-7.0.0
+- copy the folder C:\dotstatsuitejs\keycloak\keycloak-7.0.0\docs\contrib\scripts\service
+  - in C:\dotstatsuitejs\keycloak\keycloak-7.0.0\bin
+  - result: C:\dotstatsuitejs\keycloak\keycloak-7.0.0\bin\service
+- add environnement variable JAVA_HOME // need to verify
+- open windows powerShell
+- go in C:\dotstatsuitejs\keycloak\keycloak-7.0.0\bin\service
+- run `.\service.bat install /display keycloak`
+- start the service from services (keycloak)
+- go in chrome to http://localhost:8080 (wait for keycloak to load)
+  - create your admin account
+  regarding your file dotstatsuitejs/config/configs/tenants.json
+  - add realm (e.g OECD)
+  - create Clients 
+    - client ID (e.g app)
+    - Root URL (http://localhost:7000)
+  - add user
+
+
 ## Dotstatsuitejs
 > hint: pm2 is a tool that monitors nodejs services  
 > pm2-service-install makes it run as a windows service
@@ -105,7 +128,7 @@ weight: 47
   - ? PM2_HOME value: c:\dotstatsuitejs\pm2
   - ? Set PM2_SERVICE_SCRIPTS (the list of start-up scripts for pm2)? No
   - ? Set PM2_SERVICE_PM2_DIR? Yes
-  - ? Set PM2_SERVICE_PM2_DIR C:\Users\Nico\AppData\Roaming\npm\node_modules\pm2\index.js (push enter)
+  - ? Set PM2_SERVICE_PM2_DIR C:\Users\Nico\AppData\Roaming\npm\node_modules\pm2\index.js
 - close git bash
 
 
@@ -116,9 +139,36 @@ weight: 47
 - move the both files into dotstatsuitejs
 - in dotstatsuitejs folder
 - open git bash  
-- run `./dotstatsuitejs_artefacts.sh YOUR_TOKEN` *download and unzip artefacts from gitlab (develop branch)* / *[How create a Token]  (https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)*  
-- **get assets and configs from http://206.189.58.70 and put it in dotstatsuitejs/config**
-- run `./dotstatsuitejs_pm2.sh` *start services, save pm2 dump and delete all services*
+- run `./artefacts.sh YOUR_TOKEN` *download and unzip artefacts from gitlab (develop branch)* / *[How create a Token]  (https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)*  
+- **setup your assets and configs. put it in dotstatsuitejs/config like below**
+```
+.
+├── dotstatsuite
+│   ├── config
+│   │   ├── node_modules                       # from setup artifact
+│   │   ├── dist                               # from build artifact
+│   │   ├── configs
+│   │   │   ├── datasources.json               # datasources definition
+│   │   │   ├── tenants.json                   # tenants definition
+│   │   │   │   ├── default
+│   │   │   │   │   ├── data-explorer
+│   │   │   │   │   │   ├── i18n
+│   │   │   │   │   │   ├── settings.json
+│   │   │   │   │   ├── data-viewer
+│   │   │   │   │   │   ├── i18n
+│   │   │   │   │   │   ├── settings.json
+│   │   ├── assets
+│   │   │   ├── default
+│   │   │   │   ├── data-explorer
+│   │   │   │   │   │   ├── images
+│   │   │   │   │   │   ├── styles*
+│   │   │   │   ├── data-viewer
+│   │   │   │   │   │   ├── images
+│   │   │   │   │   │   ├── styles*
+│   │   ├── package.json
+```
+- edit pm2.sh to set your personnal environnement variable (e.g TRANSFER_SERVER_URL)
+- run `./pm2.sh` *start services, save pm2 dump and delete all services*
 - in windows services, start dotstatsuitejs
 - checks:
   - config: http://localhost:5007/healthcheck
@@ -126,6 +176,7 @@ weight: 47
   - search: http://localhost:3007/healthcheck (redis OK, solr OK)
   - explorer: http://localhost:3009
   - viewer: http://localhost:3005 (no id)
+  - dlm: http://localhost:7000
 
 ## Indexation
 > hint: default api-key value is secret

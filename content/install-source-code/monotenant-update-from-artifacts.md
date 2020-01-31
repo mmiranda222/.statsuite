@@ -68,3 +68,17 @@ weight: 46
  2. restart the service:
  
  - (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
+
+**6. data-lifecycle-manager app**
+
+1. download artifact archives and package.json files from gitlab:
+
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/raw/develop/package.json?inline=false)
+
+2. restart the service:
+
+  - (in git bash) run `SERVER_PORT=7000 CONFIG_URL=http://localhost:5007 npm run start:run`
+
+ 
