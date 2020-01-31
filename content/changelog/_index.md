@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 31, 2020](#January-31-2020)
 - [January 28, 2020](#january-28-2020)
 - [January 8, 2020](#january-8-2020)
 - [December 5, 2019](#december-5-2019)
@@ -30,6 +31,37 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### January 31, 2020
+**[Release .Stat Suite .NET v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/10)**
+>**Disclaimer**: This major version contains breaking changes in the **dotstatsuite-core-transfer** and **dotstatsuite-core-auth-management** services with changes to the authentication management ([dotstatsuite-core-transfer#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/66), [dotstatsuite-core-transfer#52](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/52) & [dotstatsuite-core-auth-management#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/7)).  
+This release has been tested with and is running with the **NSI WebService v7.10.8**.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+Major changes:
+
+- [dotstatsuite-core-transfer#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/66) **Unify the auth config** between the transfer service, the authentication service, and the NSI webservice. the Kubernetes strategy is also updated in order to use the authentication in the NSI WS.
+- [dotstatsuite-core-sdmxri-nsi-ws#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/19) Deploy the **NSI version 7.10.8** in DevOps. Including the following details from the [Eurostat changelog](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/CHANGELOG.md):
+>* Allow admin user to access all mapping store, to avoid having the administrator to logout and login everytime there is a new Mapping Store. OAuth2 caches the user with the mapping store.
+>* The keyword `latest` at version is not allowed when deleting artefacts.
+>* Fix SOAP 2.1 structure requests with CodeWhere and Stubs.
+
+Minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-plugin#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/25) *(documentation)* Enhance documentation of the [source code installation](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/) for NSI web service and Structure Database.
+- [dotstatsuite-core-sdmxri-nsi-plugin#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/22) Suggested in-lined user-defined function in structure database.
+
+Bug fixes:
+
+- [dotstatsuite-core-auth-management#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/7) Authorisation rules do not respect the defined space.
+- [dotstatsuite-core-transfer#52](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/52) Not possible to **delete observation values from a DSD with mandatory group/series attributes**.
+- [dotstatsuite-core-sdmxri-nsi-ws#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/12) Invalid child element `Value` in TimeRange of Actual Content Constraint.
+- [dotstatsuite-core-data-access#31](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/31) Actual Content Constraints with TimePeriod constrained cause exception to be thrown from `FillIdsFromDisseminationDb`.
+- [dotstatsuite-core-sdmxri-nsi-plugin#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/27) Deleting artefact using version of latest (*Trying to delete an artefact 'latest' version targets v1.0 instead of the actual latest*).
+- [dotstatsuite-core-sdmxri-nsi-plugin#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/24) **Enable authorisation check** on data download.
+- [dotstatsuite-core-sdmxri-nsi-plugin#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/12) Bug for not supporting multi-datasets in SDMX-JSON data.
+
+---
 
 ### January 28, 2020
 **[Release .Stat Suite .NET v2.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/9)**  
