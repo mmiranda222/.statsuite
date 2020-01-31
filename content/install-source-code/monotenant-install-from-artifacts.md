@@ -1,5 +1,5 @@
 ---
-title: "Mono-tenant installation of .Stat DE services from gitlab pipeline artifacts"
+title: "Mono-tenant installation of DE and DLM services from gitlab pipeline artifacts"
 subtitle: 
 comments: false
 weight: 45

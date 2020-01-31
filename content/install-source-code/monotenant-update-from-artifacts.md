@@ -1,5 +1,5 @@
 ---
-title: "Mono-tenant update of .Stat DE services from gitlab pipeline artifacts"
+title: "Mono-tenant update of DE and DLM services from gitlab pipeline artifacts"
 subtitle: 
 comments: false
 weight: 46
