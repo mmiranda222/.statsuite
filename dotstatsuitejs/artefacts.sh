@@ -13,20 +13,21 @@ fi
 BRANCH=develop;
 JOB=(setup build);
 
-PROJECTS=(10537079 10283564 10532325 12189645 10631000);
+PROJECTS=(10537079 10283564 10532325 12189645 10631000 10822973);
 
 CONFIG=config; #10537079
 SEARCH=search; #10283564
 DATA_EXPLORER=explorer; #10532325
 DATA_VIEWER=viewer; #12189645
 SHARE=share; #10631000
+DLM=dlm; #10822973
 
-FOLDERS=(${CONFIG} ${SEARCH} ${DATA_EXPLORER} ${DATA_VIEWER} ${SHARE});
+FOLDERS=(${CONFIG} ${SEARCH} ${DATA_EXPLORER} ${DATA_VIEWER} ${SHARE} ${DLM});
 trap "exit" INT
 
 echo ' -- Download artifacts -- ';
 
-for index in `seq 0 4`; do
+for index in `seq 0 5`; do
   folder="${FOLDERS[index]}"
   project="${PROJECTS[index]}"
 

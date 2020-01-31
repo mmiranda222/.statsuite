@@ -22,5 +22,16 @@ cd viewer
 NODE_ENV=$NODE_ENV DEBUG=webapp* SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 pm2 start --no-autorestart -n data-viewer dist/server
 cd ..
 
+cd dlm
+NODE_ENV=$NODE_ENV \
+DEBUG=webapp* \
+SERVER_PORT=7000 \
+TRANSFER_SERVER_URL="http://replace-your-transfer-service.com" \
+AUTH_SERVER_URL="http://localhost:8080" \
+DEFAULT_TENANT=default \
+CONFIG_URL=http://localhost:5007 \
+pm2 start --no-autorestart -n data-lifecycle-manager dist/server 
+cd ..
+
 pm2 save
 pm2 delete all

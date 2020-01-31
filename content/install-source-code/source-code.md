@@ -1,13 +1,6 @@
----
-title: "Full installation from source code"
-subtitle: 
-comments: false
-weight: 43
----
-
 #### Table of Content
 - [intro](#intro)
-- [source code of the components of each .Stat Suite main module](#source-code-of-the-components-of-each-stat-suite-main-module)
+- [Source code of the components of each .Stat Suite main module](#source-code-of-the-components-of-each-.stat-suite-main-module)
 - [example topologies](#example-topologies)
 
 ---
@@ -22,31 +15,24 @@ For the general purpose of the .Stat Suite framework components and technical ar
 Introduction](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/framework/).
 
 ---
-
 ## Source code of the components of each .Stat Suite main module  
 
 The technical description of each of the services can be accessed from each Gitlab's repository:<br>
 
-.Stat Data Explorer components
-
+.Stat Data Suite components
 - [Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)
+- [Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)
 - [Data Viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)
 - [Share service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)
 - [Proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)
 - [Configuration service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)
 - [Sdmx Search service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)
 
-.Stat Data Lifecycle Manager components
-
-- [Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)
-
 .Stat Core components
-
 - [Database](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)
 - [Sdmxri Nsi plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)
 - [Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)
 - [Authorisation management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)
-
 ---
 
 ## Example topologies  
@@ -55,14 +41,14 @@ Installations for frequent usages of the .Stat Suite platform components are des
 More topologies will be added in the future as needed.
 
 
-### A) Installing the .Stat Suite platform full stack with one .Stat Core Data Store
-This topology contains the full stack of .Stat Suite platform, including one instance of the .Stat Core Data Store and its SDMX API.  
+### Installing the .Stat Suite platform full stack with one tenant
+This topology contains the full stack of .Stat Suite platform
 
-![.Stat Suite full stack](/images/One_Internal_Space.png)
+![.Stat Suite full stack](/images/full_architecture.png)
 
 The installation must be done in the following order:  
 
-**I. Install the .Stat Core components (.Stat Core Data Store)**  
+#### **I. Install the .Stat Core components (.Stat Core Data Store)**  
 
 1. [Install the Database layer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/blob/master/docs/installation/CodeBaseApproach.md). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/blob/master/qa/mssql.yaml) for a topology configuration example.
 1. [Install the SDMX/NSI web service with the .Stat Suite plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/blob/develop/docs/installation/CodeBaseApproach.md). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/blob/master/qa/nsi.yaml) for a topology configuration example.
@@ -71,7 +57,7 @@ The installation must be done in the following order:
 
 >  See more about the **[Recommended infrastructure requirements](/getting-started/infrastructure-requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**. 
 
-**II. Install the .Stat Data Explorer components**  
+#### **II. Install the .Stat Data Suite components**  
 
 1. [Install the Configuration service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/config.yaml) for a topology configuration example.
 1. [Install the Search service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/sfs.yaml) for a topology configuration example.
@@ -79,23 +65,6 @@ The installation must be done in the following order:
 1. [Install the Share Viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-viewer.yml) for a topology configuration example.
 1. Optional for multi-tenant architectures: [Install the Proxy service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/proxy.yaml) for a topology configuration example.
 1. [Install the Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-explorer.yaml) for a topology configuration example.
-
-**III. Install the .Stat Data Lifecycle Manager components**  
-
-1. [Install the Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager). Topology configuration example [*to come*].
+1. [Install the Data LifeCycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-lifecycle-manager.yaml) for a topology configuration example.
 
 
-### B) Installing an instance of .Stat Data Explorer plugged to a existing SDMX web service
-This topology contains all .Stat Data Explorer components to be plugged to an existing SDMX web service.  
-**Pre-requisite**: a fully-functioning freely accessible (CORS-enabled, anonymous access enabled) SDMX end point is required.  
-
-![.Stat Suite client-side](/images/External_SDMX.png)
-
-Install these .Stat Data Explorer components in this order:
-
-1. [Install the Configuration service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/config.yaml) for a topology configuration example.
-1. [Install the Search service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/sfs.yaml) for a topology configuration example.
-1. [Install the Share service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/share.yaml) for a topology configuration example.
-1. [Install the Share Viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-viewer.yml) for a topology configuration example.
-1. Optional for multi-tenant architectures: [Install the Proxy service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/proxy.yaml) for a topology configuration example.
-1. [Install the Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/blob/master/staging/data-explorer.yaml) for a topology configuration example.

@@ -36,6 +36,7 @@ weight: 45
 │   ├── data-explorer
 │   ├── data-viewer
 │   ├── share
+|   ├── data-lifecycle-manager
 ```
 
 **2. config service**
@@ -194,6 +195,30 @@ weight: 45
 │   │   ├── package.json
 ```
 
-4. start the service:
+3. start the service:
 
   - (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
+
+
+**7. data-lifecycle-manager app**
+
+1. download artifact archives and package.json files from gitlab:
+
+  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/develop/download?job=setup)
+  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/develop/download?job=build)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/raw/develop/package.json?inline=false)
+
+2. extract archives and organize folders/files as follow:
+```
+.
+├── dotstatsuite
+│   ├── data-lifecycle-manager
+│   │   ├── node_modules                       # from setup artifact
+│   │   ├── dist                               # from build artifact (server files)
+│   │   ├── build                              # from build artifact (client bundle)
+│   │   ├── package.json
+```
+
+3. start the service:
+
+  - (in git bash) run `SERVER_PORT=7000 CONFIG_URL=http://localhost:5007 npm run start:run`
