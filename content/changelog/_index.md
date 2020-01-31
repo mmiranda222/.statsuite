@@ -42,9 +42,9 @@ Major changes:
 
 - [dotstatsuite-core-transfer#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/66) **Unify the auth config** between the transfer service, the authentication service, and the NSI webservice. the Kubernetes strategy is also updated in order to use the authentication in the NSI WS.
 - [dotstatsuite-core-sdmxri-nsi-ws#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/19) Deploy the **NSI version 7.10.8** in DevOps. Including the following details from the [Eurostat changelog](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/CHANGELOG.md):
->* Allow admin user to access all mapping store, to avoid having the administrator to logout and login everytime there is a new Mapping Store. OAuth2 caches the user with the mapping store.
->* The keyword `latest` at version is not allowed when deleting artefacts.
->* Fix SOAP 2.1 structure requests with CodeWhere and Stubs.
+> * *Allow admin user to access all mapping store, to avoid having the administrator to logout and login everytime there is a new Mapping Store. OAuth2 caches the user with the mapping store.*
+> * *The keyword `latest` at version is not allowed when deleting artefacts.*
+> * *Fix SOAP 2.1 structure requests with CodeWhere and Stubs.*
 
 Minor changes:
 
