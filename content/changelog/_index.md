@@ -35,7 +35,7 @@ ToC
 ### January 31, 2020
 **[Release .Stat Suite .NET v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/10)**
 >**Disclaimer**: This major version contains breaking changes in the **dotstatsuite-core-transfer** and **dotstatsuite-core-auth-management** services with changes to the authentication management ([dotstatsuite-core-transfer#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/66), [dotstatsuite-core-transfer#52](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/issues/52) & [dotstatsuite-core-auth-management#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/issues/7)). All impacted services are: core-transfer, core-auth-management, core-sdmxri-nsi-ws, core-data-access, and core-sdmxri-nsi-plugin.  
-This release has been tested with and is running with the **NSI WebService v7.10.8**.  
+This release has been tested and is running with the **NSI WebService v7.10.8**.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
 Major changes:
