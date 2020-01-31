@@ -51,7 +51,7 @@ More topologies will be added in the future.
 ### Installing the .Stat Suite full stack with one tenant
 This topology contains the full stack of .Stat Suite.
 
-![.Stat Suite full stack](/images/full_architecture.drawio)
+![.Stat Suite full stack](/images/full_architecture.png)
 
 The installation must performed in the following order:  
 
