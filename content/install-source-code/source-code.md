@@ -1,13 +1,20 @@
+---
+title: "Full installation from source code"
+subtitle: 
+comments: false
+weight: 43
+---
+
 #### Table of Content
 - [intro](#intro)
-- [Source code of the components of each .Stat Suite main module](#source-code-of-the-components-of-each-.stat-suite-main-module)
-- [example topologies](#example-topologies)
+- [Source code of each component of the main .Stat Suite modules](#source-code-of-each-component-of-the-main-stat-suite-modules)
+- [example of topologies](#example-of-topologies)
 
 ---
 
 ## Intro
 
-The three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components can be freely re-used to compose a new topology (system architecture) by anyone on their own infrastructure.
+The three main .Stat Suite modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components can be freely re-used to compose a new topology (system architecture) by anyone on their own infrastructure.
 
 This section describes where to find and how to install .Stat Suite framework components (applications, services, libraries) starting from the source code.
 
@@ -15,11 +22,11 @@ For the general purpose of the .Stat Suite framework components and technical ar
 Introduction](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/framework/).
 
 ---
-## Source code of the components of each .Stat Suite main module  
+## Source code of each component of the main .Stat Suite modules  
 
-The technical description of each of the services can be accessed from each Gitlab's repository:<br>
+The technical description of each service can be accessed from each Gitlab's repository:<br>
 
-.Stat Data Suite components
+JavaScript components
 - [Data Explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)
 - [Data Lifecycle Manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)
 - [Data Viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)
@@ -28,25 +35,25 @@ The technical description of each of the services can be accessed from each Gitl
 - [Configuration service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)
 - [Sdmx Search service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)
 
-.Stat Core components
+.NET/SQL (Core) components
 - [Database](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)
 - [Sdmxri Nsi plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)
 - [Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)
 - [Authorisation management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)
 ---
 
-## Example topologies  
+## Example of topologies  
 
-Installations for frequent usages of the .Stat Suite platform components are described below.  
-More topologies will be added in the future as needed.
+Installations for frequent usages of the .Stat Suite are described below.  
+More topologies will be added in the future.
 
 
-### Installing the .Stat Suite platform full stack with one tenant
-This topology contains the full stack of .Stat Suite platform
+### Installing the .Stat Suite full stack with one tenant
+This topology contains the full stack of .Stat Suite.
 
-![.Stat Suite full stack](/images/full_architecture.png)
+![.Stat Suite full stack](/images/full_architecture.drawio)
 
-The installation must be done in the following order:  
+The installation must performed in the following order:  
 
 #### **I. Install the .Stat Core components (.Stat Core Data Store)**  
 
