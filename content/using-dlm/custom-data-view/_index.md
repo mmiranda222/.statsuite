@@ -6,4 +6,4 @@ weight: 330
 
 ---
 
-*under construction...*
+Further in these sub-sections are explained how one can customise a data view with the use of standardised SDMX Annotations and/or business rules that illsutrate many statistical disseminations' use cases.
