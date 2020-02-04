@@ -13,7 +13,7 @@ weight: 220
 | 0 | None | None |
 | 1 | CanReadStructuralMetadata | Can read structural metadata attribute |
 | 2 | CanReadData | Can read data attribute |
-| 3 | WsUserRole | Underlying <br> . CanReadStructuralMetadata, <br> . CanReadData |
+| 3 | WsUserRole | Underlying  <br> . CanReadStructuralMetadata,  <br> . CanReadData |
 | 4 | CanIgnoreProductionFlag | Can ignore production flag attribute |
 | 8 | CanPerformInternalMappingConfig | Can perform internal mapping configuration attribute |
 | 15 | DomainUserRole | Underlying <br> . WsUserRole, <br> . CanIgnoreProductionFlag, <br> . CanPerformInternalMappingConfig |
