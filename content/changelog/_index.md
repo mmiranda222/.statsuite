@@ -40,8 +40,17 @@ Both **source-code** and **Docker images** are concerned by this release.
 
 Major changes:
 
-- [dotstatsuite-core-sdmxri-nsi-ws#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/15) Allow **configurable authenticated and/or anonymous access** to a single instance of the NSI service.  
-The following kind of user rule is from now on required to be configured using the authorisation web servcie in order to allow public read access to anonymous users (.Stat DE users):  
+- [dotstatsuite-core-sdmxri-nsi-ws#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/15) Allow **configurable authenticated and/or anonymous access** to a single instance of the NSI service. This is enabled by a new configuration parameter of the authentication `auth.json` with following content:  
+```
+{
+    "auth": {
+        ...
+        "allowAnonymous": true,
+        ...
+    }
+}
+```   
+The following kind of user rule is from now on required to be configured using the authorisation web service in order to allow public read access to anonymous users (.Stat DE users):  
 ```
 {
       "userMask": "*",      --> anonymous users
@@ -54,6 +63,7 @@ The following kind of user rule is from now on required to be configured using t
       "permission": 3       --> allowed to read structure and data
 }
 ```
+You can check [this page](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/)  of the documentation in order to get the full list of available pemrissions.
 
 - [dotstatsuite-core-sdmxri-nsi-plugin#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/35) Update nsi-plugin for **NSI v7.10.10** as intermediate step before 7.11.
 
