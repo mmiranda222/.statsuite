@@ -8,7 +8,8 @@ weight: 120
 
 <!-- 
 ToC
-- [January 31, 2020](#January-31-2020)
+- [February 04, 2020](#february-04-2020)
+- [January 31, 2020](#january-31-2020)
 - [January 28, 2020](#january-28-2020)
 - [January 8, 2020](#january-8-2020)
 - [December 5, 2019](#december-5-2019)
@@ -31,6 +32,42 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### February 04, 2020
+**[Release .Stat Suite .NET v3.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/11)**
+>This new release includes a new version of the .Stat Suite **core-sdmxri-nsi-ws** and **core-sdmxri-nsi-plugin** services.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+Major changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/15) Allow **configurable authenticated and/or anonymous access** to a single instance of the NSI service. This is enabled by a new configuration parameter of the authentication `auth.json` with following content:  
+```
+{
+    "auth": {
+        ...
+        "allowAnonymous": true,
+        ...
+    }
+}
+```   
+The following kind of user rule is from now on required to be configured using the authorisation web service in order to allow public read access to anonymous users (.Stat DE users):  
+```
+{
+      "userMask": "*",      --> anonymous users
+      "isGroup": false,
+      "dataSpace": "staging:SIS-CC-stable",     --> data space 
+      "artefactType": 0,
+      "artefactAgencyId": "*",
+      "artefactId": "*",
+      "artefactVersion": "*",
+      "permission": 3       --> allowed to read structure and data
+}
+```
+You can check [this page](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/)  of the documentation in order to get the full list of available pemrissions.
+
+- [dotstatsuite-core-sdmxri-nsi-plugin#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/35) Update nsi-plugin for **NSI v7.10.10** as intermediate step before 7.11.
+
+---
 
 ### January 31, 2020
 **[Release .Stat Suite .NET v3.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/10)**
