@@ -22,7 +22,7 @@ For convenience, the content has been replicated here:
 
 > Please note that currently middleware implements only authentication, user authorization logic will be supported later.
 
-##### Intro
+#### Intro
 
 Middleware can be used in scenarios where user is authenticated against 3-d party identity service, responsible for issue a [JWT](https://jwt.io/introduction) token which later is used with every request to NSIWS for user impersonation and enforcing local authorization rules.
 
@@ -32,9 +32,9 @@ OpenId-connect middleware expects a [JWT](https://jwt.io/introduction) token sen
 
 In use-case where HTTP request has no token or it is not valid **401 Unauthorized** http code is returned
 
-##### Setup
+#### Setup
 
-To enable OpenID middleware set **OpenIdMiddlewareBuilder** under `<appSettings>` in `middlewareImplementation` of the  [main configuration file](CONFIGURATION.md#main-configuration-file)
+To enable OpenID middleware set **OpenIdMiddlewareBuilder** under `<appSettings>` in `middlewareImplementation` of the  [main configuration file](#configuration).
 
 Example:
 
@@ -42,9 +42,9 @@ Example:
 <add key="middlewareImplementation" value="OpenIdMiddlewareBuilder"/>
 ```
 
-Please see the [PLUGINS](PLUGINS.md) for more information regarding middleware configuration in NSIWS
+Please see the [PLUGINS](PLUGINS.md) for more information regarding middleware configuration in NSIWS.
 
-##### Configuration
+#### Configuration
 
 add auth.json file to a config directory with following contents:
 
@@ -61,7 +61,7 @@ add auth.json file to a config directory with following contents:
 }
 ```
 
-##### Configuration settings
+#### Configuration settings
 
 | Setting    | Description |
 |------------|-------------|
@@ -76,8 +76,8 @@ add auth.json file to a config directory with following contents:
 
 Note that 
 
-- if NSI is configured to process sent JWT token then it's essential to configure it to `allowAnonymous=true` for the DE to work. 
-- with NSI openid-connect authentication turned ON structure upload/retrieval remain anonymous (we just haven't implemented the authorization for it yet)
-- with NSI openid-connect authentication turned ON, on data retrieval, there is a check if user has a Data read permission in authorization DB (managed through the authorization service) even if request is anonymous (using the .Stat Suite AuthorizationManagement web service, there must be appropriate (probably read) permissions defined for anonymous users)
+- If NSI is configured to process sent JWT token then it's essential to configure it to `allowAnonymous=true` for the DE to work. 
+- With NSI openid-connect authentication turned ON, structure upload/retrieval remain anonymous (we just haven't implemented the authorization for it yet).
+- With NSI openid-connect authentication turned ON, on data retrieval, there is a check if user has a Data read permission in authorization DB (managed through the authorization service) even if request is anonymous (using the .Stat Suite AuthorizationManagement web service, there must be appropriate (probably read) permissions defined for anonymous users).
 
-P.S. If you setup your environment just for testing turning ON openid-connect authentication is not a mandatory thing. DLM/DE will perfectly work with NSI without it. NSI will just ignore JWT token sent from DLM.
+**P.S.** If you setup your environment just for testing turning ON openid-connect, authentication is not a mandatory thing. DLM/DE will perfectly work with NSI without it. NSI will just ignore JWT token sent from DLM.
