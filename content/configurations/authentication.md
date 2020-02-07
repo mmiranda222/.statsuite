@@ -34,7 +34,7 @@ In use-case where HTTP request has no token or it is not valid **401 Unauthorize
 
 #### Setup
 
-To enable OpenID middleware set **OpenIdMiddlewareBuilder** under `<appSettings>` in `middlewareImplementation` of the  [main configuration file](#configuration).
+To enable OpenID middleware set **OpenIdMiddlewareBuilder** under `<appSettings>` in `middlewareImplementation` of the  [main configuration file](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/CONFIGURATION.md#main-configuration-file).
 
 Example:
 
@@ -42,7 +42,7 @@ Example:
 <add key="middlewareImplementation" value="OpenIdMiddlewareBuilder"/>
 ```
 
-Please see the [PLUGINS](PLUGINS.md) for more information regarding middleware configuration in NSIWS.
+Please see the [PLUGINS](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/PLUGINS.md) for more information regarding middleware configuration in NSIWS.
 
 #### Configuration
 
