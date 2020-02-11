@@ -21,21 +21,77 @@ SolDevCycleCharts:
             period_limit: 24
 
 WeekCloseIssues:
-    title: "Weekly closed issues by type"
+    title: "Weekly closed issues"
     charts:
-        - title: "Weekly closed issues by type"
-          type: stacked-bar
+        - title: "Weekly closed bugs"
+          type: bar
           query:
             issuable_type: issue
             issuable_state: closed
-            collection_labels:
+            filter_labels:
                 - "t::bug"
-                - "t::devOps"
-                - "t::documentation"
-                - "t::enhancement"
-                - "t::feature"
-                - "t::refactoring"
+            group_by: week
+            period_limit: 24
+        - title: "Weekly closed supports"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
                 - "t::support"
-                - "t::technical. design"
+            group_by: week
+            period_limit: 24
+        - title: "Weekly closed features"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
+                - "t::feature"
+            group_by: week
+            period_limit: 24
+        - title: "Weekly closed enhancements"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
+                - "t::enhancement"
+            group_by: week
+            period_limit: 24
+        - title: "Weekly closed documentation"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
+                - "t::documentation"
+            group_by: week
+            period_limit: 24
+        - title: "Weekly closed DevOps"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
+                - "t::devOps"
+            group_by: week
+            period_limit: 24
+        - title: "Weekly closed refactoring"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
+                - "t::refactoring"
+            group_by: week
+            period_limit: 24
+        - title: "Weekly closed technical design"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
+                - "t::techn. design"
             group_by: week
             period_limit: 24
