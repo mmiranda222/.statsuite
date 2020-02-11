@@ -1,3 +1,24 @@
+SolDevCycleCharts
+    title: "Solution Development Cycle charts"
+    charts:
+        - title: "Product Managment Kanban board"
+          type: stacked-bar
+          query:
+            issuable_type: issue
+            issuable_state: opened
+            filter_labels:
+              - "product-management"
+            collection_labels:
+                - "t::bug"
+                - "t::devOps"
+                - "t::documentation"
+                - "t::enhancement"
+                - "t::feature"
+                - "t::refactoring"
+                - "t::support"
+                - "t::technical. design"
+            group_by: week
+            period_limit: 24
 
 WeekCloseIssues:
     title: "Weekly closed issues by type"
