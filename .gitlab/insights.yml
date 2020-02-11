@@ -16,7 +16,7 @@ SolDevCycleCharts:
                 - "t::feature"
                 - "t::refactoring"
                 - "t::support"
-                - "t::technical. design"
+                - "t::techn. design"
         - title: ".NET/SQL Kanban board by type"
           type: bar
           query:
@@ -32,7 +32,7 @@ SolDevCycleCharts:
                 - "t::feature"
                 - "t::refactoring"
                 - "t::support"
-                - "t::technical. design"
+                - "t::techn. design"
         - title: "JavaScript Kanban board by type"
           type: bar
           query:
@@ -48,7 +48,7 @@ SolDevCycleCharts:
                 - "t::feature"
                 - "t::refactoring"
                 - "t::support"
-                - "t::technical. design"
+                - "t::techn. design"
 
 WeekCloseIssues:
     title: "Weekly closed issues"
