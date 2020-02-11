@@ -1,8 +1,3 @@
-.projectsOnly: &projectsOnly
-    projects:
-        only:
-            - sis-cc/.stat-suite
-            - sis-cc/dotstatsuite-documentation
 
 WeekCloseIssues:
     title: "Weekly closed issues by type"
