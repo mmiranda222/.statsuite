@@ -144,7 +144,7 @@ AllClosedIssues:
                 - "t::support"
                 - "t::techn. design"
 
-MonthlyOpenedClosedTypes
+MonthlyOpenedClosedTypes:
     title: Monthly opened & closed issues
     charts:
         - title: "Opened issues per month"
