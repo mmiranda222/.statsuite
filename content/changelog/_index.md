@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [February 17, 2020](#february-17-2020)
 - [February 04, 2020](#february-04-2020)
 - [January 31, 2020](#january-31-2020)
 - [January 28, 2020](#january-28-2020)
@@ -32,6 +33,30 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### February 17, 2020
+**[Release .Stat Suite .NET 3.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/12?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v3.2.0)**
+>This new release includes a new version of the .Stat Suite **core-sdmxri-nsi-ws**, **core-sdmxri-nsi-plugin** and **core-data-access** services.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+Changes:
+
+- [dotstatsuite-core-sdmxri-nsi-plugin#36](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/36) Deployment of the Eurostat's **NSI web service version 7.11.1** in DevOps (Eurostat's changelog is included in GitLab's ticket), now running on **.NET Core 3.1**.
+
+Bug fixes:
+
+- [dotstatsuite-core-sdmxri-nsi-plugin#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/40) (original ticket: [dotstatsuite-core-common#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/issues/27)) Bug in the NSI web service with referencepartial parameter *"String or binary data would be truncated"*.
+- [dotstatsuite-core-sdmxri-nsi-plugin#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/39) Load of Hierarchical Codelist results in timeout.
+- [dotstatsuite-core-data-access#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/41) Dataflows with *allowed* Content Constraints applied return 'restricted' data if a user queries it directly.
+- [dotstatsuite-core-data-access#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/issues/40) Internal error when invalid dimension code is provided in the query filter.
+- [dotstatsuite-core-sdmxri-nsi-plugin#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/32) Data retrieval in .Stat DE fails for some dataflows: *"Error during writing response"*.
+- [dotstatsuite-core-sdmxri-nsi-ws#14](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/14) Referencepartial parameter for request with references does not work anymore.
+- [dotstatsuite-core-sdmxri-nsi-ws#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/13) "Semantic Error - Duplicate language `it` for TextType" when using referencepartial.
+- [dotstatsuite-core-sdmxri-nsi-plugin#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/28) Calling the Content Constraint with "children" or "descendants" references does not return the related artifacts (for the dataflow that it is constraining).
+- [dotstatsuite-core-sdmxri-nsi-ws#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/5) Not possible to delete or update allowed Content Constraint (found in *NSI WS 7.8.0.0*).
+- [dotstatsuite-core-sdmxri-nsi-ws#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/22) Increase the UploadSizeLimit to 50MB for structures in the Transfer service.
+
+---
 
 ### February 04, 2020
 **[Release .Stat Suite .NET v3.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/11)**
