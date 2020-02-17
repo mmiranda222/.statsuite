@@ -55,6 +55,7 @@ Bug fixes:
 - [dotstatsuite-core-sdmxri-nsi-plugin#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/issues/28) Calling the Content Constraint with "children" or "descendants" references does not return the related artifacts (for the dataflow that it is constraining).
 - [dotstatsuite-core-sdmxri-nsi-ws#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/5) Not possible to delete or update allowed Content Constraint (found in *NSI WS 7.8.0.0*).
 - [dotstatsuite-core-sdmxri-nsi-ws#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/22) Increase the UploadSizeLimit to 50MB for structures in the Transfer service.
+- [dotstatsuite-core-sdmxri-nsi-ws#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/7) Mechanism to set the NSI ws URL in returned stub artefacts (stored in full in MASTORE).
 
 ---
 
