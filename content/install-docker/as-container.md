@@ -32,7 +32,7 @@ All **.Stat Suite Docker images** are located under https://hub.docker.com/u/sis
 
 This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
 
-- **demo**: http://data-explorer.staging.oecd.redpelicans.com
+- **demo**: http://de-staging-oecd.redpelicans.com/
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-explorer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer
 
@@ -48,7 +48,7 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 
 <br>
 
-- **demo**: http://share.staging.oecd.redpelicans.com/api/charts/3
+- **demo**: http://share-staging-oecd.redpelicans.com/api/charts/3
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-share
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
 
@@ -57,7 +57,7 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 
 This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
-- **demo**: http://data-viewer.staging.oecd.redpelicans.com/?chartId=3
+- **demo**: http://dv-staging-oecd.redpelicans.com/?chartId=3
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-viewer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
 - server-side rendered (configuration is injected in index.html), no request required from the client to get the configuration
@@ -68,7 +68,7 @@ This web app is a compagnon GUI for (external) users to display user-defined, sh
 
 This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows categorised and accessible in one or more SDMX end points and to execute faceted search queries on these SDMX dataflows. A static schema is defined in the config. A dynamic schema is derivated from the indexed SDMX dataflows.
 
-- **demo**: http://sfs.staging.oecd.redpelicans.com/api/config
+- **demo**: http://sfs-staging-oecd.redpelicans.com/api/config
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-sdmx-faceted-search
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
 
@@ -104,7 +104,7 @@ The Configuration service centralises all configuration resources used by other 
 
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
-- **demo**: http://data-lifecycle-manager.qa.oecd.redpelicans.com/
+- **demo**: http://dlm-staging-oecd.redpelicans.com/
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-lifecycle-manager
 
@@ -128,10 +128,10 @@ This web service is used for statistical data (and later referential metadata) f
 
 #### Configuration
 
-Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/tree/develop/DotStatServices.Transfer/config).
-All files with *.json extension are considered as configuration files. The name of the file is not important (except log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
+Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master/DotStatServices.Transfer/config).
+All files with `*.json` extension are considered as configuration files. The name of the file is not important (except log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
 
-* example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config
+* example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/transfer.yaml
 
     * [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config/log4net.config)
     > log configuration
@@ -195,7 +195,7 @@ end
 
 This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store. The docker image is using a vanilla Eurostat NSI web service image as a base image. It is enriched with a special .Stat Core plugin used to retrieve statistical data structures from a .Stat Core Data Store.
 
-- **demo**: http://nsi.qa.core.oecd.redpelicans.com/
+- **demo**: http://nsi-staging-oecd.redpelicans.com/
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-sdmxri-nsi
 - **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
 - **repository of .Stat Core plugin**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
@@ -268,7 +268,7 @@ end
 
 This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
 
-- **demo**: [*to come*]
+- **demo**: http://authz-siscc.redpelicans.com/swagger/index.html
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-auth-management
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
 

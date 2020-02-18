@@ -309,7 +309,7 @@ There are two options to configure the transfer service:
 
 2.  Saving the configuration setting as environment variables for the IIS site (transfer-service). `Recommended`
 
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration).
+>  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/master/README.md#configuration).
 
 For this example we will use the second option: 
 
@@ -439,14 +439,11 @@ cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bi
 From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:
 *  *nsiws-design-app.config* to the file */config/app.config* 
 
->  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
+>  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
 
 ```sh
 cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-design-app.config /c/dotstatsuite-website/nsiws-design/config/app.config
 ```
-
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
-
 
 **Step 6.** Create a new IIS application called **nsiws-design** in port 81, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
 
@@ -474,7 +471,7 @@ There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:
 
   2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
 
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
+>  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
 
 For this example we will use the second option: 
 
@@ -544,7 +541,7 @@ From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the followin
 
 *  *nsiws-disseminate-app.config* to the file */config/app.config* 
 
->  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
+>  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
 
 ```sh
 cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-disseminate-app.config /c/dotstatsuite-website/nsiws-disseminate/config/app.config
@@ -577,7 +574,7 @@ There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:
 
   2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
 
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin#nsi-plugin-configuration).
+>  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
 
 For this example we will use the second option:  
 
