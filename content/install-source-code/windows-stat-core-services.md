@@ -99,8 +99,7 @@ This is a private Eurostat repository, therefore you need to provide your login 
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
 ```
 
-> **WARNING!** - This repository has two git submodules (msdb.sql and authdb.sql) that are cloned with the command "--recurse-submodules". If you are behind a network security firewall, these submodules might not be cloned. To clone them manually use the commands:
->  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/msdb.sql.git maapi.net/src/Estat.Sri.Mapping.MappingStore/resources
+> **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:
 >  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 
 
