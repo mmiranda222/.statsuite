@@ -7,7 +7,8 @@ weight: 220
 ---
 
 ### List of available permissions
-#### The basic ones
+#### Basic permissions
+The basic permissions listed below are permissions associated to a single and specific action.
 
 | **id** | **Permission** | **Definition** |
 | ------ | ------ | ------ |
@@ -24,8 +25,11 @@ weight: 220
 | 512 | CanDeleteStructuralMetadata | Can delete structural metadadata attribute |
 | 1024 | CanDeleteData | Can delete data |
 
-#### The composed ones
-
+#### Combined permissions
+Combined permissions are the combination of several basic permissions.   
+A combination of permissions **must** be a combination of basic permissions as described in the table above.  
+Below is a table of the most used combinations, but others are acceptable.  
+ 
 | **id** | **Permission** | **Definition** |
 | ------ | ------ | ------ |
 | 3 | WsUserRole | Underlying CanReadStructuralMetadata[1], CanReadData[2] |
