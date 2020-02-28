@@ -20,6 +20,9 @@ weight: 47
 ---
 
 ## Prerequisites
+> Since [February 28, 2020 Release .Stat Suite JS v4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), .Stat Data Explorer requires **nodejs version 13.3.x**.
+
+
 #### git bash
 - https://gitforwindows.org/
 - during installation:
@@ -35,7 +38,7 @@ weight: 47
 - https://nodejs.org/en/download/current
 - check:
   - open git bash
-  - run `node --version` v12.x and above
+  - run `node --version` v13.3.x and above
   - run `npm --version` v6.11.x and above
 
 #### java v8 (for solr)
