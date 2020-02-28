@@ -55,7 +55,7 @@ Example: <br>
 This request results in deleting all dataflows from the index and search of Solr for all configured sdmxDataSources.
 
 #### Delete one specific dataflow
->Released in [Mmmm DD, 2020 Release .Stat Suite JS milestone XX](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmm-dd-2020)
+>Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
 Example: <br>
 `DELETE` `http://sfs-qa-oecd.redpelicans.com/admin/dataflow?api-key=xxx&datasourceId=staging:SIS-CC-reset&dataflowId=AIR_EMISSIONS_DF`
@@ -65,7 +65,7 @@ Example: <br>
 This request results in deleting one specific dataflow from the index and search. It is thus no longer avaibale in .Stat DE for search and visualisation.
 
 #### Update an already indexed dataflow
->Released in [Mmmm DD, 2020 Release .Stat Suite JS milestone XX](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmm-dd-2020)
+>Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
 Example: <br>
 `PATCH` `http://sfs-qa-oecd.redpelicans.com/admin/dataflow?api-key=xxx&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0`
