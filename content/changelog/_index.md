@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [February 28, 2020](#february-28-2020)
 - [February 17, 2020](#february-17-2020)
 - [February 04, 2020](#february-04-2020)
 - [January 31, 2020](#january-31-2020)
@@ -33,6 +34,86 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### February 28, 2020
+**[Release .Stat Suite JS 4.0.0](https://gitlab.com/groups/sis-cc/-/milestones/3?milestone%5Btitle%5D=Release+.stat+suite+JS+v4.0.0)** with **[SFS 2.0](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues?milestone_title=SFS+2.0&state=closed)**
+
+>This new **MAJOR** release includes a new version of the .Stat Suite **sdmx-faceted-search**, **config**, **data-explorer**, **dotstatsuite-proxy**, **dotstatsuite-share**, **dotstatsuite-data-viewer** and **data-lifecycle-manager** services.  
+The new version of the sdmx-faceted-search service requires **nodejs version 13.3.x** (mandatory to upgrade when installing/upgrading .Stat Suite from source-code).  
+This release has been tested and is running with the **NSI WebService v7.11.1**.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+>**Important DISCLAIMER**: There is a known dependency issue that causes the .Stat Data Explorer to return all dataflows in all categories.  
+This issue is addressed in [dotstatsuite-core-sdmxri-nsi-ws#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/28) and fix was released by Eurostat in the latest NSI WebService v7.11.2 ([issue#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/34) for its integration to .Stat Suite).  
+
+>From this release on, incremental **semantic version** is also used in this changelog for categorising changes and bug fixes:  
+  **major**: incompatible API change was introduced  
+  **minor**: functionality was added in a backwards-compatible manner  
+  **patch**: backwards-compatible bug fixes were applied  
+
+major changes:
+
+- [dotstatsuite-sdmx-faceted-search#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/41) (*Sdmx Faceted Search*) Redefine Document ID and Datasource definitions.
+- [dotstatsuite-sdmx-faceted-search#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/47) (*Sdmx Faceted Search*) Index facets' names instead of ID and remove i18n.
+- [dotstatsuite-sdmx-faceted-search#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/48) (*Sdmx Faceted Search*) All facets are hierarchical.
+
+minor changes:
+
+- [dotstatsuite-sdmx-faceted-search#44](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/44) Highlight facet values in DE search results.
+- [dotstatsuite-sdmx-faceted-search#42](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/42) Create facets for all CategorySchemes of a dataflow. **DISCLAIMER: There is a known dependency issue** that causes the .Stat Data Explorer to return all dataflows in all categories. This issue is addressed in [dotstatsuite-core-sdmxri-nsi-ws#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/28) and fix was released by Eurostat in the latest NSI WebService v7.11.2 ([issue#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/34) for its integration to .Stat Suite).
+- [dotstatsuite-sdmx-faceted-search#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/21) **Search terms** with space should act like *AND* operator.
+- [dotstatsuite-sdmx-faceted-search#37](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/37) Allow updating or deleting individual dataflows in the search index. See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#when-and-how-to-index).
+- [dotstatsuite-data-explorer#111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/111) Allow configuring **icons** associated to facet values. See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#add-icons-to-specific-facet-values).
+- [dotstatsuite-data-explorer#153](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/153) .Stat DE with the right-to-left (RTL) mode for the table view. 
+- [dotstatsuite-data-explorer#101](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/101) Indicate in the table/chart subtitle when displayed data are incomplete.
+- [dotstatsuite-data-explorer#170](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/170) In visualisation page, display the dataflow's title and table/chart footer even when there is no data available.
+- [dotstatsuite-data-explorer#188](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/188) Column widths, alignment and wrapped texts for row/column header cells in the **Excel download**.
+- [dotstatsuite-data-explorer#199](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/199) **Excel download** with data including comma separators.
+- [dotstatsuite-data-explorer#197](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/197) **Excel download** includes the right-to-left (RTL) mode. The downloaded table including Arabic localised data from the .Stat DE is automatically displayed in RTL mode **only if** the targetted environement (for instance the end-user's PC) has Windows Excel configured by default with the Right-to-left option ([reference](https://support.office.com/en-us/article/using-right-to-left-languages-in-office-17d8a34d-36d6-49ad-b765-257cb7cd22e2)). 
+- [dotstatsuite-data-lifecycle-manager#101](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/101) Remove the .Stat DLM "upload data" shortcut feature from the list view (not working and confusing).
+- [dotstatsuite-data-lifecycle-manager#95](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/95) Add a **logout** feature to .Stat DLM. See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#log-out).
+- [dotstatsuite-data-lifecycle-manager#80](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/80) Improve the text of user instructions on .Stat DLM "upload data" page for Excel option.
+- [dotstatsuite-sdmx-faceted-search#51](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/51) *(support)* Solr issue with JS milestone 7 and Core 2.1.0 update. this issue led to update Docker-Compose to target `master` versions of the Docker images instead of `develop`.
+- [dotstatsuite-sdmx-faceted-search#58](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/58) *(support)* HomefacetId for French locale is not applied.
+- [dotstatsuite-data-explorer#223](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/223) *(refactoring)* Code quality updated (Pretify src/web).
+- [dotstatsuite-data-lifecycle-manager#111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/111) *(refactoring)* .Stat DLM Codebase cleaning.
+- [dotstatsuite-data-lifecycle-manager#110](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/110) *(refactoring)* When getting the number of observations, only request for the first observation.
+- [dotstatsuite-data-explorer#206](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/206) *(refactoring)* Frequency and Time Period engine.
+- [dotstatsuite-data-lifecycle-manager#92](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/92) *(refactoring)* Refactor datasources after sfs2.0 update in all applications (DE+DLM) that require those from the config. service.
+- [dotstatsuite-sdmx-faceted-search#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/26) *(refactoring)* Report is sometimes unreadable and buggy.
+- [dotstatsuite-documentation#47](https://gitlab.com/sis-cc/dotstatsuite-documentation/issues/47) *(documentation)* .Stat DLM installation guidelines from source code need to be updated. See updated documentation including .Stat DLM and Keycloak in all [source code approahces](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/).
+- [dotstatsuite-documentation#19](https://gitlab.com/sis-cc/dotstatsuite-documentation/issues/19) *(documentation)* **Guidance on Sdmx-Faceted-Search** Index Job. See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/) and [README.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/master/README.md).
+- [dotstatsuite-visions#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/issues/11) *(documentation)* Alter README to Explain Purpose of Repository.
+- [dotstatsuite-documentation#50](https://gitlab.com/sis-cc/dotstatsuite-documentation/issues/50) *(documentation)* Update copyright date to 2020 in licence file.
+- [dotstatsuite-data-explorer#203](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/203) *(documentation)* Update README to describe Data Explorer.
+- [dotstatsuite-data-explorer#212](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/212) *(test)* Add tests for the Excel download feature.
+- [dotstatsuite-ui-components#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/issues/8) *(test)* Add tests for the Scopelist feature.
+- [dotstatsuite-sdmx-faceted-search#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/50) *(refactoring)* *(confidential)*
+- [dotstatsuite-share#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/issues/15) *(refactoring)* *(confidential)*
+- [dotstatsuite-d3-charts#1](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/issues/1) *(refactoring)* *(confidential)*
+
+patches:
+
+- [dotstatsuite-data-explorer#187](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/187) Missing behaviours for the data table **footnote attributes** displayed at the highest possible level.
+- [dotstatsuite-sdmx-faceted-search#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/23) Indexing dataflows that are categorised in Categories at lower levels of the CategoryScheme. **DISCLAIMER: There is a known dependency issue** that causes the .Stat Data Explorer to return all dataflows in all categories. This issue is addressed in [dotstatsuite-core-sdmxri-nsi-ws#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/28) and fix was released by Eurostat in the latest NSI WebService v7.11.2 ([issue#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/issues/34) for its integration to .Stat Suite).
+- [dotstatsuite-sdmx-faceted-search#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/27) **Duplicates of dataflow** in the search index. Resolving this issue now implies:
+  * One dataflow categorised in two different categories is returned only once in the .Stat DE search result;
+  * Two dataflows with the same Agency/ID/version but from different sources are both returned in the .Stat DE search result and differentiated with their `sourceID`. 
+- [dotstatsuite-data-explorer#20](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/20) Concepts should be merged into one single facet if their localised name are the same.
+- [dotstatsuite-data-explorer#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/17) Text search does not return 2 distinct dataflows from 2 different endpoints when they have the same identity (ID, Agency, Version).
+- [dotstatsuite-data-explorer#59](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/59) Free-text search hits within codes of codelists are not returned as highlights in the search results.
+- [dotstatsuite-sdmx-faceted-search#56](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/56) Localisation fails in DE search result page.
+- [dotstatsuite-data-explorer#167](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/167) We lost the defaults for layout (when there are no or only partial related SDMX annotations or selections from search).
+- [dotstatsuite-data-viewer#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/issues/4) No horizontal scroll in the Arabic table layout.
+- [dotstatsuite-data-explorer#222](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/222) Right-to-left (RTL) view of the DE table returns a wrong data display mode (when displaying in Arabic language).
+- [dotstatsuite-data-explorer#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/21) Search result filtered on hierarchical codelist returns an error in the visualisation page.
+- [dotstatsuite-data-explorer#235](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/235) Search filter selections not applied in visualisation page anymore.
+- [dotstatsuite-data-explorer#216](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/216) Broken hamburger menu of the visualisation page (in narrow mode).
+- [dotstatsuite-data-explorer#217](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/217) Broken choropleth map view in .Stat DE.
+- [dotstatsuite-data-lifecycle-manager#112](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/112) .Stat DLM Avoid unnecessary reload of the application.
+- [dotstatsuite-data-lifecycle-manager#87](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/issues/87) .Stat DLM Missing .csv format in the "custom filter" settings of the SDMX file upload.
+
+---
 
 ### February 17, 2020
 **[Release .Stat Suite .NET 3.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/12?milestone%5Btitle%5D=Release+.Stat+Suite+.NET+v3.2.0)**
@@ -478,7 +559,7 @@ Bug fixes:
 Major changes:
 
 - [dotstatsuite-data-explorer#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/23) **Time period range selection** with annual and non-annual frequencies.<br>
-This new feature of the Data Explorer visualisation page is **replacing the time range slider** and enables the end-user to select a time frequency and an corresponding range of time period values for a given dataflow view.<br>
+This new feature of the Data Explorer visualisation page is **replacing the time range slider** and enables the end-user to select a time frequency and an corresponding range of time period values for a given dataflow view.<br>  
 ![Time Period Selector](/images/TimePeriodSelector.png)
 - [dotstatsuite-data-explorer#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/26) **Share API** and publication workflow.<br>
 The new Share service for table and chart sharing views (including url and embedded codes) relies on a **email validation workflow** process detailed [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#publication-workflow).<br>
