@@ -2,7 +2,7 @@
 title: ".Stat DE customisation"
 subtitle: 
 comments: false
-weight: 72
+weight: 73
 ---
 
 #### Table of Content
@@ -301,7 +301,23 @@ SVG paths are to be considered as a best practice and solution for websites auto
 }
 ```
 
-Note: the key of the facet is always in **lowercase e.g. "topics"**, and the key of the facet value is always in **uppercase e.g. "EDU"**.<br>
+Note: the key of the facet is always in **lowercase e.g. "topics"**, and the key of the facet value is always in **uppercase e.g. "EDU"**.  <br>
+
+Facets are localised, thus you must add the translated name of facet and duplicate the value for the icon, e.g.:
+
+```json
+"sdmx": {
+  ...others keys,
+  "valueIcons": {
+    "topics": {
+      "EDU": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    } 
+    "thème": {
+      "EDU": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    } 
+  }
+}
+```
 
 The result is as follows:
 

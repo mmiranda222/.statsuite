@@ -8,9 +8,8 @@ weight: 70
 
 includes:
 
-* [.Stat Data Explorer customisation](/configurations/de-customisation)
 * [.Stat Data Explorer configuration](/configurations/de-configuration)
+* [.Stat Data Explorer customisation](/configurations/de-customisation)
 * [.Stat Data Lifecycle Manager configuration](/configurations/dlm-configuration)
 * [.Stat Authentication configuration](/configurations/authentication)
-* [.Stat DE index and search API interactions](/configurations/de-index)
 * [SolR Optimisation](/configurations/solr-optimisation)
