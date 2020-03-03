@@ -56,6 +56,7 @@ major changes:
 - [dotstatsuite-sdmx-faceted-search#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/41) (*Sdmx Faceted Search*) Redefine Document ID and Datasource definitions.
 - [dotstatsuite-sdmx-faceted-search#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/47) (*Sdmx Faceted Search*) Index facets' names instead of ID and remove i18n.
 - [dotstatsuite-sdmx-faceted-search#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/48) (*Sdmx Faceted Search*) All facets are hierarchical.
+- See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/), [README.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/master/README.md) and [SFS changelog](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/master/CHANGELOG.md) for additional details on major impacts.
 
 minor changes:
 
