@@ -28,8 +28,8 @@ These customisations can be performed by Administrators with access to the .Stat
 ---
 
 ### Main Theme
-It is possible to change the default layout theme of the application, including four properties.<br>
-You can add new entries in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json` and it will replace the default customisation. <br>
+It is possible to change the default layout theme of the application, including four properties.  
+You can add new entries in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json` and it will replace the default customisation.  
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
 * "theme":"layout" corresponds to the homepage background color and default font
@@ -117,22 +117,26 @@ Define the common logos in the header, subheader, footer and homepage of the web
     }
 ```
 
-* header:<br>
+* header:  
+
 ![Site logo header](/images/faq-site-logo-header.png)
 
-* subheader:<br>
+* subheader:  
+
 ![Site logo subheader](/images/faq-site-logo-subheader.png)
 
-* footer:<br>
+* footer:  
+
 ![Site logo footer](/images/faq-site-logo-footer.png)
 
-* splash:<br>
+* splash:  
+
 ![Site logo splash](/images/faq-site-logo-splash.png)
 
 ---
 
 ### Table and chart footer logo
-Define the logo of the organisation in the footer of the table and chart views.<br>
+Define the logo of the organisation in the footer of the table and chart views.  
 The source can be a binary image or a link.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
@@ -201,18 +205,18 @@ Define the hyperlink for the "Contact us" feature.<br>
 
 ### Map Chart Configuration
 
-Displaying data in a geographical map representation in the Data Explorer visualisation pages, will rely on the providing of one or several maps (regarding the needs) to the application.<br>
+Displaying data in a geographical map representation in the Data Explorer visualisation pages, will rely on the providing of one or several maps (regarding the needs) to the application.  
 
-**Prerequisites**<br>
-It is first required to produce these maps as `topojson` files. To learn more about `topojson` format, you can read: https://github.com/topojson/topojson-specification/blob/master/README.md <br>
-You can also learn more about `topojson` files generation from [here](https://github.com/topojson/topojson). <br>
-<br>
-From here and further in the configuration, it is assumed that one can produce `topojson` files for his needs.<br>
-<br>
+**Prerequisites**  
+It is first required to produce these maps as `topojson` files. To learn more about `topojson` format, you can read: https://github.com/topojson/topojson-specification/blob/master/README.md  
+You can also learn more about `topojson` files generation from [here](https://github.com/topojson/topojson).  
+
+From here and further in the configuration, it is assumed that one can produce `topojson` files for his needs.  
+
 
 **First steps**
-Starting with the specifications of the `topojson` file format. Following is provided a '**world_map.json**' file as example.<br>
-As `topojson` standard specifes, areas are defined in `objects` entry. Since the SDMX dimension representing the Reference Areas may be a hierarchical one, it is possible for the Data Explorer to have several maps choice corresponding to the different hierarchy levels, for only one `topojson` file. All you need is regrouping your areas definition into several entries inside your `objects` entry.<br>
+Starting with the specifications of the `topojson` file format. Following is provided a '**world_map.json**' file as example.  
+As `topojson` standard specifes, areas are defined in `objects` entry. Since the SDMX dimension representing the Reference Areas may be a hierarchical one, it is possible for the Data Explorer to have several maps choice corresponding to the different hierarchy levels, for only one `topojson` file. All you need is regrouping your areas definition into several entries inside your `objects` entry.  
 So for instance, for 2 levels of a hierarchy, e.g. `continents` and `countries`, the following 2 entries are defined in the **world_map.json** file as `objects`:
 ```json
 {
@@ -228,8 +232,8 @@ So for instance, for 2 levels of a hierarchy, e.g. `continents` and `countries`,
     }
 }
 ```
-**Note**: in case of a flat area dimension, there is still a need for areas to be put under a level in the file.<br>
-<br>
+**Note**: in case of a flat area dimension, there is still a need for areas to be put under a level in the file.  
+
 Then each of the areas will be collected in one of the `geometries` arrays, as follows:
 ```json
 area = {
@@ -238,12 +242,11 @@ area = {
     "properties": { "id": SDMX_AREA_ID }
 }
 ```
-In the above example, `type` and `arcs` are pure topojson generated entries and serving the computing of the draw. <br>
-The `properties` entry serves as the metadata entry of the area. <br>
-The engine only requires an `id` entry (**Note** that any other entry will be ignored, and it is strongly suggested to not overload the file -in case of a large number of areas- for performance purpose). <br>
-It is highly important that `id` perfectly matches the corresponding SDMX id defined in the areas codelist, for the mapping between SDMX datas and geographical data to work.
-<br>
-<br>
+In the above example, `type` and `arcs` are pure topojson generated entries and serving the computing of the draw.  
+The `properties` entry serves as the metadata entry of the area.  
+The engine only requires an `id` entry (**Note** that any other entry will be ignored, and it is strongly suggested to not overload the file -in case of a large number of areas- for performance purpose).  
+It is highly important that `id` perfectly matches the corresponding SDMX id defined in the areas codelist, for the mapping between SDMX datas and geographical data to work.  
+
 **Second step** The `topojson` file needs to be added in the following path `dotstatsuite/data/<env>/assets/<tenant>/data-explorer/maps/world_map.json`<br>
 
 **Third step** Then it needs to be referenced in Data Explorer settings in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`:
@@ -262,11 +265,11 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
     }
 }
 ```
-A very important aspect here above is about `projection` and `scale` entries. Both are linked to the api specification of the D3 library for map rendering. Detailed specifications of D3 projection mechanism are to be found [here](https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md). 
+A very important aspect here above is about `projection` and `scale` entries. Both are linked to the api specification of the D3 library for map rendering. Detailed specifications of D3 projection mechanism are to be found [here](https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md).  
 Keep in mind that `projection` stands for the specific D3 projection you want to use (e.g. `mercator` for `d3.geo.mercator`).<br>
 <br>
 
-**Last step** is to make sure that each area level of the map has its label properly put in the translation files.<br>
+**Last step** is to make sure that each area level of the map has its label properly put in the translation files.  
 For the English example of the world map, it should look like:
 `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/i18n/en.json`
 ```json
