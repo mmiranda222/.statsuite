@@ -10,7 +10,7 @@ if [ ! $TOKEN ]; then
   exit 1;
 fi
 
-BRANCH=develop;
+BRANCH=master;
 JOB=(setup build);
 
 PROJECTS=(10537079 10283564 10532325 12189645 10631000 10822973);
