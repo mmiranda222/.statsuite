@@ -285,9 +285,9 @@ This example above will result with 2 options (in the menu of the Data Explorer 
 
 You can define individual icons that are to be displayed with specific facets values in the DE home and search result pages.<br>
 
-This is a new entry of the configuration, and is supporting the **SVG path segment** format ONLY. <br>
-SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.<br>
-SVG elements should be scaled for a 24x24px viewport.<br>
+This is a new entry of the configuration, and is supporting the **SVG path segment** format ONLY.  <br>
+SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.  <br>
+SVG elements should be scaled for a 24 x 24px viewport.  <br>
 
 * in `dotstatsuite-config/data/\<env>/configs/\<tenant>/data-explorer/setting.json`
 
