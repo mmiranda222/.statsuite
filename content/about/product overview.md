@@ -64,9 +64,9 @@ The .Stat Suite has three **main modules**:
   * fast response times
   * high web accessibility
 
-**Landing page** with access to free-text search or to browsing by configurable concepts (e.g. browse by topic, referance area, data source).<br>
-**Search result page** with access to browsing by content types and indexed concepts, instant drill-down within search results (through dynamic filtering), and direct download (e.g. full .csv data files).<br>
-**Dataset view page** with automated (metadata-driven) selections of dimensions, instant data pre-view in easily comprehensive basic table formats and basic chart types, allow for continued drill-down and selection changes, configurable or automated table and chart layout options, downloads, share and Open Data API (SDMX query generator) features.<br>
+**Landing page** with access to free-text search or to browsing by configurable concepts (e.g. browse by topic, referance area, data source).  
+**Search result page** with access to browsing by content types and indexed concepts, instant drill-down within search results (through dynamic filtering), and direct download (e.g. full .csv data files).  
+**Dataset view page** with automated (metadata-driven) selections of dimensions, instant data pre-view in easily comprehensive basic table formats and basic chart types, allow for continued drill-down and selection changes, configurable or automated table and chart layout options, downloads, share and Open Data API (SDMX query generator) features.  
 **Configure** to a specific context managing various deployment modes, multiple data portals, integration with existing tools and applications, and different API endpoints.<br>
 
 ---
