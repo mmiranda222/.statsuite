@@ -7,12 +7,13 @@ weight: 350
 ---
 
 ### localised order in the items of all ItemSchemes
-**Implicit** means the order of items (e.g. codes) as returned within the array of codes. There are thus always naturally given in a structure definition.<br>
-**Explicit** order is the order provided through annotations and is optional. Explicit order prevails implicit order.<br>
+**Implicit** means the order of items (e.g. codes) as returned within the array of codes. There are thus always naturally given in a structure definition.  
+**Explicit** order is the order provided through annotations and is optional. Explicit order prevails implicit order.  
 
-In the data definition, the story is a bit different because the order of codes in dimension arrays is considered “random” (because of potential streaming on server side). The original implicit order is thus returned as an additional code property. With the NSI web service, this property should always be returned. However, we cannot guarantee the presence of this property for other SDMX endpoints.
-Explicit order is provided through annotations and is optional. Explicit order prevails implicit order, and implicit order prevails the “random” array order.
+In the data definition, the story is a bit different because the order of codes in dimension arrays is considered “random” (because of potential streaming on server side). The original implicit order is thus returned as an additional code property. With the NSI web service, this property should always be returned. However, we cannot guarantee the presence of this property for other SDMX endpoints.  
+Explicit order is provided through annotations and is optional. Explicit order prevails implicit order, and implicit order prevails the “random” array order.  
 The syntax for the explicit localised "ORDER" annotation for items in Codelists and CategorySchemes is:
+
 ```
         "annotations": [{
                  "text": {
@@ -23,7 +24,7 @@ The syntax for the explicit localised "ORDER" annotation for items in Codelists 
          }]
 ```
 
-In case an unambiguous explicit order is not provided then the SDMX standard’s implicit order of the codes is applied. This rule applies also if the same order number was explicitly specified twice: the implicit order should then prevail between those codes. <br>
+In case an unambiguous explicit order is not provided then the SDMX standard’s implicit order of the codes is applied. This rule applies also if the same order number was explicitly specified twice: the implicit order should then prevail between those codes.  
 
 Before ordering (implicit or "random" order of dimension values from SDMX ItemScheme):
 * Aaa, Explicit order=5

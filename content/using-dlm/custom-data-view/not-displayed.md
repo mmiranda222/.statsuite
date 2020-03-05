@@ -87,6 +87,5 @@ The case occurs when the code is the only available value, or when it is the onl
 In the following illustrations:
 * When I select "Overnight visitors" from the filter, the selection appears in the sub-title of the dataflow;
 * When I select **ONLY** "Total" from the same filter, the selection is applied to the view BUT the selection is NOT displayed in the sub-title of the dataflow.
-<br>
 
 ![Example of hidden special value](/using-dlm/files/HIDE_SPECIAL_VALUES.png)

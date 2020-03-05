@@ -19,8 +19,8 @@ To do so, you can use the SDMX `EXT_RESOURCE` annotation to define one or severa
 * The contents of the annotation text/texts are valid `HTML` href elements with href properties (hyperlinks to the resource). It can also include an icon.
 
 ### Syntax
+Use the following syntax when defining the annotation in the dataflow or dataset definition for additional download options for external resources:  
 
-Use the following syntax when defining the annotation in the dataflow or dataset definition for additional download options for external resources:
 ```
 "annotations": [{
 		"type": "EXT_RESOURCE",

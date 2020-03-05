@@ -18,7 +18,7 @@ Use the following syntax when defining the annotation in the item definition of 
                  "type": "DEFAULT"
          }]
 ```
-<br>
+
 
 Use the following syntax when defining the annotation in the Dataflow or DSD definition:  
 ```
@@ -38,11 +38,11 @@ Use the following syntax when defining the annotation in the Dataflow or DSD def
 * The `DEFAULT` annotations are superseded by selections on the same datalfow dimension(s) coming from the Data Explorer search result filters, or the homepage free text search hits.
 
 ### Example
-You can find [here](hhttps://gitlab.com/sis-cc/dotstatsuite-documentation/blob/master/content/OECD-AIR_EMISSIONS_DF-2.0.xml) a SDMX structure file of a Dataflow.
+You can find [here](hhttps://gitlab.com/sis-cc/dotstatsuite-documentation/blob/master/content/OECD-AIR_EMISSIONS_DF-2.0.xml) a SDMX structure file of a Dataflow.  
 
-In this attached example, several codes of codelists are defined in the dataflow definition with the DEFAULT annotation.
+In this attached example, several codes of codelists are defined in the dataflow definition with the DEFAULT annotation.  
 
-Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1 compliant's backoffice system) for Data Explorer dissemination, it will result in displaying the dataflow with the following default filters' selections:  <br>
+Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1 compliant's backoffice system) for Data Explorer dissemination, it will result in displaying the dataflow with the following default filters' selections:  
 
 ![Example of DEFAULT annotations](/using-dlm/files/DEFAULT.png)
 
