@@ -6,24 +6,25 @@ weight: 72
 ---
 
 #### Table of Content
-- [intro](#intro)
-- [homepage facets](#homepage-facets)
-- [search results page pinned facets](#search-results-page-pinned-facets)
-- [search results page excluded facets](#search-results-page-excluded-facets)
-- [search result page: number of results per page](#search-result-page-number-of-results-per-page)
-- [time period boundaries](#time-period-boundaries)
-- [default time period](#default-time-period)
-- [maximum number of observation values](#maximum-number-of-observation-values)
-- [preferred scale attribute](#preferred-scale-attribute)
-- [decimals rule attribute](#decimals-rule-attribute)
-- [coded attributes returned as flags](#coded-attributes-returned-as-flags)
-- [coded and uncoded attributes returned as footnotes](#coded-and-uncoded-attributes-returned-as-footnotes)
-- [localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
-- [localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
+- [Intro](#intro)
+- [Homepage facets](#homepage-facets)
+- [Search results page pinned facets](#search-results-page-pinned-facets)
+- [Search results page excluded facets](#search-results-page-excluded-facets)
+- [Search result page: number of results per page](#search-result-page-number-of-results-per-page)
+- [Time period boundaries](#time-period-boundaries)
+- [Default time period](#default-time-period)
+- [Maximum number of observations in tables and charts](#maximum-number-of-observations-in-tables-and-charts)
+- [Maximum number of cells in table](#maximum-number-of-cells-in-table)
+- [Preferred scale attribute](#preferred-scale-attribute)
+- [Decimals rule attribute](#decimals-rule-attribute)
+- [Coded attributes returned as flags](#coded-attributes-returned-as-flags)
+- [Coded and uncoded attributes returned as footnotes](#coded-and-uncoded-attributes-returned-as-footnotes)
+- [Localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
+- [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
 
 ---
 
-### intro
+### Intro
 This page is a guide on how to setup, configure and interact with most of the .Stat Data Explorer client-side configurations and (sdmx) business rules.  
 
 These configurations are tasks to be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.  
@@ -152,17 +153,35 @@ Define the default time period selection of the visualisation page views, accord
 
 ---
 
-### Maximum number of observation values
-Limit the number of observations values returned in the table and chart views.  
-If set to [0, 1], then only 1 observation is returned. If set to [0, 0], then nothing is returned.  
-This configuration does not impact the full data download.<br>
+### Maximum number of observations in tables and charts
+0-based range of observations returned by the SDMX web service for the display in the tables and charts.  
+The purpose of this configuration is to protect from too large selections and consequent unavoidable freezing of the .Stat Data Explorer application in the client's web browser.  
+If set to [0, 0], then only the first observation is returned. If set to [0, 2499], then the first 2500 observations are returned.  
+Standard browser performance tests revealed that numbers of observations above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
+This configuration also impacts the EXCEL download but does not impact the CSV download options.  
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```json
     "sdmx": {
-        "range": [0, 1000]
+        "range": [0, 2499]
     }
+```
+
+---
+
+### Maximum number of cells in table
+Integer to limit the number of cells being displayed in the data table.  
+Even though the number of observations returned by the SDMX web service is already limited, in an unfortunate extreme layout all observations could be placed on the table's diagonal, and the final table cell number would be the square of the number of observations. E.g. if the number of observations was limited to 2500, then the resulting maximum table size would be 6250000, which is far too much for the web browsers to digest. The purpose of this configuration is thus to protect from too large tables and consequent unavoidable freezing of the .Stat Data Explorer application in the client's web browser.  
+Standard browser performance tests revealed that number of table cells above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
+This configuration also impacts the EXCEL download but does not impact the CSV download options.  
+
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```json
+  "table": {
+        "cellsLimit": 6000
+  }
 ```
 
 ---
