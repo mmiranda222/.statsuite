@@ -128,7 +128,7 @@ This web service is used for statistical data (and later referential metadata) f
 
 #### Configuration
 
-Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master/DotStatServices.Transfer/config).
+Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master/DotStatServices.Transfer/config).  
 All files with `*.json` extension are considered as configuration files. The name of the file is not important (except log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
 
 * example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/transfer.yaml
@@ -193,7 +193,7 @@ end
 
 ### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
 
-This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store. The docker image is using a vanilla Eurostat NSI web service image as a base image. It is enriched with a special .Stat Core plugin used to retrieve statistical data structures from a .Stat Core Data Store.
+This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store. The docker image is using a vanilla Eurostat NSI web service image as a base image. It is enriched with a special .Stat Core plugin used to retrieve statistical data structures from a .Stat Core Data Store.  
 
 - **demo**: http://nsi-staging-oecd.redpelicans.com/
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-sdmxri-nsi
@@ -203,8 +203,8 @@ This web service is used for statistical data structures for their upload and do
 
 #### Configuration
 
-Configuration is loaded from **config** directory located in the [root of application](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config?at=refs%2Fheads%2Fdevelop).
-All files with *.json extension are considered as configuration files. The name of the file is not important (except app.config & log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
+Configuration is loaded from **config** directory located in the [root of application](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config?at=refs%2Fheads%2Fdevelop).  
+All files with *.json extension are considered as configuration files. The name of the file is not important (except app.config & log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.  
 
 * example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config
 
@@ -278,11 +278,11 @@ This web service is used for managing user access rights to data structures and 
 
 ## Docker-compose example(s)
 
-[Docker Compose](https://docs.docker.com/compose/overview/) is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. To learn more about all the features of Compose, see [the list of features](https://docs.docker.com/compose/overview/#features).
+[Docker Compose](https://docs.docker.com/compose/overview/) is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. To learn more about all the features of Compose, see [the list of features](https://docs.docker.com/compose/overview/#features).  
 
-Compose works in all environments: production, staging, development, testing, as well as CI workflows. You can learn more about each case in [Common Use Cases](https://docs.docker.com/compose/overview/#common-use-cases).
+Compose works in all environments: production, staging, development, testing, as well as CI workflows. You can learn more about each case in [Common Use Cases](https://docs.docker.com/compose/overview/#common-use-cases).  
 
-A .Stat Docker compose example for developers and contributors combining all apps and services and one .Stat Core Data Storage is currently in development and will be available soon. 
+A .Stat Docker compose example for developers and contributors combining all apps and services and one .Stat Core Data Storage is currently in development and will be available soon.  
 
 A first preview of a Docker compose yaml file with .Stat Core services is here:
 
