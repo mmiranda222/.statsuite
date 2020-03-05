@@ -14,12 +14,12 @@ weight: 93
 
 ---
 
-> **NOTE**: these guidelines describe how the .Stat Suite developer team members are applying the git-flow process and what coding standards are followed. <br>
+> **NOTE**: these guidelines describe how the .Stat Suite developer team members are applying the git-flow process and what coding standards are followed.  
 **As an external contributor** of the project, you can directly jump in the very well described [contributing to an open source repository](https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/), where it is explained how to contribute to an open-source project by submitting Merge Requests to the project maintainers.
 
 ### Git-flow
 
-**Overview** <br>
+**Overview**  
 The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) have the following branches:
 
 - master (name=master)
@@ -42,7 +42,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - fixing critical bug(s) in production
     - avoid blocking dev while fixing master
 
-**Rules**<br>
+**Rules**  
 
 - feature/patch branches are created from dev (after a merge in dev) <br>
 - feature/patch branches must be merged back into dev when the feature is done <br>
@@ -51,7 +51,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
 - hotfix branches are created from master (after a merge in master) <br>
 - hotfix branches must be merged back into dev and master <br>
 
-**Good practices**<br>
+**Good practices**  
 
 - perform atomic commits (ie commit a lot) <br>
     - git history is detailed <br>
@@ -100,7 +100,7 @@ $ git branch -d feature/morebanana
 $ git push
 ```
 
-**Use case of a git-conflict**<br>
+**Use case of a git-conflict**  
 I am working on a new feature, while updating my feature branch with dev, I get a conflict.<br>
 
 ```
@@ -109,7 +109,7 @@ $ git pull dev
 $ git checkout feature/morebanana
 $ git merge dev
 ```
-The merge failed because there is a conflict.<br>
+The merge failed because there is a conflict.  
 ```
 $ git mergetool
 ```
@@ -119,10 +119,10 @@ The above command will launch your default editor in a diffing mode with 3 versi
 - the reconciliated version
 - the local version
 
-The essence of resolving a conflict is to help git by writing the reconciliated version from the remote and the local versions.<br>
-A merge can have more than one conflict. <br>
-A conflict generally does not concern a whole file but only a chunk of it.<br>
-Once all conflicts are solved, let git know about it:
+The essence of resolving a conflict is to help git by writing the reconciliated version from the remote and the local versions.  
+A merge can have more than one conflict.  
+A conflict generally does not concern a whole file but only a chunk of it.  
+Once all conflicts are solved, let git know about it:  
 ```
 $ git commit
 ```
@@ -141,7 +141,7 @@ No need to enter a message neither to add reconciliated (and thus updated) files
 
 ### Coding standards
 
-We are using JavaScript (Node.js), SQL and C# (on .NET Core).<br>
+We are using JavaScript (Node.js), SQL and C# (on .NET Core).  
 
 - [ECMAScript 6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) is used to standardise JavaScript (Node.js) code.
 - [Jetbrains' Resharper](https://www.jetbrains.com/resharper/features/code_analysis.html) is a plugin used on SQL and C# (on .NET Core) code checking in real-time standardisation and common practices.
