@@ -24,9 +24,9 @@ weight: 72
 ---
 
 ### intro
-This page is a guide on how to setup, configure and interact with most of the .Stat Data Explorer client-side configurations and (sdmx) business rules.<br>
+This page is a guide on how to setup, configure and interact with most of the .Stat Data Explorer client-side configurations and (sdmx) business rules.  
 
-These configurations are tasks to be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.<br>
+These configurations are tasks to be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.  
 Some of the desired configurations or settings (e.g. how to add a new sdmx public endpoint) are not available from here because they must happen in a previous step or they are refering to server-side decisions, and you should therefore refer to the installation guides.
 
 ---
@@ -63,8 +63,8 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
 ### Search results page pinned facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
-Define the facets that are always displayed in the search result page.<br>
-These facets will be displayed always at first top positions and their labels are prefixed with a [*].<br>
+Define the facets that are always displayed in the search result page.  
+These facets will be displayed always at first top positions and their labels are prefixed with a [*].  
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
@@ -153,8 +153,8 @@ Define the default time period selection of the visualisation page views, accord
 ---
 
 ### Maximum number of observation values
-Limit the number of observations values returned in the table and chart views.<br>
-If set to [0, 1], then only 1 observation is returned. If set to [0, 0], then nothing is returned.<br>
+Limit the number of observations values returned in the table and chart views.  
+If set to [0, 1], then only 1 observation is returned. If set to [0, 0], then nothing is returned.  
 This configuration does not impact the full data download.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
@@ -198,8 +198,8 @@ It applies the Decimal Attribute value when defined in the data source, and thus
 ---
 
 ### Coded attributes returned as flags
-Define the supported coded attributes displayed as flags at the observation value level in the table and chart views.<br>
-The code is shown next to the observation value, and the label is displayed in a mouse-over feature.<br>
+Define the supported coded attributes displayed as flags at the observation value level in the table and chart views.  
+The code is shown next to the observation value, and the label is displayed in a mouse-over feature.  
 You can define more than one type of attribute to be displayed as flags.<br>
 
 > **Warning**: if the value ID of an attribute that is defined as flag is **longer than 4 characters**, then this value will not be displayed as a flag but as a **footnote**.<br>
@@ -219,8 +219,8 @@ You can define more than one type of attribute to be displayed as flags.<br>
 ---
 
 ### Coded and uncoded attributes returned as footnotes
-Define the supported coded or uncoded attributes displayed as footnotes at the observation value level in the table and chart views.<br>
-An asterisk icon is shown next to the observation value, and the attribute value is displayed in a mouse-over feature.<br>
+Define the supported coded or uncoded attributes displayed as footnotes at the observation value level in the table and chart views.  
+An asterisk icon is shown next to the observation value, and the attribute value is displayed in a mouse-over feature.  
 You can define more than one type of attributes to be displayed as footnotes.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`

@@ -21,7 +21,7 @@ weight: 73
 ---
 
 ### intro
-This page is a guide on how to customise and interact with some of the .Stat Data Explorer look and feel and layout features.<br>
+This page is a guide on how to customise and interact with some of the .Stat Data Explorer look and feel and layout features.  
 
 These customisations can be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.<br>
 
@@ -74,18 +74,16 @@ Define your website name and logo.<br>
 ---
 
 ### Homepage background image
+> **Prerequisite**: you need basic `HTML` and `CSS` knowledge before going further.  
 
-> **Prerequisite**: you need basic `HTML` and `CSS` knowledge before going further.
-
-**Go to** your Data Explorer homepage > right-click and select Inspect (Ctrl+Shift+I).<br>
-
-**Find and copy** from the Elements the name of the class corresponding to the background body.<br>
+**Go to** your Data Explorer homepage > right-click and select Inspect (Ctrl+Shift+I).  
+**Find and copy** from the Elements the name of the class corresponding to the background body.  
 
 ![DE Inspect](/images/de-background01.png)
 
-**Go to** `dotstatsuite/data/<env>/configs/assets/<tenant>/data-explorer/styles/styles.css`.<br>
+**Go to** `dotstatsuite/data/<env>/configs/assets/<tenant>/data-explorer/styles/styles.css`.  
 
-**Add** a new entry in the file in order to overide the default background. Paste the copied class and add the url of a publicly available image, or the path of an image stored in `/assets/<tenant>/data-explorer/images`:<br>
+**Add** a new entry in the file in order to overide the default background. Paste the copied class and add the url of a publicly available image, or the path of an image stored in `/assets/<tenant>/data-explorer/images`:  
 
 ```CSS
 .css-xn1wur {
@@ -93,11 +91,10 @@ Define your website name and logo.<br>
  }
 ```
 
-![DE new background](/images/de-background02.png)
+![DE new background](/images/de-background02.png)  
 
-<br>
 
-**Notes:**
+**Notes:**  
 * The class name is likely to change from time to time in the source code, depending on the version of the Data Explorer components, and you will thus need to update your configuration accordingly. 
 * Some additional CSS properties can be required in order to correctly display the background in a responsive and adaptive mode depending on the original size of your image. 
 
@@ -204,11 +201,10 @@ Define the hyperlink for the "Contact us" feature.<br>
 ---
 
 ### Map Chart Configuration
-
 Displaying data in a geographical map representation in the Data Explorer visualisation pages, will rely on the providing of one or several maps (regarding the needs) to the application.  
 
 **Prerequisites**  
-It is first required to produce these maps as `topojson` files. To learn more about `topojson` format, you can read: https://github.com/topojson/topojson-specification/blob/master/README.md  
+It is first required to produce these maps as `topojson` files. To learn more about `topojson` format, you can read: https://github.com/topojson/topojson-specification/blob/master/README.md.  
 You can also learn more about `topojson` files generation from [here](https://github.com/topojson/topojson).  
 
 From here and further in the configuration, it is assumed that one can produce `topojson` files for his needs.  
@@ -234,7 +230,7 @@ So for instance, for 2 levels of a hierarchy, e.g. `continents` and `countries`,
 ```
 **Note**: in case of a flat area dimension, there is still a need for areas to be put under a level in the file.  
 
-Then each of the areas will be collected in one of the `geometries` arrays, as follows:
+Then each of the areas will be collected in one of the `geometries` arrays, as follows:  
 ```json
 area = {
     "type": "",
@@ -266,11 +262,11 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
 }
 ```
 A very important aspect here above is about `projection` and `scale` entries. Both are linked to the api specification of the D3 library for map rendering. Detailed specifications of D3 projection mechanism are to be found [here](https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md).  
-Keep in mind that `projection` stands for the specific D3 projection you want to use (e.g. `mercator` for `d3.geo.mercator`).<br>
-<br>
+Keep in mind that `projection` stands for the specific D3 projection you want to use (e.g. `mercator` for `d3.geo.mercator`).  
+
 
 **Last step** is to make sure that each area level of the map has its label properly put in the translation files.  
-For the English example of the world map, it should look like:
+For the English example of the world map, it should look like:  
 `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/i18n/en.json`
 ```json
 {
@@ -286,11 +282,11 @@ This example above will result with 2 options (in the menu of the Data Explorer 
 
 ### Add icons to specific facet values
 
-You can define individual icons that are to be displayed with specific facets values in the DE home and search result pages.<br>
+You can define individual icons that are to be displayed with specific facets values in the DE home and search result pages.  
 
 This is a new entry of the configuration, and is supporting the **SVG path segment** format ONLY.  
 SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.  
-SVG elements should be scaled for a 24 x 24px viewport.
+SVG elements should be scaled for a 24 x 24px viewport.  
 
 * in `dotstatsuite-config/data/\<env>/configs/\<tenant>/data-explorer/setting.json`
 
@@ -305,9 +301,9 @@ SVG elements should be scaled for a 24 x 24px viewport.
 }
 ```
 
-Note: the key of the facet is always in **lowercase e.g. "topics"**, and the key of the facet value is always in **uppercase e.g. "EDU"**.  <br>
+**Note**: the key of the facet is always in **lowercase e.g. "topics"**, and the key of the facet value is always in **uppercase e.g. "EDU"**.  
 
-Facets are localised, thus you must add the translated name of facet and duplicate the value for the icon, e.g.:
+Facets are localised, thus you must add the translated name of facet and duplicate the value for the icon, e.g.:  
 
 ```json
 "sdmx": {
@@ -323,7 +319,7 @@ Facets are localised, thus you must add the translated name of facet and duplica
 }
 ```
 
-The result is as follows:
+The result is as follows:  
 
 ![facet icon 1](/images/faq-facet-icon-1.png)
 
