@@ -25,7 +25,7 @@ The following example, contains the list of steps required to deploy a **specifi
 
 > **`This example SHOULD NOT be used as is for production deployments.`**
 > 
-> In this installation example all sensitive information is set to use default values, including connection strings, SQL users and passwords, database names, application folders, among others. 
+> In this installation example all sensitive information is set to use default values, including connection strings, SQL users and passwords, database names, application folders, among others.  
 >  **This information is publically available, making your deployment vulnerable.**
 
 ## Pre-requisites
@@ -99,7 +99,7 @@ This is a private Eurostat repository, therefore you need to provide your login 
 git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
 ```
 
-> **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:
+> **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:  
 >  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 
 
