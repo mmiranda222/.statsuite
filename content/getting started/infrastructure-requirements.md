@@ -21,17 +21,17 @@ weight: 38
 - **Microsoft SQL server management studio** (Optional)
 - **Visual Studio 2017**.-Used only for compiling the solutions when doing a source code installation.
 
-**Hardware requirements**<br>
-Although the requirements could vary depending on the size of your data and the amount of users, for an installation of one **.Stat Core Data Store** (*[See sample topology](/install-source-code/source-code/#example-topologies)*), we suggest as a minimum the following requirements: <br>
+**Hardware requirements**  
+Although the requirements could vary depending on the size of your data and the amount of users, for an installation of one **.Stat Core Data Store** (*[See sample topology](/install-source-code/source-code/#example-topologies)*), we suggest as a minimum the following requirements:  
 
 - **Memory:** 16 GB
 - **vCPUs:** 8 CPU @ 2.4 GHz
 - **Disk:** 250 GB         
 
 ## .Stat Data Explorer
-> Since [February 28, 2020 Release .Stat Suite JS v4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), .Stat Data Explorer requires **nodejs version 13.3.x**.
+> Since [February 28, 2020 Release .Stat Suite JS v4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), .Stat Data Explorer requires **nodejs version 13.3.x**.  
 
-**pre-requisites**
+**pre-requisites**  
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
 - **nodejs 13.3.x** and **npm 6.x** installed
@@ -39,7 +39,7 @@ Although the requirements could vary depending on the size of your data and the 
 - **solr 7.x** installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - **redis** downloaded and running on port 6379 (default)
 
-*notes:*
+*notes:*  
 
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
 - ports can be freely picked, if different than defaults they should be specified when launching services

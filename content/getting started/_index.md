@@ -18,9 +18,8 @@ includes:
 ![DevOps diagram](/images/devops-schema.png)
 
 In this diagram are represented the deliverables we provide (in green) based on the 3 different delivery approaches that we support.  
-<br>
-In blue are represented the areas where some technical support can be provided by third-parties' technical partner(s) with the following tasks:
 
+In blue are represented the areas where some technical support can be provided by third-parties' technical partner(s) with the following tasks:  
 * Advanced support for source code installations for technical experts (in collaboration with the Developer advocate);
 * Support for source code installations for technical newbies (creation of simple installation scripts, hand-holding);
 * Advanced support for container based installations (using Docker images) on premise (onsite/own cloud) for technical experts;
