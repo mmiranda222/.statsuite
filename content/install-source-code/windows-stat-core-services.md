@@ -166,7 +166,7 @@ For this step you will need the Microsoft SQL sysadmin user and password.
 
 ![.Stat Core topology Common](/images/stat-core-topology-common.PNG)  
 
-Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the DotStatSuiteCore_Common database.
+Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the DotStatSuiteCore_Common database.
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
@@ -186,7 +186,7 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publis
 
 ![.Stat Core topology disseminateData](/images/stat-core-topology-disseminateData.PNG)  
 
-Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the Disseminate DotStatSuiteCore_Data database.
+Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the Disseminate DotStatSuiteCore_Data database.
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
@@ -322,6 +322,11 @@ For this example we will use the second option:
 *  Set the common database connection string:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
+```
+
+* Set the default language code:
+```sh
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DefaultLanguageCode',value='en']" /commit:apphost
 ```
 
 *  Disable authentication:
