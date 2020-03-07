@@ -74,6 +74,13 @@ Make sure that the windows machine which will be used in this installation proce
 6.   [Deploy the Disseminate NSI web service](#6-deploy-the-disseminate-nsi-web-service-in-port-80)
 
 ## 1 Download the source code
+
+In this section we'll download the source code for the databases and for each of the applications.
+
+### A word on versions
+
+The versions of the source code we download here need to work together. This means that we need to download compatible versions of all the various components, which is why none of the clone statements refer to branches such as "master" or "develop", but instead refer to tags we know to be compatible.
+
   1 .  Open Git Bash with **admin rights** from the windows start menu
 
   2 .  Create a new folder *C:/git* to store the source code
@@ -86,9 +93,9 @@ mkdir /c/git
 cd /c/git
 ```
 
-  4 .  Clone the dotstatsuite-core-dbup repository.- *This tool will be used to create and initialize the common and data databases.*
+  4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 6.1.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
@@ -96,29 +103,29 @@ git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
 
 ```sh 
-git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
+git clone -b v1.24.9_2019-12-27 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:  
->  -  git clone -b master --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
+>  -  git clone -b 1.0 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 
 
   6 .  Clone the NSI web service repository
 
 This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
 ```sh
-git clone -b 7.10.0 --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
+git clone -b 7.10.10 --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
 ```
 
   7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
 
 ```sh
-git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
+git clone -b 7.10.10 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b master --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 3.0.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ## 2 Compile the source code
