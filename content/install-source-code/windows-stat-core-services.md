@@ -534,6 +534,7 @@ cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp2.2/publish/* /
 **Step 4.** Copy the following dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Disseminate DotStatSuiteCore_Data database.
 
 - DotStat.Common.dll
+- DotStat.Config.dll
 - DotStat.DB.dll
 - DotStat.Domain.dll
 - DotStat.MappingStore.dll
