@@ -82,7 +82,7 @@ Limitations:
 
 ### Proxy service
 
-The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct target application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
+The Proxy service handles route requests by mapping the hostname part of URLs to tenant-application pairs. Requests with hostnames that match the defined mappings are forwarded to the matched target application, and tenant headers are set for the matched tenant.
 
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-kube-proxy
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
