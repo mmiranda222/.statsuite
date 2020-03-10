@@ -25,4 +25,4 @@ Empty observations should be loaded through direct imports into the required dat
 
 
 **Future outlook**:  
-It is planned to replace the current feature (except for Excel imports) by an SDMX-compatible approach, which means that observations are to be deleted through specific SDMX-ML import files using an SDMX Dataset with the action "Delete". The "transfer" (copy) of deleted data from one space to another will be supported by the SDMX rest features "includeHistory" (and "lastUpdated") that will be implemented. Approximate delivery: 2020.
+It is planned to replace the current feature (except for Excel imports) by an SDMX-compatible approach, which means that observations are to be deleted through specific SDMX-ML import files using an SDMX Dataset with the action "Delete", and through specific (filtered or unfiltered) SDMX REST data queries using the HTTP DELETE verb. The "transfer" (copy) of deleted data from one space to another will be supported by the SDMX REST data query features "includeHistory" (and "lastUpdated") that will be implemented. Approximate delivery: 2020.
