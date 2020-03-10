@@ -12,7 +12,7 @@ Data can be deleted today only through specifying **empty observations in import
 **Current limitation**:   
 It is not possible yet to "transfer" (copy) the deletion of data from one data space to another.
 The following scenario does thus not work:
-1) User loads data into a space A
+1) User loads data into a Space A
 2) User transfer data to another space (Space B)
 3) User deletes data in Space A by loading empty observations
 4) User transfers data from Space A to Space B (e.g. without filter)  
