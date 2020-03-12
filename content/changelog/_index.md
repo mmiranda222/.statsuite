@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 05, 2020](#march-05-2020)
 - [February 28, 2020](#february-28-2020)
 - [February 17, 2020](#february-17-2020)
 - [February 04, 2020](#february-04-2020)
@@ -34,6 +35,23 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### March 05, 2020
+**[Release .Stat Suite JS 4.0.1](https://gitlab.com/groups/sis-cc/-/milestones/4?milestone%5Btitle%5D=Release+.stat+suite+JS+v4.0.1)**  
+> This new minor release includes a new version of the .Stat Suite **sdmx-faceted-search**, **config** and **data-explorer** services.  
+This release has been tested and is running with the **NSI WebService v7.11.1**.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+minor changes:
+
+- [dotstatsuite-data-explorer#228](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/228) Add **Data Explorer authentication**. This is the first version of the Data Explorer auhtentication feature. The Data Explorer now works in both anonymous and authenticated modes. The same authenticated session (through Keycloak) is used when logging in DLM and DE. See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/).
+
+patches:
+
+- [dotstatsuite-data-explorer#230](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/230) **Decimals** set in the configuration are not applied in the Data Explorer.
+- [dotstatsuite-data-explorer#243](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/243) Repeating dataflows in the Data Explorer search results.
+
+---
 
 ### February 28, 2020
 **[Release .Stat Suite JS 4.0.0](https://gitlab.com/groups/sis-cc/-/milestones/3?milestone%5Btitle%5D=Release+.stat+suite+JS+v4.0.0)** with **[SFS 2.0](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues?milestone_title=SFS+2.0&state=closed)**
