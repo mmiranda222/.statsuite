@@ -38,7 +38,7 @@ ToC
 
 ### March 05, 2020
 **[Release .Stat Suite JS 4.0.1](https://gitlab.com/groups/sis-cc/-/milestones/4?milestone%5Btitle%5D=Release+.stat+suite+JS+v4.0.1)**  
-> This new minor release includes a new version of the .Stat Suite **sdmx-faceted-search**, **config** and **data-explorer** services.  
+> This new release includes a new minor version of the .Stat Suite **sdmx-faceted-search**, **config** and **data-explorer** services.  
 This release has been tested and is running with the **NSI WebService v7.11.1**.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
