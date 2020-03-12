@@ -118,6 +118,7 @@ weight: 47
     - Root URL (http://localhost:7000)
   - add user
 
+A very useful tutorial on how to get a Keycloak server ready to work with the .Stat suite is also available [here](https://github.com/Kyelin25/dotstat-tutorials/blob/master/KeycloakConfiguration/KeycloakConfiguration.md) (Thanks [Ben](https://github.com/Kyelin25)!).
 
 ## Dotstatsuitejs
 > hint: pm2 is a tool that monitors nodejs services  
