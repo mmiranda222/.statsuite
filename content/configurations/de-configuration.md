@@ -35,7 +35,7 @@ Some of the desired configurations or settings (e.g. how to add a new sdmx publi
 ### Homepage facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
-Define the facets that are displayed on the homepage below "browse by", by their names and in the order in which you want them to appear.  
+Define the facets that are displayed on the homepage below "browse by", by their names and in the order in which you want them to appear. Replace spaces in your facet names by underline `_`.  
 In the property "homeFacetIds", you must enter the localised name of an indexed CategoryScheme (e.g. "Topics") or a ConceptScheme (e.g. "Country").  
 If the setting exists but is **empty**, then no facet is displayed on the homepage.  
 If it is **missing**, then all available (indexed) facets are displayed on the homepage.  
@@ -51,6 +51,7 @@ If it is **missing**, then all available (indexed) facets are displayed on the h
 ![Homepage facets](/images/faq-homepage-facets.png)
 
 Facets are **localised**, thus you must add the translated name of the chosen facet if your instance of .Stat DE is configured with several languages.  
+Replace spaces in your facet names by underline `_`.  
 For instance, if you configure an instance of .Stat DE in both English and French languages, and the localised name of your CategoryScheme "Topic" in French is "Thème", and the localised name of your Concept "Country" in French is "Pays", then the configuration must be as such:
 
 ```json
@@ -65,13 +66,13 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
 Define the facets that are always displayed in the search result page.  
-These facets will be displayed always at first top positions and their labels are prefixed with a [*].  
+These facets will be displayed always at first top positions and their labels are prefixed with a [*]. Replace spaces in your facet names by underline `_`.  
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
 ```json
     "search": {
-        "pinnedFacetIds": ["Browse Indicators by subject","Reference area"]
+        "pinnedFacetIds": ["Browse_Indicators_by_subject","Reference_area"]
     }
 ```
 
@@ -80,7 +81,7 @@ These facets will be displayed always at first top positions and their labels ar
 Facets are **localised**, thus you must add the translated name of the pinned facet(s) if your instance of .Stat DE is configured with several languages, e.g.:  
 ```json
     "search": {
-        "pinnedFacetIds": ["Browse Indicators by subject","Parcourir les indicateurs par sujet","Reference area","Aire de référence"]
+        "pinnedFacetIds": ["Browse_Indicators_by_subject","Parcourir_les_indicateurs_par_sujet","Reference_area","Aire_de_référence"]
     }
 ```
 
@@ -89,7 +90,7 @@ Facets are **localised**, thus you must add the translated name of the pinned fa
 ### Search results page excluded facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
-Define the facets that will always be excluded from the search result page.<br> 
+Define the facets that will always be excluded from the search result page. Replace spaces in your facet names by underline `_`.  
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
