@@ -176,7 +176,7 @@ weight: 45
 
 3. start the service:
 
-  - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 npm run start:run`
+  - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 AUTH_SERVER_URL=http://localhost:8080 npm run start:run`
   - check if everything is fine: http://localhost:3009 (proxy with a route mapped to data-explorer)
 
 **6. data-viewer app**
@@ -224,4 +224,4 @@ weight: 45
 
 3. start the service:
 
-  - (in git bash) run `SERVER_PORT=7000 CONFIG_URL=http://localhost:5007 npm run start:run`
+  - (in git bash) run `SERVER_PORT=7000 CONFIG_URL=http://localhost:5007 AUTH_SERVER_URL=http://localhost:8080 npm run start:run`
