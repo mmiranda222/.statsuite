@@ -323,6 +323,8 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__claimsMapping__email',value='null']" /commit:apphost
 ```
 
+**NOTE** that the transfer service will not send emails (for actions performed on data from the .Stat DLM) until authentication is enabled and properly configured. To **enable authentication** in the transfer-service, see [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/).
+
 *  Set the design dataspace values:
 ```sh
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
