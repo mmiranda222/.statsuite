@@ -43,7 +43,7 @@ These different levels of display are represented in the following use cases.
 **When** an attribute is attached to only one single dimension, and that dimension has only one single value (and thus that dimension is in the data view subtitle),  
 **Then** the `(*)` icon is shown behind the dimension name shown in the **subtitle**.
 
-![Case 1b](images/using-de-footnotes-scenario1-with-1dim-relationship.PNG)
+![Case 1b](images/using-de-footnotes-scenario1-with-1dim-relationship.png)
 
 #### Use case 2a: the attribute value is the same for all cells in any row section of the table
 **When**:
