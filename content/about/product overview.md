@@ -268,7 +268,6 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 
 ## Flight planner
 
-*Status of March 2020. Current projected flight plan subject to constant adjustment depending on +/- change in resource capacity and Community member priorities:*
+**This flight planner allows travellers [*implementers*] getting a better understanding of the foreseen flight stops [*availability of features*] and their approximate timing according to the current fuel level [*resource capacity*] and Community priorities, and so to plan their own flight boarding [*deployment strategy*] as best as possible.**
 
-![Flight Planner](/images/flight_planner_2020.png)
-
+![Flight Planner](/images/flight_planner_2020.png)  
