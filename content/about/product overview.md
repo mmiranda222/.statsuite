@@ -1,5 +1,5 @@
 ---
-title: "Product overview and tentative high-level roadmap"
+title: "Product overview and flight planner"
 subtitle: 
 comments: false
 weight: 12
@@ -8,7 +8,7 @@ weight: 12
 #### Table of Content
 - [introduction](#introduction)
 - [details about the main .Stat Suite modules](#details-about-the-main-stat-suite-modules)
-- [tentative high-level .Stat Suite product roadmap](#tentative-high-level-stat-suite-product-roadmap)
+- [flight planner](#flight-planner)
 
 ---
 
@@ -266,9 +266,9 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 ---
 
 
-## Tentative high-level .Stat Suite product roadmap
+## Flight planner
 
-*Status of March 2019. Current projected roadmap open to adjustment depending on +/- change in resource capacity and Community member priorities:*
+*Status of March 2020. Current projected flight plan subject to constant adjustment depending on +/- change in resource capacity and Community member priorities:*
 
-![Product roadmap](/images/Product_Roadmap.png)
+![Flight Planner](/images/flight_planner_2020.png.png)
 
