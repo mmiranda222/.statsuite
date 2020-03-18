@@ -270,5 +270,5 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 
 *Status of March 2020. Current projected flight plan subject to constant adjustment depending on +/- change in resource capacity and Community member priorities:*
 
-![Flight Planner](/images/flight_planner_2020.png.png)
+![Flight Planner](/images/flight_planner_2020.png)
 
