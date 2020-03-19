@@ -38,11 +38,13 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL browser service running  
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
-- **Microsoft .NET**
+- **Microsoft .NET**    
     - Microsoft .NET Core Runtime - 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
     - Microsoft .NET Core 2.2.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
     - Microsoft .NET Core SDK 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
     - Microsoft .NET Framework 4.5.\* [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
+    - Microsoft .NET Core Runtime - 3.1.\* [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+    - Visual studio 2019 is needed to compile solutions with .net core 3.1 (NSI webservice, maapi.net, NSI plugin)
 
 - **IIS Web server**  
     - IIS server 7.5 or later  
@@ -95,7 +97,7 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 6.1.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 6.2.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
@@ -103,7 +105,7 @@ git clone -b 6.1.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstat
 This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
 
 ```sh 
-git clone -b v1.24.9_2019-12-27 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
+git clone -b v1.25.2 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:  
@@ -114,18 +116,18 @@ git clone -b v1.24.9_2019-12-27 --single-branch --recurse-submodules https://YOU
 
 This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
 ```sh
-git clone -b 7.10.10 --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
+git clone -b 7.11.3 --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
 ```
 
   7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
 
 ```sh
-git clone -b 7.10.10 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
+git clone -b 7.11.3 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b 3.0.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 4.0.3 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ## 2 Compile the source code
@@ -441,7 +443,6 @@ cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp2.2/publish/* /
 - DotStat.NSI.DataRetriever.dll
 - DotStat.NSI.RetrieverFactory.deps.json
 - DotStat.NSI.RetrieverFactory.dll
-- MicroKnights.Log4NetAdoNetAppender.dll
 
 ```sh
 cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp2.2/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,DotStat.NSI.DataRetriever.dll,DotStat.NSI.RetrieverFactory.deps.json,DotStat.NSI.RetrieverFactory.dll,MicroKnights.Log4NetAdoNetAppender.dll} /c/dotstatsuite-website/nsiws-design/Plugins
