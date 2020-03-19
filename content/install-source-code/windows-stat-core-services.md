@@ -97,7 +97,7 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 6.1.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 6.2.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
@@ -127,7 +127,7 @@ git clone -b 7.11.3 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b 3.0.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 4.0.3 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ## 2 Compile the source code
