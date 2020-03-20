@@ -10,6 +10,7 @@ weight: 72
 - [Homepage facets](#homepage-facets)
 - [Search results page pinned facets](#search-results-page-pinned-facets)
 - [Search results page excluded facets](#search-results-page-excluded-facets)
+- [Exclude specific CategorySchemes from the search index](#search-exclude-categoryschemes)
 - [Search result page: number of results per page](#search-result-page-number-of-results-per-page)
 - [Time period boundaries](#time-period-boundaries)
 - [Default time period](#default-time-period)
@@ -105,12 +106,33 @@ Facets are **localised**, thus you must add the translated name of the excluded 
     "search": {
         "excludedFacetIds": ["survey","sondage"]
     }
-```
+```   
+
+---
+
+### Search: exclude categoryschemes
+> Available since [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020).  
+
+Exclude some specific CategorySchemes from the search index (**by ID**). Browsing and free-text search will not return related dataflows when related Categories are used as search/browsing criteria.  
+**Note:** Always all dataflows categorised in Categories of the CategoryScheme(s) defined for indexing of the data source will be indexed, see documentation: [What is indexed?](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed). If those dataflows are also categorised in other CategorySchemes not useful for the Data Explorer than those CategorySchemes can be completely excluded from the search index and thus be hidden in the Data Explorer.  
+
+* in source code of dotstatsuite-sdmx-faceted-search `src/server/params/default.js`
+
+```json
+    module.exports = {
+        ...
+        excludedCategorySchemeFacets: ["categoryschemeID"],
+        ...
+    };
+```  
+
+**Note:** This configuration is tenant-independent and thus applied to all tenants of an instance. It is currently configured within the source code. Implementers who wish to modify this setting, need to maintain their own source code branch or inject this setting before building the application.    
+
 
 ---
 
 ### Search result page: number of results per page
-Define the number of results displayed per page in the search result pages.<br>
+Define the number of results displayed per page in the search result pages.  
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
