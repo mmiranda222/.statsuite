@@ -35,12 +35,12 @@ includes:
 |**BRANDING**|  |  |
 | DATA EXPLORER|Setting paramaters|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/oecd/data-explorer/settings.json)|
 | DATA VIEWER|Setting paramaters|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/master/data/prod/configs/oecd/data-viewer/settings.json)|
-| DATA LIFECYCLE|Setting paramaters|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/settings.json)|
+| DATA LIFECYCLE MANAGER|Setting paramaters|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/settings.json)|
 |**LOCALISATION**|  |  |
 | DATA EXPLORER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/oecd/data-explorer/i18n/en.json)|
 | DATA VIEWER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/develop/data/dev/configs/oecd/data-viewer/i18n)|
-| DATA LIFECYCLE|DLM messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/i18n/en.json)|
-| BACKEND Services|Common configuration|[localization.json]https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/blob/develop/DotStat.Config/config/localization.json)|
+| DATA LIFECYCLE MANAGER|DLM messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/i18n/en.json)|
+| .Net Services|Common configuration|[localization.json]https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/blob/develop/DotStat.Config/config/localization.json)|
 |**FEATURES**|  |  |
 | DATA VIEWER|Data viewer settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/prod/configs/oecd/data-viewer/settings.json)|
-| DATA LIFECYCLE|DLM settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/prod/configs/oecd/data-lifecycle-manager/settings.json)|
+| DATA LIFECYCLE MANAGER|DLM settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/prod/configs/oecd/data-lifecycle-manager/settings.json)|
