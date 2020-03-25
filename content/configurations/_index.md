@@ -30,7 +30,7 @@ includes:
 | |Database connection string|[settings.private.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/blob/develop/DotStatServices.AuthorizationManagement/config/settings.private.json.sample)|
 | |Authorisation config|[auth.private.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/blob/develop/DotStatServices.AuthorizationManagement/config/auth.private.json.sample)|
 | |Log files definition|[log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/blob/develop/DotStatServices.AuthorizationManagement/config/log4net.config)|
-| SDMX Service (also named SDMX-RI NSI web service © Eurostat)|| |
+| SDMX Service (SDMX-RI NSI web service © Eurostat)|| |
 | |Log files definition|[log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/develop/config/log4net.config)|
 |**BRANDING**|  |  |
 | DATA EXPLORER|Setting paramaters|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/oecd/data-explorer/settings.json)|
@@ -40,7 +40,7 @@ includes:
 | DATA EXPLORER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/oecd/data-explorer/i18n/en.json)|
 | DATA VIEWER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/develop/data/dev/configs/oecd/data-viewer/i18n)|
 | DATA LIFECYCLE MANAGER|DLM messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/i18n/en.json)|
-| .Net Services|Common configuration|[localization.json]https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/blob/develop/DotStat.Config/config/localization.json)|
+| .Net Services|Common configuration|[localization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/blob/develop/DotStat.Config/config/localization.json)|
 |**FEATURES**|  |  |
 | DATA VIEWER|Data viewer settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/prod/configs/oecd/data-viewer/settings.json)|
 | DATA LIFECYCLE MANAGER|DLM settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/prod/configs/oecd/data-lifecycle-manager/settings.json)|
