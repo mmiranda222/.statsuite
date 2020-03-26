@@ -38,7 +38,7 @@ includes:
 | DATA LIFECYCLE MANAGER|Setting paramaters|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/settings.json)|
 |**LOCALISATION**|  |  |
 | DATA EXPLORER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/oecd/data-explorer/i18n/en.json)|
-| DATA VIEWER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/develop/data/dev/configs/oecd/data-viewer/i18n)|
+| DATA VIEWER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-viewer/i18n/en.json)|
 | DATA LIFECYCLE MANAGER|DLM messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/i18n/en.json)|
 | .Net Services|Common configuration|[localization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/blob/develop/DotStat.Config/config/localization.json)|
 |**FEATURES**|  |  |
