@@ -41,9 +41,9 @@ includes:
 
 |**LOCALISATION**|  |  |
 |---|---|---|
-| DATA EXPLORER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/oecd/data-explorer/i18n/en.json)|
-| DATA VIEWER|DE messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-viewer/i18n/en.json)|
-| DATA LIFECYCLE MANAGER|DLM messages (a file for each language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/i18n/en.json)|
+| DATA EXPLORER|DE messages (one file per language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/oecd/data-explorer/i18n/en.json)|
+| DATA VIEWER|DE messages (one file per language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-viewer/i18n/en.json)|
+| DATA LIFECYCLE MANAGER|DLM messages (one file per language)|[i18n/en.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-lifecycle-manager/i18n/en.json)|
 | .NET Services|Common configuration|[localization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/blob/develop/DotStat.Config/config/localization.json)|
 
 |**FEATURES**|  |  |
