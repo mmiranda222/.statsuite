@@ -2,10 +2,9 @@
 
 1. define a scope about issues ([board](https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript)) to include in the release in order to define next semver (major, minor, patch)
 1. identify service/app to release (see template for the list)
-1. define a semver compliant with changes of 1. and upper than all underlying releases from service/app scoped in 2.
+1. define a semver compliant with changes of 1. and upper than all underlying releases from all service/app (see template for the list).
 1. create a **milestone** at [.stat-suite level](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones) following the name convention: `dotstatsuiteJS@v<semver>`
 1. assign [issues](https://gitlab.com/groups/sis-cc/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=s%3A%3Arelease) to the milestone
-1. identify service/app to release and update the milestone description (see template for the list)
 1. for each service/app:
     1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
     1. create a release branch based on this commit following the name convention: `release-v<semver>`
