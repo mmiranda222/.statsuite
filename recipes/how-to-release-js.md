@@ -1,6 +1,6 @@
 # how to release (JS)
 
-1. have a look to issues to include in the release to define next semver ([board](https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript))
+1. define a scope about issues to include in the release in order to define next semver ([board](https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript))
 1. identify service/app to release (see template for the list)
 1. define a semver compliant with changes of 1. and upper than all underlying releases
 1. create a **milestone** at [.stat-suite level](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones) following the name convention: `dotstatsuiteJS@v<semver>`
