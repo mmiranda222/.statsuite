@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 27, 2020](#march-27-2020)
 - [March 05, 2020](#march-05-2020)
 - [February 28, 2020](#february-28-2020)
 - [February 17, 2020](#february-17-2020)
@@ -36,9 +37,28 @@ ToC
 - [Release 10.07.2018](#release-10072018)
  -->
 
+### March 27, 2020
+**[Release .Stat Suite JS 4.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/15)**
+> This new release includes a new minor version of the .Stat Suite **data-explorer**, **config** and **data-lifecycle-manager** services.  
+This release has been tested and is running with the **NSI WebService v7.11.1**.  
+Both **source-code** and **Docker images** are concerned by this release.   
+
+minor changes:
+
+- [dotstatsuite-data-explorer#210](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/210) **RTL mode** xlsx-populate, this allowing to programmatically switching the layout of a downloaded Excel data table between left-to-right and right-to-left.
+
+patches:
+
+- [dotstatsuite-data-explorer#240](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/240) Broken **RTL style** table.
+- [dotstatsuite-data-explorer#255](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/255) Empty filters in the .Stat DE visualisation page.
+- [dotstatsuite-data-lifecycle-manager#123](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/123) **.Stat DLM** Preview icon is displayed even if a DE Url is not provided.
+- [dotstatsuite-data-lifecycle-manager#124](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/124) **.Stat DLM** unauthenticated requests.
+
+---
+
 ### March 05, 2020
 **[Release .Stat Suite JS 4.0.1](https://gitlab.com/groups/sis-cc/-/milestones/4?milestone%5Btitle%5D=Release+.stat+suite+JS+v4.0.1)**  
-> This new release includes a new minor version of the .Stat Suite **sdmx-faceted-search**, **config** and **data-explorer** services.  
+> This new release includes a new patch version of the .Stat Suite **sdmx-faceted-search**, **config** and **data-explorer** services.  
 This release has been tested and is running with the **NSI WebService v7.11.1**.  
 Both **source-code** and **Docker images** are concerned by this release.  
 
