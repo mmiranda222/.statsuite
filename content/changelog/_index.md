@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 29, 2020](#march-29-2020)
 - [March 27, 2020](#march-27-2020)
 - [March 05, 2020](#march-05-2020)
 - [February 28, 2020](#february-28-2020)
@@ -36,6 +37,31 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### March 29, 2020
+**[Release .Stat Suite .NET 3.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/13)**
+> This new release includes a new minor version of the .Stat Suite **core-sdmxri-nsi-ws** and **core-sdmxri-nsi-plugin** services.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+> **DISCLAIMER**: This release includes an unofficial **nsiws.net v7.11.3-hotfix** version of NSI webservice, until the resolution of Eurostat's *SDMXRI-1315* issue is made available in the next NSIWS v7.11.5 (see [details](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/CHANGELOG_NSIWS.md#nsiwsnet-v7113-hotfix-2020-03-25-by-oecd-msdb-v68-authdb-v10)).
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/34) Deploy **NSI version 7.11.3** (incl. 7.11.2) in DevOps.
+- [dotstatsuite-core-sdmxri-nsi-ws#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/28) Implement partial CategorySchemes through **detail=referencepartial** parameter.
+- [dotstatsuite-core-sdmxri-nsi-ws#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/23) ShowPII set to True in NSI OpenId Middleware.
+- [dotstatsuite-core-sdmxri-nsi-plugin#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/34) Add commit hash in /health.
+- [dotstatsuite-core-sdmxri-nsi-ws#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/32) *(Refactoring)* Change default logging level to WARN.
+- [dotstatsuite-core-sdmxri-nsi-ws#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/25) *(Refactoring)* Make mapping.store `InsertNewItems` parameter configurable for one specific NSI instance.
+
+patches:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#42](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/42) Apply **hotfix** on NSI WS version 7.11.3. See [documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/CHANGELOG_NSIWS.md#nsiwsnet-v7113-hotfix-2020-03-25-by-oecd-msdb-v68-authdb-v10).
+- [dotstatsuite-core-sdmxri-nsi-ws#30](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/30) .Stat DLM filter by types does not always return the expected list of artifacts (**Note** that an knwon issue on JavaScript side still causes a failure for the DLM end-user: [dotstatsuite-data-lifecycle-manager#121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/121)).
+- [dotstatsuite-core-sdmxri-nsi-ws#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/21) Not possible to update labels/annotations in the artifacts that are referenced by other artifacts.
+- [dotstatsuite-core-sdmxri-nsi-plugin#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/45) Data query response wrongly contains time periods that should be excluded when applying Allowed Content Constraint with `TimeRange`.
+
+---
 
 ### March 27, 2020
 **[Release .Stat Suite JS 4.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/15)**
