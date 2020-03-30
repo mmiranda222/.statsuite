@@ -9,7 +9,9 @@ weight: 245
 >Released in [January 28, 2020 Release .Stat Suite .NET v2.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-28-2020)
 
 You can specify, at the Dataflow Structure Definition (DSD) level, to allow uploading data with **long textual attribute values**.  
-By default, the maximum length for textual attribute values is set to **150**. In order to extend this limit, you need to define a SDMX annotation of type **`MAXTEXTATTRIBUTELENGTH`** with a value superior to 150 in the DSD definition.
+By default, the maximum length for textual attribute values is set to **150**. In order to extend this limit, you need to define a SDMX annotation of type **`MAXTEXTATTRIBUTELENGTH`** with a value superior to 150 in the DSD definition.  
+
+NOTE: Once the limit has been extended, it cannot be decreased.
 
 ### Syntax
 Use the following syntax when defining the annotation in the DSD definition:
@@ -18,8 +20,8 @@ Use the following syntax when defining the annotation in the DSD definition:
   <structure:DataStructure id="SPS_ATT_TEST_TFWithNoRelationship_DSD" agencyID="OECD" version="11.1" isFinal="false">  
                  <common:Annotations>  
                      <common:Annotation>  
+                         <common:AnnotationTitle>500</common:AnnotationTitle>  
                          <common:AnnotationType>MAXTEXTATTRIBUTELENGTH</common:AnnotationType>  
-                         <common:AnnotationText xml:lang="en">500</common:AnnotationText>  
                      </common:Annotation>  
                  </common:Annotations>  
                  <common:Name xml:lang="en">Attribute test dsd scenario with TIME_FORMAT attribute relationship on dimensions ETA and SESSO</common:Name>  
