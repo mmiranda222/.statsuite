@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 31, 2020](#march-31-2020)
 - [March 29, 2020](#march-29-2020)
 - [March 27, 2020](#march-27-2020)
 - [March 05, 2020](#march-05-2020)
@@ -37,6 +38,32 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### March 31, 2020
+**[Release .Stat Suite .NET 3.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/14)**
+> This new release includes a new minor version of the .Stat Suite **core-transfer** and **core-data-access** services.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+minor changes:
+
+- [dotstatsuite-core-transfer#91](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/91) *(Refactoring)* Replace usage of AnnotationText by Title in MAXTEXTATTRIBUTELENGTH annotation. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-structure/text-attribute-length/)
+- [dotstatsuite-core-transfer#92](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/92) *(Refactoring)* Refactor actual constraints generation method.
+- [dotstatsuite-core-transfer#80](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/80) *(Refactoring)* Update project with the latest data-access nuget package.
+- [dotstatsuite-core-transfer#77](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/77) *(Refactoring)* Transfer Service should not need write permission on import files.
+- [dotstatsuite-core-transfer#54](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/54) *(DevOps)* Test docker images created in pipelines.
+- [dotstatsuite-core-sdmxri-nsi-plugin#42](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/42) Race condition in plugin.
+- [dotstatsuite-core-transfer#82](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/82) *(Refactoring)* *(Confidential)*
+
+patches:
+
+- [dotstatsuite-core-transfer#88](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/88) Loading PIT data without having done a live load fails.
+- [dotstatsuite-core-transfer#86](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/86) `isInclusive` parameter and `EndPeriod` value in generated actual content constraints.
+- [dotstatsuite-core-transfer#85](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/85) Generated actual content constraints do not take into account empty observation values with existing attributes.
+- [dotstatsuite-core-transfer#76](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/76) Wrong `TimeRange` in actual content constraint if the TIME_PERIOD is not a last dimension in a DSD.
+- [dotstatsuite-core-transfer#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/75) Transfer fails and no email notifications are received.
+- [dotstatsuite-core-transfer#71](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/71) PITController does not work with authentication switched on.
+
+---
 
 ### March 29, 2020
 **[Release .Stat Suite .NET 3.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/13)**
