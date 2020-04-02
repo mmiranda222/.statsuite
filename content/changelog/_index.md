@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 2, 2020](#april-2-2020)
 - [March 31, 2020](#march-31-2020)
 - [March 29, 2020](#march-29-2020)
 - [March 27, 2020](#march-27-2020)
@@ -38,6 +39,22 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### April 2, 2020
+**[Release .Stat Suite JS 4.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/16)**
+> This new release includes a new minor version of the .Stat Suite **sdmx-faceted-search** service.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+patch: 
+
+- [dotstatsuite-sdmx-faceted-search#67](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/67) Use of **`referencepartial` parameter** in dataflow queries for indexing.  
+This fix resolves the issue that caused the .Stat Data Explorer to return all dataflows in all categories.  
+With this solved, dataflows are only retrieved through the CategoryScheme facet value in which they are categorised.  
+This feature needs at least **nsiws.net v7.11.3** to fully function, and nsiws.net v7.11.0 to not break the request.
+
+![DE fixed issue for facet filter](/images/changelog-js4.2.0.png)
+
+---
 
 ### March 31, 2020
 **[Release .Stat Suite .NET 3.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/14)**
