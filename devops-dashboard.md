@@ -94,12 +94,16 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="7">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
-<td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
-<td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
-<td>de-qa-oecd</td>
+<td rowspan="8">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="2">de-qa-oecd</td>
 <td>[website](http://de-qa-oecd.redpelicans.com)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>[health](http://de-qa-oecd.redpelicans.com/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
