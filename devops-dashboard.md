@@ -94,7 +94,7 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="8">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
+<td rowspan="9">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
 <td rowspan="2">qa/develop</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
@@ -107,11 +107,15 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="6">staging/master</td>
-<td rowspan="6">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="6">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
-<td>de-staging-oecd</td>
+<td rowspan="7">staging/master</td>
+<td rowspan="7">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
+<td rowspan="7">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="2">de-staging-oecd</td>
 <td>[website](http://de-staging-oecd.redpelicans.com)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>[health](http://de-staging-oecd.redpelicans.com/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -162,20 +166,28 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="3">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
-<td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
-<td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
-<td>dlm-qa-oecd</td>
+<td rowspan="5">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="2">dlm-qa-oecd</td>
 <td>[website](http://dlm-qa-oecd.redpelicans.com)</td>
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/coverage.svg?style=flat-square)</td>
-<td>dlm-staging-oecd</td>
+<td>[health](http://dlm-qa-oecd.redpelicans.com/healthcheck)</td>
+<td>-</td>
+</tr>
+<tr>
+<td rowspan="3">staging/master</td>
+<td rowspan="3">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/pipeline.svg?style=flat-square)</td>
+<td rowspan="3">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="2">dlm-staging-oecd</td>
 <td>[website](http://dlm-staging-oecd.redpelicans.com)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>[health](http://dlm-staging-oecd.redpelicans.com/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
