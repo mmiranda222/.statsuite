@@ -105,7 +105,7 @@ git clone -b 6.2.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstat
 This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
 
 ```sh 
-git clone -b v1.25.1 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
+git clone -b 1.25.1 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:  
