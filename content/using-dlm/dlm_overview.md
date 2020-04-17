@@ -22,13 +22,16 @@ weight: 230
 The header of the .Stat DLM application is set to be common to all pages. It is composed of:
 * A logo of the organisation;
 * A list of features and buttons for navigating through the pages.  
+
 When the user is on any of the pages of the application, the referred button is inactive (light blue tint).
+
+![dlm overview](/using-dlm/files/dlm-overview-1bis.png)
 
 **Logo**  
 There is a placeholder on the left side for the logo of the organisation *(configurable!)*.  
 
 **Navigation buttons**  
-There is a list of buttons that trigger the navigation through all pages / wizards in the application:
+There is a list of buttons triggering the navigation through all pages of the application:
 * Upload structures
 * Upload data
 * Dump
@@ -36,14 +39,14 @@ There is a list of buttons that trigger the navigation through all pages / wizar
 
 **Features**  
 There is a placeholder on the right side (after the home icon) with:
-* Information about the authenticated user. Once the user is authenticated and accesses the .Stat DLM, the feature automatically displays the first name and last name of the user. The drop-down featrues allows to log out of the DLM.
-* Localisation. It displays the list of available translations of the applciation. The list of available languages is defined during the installation of the application *(configurable!)*.
+* Information about the authenticated user: once the user is authenticated and accesses the .Stat DLM, the feature automatically displays the first name and last name of the user. The drop-down featrues allows to log out of the DLM (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/)).
+* Localisation: it displays the list of available translations of the application. The list of available languages is defined during the installation of the application *(configurable!)*.
 
 ---
 
 ### Business logic of filters
 
-The business logic of the filters "filter by spaces", "filter by external sources" and "filter by types" allows for blank results when no dataspace nor artefact are selected.  
+The business logic of the filters "filter by spaces", "filter by external sources" and "filter by types" allows for blank results when no space, source nor artifact are selected.  
 
 For the cases of internal source (spaces), external sources and types (sdmx artifacts), if nothing is selected from the lists, nothing is returned in the list:  
 * If no source is selected AND no type is selected, then the message is: "Please select at least one source (space or external source) and at least one type of object".
@@ -58,11 +61,11 @@ For the cases of internal source (spaces), external sources and types (sdmx arti
 **spaces** and **external sources**  
 A DLM user is able to manage the information independently in different **data spaces** that can correspond to the different steps of a statistical production process: e.g. Collect, Process (data preparation) and Disseminate.  
 The SDMX artifacts and data are thus manageable independently in the different spaces, in other words, structure and data are managed in only one of the above spaces, while it should be easy for the user to replicate structures in the other spaces.  
-The number of data spaces are not restricted to the use case mentioned above (configurable!). Therefore, it is possible to configure (during the installation of the application) only one or several data spaces with a type "Collect", "Process" or "Disseminate" as well as their naming and colour scheme.  
-When using the DLM, users always need to be very aware about the data space concerned by the managed structures and data. Therefore, a color code is associated to each space, so that each artifact, structure, dataflow and space environment has a unique color identification is all components and views in the DLM.  
-The filter by spaces is a multi-selection filter.  
-**External sources** are configurable (during installation) *SDMX* public endpoints that can also returned lists of available structures and data for consultaiton and reuse, depending of the users' permissions.  
-The filter by external sources behave like the filter by space.
+The number of data spaces is not restricted to the use case mentioned above *(configurable!)*. Therefore, it is possible to configure (during the installation of the application) only one or several data spaces with a type "Collect", "Process" or "Disseminate" as well as their naming and colour scheme.  
+When using the DLM, users always need to be very aware of the data space concerned by the managed structures and data. Therefore, a color code is associated to each space, so that each artifact, structure, dataflow and space environment has a unique color identification in all components or views of the DLM.  
+Note also that the filter by spaces is a multi-selection filter.  
+**External sources** are configurable (during installation) *SDMX* public endpoints that can also return lists of available structures and data for consultation and reuse, depending on the user permissions.  
+The filter by external sources behave like the filter by spaces.
 
 ![dlm overview](/using-dlm/files/dlm-overview-3.png)
 
@@ -75,13 +78,13 @@ All CategorySchemes are listed at the root level of this filter. Only once a Cat
 
 **Owner** and **My artifacts**  
 The **Owner filter** is a hierarchical filter that is *built* by grouping all *SDMX* Agency Schemes (maintenance agencies) into one single tree.  
-Note that each Agency Scheme is a flat list of agencies but the SDMX system can offer a hierarchy of agencies. Therefore, the system offers a hierarchical structure of agencies with the common SDMX root level. This SDMX root level is hidden and not displayed in the filter.  
-The **My artifacts** option, When it is selected, filters the list with all artifacts with a Maintenance Agency of which the user is a member.
+Note that each Agency Scheme is a flat list of agencies, but the *SDMX* system can offer a hierarchy of agencies. Therefore, the system offers a hierarchical structure of agencies with the common SDMX root level. This SDMX root level is hidden and not displayed in the filter.  
+The **"My artifacts"** option, when it is selected, filters the list with all artifacts with a Maintenance Agency of which the user is a member.
 
 ![dlm overview](/using-dlm/files/dlm-overview-5.png)
 
 **Types**  
-A multi-selection filter allows the user to select one or more than one type of *SDMX* artifacts, such as DSD (Data Structure Definition), MSD (Metadata Structure Definition), Dataflow, Metadatflow, ConceptScheme, Codelist or any other potential artifact configured (during the installation) to be returned in the list.  
+A multi-selection filter allows the user to select one or more than one type of *SDMX* artifacts, such as DSD (Data Structure Definition), Dataflow, ConceptScheme, Codelist or any other potential artifact configured (during the installation) to be returned in the list.  
 
 ![dlm overview](/using-dlm/files/dlm-overview-6.png)
 
