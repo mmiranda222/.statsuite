@@ -101,13 +101,13 @@ The user may additionally select the "Only final" option to view only the final 
 ---
 
 ### List of artifacts
-Authenticated DLM users see in the list all SDMX artifacts available in all selected DLM spaces or external sources.  
+Authenticated DLM users see in the list all structural *SDMX* artifacts available in all selected DLM spaces or external sources.  
 
 **Options of display**  
 *  Spotlight: the user can reduce the list of artifacts based on the text he enters in the spotlight box. An additional option of the spotlight allows to apply the text filter to one, several or all of the following: "Label", "Code", "Description".
-When he enters text, it searches for all artefacts Name and Code that contain the entered text. It should act like a simple client-side free text feature.
-* Sorting: user can sort the whole list by "Type", "Label”, "Code", "Version", "Final" or "Owner”. The list is sorted by “Type” and "Name" ascending by default.
-* Pagination: pagination allows for navigating from page to page, and to jump to next, previous, last or first page. the number of results by page is configurable during the set up of the application.
+When he enters some text, it searches for all artifacts "Name" and "Code" that contain the entered text.
+* Sorting: the user can sort the whole list by "Type", "Label”, "Code", "Version", "Final" or "Owner”. The list is sorted by “Type” and "Name" ascending by default.
+* Pagination: pagination allows for navigating from page to page, and to jump to next, previous, last or first page. the number of results by page is configurable during the set up of the application ([documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/)).
 
 ![dlm overview](/using-dlm/files/dlm-overview-8.png)
 
@@ -117,11 +117,11 @@ For each artifact, the following details are shown:
 * Artifact Name (e.g. Health Status) in the first available language
 * Artifact Code (e.g. HEALTH_STAT)
 * Artifact version (e.g. 1.0, 0.2, 1.0.3)
-* Final (this information is a Yes/No value, with a *tick* icon is Yes)
+* Final (this information is a Yes/No value, with a *tick* icon if Yes)
 * Owner: Maintenance agency of the artifact
-* Action: hamburger menu button that offers a contextual action list to perform on an object of the list
+* Action: hamburger menu button that offers a contextual action list to perform on an object of the list (see related documentation for actions such as transfer, export and delete)
 
-For Dataflows ONLY, The user can view the additional information:
+For Dataflows ONLY, The user can view the following additional information:
 * Preview: the eye icon opens the data table preview of a dataflow in a new tab of the application (using the Data Explorer data view)
 * Categories with information about thematic categorisation. Note that a Dataflow can be categorised into one or more Categories
 * Number of observation values
