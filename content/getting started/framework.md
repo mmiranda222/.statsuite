@@ -11,6 +11,10 @@ weight: 32
 - [.Stat Data Explorer module](#stat-data-explorer-module)
 - [.Stat Data Lifecycle Manager module](#stat-data-lifecycle-manager-module)
 - [.Stat Core module](#stat-core-module)
+- [DevOps implementation](#devops-implementation)
+- [Component list and dependency matrix](#component-list-and-dependency-matrix)
+- [Contributing to an open source repository](#contributing-to-an-open-source-repository)
+
 
 ## Introduction
 The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
@@ -592,6 +596,11 @@ This library is used for shared code in the .Stat Core components. These inlude 
 ## DevOps implementation
 
 See: [.Stat DevOps implementation](/getting-started/devops) 
+
+
+## Component list and dependency matrix
+
+[FlowMatrixInfo__1_.xlsx](/uploads/27643af0f690545d46d897fe1935d8a1/FlowMatrixInfo__1_.xlsx)
 
 ---
 
