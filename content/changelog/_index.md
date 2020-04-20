@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 20, 2020](#april-20-2020)
 - [April 2, 2020](#april-2-2020)
 - [March 31, 2020](#march-31-2020)
 - [March 29, 2020](#march-29-2020)
@@ -39,6 +40,28 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### April 20, 2020
+**[Release .Stat Suite .NET 3.5.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/17)**
+> This new release includes a new minor version of the **transfer** and **auth-management** services.  
+Both **source-code** and **Docker images** are concerned by this release.  
+
+minor changes:
+
+- [dotstatsuite-core-transfer#65](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/65) Add API feature to cleanup the Data DB when a DSD was deleted.
+- [dotstatsuite-core-transfer#62](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/62) Add source file path/name to notification message content sent to user via e-mail.
+- [dotstatsuite-core-transfer#97](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/97) *(Refactoring)* Increase Transfer response consistency by applying `lowerCamelCase` across all messages.
+- [dotstatsuite-core-transfer#84](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/84) *(Refactoring)* Actual Content Constraint with `ReleaseVersion=PointInTime` generated during the first data upload.
+- [dotstatsuite-core-auth-management#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/13) *(Confidential)*
+- [dotstatsuite-core-transfer#58](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/58) *(Documentation)* Improved documentation for Restoration service (see in [README.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/master/README.md#new-methods) file).
+- [dotstatsuite-core-common#103](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/issues/103) *(Documentation)* Add a [README](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/blob/develop/README.md) explaining the purpose of the repository.
+
+patches:
+
+- [dotstatsuite-core-transfer#3](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/3) Not possibe to upload data after the DSD is re-uploaded with a different structure (this is resolved by implementing [dotstatsuite-core-transfer#65](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/65)).
+- [dotstatsuite-core-transfer#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/47) Wrong row id in the data transfer error log.
+
+---
 
 ### April 2, 2020
 **[Release .Stat Suite JS 4.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/16)**
