@@ -39,12 +39,11 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
 - **Microsoft .NET**    
-    - Microsoft .NET Core Runtime - 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-    - Microsoft .NET Core 2.2.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/2.2) 
-    - Microsoft .NET Core SDK 2.2.\* [download](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-    - Microsoft .NET Framework 4.5.\* [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
     - Microsoft .NET Core Runtime - 3.1.\* [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-    - Visual studio 2019 is needed to compile solutions with .net core 3.1 (NSI webservice, maapi.net, NSI plugin)
+    - Microsoft .NET Core 3.1.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/3.1) 
+    - Microsoft .NET Core SDK 3.1.\* [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+    - Microsoft .NET Framework 4.5.\* [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
+    - Visual studio 2019 is needed to compile solutions with .net core 3.1
 
 - **IIS Web server**  
     - IIS server 7.5 or later  
