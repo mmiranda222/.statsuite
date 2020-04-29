@@ -17,9 +17,9 @@ weight: 38
     - Not all columnstore features are available in express and standard editions of MS SQL for versions older than 2017
     - SQL server 2016 contains columnstore features only on enterprise edition. 
 - **IIS Web server 7\.5** or higher
-- **Microsoft .NET**
+- **Microsoft .NET Core 3\.1**
 - **Microsoft SQL server management studio** (Optional)
-- **Visual Studio 2017**.-Used only for compiling the solutions when doing a source code installation.
+- **Visual Studio 2019**.-Used only for compiling the solutions when doing a source code installation.
 
 **Hardware requirements**  
 Although the requirements could vary depending on the size of your data and the amount of users, for an installation of one **.Stat Core Data Store** (*[See sample topology](/install-source-code/source-code/#example-topologies)*), we suggest as a minimum the following requirements:  
