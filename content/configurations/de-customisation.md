@@ -76,26 +76,36 @@ Define your website name and logo.<br>
 ### Homepage background image
 > **Prerequisite**: you need basic `HTML` and `CSS` knowledge before going further.  
 
-**Go to** your Data Explorer homepage > right-click and select Inspect (Ctrl+Shift+I).  
-**Find and copy** from the Elements the name of the class corresponding to the background body.  
-
-![DE Inspect](/images/de-background01.png)
+> **Disclaimer**: Since release of [MMMMMMMM DD, 2020 Release .Stat Suite JS X.X.X.](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmm-dd-2020), the **class** object to overide the default background is replaced by a **unique ID** called **ID_HOME_PAGE**.
 
 **Go to** `dotstatsuite/data/<env>/configs/assets/<tenant>/data-explorer/styles/styles.css`.  
 
-**Add** a new entry in the file in order to overide the default background. Paste the copied class and add the url of a publicly available image, or the path of an image stored in `/assets/<tenant>/data-explorer/images`:  
+**Add** a new entry called `#id_home_page` in the file in order to overide the default background.  
+Add the url of a publicly available image, or the path of an image stored in `/assets/<tenant>/data-explorer/images`:  
 
 ```CSS
-.css-xn1wur {
- background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_3082832_1280.jpg');
+#id_home_page {
+ background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg');
  }
 ```
 
-![DE new background](/images/de-background02.png)  
+![DE new background](/images/de-background.png)  
 
 
 **Notes:**  
-* The class name is likely to change from time to time in the source code, depending on the version of the Data Explorer components, and you will thus need to update your configuration accordingly. 
+* Unique IDs are created for each of the Data Explorer page containers (background layers), but it does not imply all components of a page:
+```CSS
+// HOME PAGE
+ID_HOME_PAGE = 'id_home_page';
+// ERROR PAGE
+ID_ERROR_PAGE = 'id_error_page';
+// SEARCH PAGE
+ID_SEARCH_PAGE = 'id_search_page';
+// VIS PAGE
+ID_VIS_PAGE = 'id_vis_page';
+// AUTH PAGE
+ID_AUTH_PAGE = 'id_auth_page';
+```
 * Some additional CSS properties can be required in order to correctly display the background in a responsive and adaptive mode depending on the original size of your image. 
 
 ---
