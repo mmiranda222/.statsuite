@@ -25,7 +25,7 @@ Also, theming the Data Explorer is largely flexible (see our documentation [here
 
 ### Header
 The Data Explorer header is common to all pages of the application, and consists of:
-* a static logo ([configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
+* a static logo ([*configurable*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
 * a link to log in the application;
 * a multilangual switch option.
 
@@ -63,7 +63,7 @@ The behavior of switching language will change depending on the page where langu
 
 ### Footer
 The Data Explorer footer is common to all pages of the application, and consists of:
-* a static logo ([configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
+* a static logo ([*configurable*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
 * two (left and right) placeholders for localised text and hyperlink.
 
 ![DE Footer](/images/de-footer.png)
