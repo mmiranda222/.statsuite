@@ -126,22 +126,22 @@
 <tr>
 <td>de-staging-abs</td>
 <td>[website](http://de-staging-abs.redpelicans.com)</td>
-<td>only de</td>
+<td></td>
 </tr>
 <tr>
 <td>de-staging-astat</td>
 <td>[website](http://de-staging-astat.redpelicans.com)</td>
-<td>only de (on OECDCS1 of SIS-CC-stable)</td>
+<td></td>
 </tr>
 <tr>
 <td>de-staging-statec</td>
 <td>[website](http://de-staging-statec.redpelicans.com)</td>
-<td>only de (on OECDCS1 of SIS-CC-stable)</td>
+<td></td>
 </tr>
 <tr>
 <td>de-staging-statsnz</td>
 <td>[website](http://de-staging-statsnz.redpelicans.com)</td>
-<td>only de (on OECDCS1 of SIS-CC-stable)</td>
+<td></td>
 </tr>
 <tr>
 <td rowspan="3">[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)</td>
