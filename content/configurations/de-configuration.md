@@ -14,6 +14,7 @@ weight: 72
 - [Search result page: number of results per page](#search-result-page-number-of-results-per-page)
 - [Time period boundaries](#time-period-boundaries)
 - [Default time period](#default-time-period)
+- [LastNObservations support](lastnobservations-support)
 - [Maximum number of observations in tables and charts](#maximum-number-of-observations-in-tables-and-charts)
 - [Maximum number of cells in table](#maximum-number-of-cells-in-table)
 - [Preferred scale attribute](#preferred-scale-attribute)
@@ -173,6 +174,26 @@ Define the default time period selection of the visualisation page views, accord
 ```
 
 ![Time period default range](/images/faq-period-default.png)
+
+---
+
+### LastNObservations support
+>Released in [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)
+
+Define, **per datasource**, the support of the `LastNObservations` features from your SDMX web service.  
+
+in `dotstatsuite/data/<env>/configs/<tenant>/datasources.json`
+
+```json
+{
+  "prod:[ORG]-[stable]": {
+       "hasLastNObservations": true,
+ },
+ ```
+When set to `true`, then the **LastNPeriod** feature is displayed in the DataExplorer visualisation page (under the Time Period & Frequency filter). See the functional specifications of the feature described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#last-n-periods). 
+The feature is set to `false` by default.
+
+![Time period default range](/images/lastnobs-config.png)
 
 ---
 
