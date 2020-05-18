@@ -28,31 +28,82 @@ These customisations can be performed by Administrators with access to the .Stat
 ---
 
 ### Main Theme
-It is possible to change the default layout theme of the application, including four properties.  
+>The format and default theme was changed with the release [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)  
+
+It is possible to **override** the default **layout theme** of the application.  
 You can add new entries in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json` and it will replace the default customisation.  
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
-* "theme":"layout" corresponds to the homepage background color and default font
-* "theme":"searchHeader" corresponds to colored header banner of the search and visualisation pages
-* "theme":"splash" corresponds to the text color under the homepage splash logo
-* "theme":"searchDataflow" corresponds to the text color of Dataflow titles in the list of the search result page
-
 ```json
-    "theme":  {
-        "layout": {
-            "fontFamily": "Arial, 'sans-serif'",
-            "background": "#c5e0dc"
+{
+    overrides: {
+      MuiButton: {
+        root: {
+          textTransform: 'none',
         },
-        "searchHeader": {
-            "background": "#c5e0dc"
+      },
+    },
+    palette: {
+      action: {
+        active: 'rgba(14, 144, 144, 0.54)',
+        selected: 'rgba(14, 144, 224, 0.25)',
+        hover: 'rgba(14, 144, 224, 0.13)',
+      },
+      primary: {
+        main: '#0965c1',
+        light: '#0e90e0',
+        dark: '#0549ab',
+      },
+      secondary: {
+        main: '#e3e9ed',
+        light: '#f5f8fa',
+        dark: '#ebf1f5',
+      },
+      tertiary: {
+        light: '#e2f2fb',
+        dark: '#b7def6',
+      },
+      button: {
+        mainOpacity: 'rgba(0, 0, 0, 0.2)',
+      },
+      highlight: {
+        hl1: #f7a42c, // highlight1
+        hl2: #8CC841 , // highlight2
+      },
+      grey: {
+        200: '#F3F7FB',
+        300: '#cccccc',
+        700: '#666666',
+        A700: '#182026',
+      },
+    },
+    mixins: {
+      dataflow: {
+        fontWeight: 400,
+        fontFamily: "'Roboto Slab', serif",
+      },
+      scopeList: {
+        fontWeight: 700,
+        fontFamily: "'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+      },
+      excel: {
+        headerFont: '#ffffff',
+        sectionFont: '#000000',
+        rowFont: '#000000',
+      },
+      sisccButton: {
+        '&:hover': {
+          backgroundColor: #f7a42c, // hightlight1
         },
-        "splash": {
-            "color": "black"
-        },
-        "searchDataflow": {
-            "colorTitle": "#0088cc !important"
-        }
-      }
+      },
+    },
+    typography: {
+      fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      h6: {
+        fontSize: ' 1.0625rem',
+      },
+    },
+  }
 ```
 
 ---
