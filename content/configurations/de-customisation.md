@@ -127,7 +127,7 @@ Define your website name and logo.<br>
 ### Homepage background image
 > **Prerequisite**: you need basic `HTML` and `CSS` knowledge before going further.  
 
-> **Disclaimer**: Since release of [MMMMMMMM DD, 2020 Release .Stat Suite JS X.X.X.](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmm-dd-2020), the **class** object to overide the default background is replaced by a **unique ID** called **ID_HOME_PAGE**.
+> **Disclaimer**: Since release of [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020), the **class** object to overide the default background is replaced by a **unique ID** called **ID_HOME_PAGE**.
 
 **Go to** `dotstatsuite/data/<env>/configs/assets/<tenant>/data-explorer/styles/styles.css`.  
 
