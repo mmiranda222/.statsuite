@@ -14,7 +14,7 @@ weight: 72
 - [Search result page: number of results per page](#search-result-page-number-of-results-per-page)
 - [Time period boundaries](#time-period-boundaries)
 - [Default time period](#default-time-period)
-- [LastNObservations support](lastnobservations-support)
+- [LastNObservations support](#lastnobservations-support)
 - [Maximum number of observations in tables and charts](#maximum-number-of-observations-in-tables-and-charts)
 - [Maximum number of cells in table](#maximum-number-of-cells-in-table)
 - [Preferred scale attribute](#preferred-scale-attribute)
