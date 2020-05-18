@@ -34,7 +34,7 @@ It is possible to **override** the default **layout theme** of the application.
 You can add new entries in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json` and it will replace the default customisation.  
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
-```json
+```css
 {
     overrides: {
       MuiButton: {
