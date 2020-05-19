@@ -60,8 +60,8 @@ major changes:
 
 minor changes:
 
-- [dotstatsuite-data-explorer#117](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/117) DE data views: Limit the displayed filter values according to the current **data availability**. [Documentation](LINK)
-- [dotstatsuite-data-explorer#113](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/113) Full **Unit of measure** display in data table views. [Documentation](LINK)
+- [dotstatsuite-data-explorer#117](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/117) DE data views: Limit the displayed filter values according to the current **data availability**. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)
+- [dotstatsuite-data-explorer#113](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/113) Full **Unit of measure** display in data table views. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/)
 - [dotstatsuite-data-explorer#261](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/261) **DE Image background** on March 2020 release. This resulted in improving the customisation method. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#homepage-background-image)
 - [dotstatsuite-data-explorer#82](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/82) Time range selector: current period selected in drop-down but not visible.
 - [dotstatsuite-visions#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/17) DE toolbar with icon loader for the download options.

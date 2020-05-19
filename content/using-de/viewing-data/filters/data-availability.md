@@ -47,7 +47,7 @@ The user can then again uncheck the option "Hide filter items without data" in o
 - The content constraint's *CubeRegion* with property *include="false"* contains dimension values for which no data are available. These dimension values are excluded from the display. **Extreme case**: If for any one of those dimensions all values (as defined in the codelist) are excluded then the whole dataflow has no data (Case 2).
 - Each dimension can only be part of one single *CubeRegion* definition, thus either use *include="true"* or use *include="false"*.  
 - The constraint for TIME_PERIOD dimension range uses the property "isInclusive" and datetime variables, but they are applied on SDMX time periods like "2015" (means whole of year 2015) or "2015-11" (means whole of November of 2015).
-  * "isInclusive":"true" indicates that this value should be the first (or last) datetime valid for the intended range, e.g. when dealing with an annual frequency, then the following syntax means: All time periods that start earliest 1990-01-01T00:00:00Z are included in the range: 1990, 1991, 1992, .... Any time period that starts before is excluded.
+  * **"isInclusive":"true"** indicates that this value should be the first (or last) datetime valid for the intended range, e.g. when dealing with an annual frequency, then the following syntax means: All time periods that start earliest 1990-01-01T00:00:00Z are included in the range: 1990, 1991, 1992, .... Any time period that starts before is excluded.
     ```
     "startPeriod": {
       "period": "1990-01-01T00:00:00Z",
@@ -61,7 +61,7 @@ The user can then again uncheck the option "Hide filter items without data" in o
       "isInclusive": true
     }
     ```
-  * "isInclusive": "false" indicates that this value should be the last (or first) datetime non-valid for the intended range, e.g. the following syntax means: All time periods that start later than 1989-12-31T23:59:59Z are included in the range: 1990, 1991, 1992, .... Any time period that starts before or exactly at that datetime is excluded
+  * **"isInclusive": "false"** indicates that this value should be the last (or first) datetime non-valid for the intended range, e.g. the following syntax means: All time periods that start later than 1989-12-31T23:59:59Z are included in the range: 1990, 1991, 1992, .... Any time period that starts before or exactly at that datetime is excluded
     ```
     "startPeriod": {
       "period": "1989-12-31T23:59:59Z",

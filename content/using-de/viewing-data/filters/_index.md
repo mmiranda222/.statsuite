@@ -11,7 +11,6 @@ weight: 2100
 - [Frequency and Time Period](#frequency-and-time-period)
 - [Last N Periods](#last-n-periods)
 - [Spotlight](#spotlight)
-- [Data availability](#data-availability)
 - [Used filters](#used-filters)
 
 *under construction...*
