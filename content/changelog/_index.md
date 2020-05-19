@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 18, 2020](#may-18-2020)
 - [April 20, 2020](#april-20-2020)
 - [April 2, 2020](#april-2-2020)
 - [March 31, 2020](#march-31-2020)
@@ -40,6 +41,60 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### May 18, 2020
+**[Release .Stat Suite .JS 5.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/18)**
+> This new release includes a new major version of the **data-explorer**, **data-viewer**, **sdmx-faceted-search** and **data-lifecycle-manager** services.  
+
+> This version **does not** introduce backward incompatibility, but it brings **significant changes** in the `css API` and DE design.  
+**WARNING**: this release changes and extends how the Data Explorer **Theme** is customised and will result in your custom styles being lost (if you previously modified the default one). Please see [this updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#main-theme) for how to reapply your styles.  
+
+> Both **source-code** and **Docker images** are concerned by this release.  
+
+major changes:
+
+- [dotstatsuite-data-explorer#263](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/263) Adjust some UI design in Data Explorer (**Material UI v4** migration).
+- [dotstatsuite-data-explorer#245](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/245) Data-explorer Visions component's integration (part of MUI v4 migration).
+- [dotstatsuite-data-explorer#150](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/150) Apply **new Design to DE** (based on usability tests performed across the SIS-CCommunity). See the [UI reference documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#user-interface-design).
+- [dotstatsuite-data-explorer#264](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/264) **Last N periods** feature display should be **configurable**. This new configuration parameter allows, **per datasource**, to hide or display the LastNperiod feature of the application (from the filter area of the visualisation page). [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#lastnobservations-support)
+
+minor changes:
+
+- [dotstatsuite-data-explorer#117](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/117) DE data views: Limit the displayed filter values according to the current **data availability**. [Documentation](LINK)
+- [dotstatsuite-data-explorer#113](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/113) Full **Unit of measure** display in data table views. [Documentation](LINK)
+- [dotstatsuite-data-explorer#261](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/261) **DE Image background** on March 2020 release. This resulted in improving the customisation method. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#homepage-background-image)
+- [dotstatsuite-data-explorer#82](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/82) Time range selector: current period selected in drop-down but not visible.
+- [dotstatsuite-visions#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/17) DE toolbar with icon loader for the download options.
+- [dotstatsuite-data-explorer#281](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/281) **Efficient** handling of **big codelists** in DE search results facets and visualisation page filters.
+- [dotstatsuite-data-explorer#160](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/160) Add support of **Khmer** language in DE.
+- [dotstatsuite-data-explorer#251](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/251) and [dotstatsuite-data-explorer#254](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/254) Add support of **Dutch** language in DE and DLM.
+- [dotstatsuite-data-explorer#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/75) More clearly indicate the "Filter by" features in the facets of the search and the filters in the visualisation.
+- [dotstatsuite-data-explorer#259](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/259) Healthcheck in DE.
+- [dotstatsuite-data-explorer#300](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/300) Inconsistent behavior of ascending/descending custom option for time period table view.
+- [dotstatsuite-data-explorer#277](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/277) Update labels according to new design, and aligning all supported localised version of the DE.
+- [dotstatsuite-sdmx-faceted-search#63](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/63) Handling **facet names in solr containing special characters**.
+- [dotstatsuite-chart-generator-legacy#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/4) Add time period to data tooltip.
+- [dotstatsuite-visions#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/13) *(Refactoring)* Final migration to **Material UI** v4.
+- [dotstatsuite-data-viewer#16](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/16) Viewer table updates as part of the Material UI migration.
+- [dotstatsuite-data-lifecycle-manager#117](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/117) *(Refactoring)* Remove feature and usage of external spaces by ID in transfer service.
+- [dotstatsuite-data-explorer#273](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/273) *(Refactoring)* Lint Data-explorer.
+- [dotstatsuite-visions#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/12) *(Refactoring)* Backport allow configuring icons associated to facet values into Visions.
+- [dotstatsuite-docker-compose#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/2) JS Docker-Compose uses config URLs that will not work.
+
+patches:
+
+- [dotstatsuite-data-explorer#246](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/246) Filtered CSV download must not be restricted by http range header.
+- [dotstatsuite-data-explorer#262](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/262) No reaction on Excel download.
+- [dotstatsuite-data-explorer#268](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/268) Time Zone: invalid time period boundaries.
+- [dotstatsuite-data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/294) Full page error on search in filter in table view.
+- [dotstatsuite-data-explorer#274](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/274) Reapply the behaviour of the `DEFAULT` filter selections by also applying items from search (*part 1: use of search facet selections*).
+- [dotstatsuite-data-explorer#279](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/279) Table cell limit warning continues to be shown while refreshing the table even for a different dataflow.
+- [dotstatsuite-data-explorer#284](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/284) Error in DE on Entering Table/Chart View *"Whoops something went wrong on our end"*.
+- [dotstatsuite-data-lifecycle-manage#121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/121) **DLM filter** by `AgencyScheme` or by `Categorisation` does not return any result.
+- [dotstatsuite-data-lifecycle-manager#84](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/84) Display the **correct message in the DLM** after a data upload if any issue.
+- [dotstatsuite-data-explorer#298](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/298) Wrong frequency when visiting table view is permanent.
+
+---
 
 ### April 20, 2020
 **[Release .Stat Suite .NET 3.5.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/17)**
