@@ -43,7 +43,7 @@ ToC
  -->
 
 ### May 18, 2020
-**[Release .Stat Suite .JS 5.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/18)**
+**[Release .Stat Suite JS 5.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/18)**
 > This new release includes a new major version of the **data-explorer**, **data-viewer**, **sdmx-faceted-search** and **data-lifecycle-manager** services.  
 
 > This version **does not** introduce backward incompatibility, but it brings **significant changes** in the `css API` and DE design.  
