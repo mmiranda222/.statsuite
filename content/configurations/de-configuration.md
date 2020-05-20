@@ -328,7 +328,7 @@ Define the localised thousands and decimals separators of the observation values
         "locales": {
             "en": {
                 "id": "en",
-                "delimiters": { "thousands": "", "decimal": "."  }
+                "delimiters": { "thousands": " ", "decimal": "."  }
             },
         }
     }
