@@ -369,7 +369,7 @@ By default, if no configuration for a given localised format is added, then the 
       },
       "fr": {
         "id": "fr",
-        "delimiters": { "thousands": " ", "decimal": ","  },
+        "delimiters": { "thousands": " ", "decimal": ","  },
         "timeFormat": "MMM YYYY"
       },
 ```
