@@ -39,6 +39,8 @@ The *green* number of **selected values/total of values** is counting values for
 
 ![number of values](/images/time-period-3.png)
 
+---
+
 ### Last N Periods
 >Pre-requisite: This feature is defined by the configuration and must supported by the web service. See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#lastnobservations-support).
 
