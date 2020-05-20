@@ -80,6 +80,7 @@ minor changes:
 - [dotstatsuite-data-explorer#273](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/273) *(Refactoring)* Lint Data-explorer.
 - [dotstatsuite-visions#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/12) *(Refactoring)* Backport allow configuring icons associated to facet values into Visions.
 - [dotstatsuite-docker-compose#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/2) JS Docker-Compose uses config URLs that will not work.
+- [dotstatsuite-data-explorer#306](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/306) Change the default **thousand separator** to non-breaking space. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#localised-observation-values-separators-for-thousands-and-decimals)
 
 patches:
 

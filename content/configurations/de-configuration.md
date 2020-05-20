@@ -321,6 +321,19 @@ Define the localised thousands and decimals separators of the observation values
     }
 ```
 
+> Since the [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020), the default thousand separator is set to non-breaking space for all locales:
+```json
+    "i18n": {
+        "localeId": "en",
+        "locales": {
+            "en": {
+                "id": "en",
+                "delimiters": { "thousands": "", "decimal": "."  }
+            },
+        }
+    }
+```
+
 ---
 
 ### Localised time period values for monthly frequency
