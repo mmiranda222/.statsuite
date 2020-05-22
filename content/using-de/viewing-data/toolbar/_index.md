@@ -18,11 +18,10 @@ weight: 3500
 ![Toolbar](/images/de-toolbar1.png)
 
 ### View type
-On the left side of the toolbar, the user can select to display data in a table view or in chart view.  
+On the left side of the toolbar, the user can select to display data in a **table view** or in **chart view**.  
 The data table view is the default view when the user arrives from a search result.  
 
-Chart types depend on the configuration of the DE instance, or on the type of data (e.g. viewing data in a timeline chart is feasible only with the appropriate time dimension).  
-For more information about charts and chart types, go to [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/).
+Chart types depend on the configuration of the DE instance, or on the type of data (e.g. viewing data in a timeline chart is feasible only with the appropriate time dimension). For more information about charts and chart types, go to [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/).
 
 ![Toolbar](/images/de-toolbar2.png)
 
@@ -31,7 +30,7 @@ The "Labels" option allows to display the information using names, identifiers (
 
 ![Toolbar](/images/de-toolbar3.png)
 
-This option applies to all the table/chart contents, including their header and footer. When the option `Both` is selected, then it shows the Identifer bewteen brakets, then a space, then the name.  
+This option applies to all the table and chart contents, including their header and footer. When the option `Both` is selected, then it shows the Identifer bewteen brakets, then a space, then the name.  
 
 Example with the dimension label `Reference area`:
 * with option **Name**, it displays **`Reference area`**
