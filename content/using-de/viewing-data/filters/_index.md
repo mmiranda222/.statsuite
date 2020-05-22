@@ -12,11 +12,10 @@ weight: 2100
 - [Spotlight](#spotlight)
 - [Used filters](#used-filters)
 
-**General note**: all contents related to the filters area are localised.  
-For more informaiton, check the [general documentation about Languages](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#language).
+**General note**: all content related to the filter area is localised. For more information, go to the [general documentation about Languages](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#language).
 
 ### Multi selection filters
-The visualisation pages for data table/chart views are filtered using the filters on the left side of the page. All filters are mutli-selection filters, except for Frequency (see the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) related to the scecific functional requirements and behaviors of the **Frequency and Time-Period** selectors).  
+The visualisation pages for data table/chart views are dynamically filtered using the filters on the left side of the page. All filters are mutli-selection filters, except for Frequency (see the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) related to the specific functional requirements and behaviors of the **Frequency and Time-Period** selectors).  
 
 ![Multi selection filters](/images/de-filters1.png)
 
