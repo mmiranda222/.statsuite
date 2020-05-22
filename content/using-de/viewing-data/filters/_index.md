@@ -7,9 +7,51 @@ weight: 2100
 ---
 
 #### Table of Content
-- [Multi selection and Scopelist](#multi-selection-and-scopelist)
+- [Multi selection filters](#multi-selection-filters)
+- [Hierarchical contents](#hierarchical-contents)
 - [Spotlight](#spotlight)
 - [Used filters](#used-filters)
 
-*under construction...*
+**General note**: all contents related to the filters area are localised.  
+For more informaiton, check the [general documentation about Languages](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#language).
 
+### Multi selection filters
+The visualisation pages for data table/chart views are filtered using the filters on the left side of the page. All filters are mutli-selection filters, except for Frequency (see the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) related to the scecific functional requirements and behaviors of the **Frequency and Time-Period** selectors).  
+
+![Multi selection filters](/images/de-filters1.png)
+
+All dimensions of a selected data view are returned as filters, and based on data availability (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)).  
+The user can select dimension items, including Frequency and time period ranges, from the list of available filter values to be shown in the data view. Each selection will automatically trigger the update of the data view.  
+If the user has made selection(s) in the previous search result page, or if a default selection is applied from an *SDMX* annotation (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-selection/)), then these selections will appear in the "Used filters" area by default.  
+**Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all were selected.
+
+### Hierarchical contents
+In case of a hierarchy in the dimension items, the filter will display the root parents' list at first. If some of the root parents have children, then by clicking on the arrow right next to a root parent label, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.  
+
+![Hierarchical contents](/images/de-filters2.png)
+
+**Functional behaviors**:
+* When selecting a parent, the selected parent is added to the "Used filters" area and, in the filter, the selected parent is shown with a (light blue) background.
+* Its children are visible only if the user clicks on the arrow placed to the right of the parent label. **Note** that the arrow closed to a parent label can be clicked even if the parent has not been previously selected.
+* Once the arrow is clicked, the children list appears. Above this list, the parent appears (with a blue background if previously selected, or without background if not selected) in a distinct zone separated by a thick light grey line, named "children breadcrumb".
+* Selecting a sub-child will act the same way, but in the "Used filters area" the user will see the selected sub-child item prefixed with `...>` and the details of the parent information is displayed in a tooltip.
+* The "dots" line is also visible in the "children breadcrumb" to allow the user going back to a previous level corresponding to the underlined item. For each item, there is a similar tooltip "Back to this level" meaning that by click, the user goes back to the level of the list where the item belongs.
+
+### Spotlight
+The spotlight filter appears only when the list of items exceed a configurable number (e.g. more than 7 that represents the limit, in default layout, before a scrollbar option is introduced in the filter area).  
+The spotlight filter dinamically reduces the reutrned items when the user types in it.  
+For hierarchical contents, it dinamically acts on all contents at once when using it from the root level, so that it displays the list of results in one single and flat list, regardless their position in the hierarchy, with the information of the root(s) in light grey:
+
+![Spotlight](/images/de-filters3.png)
+
+But, when using spotlight on hierarchical contents from a sub-level, then it will ONLY act on the current node level:
+
+![Spotlight 2](/images/de-filters4.png)
+
+### Used filters
+The "Used filters" area displays all current items selected, per dimension, for a given data view.  
+The top right *green* numering feature counts the total number of selected items for all dimensions.  
+Used filters are ranked and displayed by their types of dimension.  
+Users can unselected one single item, or all items for a given dimension, or finally all selections made by licking on `Clear all filters`.
+
+![Used filters](/images/de-filters5.png)
