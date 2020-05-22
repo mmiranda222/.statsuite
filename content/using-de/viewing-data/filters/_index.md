@@ -25,11 +25,11 @@ If the user has made selection(s) in the previous search result page, or if a de
 **Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all were selected.
 
 ### Hierarchical contents
-In case of a hierarchy in the dimension items, the filter will display the root parents' list at first.
+In case of a hierarchy in the dimension items, the filter will display the root parents' list at first. A blue arrow next to an item and right-aligned will indicate when this item is a parent of sub-item(s).
 
 ![Hierarchical contents](/images/de-filters2.png)
 
-If some of the root parents have children, then by clicking on the arrow right next to a root parent label, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.  
+If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.  
 
 ![Hierarchical contents](/images/de-filters21.png)
 
@@ -41,15 +41,15 @@ If some of the root parents have children, then by clicking on the arrow right n
 * The "dots" line is also visible in the "children breadcrumb" to allow the user going back to a previous level corresponding to the underlined item. For each item, there is a similar tooltip "Back to this level" meaning that by click, the user goes back to the level of the list where the item belongs.
 
 ### Spotlight
-The spotlight filter appears only when the list of items exceed a configurable number (e.g. more than 7 that represents the limit, in default layout, before a scrollbar option is introduced in the filter area).  
-The spotlight filter dinamically reduces the reutrned items when the user types in it.  
-For hierarchical contents, it dinamically acts on all contents at once when using it from the root level, so that it displays the list of results in one single and flat list, regardless their position in the hierarchy, with the information of the root(s) in light grey:
+The spotlight filter appears only when the list of items exceeds a configurable number (e.g. more than 7 that represents the limit, in default layout, before a scrollbar option is introduced in the filter area). The spotlight filter dynamically reduces the returned number items when the user types some text in it.  
 
 ![Spotlight](/images/de-filters3.png)
 
-But, when using spotlight on hierarchical contents from a sub-level, then it will ONLY act on the current node level:
+For hierarchical contents, it dinamically acts on all contents at once when using it from the root level, so that it displays the list of results in one single and flat list, regardless their position in the hierarchy, with the information of the root(s) in light grey:
 
 ![Spotlight 2](/images/de-filters4.png)
+
+But, when using spotlight on hierarchical contents from a sub-level, then it will ONLY act on the current visible level.
 
 ### Used filters
 The "Used filters" area displays all current items selected, per dimension, for a given data view.  
