@@ -22,7 +22,10 @@ The visualisation pages for data table/chart views are dynamically filtered usin
 All dimensions of a selected data view are returned as filters, and based on data availability (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)).  
 The user can select dimension items, including Frequency and time period ranges, from the list of available filter values to be shown in the data view. Each selection will automatically trigger the update of the data view.  
 If the user has made selection(s) in the previous search result page, or if a default selection is applied from an *SDMX* annotation (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-selection/)), then these selections will appear in the "Used filters" area by default.  
-**Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all were selected.
+**Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all were selected.  
+A numbering feature, next to the filter name, indicates for each filter the number of selection per total selectable items(`n/t`).
+
+![Multi selection filters](/images/de-filters12.png)
 
 ### Hierarchical contents
 In case of a hierarchy in the dimension items, the filter will display the root parents' list at first. A blue arrow next to an item and right-aligned will indicate when this item is a parent of sub-item(s).
@@ -52,9 +55,12 @@ For hierarchical contents, it dinamically acts on all contents at once when usin
 But, when using spotlight on hierarchical contents from a sub-level, then it will ONLY act on the current visible level.
 
 ### Used filters
-The "Used filters" area displays all current items selected, per dimension, for a given data view.  
-The top right *green* numering feature counts the total number of selected items for all dimensions.  
-Used filters are ranked and displayed by their types of dimension.  
-Users can unselected one single item, or all items for a given dimension, or finally all selections made by licking on `Clear all filters`.
+The "Used filters" area displays all current selected items, per dimension, for a given data view.  
+The top right *green* numbering feature counts the total number of selected items for all dimensions.  
+Used filters are ranked and displayed by dimension type.  
+Users can unselected:
+* one single item by clicking on the `x` next to the item label, or
+* all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
+* all selections by clicking on `Clear all filters`.
 
 ![Used filters](/images/de-filters5.png)
