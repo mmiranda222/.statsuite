@@ -25,9 +25,13 @@ If the user has made selection(s) in the previous search result page, or if a de
 **Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all were selected.
 
 ### Hierarchical contents
-In case of a hierarchy in the dimension items, the filter will display the root parents' list at first. If some of the root parents have children, then by clicking on the arrow right next to a root parent label, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.  
+In case of a hierarchy in the dimension items, the filter will display the root parents' list at first.
 
 ![Hierarchical contents](/images/de-filters2.png)
+
+If some of the root parents have children, then by clicking on the arrow right next to a root parent label, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.  
+
+![Hierarchical contents](/images/de-filters21.png)
 
 **Functional behaviors**:
 * When selecting a parent, the selected parent is added to the "Used filters" area and, in the filter, the selected parent is shown with a (light blue) background.
