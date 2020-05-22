@@ -23,7 +23,7 @@ All dimensions of a selected data view are returned as filters, and based on dat
 The user can select dimension items, including Frequency and time period ranges, from the list of available filter values to be shown in the data view. Each selection will automatically trigger the update of the data view.  
 If the user has made selection(s) in the previous search result page, or if a default selection is applied from an *SDMX* annotation (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-selection/)), then these selections will appear in the "Used filters" area by default.  
 **Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all were selected.  
-A numbering feature, next to the filter name, indicates for each filter the number of selection per total selectable items(`n/t`).
+A numbering feature, next to the filter name, indicates for each filter the number of selection per total selectable items (`n/t`).
 
 ![Multi selection filters](/images/de-filters12.png)
 
