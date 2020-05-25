@@ -10,7 +10,7 @@ With the DLM, data structures can be deleted separately for each structure objec
 
 ![DLM delete structures](/using-dlm/files/delete_structures.png)  
 
-Data structures can also be deleted directly through the SDMX (NSI) web service API, using the DELETE HTTP verb with the appropriate resource URL. Example of deleting a Codelist:
+Data structures can also be deleted directly through the *SDMX* (NSI) web service API, using the DELETE HTTP verb with the appropriate resource URL. Example of deleting a Codelist:
 
 ```bash
 curl -X DELETE http://nsi-stable-siscc.redpelicans.com/rest/codelist/OECD/COUNTRY/1.0.0
