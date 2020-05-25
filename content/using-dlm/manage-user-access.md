@@ -27,7 +27,7 @@ The basic permissions listed below are permissions associated to a single and sp
 
 #### Combined permissions
 Combined permissions are the combination of several basic permissions.   
-A combination of permissions **must** be a combination of basic permissions as described in the table above.  
+A combination of permissions **must** be a combination of basic permissions as described in the table above, obtained by addition. For example, adding together CanReadStructuralMetadata [1] and CanReadData [2] to get 3, creates a combined permission that has the ability to read both structural metadata and data. 
 Below is a table of the most used combinations, but others are acceptable.  
  
 | **id** | **Permission** | **Definition** |
