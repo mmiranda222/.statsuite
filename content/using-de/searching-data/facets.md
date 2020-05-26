@@ -32,6 +32,8 @@ Dataflows do not have a codelist for the time period dimension (time dimension).
 For practical reasons, the search only allows a filter by **ANNUAL** time periods. All non-annual time periods are converted to annual time period facet values. The time period facet is built as a range facet, because the facet filtering is done through a start year and an end year.  
 **Note** that if a dataflow has no time dimension, then it will also not have values for the time period facet.  
 
+---
+
 ### How facets are used
 #### Home page facets
 The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service.  
