@@ -53,15 +53,19 @@ All requests need a header made of:
 * actions' variables, e.g. depending on the request `&datasourceId&dataflowId`
 
 #### GET search sfs config.
-Example:  <br>
+Example:  
 `GET` `http://sfs-qa-oecd.redpelicans.com/admin/config?api-key=xxx`
 
 ![GET search sfs config](/images/de-index-get-config.png)
 
 This request returns the `sfs` dynamic configuration with full details on configUrl, data source(s), fileds, RedisServer, fields and indexed dataflows.
 
+#### DELETE search sfs config
+Example:  
+`DELETE` `http://sfs-qa-oecd.redpelicans.com/admin/config?api-key=xxx`
+
 #### GET search sfs report
-Example: <br>
+Example:  
 `GET` `http://sfs-qa-oecd.redpelicans.com/admin/report?api-key=xxx`
 
 ![GET search sfs report](/images/de-index-get-report.png)
@@ -69,7 +73,7 @@ Example: <br>
 This request returns the `sfs` in memory loadings statuses.
 
 #### Index all dataflows
-Example: <br>
+Example:  
 `POST` `http://sfs-qa-oecd.redpelicans.com/admin/dataflows?api-key=xxx`
 
 ![Index all dataflows](/images/de-index-post-all.png)
@@ -80,7 +84,7 @@ This request indexes **all dataflows** from **all configured sdmx endpoints**. I
 * updates existing dynamic sfs schema depending on added dataflows
 
 #### Delete all dataflows
-Example: <br>
+Example:  
 `DELETE` `http://sfs-qa-oecd.redpelicans.com/admin/dataflows?api-key=xxx`
 
 ![Delete all dataflows](/images/de-index-delete-all.png)
@@ -90,7 +94,7 @@ This request results in deleting all dataflows from the index and search of Solr
 #### Delete one specific dataflow
 >Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
-Example: <br>
+Example:  
 `DELETE` `http://sfs-qa-oecd.redpelicans.com/admin/dataflow?api-key=xxx&datasourceId=staging:SIS-CC-reset&dataflowId=AIR_EMISSIONS_DF`
 
 ![Delete one specific dataflow](/images/de-index-delete-dataflow.png)
@@ -100,7 +104,7 @@ This request results in deleting one specific dataflow from the index and search
 #### Update an already indexed dataflow
 >Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
-Example: <br>
+Example:  
 `PATCH` `http://sfs-qa-oecd.redpelicans.com/admin/dataflow?api-key=xxx&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0`
 
 ![Update an already indexed dataflow](/images/de-index-patch-dataflow.png)
