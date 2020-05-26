@@ -32,6 +32,8 @@ The following pieces of information are retrieved for each dataflow:
 
 Dataflows are **uniquely** identified by data source, Agency, ID and Version. It could happen that the same dataflow (same localised name, Agency, ID and Version) is retrieved from different data sources. In the search result output, they appear as different dataflows and **distinguished by the data source**.
 
+---
+
 ### When and how to index
 
 **CURRENT_STATE** The index is a manual action usually performed by a sysadmin user, who can lively manage the index of the endpoints for updating the dataflows that are published in .Stat DE and available for search and visualisation.  
