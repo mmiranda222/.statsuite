@@ -37,7 +37,8 @@ Some of the desired configurations or settings (e.g. how to add a new sdmx publi
 ### Homepage facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
-Define the facets that are displayed on the homepage below "browse by", by their names and in the order in which you want them to appear. Keep whitespace(s) between words in your facet names.  
+Define the facets that are displayed on the homepage below "browse by", by their names and in the order in which you want them to appear.  
+**Keep whitespace(s)** between words in your facet names.  
 In the property "homeFacetIds", you must enter the localised name of an indexed CategoryScheme (e.g. "Topics") or a ConceptScheme (e.g. "Country").  
 If the setting exists but is **empty**, then no facet is displayed on the homepage.  
 If it is **missing**, then all available (indexed) facets are displayed on the homepage.  
@@ -46,19 +47,19 @@ If it is **missing**, then all available (indexed) facets are displayed on the h
 
 ```json
     "search": {
-        "homeFacetIds": ["Topics", "Country",]
+        "homeFacetIds": ["Topics", "Country", "Disability status"]
     }
 ```
 
 ![Homepage facets](/images/faq-homepage-facets.png)
 
 Facets are **localised**, thus you must add the translated name of the chosen facet if your instance of .Stat DE is configured with several languages.  
-Replace spaces in your facet names by underline `_`.  
+Keep whitespace(s) between words in your facet names.  
 For instance, if you configure an instance of .Stat DE in both English and French languages, and the localised name of your CategoryScheme "Topic" in French is "Thème", and the localised name of your Concept "Country" in French is "Pays", then the configuration must be as such:
 
 ```json
     "search": {
-        "homeFacetIds": ["Topics", "Thème", "Country", "Pays"]
+        "homeFacetIds": ["Topics", "Thème", "Country", "Pays", "Disability status", "Statut d'invalidité"]
     }
 ```
 
