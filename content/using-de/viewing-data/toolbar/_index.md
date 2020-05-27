@@ -95,7 +95,7 @@ Clicking on **Full screen** again brings back to the normal screen.
 ---
 
 ### Developer API
-The option **Developer API** allows to generate the API queries in a standardised *SDMX 2.1* Rest format, for both structural and data information of a current data table or chart view.  
+The option **Developer API** allows to generate queries through a RESTful API based on *SDMX 2.1* standard, for both structural and data information of a current data table or chart view.  
 Both Data query and staructure query are generated according to the current data selection. Changing the data selection (using filters) will dynamically change the generated data and structure queries.
 
 ![Developer API](/images/de-api.png)
