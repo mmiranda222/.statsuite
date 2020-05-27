@@ -94,5 +94,11 @@ Clicking on **Full screen** again brings back to the normal screen.
 
 ---
 
-### API queries
-*under construction...*
+### Developer API
+The option **Developer API** allows to generate the API queries in a standardised *SDMX 2.1* Rest format, for both structural and data information of a current data table or chart view.  
+Both Data query and staructure query are generated according to the current data selection. Changing the data selection (using filters) will dynamically change the generated data and structure queries.
+
+![Developer API](/images/de-api.png)
+
+There is an option for generating the data query in **"Flat"** or **"Time series"** format.  
+There is a button option, for each query, to **copy** the related query in the clipboard of the user.
