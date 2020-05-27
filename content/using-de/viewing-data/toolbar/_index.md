@@ -15,8 +15,6 @@ weight: 3500
 - [Full screen](#full-screen)
 - [API queries](#api-queries)
 
----
-
 ![Toolbar](/images/de-toolbar1.png)
 
 ---
@@ -51,25 +49,25 @@ Example with the dimension label `Reference area`:
 ---
 
 ### Share
-The **Share** option allows sharing the the data view in table or chart mode.
+The **Share** option allows sharing the data view in table or chart mode.
 
 ![Share](/images/de-share1.png)
 
 There are two options for sharing the data view:
-* 1) Data snapshot: The current data is to be saved with the data view and redisplayed as such.
-* 2) Latest available data for the period defined: The current data query is saved with the data view and re-executed before the data view is redisplayed. The time period is fixed to the current time span covered.
+* 1) **Data snapshot**: The current data is to be saved with the data view and redisplayed as such.
+* 2) **Latest available data** for the period defined: The current data query is saved with the data view and re-executed before the data view is redisplayed. The time period is fixed to the current time span covered.
 
-Before having the expected URL and the code to embed for sharing the information, the user must fill up his/her email address to make the request by clicking on the button "Request URL and embed code".  
-Once clicked, the user will receive the following message:
+Before having the expected URL and the code to embed for sharing the information, the user must fill up his/her **email address** to make the request by clicking on the button "Request URL and embed code".  
+Once clicked, the user receives the following message:
 
 ![Share](/images/de-share2.png)
 
-... Then the following mail:
+... Then the following email:
 
 ![Share](/images/de-share3.png)
 
-The mail contains two parts, the first one to let the user validating its e-mail and so its requested of sharing table or chart view. In the second part, the mail displays the URL and the embedded code for sharing the table or the chart previously requested.  
-There is also a warning that the URL and the embedded code are only available once the user has validated its email.
+The email contains two parts, the first one to let the user validating its email and so its requested of sharing table or chart view. In the second part, the email displays the URL and the embedded code for sharing the table or the chart previously requested.  
+There is also a warning message that the URL and the embedded code are only available once the user has validated its email.
 
 Once the user clicks on "Validate your email address", the shared content is *activated* and opened in a new webpage with a unique URL id.  
 The shared view contains the data table or chart view, including the header (title and sub-title) and footer (copyright link and source url id):
