@@ -547,7 +547,7 @@ It is based on the SDMX compliant REST web service developed by Eurostat and (th
 1. go to http://nsi.qa.core.oecd.redpelicans.com/ (tenant: oecd, env: qa)
 
 #### technical aspects
-- **repository**: https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
+- **repository**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi
 - **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
 
