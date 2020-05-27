@@ -13,7 +13,7 @@ weight: 3500
 - [Share](#share)
 - [Download](#download)
 - [Full screen](#full-screen)
-- [API queries](#api-queries)
+- [Developer API](#developer-api)
 
 ![Toolbar](/images/de-toolbar1.png)
 
