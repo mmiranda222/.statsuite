@@ -77,20 +77,50 @@ The shared view contains the data table or chart view, including the header (tit
 ---
 
 ### Download
-*under construction...*
+There is an option to **download** data in a specific format and content according to the current data view, and accessible from both table and chart views.  
+The download feature is contextual, therefore the **Label** option will act accordingly:
+* If the table/chart option is "Identifier", then the downloaded file contains codes only;
+* If the table/chart option is "Name" or "Both" (Name + Identifier), then the downloaded file contains identifiers and names.  
+The **locale** used for names is the currently used language in the application.  
+
+The download options form the dropdown button are described below.  
+
+![Download](/images/de-download1.png)
+
+**Table in Excel**  
+Only the filtered data contained in the online table (or chart) view is downloaded in **.xlsx** file format.  
+All online table's layout, styles, cell and text formatting are maintained in the downloaded Excel file.  
+The online **table limitation** (maximum number of observations to be returned by the *SDMX* web service) is maintained in the downloaded file (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/)).  
+**Attributes** in flags and footnotes are also included in the downloaded Excel file, as internal links into a second sheet with exactly the same layout, but without any of the values and with flags in the cells instead of the values.  
+The online **table header**'s title and sub-title are replicated in separate lines above the data table.  
+The online **table footer**'s copyright is to replicated in a separate line below the data table (including its hyperlink). The source link is also replicated below the table with the data view name and hyperlink to the original online view.
+RTL (Right-to-Left) mode is supported, allowing to programmatically switching the layout of a downloaded Excel data table between left-to-right and right-to-left. Depending on the version viewed online (e.g. in Arabic language) and the user's localised preferences in Excel, the downloaded Excel table will automatically be displayed in RTL mode.
+
+![Download](/images/de-download2.png)
+
+**Filter data in tabular text (CSV)**  
+Only the filtered data contained in the online table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
+This format does not contains header or footer, and the downloaded data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
+
+**Unfiltered data in tabular text (CSV)**  
+The full (unfiltered) data contained in the online request behind a table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
+This format does not contains header or footer, and the downloaded full data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
+
+**Additional download(s) of external resources**  
+Additional downloads of external resources can be added to a dataflow and be made available in the Download option. See the [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/) related to this option.
 
 ---
 
 ### Full screen
 Both table and chart views can be displayed in full screen mode.  
 
-![Share](/images/de-fullscreen1.png)
+![Fullscreen](/images/de-fullscreen1.png)
 
 When the user presses the **Full screen** option, a table or chart occupying the whole screen is displayed.  
 The entire toolb ar is kept in the view, as well as the table/chart header (title and sub-title) and footer (copyright link and source url id).  
 Clicking on **Full screen** again brings back to the normal screen.
 
-![Share](/images/de-fullscreen2.png)
+![Fullscreen](/images/de-fullscreen2.png)
 
 ---
 
