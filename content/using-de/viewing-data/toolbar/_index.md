@@ -82,7 +82,15 @@ The shared view contains the data table or chart view, including the header (tit
 ---
 
 ### Full screen
-*under construction...*
+Both table and chart views can be displayed in full screen mode.  
+
+![Share](/images/de-fullscreen1.png)
+
+When the user presses the **Full screen** option, a table or chart occupying the whole screen is displayed.  
+The entire toolb ar is kept in the view, as well as the table/chart header (title and sub-title) and footer (copyright link and source url id).  
+Clicking on **Full screen** again brings back to the normal screen.
+
+![Share](/images/de-fullscreen2.png)
 
 ---
 
