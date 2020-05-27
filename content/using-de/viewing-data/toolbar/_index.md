@@ -93,8 +93,8 @@ All online table's layout, styles, cell and text formatting are maintained in th
 The online **table limitation** (maximum number of observations to be returned by the *SDMX* web service) is maintained in the downloaded file (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/)).  
 **Attributes** in flags and footnotes are also included in the downloaded Excel file, as internal links into a second sheet with exactly the same layout, but without any of the values and with flags in the cells instead of the values.  
 The online **table header**'s title and sub-title are replicated in separate lines above the data table.  
-The online **table footer**'s copyright is to replicated in a separate line below the data table (including its hyperlink). The source link is also replicated below the table with the data view name and hyperlink to the original online view.
-RTL (Right-to-Left) mode is supported, allowing to programmatically switching the layout of a downloaded Excel data table between left-to-right and right-to-left. Depending on the version viewed online (e.g. in Arabic language) and the user's localised preferences in Excel, the downloaded Excel table will automatically be displayed in RTL mode.
+The online **table footer**'s copyright is to replicated in a separate line below the data table (including its hyperlink). The source link is also replicated below the table with the data view name and hyperlink to the original online view.  
+**RTL** (Right-to-Left) mode is supported, allowing to programmatically switching the layout of a downloaded Excel data table between left-to-right and right-to-left. Depending on the version viewed online (e.g. in Arabic language) and the user's localised preferences in Excel, the downloaded Excel table will automatically be displayed in RTL mode.
 
 ![Download](/images/de-download2.png)
 
