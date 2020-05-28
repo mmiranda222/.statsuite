@@ -217,7 +217,8 @@ This configuration also impacts the EXCEL download but does not impact the CSV d
 
 ### Maximum number of cells in table
 Integer to limit the number of cells being displayed in the data table.  
-Even though the number of observations returned by the SDMX web service is already limited, in an unfortunate extreme layout all observations could be placed on the table's diagonal, and the final table cell number would be the square of the number of observations. E.g. if the number of observations was limited to 2500, then the resulting maximum table size would be 6250000, which is far too much for the web browsers to digest. The purpose of this configuration is thus to protect from too large tables and consequent unavoidable freezing of the .Stat Data Explorer application in the client's web browser.  
+Even though the number of observations returned by the *SDMX* web service is already limited, in an unfortunate extreme layout all observations could be placed on the table's diagonal, and the final table cell number would be the square of the number of observations.  
+E.g. if the number of observations was limited to 2500, then the resulting maximum table size would be 6 250 000, which is far too much for the web browsers to digest. The purpose of this configuration is thus to protect from too large tables and consequent unavoidable freezing of the .Stat Data Explorer application in the client's web browser.  
 Standard browser performance tests revealed that number of table cells above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
 This configuration also impacts the EXCEL download but does not impact the CSV download options.  
 
@@ -242,7 +243,7 @@ The Preferred scale attribute (with the Concept ID or Attribute ID `PREF_SCALE`)
 | 6 | 1 000 000 | 1 |
 
 **Configurable parameter**  
-It applies the calculation over the observation values when the Preferred Scale attribute is used in the data source.<br>
+It applies the calculation over the observation values when the Preferred scale attribute is used in the data source.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
