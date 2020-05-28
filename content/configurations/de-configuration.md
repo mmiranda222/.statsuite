@@ -232,7 +232,17 @@ This configuration also impacts the EXCEL download but does not impact the CSV d
 ---
 
 ### Preferred scale attribute
-It applies the calculation over the observation values when the Preferred Scale Attribute is used in the data source.<br>
+**Specifications**  
+The Preferred scale attribute (with the Concept ID or Attribute ID `PREF_SCALE`) is an attribute which implies calculations. Each observation value, as long as it represents a number to be displayed, is therefore the original observation value multiplied by ten to the power of the negation of the Scale code ID.  
+
+| Scale code ID | Original observation value | Displayed observation value |
+| ------------- | ------------- | ------------- |
+| 6 | 10 | 0.000 01 |
+| -6 | 10 | 10 000 000 |
+| 6 | 1 000 000 | 1 |
+
+**Configurable parameter**  
+It applies the calculation over the observation values when the Preferred Scale attribute is used in the data source.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
@@ -247,7 +257,12 @@ It applies the calculation over the observation values when the Preferred Scale 
 ---
 
 ### Decimals rule attribute
-It applies the Decimal Attribute value when defined in the data source, and thus adapts the observation value display.<br>
+**Specifications**  
+The Decimals attribute (with the Concept ID or Attribute ID `DECIMALS`) is used to adapt the observation value display: the number of decimal points provided in the Decimals attribute should be displayed for the corresponding data points.  
+**For example**, the value for the Decimals attribute is 2. All observation values to which this attribute value is attached will be adapted to two decimal points. If the value in the table has more than two decimal points, then it should be rounded.  
+
+**Configurable parameter**  
+It applies the Decimals attribute value when defined in the data source, and thus adapts the observation value display.<br>
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 
@@ -262,6 +277,12 @@ It applies the Decimal Attribute value when defined in the data source, and thus
 ---
 
 ### Coded attributes returned as flags
+**Specifications**  
+Flags are coded attributes, for which the code Identifier (`ID` property of the attribute value), under the condition that the ID has not more than 4 characters, is displayed within brackets directly left-aligned to the observation value in the table cells.  
+If several flags need to be displayed in the same cell, then they are separated by comma and all are enclosed in the same brackets, e.g. `(B,E)`. Their order is defined by the order in which they are returned in the *SDMX-JSON* data message.  
+On cell mouse-over, the code Identifier and localised code name are displayed in a tooltip, e.g. `B: Break`. The mouse-over event does not work separately for each attribute but for the whole cell. If several attributes need to be displayed in the tooltip, then they are separated by a line break.  
+
+**Configurable parameter**  
 Define the supported coded attributes displayed as flags at the observation value level in the table and chart views.  
 The code is shown next to the observation value, and the label is displayed in a mouse-over feature.  
 You can define more than one type of attribute to be displayed as flags.<br>
