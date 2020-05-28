@@ -44,7 +44,9 @@ Example with the dimension label `Reference area`:
 ---
 
 ### Customise
-*under construction...*
+The **Customise** option is contextual depending on the type of data view representation.  
+For the data table view, check the documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/).  
+For the data chart views, check the docmentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/).
 
 ---
 
