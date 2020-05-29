@@ -9,6 +9,7 @@ weight: 1800
 #### Table of Content
 - [What information is presented as facets](#what-information-is-presented-as-facets)
 - [How facets are used](#how-facets-are-used)
+- [Used filters](#used-filters)
 
 ### What information is presented as facets
 **Data source**: If configured so (relates to *installation/configuration*), one facet is returned for the **data source** (SDMX endpoint used to retrieve dataflow information).  
@@ -60,3 +61,15 @@ The facet header contains the number of facet values available, and the number o
 
 ![de facet information](/images/de-facet-5.png)
 
+---
+
+### Used filters
+The "Used filters" area in search resuslts displays all current selected items, per facet.  
+The top right *green* numbering feature counts the total number of selected items for all facets.  
+Used filters are ranked and displayed by facet type.  
+Users can unselected:
+* one single item by clicking on the `x` next to the item label, or
+* all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
+* all selections by clicking on `Clear all filters`. When all filters are unselected, then the user is brought back to the home page.
+
+![de used filters](/images/de-facet-6.png)
