@@ -6,11 +6,11 @@ weight: 2000
 
 ---
 
-This section describes the bahaviors and functionalities for viewing data, in what we call the Data Explorer **visualisation page**.  
+The following sections describe the behaviors and functionalities of previewing data, in what we call the Data Explorer **visualisation page**.  
 In addition to the common header and footer of the Data Explorer ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/)), the visualisation page is composed of:
-* **Filters** on the left side dynamically related to the data preview;
-* a central **Data Preview** for table or chart representations;
-* a **Toolbar** above the data preview with generic and contextual options;
+* a **Filters** area on the left side that is dynamically related to the data preview;
+* a central **Data Preview** area for table and chart representations;
+* a **Toolbar** above the data preview area with generic and contextual options;
 * a **Back to the search results** option.
 
 **Note** that the `Back to the search results` option is only available when the user is coming from a previous search result (see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/) of the documentation), and clicking on it brings the user back to any previous state of the search results.  
