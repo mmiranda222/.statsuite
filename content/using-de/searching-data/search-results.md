@@ -6,6 +6,11 @@ weight: 1900
 
 ---
 
+#### Table of Content
+- [Result content](#result-content)
+- [Pagination](#pagination)
+- [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
+
 ### Result content
 The number of total search hits as well as the first set of most relevant search results are presented on the page.  
 
@@ -24,6 +29,12 @@ All the above details are "hidden" by default, and an option (arrow on the right
 A **download** button allowing downloading the complete unfiltered dataflow in SDMX-CSV format using the current language.
 
 If a free text search was made, then the relevant above information is highlighted. If the text was found in a concept name/ID or dimension codes, then also this information is added to the dataflow information. See documentation on [How free text search hits are displayed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/free-text-search/).
+
+### Pagination
+Search results are paginated, and the number of results per page is configurable (see [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-result-page-number-of-results-per-page)).  
+By using the feature at the bottom right side of the search results page, the user can move to the next, first or last page by using the corresponding **arrows** `|<` `<` `>` `>|`. The user can also enter a page number in the appropriate box.
+
+![de search result content](/images/de-result-1.png)
 
 ### Navigation towards the DE visualisation page
 When the user selects a dataflow in the search result, by clicking on the search result, then she/he is forwarded to the DE data visualisation page that corresponds to that dataflow.  
