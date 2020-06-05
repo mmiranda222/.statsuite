@@ -6,14 +6,14 @@ weight: 78
 ---
 
 #### Table of Content
-- [IR Ranking Functions Introduction - Default Scoring](#ir-ranking-functions-introduction-default-scoring)
+- [IR Ranking Functions Introduction - Default Scoring](#ir-ranking-functions-introduction---default-scoring)
 - [Customise Scoring Function](#customise-scoring-function)
 - [Partial Search](#partial-search)
 - [Synonyms Search](#synonyms-search)
 - [Autocompletion Service (potential future development)](#autocompletion-service-potential-future-development)
 - [Highlighting](#highlighting)
 - [Federated Search](#federated-search)
-- [Faceting, Tag & Exclusion](#faceting-tag-&-exclusion)
+- [Faceting, Tag and Exclusion](#faceting-tag-and-exclusion)
 
 This page describes the SOLR search engine optimisation possibilities to fine-tune the **free-text search** behaviour.
 
@@ -462,7 +462,7 @@ https://sease.io/2017/11/distributed-search-tips-for-apache-solr.html
 
 ---
 
-### Faceting, Tag & Exclusion
+### Faceting, Tag and Exclusion
 While the tag and exclusion approach for multi selected facets was previously implemented, it was replaced by a drill-down facet approach. More information:  
 
 https://lucene.apache.org/solr/guide/7_5/faceting.html#tagging-and-excluding-filters
