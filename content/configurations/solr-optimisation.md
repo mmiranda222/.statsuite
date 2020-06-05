@@ -5,10 +5,21 @@ comments: false
 weight: 78
 ---
 
+#### Table of Content
+- [IR Ranking Functions Introduction - Default Scoring](#ir-ranking-functions-introduction-default-scoring)
+- [Customise Scoring Function](#customise-scoring-function)
+- [Partial Search](#partial-search)
+- [Synonyms Search](#synonyms-search)
+- [Autocompletion Service (potential future development)](#autocompletion-service-potential-future-development)
+- [Highlighting](#highlighting)
+- [Federated Search](#federated-search)
+- [Faceting, Tag & Exclusion](#faceting-tag-&-exclusion)
+
 This page describes the SOLR search engine optimisation possibilities to fine-tune the **free-text search** behaviour.
 
-## IR Ranking Functions Introduction - Default Scoring
+---
 
+### IR Ranking Functions Introduction - Default Scoring
 Search relevance and search results scoring is a complex matter.  
 Modern IR systems relies on various factors to score a document when matching a user query:
 - term frequency of the term matched in the search result field
@@ -29,14 +40,14 @@ For more information on Lucene/Solr scoring:
 https://opensourceconnections.com/blog/2015/10/16/bm25-the-next-generation-of-lucene-relevation/  
 https://lucene.apache.org/core/8_2_0/core/org/apache/lucene/search/package-summary.html#scoringBasics
 
-## Customise Scoring Function
+---
 
+### Customise Scoring Function
 There is a whole world of ways to customise the Solr scoring function.  
 Books have been written on this topic, so describing all the ways to tune relevance in Solr is out of scope here.  
 We’ll describe what is currently available in your search solution, and some possible improvement there.  
 
 #### Basic Boosting (Already in place)
-
 It is currently possible to give an additional boost to specific fields, explicitly:  
 
 ```json
@@ -60,7 +71,6 @@ Assigning the weight is also a difficult and iterative task, that is the reason 
 https://sease.io/2016/07/apache-solr-learning-to-rank-part-1-data-collection.html
 
 #### Advanced Boosting
-
 Apart from the boost queries currently in use, moving to edismax query parsing gives additional possibility in terms of:
 
 1) **boosting fields** (so the weight passed as a parameter will end up as a qf Solr parameter)  
@@ -115,7 +125,6 @@ Apart from the boost queries currently in use, moving to edismax query parsing g
    https://lucene.apache.org/solr/guide/6_6/function-queries.html  
 
 #### Constant Score Queries
-
 If case of interest in constant score queries i.e. you get a constant score for a clause matching, independently of the document/corpus terms distributions.  
 This is possible in Solr through the Constant Score query concept, the score of each clause is explicitly passed with the syntax:  
 ^=  
@@ -147,8 +156,9 @@ name: {
 
 **N.B.** it is unlikely that constant scoring solves complex relevance problems, but having the possibility of using it, can give great flexibility to the adopters of the framework  
 
-## Partial Search
+---
 
+### Partial Search
 Currently each search term is hard-coded prefixed and suffixed by a *  
 e.g.  
 \<field1\>:\*one\*  
@@ -157,9 +167,7 @@ This wildcard search is extremely expensive and not very common in the free text
 
 Following are listed alternativatives better performing alternatives. 
 
-
 #### Stemming
-
 Stemming is a functionality used in search to improve the recall of your system.  
 It means you want to cover MORE search results given a query.  
 It relies on a text analysis technique that brings the terms to their stem:  
@@ -235,7 +243,6 @@ export const ***STRING_EXT*** = 's';
 export const ***STRING_LIST_EXT*** = ‘ss';  
 
 #### Lemmatisation
-
 Lemmatisation is another technique similar to Stemming, to improve the recall of your system.   
 It means you want to cover MORE search results given a query.  
 It relies on a text analysis technique that brings the terms to their stem:  
@@ -254,15 +261,15 @@ Some lemmatiser are already included in the per language txt field type provided
 More advanced lemmatisation can be found in Solr 7.x.  
 The exact same suggestion for the stemmers applies here.  
 
-## Synonyms Search
+---
 
+### Synonyms Search
 Synonyms search is a complex matter and it is a functionality offered by Solr out of the box.  
 Just bear in mind that some particular class of synonyms may require particular care i.e. multi term synonyms (https://lucidworks.com/post/multi-word-synonyms-solr-adds-query-time-support/).  
 This means to fully support synonyms search an upgrade to Solr >=6.6 is recommended.  
 Let’s see what it is necessary to integrate Synonyms search in the current .stat solution:  
 
 #### Synonyms Provision
-
 Where should Solr fetch the synonyms from?  
 Currently Solr provide 2 flexible approaches:  
 
@@ -274,7 +281,6 @@ https://lucene.apache.org/solr/guide/6_6/managed-resources.html#ManagedResources
 The second approach is normally suggested when complex synonyms provision system are considered.
 
 #### Solr Schema Configuration
-
 Once we have defined the various groups of synonyms ( they may be depending on the language or field types), the Solr schema will be modified accordingly, specifying the Synonym graph filter to be part to analysis chain:  
 e.g.  
 
@@ -323,7 +329,6 @@ TF stands for Term Frequency.
 For more information about how scoring works in Lucene/Solr, page 10-11 has all the details.  
 
 #### Query Time - phrase query disable
-
 Out of the box Solr is going to expand synonyms in phrase queries as well.  
 This doesn’t seem an acceptable behaviour for a requirements that synonyms expansion should not happen for phrase queries.
 This implies:  
@@ -333,16 +338,15 @@ This implies:
 
 In this way for phrase queries you hit the field with no synonyms expansion.   
 
-## Autocompletion Service (potential future development)
+---
 
+### Autocompletion Service (potential future development)
 The autocomplete solutions can be heavily customised. However, the following design will be for a basic autocompletion service, but much can be done in addition to that:
 
 #### Autocompletion Suggestions Provision
-
 Solr out of the box supports suggestions coming from both the index (so you are sure the suggestions will get results when clicking them) or an external file: https://lucene.apache.org/solr/guide/6_6/suggester.html#dictionary-implementations  
 
 #### Solrconfig.xml Configuration
-
 When you have decided where the suggestions are coming from it is necessary to define the proper Solr configuration in the solrconfig.xml, starting from defining the suggester component:
 
 ```xml
@@ -384,15 +388,15 @@ Once you have defined all the parameters you need (https://lucene.apache.org/sol
 https://lucene.apache.org/solr/guide/8_1/suggester.html#adding-the-suggest-request-handler  
 
 #### .Stat Search-API Extension
-
 Once the Solr side is operational it is required to implement the client side.   
 This will require:  
 1) modelling of the autocomplete response from a .Stat perspective  
 2) add the call to the configured Solr request handler in src/server/solr/index.js:87 
 3) parse the Solr response and build the .Stat response  
 
-## Highlighting
+---
 
+### Highlighting
 Currently highlighting is included in the .stat solution and specifically it uses the default method:  
 
 hl.method: The highlighting implementation to use. Acceptable values are: unified, original, fastVector, and postings. See the Choosing a Highlighter section below for more details on the differences between the available highlighters.  
@@ -442,8 +446,9 @@ These params can be just sent as request parameters or specified in the solrconf
       </fragmenter>
 ```
 
-## Federated Search
+---
 
+### Federated Search
 Solr offers the capability of federating search across collections.  
 A collection in Solr is a logical domain separation: it contains documents that share the same structure and semantic (https://lucene.apache.org/solr/guide/6_6/collections-api.html)  
 A collection may contains data coming from a different datasource (a CMS for example).  
@@ -455,8 +460,9 @@ http://localhost:8983/solr/collection1/select?q=*:*&collection=collection1,colle
 For more information on distributed search and all its related caveats, please have a read to our blog post:  
 https://sease.io/2017/11/distributed-search-tips-for-apache-solr.html   
 
-## Faceting, Tag & Exclusion
+---
 
+### Faceting, Tag & Exclusion
 While the tag and exclusion approach for multi selected facets was previously implemented, it was replaced by a drill-down facet approach. More information:  
 
 https://lucene.apache.org/solr/guide/7_5/faceting.html#tagging-and-excluding-filters
