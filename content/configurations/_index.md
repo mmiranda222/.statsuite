@@ -6,9 +6,7 @@ weight: 70
 
 ---
 
-includes:
-
-**Overview of the different configuration files**  
+### Overview of the different configuration files
 
 |**TOPOLOGY**|  |  |
 |---|---|---|
