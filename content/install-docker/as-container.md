@@ -128,29 +128,38 @@ This web service is used for statistical data (and later referential metadata) f
 
 #### Configuration
 
-Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master/DotStatServices.Transfer/config).  
-All files with `*.json` extension are considered as configuration files. The name of the file is not important (except log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.
+Configuration values can be set using a **config** file located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master/DotStatServices.Transfer/config) or by using **environment variables**.  
+All files with `*.json` extension and which are located in the config folder are considered as configuration files. The name of the file is arbitrary (except for the log4net.config file) and configuration values can be loaded from a single or multiple files.
 
-* example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/transfer.yaml
+**Example configurations**
 
-    * [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config/log4net.config)
-    > log configuration
-    * [dataspaces.private.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config/dataspaces.private.json)
-    > dataspaces configuration with connection strings to Structure, Management & Data databases. At least 1 dataspace is required.
-    * [localization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/transfer-config/localization.json)
-    > Localized messages returned back to a user
+> Setting environment variables when using Docker-compose
+  * [.env](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/dotnet/.env)
+> Setting environment variables when using Kubernetes
+* [transfer.yaml](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/transfer.yaml)
+> log configuration using a configuration file
+* [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/master/DotStatServices.Transfer/config/log4net.config)
+> Dataspaces configuration using a configuration file with connection strings to Structure, Management & Data databases. At least 1 dataspace is required.
+* [dataspaces.private.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/develop/DotStatServices.Transfer/config/dataspaces.private.json.sample)
+> Localized user and error messages
+* [localization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/blob/develop/DotStat.Config/config/localization.json)
+
     
-* sample usage of docker (provided log4net.config instructs to write to a file in /app/logs directory):
+**Sample usage of docker:**
 
+* Docker with using configuration from file:
+
+>Before running sample you would need to copy required configuration files to your locally mapped folder </path-to/my/config>
 ```yaml
 docker run -it --rm -p 80:80 \
--v /path-to/my/config:/app/config \
--v /path-to/my/logs:/app/logs \
+-v </path-to/my/config>:/app/config \
+-v </path-to/my/logs>:/app/logs \
 --name transfer \
 siscc/dotstatsuite-core-transfer
 ```
 
-* docker with connection strings from environment variables:
+
+* Docker with connection strings from environment variables:
 
 ```yaml
 docker run -it --rm -p 80:80 \
@@ -199,11 +208,11 @@ This web service is used for statistical data structures for their upload and do
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-sdmxri-nsi
 - **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
 - **repository of .Stat Core plugin**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
-- **repository of original Eurostat SDMX-RI NSI web service**: https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
+- **repository of original Eurostat SDMX-RI NSI web service**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 
 #### Configuration
 
-Configuration is loaded from **config** directory located in the [root of application](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config?at=refs%2Fheads%2Fdevelop).  
+Configuration is loaded from **config** directory located in the [root of application](https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config).  
 All files with *.json extension are considered as configuration files. The name of the file is not important (except app.config & log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.  
 
 * example configuration: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config
@@ -291,7 +300,7 @@ version: "3"
 
 services:
   nsi-ws:
-    image: siscc/dotstatsuite-core-sdmxri-nsi:7.2.0
+    image: siscc/dotstatsuite-core-sdmxri-nsi:7.12.0
     container_name: nsi-ws
     ports:
       - "85:80"

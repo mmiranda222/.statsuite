@@ -52,7 +52,7 @@ Make sure that the windows machine which will be used in this installation proce
 
 - **Git for windows** [download](https://git-scm.com/download/win).  
 
-- **Access to Eurostat's [bitbucket repository](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
+- **Access to Eurostat's [bitbucket repository](https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
 
 > **`WARNING!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
 
@@ -96,37 +96,37 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 6.2.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 8.0.3 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
 
-This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD `
+This is a private Eurostat repository, therefore you need to login before cloning the repository.
 
 ```sh 
-git clone -b 1.25.1 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
+git clone -b 1.26.1 --single-branch --recurse-submodules https://citnet.tech.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:  
->  -  git clone -b 1.0.1 --single-branch --recurse-submodules https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
+>  -  git clone -b 1.0.1 --single-branch --recurse-submodules https://citnet.tech.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
 
 
   6 .  Clone the NSI web service repository
 
-This is a private Eurostat repository, therefore you need to provide your login credentials. `Replace YOURUSERNAME and YOURPASSWORD`
+This is a private Eurostat repository, therefore you need to login before cloning the repository.
 ```sh
-git clone -b 7.11.1 --single-branch https://YOURUSERNAME:YOURPASSWORD@webgate.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
+git clone -b 7.12.1 --single-branch https://citnet.tech.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
 ```
 
   7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
 
 ```sh
-git clone -b 7.11.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
+git clone -b 7.12.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b release3.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 4.2.4 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ## 2 Compile the source code
@@ -171,7 +171,7 @@ Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(\!)Password" --force
 ```
 ### Initialize one Design DotStatSuiteCore_Data database  
 
@@ -181,7 +181,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ``` sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(\!)Password" --force
 ```
 ### Initialize one Disseminate DotStatSuiteCore_Data database  
 
@@ -191,7 +191,7 @@ Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb  --loginName testLoginDisseminateData --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb  --loginName testLoginDisseminateData --loginPwd "testLogin(\!)Password" --force
 ```
 
 ### Configure the maapi.net tool 
@@ -238,7 +238,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ``` sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDesignStruct --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDesignStruct --loginPwd "testLogin(\!)Password" --force
 ```
 
 **Step 2.**   Initialize the database using the maapi.net tool
@@ -259,7 +259,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp2.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDisseminateStruct --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDisseminateStruct --loginPwd "testLogin(\!)Password" --force
 ```
 
 **Step 2.**   Initialize the database using the maapi.net tool
