@@ -8,6 +8,7 @@ weight: 1200
 
 #### Table of Content
 - [User Interface Design](#user-interface-design)
+- [Web Content Accessibility Compliance](#web-content-accessibility-compliance)
 - [Header](#header)
 - [Login](#login)
 - [Language](#language)
@@ -23,6 +24,13 @@ Also, theming the Data Explorer is largely flexible (see our documentation [here
 
 ![DE UI documentation](/images/de-ui-doc.png)
 
+---
+
+### Web Content Accessibility Compliance
+*Under construtction...*
+
+---
+
 ### Header
 The Data Explorer header is common to all pages of the application, and consists of:
 * a static logo ([*configurable*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
@@ -30,6 +38,8 @@ The Data Explorer header is common to all pages of the application, and consists
 * a multilangual switch option.
 
 ![DE Header](/images/de-header.png)
+
+---
 
 ### Login
 Registration is orchestrated at the organisation level, for one or several instances of the Data Explorer, and common with the Data Lifecycle Manager (DLM) registration mechanism (if the DLM is part of the same installation). For further information, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/) and the [DLM login mechanism](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/).  
@@ -47,6 +57,8 @@ Once logged in, the DE header displays the user's name, next to the user icon. W
 
 Cliking on `Log out` will automatically unregister the user and refresh the DE homepage.
 
+---
+
 ### Language
 The Data Explorer is multilangual and supports the localisation of the static elements of the user interface, as well as the localised indexed data )[documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/)).  
 There must be at least one language defined per DE instance. If an instance supports more than one language, then a dropdown feature displays the list of available languages.
@@ -60,6 +72,8 @@ The behavior of switching language will change depending on the page where langu
 * Switching language from the homepage keeps the user on the homepage;
 * Switching language from the search result page brings the user back to the homepage;
 * Switching language from the visualisation page (table view or chart view) keeps the user on the same page.
+
+---
 
 ### Footer
 The Data Explorer footer is common to all pages of the application, and consists of:
