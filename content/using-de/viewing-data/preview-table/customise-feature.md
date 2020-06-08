@@ -47,7 +47,7 @@ This option is managed by a selection box always embedded to the Time Period dim
 
 ![Time period reverse](/images/de-time-period-reverse1.png)
 
-The option is always set to `Descending` by default. When the user changes it to `Ascending`, it automatically reverses the Time Period values accordingly.
+The option is always set to `Ascending` by default. When the user changes it to `Descending`, it automatically reverses the Time Period values accordingly.
 
 ![Time period reverse](/images/de-time-period-reverse2.png)
 
