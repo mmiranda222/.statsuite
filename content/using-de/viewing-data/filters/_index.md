@@ -8,6 +8,7 @@ weight: 2100
 
 #### Table of Content
 - [Multi selection filters](#multi-selection-filters)
+- [Data availability](#data-availability)
 - [Hierarchical contents](#hierarchical-contents)
 - [Spotlight](#spotlight)
 - [Used filters](#used-filters)
