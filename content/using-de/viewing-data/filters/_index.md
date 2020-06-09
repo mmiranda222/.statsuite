@@ -27,6 +27,22 @@ A numbering feature, next to the filter name, indicates for each filter the numb
 
 ![Multi selection filters](/images/de-filters12.png)
 
+
+### Data availability
+
+The filters show by default only those items for which data exists anywhere in the Dataflow. There is only one exception to this rule for parent items without data (See [Hierarchical contents](#hierarchical-contents) for more information). In order to allow the filters taking into account the current data availability, the filters apply the Actual ContentConstraints related to the underlying Dataflow.
+
+An additional filter for the "Data availability" settings can be displayed by adding `dataAvailability=on` to the URL. This will apply the data availability information on the other filters, as is done by default. This URL parameter is added automatically by the DLM, when the DE is used for previewing data. 
+
+![Hierarchical contents](/images/DE-data-availability-filter-on.png)
+
+With `dataAvailability=off` in the URL, the additional "Data availability" filter is shown. This filter is switched off and data availability is not applied. 
+
+![Hierarchical contents](/images/DE-data-availability-filter-off.png)
+
+When the user switches the filter check box, the URL automatically updates accordingly.
+
+
 ### Hierarchical contents
 In case of a hierarchy in the dimension items, the filter will display the root parents' list at first. A blue arrow next to an item and right-aligned will indicate when this item is a parent of sub-item(s).
 
@@ -35,6 +51,15 @@ In case of a hierarchy in the dimension items, the filter will display the root 
 If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.  
 
 ![Hierarchical contents](/images/de-filters21.png)
+
+If for a parent (at any level) there are no data available (according to the Actual ContentConstraint related to the Dataflow), then the parent item is not selectable (and marked in light grey). Still, the user can navigate to the children and back to the parent again. 
+
+Parents without data:  
+![Hierarchical contents](/images/DE-filter-parents-without-data.png)
+
+Children of parents without data:  
+![Hierarchical contents](/images/DE-filter-children-of-parents-without-data.png)
+
 
 **Functional behaviors**:
 * When selecting a parent, the selected parent is added to the "Used filters" area and, in the filter, the selected parent is shown with a (light blue) background.
