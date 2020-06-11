@@ -31,7 +31,7 @@ These customisations can be performed by Administrators with access to the .Stat
 >The format and default theme was changed with the release [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)  
 
 It is possible to **override** the default **layout theme** of the application.  
-You can add new entries in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json` and it will replace the default customisation.  
+The **default theme** is stored under `dotstatsuite-data-explorer/src/web/theme/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/setting.json`.  
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
 ```css
