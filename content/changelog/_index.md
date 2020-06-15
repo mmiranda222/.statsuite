@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 15, 2020](#june-15-2020)
 - [May 18, 2020](#may-18-2020)
 - [April 20, 2020](#april-20-2020)
 - [April 2, 2020](#april-2-2020)
@@ -41,6 +42,26 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### June 15, 2020
+**[Release .Stat Suite .NET 3.9.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/19)**
+> This new release includes a new minor version of the **core-sdmxri-nsi-ws** service, with the new release of the **Eurostat's NSIWS v7.12.1** that contains the upgrade of the **Mappingstore database to v6.9**.  
+**Disclaimer**: you need to upgrade to **NSIWS v7.12.1** if you want to benefit form all the latest features/fixes. I you don't have access to Eurostat repository, you can check their full release note from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/CHANGELOG_NSIWS.md).  
+> Both **source-code** and **Docker images** are concerned by this release.  
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/41) Deploy **NSI version 7.12.1** in DevOps.
+
+patches:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/11) Default GenericData message response is defined with DSD while the data query was for Dataflow.
+- [dotstatsuite-core-sdmxri-nsi-plugin#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/19) NSI-Web-Service recognises attributes attached to TIME_PERIOD as observation level attributes. 
+- [dotstatsuite-core-sdmxri-nsi-ws#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/45) 'Access-Control-Allow-Origin' header is missing in the 404 data response.
+- [dotstatsuite-core-sdmxri-nsi-plugin#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/47) Performance issue when downloading/retrieving data.
+- [dotstatsuite-core-sdmxri-nsi-ws#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/24) AnnotationTitle is (still) fixed to 70 characters. 
+
+---
 
 ### May 18, 2020
 **[Release .Stat Suite JS 5.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/18)**
