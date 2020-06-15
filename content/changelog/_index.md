@@ -45,8 +45,9 @@ ToC
 
 ### June 15, 2020
 **[Release .Stat Suite .NET 3.9.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/19)**
-> This new release includes a new minor version of the **core-sdmxri-nsi-ws** service, with the new release of the **Eurostat's NSIWS v7.12.1** that contains the upgrade of the **Mappingstore database to v6.9**.  
-**Disclaimer**: you need to upgrade to **NSIWS v7.12.1** if you want to benefit form all the latest features/fixes. I you don't have access to Eurostat repository, you can check their full release note from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/CHANGELOG_NSIWS.md).  
+> This release includes a new minor version of the **core-sdmxri-nsi-ws** service, with the deployment of the **Eurostat's NSIWS v7.12.1** that contains the upgrade of the **Mappingstore database to v6.9**.  
+**Disclaimer**: you will need to upgrade to **NSIWS v7.12.1** if you want to benefit from all the latest features/fixes in the .Stat Suite context. I you don't have access to the Eurostat repository, you can check their full release note from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/CHANGELOG_NSIWS.md).  
+
 > Both **source-code** and **Docker images** are concerned by this release.  
 
 minor changes:
@@ -55,9 +56,9 @@ minor changes:
 
 patches:
 
-- [dotstatsuite-core-sdmxri-nsi-ws#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/11) Default GenericData message response is defined with DSD while the data query was for Dataflow.
+- [dotstatsuite-core-sdmxri-nsi-ws#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/11) Default GenericData message response is defined with DSD while the data query is for Dataflow.
 - [dotstatsuite-core-sdmxri-nsi-plugin#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/19) NSI-Web-Service recognises attributes attached to TIME_PERIOD as observation level attributes. 
-- [dotstatsuite-core-sdmxri-nsi-ws#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/45) 'Access-Control-Allow-Origin' header is missing in the 404 data response.
+- [dotstatsuite-core-sdmxri-nsi-ws#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/45) `Access-Control-Allow-Origin` header is missing in the 404 data response.
 - [dotstatsuite-core-sdmxri-nsi-plugin#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/47) Performance issue when downloading/retrieving data.
 - [dotstatsuite-core-sdmxri-nsi-ws#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/24) AnnotationTitle is (still) fixed to 70 characters. 
 
