@@ -29,6 +29,7 @@ This tool maps to these GSBPM sub-processes:
 
 The "How to use" worksheet of the generator tool contains a Step-by-step guide.
 
+A video record of a demo of the tool is available from [here online](https://oecdtv.webtv-solution.com/embed/6650/en/video).
 
 ## SDMX ISTAT Framework
 
