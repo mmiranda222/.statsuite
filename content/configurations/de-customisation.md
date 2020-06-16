@@ -36,73 +36,73 @@ The default theme is applied if there is no theme added to the settings.json fil
 
 ```css
 {
-    overrides: {
-      MuiButton: {
-        root: {
-          textTransform: 'none',
-        },
-      },
+    "overrides": {
+      "MuiButton": {
+        "root": {
+          "textTransform": "'none'"
+        }
+      }
     },
-    palette: {
-      action: {
-        active: 'rgba(14, 144, 144, 0.54)',
-        selected: 'rgba(14, 144, 224, 0.25)',
-        hover: 'rgba(14, 144, 224, 0.13)',
+    "palette": {
+      "action": {
+        "active": "rgba(14, 144, 144, 0.54)",
+        "selected": "rgba(14, 144, 224, 0.25)",
+        "hover": "rgba(14, 144, 224, 0.13)"
       },
-      primary: {
-        main: '#0965c1',
-        light: '#0e90e0',
-        dark: '#0549ab',
+      "primary": {
+        "main": "#0965c1",
+        "light": "#0e90e0",
+        "dark": "#0549ab"
       },
-      secondary: {
-        main: '#e3e9ed',
-        light: '#f5f8fa',
-        dark: '#ebf1f5',
+      "secondary": {
+        "main": "#e3e9ed",
+        "light": "#f5f8fa",
+        "dark": "#ebf1f5"
       },
-      tertiary: {
-        light: '#e2f2fb',
-        dark: '#b7def6',
+      "tertiary": {
+        "light": "#e2f2fb",
+        "dark": "#b7def6"
       },
-      button: {
-        mainOpacity: 'rgba(0, 0, 0, 0.2)',
+      "button": {
+        "mainOpacity": "rgba(0, 0, 0, 0.2)"
       },
-      highlight: {
-        hl1: #f7a42c, // highlight1
-        hl2: #8CC841 , // highlight2
+      "highlight": {
+        "hl1": "#f7a42c",
+        "hl2": "#8CC841"
       },
-      grey: {
-        200: '#F3F7FB',
-        300: '#cccccc',
-        700: '#666666',
-        A700: '#182026',
-      },
+      "grey": {
+        "200": "#F3F7FB",
+        "300": "#cccccc",
+        "700": "#666666",
+        "A700": "#182026"
+      }
     },
-    mixins: {
-      dataflow: {
-        fontWeight: 400,
-        fontFamily: "'Roboto Slab', serif",
+    "mixins": {
+      "dataflow": {
+        "fontWeight": 400,
+        "fontFamily": "'Roboto Slab', serif"
       },
-      scopeList: {
-        fontWeight: 700,
-        fontFamily: "'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "scopeList": {
+        "fontWeight": 700,
+        "fontFamily": "'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif"
       },
-      excel: {
-        headerFont: '#ffffff',
-        sectionFont: '#000000',
-        rowFont: '#000000',
+      "excel": {
+        "headerFont": "#ffffff",
+        "sectionFont": "#000000",
+        "rowFont": "#000000"
       },
-      sisccButton: {
-        '&:hover': {
-          backgroundColor: #f7a42c, // hightlight1
-        },
-      },
+      "sisccButton": {
+        "&:hover": {
+          "backgroundColor": "#f7a42c"
+        }
+      }
     },
-    typography: {
-      fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-      h6: {
-        fontSize: ' 1.0625rem',
-      },
-    },
+    "typography": {
+      "fontFamily": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "h6": {
+        "fontSize": " 1.0625rem"
+      }
+    }
   }
 ```
 
