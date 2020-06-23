@@ -30,3 +30,5 @@
 |app/svc|[explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|[viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)|[dlm](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|[sfs](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|
 |---|---|---|---|---|---|---|---|
 |releases|-|-|-|-|-|-|-|
+
+> use https://gitmoji.carloscuesta.me/ for visual help
