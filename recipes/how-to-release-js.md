@@ -20,6 +20,7 @@
     - a list of merge requests from develop to master branches (global diffs)
     - a changelog for none obvious changes
     - a list of tags/releases
+    - a list of commits to ease update from source code
 
 
 **notes**:
