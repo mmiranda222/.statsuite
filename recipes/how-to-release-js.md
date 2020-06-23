@@ -22,15 +22,15 @@
     - a list of tags/releases
     - a list of commits to ease update from source code
 
-
 **notes**:
 - a change of data in config is not considered as a release since the service itself hasn't changed
 
 **template**:
 
-|app/svc|[explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|[viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)|[dlm](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|[sfs](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|
+|icon|[explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|[viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)|[dlm](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|[sfs](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|
 |---|---|---|---|---|---|---|---|
 |releases|-|-|-|-|-|-|-|
 |commits|-|-|-|-|-|-|-|
+|docker|-|-|-|-|-|-|-|
 
 > use https://gitmoji.carloscuesta.me/ for visual help
