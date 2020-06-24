@@ -30,7 +30,18 @@ The following pieces of information are retrieved for each dataflow:
 * IDs and localised names of the concepts used as dimensions, as well as the dimension IDs
 * IDs, localised names and hierarchy position of the codes used as dimension values constrained by the Actual Content Constraints defined for the dataflow. **Note** that this Content Constraint also contains information about the Time Periods (Time dimension values) available for the dataflow. It allows defining a specific “Time Period” range facet.
 
-Dataflows are **uniquely** identified by data source, Agency, ID and Version. It could happen that the same dataflow (same localised name, Agency, ID and Version) is retrieved from different data sources. In the search result output, they appear as different dataflows and **distinguished by the data source**.
+In SDMX, dataflows are **uniquely** identified by data source, Agency, ID and Version. However, to avoid user confusion, the **search does not distingish dataflows per Agency or per Version**. Thus if there are dataflows, categorised for search indexing, with the same ID, but with different Agencies or different Versions, then only one of them is indexed (first version retrieved through `dataflow/all/ID/latest`). In such a case, it is needed to create and categorise separate dataflows with different IDs.  
+
+If the same dataflow (same ID, whatever Agency or Version) is retrieved from different data sources, when they are indexed separately and appear in the search results as different dataflows and **distinguished by the data source** visible when the dataflow area is expanded.
+
+##### Conditions and exceptions
+> Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
+
+* A dataflow is indexed only if there is data associated to it.  
+  The data availability check is based on the Actual Content Constraint attached to the dataflow. The dataflow is indexed only if there is:  
+  - a *non-empty* Actual Content Constraint
+  - no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
+* A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
 
 ---
 
@@ -38,7 +49,7 @@ Dataflows are **uniquely** identified by data source, Agency, ID and Version. It
 
 **CURRENT_STATE** The index is a manual action usually performed by a sysadmin user, who can lively manage the index of the endpoints for updating the dataflows that are published in .Stat DE and available for search and visualisation.  
 The following individual actions are currently enabled for index:
-* Index all adatflows for all data sources
+* Index all datflows for all data sources
 * Delete all dataflows
 * Delete one specific dataflow
 * Update an already indexed dataflow

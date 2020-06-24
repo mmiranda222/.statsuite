@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 23, 2020](#june-23-2020)
 - [June 15, 2020](#june-15-2020)
 - [May 18, 2020](#may-18-2020)
 - [April 20, 2020](#april-20-2020)
@@ -42,6 +43,34 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### June 23, 2020
+**[Release .Stat Suite JS 5.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/21)**
+> This new release includes a new version of the **data-explorer**, **sdmx-faceted-search** and **data-lifecycle-manager** services.  
+
+minor changes:
+
+- [dotstatsuite-data-explorer#148](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/148) Data Explorer web accessibility support according to **WCAG 2.1 level AA** and [dotstatsuite-data-explorer#209](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/209) Web-accessible alternative for table layout drag&drop. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support))
+- [dotstatsuite-sdmx-faceted-search#30](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/30) Restrict search facets to items with data, using to the current **data availability**. (Documentation is  [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#what-information-is-presented-as-facets))
+- [dotstatsuite-sdmx-faceted-search#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/75) Adding (again) hierarchical parents without data to search facets when their children have data - to align with approach in viz page filters, see below).
+- [dotstatsuite-sdmx-faceted-search#73](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/73) Exclude dimensions of a dataflow from the indexing that have more values than a new configurable limit. (Documentation is [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow) and [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#conditions-and-exceptions))
+- [dotstatsuite-data-explorer#305](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/305) Correct display of hierarchical parents without data to viz page filters when their children have data.
+- [dotstatsuite-sdmx-faceted-search#77](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/77) Exclude dataflows from the indexing when its Actual Content Constraint is empty. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#conditions-and-exceptions))
+- [dotstatsuite-data-lifecycle-manager#145](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/145) When calling the DE preview in the DLM, use `dataAvailability=on` instead of `off`. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/))
+
+patches:
+
+- [dotstatsuite-data-explorer#312](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/312) Clicking on the scopelist parent arrow refreshes the table instead of displaying children items.
+- [dotstatsuite-data-explorer#270](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/270) `NAMAIN_FLASH_Q` Dataflow with Q freq. data gets a wrong Time-Period selector set on Annual (not possible to switch to Quarterly).
+- [dotstatsuite-data-explorer#313](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/313) DE fullscreen error page appears on click.
+- [dotstatsuite-data-explorer#276](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/276) DE fullscreen feature looses chart customisations.
+- [dotstatsuite-data-explorer#336](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/336) Missing label pagination.
+- [dotstatsuite-data-explorer#322](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/322) Repair: Hide filter with one value.
+- [dotstatsuite-data-explorer#321](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/321) data-explorer link in story crash.
+- [dotstatsuite-core-sdmxri-nsi-ws#36](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/36) In DLM, clarify the text for 'number of observations' when data request returns `404`.
+- [dotstatsuite-data-lifecycle-manager#107](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/107) In DLM, display the correct structure upload status based uniquely on `NSI HTTP` return code (e.g. "200", "201", ...) and always display the full status message.
+
+---
 
 ### June 15, 2020
 **[Release .Stat Suite .NET 3.9.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/19)**

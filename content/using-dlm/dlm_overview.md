@@ -123,7 +123,7 @@ For each artifact, the following details are shown:
 * Action: Hamburger menu button that offers a context-aware list of actions to perform on an object (see related documentation for actions such as [transfer](/using-dlm/copy-data.md), export and [delete](/using-dlm/delete-data-structures.md))
 
 For Dataflows **only**, The user can view the following additional information:
-* Preview: the eye icon opens the data table preview of a dataflow in a new tab of the application (using the Data Explorer data view)
+* Preview: the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
 * Categories with information about thematic categorisation. Note that a Dataflow can be categorised into one or more Categories
 * Number of observation values
 

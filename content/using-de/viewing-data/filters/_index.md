@@ -28,6 +28,7 @@ A numbering feature, next to the filter name, indicates for each filter the numb
 
 ![Multi selection filters](/images/de-filters12.png)
 
+---
 
 ### Data availability
 
@@ -43,6 +44,7 @@ With `dataAvailability=off` in the URL, the additional "Data availability" filte
 
 When the user switches the filter check box, the URL automatically updates accordingly.
 
+---
 
 ### Hierarchical contents
 In case of a hierarchy in the dimension items, the filter will display the root parents' list at first. A blue arrow next to an item and right-aligned will indicate when this item is a parent of sub-item(s).
@@ -69,6 +71,8 @@ Children of parents without data:
 * Selecting a sub-child will act the same way, but in the "Used filters area" the user will see the selected sub-child item prefixed with `...>` and the details of the parent information is displayed in a tooltip.
 * The "dots" line is also visible in the "children breadcrumb" to allow the user going back to a previous level corresponding to the underlined item. For each item, there is a similar tooltip "Back to this level" meaning that by click, the user goes back to the level of the list where the item belongs.
 
+---
+
 ### Spotlight
 The spotlight filter appears only when the list of items exceeds a configurable number (e.g. more than 7 that represents the limit, in default layout, before a scrollbar option is introduced in the filter area). The spotlight filter dynamically reduces the returned number items when the user types some text in it.  
 
@@ -79,6 +83,8 @@ For hierarchical contents, it dinamically acts on all contents at once when usin
 ![Spotlight 2](/images/de-filters4.png)
 
 But, when using spotlight on hierarchical contents from a sub-level, then it will ONLY act on the current visible level.
+
+---
 
 ### Used filters
 The "Used filters" area displays all current selected items, per dimension, for a given data view.  
