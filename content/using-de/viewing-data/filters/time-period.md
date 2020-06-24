@@ -10,6 +10,8 @@ weight: 2130
 - [Frequency & Time Period](#frequency-and-time-period-selectors)
 - [Last N Periods](#last-n-periods)
 
+---
+
 ### Frequency and Time-Period selectors
 **Frequency & Time Period** is a combined set of selectors in the visualisation page, enabling to filter a data view for time-period range in the context of a pre-selected frequency. **Frequency** is a single-selection filter, and **Time Period** is a range selector.  
 Most of the (*standard SDMX*) used frequencies are supported: Annual, biannual, quarterly, monthly, weekly, daily, daily (business week), hourly. Minutely and secondly are nice to have options.  

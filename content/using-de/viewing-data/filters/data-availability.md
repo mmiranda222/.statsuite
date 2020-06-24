@@ -13,6 +13,8 @@ weight: 2150
 - [Case 3: DLM data preview - Allow displaying all filter values](#case-3-dlm-data-preview-allow-displaying-all-filter-values-whether-there-are-data-or-not)
 - [Technical notes](#technical-notes)
 
+---
+
 ### Intro
 In order to reduce the risk for Data Explorer (DE) users to end up with an empty data table or chart, the filter values are limited to those items for which data actually exists.
 

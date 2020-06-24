@@ -10,6 +10,8 @@ weight: 2900
 - [Definition](#definition)
 - [Level of display](#level-of-display)
 
+---
+
 ### Definition
 Footnotes are **coded or uncoded attributes** for which a star icon is displayed within brackets `(*)` directly left-aligned in the table cells, or next to the data view title.  
 On cell mouse-over, a tooltip shows the attribute(s) and its value(s). If several footnotes are to be displayed for the same coordinates of a given view, then there will be only one star icon. Several attributes in the same footnote are separated by a new line in the tooltip. 
@@ -17,6 +19,8 @@ On cell mouse-over, a tooltip shows the attribute(s) and its value(s). If severa
 ![footnotes attributes](/images/using-de-footnotes.png)
 
 Displaying attributes as footnotes, instead of flags for instance, is defined per Data Explorer instance by the **configuration**: see [coded and uncoded attributes returned as footnotes](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes) and [coded attributes returned as flags](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags).
+
+---
 
 ### Level of display
 Footnotes for attributes can be attached/displayed at the following levels in the table view (from *highest* level to *lowest*):

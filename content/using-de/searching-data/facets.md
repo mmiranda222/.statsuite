@@ -11,6 +11,8 @@ weight: 1800
 - [How facets are used](#how-facets-are-used)
 - [Used filters](#used-filters)
 
+---
+
 ### What information is presented as facets
 **Data source**: If configured so (relates to *installation/configuration*), one facet is returned for the **data source** (SDMX endpoint used to retrieve dataflow information).  
 

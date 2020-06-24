@@ -14,12 +14,18 @@ weight: 2950
 - [Example](#example)
 - [Charts](#charts)
 
+---
+
 ### Intro
 In order to ease understanding the basic context of the data shown in the data table (according to standard statistical modelling), the predefined standard statistical concepts defining a full 'Unit of measure' (UoM) are displayed in an as compact as possible and well visible way, even if those concepts represent different dimensions or attributes. This means that those concepts are displayed in the data table, whenever possible, as if they were one single component.
+
+---
 
 ### Reminders
 In SDMX, an attribute is a component of the data structure, similar to a dimension, but it does not allow uniquely identifying an observation. It contains additional information about the data characteristics in coded (--> Codelist) or uncoded form (e.g. free text).  
 Also like for dimensions, an attribute links to the Concept that defines its localised name and semantic. The localised name is used for display purposes (see details below).  
+
+---
 
 ### Underlying data model
 Some attributes and some dimensions play a specific role (e.g. Unit of measure, Unit multiplier, Base period) and will be interpreted, displayed differently or used to adapt the display.  
@@ -35,6 +41,8 @@ A pre-defined (optional) dataflow-level annotation **UNIT_MEASURE_CONCEPTS** lis
 The order of concepts in the **UNIT_MEASURE_CONCEPTS** annotation is significant and determines the order in which the different dimension and attribute item labels are concatenated into the UoM labels.
 
 Because attributes can be attached at different levels, e.g. dataset, partial or full combinations of dimensions, the (virtual) UoM component depends not only on the dimensions directly defined in the annotation **UNIT_MEASURE_CONCEPTS** but also on the dimensions to which the composing attributes are attached. 
+
+---
 
 ### Display rules
 The (virtual) UoM component will be displayed at the "highest possible level" in the table according to the dispositions of all dimensions implied in the UoM definition (either directly as dimension or through the attachment of attributes to dimensions), the order of the levels from highest to lowest being defined as:  
@@ -54,8 +62,9 @@ Based on the original placement of all dimensions that are finally combined into
 - Column: if at least some of those dimensions are placed in Columns and none in Rows or Row Sections
 - Cell: if at least some of those dimensions are placed in Rows or Row Sections and some others are placed in Columns
 
-### Example
+---
 
+### Example
 See a stylised DSD (inspired by National Accounts) with the following concepts and codelist samples:  
 
 ![Data model example](/images/DE_UoM_data_model_example.png)
@@ -155,6 +164,8 @@ See also: http://de-staging-siscc.redpelicans.com/vis?dataquery=AU%2BBE.A.GDP..V
 
 Note: The dimension Measure had a single selection and is placed in the header. The dimensions Country and UnitMeasure were placed on rows by the user and the dimension Adjustment was placed on columns by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the UoM label.  
 Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
+
+---
 
 ### Charts
 Data Explorer **charts** behave in the same way as tables for what concerns the construction of UoM for the chart header.

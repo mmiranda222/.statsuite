@@ -10,6 +10,8 @@ weight: 1600
 - [What is indexed](#what-is-indexed)
 - [When and how to index](#when-and-how-to-index)
 
+---
+
 ### What is indexed
 The languages used for the search features are configurable per Data Explorer instance (part of the installation process), and there must be at least one language defined. If the below localised elements for a defined language are not available, then they are replaced by their corresponding IDs.  
 

@@ -11,6 +11,8 @@ weight: 1900
 - [Pagination](#pagination)
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
 
+---
+
 ### Result content
 The number of total search hits as well as the first set of most relevant search results are presented on the page.  
 
