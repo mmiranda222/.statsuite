@@ -35,14 +35,14 @@ For practical reasons, the search only allows a filter by **ANNUAL** time period
 
 #### Indexation content restrictions
 
-A dataflow is indexed only if there is data associated to it.  
-The data availability check is based on the Actual Content Constraint attached to the dataflow. The dataflow is indexed only if there is:
+A dataflow is indexed **only if** there is data associated to it.  
+The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:
 - a non-empty Actual Content Constraint
 - no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
 
-A particular dimension of a dataflow is indexed only if the dimension values with available data do not exceed the limit defined in the SFS configuration parameter DIMENSION_VALUES_LIMIT, which is by default set to 1000. It protects the search engine from too big codelists and prevents performance impacts. For more information see here.  
+A particular dimension of a dataflow is indexed only if the dimension values with available data do not exceed the limit defined in the SFS configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to 1000. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).  
 
-Dimension values of a dataflow are indexed only if there are data available for the values or, if those values are hierarchical parents in case their children values have data. For that purpose, the search indexing takes the current Actual Content Constraint of the dataflow, if available, into account.
+Dimension values of a dataflow are indexed only if there are data available for the values or, if those values are hierarchical parents in case their children values have data. For that purpose, the search indexing takes the current `Actual Content Constraint` of the dataflow, if available, into account.
 
 ---
 
