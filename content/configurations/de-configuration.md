@@ -8,6 +8,7 @@ weight: 72
 #### Table of Content
 - [Intro](#intro)
 - [Homepage facets](#homepage-facets)
+- [Limit for indexing dimensions per dataflow](#limit-for-indexing-dimensions-per-dataflow)
 - [Search results page pinned facets](#search-results-page-pinned-facets)
 - [Search results page excluded facets](#search-results-page-excluded-facets)
 - [Exclude specific CategorySchemes from the search index](#search-exclude-categoryschemes)
@@ -62,6 +63,20 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
         "homeFacetIds": ["Topics", "Thème", "Country", "Pays", "Disability status", "Statut d'invalidité"]
     }
 ```
+
+---
+
+### Limit for indexing dimensions per dataflow
+> Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
+
+A parameter of the `SFS` configuration at server level (docker-compose, kubernetes strategy) named `DIMENSION_VALUES_LIMIT` excludes those dimension of a dataflow from the indexing that have more values than this limit.  
+It is set by default to `1000`.  
+It protects the search engine from too big codelists and prevents performance impacts.  
+Dimensions are checked for this limit **after** the `Actual Content Constraint` has been applied.  
+Because dimensions exceeding this limit are not indexed, the user will not find the underlying dataflow through the freetext search or facet navgation on these dimension values. However, the dimension remains available in the filters of the visualisation page.  
+Because this limit is applied per dataflow per dimension:  
+- there might be other dataflows using the same concept name and respecting this limit, and therefor the search facets could still display the same values  
+- the number of search facet values displayed might still be greater than this limit (because they would be composed of the **union** of all indexed dimension values for all dataflows)
 
 ---
 

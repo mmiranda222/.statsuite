@@ -33,10 +33,21 @@ Dataflows do not have a codelist for the time period dimension (time dimension).
 For practical reasons, the search only allows a filter by **ANNUAL** time periods. All non-annual time periods are converted to annual time period facet values. The time period facet is built as a range facet, because the facet filtering is done through a start year and an end year.  
 **Note** that if a dataflow has no time dimension, then it will also not have values for the time period facet.  
 
+#### Indexation content restrictions
+
+A dataflow is indexed only if there is data associated to it.  
+The data availability check is based on the Actual Content Constraint attached to the dataflow. The dataflow is indexed only if there is:
+- a non-empty Actual Content Constraint
+- no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
+
+A particular dimension of a dataflow is indexed only if the dimension values with available data do not exceed the limit defined in the SFS configuration parameter DIMENSION_VALUES_LIMIT, which is by default set to 1000. It protects the search engine from too big codelists and prevents performance impacts. For more information see here.  
+
+Dimension values of a dataflow are indexed only if there are data available for the values or, if those values are hierarchical parents in case their children values have data. For that purpose, the search indexing takes the current Actual Content Constraint of the dataflow, if available, into account.
+
 ---
 
 ### How facets are used
-#### Home page facets
+#### Homepage facets
 The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service.  
 
 ![de homepage facet](/images/de-facet-2.png)
@@ -47,7 +58,7 @@ The free text search and the navigation through pre-defined facets are exclusive
 
 #### Facets on the search result page
 The facets shown in the search result page are fully dependent on the current search context.  
-Common facet dimensions can be automatically removed (hidden) from the saerch result page when specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).
+Common facet dimensions can be automatically removed (hidden) from the search result page when specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).
 
 ![de facet result](/images/de-facet-3.png)
 
@@ -60,6 +71,18 @@ All facets are **multi-selection** facets (an existing facet value selection doe
 The facet header contains the number of facet values available, and the number of currently selected facets (green numbers). The facet values show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
 
 ![de facet information](/images/de-facet-5.png)
+
+#### Hierarchical contents
+In case of a hierarchy in the dimension items, the facet displays the root parents’ list at first. A blue arrow next to an item and right-aligned indicates when this item is a parent of sub-item(s).  
+If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.
+
+![de facet types](/images/de-facet4bis.png)
+
+#### Data availability
+
+In hierarchical search facets, parent values, for which any of the resulting dataflows do not have data, are not selectable and are marked in light grey colour. Still, the user can navigate to the children and back to the parent again.
+
+![de facet types](/images/de-facet5bis.png)
 
 ---
 
