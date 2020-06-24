@@ -8,7 +8,7 @@ weight: 1200
 
 #### Table of Content
 - [User Interface Design](#user-interface-design)
-- [Web Content Accessibility Compliance](#web-content-accessibility-compliance)
+- [Web Content Accessibility Support](#web-content-accessibility-support)
 - [Header](#header)
 - [Login](#login)
 - [Language](#language)
@@ -26,8 +26,37 @@ Also, theming the Data Explorer is largely flexible (see our documentation [here
 
 ---
 
-### Web Content Accessibility Compliance
-*Under construtction...*
+### Web Content Accessibility Support
+> Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
+
+The Data Explorer **endorses [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) 2.1 to Level AA**, in order to make its content **accessible to people with disabilities**.  
+The WCAG 2.1 accessibility standards are made of prioritised criteria improving the accessibility. While all the technical content of the Data Explorer meets WCAG 2.1 criteria at Level AA, large parts also already meet Level AAA criteria.  
+The prioritised criteria include key areas of adaptability such as:
+* Semantic mark-up code enabling screen readers accessibility;
+* All functionalities are keyboard accessible;
+* Correct contrast ratio across the entire design colours;
+* Alternative features (see below) when the defaults ones are limited in terms of accessibility criteria.
+
+In order to apply the Data Explorer content accessibility features, the user can **enable accessibility support** using the related button in the application header.   
+The option can be used to enable or disable accessibility support at any time during the user journey in the Data Explorer.  
+With this feature enabled, the data table view and its 'Customise' panel become accessible by screen readers.  
+
+![DE Accessibility](/images/de-accessibility1.png)
+
+* **Accessible data table version**  
+When accessibility support is enabled, using the `Tab` key of the keyboard allows to navigate through each cell and see its content. When the specific footnote cells in the column headers have no content, then they are skipped.  
+
+![DE Accessibility](/images/de-accessibility2.png)
+
+* **Accessible 'Customise' panel version**  
+When accessibility support is enabled, using the `Tab` key of the keyboard allows to navigate through the table axes (Rows, Columns or Row sections) and dimensions in order to change the table layout:  
+  - use `spacebar` or `enter` key to select/unselect a dimension  
+  - use `left` and `right` control keys to move a dimension between axes  
+  - use `up` and `down` control keys to re-order dimensions within an axis  
+
+![DE Accessibility](/images/de-accessibility3.png)
+
+> Note: We used [ANDI](https://www.ssa.gov/accessibility/andi/help/howtouse.html), the **Accessible Name and Description Inspector** accessibility testing tool, in the developments and testing of the accessibility compliances features.
 
 ---
 
