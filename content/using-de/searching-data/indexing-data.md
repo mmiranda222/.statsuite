@@ -34,11 +34,11 @@ In SDMX, dataflows are **uniquely** identified by data source, Agency, ID and Ve
 
 If the same dataflow (same ID, whatever Agency or Version) is retrieved from different data sources, when they are indexed separately and appear in the search results as different dataflows and **distinguished by the data source** visible when the dataflow area is expanded.
 
-##### Conditions and exceptions
+#### Conditions and exceptions
 > Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
 
-* A dataflow is indexed only if there is data associated to it.  
-  The data availability check is based on the Actual Content Constraint attached to the dataflow. The dataflow is indexed only if there is:  
+* A dataflow is indexed **only if** there is data associated to it.  
+  The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:  
   - a *non-empty* Actual Content Constraint
   - no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
 * A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
