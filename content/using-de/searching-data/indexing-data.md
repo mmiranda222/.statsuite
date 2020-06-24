@@ -34,7 +34,7 @@ The following pieces of information are retrieved for each dataflow:
 
 In SDMX, dataflows are **uniquely** identified by data source, Agency, ID and Version. However, to avoid user confusion, the **search does not distingish dataflows per Agency or per Version**. Thus if there are dataflows, categorised for search indexing, with the same ID, but with different Agencies or different Versions, then only one of them is indexed (first version retrieved through `dataflow/all/ID/latest`). In such a case, it is needed to create and categorise separate dataflows with different IDs.  
 
-If the same dataflow (same ID, whatever Agency or Version) is retrieved from different data sources, when they are indexed separately and appear in the search results as different dataflows and **distinguished by the data source** visible when the dataflow area is expanded.
+If the same dataflow (same ID, whatever Agency or Version) is retrieved from different data sources, when they are indexed separately and appear in the search results as different dataflows and **distinguished by the data source** which is visible when the dataflow information is expanded.
 
 #### Conditions and exceptions
 > Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
