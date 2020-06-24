@@ -56,7 +56,7 @@ When accessibility support is enabled, using the `Tab` key of the keyboard allow
 
 ![DE Accessibility](/images/de-accessibility3.png)
 
-> Note: We used [ANDI](https://www.ssa.gov/accessibility/andi/help/howtouse.html), the **Accessible Name and Description Inspector** accessibility testing tool, in the developments and testing of the accessibility compliances features.
+> Note: We used [ANDI](https://www.ssa.gov/accessibility/andi/help/howtouse.html), the **Accessible Name and Description Inspector** accessibility testing tool, in the developments and tests of the accessibility compliance features.
 
 ---
 
