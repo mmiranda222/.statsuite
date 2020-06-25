@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 24, 2020](#june-24-2020)
 - [June 23, 2020](#june-23-2020)
 - [June 15, 2020](#june-15-2020)
 - [May 18, 2020](#may-18-2020)
@@ -43,6 +44,43 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### June 24, 2020
+**[Release .Stat Suite .NET 4.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/20)**
+> This new release includes a new **major** version of the **core-transfer** service, with an upgrade to the **.NET framework to version 3.1**.  
+It also includes a minor version of the **core-auth-management** service.
+
+major changes:
+
+- [dotstatsuite-core-transfer#93](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/93) Upgrade the remaining `.statsuite-core` commponents to **.NET core 3.1**.
+
+minor changes:
+
+- [dotstatsuite-core-transfer#101](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/101) Harmonise the construction of coordinates in user messages.
+- [dotstatsuite-core-transfer#94](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/94) Make the **API cleanup** feature more robust.
+- [dotstatsuite-core-transfer#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/48) Review the text of all current localised transfer error messages.
+- [dotstatsuite-core-transfer#78](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/78) Add API feature to **initialise Data DB objects** when a dataflow was created. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
+- [dotstatsuite-core-transfer#95](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/95) *(Refactoring)* Remove the feature and usage of external spaces by ID in the transfer service.
+- [dotstatsuite-core-transfer#100](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/100) *(Refactoring)* Error messages are missing in the `config/localization.json` file.
+- [dotstatsuite-core-transfer#108](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/108) *(Refactoring)* Remove the "See details" feature from the current implementation of the transfer service log messages.
+- [dotstatsuite-core-transfer#112](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/112) *(Refactoring)* Remove the unit test examples of xml files with no dataflow reference.
+- [dotstatsuite-core-transfer#117](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/117) *(Refactoring)* Transfer service breaks with latest version of data access nuget.
+- [dotstatsuite-core-transfer#118](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/118) *(DevOps)* Add database version numbers to the Transfer service healthcheck page.
+
+patches:
+
+- [dotstatsuite-core-transfer#111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/111) Dataflow not found in the mapping store.
+- [dotstatsuite-core-transfer#107](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/107) After uploading data for a free-text dataset attribute, the value provided in exports is wrongly wrapped in single quotes.
+- [dotstatsuite-core-transfer#106](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/106) DLM data import with **Excel+EDD** fails because it expects a mandatory `LanguageCode` parameter.
+- [dotstatsuite-core-transfer#102](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/102) Add **API feature** to cleanup the Data DB from all orphan content *(garbage collection)*. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master#delete-12cleanuporphans-full-cleanup-of-the-data-db-when-related-dsds-and-artefacts-doesnt-exist-in-the-mapping-store-db))
+- [dotstatsuite-core-transfer#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/96) Calling `PITInfo` on `PITController` falsely claims that times are UTC.
+- [dotstatsuite-core-transfer#83](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/83) No `MIME-Type` validation of file uploads.
+- [dotstatsuite-core-transfer#79](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/79) Database failure during first import leaves the data database in inconsistent state.
+- [dotstatsuite-core-transfer#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/29) Remove request target dataflow from SDMX import request (because the destination is defined already in the SDMX import file).
+- [dotstatsuite-core-data-access#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/47) Add reference to `dotstat-common` dependency.
+- [dotstatsuite-core-auth-management#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/12) *(Confidential)*
+
+---
 
 ### June 23, 2020
 **[Release .Stat Suite JS 5.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/21)**
