@@ -74,11 +74,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
 <td rowspan="2">authz-qa-oecd</td>
-<td>[health](http://transfer-qa-oecd.redpelicans.com/health)</td>
+<td>[health](http://authz-qa-oecd.redpelicans.com/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://transfer-qa-oecd.redpelicans.com/swagger)</td>
+<td>[swagger](http://authz-qa-oecd.redpelicans.com/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -86,11 +86,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">authz-siscc</td>
-<td>[health](http://transfer-siscc.redpelicans.com/health)</td>
+<td>[health](http://authz-siscc.redpelicans.com/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://transfer-siscc.redpelicans.com/swagger)</td>
+<td>[swagger](http://authz-siscc.redpelicans.com/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
