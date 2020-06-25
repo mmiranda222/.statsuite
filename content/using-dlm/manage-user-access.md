@@ -6,7 +6,35 @@ weight: 220
 
 ---
 
+#### Table of Content
+- [Introduction](#introduction)
+- [List of available permissions](#list-of-available-permissions)
+- [List of available SDMX artefact types](#list-of-available-sdmx-artefact-types)
+- [Visibility of permission rules](#visibility-of-permission-rules)
+
+---
+
+### Introduction
+
+Currently, the Data Lifecycle Manager doesn't include yet user-interface features to manage user access rights to the content of the .Stat Suite data spaces. Therefore, user permissions still need to be entered, updated or deleted using the AuthorisationManagement web service. The following pieces of information give more information on the usage and parameters of this API.
+
+Please see here a Demo version of the AuthorisationManagement web service: http://authz-siscc.redpelicans.com/swagger/index.html
+
+Access permissions can be defined individually for the following contexts:
+ - per user (e-mail, e.g. user@domain.org), group of users (Project_Team) or any user (*)
+ - per data space (e.g. Dissemination) or for all spaces managed within an instance (*)
+ - per SDMX artefact type (e.g. Dsd, Dataflow) or any type (0)
+ - per SDMX artefact maintenance agency (e.g. SDMX, MY_ORG) or any agency (*)
+ - per SDMX artefact ID (e.g. DATAFLOW_ID) or any ID (*)
+ - per SDMX artefact version (e.g. 1.0) or any version (*)
+ - permission type (e.g. 3)
+
+ For the list of avaiable Permission types and SDMX artfact types, pleasse see below.
+
+ In order to be able using the AuthorisationManagement web service, the user needs to be authenticated and provide a valid access token.
+
 ### List of available permissions
+
 #### Basic permissions
 The basic permissions listed below are permissions associated to a single and specific action.
 
@@ -102,3 +130,8 @@ Below is a table of the most used combinations, but others are acceptable.
 | 54 | Organisation |
 | 55 | OrganisationScheme |
 
+### Visibility of permission rules
+
+Using the AuthorizationRules method of the AuthorisationManagement web service:
+- A non-admin user (or member of a non-admin group) can only see all those permissions that grant this user with a permission.
+- An admin user (or member of an admin group) - with admin permission #2047 - can see all permissions defined on those spaces on which that user has admin rights.
