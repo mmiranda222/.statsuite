@@ -33,6 +33,8 @@ Access permissions can be defined individually for the following contexts:
 
  In order to be able using the AuthorisationManagement web service, the user needs to be authenticated and provide a valid access token.
 
+---
+
 ### List of available permissions
 
 #### Basic permissions
@@ -68,6 +70,7 @@ Below is a table of the most used combinations, but others are acceptable.
 | 1315 | DataImporterRole | Underlying DataImporterRole_U[657], CanDeleteData[1024] |
 | 2047 | AdminRole | Underlying DomainUserRole[15], CanModifyStoreSettings[64], StructureImporterRole[657], DataImporterRole[1315] |
 
+---
 
 ### List of available SDMX artefact types
 
@@ -129,6 +132,8 @@ Below is a table of the most used combinations, but others are acceptable.
 | 53 | MetadataTargetRegion |
 | 54 | Organisation |
 | 55 | OrganisationScheme |
+
+---
 
 ### Visibility of permission rules
 
