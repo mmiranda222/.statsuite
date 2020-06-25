@@ -140,3 +140,46 @@ Below is a table of the most used combinations, but others are acceptable.
 Using the AuthorizationRules method of the AuthorisationManagement web service:
 - A non-admin user (or member of a non-admin group) can only see all those permissions that grant this user with a permission.
 - An admin user (or member of an admin group) - with admin permission #2047 - can see all permissions defined on those spaces on which that user has admin rights.
+
+**Example:**  
+
+Consider the following fictive users:
+
+| User                      | Group membership                      | Email           | User Id |
+|---------------------------|---------------------------------------|-----------------|---------|
+| full-admin-1              |                                       | fa1@auth.test   | fa1     |
+| full-admin-2              | full-admin-group                      | fa2@auth.test   | fa2     |
+| reset-admin-1             |                                       | ra1@auth.test   | ra1     |
+| reset-admin-2             | reset-admin-group                     | ra2@auth.test   | ra2     |
+| stable-admin-1            |                                       | sa1@auth.test   | sa1     |
+| stable-admin-2            | stable-admin-group                    | sa2@auth.test   | sa2     |
+| full-user-1               |                                       | fu1@auth.test   | fu1     |
+| full-user-2               | full-user-group                       | fu2@auth.test   | fu2     |
+| reset-user-1              |                                       | ru1@auth.test   | ru1     |
+| reset-user-2              | reset-user-group                      | ru2@auth.test   | ru2     |
+| stable-user-1             |                                       | su1@auth.test   | su1     |
+| stable-user-2             | stable-user-group                     | su2@auth.test   | su2     |
+| reset-admin-stable-user-2 | reset-admin-group, stable-user-group  | rasu2@auth.test | rasu2   |
+| new-user-1                |                                       | nu1@auth.test   | nu1     |
+
+Considering the following fictive authorization rules (one per line), the *visibility of these rules to each user* would be as follow:
+
+| USERMASK           | ISGROUP | DATASPACE | PERMISSION |*full-admin-1*|*full-admin-2*|*reset-admin-1*|*reset-admin-2*|*stable-admin-1*|*stable-admin-2*|*full-user-1*|*full-user-2*|*reset-user-1*|*reset-user-2*|*stable-user-1*|*stable-user-2*|*reset-admin-stable-user-1*|*new-user-1*|
+|--------------------|---------|-----------|------------|--------------|--------------|---------------|---------------|----------------|----------------|-------------|-------------|--------------|--------------|---------------|---------------|---------------------------|------------|
+| fa1@auth.test      | 0       | *         | 2047       | y            | y            | y             | y             | y              | y              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| full-admin-group   | 1       | *         | 2047       | y            | y            | y             | y             | y              | y              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| ra1@auth.test      | 0       | reset     | 2047       | y            | y            | y             | y             | n              | n              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| reset-admin-group  | 1       | reset     | 2047       | y            | y            | y             | y             | n              | n              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| sa1@auth.test      | 0       | stable    | 2047       | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | n             | n             | n                         | n          |
+| stable-admin-group | 1       | stable    | 2047       | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | n             | n             | n                         | n          |
+| fu1@auth.test      | 0       | *         | 3          | y            | y            | y             | y             | y              | y              | y           | n           | n            | n            | n             | n             | y                         | n          |
+| full-user-group    | 1       | *         | 3          | y            | y            | y             | y             | y              | y              | n           | y           | n            | n            | n             | n             | y                         | n          |
+| ru1@auth.test      | 0       | reset     | 3          | y            | y            | y             | y             | n              | n              | n           | n           | y            | n            | n             | n             | y                         | n          |
+| reset-user-group   | 1       | reset     | 3          | y            | y            | y             | y             | n              | n              | n           | n           | n            | y            | n             | n             | y                         | n          |
+| su1@auth.test      | 0       | stable    | 3          | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | y             | n             | n                         | n          |
+| stable-user-group  | 1       | stable    | 3          | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | n             | y             | y                         | n          |
+| *                  | 0       | *         | 1          | y            | y            | y             | y             | y              | y              | y           | y           | y            | y            | y             | y             | y                         | y          |
+| *                  | 0       | reset     | 3          | y            | y            | y             | y             | y              | y              | y           | y           | y            | y            | y             | y             | y                         | y          |
+| *                  | 0       | stable    | 15         | y            | y            | y             | y             | y              | y              | y           | y           | y            | y            | y             | y             | y                         | y          |
+
+
