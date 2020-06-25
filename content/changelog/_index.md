@@ -47,12 +47,12 @@ ToC
 
 ### June 24, 2020
 **[Release .Stat Suite .NET 4.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/20)**
-> This new release includes a new **major** version of the **core-transfer** service, with an upgrade to the **.NET framework to version 3.1**.  
+> This new release includes a new **major** version of the **core-transfer** service, with an upgrade to the **.NET core version 3.1**.  
 It also includes a minor version of the **core-auth-management** service.
 
 major changes:
 
-- [dotstatsuite-core-transfer#93](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/93) Upgrade the remaining `.statsuite-core` commponents to **.NET core 3.1**.
+- [dotstatsuite-core-transfer#93](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/93) Upgrade the remaining `.statsuite-core` components to **.NET core 3.1**.
 
 minor changes:
 
