@@ -63,8 +63,9 @@ When accessibility support is enabled, using the `Tab` key of the keyboard allow
 ### Header
 The Data Explorer header is common to all pages of the application, and consists of:
 * a static logo ([*configurable*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
+* an option to enable accessibility support (see [above](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support))
 * a link to log in the application;
-* a multilangual switch option.
+* a multilingual switch option.
 
 ![DE Header](/images/de-header.png)
 
