@@ -145,33 +145,31 @@ main {
 	a {
 		position: relative;
 		display: block;
-		color: #404040;
 		text-decoration: none;
 		padding: .2rem 1rem;
-		border-left: solid 4px $sidebar-background-color;
-		border-bottom: solid 1px $sidebar-active-color;
+		border-left: solid 1px $sidebar-border-color;
+		// border-bottom: solid 1px $sidebar-active-color;
 
 		&:hover {
-			color: #404040;
 			background: $sidebar-hover-color;
-			border-left: solid 4px #ccc;
+			border-left: solid 1px $sidebar-border-color;
 		}
 	}
 
 	nav > ul > li li a {
-		padding-left: 1rem + 1rem * 1;
+		margin-left: 1rem + 1rem * 1;
 	}
 	nav > ul ul > li li a {
-		padding-left: 1rem + 1rem * 2;
+		margin-left: 1rem + 1rem * 2;
 	}
 	nav > ul ul ul > li li a {
-		padding-left: 1rem + 1rem * 3;
+		margin-left: 1rem + 1rem * 3;
 	}
 	nav > ul ul ul ul > li li a {
-		padding-left: 1rem + 1rem * 4;
+		margin-left: 1rem + 1rem * 4;
 	}
 	nav > ul ul ul ul ul > li li a {
-		padding-left: 1rem + 1rem * 5;
+		margin-left: 1rem + 1rem * 5;
 	}
 
 	@media screen and (max-width: #{map-get($default-breakpoints, xs )} ) {
@@ -182,7 +180,7 @@ main {
 
 	.active > a {
 		background: $sidebar-active-color;
-		border-left: solid 4px #ccc;
+		border-left: solid 4px $sidebar-border-color;
 		color: var(--custom-link-text-color, #2e7eb3);
 		font-weight: bold;
 	}

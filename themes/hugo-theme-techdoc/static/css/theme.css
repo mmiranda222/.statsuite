@@ -691,6 +691,7 @@ main li > ol, .ais-Hits-item p {
 html,
 body {
   height: 100%;
+  font-family: 'Open sans',Raleway,Helvetica,Arial sans-serif;
 }
 
 .container {
@@ -1148,37 +1149,34 @@ main {
 .sidebar a {
   position: relative;
   display: block;
-  color: #404040;
   text-decoration: none;
   padding: .2rem 1rem;
-  border-left: solid 4px #f9f9f9;
-  border-bottom: solid 1px #eee;
+  border-left: solid 1px #2e7eb3;
 }
 
 .sidebar a:hover {
-  color: #404040;
   background: #eee;
-  border-left: solid 4px #ccc;
+  border-left: solid 1px #2e7eb3;
 }
 
 .sidebar nav > ul > li li a {
-  padding-left: 2rem;
+  margin-left: 2rem;
 }
 
 .sidebar nav > ul ul > li li a {
-  padding-left: 3rem;
+  margin-left: 3rem;
 }
 
 .sidebar nav > ul ul ul > li li a {
-  padding-left: 4rem;
+  margin-left: 4rem;
 }
 
 .sidebar nav > ul ul ul ul > li li a {
-  padding-left: 5rem;
+  margin-left: 5rem;
 }
 
 .sidebar nav > ul ul ul ul ul > li li a {
-  padding-left: 6rem;
+  margin-left: 6rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -1189,7 +1187,7 @@ main {
 
 .sidebar .active > a {
   background: #eee;
-  border-left: solid 4px #ccc;
+  border-left: solid 4px #2e7eb3;
   color: var(--custom-link-text-color, #2e7eb3);
   font-weight: bold;
 }

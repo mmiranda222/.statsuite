@@ -13,6 +13,7 @@ defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
 [params]
+    favicon = "/dotstatsuite-documentation/favicon.ico"
 
     # Source Code repository section
     # description = "put your description"
@@ -23,6 +24,7 @@ enableMissingTranslationPlaceholders = false
     mail = "mailto:contact@siscc.org"
     website_link = "https://siscc.org/"
     header_logo = "/dotstatsuite-documentation/images/sis-cc-logo-bw.png"
+
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
     # github_doc_repository = "https://github.com/thingsym/hugo-theme-techdoc"
