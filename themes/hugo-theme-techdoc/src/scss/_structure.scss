@@ -27,7 +27,7 @@ main {
 	// position: fixed;
 	// overflow-x: hidden;
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 @media screen and (max-width: #{map-get($default-breakpoints, xs )} ) {
@@ -41,5 +41,7 @@ main {
 	}
 	.sidebar {
 		@include grid-col($col: none, $order: 1);
+		max-height: 50vh !important;
+		height: 50vh !important;
 	}
 }

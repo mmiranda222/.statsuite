@@ -127,6 +127,7 @@ main {
 	header {
 		display: flex;
 		flex-direction: column;
+		text-align: center;
 	}
 }
 
@@ -135,6 +136,8 @@ main {
 	line-height: 1.8;
 	background: $sidebar-background-color;
 	border-right: 1px solid $sidebar-active-color;
+	max-height: 100vh;
+	height: 100vh;
 
 	ul {
 		list-style: none;
