@@ -20,14 +20,14 @@ Most of the (*standard SDMX*) used frequencies are supported: Annual, biannual, 
 The frequencies returned in the **Frequency** dimension of a data view are displayed in the filter, and only the frequencies returned for the given data view are displayed in it. If there is only one frequency, then the filter isn't displayed, and **Frequency** is shown only in the data view table/chart header.  
 In any case, the **Time Period** range selector will dynamically update according to the **Frequency** selection.
 
-![frequency](/images/time-period-1.png)
+![frequency](/dotstatsuite-documentation/images/time-period-1.png)
 
 **Time Periods**  
 As a general behavior, the **Time Period** selector layout is dynamic and updates according to the Frequency selection, e.g. *"I select Daily frequency, and the Time Period range selector displays the boxes for Year, Month and Day"*.  
 At this stage, if only Year is filled, or Year and Month, then it means that all available values in this range are returned. The selection field dropdown content automatically adapts to the corresponding date/time part displayed, e.g. "1" and "2" for semesters, and it should also take the actual data availability into account (see [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)).  
 In the **Time Period** selector, each box is a drop-down list of items corresponding to the selected **Frequency**.
 
-![time period](/images/time-period-2.png)
+![time period](/dotstatsuite-documentation/images/time-period-2.png)
 
 **Configurations**  
 If there is no Frequency dimension returned for a data view, then the **Frequency** Annual is selected by default.  
@@ -39,7 +39,7 @@ In the "Used filters" area, **Frequency** cannot be removed, but only replaced. 
 For **Time Period** ranges, each start / end can be removed, and thus no filter will be applied for each.  
 The *green* number of **selected values/total of values** is counting values for a given frequency. So for example, it will count the number of selected/total years when Yearly is selected, the number of selected/total months when Monthly is selcted, etc...
 
-![number of values](/images/time-period-3.png)
+![number of values](/dotstatsuite-documentation/images/time-period-3.png)
 
 ---
 
@@ -50,7 +50,7 @@ An edit box for "Last [xxx] periods" is visible under the "Frequency & Time peri
 It implies that the equivalent number of latest time series observations per time series will be returned for table and chart views of a given data view.  
 Unless the LastNObservations value is defined by an `SDMX`-sourced default setting (see the example below) or by a URL parameter, at first display the edit box will show an empty value "--". Otherwise it shows the number retrieved from the default setting or the URL.
 
-![Last N Periods](/images/last-n-periods.png)
+![Last N Periods](/dotstatsuite-documentation/images/last-n-periods.png)
 
 **Example**:  
 If a dataflow has yearly data and sparse observations within the default time period range from 2014 to 2018.  

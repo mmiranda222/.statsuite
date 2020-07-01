@@ -1,5 +1,7 @@
 <header>
-  <img src="/images/sis-cc-logo-bw.png"/>
+  {{ with .Site.Params.header_logo }}
+  <img src="{{ . }}"/>
+  {{end}}
   <div>
     <h1>{{ .Site.Title }}</h1>
     {{ with .Site.Params.version }}

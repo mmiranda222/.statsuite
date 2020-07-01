@@ -24,7 +24,7 @@ The .Stat Suite has three **main modules**:
  
 * **.Stat Core**: A highly performing, secure SDMX Data Store based on standard protocols, to store and retrieve statistical data, structural and referential metadata, data process information and security settings.
  
-![3 main modules](/images/home_splash.png)
+![3 main modules](/dotstatsuite-documentation/images/home_splash.png)
 
 ---
 
@@ -270,4 +270,4 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 
 **This flight planner allows travellers [*implementers*] getting a better understanding of the foreseen flight stops [*availability of features*] and their approximate timing according to the current fuel level [*resource capacity*] and Community priorities, and so to plan their own flight boarding [*deployment strategy*] as best as possible.**
 
-![Flight Planner](/images/flight_planner_2020.png)  
+![Flight Planner](/dotstatsuite-documentation/images/flight_planner_2020.png)  

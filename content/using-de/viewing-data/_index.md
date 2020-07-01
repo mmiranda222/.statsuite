@@ -17,4 +17,4 @@ In addition to the common header and footer of the Data Explorer ([Documentation
 
 Also **note** that every modification made on the selections in the visualisations pages, using the filters, or when switching the view from table to charts, is "stored" in the URL webpage. Therefore, using the `Going Back` option of the web browser interface allows to roll back to any previous state and user's action/selection.
 
-![Viewing data](/images/de-viewing-data.png)
+![Viewing data](/dotstatsuite-documentation/images/de-viewing-data.png)

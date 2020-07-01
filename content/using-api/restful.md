@@ -10,18 +10,18 @@ This cheat sheet is a quick reference description of the syntax and parameters f
 You can also download this document as a [.docx](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/9256239f1128a36174c7214c2aa316a22ffdf9e1/content/dotStat_REST_Cheat_Sheet.docx) file.
 
 **Legend:**  
-![API Restful](/images/api-resftul1.png)
+![API Restful](/dotstatsuite-documentation/images/api-resftul1.png)
 
 ---
 
 **Structural metadata queries:**  
-![API Restful](/images/api-resftul2.png)
+![API Restful](/dotstatsuite-documentation/images/api-resftul2.png)
 
 Each a .Stat space has a different web service entry point which should- replace **`http[s]://.Stat space WS/resource`** in the above syntax.  
 
 More options are available in the [full SDMX REST API standard](https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/rest_cheat_sheet.pdf?raw=true) but are not present or have not been fully tested in the .Stat web service, and do not appear here.  
 
-![API Restful](/images/api-resftul3.png)
+![API Restful](/dotstatsuite-documentation/images/api-resftul3.png)
 
 **Examples of structural metadata queries**  
 These examples use an entry point of http://nsi-staging-oecd.redpelicans.com/ This may be swapped out for your target space.
@@ -41,11 +41,11 @@ These examples use an entry point of http://nsi-staging-oecd.redpelicans.com/ Th
 ---
 
 **Data queries:**  
-![API Restful](/images/api-resftul4.png)
+![API Restful](/dotstatsuite-documentation/images/api-resftul4.png)
 
 Each a .Stat space has a different web service entry point which should replace https://ws-entry-point in the above syntax.  
 
-![API Restful](/images/api-resftul5.png)
+![API Restful](/dotstatsuite-documentation/images/api-resftul5.png)
 
 **Examples of data queries**  
 These examples use an entry point of http://nsi-staging-oecd.redpelicans.com. This may be swapped out for your target space.  
@@ -57,10 +57,10 @@ These examples use an entry point of http://nsi-staging-oecd.redpelicans.com. Th
 | All data for a partial key (Argentina, Total Visitors measure, Annual frequency), time series view | http://nsi-staging-oecd.redpelicans.com/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/AR..TOTAL_VISITORS........A |
 | Annual data for period 2010-2020 in a flat view | http://nsi-staging-oecd.redpelicans.com/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/.........A?startPeriod=2010&endPeriod=2020&dimensionAtObservation=AllDimensions |
 
-![API Restful](/images/api-resftul6.png)
+![API Restful](/dotstatsuite-documentation/images/api-resftul6.png)
 
 ---
 
 **Supported formats. “Parameter” in the tables below is used with the Accept HTTP header (see the Useful HTTP headers above)**  
 
-![API Restful](/images/api-resftul7.png)
+![API Restful](/dotstatsuite-documentation/images/api-resftul7.png)

@@ -8,7 +8,7 @@ weight: 320
 
 It is possible to **preview the structure and data of a dataflow** using the Data Explorer's table and chart representations. For that, the **eye icon** in the list of dataflows opens the dataflow preview in a new tab of the browser.    
 
-![DLM preview](/images/dlm-preview1.png)
+![DLM preview](/dotstatsuite-documentation/images/dlm-preview1.png)
 
 **Note** that if related observations have not yet been uploaded, then the preview will only display the filled dimension filters but no data table or chart.  
 
@@ -23,10 +23,10 @@ When this filter is switched 'On' then the dimension filters only show:
 
 This will apply the data availability information on the other dimension filters, as is done in the DE by default when the `dataAvailability` URL parameter is not used. For that, the DE takes the currently valid `Actual Content Constraint` of the dataflow, if available, into account.
 
-![DLM preview data avaibility on](/images/DE-data-availability-filter-on.png)
+![DLM preview data avaibility on](/dotstatsuite-documentation/images/DE-data-availability-filter-on.png)
 
 By switching the “Data availability” to 'Off', or by setting the `dataAvailability=off`parameter in the URL, data availability information is not applied. All valid dimension values will be shown in this case.
 
-![DLM preview data avaibility off](/images/DE-data-availability-filter-off.png)
+![DLM preview data avaibility off](/dotstatsuite-documentation/images/DE-data-availability-filter-off.png)
 
 When the user switches the filter check box, the `dataAvailability` URL parameter automatically updates accordingly.

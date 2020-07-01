@@ -20,7 +20,7 @@ weight: 2100
 ### Multi selection filters
 The visualisation pages for data table/chart views are dynamically filtered using the filters on the left side of the page. All filters are mutli-selection filters, except for Frequency (see the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) related to the specific functional requirements and behaviors of the **Frequency and Time-Period** selectors).  
 
-![Multi selection filters](/images/de-filters1.png)
+![Multi selection filters](/dotstatsuite-documentation/images/de-filters1.png)
 
 All dimensions of a selected data view are returned as filters, and based on data availability (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)).  
 The user can select dimension items, including Frequency and time period ranges, from the list of available filter values to be shown in the data view. Each selection will automatically trigger the update of the data view.  
@@ -28,7 +28,7 @@ If the user has made selection(s) in the previous search result page, or if a de
 **Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all were selected.  
 A numbering feature, next to the filter name, indicates for each filter the number of selection per total selectable items (`n/t`).
 
-![Multi selection filters](/images/de-filters12.png)
+![Multi selection filters](/dotstatsuite-documentation/images/de-filters12.png)
 
 ---
 
@@ -38,11 +38,11 @@ The filters show by default only those items for which data exists anywhere in t
 
 An additional filter for the "Data availability" settings can be displayed by adding `dataAvailability=on` to the URL. This will apply the data availability information on the other filters, as is done by default. This URL parameter is added automatically by the DLM, when the DE is used for previewing data. 
 
-![Hierarchical contents](/images/DE-data-availability-filter-on.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/DE-data-availability-filter-on.png)
 
 With `dataAvailability=off` in the URL, the additional "Data availability" filter is shown. This filter is switched off and data availability is not applied. 
 
-![Hierarchical contents](/images/DE-data-availability-filter-off.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/DE-data-availability-filter-off.png)
 
 When the user switches the filter check box, the URL automatically updates accordingly.
 
@@ -51,19 +51,19 @@ When the user switches the filter check box, the URL automatically updates accor
 ### Hierarchical contents
 In case of a hierarchy in the dimension items, the filter will display the root parents' list at first. A blue arrow next to an item and right-aligned will indicate when this item is a parent of sub-item(s).
 
-![Hierarchical contents](/images/de-filters2.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/de-filters2.png)
 
 If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.  
 
-![Hierarchical contents](/images/de-filters21.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/de-filters21.png)
 
 If for a parent (at any level) there are no data available (according to the Actual ContentConstraint related to the Dataflow), then the parent item is not selectable (and marked in light grey). Still, the user can navigate to the children and back to the parent again. 
 
 Parents without data:  
-![Hierarchical contents](/images/DE-filter-parents-without-data.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/DE-filter-parents-without-data.png)
 
 Children of parents without data:  
-![Hierarchical contents](/images/DE-filter-children-of-parents-without-data.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/DE-filter-children-of-parents-without-data.png)
 
 
 **Functional behaviors**:
@@ -78,11 +78,11 @@ Children of parents without data:
 ### Spotlight
 The spotlight filter appears only when the list of items exceeds a configurable number (e.g. more than 7 that represents the limit, in default layout, before a scrollbar option is introduced in the filter area). The spotlight filter dynamically reduces the returned number items when the user types some text in it.  
 
-![Spotlight](/images/de-filters3.png)
+![Spotlight](/dotstatsuite-documentation/images/de-filters3.png)
 
 For hierarchical contents, it dinamically acts on all contents at once when using it from the root level, so that it displays the list of results in one single and flat list, regardless their position in the hierarchy, with the information of the root(s) in light grey:
 
-![Spotlight 2](/images/de-filters4.png)
+![Spotlight 2](/dotstatsuite-documentation/images/de-filters4.png)
 
 But, when using spotlight on hierarchical contents from a sub-level, then it will ONLY act on the current visible level.
 
@@ -97,4 +97,4 @@ Users can unselected:
 * all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
 * all selections by clicking on `Clear all filters`.
 
-![Used filters](/images/de-filters5.png)
+![Used filters](/dotstatsuite-documentation/images/de-filters5.png)

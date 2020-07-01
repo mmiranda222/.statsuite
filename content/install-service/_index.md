@@ -15,7 +15,7 @@ No need for locally hosting servers, building complex infrastructures or worryin
 * The DevOps chain automatically keeps installations up-to-date with the latest .Stat Suite version (dev or master), thus organisations can easily test and use the latest features;
 * Costs and resources are minimised.
 
-![.Stat Suite as a Service](/images/as-a-service.png)
+![.Stat Suite as a Service](/dotstatsuite-documentation/images/as-a-service.png)
 
 [Contact us](mailto:contact@siscc.org) for further information and to set up a new tenant for you.
 

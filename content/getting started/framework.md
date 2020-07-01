@@ -27,11 +27,11 @@ The .Stat Suite has three **main modules**:
  
 * **.Stat Data Explorer**: A front-office application for easy finding, understanding and using of data through an efficient well-tuned navigation and search approach, appropriate data previews and contextual metadata, and download in standard formats, APIs or share features.
 
-![3 main modules](/images/home_splash.png)
+![3 main modules](/dotstatsuite-documentation/images/home_splash.png)
 
 
 ### The high-level technical architecture can be schematised as follow:
-![Stat Suite high-level architecture](/images/architecture.png)
+![Stat Suite high-level architecture](/dotstatsuite-documentation/images/architecture.png)
 
 
 Each main module (as well as their components) can be used together or separately.
@@ -101,9 +101,9 @@ The following technologies are used for the development of the **.Stat Data Expl
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Surface1.png" height="40" /></td>
 <td align="center"><img src="https://cdn-images-1.medium.com/max/1200/1*ngGAAMf8Sw4jCJ_nP2Qt5A.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" height="40" /></td>
-<td align="center"><img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" height="40" /></td>
+<td align="center"><img src="https://nodejs.org/static/dotstatsuite-documentation/images/logos/nodejs-new-pantone-black.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1280px-Npm-logo.svg.png" height="40" /></td>
-<td align="center"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height="40" /></td>
+<td align="center"><img src="https://git-scm.com/dotstatsuite-documentation/images/logos/downloads/Git-Icon-1788C.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" height="40" /></td>
 </tr>
 </tbody>
@@ -130,9 +130,9 @@ The following technologies are used for the development of the **.Stat Core** co
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Kubernetes_%28container_engine%29.png" height="40" /></td>
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" height="40" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" height="40" /></td>
-<td align="center"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height="40" /></td>
+<td align="center"><img src="https://git-scm.com/dotstatsuite-documentation/images/logos/downloads/Git-Icon-1788C.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" height="40" /></td>
-<td align="center"><img src="https://fr-wiki.ikoula.com/images/5/55/Sqlserver.png" height="40" /></td>
+<td align="center"><img src="https://fr-wiki.ikoula.com/dotstatsuite-documentation/images/5/55/Sqlserver.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/150px-.NET_Core_Logo.svg.png" height="40" /></td>
 <td align="center"><img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/04/BrandVisualStudioWin2019.png" height="40" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/220px-NuGet_project_logo.svg.png" height="40" /></td>

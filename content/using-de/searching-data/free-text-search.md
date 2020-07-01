@@ -6,7 +6,7 @@ weight: 1700
 
 ---
 
-![DE Free text search](/images/de-free-text-search.png)
+![DE Free text search](/dotstatsuite-documentation/images/de-free-text-search.png)
 
 ### Where search is performed
 The free text search of the Data Explorer looks for a specific language in the following pieces of information:
@@ -31,16 +31,16 @@ See reference [here](https://www.elastic.co/guide/en/elasticsearch/guide/current
 ### How free text search hits are displayed
 For each search result (dataflow), search hits found are displayed **highlighted within its context**, meaning that according text before and after the found text is also to be displayed.
 #### Found in ID and localised name of a dataflow
-![de search hits](/images/de-search-hits-1.png)
+![de search hits](/dotstatsuite-documentation/images/de-search-hits-1.png)
 
 #### Found in ID and localised name of the categories (and their parent categories) in which the dataflow is categorised
-![de search hits](/images/de-search-hits-2.png)
+![de search hits](/dotstatsuite-documentation/images/de-search-hits-2.png)
 
 #### Found in the localised description of the dataflow
-![de search hits](/images/de-search-hits-3.png)
+![de search hits](/dotstatsuite-documentation/images/de-search-hits-3.png)
 
 #### Found in IDs and localised names of the concepts used as dimensions, as well as the dimension IDs
-![de search hits](/images/de-search-hits-4.png)
+![de search hits](/dotstatsuite-documentation/images/de-search-hits-4.png)
 
 #### Found in IDs and localised names of the codes used as dimension values
-![de search hits](/images/de-search-hits-5.png)
+![de search hits](/dotstatsuite-documentation/images/de-search-hits-5.png)

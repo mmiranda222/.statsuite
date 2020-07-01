@@ -25,7 +25,7 @@ weight: 45
 
 **summary**
 
-![from gitlab artifacts summary](/images/from_gitlab_artifacts.png)
+![from gitlab artifacts summary](/dotstatsuite-documentation/images/from_gitlab_artifacts.png)
 
 **1. setup**
 

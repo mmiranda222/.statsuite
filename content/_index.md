@@ -8,6 +8,6 @@ You can find out more about the Community on our [web site](https://siscc.org). 
 **An environment to explore data** and develop various reporting and dissemination experiences.  
 **An ‘SDMX-native’ environment**, building on best practices in statistical data modelling.  
 
-![homepage splash](/images/home_splash.png)
+![homepage splash](/dotstatsuite-documentation/images/home_splash.png)
 
 [![Mentioned in Awesome Official Statistics ](https://awesome.re/mentioned-badge.svg)](http://www.awesomeofficialstatistics.org)

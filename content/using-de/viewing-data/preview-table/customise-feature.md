@@ -19,7 +19,7 @@ weight: 2650
 The DE user is able to customise the table preview by using the **"Customise"** option from the toolbar. It is thus possible to customise how the data is positioned in the table preview by moving (dragging and dropping) the available dimensions between the Columns, Rows and Row Sections axis.  
 Upon clicking on "Customise", the following area is displayed (moving the table preview downwards):
 
-![Customise](/images/de-customise1.png)
+![Customise](/dotstatsuite-documentation/images/de-customise1.png)
 
 The **Drag & Drop** feature allows to:
 * Move any dimension from one axis to another;
@@ -45,13 +45,13 @@ All data displayed in the data table preview are shown with a Time Period (when 
 It is possible to change that representation in order to display the time period in **reverse mode**, so that the latest value comes first in any layout option.  
 This option is managed by a selection box always embedded to the Time Period dimension in the Customise option:
 
-![Time period reverse](/images/de-time-period-reverse1.png)
+![Time period reverse](/dotstatsuite-documentation/images/de-time-period-reverse1.png)
 
 The option is always set to `Ascending` by default. When the user changes it to `Descending`, it automatically reverses the Time Period values accordingly.
 
-![Time period reverse](/images/de-time-period-reverse2.png)
+![Time period reverse](/dotstatsuite-documentation/images/de-time-period-reverse2.png)
 
-![Time period reverse](/images/de-time-period-reverse3.png)
+![Time period reverse](/dotstatsuite-documentation/images/de-time-period-reverse3.png)
 
 ---
 

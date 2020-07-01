@@ -8,7 +8,7 @@ weight: 20
 
 ### Our delivery and support streams' diagram
 
-![DevOps diagram](/images/devops-schema.png)
+![DevOps diagram](/dotstatsuite-documentation/images/devops-schema.png)
 
 In this diagram are represented the deliverables we provide (in green) based on the 3 different delivery approaches that we support.  
 

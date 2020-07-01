@@ -20,7 +20,7 @@ weight: 1800
 **Note** that each dataflow can be attached to one or more than one category.  
 The CategoryScheme can have a simple hierarchy (each child element can have no or only one parent element defined) of an undefined depth (usually not more than 3 or 4), e.g.:
 
-![de facet hierarchy](/images/de-facet-1.png)
+![de facet hierarchy](/dotstatsuite-documentation/images/de-facet-1.png)
 
 **One facet per concept that is used to define dataflow dimensions**: Concepts are distinguished only by their localised concept names (per language), not by their IDs.  
 **Note** that all Concepts having the same localised name (independently from their ID) are grouped into one single facet.  
@@ -52,7 +52,7 @@ Dimension values of a dataflow are indexed only if there are data available for 
 #### Homepage facets
 The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service.  
 
-![de homepage facet](/images/de-facet-2.png)
+![de homepage facet](/dotstatsuite-documentation/images/de-facet-2.png)
 
 Each facet, when opened, presents a selectable root-level of facet values together with a non-selectable second-level facet values. The root-level and second-level facet values represent the available values for all dataflows currently being indexed.  
 
@@ -62,29 +62,29 @@ The free text search and the navigation through pre-defined facets are exclusive
 The facets shown in the search result page are fully dependent on the current search context.  
 Common facet dimensions can be automatically removed (hidden) from the search result page when specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).
 
-![de facet result](/images/de-facet-3.png)
+![de facet result](/dotstatsuite-documentation/images/de-facet-3.png)
 
 #### Facet types
 All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values) **except** for the **Time Period** facet. The Time Period facet is a range selection facet that shows a start year and end year independently from the currently selected frequency.  
 
-![de facet types](/images/de-facet-4.png)
+![de facet types](/dotstatsuite-documentation/images/de-facet-4.png)
 
 #### Facet information
 The facet header contains the number of facet values available, and the number of currently selected facets (green numbers). The facet values show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
 
-![de facet information](/images/de-facet-5.png)
+![de facet information](/dotstatsuite-documentation/images/de-facet-5.png)
 
 #### Hierarchical contents
 In case of a hierarchy in the dimension items, the facet displays the root parents’ list at first. A blue arrow next to an item and right-aligned indicates when this item is a parent of sub-item(s).  
 If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.
 
-![de facet types](/images/de-facet4bis.png)
+![de facet types](/dotstatsuite-documentation/images/de-facet4bis.png)
 
 #### Data availability
 
 In hierarchical search facets, parent values, for which any of the resulting dataflows do not have data, are not selectable and are marked in light grey colour. Still, the user can navigate to the children and back to the parent again.
 
-![de facet types](/images/de-facet5bis.png)
+![de facet types](/dotstatsuite-documentation/images/de-facet5bis.png)
 
 ---
 
@@ -97,4 +97,4 @@ Users can unselected:
 * all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
 * all selections by clicking on `Clear all filters`. When all filters are unselected, then the user is brought back to the home page.
 
-![de used filters](/images/de-facet-6.png)
+![de used filters](/dotstatsuite-documentation/images/de-facet-6.png)

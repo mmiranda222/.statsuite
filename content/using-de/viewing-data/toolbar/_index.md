@@ -15,7 +15,7 @@ weight: 3500
 - [Full screen](#full-screen)
 - [Developer API](#developer-api)
 
-![Toolbar](/images/de-toolbar1.png)
+![Toolbar](/dotstatsuite-documentation/images/de-toolbar1.png)
 
 ---
 
@@ -25,14 +25,14 @@ The data table view is the default view when the user arrives from a search resu
 
 Chart types depend on the configuration of the DE instance, or on the type of data (e.g. viewing data in a timeline chart is feasible only with the appropriate time dimension). For more information about charts and chart types, go to [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/).
 
-![Toolbar](/images/de-toolbar2.png)
+![Toolbar](/dotstatsuite-documentation/images/de-toolbar2.png)
 
 ---
 
 ### Labels
 The "Labels" option allows to display the information using names, identifiers (unique IDs) or both.  
 
-![Toolbar](/images/de-toolbar3.png)
+![Toolbar](/dotstatsuite-documentation/images/de-toolbar3.png)
 
 This option applies to all the table and chart contents, including their header and footer. When the option `Both` is selected, then it shows the Identifer bewteen brakets, then a space, then the name.  
 
@@ -53,7 +53,7 @@ For the data **chart views**, check the docmentation [here](https://sis-cc.gitla
 ### Share
 The **Share** option allows sharing the data view in table or chart mode.
 
-![Share](/images/de-share1.png)
+![Share](/dotstatsuite-documentation/images/de-share1.png)
 
 There are two options for sharing the data view:
 * 1) **Data snapshot**: The current data is to be saved with the data view and redisplayed as such.
@@ -62,11 +62,11 @@ There are two options for sharing the data view:
 Before having the expected URL and the code to embed for sharing the information, the user must fill up his/her **email address** to make the request by clicking on the button "Request URL and embed code".  
 Once clicked, the user receives the following message:
 
-![Share](/images/de-share2.png)
+![Share](/dotstatsuite-documentation/images/de-share2.png)
 
 ... Then the following email:
 
-![Share](/images/de-share3.png)
+![Share](/dotstatsuite-documentation/images/de-share3.png)
 
 The email contains two parts, the first one to let the user validating its email and so its requested of sharing table or chart view. In the second part, the email displays the URL and the embedded code for sharing the table or the chart previously requested.  
 There is also a warning message that the URL and the embedded code are only available once the user has validated its email.
@@ -74,7 +74,7 @@ There is also a warning message that the URL and the embedded code are only avai
 Once the user clicks on "Validate your email address", the shared content is *activated* and opened in a new webpage with a unique URL id.  
 The shared view contains the data table or chart view, including the header (title and sub-title) and footer (copyright link and source url id):
 
-![Share](/images/de-share4.png)
+![Share](/dotstatsuite-documentation/images/de-share4.png)
 
 ---
 
@@ -87,7 +87,7 @@ The **locale** used for names is the currently used language in the application.
 
 The download options form the dropdown button are described below.  
 
-![Download](/images/de-download1.png)
+![Download](/dotstatsuite-documentation/images/de-download1.png)
 
 **Table in Excel**  
 Only the filtered data contained in the online table (or chart) view is downloaded in **.xlsx** file format.  
@@ -98,7 +98,7 @@ The online **table header**'s title and sub-title are replicated in separate lin
 The online **table footer**'s copyright is to replicated in a separate line below the data table (including its hyperlink). The source link is also replicated below the table with the data view name and hyperlink to the original online view.  
 **RTL** (Right-to-Left) mode is supported, allowing to programmatically switching the layout of a downloaded Excel data table between left-to-right and right-to-left. Depending on the version viewed online (e.g. in Arabic language) and the user's localised preferences in Excel, the downloaded Excel table will automatically be displayed in RTL mode.
 
-![Download](/images/de-download2.png)
+![Download](/dotstatsuite-documentation/images/de-download2.png)
 
 **Filter data in tabular text (CSV)**  
 Only the filtered data contained in the online table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
@@ -116,13 +116,13 @@ Additional downloads of external resources can be added to a dataflow and be mad
 ### Full screen
 Both table and chart views can be displayed in full screen mode.  
 
-![Fullscreen](/images/de-fullscreen1.png)
+![Fullscreen](/dotstatsuite-documentation/images/de-fullscreen1.png)
 
 When the user presses the **Full screen** option, a table or chart occupying the whole screen is displayed.  
 The entire toolb ar is kept in the view, as well as the table/chart header (title and sub-title) and footer (copyright link and source url id).  
 Clicking on **Full screen** again brings back to the normal screen.
 
-![Fullscreen](/images/de-fullscreen2.png)
+![Fullscreen](/dotstatsuite-documentation/images/de-fullscreen2.png)
 
 ---
 
@@ -132,5 +132,5 @@ Both Data query and structure query are generated according to the current data 
 There is an option for generating the data query in **"Flat"** or **"Time series"** format.  
 There is an option to **copy** each query in the user's clipboard.
 
-![Developer API](/images/de-api.png)
+![Developer API](/dotstatsuite-documentation/images/de-api.png)
 

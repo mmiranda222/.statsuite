@@ -67,7 +67,7 @@ Based on the original placement of all dimensions that are finally combined into
 ### Example
 See a stylised DSD (inspired by National Accounts) with the following concepts and codelist samples:  
 
-![Data model example](/images/DE_UoM_data_model_example.png)
+![Data model example](/dotstatsuite-documentation/images/DE_UoM_data_model_example.png)
 
 The concepts of the dimensions and attributes highlighted above in red are listed in the **UNIT_MEASURE_CONCEPTS** annotation. The underlying dimension attachment of the UnitMultiplier and BaseYear attributes are supposed to be *Measure* and *Country*.   
 Therefor:  
@@ -78,7 +78,7 @@ Therefor:
 #### Case 1: Table Header  
 The UoM label (which includes the labels for all dimensions in UNIT_MEASURE_CONCEPTS) is shown in the **second "Unit of measure" table subtitle**. The dimensions defined in UNIT_MEASURE_CONCEPTS are **not** displayed separately in the first table subtitle.
 
-![Example case 1](/images/DE_UoM_Case1.png)  
+![Example case 1](/dotstatsuite-documentation/images/DE_UoM_Case1.png)  
 
 See also: http://de-staging-siscc.redpelicans.com/vis?dataquery=AU.A.GDP..V.SA.NT&period=2000%2C2004&frequency=A&locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=DF_UOM&dataflow[agencyId]=OECD&dataflow[version]=3.0&dataAvailability=on&filter=PANEL_PERIOD
 
@@ -146,7 +146,7 @@ Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM la
 #### Case 4
 The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed in the Row section axis) are displayed in an additional **"Unit of measure" row**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally on the Column axis are **not** displayed separately.
 
-![Example case 4](/images/DE_UoM_Case4.png)  
+![Example case 4](/dotstatsuite-documentation/images/DE_UoM_Case4.png)  
 
 See also: http://de-staging-siscc.redpelicans.com/vis?dataquery=AU%2BBE.A.GDP%2BINV..V%2BQ.SA.NT&period=2000%2C2002&frequency=A&locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=DF_UOM&dataflow[agencyId]=OECD&dataflow[version]=3.0&dataAvailability=on&filter=PRICE_BASE
 
@@ -156,7 +156,7 @@ Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM la
 #### Case 5
 The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS) are displayed as a **"Unit of measure" footnote at cell level**.
 
-![Example case 5](/images/DE_UoM_Case5.png)  
+![Example case 5](/dotstatsuite-documentation/images/DE_UoM_Case5.png)  
 
 [improved screenshot to follow - feature not fully implemented yet - PriceBase and Transformation dimensions still displayed in Table sub-header instead of Cell]
 

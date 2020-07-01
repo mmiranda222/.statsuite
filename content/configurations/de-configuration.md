@@ -52,7 +52,7 @@ If it is **missing**, then all available (indexed) facets are displayed on the h
     }
 ```
 
-![Homepage facets](/images/faq-homepage-facets.png)
+![Homepage facets](/dotstatsuite-documentation/images/faq-homepage-facets.png)
 
 Facets are **localised**, thus you must add the translated name of the chosen facet if your instance of .Stat DE is configured with several languages.  
 Keep whitespace(s) between words in your facet names.  
@@ -94,7 +94,7 @@ These facets will be displayed always at first top positions and their labels ar
     }
 ```
 
-![Search result pinned facets](/images/faq-pinned-facets.png)
+![Search result pinned facets](/dotstatsuite-documentation/images/faq-pinned-facets.png)
 
 Facets are **localised**, thus you must add the translated name of the pinned facet(s) if your instance of .Stat DE is configured with several languages, e.g.:  
 ```json
@@ -172,7 +172,7 @@ Define the minimum and maximum values of the time period range in the visualisat
     }
 ```
 
-![Time period boundaries](/images/faq-period-boundaries.png)
+![Time period boundaries](/dotstatsuite-documentation/images/faq-period-boundaries.png)
 
 ---
 
@@ -189,7 +189,7 @@ Define the default time period selection of the visualisation page views, accord
     }
 ```
 
-![Time period default range](/images/faq-period-default.png)
+![Time period default range](/dotstatsuite-documentation/images/faq-period-default.png)
 
 ---
 
@@ -209,7 +209,7 @@ in `dotstatsuite/data/<env>/configs/<tenant>/datasources.json`
 When set to `true`, then the **LastNPeriod** feature is displayed in the DataExplorer visualisation page (under the Time Period & Frequency filter). See the functional specifications of the feature described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#last-n-periods). 
 The feature is set to `false` by default.
 
-![Time period default range](/images/lastnobs-config.png)
+![Time period default range](/dotstatsuite-documentation/images/lastnobs-config.png)
 
 ---
 
@@ -315,7 +315,7 @@ You can define more than one type of attribute to be displayed as flags.<br>
     }
 ```
 
-![Attributes flags](/images/faq-flags.png)
+![Attributes flags](/dotstatsuite-documentation/images/faq-flags.png)
 
 ---
 
@@ -334,7 +334,7 @@ You can define more than one type of attributes to be displayed as footnotes.<br
     }
 ```
 
-![Attributes footnotes](/images/faq-footnotes.png)
+![Attributes footnotes](/dotstatsuite-documentation/images/faq-footnotes.png)
 
 ---
 

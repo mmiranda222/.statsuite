@@ -220,7 +220,7 @@ This fix resolves the issue that caused the .Stat Data Explorer to return all da
 With this solved, dataflows are only retrieved through the CategoryScheme facet value in which they are categorised.  
 This feature needs at least **nsiws.net v7.11.3** to fully function, and nsiws.net v7.11.0 to not break the request.
 
-![DE fixed issue for facet filter](/images/changelog-js4.2.0.png)
+![DE fixed issue for facet filter](/dotstatsuite-documentation/images/changelog-js4.2.0.png)
 
 ---
 
@@ -498,15 +498,15 @@ You can access the installation files from [here](https://gitlab.com/sis-cc/.sta
 The DLM Excel-Addin is made for configuring a single or multiple connection endpoints, in order to retrieve data within Excel tables with simple layout. This first version supports **flat**, **time series down**, and **time series across** layouts.  
 You can find more information about deployment, set up and configuration [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/blob/master/README.md).  
 
-![DLM Excel-Addin](/images/dlm-wizard-01.png)
+![DLM Excel-Addin](/dotstatsuite-documentation/images/dlm-wizard-01.png)
 
-![DLM Excel-Addin](/images/dlm-wizard-02.png)
+![DLM Excel-Addin](/dotstatsuite-documentation/images/dlm-wizard-02.png)
 
-![DLM Excel-Addin](/images/dlm-wizard-03.png)
+![DLM Excel-Addin](/dotstatsuite-documentation/images/dlm-wizard-03.png)
 
-![DLM Excel-Addin](/images/dlm-wizard-04.png)
+![DLM Excel-Addin](/dotstatsuite-documentation/images/dlm-wizard-04.png)
 
-![DLM Excel-Addin](/images/dlm-wizard-05.png)
+![DLM Excel-Addin](/dotstatsuite-documentation/images/dlm-wizard-05.png)
 
 Minor changes:
 
@@ -535,7 +535,7 @@ When adding the annotation type **`MAXTEXTATTRIBUTELENGTH`** to a DSD definition
 Then the textual attribute value can be longer in its display than the default length.  
 The user is also notified through the email of the transfer action in the DLM:  
 
-![MaxTexAttributeLength message](/images/maxtextattributelength.png)
+![MaxTexAttributeLength message](/dotstatsuite-documentation/images/maxtextattributelength.png)
 
 ---
 
@@ -613,11 +613,11 @@ It is possible to relate a specific dataflow, in the SDMX Dataflow structure def
 
 **In the following example**, the dataflow structure definition contains 3 annotations of EXT_RESOURCE type for localised (in English and French) externally stored files to link to the datalfow. Each hyperlink can be enriched with a link to an image for its display as an icon of the link in the final representation: <br>
 
-![Dataflow structure with external resources](/images/changelog_ext_res01.png)
+![Dataflow structure with external resources](/dotstatsuite-documentation/images/changelog_ext_res01.png)
 
 Once published in the Data Explorer, the external resources related to the dataflow are available from the visualisation page (table and chart views) under the "Download" option, and in addition to the default data download links:
 
-![Dataflow display with external sources](/images/changelog_ext_res02.png)
+![Dataflow display with external sources](/dotstatsuite-documentation/images/changelog_ext_res02.png)
 
 Switching the language of the Data Explorer from English to French will make the localised external files available for download (acccording to the dataflow structure definition).
 
@@ -731,7 +731,7 @@ Major changes:
 
 - [dotstatsuite-sdmx-faceted-search#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/issues/32) Adapt the search service to use the new format of **localised elements in SDMX-JSON** formats
 - [dotstatsuite-data-explorer#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/13) Table view with **indented children** for hierarchies in rows <br>
-![RowLimit1](/images/Indented_Table.png)
+![RowLimit1](/dotstatsuite-documentation/images/Indented_Table.png)
 - [dotstatsuite-data-explorer#9](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/9) DataExplorer table preview in the **Drag&Drop feature**
 - [dotstatsuite-data-explorer#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/4) Set a limit of cells in the DataExplorer table view
 - [dotstatsuite-data-explorer#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/50) Time Dimension labels in DataExplorer for **monthly frequency** (see the new configuration rules [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/installation/de-customisation-configuration/#localised-time-period-values-for-monthly-frequency))
@@ -777,7 +777,7 @@ Bug fixes:
 Major changes:
 
 - [dotstatsuite-data-explorer#89](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/89) **Drag&Drop feature** is restricted to minimum of 1 dimension on row. The last dimension set to Row cannot be removed. <br>
-![RowLimit1](/images/RowLimit1.png)
+![RowLimit1](/dotstatsuite-documentation/images/RowLimit1.png)
 - [dotstatsuite-data-explorer#71](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/71) Extend the behavior of the **DEFAULT filter selections** by applying also items from search ; the sdmx DEFAULT annotation rule is combined with the end-user's selections from the search result page.
 
 Minor changes:
@@ -787,7 +787,7 @@ Minor changes:
 - [dotstatsuite-data-explorer#88](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/88) The number of selected items of the **Time-Range selector** filter is displayed in the visualisation page.
 - [dotstatsuite-share#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/issues/2) Style, content and layout enhancements of the content of the **Share email** validation request
 - [dotstatsuite-data-explorer#73](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/73) Change "Code" option in "Label format" to "Identifier" <br>
-![Identifier](/images/Identifier.png)
+![Identifier](/dotstatsuite-documentation/images/Identifier.png)
 
 Bug fixes:
 
@@ -837,11 +837,11 @@ Major changes:
 
 - [dotstatsuite-data-explorer#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/23) **Time period range selection** with annual and non-annual frequencies.<br>
 This new feature of the Data Explorer visualisation page is **replacing the time range slider** and enables the end-user to select a time frequency and an corresponding range of time period values for a given dataflow view.<br>  
-![Time Period Selector](/images/TimePeriodSelector.png)
+![Time Period Selector](/dotstatsuite-documentation/images/TimePeriodSelector.png)
 - [dotstatsuite-data-explorer#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/26) **Share API** and publication workflow.<br>
 The new Share service for table and chart sharing views (including url and embedded codes) relies on a **email validation workflow** process detailed [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#publication-workflow).<br>
 The end-user needs to provide a valid email address in order to receive a validation email along with the url and embedded code of the shared table or chart view.<br>  
-![Share email](/images/ShareMail.png)
+![Share email](/dotstatsuite-documentation/images/ShareMail.png)
 - [dotstatsuite-data-explorer#33](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/33) **LastNObservations** default setting allowing to define a default number of latest time series observations per time series returned for table and chart views.<br>
 This is implemented as an sdmx annotation parameter, but it should then be enhanced with a UI feature allowing the end-user to change this default parameter.
 - [dotstatsuite-data-explorer#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/issues/15) **.CSV download includes labels/codes option**.<br>

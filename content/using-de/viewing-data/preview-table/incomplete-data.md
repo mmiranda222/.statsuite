@@ -13,7 +13,7 @@ Data in table or chart views can be incomplete when the current data selections 
 
 In these cases where the data returned in the visualisation page are incomplete, and an orange text in the table/chart's subtitle indicates that `"This preview displays [xxxx] data points. Your selection is above this limit resulting in an incomplete table. All selected data points can still be downloaded in tabular text (CSV)."`.  
 
-![DE incomplete data message](/images/de-incomplete-data.png)  
+![DE incomplete data message](/dotstatsuite-documentation/images/de-incomplete-data.png)  
 
 Also the Excel download will contain only the incomplete data.   
 

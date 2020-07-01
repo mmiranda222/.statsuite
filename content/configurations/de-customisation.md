@@ -116,11 +116,11 @@ Define your website name and logo.<br>
 ```json
     "app": {
           "title": "OECD Data Explorer",
-          "favicon": "/assets/siscc/data-explorer/images/favicon.ico"
+          "favicon": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/favicon.ico"
     }
 ```
 
-![Site title and logo](/images/faq-site-title-logo.png)
+![Site title and logo](/dotstatsuite-documentation/images/faq-site-title-logo.png)
 
 ---
 
@@ -140,7 +140,7 @@ Add the url of a publicly available image, or the path of an image stored in `/a
  }
 ```
 
-![DE new background](/images/de-background.png)  
+![DE new background](/dotstatsuite-documentation/images/de-background.png)  
 
 
 **Notes:**  
@@ -168,28 +168,28 @@ Define the common logos in the header, subheader, footer and homepage of the web
 
 ```json
     "assets": {
-        "header": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
-        "subheader": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png",
-        "footer": "/assets/siscc/data-explorer/images/sis-cc-icon.png",
-        "splash": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
+        "header": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/sis-cc-logo.png",
+        "subheader": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/dotstat-data-explorer-logo.png",
+        "footer": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/sis-cc-icon.png",
+        "splash": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/dotstat-data-explorer-logo.png"
     }
 ```
 
 * header:  
 
-![Site logo header](/images/faq-site-logo-header.png)
+![Site logo header](/dotstatsuite-documentation/images/faq-site-logo-header.png)
 
 * subheader:  
 
-![Site logo subheader](/images/faq-site-logo-subheader.png)
+![Site logo subheader](/dotstatsuite-documentation/images/faq-site-logo-subheader.png)
 
 * footer:  
 
-![Site logo footer](/images/faq-site-logo-footer.png)
+![Site logo footer](/dotstatsuite-documentation/images/faq-site-logo-footer.png)
 
 * splash:  
 
-![Site logo splash](/images/faq-site-logo-splash.png)
+![Site logo splash](/dotstatsuite-documentation/images/faq-site-logo-splash.png)
 
 ---
 
@@ -205,7 +205,7 @@ The source can be a binary image or a link.<br>
     }
 ```
 
-![viewer footer logo](/images/faq-viewer-logo.png)
+![viewer footer logo](/dotstatsuite-documentation/images/faq-viewer-logo.png)
 
 ---
 
@@ -223,7 +223,7 @@ Define the name and hyperlink in the footer of the table and chart views behind 
     }
 ```
 
-![Terms and Conditions](/images/faq-terms-conditions.png)
+![Terms and Conditions](/dotstatsuite-documentation/images/faq-terms-conditions.png)
 
 ---
 
@@ -240,7 +240,7 @@ Define the hyperlink for the API documentation.<br>
     }
 ```
 
-![API documentation](/images/faq-api-documentation.png)
+![API documentation](/dotstatsuite-documentation/images/faq-api-documentation.png)
 
 ---
 
@@ -257,7 +257,7 @@ Define the hyperlink for the "Contact us" feature.<br>
     }
 ```
 
-![Contact us](/images/faq-contact-us.png)
+![Contact us](/dotstatsuite-documentation/images/faq-contact-us.png)
 
 ---
 
@@ -382,6 +382,6 @@ Facets are localised, thus you must add the translated name of facet and duplica
 
 The result is as follows:  
 
-![facet icon 1](/images/faq-facet-icon-1.png)
+![facet icon 1](/dotstatsuite-documentation/images/faq-facet-icon-1.png)
 
-![facet icon 2](/images/faq-facet-icon-2.png)
+![facet icon 2](/dotstatsuite-documentation/images/faq-facet-icon-2.png)

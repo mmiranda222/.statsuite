@@ -20,7 +20,7 @@ ToC
 
 Once logged in the DLM, a **Log out** feature is available in the common header of the interface.  
 
-![DLM log out](/using-dlm/files/dlm-log-out.png)
+![DLM log out](/dotstatsuite-documentation/using-dlm/files/dlm-log-out.png)
 
 Under the username icon, the pop-up window displays his email address (used for credential), and the "Log out" button.  
 When the user clicks on "Log out", then he is unregistered from .Stat DLM and redirected to the Keycloak Log in page.

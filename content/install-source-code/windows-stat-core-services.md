@@ -58,7 +58,7 @@ Make sure that the windows machine which will be used in this installation proce
 
 ## Topology
 
-![.Stat Core topology two spaces](/images/stat-core-topology-two-spaces.PNG)
+![.Stat Core topology two spaces](/dotstatsuite-documentation/images/stat-core-topology-two-spaces.PNG)
 
 ## Installation overview
 1.   [Download the source code](#1-download-the-source-code)
@@ -165,7 +165,7 @@ For this step you will need the Microsoft SQL sysadmin user and password.
 
 ### Initialize the DotStatSuiteCore_Common database  
 
-![.Stat Core topology Common](/images/stat-core-topology-common.PNG)  
+![.Stat Core topology Common](/dotstatsuite-documentation/images/stat-core-topology-common.PNG)  
 
 Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the DotStatSuiteCore_Common database.
 
@@ -175,7 +175,7 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publis
 ```
 ### Initialize one Design DotStatSuiteCore_Data database  
 
-![.Stat Core topology designData](/images/stat-core-topology-designData.PNG)  
+![.Stat Core topology designData](/dotstatsuite-documentation/images/stat-core-topology-designData.PNG)  
 
 Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and initialize Design DotStatSuiteCore_Data database.
 
@@ -185,7 +185,7 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publis
 ```
 ### Initialize one Disseminate DotStatSuiteCore_Data database  
 
-![.Stat Core topology disseminateData](/images/stat-core-topology-disseminateData.PNG)  
+![.Stat Core topology disseminateData](/dotstatsuite-documentation/images/stat-core-topology-disseminateData.PNG)  
 
 Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and initialize the Disseminate DotStatSuiteCore_Data database.
 
@@ -228,7 +228,7 @@ cp -r -f /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-exa
 
 ### Initialize one Design DotStatSuiteCore_Struct database (MappingStore db)  
 
-![.Stat Core topology designStruct](/images/stat-core-topology-designStruct.PNG)
+![.Stat Core topology designStruct](/dotstatsuite-documentation/images/stat-core-topology-designStruct.PNG)
 
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
@@ -249,7 +249,7 @@ dotnet Estat.Sri.Mapping.Tool.dll init -m DesignStructDb -f
 
 ### Initialize one Disseminate DotStatSuiteCore_Struct database (MappingStore db)  
 
-![.Stat Core topology disseminateStruct](/images/stat-core-topology-disseminateStruct.PNG)
+![.Stat Core topology disseminateStruct](/dotstatsuite-documentation/images/stat-core-topology-disseminateStruct.PNG)
    
 The initialization of MappingStore databases is done in two steps, first the dotstatsuite-core-dbup tool is used to create an empty database with the user and its credentials, and finally the maapi.net tool will generate all the remaining database artifacts.
 
@@ -270,7 +270,7 @@ dotnet Estat.Sri.Mapping.Tool.dll init -m DisseminateStructDb -f
 
 ## 4 Deploy the Transfer service  
 
-![.Stat Core topology transfer](/images/stat-core-topology-transfer.PNG)
+![.Stat Core topology transfer](/dotstatsuite-documentation/images/stat-core-topology-transfer.PNG)
 
 **Step 1.** Create a new folder to create the web service 
 
@@ -413,7 +413,7 @@ Open a web browser and open the url localhost:83/health
 
 ## 5 Deploy the Design NSI web service in port 81  
 
-![.Stat Core topology nsiwsDesign](/images/stat-core-topology-nsiwsDesign.PNG)
+![.Stat Core topology nsiwsDesign](/dotstatsuite-documentation/images/stat-core-topology-nsiwsDesign.PNG)
 
 **Step 1.** Create a new folder to create the web service 
 
@@ -513,7 +513,7 @@ Open a web browser and open the url localhost:81
 
 ## 6 Deploy the Disseminate NSI web service in port 80  
 
-![.Stat Core topology nsiwsDisseminate](/images/stat-core-topology-nsiwsDisseminate.PNG)
+![.Stat Core topology nsiwsDisseminate](/dotstatsuite-documentation/images/stat-core-topology-nsiwsDisseminate.PNG)
 
 **Step 1.** Create a new folder to create the web service 
 
