@@ -108,7 +108,7 @@ The following technologies and cloud services are used for the DevOps implementa
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/220px-NuGet_project_logo.svg.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" style="height: 40px;" /></td>
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" style="height: 40px;" /></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/en/0/00/Kubernetes_%28container_engine%29.png" style="height: 40px;" /></td>
+<td align="center"><img src="https://kubernetes.io/images/wheel.svg" style="height: 40px;" /></td>
 </tr>
 </tbody>
 </table>
