@@ -8,6 +8,13 @@ weight: 1700
 
 ![DE Free text search](/dotstatsuite-documentation/images/de-free-text-search.png)
 
+#### Table of Content
+- [Where search is performed](#where-search-is-performed)
+- [How to search](#how-to-search)
+- [How free text search hits are displayed](#how-free-text-search-hits-are-displayed)
+
+---
+
 ### Where search is performed
 The free text search of the Data Explorer looks for a specific language in the following pieces of information:
 * ID and localised name of the dataflow
@@ -15,6 +22,8 @@ The free text search of the Data Explorer looks for a specific language in the f
 * Localised description of the dataflow
 * IDs and localised names of the concepts used as dimensions, as well as the dimension IDs
 * IDs and localised names of the codes used as dimension values
+
+---
 
 ### How to search
 #### Exact single match word or multiword
@@ -28,8 +37,11 @@ Apply the same rules as for exact single match word or multiword for partial mat
 It is not used for exact phrases.  
 See reference [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/partial-matching.html).
 
+---
+
 ### How free text search hits are displayed
 For each search result (dataflow), search hits found are displayed **highlighted within its context**, meaning that according text before and after the found text is also to be displayed.
+
 #### Found in ID and localised name of a dataflow
 ![de search hits](/dotstatsuite-documentation/images/de-search-hits-1.png)
 

@@ -19,8 +19,8 @@ weight: 1200
 >**Disclaimer**: It is possible to see some differences between the principles of the UI design from the referenced documentation, and the look and feel of the latest versions of .Stat DE, this being due to the timing of implementation.  
 Also, theming the Data Explorer is largely flexible (see our documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/) about the topic), you can thus meet tenants of the .Stat DE applying layouts, colors or fonts that are entirely different from the default ones.  
 
-.Stat Data Explorer (DE) **UI design** and layouts are following and applying the principles described in the **[UI documentation](https://cis-itn-oecd.github.io/Design-artefacts/demo/ui-documentation/index.html)**.  
-**[DE mockups](https://cis-itn-oecd.github.io/Design-artefacts/demo/de-material/index.html)** are also made and maintained up-to-date in order to illustrate how the design principles apply to the expected user experience.
+.Stat Data Explorer (DE) **UI design** and layouts are following and applying the principles described in the **[UI documentation](https://sis-cc.gitlab.io/design/demo/ui-documentation/index.html)**.  
+**[DE mockups](https://sis-cc.gitlab.io/design/demo/de-material/index.html)** are also made and maintained up-to-date in order to illustrate how the design principles apply to the expected user experience.
 
 ![DE UI documentation](/dotstatsuite-documentation/images/de-ui-doc.png)
 
@@ -90,7 +90,7 @@ Cliking on `Log out` will automatically unregister the user and refresh the DE h
 ---
 
 ### Language
-The Data Explorer is multilangual and supports the localisation of the static elements of the user interface, as well as the localised indexed data )[documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/)).  
+The Data Explorer is multilangual and supports the localisation of the static elements of the user interface, as well as the localised indexed data ([documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/)).  
 There must be at least one language defined per DE instance. If an instance supports more than one language, then a dropdown feature displays the list of available languages.
 
 ![DE language](/dotstatsuite-documentation/images/de-language.png)
