@@ -65,7 +65,6 @@ The following rules apply when the user makes filter selection changes:
 ---
 
 ### Accessibility
-*Under construction...*  
 As part of the [Web Content Accessibility compliance](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-compliance), the user can also use **keyboard's shortcuts** instead of the Drag & Drop feature in order to customise the table layout.  
 To do so, the user needs to focus the dimension she/he wishes to move using the `Tab` key. Once done, she/he can select it by clicking on  the `Space` bar. At this stage, she/he can use the `up`, `down`, `right` and `left` control arrow keys in order to move the selected item to the appropriate place in the same area, or in another axis ("Rows", "Columns", "Row sections").  
 To unselect the item, she/he can click on the `Space` bar again.
