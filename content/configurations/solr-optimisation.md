@@ -50,7 +50,7 @@ We’ll describe what is currently available in your search solution, and some p
 #### Basic Boosting (Already in place)
 It is currently possible to give an additional boost to specific fields, explicitly:  
 
-```json
+```
 name: { // field name, we must get the same in POST /admin/dataflows body
       type: ATTR_TYPE, // ????
       ext: TEXTFIELD_EXT, // solr dynamic field extension
@@ -403,7 +403,7 @@ hl.method: The highlighting implementation to use. Acceptable values are: unifie
 
 On a set of fields configured:  
 
-```json
+```
 {
   ...
   fields: {

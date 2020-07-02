@@ -34,7 +34,7 @@ It is possible to **override** the default **layout theme** of the application.
 The **default theme** is stored under `dotstatsuite-data-explorer/src/web/theme/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/setting.json`.  
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
-```css
+```json
 {
     "overrides": {
       "MuiButton": {
@@ -134,7 +134,7 @@ Define your website name and logo.<br>
 **Add** a new entry called `#id_home_page` in the file in order to overide the default background.  
 Add the url of a publicly available image, or the path of an image stored in `/assets/<tenant>/data-explorer/images`:  
 
-```CSS
+```css
 #id_home_page {
  background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg');
  }
@@ -145,7 +145,7 @@ Add the url of a publicly available image, or the path of an image stored in `/a
 
 **Notes:**  
 * Unique IDs are created for each of the Data Explorer page containers (background layers), but it does not imply all components of a page:
-```CSS
+```css
 // HOME PAGE
 ID_HOME_PAGE = 'id_home_page';
 // ERROR PAGE
@@ -275,6 +275,7 @@ From here and further in the configuration, it is assumed that one can produce `
 Starting with the specifications of the `topojson` file format. Following is provided a '**world_map.json**' file as example.  
 As `topojson` standard specifes, areas are defined in `objects` entry. Since the SDMX dimension representing the Reference Areas may be a hierarchical one, it is possible for the Data Explorer to have several maps choice corresponding to the different hierarchy levels, for only one `topojson` file. All you need is regrouping your areas definition into several entries inside your `objects` entry.  
 So for instance, for 2 levels of a hierarchy, e.g. `continents` and `countries`, the following 2 entries are defined in the **world_map.json** file as `objects`:
+
 ```json
 {
     "objects": {
