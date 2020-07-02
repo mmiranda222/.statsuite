@@ -8,7 +8,7 @@ weight: 2150
 
 #### Table of Content
 - [Intro](#intro)
-- [Case 1: DE - The dataflow has some data](#case-1-:-de-the-dataflow-has-some-data-:-display-only-filter-values-for-which-data-exists)
+- [Case 1: DE - The dataflow has some data](#case-1-de-the-dataflow-has-some-data-display-only-filter-values-for-which-data-exists)
 - [Case 2: DE - The dataflow has no data](#case-2-de-the-dataflow-has-no-data-there-are-no-filter-values)
 - [Case 3: DLM data preview - Allow displaying all filter values](#case-3-dlm-data-preview-allow-displaying-all-filter-values-whether-there-are-data-or-not)
 - [Technical notes](#technical-notes)
