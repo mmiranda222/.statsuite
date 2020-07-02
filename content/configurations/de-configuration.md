@@ -24,6 +24,7 @@ weight: 72
 - [Coded and uncoded attributes returned as footnotes](#coded-and-uncoded-attributes-returned-as-footnotes)
 - [Localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
 - [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
+- [Unit of measure support](#unit-of-measure-support)
 
 ---
 
@@ -411,4 +412,31 @@ By default, if no configuration for a given localised format is added, then the 
         "timeFormat": "MMM YYYY"
       },
 ```
+
+---
+
+### Unit of measure support
+Define the rules of the (optional) dataflow-level *SDMX* annotation **UNIT_MEASURE_CONCEPTS**: see the [documentation here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/) about the Special display for 'Unit of measure' in preview table.  
+The pre-defined `UNIT_MEASURE_CONCEPTS` annotation lists the dimensions and/or attributes (by ID) to be used for display in data table views.  
+In case this annotation is not given, then the following concepts are used: “UNIT_MEASURE,UNIT_MULT,BASE_PER” (provided that these concepts are used as dimensions or attributes in the DSD of the displayed data).  
+If the annotation is present but empty, then there is no special display of the Units of measure.
+
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```json
+    "units": {
+      "id": "UNIT",
+      "annotationsDefinitionCodes": {
+        "concepts": ["UNIT_MEASURE_CONCEPTS"]
+      },
+      "defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"],
+      "rejectedValueIds": ["_L", "_T", "_Z"]
+    },
+```
+
+In the above template:
+* `"id": "UNIT"` is used when the user switches the display of the Data Explorer visualisation page's label to Name, Identifier or Both;
+* `"concepts": ["UNIT_MEASURE_CONCEPTS"]` is an array of the possible IDs of the *SDMX* annotation;
+* `"defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"]` is the list of attributes/dimensions to retrieve if no annotation is found;
+* `"rejectedValueIds": ["_L", "_T", "_Z"]` is the list of values to not display if they belong to dimensions or attributes defined in the Unit of Measure.
 
