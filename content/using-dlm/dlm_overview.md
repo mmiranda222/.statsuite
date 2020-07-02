@@ -120,7 +120,7 @@ For each artifact, the following details are shown:
 * Artifact version (e.g. 1.0, 0.2, 1.0.3)
 * Final: A Yes/No value, with a *tick* icon if Yes
 * Owner: Maintenance agency of the artifact
-* Action: Hamburger menu button that offers a context-aware list of actions to perform on an object (see related documentation for actions such as [transfer](/dotstatsuite-documentation/using-dlm/copy-data.md), export and [delete](/dotstatsuite-documentation/using-dlm/delete-data-structures.md))
+* Action: Hamburger menu button that offers a context-aware list of actions to perform on an object (see related documentation for actions such as [transfer](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data), export and [delete](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures))
 
 For Dataflows **only**, The user can view the following additional information:
 * Preview: the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
