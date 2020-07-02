@@ -29,7 +29,7 @@ Also like for dimensions, an attribute links to the Concept that defines its loc
 
 ### Underlying data model
 Some attributes and some dimensions play a specific role (e.g. Unit of measure, Unit multiplier, Base period) and will be interpreted, displayed differently or used to adapt the display.  
-A pre-defined (optional) dataflow-level annotation **UNIT_MEASURE_CONCEPTS** lists the dimensions and/or attributes (by ID) that will define how the full UoM (virtual) component is built and how its labels are auto-generated. By default, in case this annotation is not given, the full UoM will be composed of the following concepts: "UNIT_MEASURE,UNIT_MULT,BASE_PER" provided that these concepts are used as dimensions or attributes in the DSD of the displayed data. If the annotation is present but empty, then there is no special display of the (virtual) UoM component.  
+A pre-defined (optional, see the related [documentation for configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#unit-of-measure-support)) dataflow-level annotation **UNIT_MEASURE_CONCEPTS** lists the dimensions and/or attributes (by ID) that will define how the full UoM (virtual) component is built and how its labels are auto-generated. By default, in case this annotation is not given, the full UoM will be composed of the following concepts: "UNIT_MEASURE,UNIT_MULT,BASE_PER" provided that these concepts are used as dimensions or attributes in the DSD of the displayed data. If the annotation is present but empty, then there is no special display of the (virtual) UoM component.  
 
 ```xml
 <common:Annotation>  
