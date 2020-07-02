@@ -6,12 +6,12 @@ weight: 1700
 
 ---
 
-![DE Free text search](/dotstatsuite-documentation/images/de-free-text-search.png)
-
 #### Table of Content
 - [Where search is performed](#where-search-is-performed)
 - [How to search](#how-to-search)
 - [How free text search hits are displayed](#how-free-text-search-hits-are-displayed)
+
+![DE Free text search](/dotstatsuite-documentation/images/de-free-text-search.png)
 
 ---
 
