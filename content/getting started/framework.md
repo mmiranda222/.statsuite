@@ -15,6 +15,7 @@ weight: 32
 - [Component list and dependency matrix](#component-list-and-dependency-matrix)
 - [Contributing to an open source repository](#contributing-to-an-open-source-repository)
 
+---
 
 ## Introduction
 The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).

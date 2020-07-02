@@ -10,4 +10,4 @@ The following pages provide examples of topologies (with targetted infrastructur
 
 This approach requires solid technical knowledge of the underlying ecosystems (.Net, MS SQL Server, JS, OS) but it offers the most flexibility for topologies and configuration.  
 
-You can also have a look at the [Delivery and support streams' diagram](/getting-started/index/#delivery-and-support-streams-diagram) for a better understanding of the installation approach.
+You can also have a look at the [Delivery and support streams' diagram](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/) for a better understanding of the installation approach.
