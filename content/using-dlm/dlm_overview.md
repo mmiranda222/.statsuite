@@ -32,14 +32,14 @@ There is a placeholder on the left side for the logo of the organisation *(confi
 
 **Navigation buttons**  
 There is a list of buttons triggering the navigation through all pages of the application:
-* [Upload structures](/using-dlm/upload-structure/)
-* [Upload data](/using-dlm/upload-data/)
+* [Upload structures](/dotstatsuite-documentation/using-dlm/upload-structure/)
+* [Upload data](/dotstatsuite-documentation/using-dlm/upload-data/)
 * Dump
 * Home
 
 **Features**  
 There is a section on the right side (after the home icon) with:
-* Information about the authenticated user: once the user is authenticated and accesses the .Stat DLM, the feature automatically displays the first name and last name of the user. The drop-down allows the user to log out of the DLM (see [documentation](/using-dlm/log-in-dlm/)).
+* Information about the authenticated user: once the user is authenticated and accesses the .Stat DLM, the feature automatically displays the first name and last name of the user. The drop-down allows the user to log out of the DLM (see [documentation](/dotstatsuite-documentation/using-dlm/log-in-dlm/)).
 * Localisation: it displays the list of available translations of the application. The list of available languages is defined during the installation of the application *(configurable!)*.
 
 ---
@@ -108,7 +108,7 @@ Authenticated DLM users see in the list all structural *SDMX* artifacts availabl
 *  Spotlight: the user can reduce the list of artifacts based on the text he enters in the spotlight box. An additional option of the spotlight applies the text filter to one, several or all of the following: "Label", "Code", and "Description".
 When he enters some text, it searches for all artifacts "Name", "Code" or "Description" that contain the entered text.
 * Sorting: the user can sort the whole list by "Type", "Label”, "Code", "Version", "Final" or "Owner”. The list is sorted by “Type” and "Name" ascending by default.
-* Pagination: pagination allows for navigating from page to page, and to jump to the next, previous, first or last page. The number of results on each page is configurable during the set up of the application ([documentation](/configurations/dlm-configuration/)).
+* Pagination: pagination allows for navigating from page to page, and to jump to the next, previous, first or last page. The number of results on each page is configurable during the set up of the application ([documentation](/dotstatsuite-documentation/configurations/dlm-configuration/)).
 
 ![dlm overview](/dotstatsuite-documentation/using-dlm/files/dlm-overview-8.png)
 
@@ -120,7 +120,7 @@ For each artifact, the following details are shown:
 * Artifact version (e.g. 1.0, 0.2, 1.0.3)
 * Final: A Yes/No value, with a *tick* icon if Yes
 * Owner: Maintenance agency of the artifact
-* Action: Hamburger menu button that offers a context-aware list of actions to perform on an object (see related documentation for actions such as [transfer](/using-dlm/copy-data.md), export and [delete](/using-dlm/delete-data-structures.md))
+* Action: Hamburger menu button that offers a context-aware list of actions to perform on an object (see related documentation for actions such as [transfer](/dotstatsuite-documentation/using-dlm/copy-data.md), export and [delete](/dotstatsuite-documentation/using-dlm/delete-data-structures.md))
 
 For Dataflows **only**, The user can view the following additional information:
 * Preview: the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
