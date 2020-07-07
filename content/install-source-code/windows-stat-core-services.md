@@ -42,8 +42,7 @@ Make sure that the windows machine which will be used in this installation proce
     - Microsoft .NET Core Runtime - 3.1.\* [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
     - Microsoft .NET Core 3.1.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/3.1) 
     - Microsoft .NET Core SDK 3.1.\* [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-    - Microsoft .NET Framework 4.5.\* [download](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
-    - Visual studio 2019 is needed to compile solutions with .net core 3.1
+    - Visual studio 2019 is needed to compile solutions with .net core 3.1 (optional)
 
 - **IIS Web server**  
     - IIS server 7.5 or later  
@@ -51,8 +50,6 @@ Make sure that the windows machine which will be used in this installation proce
     - Microsoft Visual C++ 2015 Redistributable [download](https://www.microsoft.com/en-US/download/details.aspx?id=52685) 
 
 - **Git for windows** [download](https://git-scm.com/download/win).  
-
-- **Access to Eurostat's [bitbucket repository](https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI)**  
 
 > **`WARNING!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
 
@@ -96,32 +93,36 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 8.0.3 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 10.2.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
-  5 .  Clone the maapi.net tool repository.- *This tool will be used to initialize the structure databases.* 
-
-This is a private Eurostat repository, therefore you need to login before cloning the repository.
+  5 .  Clone the maapi.net tool repository from the SIS-CC's mirror of Eurostat repository - *This tool will be used to initialize the structure databases.* 
 
 ```sh 
-git clone -b 1.26.1 --single-branch --recurse-submodules https://citnet.tech.ec.europa.eu/CITnet/stash/scm/sdmxri/maapi.net.git
+
+git clone -b 1.26.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
 ```
 
-> **WARNING!** - This repository has a git submodule (authdb.sql) that is cloned with the command "--recurse-submodules". If you are behind a network security firewall, this submodule might not be cloned. To clone it manually use the command:  
->  -  git clone -b 1.0.1 --single-branch --recurse-submodules https://citnet.tech.ec.europa.eu/CITnet/stash/scm/sdmxri/authdb.sql.git maapi.net/src/Estat.Sri.Security/resources
+> **WARNING!** - This repository has a git submodule (authdb.sql) that points to the original ESTAT's repository in the mirror repository. To change the url of the submodule and to clone it manually (from the SIS-CC's mirror of Eurostat repository) use the following commands:  
+>
+>   ```sh
+>   cd maapi.net
+>   git submodule set-url authdb https://gitlab.com/sis-cc/eurostat-sdmx-ri/authdb.sql.mirrored.git
+>   git submodule update --init --single-branch
+>   cd ..
+>   ```
+>
 
+  6 .  Clone the NSI web service repository from the SIS-CC's mirror of Eurostat repository.
 
-  6 .  Clone the NSI web service repository
-
-This is a private Eurostat repository, therefore you need to login before cloning the repository.
 ```sh
-git clone -b 7.12.1 --single-branch https://citnet.tech.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.git
+git clone -b 7.13.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
   7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
 
 ```sh
-git clone -b 7.12.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
+git clone -b 7.13.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
