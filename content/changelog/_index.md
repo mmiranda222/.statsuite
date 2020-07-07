@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [July 7, 2020](#july-7-2020)
 - [June 24, 2020](#june-24-2020)
 - [June 23, 2020](#june-23-2020)
 - [June 15, 2020](#june-15-2020)
@@ -44,6 +45,26 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### July 7, 2020
+**[Release .Stat Suite .NET 4.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/22)**
+> This new release includes a new version of the **core-sdmxri-nsi-plugin** service, with the release of the Eurostat's **NSI-WS version 7.13.0**.
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#53](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/53) Deploy NSI version 7.13.0 (incl. 7.12.2). The task also included the creation, upon Eurostat authorization to the SIS-CC, of a new sub-group called **Eurostat SDMX-RI components** into GitLab for hosting Read-Only copies (*mirrored copies*) of some of Eurostat components:
+>* [nsiws.net.mirrored](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored)
+>* [maapi.net.mirrored](https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored)
+>* [authdb.sql.mirrored](https://gitlab.com/sis-cc/eurostat-sdmx-ri/authdb.sql.mirrored)
+- [dotstatsuite-core-sdmxri-nsi-plugin#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/8) Load of the Concept Scheme CoreRepresentation.
+- [dotstatsuite-core-sdmxri-nsi-ws#49](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/49) Add the database version number to the nsiws health page.
+- [dotstatsuite-core-sdmxri-nsi-ws#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/50) *(DevOps)* Update default MSDB variable and use default settings in `kube` & `docker-compose`.
+
+patches:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/29) Query for dataflows as references to a particular category wrongly returns also other dataflows. This fix enables to properly filtering dataflows in the DLM by category [dotstatsuite-data-lifecycle-manager#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/48).
+
+---
 
 ### June 24, 2020
 **[Release .Stat Suite .NET 4.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/20)**
