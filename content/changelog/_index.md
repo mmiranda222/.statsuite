@@ -52,17 +52,17 @@ ToC
 
 minor changes:
 
-- [dotstatsuite-core-sdmxri-nsi-ws#53](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/53) Deploy NSI version 7.13.0 (incl. 7.12.2). The task also included the creation, upon Eurostat authorization to the SIS-CC, of a new sub-group called **Eurostat SDMX-RI components** into GitLab for hosting Read-Only copies (*mirrored copies*) of some of Eurostat components:
+- [dotstatsuite-core-sdmxri-nsi-ws#53](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/53) Deploy NSI version 7.13.0 (incl. 7.12.2). The task also included the creation, upon Eurostat authorization to the SIS-CC, of a new sub-group called **Eurostat SDMX-RI components** into GitLab for hosting Read-Only copies (*manually mirrored*) of some of the Eurostat components:
 >* [nsiws.net.mirrored](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored)
 >* [maapi.net.mirrored](https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored)
 >* [authdb.sql.mirrored](https://gitlab.com/sis-cc/eurostat-sdmx-ri/authdb.sql.mirrored)
 - [dotstatsuite-core-sdmxri-nsi-plugin#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/8) Load of the Concept Scheme CoreRepresentation.
-- [dotstatsuite-core-sdmxri-nsi-ws#49](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/49) Add the database version number to the nsiws health page.
+- [dotstatsuite-core-sdmxri-nsi-ws#49](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/49) Add the database version number to the NSI-WS health page.
 - [dotstatsuite-core-sdmxri-nsi-ws#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/50) *(DevOps)* Update default MSDB variable and use default settings in `kube` & `docker-compose`.
 
 patches:
 
-- [dotstatsuite-core-sdmxri-nsi-ws#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/29) Query for dataflows as references to a particular category wrongly returns also other dataflows. This fix enables to properly filtering dataflows in the DLM by category [dotstatsuite-data-lifecycle-manager#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/48).
+- [dotstatsuite-core-sdmxri-nsi-ws#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/29) Query for dataflows as references to a particular category wrongly returns also other dataflows. This fix enables to properly filter dataflows in the DLM by category [dotstatsuite-data-lifecycle-manager#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/48).
 
 ---
 
