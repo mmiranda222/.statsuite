@@ -271,20 +271,17 @@
 
 <tr>
 <td rowspan="2">[keycloak](https://gitlab.com/sis-cc/.stat-suite/keycloak)</td>
-<td>qa/develop</td>
-<td>-</td>
-<td>-</td>
+<td rowspan="2">develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/keycloak/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="2">-</td>
 <td>keycloak-oecd</td>
 <td>[admin UI](http://keycloak-oecd.redpelicans.com)</td>
-<td>shared between qa and staging</td>
+<td>v6.0.1</td>
 </tr>
 <tr>
-<td>staging/master</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>not used</td>
+<td>keycloak-staging-oecd</td>
+<td>[admin UI](http://keycloak-oecd.redpelicans.com)</td>
+<td>v7.0.0</td>
 </tr>
 </body>
 </table>
