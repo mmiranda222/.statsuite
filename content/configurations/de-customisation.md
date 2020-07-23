@@ -196,7 +196,7 @@ Define the common logos in the header, subheader, footer and homepage of the web
 
 ### Add hyperlink on header logo
 > Released in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020)  
-> Thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution on [UNESCAP](https://data.unescap.org/)'s behalf!
+> (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
 
 To add an hyperlink/URL behind the logo of the common site header (top-left part). This feature is useful when the Data Explorer is part of a web portal and thus allows users to browse from one application to another within the same portal.
 
@@ -204,7 +204,7 @@ To add an hyperlink/URL behind the logo of the common site header (top-left part
 
 ```json
     "assets": {
-        "logoLink": "https://oecd.org",
+        "logoLink": "https://www.oecd.org",
     }
 ```
 
