@@ -57,15 +57,15 @@ When Keycloak is configured to enforce pkce, then non-compliant clients will bre
 
 minor changes:
 
-- [dotstatsuite-data-explorer#116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/116) Download charts in .png image format (allowing for high-quality resolution). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#download))
-- [dotstatsuite-data-explorer#326](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/326) Add a link to the .Stat DE top-left logo. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#add-hyperlink-on-header-logo))
+- [dotstatsuite-data-explorer#116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/116) **Download charts** in .png image format (allowing for high-quality resolution). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#download))
+- [dotstatsuite-data-explorer#326](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/326) Add a link to the .Stat DE top-left logo. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#add-hyperlink-on-header-logo))
 - [dotstatsuite-data-lifecycle-manager#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/48) View artifacts per category (topic/domain) in .Stat DLM.
 - [dotstatsuite-data-lifecycle-manager#141](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/141) *(Refactoring)* DLM refactoring including code base conception cleaning, and `SDMX` parsing to `sdmxjs`.
 - [dotstatsuite-data-lifecycle-manager#149](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/149) *(Refactoring)* Remove in .Stat DLM 'references=all' from query for category filter when no Category[Scheme] is selected.
 - [dotstatsuite-visions#16](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/16) Blueprint migration & integration.
-- [.stat-suite/keycloak#6](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/issues/6) *(DevOps)* Update Keycloak to version 7 in qa/staging environments.
+- [.stat-suite/keycloak#6](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/issues/6) *(DevOps)* Update to **Keycloak version 7** in qa/staging environments.
 - [dotstatsuite-data-lifecycle-manager#119](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/119) *(Confidential)*
-- [dotstatsuite-data-explorer#331](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/331) *(DevOps)* Update pipeline with Docker tag.
+- [dotstatsuite-data-explorer#331](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/331) *(DevOps)* Update pipeline with **Docker tag**.
 - [dotstatsuite-config#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/13) and [dotstatsuite-config#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/12) *(Support)* Update all i18n dev/prod, including new keys.
 - [dotstatsuite-config#14](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/14) *(Support)* .Stat DE configuration changes for OECD staging.
 
