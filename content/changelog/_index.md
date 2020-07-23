@@ -51,13 +51,14 @@ ToC
 **[Release .Stat Suite JS 5.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/23)**  
 > This new release includes a new version of the **data-explorer** and **data-lifecycle-manager** services.  
 
-> **Disclaimer**: Support and use of the **Proof Key for Code Exchange** (PKCE) in both DE & DLM by ensuring .Stat Suite using Keycloak v7+ (PKCE is supported from Keycloak v.7).  
-if keycloak does not support pkce (below version 6), then everything will work properly (becasuse pkce from .Stat DE and .stat DLM will be ignored). When Keycloak is configured to enforce pkce, then non-compliant clients will break.
+> **Disclaimer**: Support and use of the **Proof Key for Code Exchange** (PKCE) in both DE & DLM by ensuring .Stat Suite using Keycloak v7+ (PKCE is supported from Keycloak v.7):
+* If keycloak does not support pkce (below version 6), then everything will work properly (becasuse pkce from .Stat DE and .stat DLM will be ignored);
+* When Keycloak is configured to enforce pkce, then non-compliant clients will break.
 
 minor changes:
 
-- [dotstatsuite-data-explorer#116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/116) Download the chart in .png image format (allowing for high-quality resolution). (Documentation)[https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#download]
-- [dotstatsuite-data-explorer#326](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/326) Add a link to the .Stat DE top-left logo. (Documentation)[https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#add-hyperlink-on-header-logo]
+- [dotstatsuite-data-explorer#116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/116) Download charts in .png image format (allowing for high-quality resolution). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#download))
+- [dotstatsuite-data-explorer#326](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/326) Add a link to the .Stat DE top-left logo. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#add-hyperlink-on-header-logo))
 - [dotstatsuite-data-lifecycle-manager#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/48) View artifacts per category (topic/domain) in .Stat DLM.
 - [dotstatsuite-data-lifecycle-manager#141](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/141) *(Refactoring)* DLM refactoring including code base conception cleaning, and `SDMX` parsing to `sdmxjs`.
 - [dotstatsuite-data-lifecycle-manager#149](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/149) *(Refactoring)* Remove in .Stat DLM 'references=all' from query for category filter when no Category[Scheme] is selected.
