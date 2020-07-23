@@ -84,8 +84,9 @@ Because this limit is applied per dataflow per dimension:
 ### Search results page pinned facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
-Define the facets that are always displayed in the search result page.  
-These facets will be displayed always at first top positions and their labels are prefixed with a [*]. Replace spaces in your facet names by underline `_`.  
+Define the facets that are always displayed in the first position(s) in the search result page, when available.  
+These facets will be displayed always at first top positions and their labels are prefixed with a [**.**]. Replace spaces in your facet names by underline `_`.  
+In addition, a help [**?**] tooltip is shown right next to the Filters header title, which will display the following information (localised): *"Filters marked with **.** are, when available, always listed first."*
 
 * in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
 

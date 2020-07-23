@@ -10,6 +10,7 @@ weight: 1800
 - [What information is presented as facets](#what-information-is-presented-as-facets)
 - [How facets are used](#how-facets-are-used)
 - [Used filters](#used-filters)
+- [Pinned facets](#pinned-facets)
 
 ---
 
@@ -98,3 +99,11 @@ Users can unselected:
 * all selections by clicking on `Clear all filters`. When all filters are unselected, then the user is brought back to the home page.
 
 ![de used filters](/dotstatsuite-documentation/images/de-facet-6.png)
+
+---
+
+### Pinned facets
+Facets displayed with a [**.**] after their localised name are called **pinned facets** and are configured (the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-results-page-pinned-facets) is set per DE instance) to always be displayed, when available, at the first top position(s) in the list.  
+In addition, a help [**?**] tooltip is shown right next to the Filters header title, which displays the following information (localised): *"Filters marked with **.** are, when available, always listed first."*
+
+![Pinned facets](/dotstatsuite-documentation/images/de-pinned-facets.png)
