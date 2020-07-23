@@ -111,6 +111,16 @@ This format does not contains header or footer, and the downloaded full data vie
 **Additional download(s) of external resources**  
 Additional downloads of external resources can be added to a dataflow and be made available in the Download option. See the [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/) related to this option.
 
+**Chart as picture (PNG)**  
+> Released in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020)  
+
+All graphical reprensentations of a data view (chart types) are available for **download as picture** in a **.png** format with high quality screenshot rendering (using the https://html2canvas.hertzen.com/ library).  
+
+![Download chart option](/dotstatsuite-documentation/images/de-download-chart.png)
+
+The option is only available when viewing data in a chart representation. The application downloads the screenshot of the current chart together with its header and footer in a .png format. It is using the current chart size, highlights and baseline as provided or set by the user in the chart customisation.  
+The default chart's filename is consistent with the downloaded Excel's filename, being the `AgencyID.DataflowID_Version` combined with the filter selection(s) and the .png extension.
+
 ---
 
 ### Full screen
