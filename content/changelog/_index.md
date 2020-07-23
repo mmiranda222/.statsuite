@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [July 23, 2020](#july-23-2020)
 - [July 7, 2020](#july-7-2020)
 - [June 24, 2020](#june-24-2020)
 - [June 23, 2020](#june-23-2020)
@@ -45,6 +46,39 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### July 23, 2020
+**[Release .Stat Suite JS 5.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/23)**  
+> This new release includes a new version of the **data-explorer** and **data-lifecycle-manager** services.  
+
+> **Disclaimer**: Support and use of the **Proof Key for Code Exchange** (PKCE) in both DE & DLM by ensuring .Stat Suite using Keycloak v7+ (PKCE is supported from Keycloak v.7).  
+if keycloak does not support pkce (below version 6), then everything will work properly (becasuse pkce from .Stat DE and .stat DLM will be ignored). When Keycloak is configured to enforce pkce, then non-compliant clients will break.
+
+minor changes:
+
+- [dotstatsuite-data-explorer#116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/116) Download the chart in .png image format (allowing for high-quality resolution). (Documentation)[https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#download]
+- [dotstatsuite-data-explorer#326](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/326) Add a link to the .Stat DE top-left logo. (Documentation)[https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#add-hyperlink-on-header-logo]
+- [dotstatsuite-data-lifecycle-manager#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/48) View artifacts per category (topic/domain) in .Stat DLM.
+- [dotstatsuite-data-lifecycle-manager#141](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/141) *(Refactoring)* DLM refactoring including code base conception cleaning, and `SDMX` parsing to `sdmxjs`.
+- [dotstatsuite-data-lifecycle-manager#149](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/149) *(Refactoring)* Remove in .Stat DLM 'references=all' from query for category filter when no Category[Scheme] is selected.
+- [dotstatsuite-visions#16](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/16) Blueprint migration & integration.
+- [.stat-suite/keycloak#6](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/issues/6) *(DevOps)* Update Keycloak to version 7 in qa/staging environments.
+- [dotstatsuite-data-lifecycle-manager#119](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/119) *(Confidential)*
+- [dotstatsuite-data-explorer#331](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/331) *(DevOps)* Update pipeline with Docker tag.
+- [dotstatsuite-config#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/13) and [dotstatsuite-config#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/12) *(Support)* Update all i18n dev/prod, including new keys.
+- [dotstatsuite-config#14](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/14) *(Support)* .Stat DE configuration changes for OECD staging.
+
+patches:
+
+- [dotstatsuite-data-explorer#341](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/341) Navigation in filter with hierarchy: no root (/parent?) values displayed.
+- [dotstatsuite-data-explorer#299](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/299) When applying DECIMALS=0 on integers, thousands separator wrongly disappears.
+- [dotstatsuite-data-explorer#351](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/351) Crash for a specific dataflow (because it has only one observation).
+- [dotstatsuite-data-explorer#324](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/324) Dataset-level attribute is not displayed next to the title (Dataflow header).
+- [dotstatsuite-data-explorer#349](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/349) Reversed number for right to left languages when using thousand separator.
+- [dotstatsuite-data-explorer#339](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/339) wcag wrongly automatically enabled on .Stat DE viz. page.
+- [dotstatsuite-data-lifecycle-manager#85](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/85) Show the correct status of the artifact deletion in .Stat DLM.
+
+---
 
 ### July 7, 2020
 **[Release .Stat Suite .NET 4.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/22)**
