@@ -11,6 +11,7 @@ weight: 73
 - [site title and logo](#site-title-and-logo)
 - [homepage background image](#homepage-background-image)
 - [common site logos](#common-site-logos)
+- [add hyperlink on header logo](#add-hyperlink-on-header-logo)
 - [table and chart footer logo](#table-and-chart-footer-logo)
 - [table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
 - [api documentation hyperlink](#api-documentation-hyperlink)
@@ -31,7 +32,7 @@ These customisations can be performed by Administrators with access to the .Stat
 >The format and default theme was changed with the release [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)  
 
 It is possible to **override** the default **layout theme** of the application.  
-The **default theme** is stored under `dotstatsuite-data-explorer/src/web/theme/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/setting.json`.  
+The **default theme** is stored under `dotstatsuite-data-explorer/src/web/theme/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`.  
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
 ```json
@@ -111,7 +112,7 @@ The default theme is applied if there is no theme added to the settings.json fil
 ### Site title and logo
 Define your website name and logo.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "app": {
@@ -164,7 +165,7 @@ ID_AUTH_PAGE = 'id_auth_page';
 ### Common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "assets": {
@@ -193,11 +194,27 @@ Define the common logos in the header, subheader, footer and homepage of the web
 
 ---
 
+### Add hyperlink on header logo
+> Released in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020)  
+> Thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution on [UNESCAP](https://data.unescap.org/)'s behalf!
+
+To add an hyperlink/URL behind the logo of the common site header (top-left part). This feature is useful when the Data Explorer is part of a web portal and thus allows users to browse from one application to another within the same portal.
+
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+    "assets": {
+        "logoLink": "https://oecd.org",
+    }
+```
+
+---
+
 ### Table and chart footer logo
 Define the logo of the organisation in the footer of the table and chart views.  
 The source can be a binary image or a link.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "viewer": {
@@ -212,7 +229,7 @@ The source can be a binary image or a link.<br>
 ### Table and chart footer terms and conditions
 Define the name and hyperlink in the footer of the table and chart views behind the "c" copyright icon.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "viewer": {
@@ -230,7 +247,7 @@ Define the name and hyperlink in the footer of the table and chart views behind 
 ### API documentation hyperlink
 Define the hyperlink for the API documentation.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "viewer": {
@@ -247,7 +264,7 @@ Define the hyperlink for the API documentation.<br>
 ### Contact us hyperlink
 Define the hyperlink for the "Contact us" feature.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "viewer": {
@@ -305,9 +322,9 @@ The `properties` entry serves as the metadata entry of the area.
 The engine only requires an `id` entry (**Note** that any other entry will be ignored, and it is strongly suggested to not overload the file -in case of a large number of areas- for performance purpose).  
 It is highly important that `id` perfectly matches the corresponding SDMX id defined in the areas codelist, for the mapping between SDMX datas and geographical data to work.  
 
-**Second step** The `topojson` file needs to be added in the following path `dotstatsuite/data/<env>/assets/<tenant>/data-explorer/maps/world_map.json`<br>
+**Second step** The `topojson` file needs to be added in the following path `dotstatsuite-config/data/<env>/assets/<tenant>/data-explorer/maps/world_map.json`<br>
 
-**Third step** Then it needs to be referenced in Data Explorer settings in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`:
+**Third step** Then it needs to be referenced in Data Explorer settings in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`:
 ```json
 {
     "chart": {
@@ -329,7 +346,7 @@ Keep in mind that `projection` stands for the specific D3 projection you want to
 
 **Last step** is to make sure that each area level of the map has its label properly put in the translation files.  
 For the English example of the world map, it should look like:  
-`dotstatsuite/data/<env>/configs/<tenant>/data-explorer/i18n/en.json`
+`dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/i18n/en.json`
 ```json
 {
     "chart.choropleth": "Map of {map}",
@@ -350,7 +367,7 @@ This is a new entry of the configuration, and is supporting the **SVG path segme
 SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.  
 SVG elements should be scaled for a 24 x 24px viewport.  
 
-* in `dotstatsuite-config/data/\<env>/configs/\<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
 "sdmx": {
