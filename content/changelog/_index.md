@@ -52,7 +52,7 @@ ToC
 > This new release includes a new version of the **data-explorer** and **data-lifecycle-manager** services.  
 
 > **Disclaimer**: Support and use of the **Proof Key for Code Exchange** (PKCE) in both DE & DLM by ensuring .Stat Suite using Keycloak v7+ (PKCE is supported from Keycloak v.7).  
-If keycloak does not support pkce (below version 6), then everything will work properly (becasuse pkce from .Stat DE and .stat DLM will be ignored).  
+If Keycloak does not support pkce (below version 6), then everything will work properly (because pkce from .Stat DE and .stat DLM will be ignored).  
 When Keycloak is configured to enforce pkce, then non-compliant clients will break.
 
 minor changes:
