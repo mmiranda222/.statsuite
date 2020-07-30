@@ -22,7 +22,7 @@ weight: 38
 - **Visual Studio 2019**.-Used only for compiling the solutions when doing a source code installation.
 
 **Hardware requirements**  
-Although the requirements could vary depending on the size of your data and the amount of users, for an installation of one **.Stat Core Data Store** (*[See sample topology](/install-source-code/source-code/#example-topologies)*), we suggest as a minimum the following requirements:  
+Although the requirements could vary depending on the size of your data and the amount of users, for an installation of one **.Stat Core Data Store** (*[See sample topology](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/source-code/#example-of-topologies)*), we suggest as a minimum the following requirements:  
 
 - **Memory:** 16 GB
 - **vCPUs:** 8 CPU @ 2.4 GHz
@@ -51,9 +51,10 @@ Although the requirements could vary depending on the size of your data and the 
 - **nodejs 12.x** and **npm 6.x** installed
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
 - **keycloak 7.x** installed and running on port 8080 (default)
-- **postgres 12.x** installed and running on port 5432 (default)
+- **postgres 12.x** installed and running on port 5432 (default) or any other relational database usable by keycloak (for more information see [here](https://www.keycloak.org/docs/4.8/server_installation/#_database))
 
 *notes:*
 
 - keycloak realm name can be freely picked, default configuration targets oecd
 - ports can be freely picked, if different than defaults they should be specified when launching services
+- postgres is used as keycloak database in the qa and staging environments as well as in the default docker images, but it can be replaced with your own keycloak comptatible relational database
