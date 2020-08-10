@@ -22,37 +22,51 @@ The following types of charts are supported:
 
 ![Toolbar](/dotstatsuite-documentation/images/bar.png)
 
+---
+
 ### Row chart
 **Example**  
 
 ![Toolbar](/dotstatsuite-documentation/images/row.png)
 
-### Stacked bar chart:
+---
+
+### Stacked bar chart
 **Example**  
 
 ![Toolbar](/dotstatsuite-documentation/images/stacked-bar.png)
 
-### Scatter plot chart:
+---
+
+### Scatter plot chart
 **Example**  
 
 ![Toolbar](/dotstatsuite-documentation/images/scatter.png)
 
-### Horizontal symbol chart:
+---
+
+### Horizontal symbol chart
 **Example**  
 
 ![Toolbar](/dotstatsuite-documentation/images/horiz-symbol.png)
 
-### Vertical symbol chart:
+---
+
+### Vertical symbol chart
 **Example**  
 
 ![Toolbar](/dotstatsuite-documentation/images/vertic-symbol.png)
 
-### Timeline chart:
+---
+
+### Timeline chart
 **Example**  
 
 ![Toolbar](/dotstatsuite-documentation/images/timeline.png)
 
-### Choropleth map:
+---
+
+### Choropleth map
 **Example**  
 
 ![Toolbar](/dotstatsuite-documentation/images/map.png)
