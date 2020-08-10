@@ -8,8 +8,8 @@ weight: 1200
 
 #### Table of Content
 - [User Interface Design](#user-interface-design)
-- [Web Content Accessibility Support](#web-content-accessibility-support)
 - [Header](#header)
+- [Web Content Accessibility Support](#web-content-accessibility-support)
 - [Login](#login)
 - [Language](#language)
 - [Footer](#footer)
@@ -26,7 +26,20 @@ Also, theming the Data Explorer is largely flexible (see our documentation [here
 
 ---
 
+### Header
+
+The Data Explorer header is common to all pages of the application, and consists of:
+* a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo
+* a switch to enable [**Accessibility support**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support)
+* a link to [**Login**](#login) to the application
+* a [**Language**](#language) switch option
+
+![DE Header](/dotstatsuite-documentation/images/de-header.png)
+
+---
+
 ### Web Content Accessibility Support
+
 > Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
 
 The Data Explorer **endorses [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) 2.1 to Level AA**, in order to make its content **accessible to people with disabilities**.  
@@ -60,18 +73,8 @@ When accessibility support is enabled, using the `Tab` key of the keyboard allow
 
 ---
 
-### Header
-The Data Explorer header is common to all pages of the application, and consists of:
-* a static logo ([*configurable*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
-* an option to enable accessibility support (see [above](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support))
-* a link to log in the application;
-* a multilingual switch option.
-
-![DE Header](/dotstatsuite-documentation/images/de-header.png)
-
----
-
 ### Login
+
 Registration is orchestrated at the organisation level, for one or several instances of the Data Explorer, and common with the Data Lifecycle Manager (DLM) registration mechanism (if the DLM is part of the same installation). For further information, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/) and the [DLM login mechanism](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/).  
 .Stat Suite applications are using **[Keycloak](https://www.keycloak.org/)** as the authentication service.  
 
@@ -90,6 +93,7 @@ Cliking on `Log out` will automatically unregister the user and refresh the DE h
 ---
 
 ### Language
+
 The Data Explorer is multilangual and supports the localisation of the static elements of the user interface, as well as the localised indexed data ([documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/)).  
 There must be at least one language defined per DE instance. If an instance supports more than one language, then a dropdown feature displays the list of available languages.
 
@@ -106,9 +110,10 @@ The behavior of switching language will change depending on the page where langu
 ---
 
 ### Footer
+
 The Data Explorer footer is common to all pages of the application, and consists of:
-* a static logo ([*configurable*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo));
-* two (left and right) placeholders for localised text and hyperlink.
+* a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo;
+* two (left and right) placeholders for predefined, configurable localised text and hyperlink.
 
 ![DE Footer](/dotstatsuite-documentation/images/de-footer.png)
 
