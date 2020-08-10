@@ -9,11 +9,11 @@ weight: 3300
 - [Chart series](#chart-series)
 - [Chart size](#chart-size)
 - [Highlight and Baseline](#highlight-and-baseline)
-- [Axis scaling](#axis-scaling)
+- [Axes scaling](#axes-scaling)
 
 ---
 
-> This section describes how to customise the **chart layout** by using the **"Customise"** option from the toolbar. For the customisation of the table previews, please see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature.md) of the documentation.
+> This section describes how to customise the **chart layout** by using the **"Customise"** option from the toolbar. For the customisation of the table previews, please see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/) of the documentation.
 
 ### Chart series
 
@@ -40,7 +40,7 @@ By default, all data elements (bars, columns, lines, dots, etc.) in the charts a
 
 ---
 
-### Axis scaling
+### Axes scaling
 
 The corresponding selectors allow changing:
 - Minimum value, maximum value, pivot value and step size for the vertical axis (always non-time-period scale);
