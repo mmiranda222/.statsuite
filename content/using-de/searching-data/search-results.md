@@ -7,6 +7,7 @@ weight: 1900
 ---
 
 #### Table of Content
+- [Introduction](#introduction)
 - [Result content](#result-content)
 - [Pagination](#pagination)
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
@@ -30,12 +31,12 @@ Each search result is divided into three parts:
 ![de search result content](/dotstatsuite-documentation/images/de-result-1.png)  
 
 The following information is displayed for each search result:  
-1. Default display of basic information (collapsed mode)  
+1. Default display of **basic information** (collapsed mode)  
 * The localised dataflow name (or its ID if no localised dataflow name) which is also a link to open the table data preview; this link is a query taking the search terms into account.  
 * The localised dataflow description if exists; it can be shortened if too long.
 * The dataflow dimensions name when search terms are found as hits  
 
-2. Display of extended information (expanded mode)  
+2. Display of **extended information** (expanded mode)  
 In order to display additional information of a search result, the user can click on the `expand` option arrow on the right side of the search result area.  
 The default information is still visible with the entire description (if it was shortened in the default display) and is followed by:
 * The dataflow source (datasource ID)
@@ -43,7 +44,7 @@ The default information is still visible with the entire description (if it was 
 * The date/time of the last update of the dataflow
 * The dataflow’s Agency, ID and version
 
-3. Options
+3. **Options**
 * Expand/Collapse option for displaying additional information of a search result
 * Download the complete unfiltered dataflow data in tabular text (SDMX-CSV format) using the current language.
 
@@ -58,6 +59,8 @@ Search results are paginated, and the number of results per page is configurable
 By using the feature at the bottom right side of the search results page, the user can move to the next, first or last page by using the corresponding **arrows** `|<` `<` `>` `>|`. The user can also enter a page number in the appropriate box.
 
 ![de search result content](/dotstatsuite-documentation/images/de-result-2.png)
+
+---
 
 ### Navigation towards the DE visualisation page
 When the user clicks on a search result name from the search result page, then she/he is forwarded to the DE data visualisation page that corresponds to the selected result.  
