@@ -179,3 +179,17 @@ MonthlyOpenedClosedTypes:
                 - "t::techn. design"
             group_by: month
             period_limit: 6
+
+WeeklyDeliveryTrends:
+    title: Weekly .Stat Suite delivery trends
+    charts:
+        - title: "Number of bugs reported by week"
+        type: line
+        query:
+            issuable_type: issue
+            issuable_state: opened
+            collection_labels:
+                - "t::bug"
+            group_by: week
+            period_limit: 52
+            
