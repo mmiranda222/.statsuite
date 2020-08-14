@@ -184,8 +184,8 @@ WeeklyDeliveryTrends:
     title: Weekly .Stat Suite delivery trends
     charts:
         - title: "Number of bugs reported by week"
-        type: line
-        query:
+          type: line
+          query:
             issuable_type: issue
             issuable_state: opened
             collection_labels:
