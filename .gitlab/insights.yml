@@ -177,7 +177,7 @@ WeeklyOpenedClosedTypes:
                 - "t::refactoring"
                 - "t::support"
                 - "t::techn. design"
-            group_by: Week
+            group_by: week
             period_limit: 52
 
 WeeklyDeliveryTrends:
