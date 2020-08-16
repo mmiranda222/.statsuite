@@ -144,10 +144,10 @@ AllClosedIssues:
                 - "t::support"
                 - "t::techn. design"
 
-MonthlyOpenedClosedTypes:
-    title: Monthly opened & closed issues
+WeeklyOpenedClosedTypes:
+    title: Weekly opened & closed issues
     charts:
-        - title: "Opened issues per month"
+        - title: "Opened issues per week"
           type: stacked-bar
           query:
             issuable_type: issue
@@ -161,9 +161,9 @@ MonthlyOpenedClosedTypes:
                 - "t::refactoring"
                 - "t::support"
                 - "t::techn. design"
-            group_by: month
-            period_limit: 6
-        - title: "Closed issues per month"
+            group_by: week
+            period_limit: 52
+        - title: "Closed issues per week"
           type: stacked-bar
           query:
             issuable_type: issue
@@ -177,8 +177,8 @@ MonthlyOpenedClosedTypes:
                 - "t::refactoring"
                 - "t::support"
                 - "t::techn. design"
-            group_by: month
-            period_limit: 6
+            group_by: Week
+            period_limit: 52
 
 WeeklyDeliveryTrends:
     title: Weekly .Stat Suite delivery trends
