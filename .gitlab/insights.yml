@@ -162,7 +162,7 @@ WeeklyOpenedClosedTypes:
                 - "t::support"
                 - "t::techn. design"
             group_by: week
-            period_limit: 52
+            period_limit: 24
         - title: "Closed issues per week"
           type: stacked-bar
           query:
@@ -178,7 +178,7 @@ WeeklyOpenedClosedTypes:
                 - "t::support"
                 - "t::techn. design"
             group_by: week
-            period_limit: 52
+            period_limit: 24
 
 WeeklyDeliveryTrends:
     title: Weekly .Stat Suite delivery trends
