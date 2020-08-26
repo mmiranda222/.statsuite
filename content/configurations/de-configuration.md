@@ -46,7 +46,7 @@ In the property "homeFacetIds", you must enter the localised name of an indexed 
 If the setting exists but is **empty**, then no facet is displayed on the homepage.  
 If it is **missing**, then all available (indexed) facets are displayed on the homepage.  
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -107,7 +107,7 @@ Define the facets that are always displayed in the first position(s) in the sear
 These facets will be displayed always at first top positions and their labels are prefixed with a [**.**]. Replace spaces in your facet names by underline `_`.  
 In addition, a help [**?**] tooltip is shown right next to the Filters header title, which will display the following information (localised): *"Filters marked with **.** are, when available, always listed first."*
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -131,7 +131,7 @@ Facets are **localised**, thus you must add the translated name of the pinned fa
 
 Define the facets that will always be excluded from the search result page. Replace spaces in your facet names by underline `_`.  
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -172,7 +172,7 @@ Exclude some specific CategorySchemes from the search index (**by ID**). Browsin
 ### Search result page: number of results per page
 Define the number of results displayed per page in the search result pages.  
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -185,7 +185,7 @@ Define the number of results displayed per page in the search result pages.
 ### Time period boundaries
 Define the minimum and maximum values of the time period range in the visualisation page views.<br> 
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "period": {
@@ -202,7 +202,7 @@ Define the default time period selection of the visualisation page views, accord
 
 > **Warning** Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "period": {
@@ -219,7 +219,7 @@ Define the default time period selection of the visualisation page views, accord
 
 Define, **per datasource**, the support of the `LastNObservations` features from your SDMX web service.  
 
-in `dotstatsuite/data/<env>/configs/<tenant>/datasources.json`
+in `dotstatsuite-config/data/<env>/configs/<tenant>/datasources.json`
 
 ```json
 {
@@ -241,7 +241,7 @@ If set to [0, 0], then only the first observation is returned. If set to [0, 249
 Standard browser performance tests revealed that numbers of observations above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
 This configuration also impacts the EXCEL download but does not impact the CSV download options.  
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "sdmx": {
@@ -258,7 +258,7 @@ E.g. if the number of observations was limited to 2500, then the resulting maxim
 Standard browser performance tests revealed that number of table cells above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
 This configuration also impacts the EXCEL download but does not impact the CSV download options.  
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
   "table": {
@@ -281,7 +281,7 @@ The Preferred scale attribute (with the Concept ID or Attribute ID `PREF_SCALE`)
 **Configurable parameter**  
 It applies the calculation over the observation values when the Preferred scale attribute is used in the data source.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
@@ -301,7 +301,7 @@ The Decimals attribute (with the Concept ID or Attribute ID `DECIMALS`) is used 
 **Configurable parameter**  
 It applies the Decimals attribute value when defined in the data source, and thus adapts the observation value display.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
@@ -326,7 +326,7 @@ You can define more than one type of attribute to be displayed as flags.<br>
 
 > **Warning**: if the value ID of an attribute that is defined as flag is **longer than 4 characters**, then this value will not be displayed as a flag but as a **footnote**.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
@@ -354,7 +354,7 @@ More than one type of attributes can be displayed as footnotes.<br>
 ### Localised observation values separators for thousands and decimals
 Define the localised thousands and decimals separators of the observation values when required in the table and chart views.<br>
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "i18n": {
@@ -407,7 +407,7 @@ Examples:
 
 By default, if no configuration for a given localised format is added, then the default applied date format is 'YYYY MMM', e.g. in English '2010 Jan'.
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
   "i18n": {
@@ -433,7 +433,7 @@ The pre-defined `UNIT_MEASURE_CONCEPTS` annotation lists the dimensions and/or a
 In case this annotation is not given, then the following concepts are used: “UNIT_MEASURE,UNIT_MULT,BASE_PER” (provided that these concepts are used as dimensions or attributes in the DSD of the displayed data).  
 If the annotation is present but empty, then there is no special display of the Units of measure.
 
-* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "units": {
