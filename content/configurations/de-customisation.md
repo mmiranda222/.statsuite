@@ -108,8 +108,10 @@ The default theme is applied if there is no theme added to the settings.json fil
   }
 ```
 
+---
+
 ### Main Theme: how to override Mixins
-Data Explorer uses a [Material-ui](https://material-ui.com/) theme, and you can entirely customise it by using your [settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-explorer/settings.json) file under the `https://material-ui.com/` key. For your help, all components used in Data Explorer are in the website [**Visions**](http://visions-qa-oecd.redpelicans.com/#o).
+Data Explorer uses a [Material-ui](https://material-ui.com/) theme, and you can entirely customise it by using your [settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/master/data/dev/configs/oecd/data-explorer/settings.json) file under the `https://material-ui.com/` key. For your help, all components used in Data Explorer are in the website [**Visions**](http://visions-qa-oecd.redpelicans.com/#o).
 
 We try as much as possible to use the Material-ui theme. But sometimes, it is necessary to define **mixins in order to modify the component** with a specific font, font-size, colors, etc...
 
@@ -154,7 +156,7 @@ This example will not erase your other props defined in your theme. Your header 
 }
 ```
 
-The next objective is then to change the font of "DataHeader"
+The next objective is then to change the font of "DataHeader".
 ```json
 {
   "theme": {
