@@ -57,6 +57,8 @@ The localised .Stat DE home page presents a combination of a free text search bo
 
 Each facet, when opened, presents a selectable root-level of facet values together with a non-selectable second-level facet values. The root-level and second-level facet values represent the available values for all dataflows currently being indexed.  
 
+> **Note** that, since the [MMMM XX, 2020 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#MMMM-XX-2020) release, it is possible to make the individual second-level homepage facet values clickable by configuration. See the documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values).
+
 The free text search and the navigation through pre-defined facets are exclusive and result systematically in a new search discarding any previously made search selections.
 
 #### Facets on the search result page

@@ -8,6 +8,7 @@ weight: 72
 #### Table of Content
 - [Intro](#intro)
 - [Homepage facets](#homepage-facets)
+- [Selectable second-level homepage facet values](#selectable-second-level-homepage-facet-values)
 - [Limit for indexing dimensions per dataflow](#limit-for-indexing-dimensions-per-dataflow)
 - [Search results page pinned facets](#search-results-page-pinned-facets)
 - [Search results page excluded facets](#search-results-page-excluded-facets)
@@ -64,6 +65,24 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
         "homeFacetIds": ["Topics", "Thème", "Country", "Pays", "Disability status", "Statut d'invalidité"]
     }
 ```
+
+---
+
+### Selectable second-level homepage facet values
+> Released in [MMMM XX, 2020 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#MMMM-XX-2020)
+
+Make the individual second-level homepage facet values clickable. When a homepage facet returns a **hierarchical** CategoryScheme or ConceptScheme, then it is possible to make the second-level values (sub-level of a root) selectable, so that the search result applies the selection when browsing.   
+By default, the second-level home facet values are **not clickable** (`"homeFacetLevel2Clickable": fasle`).
+
+* in `dotstatsuite/data/<env>/configs/<tenant>/data-explorer/setting.json`
+
+```json
+    "search": {
+        "homeFacetLevel2Clickable": true,
+    }
+```
+
+![Selectable second-level homepage facet values](/dotstatsuite-documentation/images/faq-homepage-select.png)
 
 ---
 
