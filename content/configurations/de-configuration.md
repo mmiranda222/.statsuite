@@ -322,7 +322,7 @@ You can define more than one type of attribute to be displayed as flags.<br>
 ---
 
 ### Coded and uncoded attributes returned as footnotes
-> Since the [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020) release, the **`footnotes`** parameter is **removed from the DE configuration**.
+> Since the [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020), the **`footnotes`** parameter is **removed from the DE configuration**.
 
 If a coded or uncoded attribute is not defined to be returned as **`flags`** in the DE configuration (see [above](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)), then it is displayed as a **`footnote`**.  
 A footnote is an asterisk icon shown next to the observation value, or at a higher-level (see business rules [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed in a mouse-over feature.  
