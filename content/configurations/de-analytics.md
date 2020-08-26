@@ -20,7 +20,7 @@ You can enable [Google Analytics](https://analytics.google.com/) to receive hits
 In order to activate the analytics functionality, you must create your own **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)** and add it to your `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json` file, e.g.
 
 ```json
-  "ga": {UA-123456789-0},
+    "ga": {UA-123456789-0}
 ```
 
 To make sure that the tracking ID is well configured, the F12 console of your DE homepage instance should return the following:
@@ -99,11 +99,11 @@ List of **Events** set up and applied to a Data Explorer instance:
 ### Default overviews for audiences and behaviours
 Once your tracking ID is set up to a deployed instance of .Stat Data Explorer, you should be able to view all event actions, categories and labels (dataflows) under **Reports > Behaviour > Events > Overview**.
 
+![DE Analytics Overview](/dotstatsuite-documentation/images/de-analytics-1.png)
+
 **Event Category** lists the number of actions performed over a given period: dataflow visualisations, downloads, shared objects and views of shared objects.  
 **Event action** lists the number of distinct actions performed by category of event over a given period: views of dataflows, downlaods by type, shares by type (table or chart).  
 **Event label** lists the number of data visualisation by dataflow name over a given period. In order to establish the uniqueness of a dataflow, it is identified by **localised name sourceID/ID/Agency/Version**, e.g. *National Accounts (UoM) staging:SIS-CC-stable/DF_UOM/OECD/3.0*.
-
-![DE Analytics Overview](/dotstatsuite-documentation/images/de-analytics-1.png)
 
 ---
 
