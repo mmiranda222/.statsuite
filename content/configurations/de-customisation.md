@@ -8,6 +8,7 @@ weight: 73
 #### Table of Content
 - [intro](#intro)
 - [main theme](#main-theme)
+- [main theme: how to override Mixins](#main-theme-how-to-override-mixins)
 - [site title and logo](#site-title-and-logo)
 - [homepage background image](#homepage-background-image)
 - [common site logos](#common-site-logos)
@@ -106,6 +107,96 @@ The default theme is applied if there is no theme added to the settings.json fil
     }
   }
 ```
+
+### Main Theme: how to override Mixins
+Data Explorer uses a [Material-ui](https://material-ui.com/) theme, and you can entirely customise it by using your [settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/develop/data/dev/configs/oecd/data-explorer/settings.json) file under the `https://material-ui.com/` key. For your help, all components used in Data Explorer are in the website [**Visions**](http://visions-qa-oecd.redpelicans.com/#o).
+
+We try as much as possible to use the Material-ui theme. But sometimes, it is necessary to define **mixins in order to modify the component** with a specific font, font-size, colors, etc...
+
+**Mixins**  
+The default defined **mixins** can be overridden from the `settings.json` file.
+
+In the Material-ui theme, under the `mixins` key, it is described as such:
+```json
+{
+  "theme": {
+    "mixins": {
+      "nameOfTheComponents": { // use camelCase
+        "root": {
+          // common styles for the entire component
+        },
+        "specificName": {
+          // specific style for the component 
+        }
+      }
+    }
+  }
+}
+```
+
+All mixins are available using the following link: [**theme used by data-explorer**](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/blob/master/src/theme.js)
+
+**Example**  
+Here is an example on **how to change the header of the DE table and charts**.  
+you can find this component in visions [(**DataHeader**)](http://visions-qa-oecd.redpelicans.com/#oDataHeader), the name of this component being "DataHeader".
+
+Taking our general use case, you need to replace the "nameOfTheComponents" by "dataHeader".  
+/**!**\ **You need to change the first capitalize letter into a lower letter to use camelCase mode ("DataHeader" => "dataHeader")** /**!**\
+
+This example will not erase your other props defined in your theme. Your header will remain the same. 
+```json
+{
+  "theme": {
+    "mixins": {
+      "dataHeader": {}
+    }
+  }
+}
+```
+
+The next objective is then to change the font of "DataHeader"
+```json
+{
+  "theme": {
+    "mixins": {
+      "dataHeader": {
+        "root": {
+          "font": "'Comic sans MS'"
+        }
+      }
+    }
+  }
+}
+```
+
+Finally, some components have more props defined in mixins.  
+As you can see in the [**theme file**](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/blob/master/src/theme.js) "DataHeader" have "title", "subtitle", "uprs" and "disclaimer". You can override those props by your owns.
+
+Let's see with the previous example how we can manage those other props:
+```js
+{
+  "theme": {
+    "mixins": {
+      "dataHeader": {
+        "root": {
+          "font": "'Comic sans MS'"
+        },
+        "title": {
+          "color": "black",
+          "fontSize": "60px"
+          "backgroundColor": "yellow"
+        },
+        "subtitle": {
+          // e.g. add here your own styles for subtitle
+        }
+      }
+    }
+  }
+}
+```
+
+Some styles are now added to the title. Title color is now black with bigger font size and with a yellow background color.  
+You can note that style's props are very close to css, but in javascript we use camelCase (e.g: "background-color" => "backgroundColor").
 
 ---
 
@@ -334,7 +425,7 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
                 "projection": ,
                 "path": "/assets/<tenant>/data-explorer/maps/world_map.json",
                 "levels": ["continents", "countries"],
-                "scale": ,
+                "scale": 
             }
         }
     }
