@@ -2,7 +2,7 @@
 title: ".Stat authentication configuration"
 subtitle: 
 comments: false
-weight: 75
+weight: 77
 
 ---
 
