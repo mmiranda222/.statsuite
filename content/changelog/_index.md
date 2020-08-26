@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [August 25, 2020](#august-25-2020)
 - [July 23, 2020](#july-23-2020)
 - [July 7, 2020](#july-7-2020)
 - [June 24, 2020](#june-24-2020)
@@ -46,6 +47,37 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### August 25, 2020
+**[Release .Stat Suite JS 5.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/24)**
+> This new release includes a new minor version of the **data-explorer**, **data-viewer** and  **data-lifecycle-manager** services.
+
+minor changes:
+
+- [dotstatsuite-data-explorer#265](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/265) Enhance the **attribute display** configuration logic. The **footnotes parameter is removed** from the DE configuration. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes))
+- [dotstatsuite-data-explorer#327](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/327) Make the **second-level home facet** values **selectable**. This new feature is enabled by a new configuration parameter (see the related [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values) and the full [functional specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#) of the homepage facets).
+- [dotstatsuite-data-explorer#307](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/307) Adjust the theme and some components to reach the **WCAG AA contrast** compliancy level.
+- [dotstatsuite-data-explorer#211](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/211) *(Refactoring)* Refactoring and documentation update necessary for **GoogleAnalytics plugged to .Stat DE**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/))
+- [dotstatsuite-data-explorer#237](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/237) Empty observation with and without attributes are shown differently.
+- [dotstatsuite-data-explorer#278](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/278) Update the UI Design of the pinned facets.
+- [dotstatsuite-data-explorer#302](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/302) Remove buttons ripple.
+- [dotstatsuite-data-explorer #376](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/376) Additional style corrections.
+- [dotstatsuite-data-explorer#383](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/383) Enable Data Explorer focus only in accessible mode.
+- [dotstatsuite-visions#18](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/18) *(Refactoring)* .Stat DE **Theme** moving into `mixins` what is not in the `default` theme of material UI. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#main-theme-how-to-override-mixins))
+- [dotstatsuite-data-explorer#309](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/309) *(Support)* **UI improvements** following the release JS v5.0.0.
+- [dotstatsuite-data-explorer#323](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/323) *(Support)* .Stat DE becomes non-responsive when viewing footnotes (in specific cases, after several mouse hovers).
+- [dotstatsuite-data-explorer#352](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/352) *(Support)* In the .Stat DE viz page, the green filter selection's count for Time Period should display 0 when no time period is selected.
+- [dotstatsuite-visions#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/19) *(Support)* Flags hover (quick correction).
+
+patches
+
+- [dotstatsuite-data-explorer#368](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/368) Style issues in the 'External resources' link of the 'Download' menu.
+- [dotstatsuite-data-explorer#366](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/366) Wrong legend fonts in chart(s).
+- [dotstatsuite-data-explorer#359](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/359) Download chart incompatibility with Firefox and Microsoft EDGE.
+- [dotstatsuite-data-explorer#358](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/358) .Stat DE becomes non-responsive when viewing a Vertical Symbol chart.
+- [dotstatsuite-data-explorer#252](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/252) The DECIMALS setting is not applied correctly: the 0-padding is missing.
+
+---
 
 ### July 23, 2020
 **[Release .Stat Suite JS 5.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/23)**  
