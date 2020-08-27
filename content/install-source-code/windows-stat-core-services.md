@@ -130,13 +130,7 @@ git clone -b 1.26.5 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/m
 git clone -b 7.13.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
-  7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
-
-```sh
-git clone -b 7.13.2 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
-```
-
-  8 .  Clone the dotstatsuite-core-transfer repository
+  7 .  Clone the dotstatsuite-core-transfer repository
 ```sh
 git clone -b 5.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
@@ -164,11 +158,8 @@ dotnet build /c/git/nsiws.net/NSIWebServices.sln
 ```sh
 dotnet publish /c/git/nsiws.net/NSIWebServices.sln
 ```
-  4 .  Compile the dotstatsuite-core-sdmxri-nsi-plugin
-```sh
-dotnet publish /c/git/dotstatsuite-core-sdmxri-nsi-plugin
-```
-  5 .  Compile the dotstatsuite-core-transfer
+
+  4 .  Compile the dotstatsuite-core-transfer
 ```sh
 dotnet publish /c/git/dotstatsuite-core-transfer
 ```
@@ -230,18 +221,6 @@ The  tool requires a pre-configured list of connection strings of each of the da
         providerName="MySql.Data.MySqlClient"/>
   </connectionStrings>
 ...
-```
-
-To simplify the process, we will use the configuration example maapi-app.config, from the dotstatsuite-core-sdmxri-nsi-plugin repository.
-
--  Move to the maapi.net folder
-```sh
-cd /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/bin/Debug/netcoreapp3.1/publish/
-```
-- From the dotstatsuite-core-sdmxri-nsi-plugin repository, copy the content of the example configuration file `maapi-app.config` to the 
-Estat.Sri.Mapping.Tool.dll.config 
-```sh
-cp -r -f /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/maapi-app.config Estat.Sri.Mapping.Tool.dll.config 
 ```
 
 #### Initialize one Design DotStatSuiteCore_Struct database (MappingStore db)  
@@ -455,32 +434,11 @@ icacls "C:\dotstatsuite-website\nsiws-design" /grant:r "IIS_IUSRS":"(OI)(CI)F"
 cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/nsiws-design/
 ```
 
-**Step 4.** Copy the following dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Design DotStatSuiteCore_Data database.
+**Step 4.** Configure the nsi web service 
 
-- DotStat.Common.dll
-- DotStat.DB.dll
-- DotStat.Domain.dll
-- DotStat.MappingStore.dll
-- DotStat.NSI.DataRetriever.dll
-- DotStat.NSI.RetrieverFactory.deps.json
-- DotStat.NSI.RetrieverFactory.dll
+Configure NSI web service using [this manual](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md)
 
-```sh
-cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp3.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,DotStat.NSI.DataRetriever.dll,DotStat.NSI.RetrieverFactory.deps.json,DotStat.NSI.RetrieverFactory.dll,MicroKnights.Log4NetAdoNetAppender.dll} /c/dotstatsuite-website/nsiws-design/Plugins
-```
-
-**Step 5.** Configure the nsi web service 
-
-From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:
-*  *nsiws-design-app.config* to the file */config/app.config* 
-
->  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
-
-```sh
-cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-design-app.config /c/dotstatsuite-website/nsiws-design/config/app.config
-```
-
->  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
+**Step 5.** Create a new IIS application called **nsiws-design** in port 81, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
  
  In line 80 modify the xml block FROM:
 ```xml
@@ -504,7 +462,6 @@ TO:
 ...
 ```
 
-**Step 6.** Create a new IIS application called **nsiws-design** in port 81, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
 
 >  Make sure git bash is running in admin mode.
 
@@ -512,7 +469,7 @@ TO:
 /c/Windows/System32/inetsrv/appcmd add site /name:nsiws-design /physicalPath:C:\\dotstatsuite-website\\nsiws-design /bindings:http/*:81:
 ```
 
-**Step 7.** Create a new IIS application pool (NSIWSDesignAppPool) 
+**Step 6.** Create a new IIS application pool (NSIWSDesignAppPool) 
 ```sh
 /c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDesignAppPool /managedRuntimeVersion:"" /managedPipelineMode:Integrated
 ```
@@ -521,34 +478,13 @@ TO:
 /c/Windows/System32/inetsrv/appcmd set app "nsiws-design/" /applicationPool:NSIWSDesignAppPool
 ```
 
-**Step 8.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
 
-There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
-  1 .  Json config file.- `NOT RECOMMENDED`
-
->  Copy the sample file dataspaces-design.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-design\config). 
-
-  2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
-
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
-
-For this example we will use the second option: 
-
-*  Set the design dataspace values:
-```sh
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignStructDb;User ID=testLoginDesignStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignDataDb;User ID=testLoginDesignData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
-```
-
-**Step 9.** Start the new application
+**Step 7.** Start the new application
 ```sh
 /c/Windows/System32/inetsrv/appcmd start site /site.name:nsiws-design
 ```
 
-**Step 10.** Test that the application is up and running
+**Step 8.** Test that the application is up and running
 
 *  **Using a web browser**  
 Open a web browser and open the url localhost:81
@@ -581,32 +517,9 @@ icacls "C:\dotstatsuite-website\nsiws-disseminate" /grant:r "IIS_IUSRS":"(OI)(CI
 cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/nsiws-disseminate/
 ```
 
-**Step 4.** Copy the following dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Disseminate DotStatSuiteCore_Data database.
+**Step 4.** Configure the nsi web service  
 
-- DotStat.Common.dll
-- DotStat.Config.dll
-- DotStat.DB.dll
-- DotStat.Domain.dll
-- DotStat.MappingStore.dll
-- DotStat.NSI.DataRetriever.dll
-- DotStat.NSI.RetrieverFactory.deps.json
-- DotStat.NSI.RetrieverFactory.dll
-- MicroKnights.Log4NetAdoNetAppender.dll
-
-
-```sh
-cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp3.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,DotStat.NSI.DataRetriever.dll,DotStat.NSI.RetrieverFactory.deps.json,DotStat.NSI.RetrieverFactory.dll,MicroKnights.Log4NetAdoNetAppender.dll} /c/dotstatsuite-website/nsiws-disseminate/Plugins
-```
-
-**Step 5.** Configure the nsi web service  
-From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:  
-
-*  *nsiws-disseminate-app.config* to the file */config/app.config* 
-
->  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
-
-```sh
-cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-disseminate-app.config /c/dotstatsuite-website/nsiws-disseminate/config/app.config
+Configure NSI web service using [this manual](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md)
 ```
 
 >  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
@@ -631,9 +544,8 @@ TO:
     <appender-ref ref="UserActivityAppender"/>
   </root>
 ...
-```
 
-**Step 6.** Create a new IIS application called **nsiws-disseminate** in port 80, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)  
+**Step 5.** Create a new IIS application called **nsiws-disseminate** in port 80, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)  
 
 >  Make sure git bash is running in admin mode.
 
@@ -641,7 +553,7 @@ TO:
 /c/Windows/System32/inetsrv/appcmd add site /name:nsiws-disseminate /physicalPath:C:\\dotstatsuite-website\\nsiws-disseminate /bindings:http/*:80:
 ```
 
-**Step 7.** Create a new IIS application pool (NSIWSDisseminateAppPool) 
+**Step 6.** Create a new IIS application pool (NSIWSDisseminateAppPool) 
 ```sh
 /c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDisseminateAppPool /managedRuntimeVersion:"" /managedPipelineMode:Integrated
 ```  
@@ -651,35 +563,12 @@ TO:
 /c/Windows/System32/inetsrv/appcmd set app "nsiws-disseminate/" /applicationPool:NSIWSDisseminateAppPool
 ```
 
-**Step 8.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
-
-There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
-  1 .  Json config file.- `NOT RECOMMENDED`
-
->  Copy the sample file dataspaces-disseminate.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-disseminate\config). 
-
-  2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
-
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
-
-For this example we will use the second option:  
-
-*  Set the disseminate dataspace values:
-
-```sh
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='disseminate']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateStructDb;User ID=testLoginDisseminateStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
-```
-
-**Step 9.** Start the new application
+**Step 7.** Start the new application
 ```sh
 /c/Windows/System32/inetsrv/appcmd start site /site.name:nsiws-disseminate
 ```
 
-**Step 10.** Test that the application is up and running
+**Step 8.** Test that the application is up and running
 
 *  **Using a web browser**  
 Open a web browser and open the url localhost:80

@@ -554,17 +554,9 @@ It is based on the SDMX compliant REST web service developed by Eurostat and (th
 
 ##### technical aspects
 - **repository**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
-- **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi
+- **docker**: https://hub.docker.com/r/siscc/sdmxri-nsi-maapi
 - **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
 
-#### Plugin for SDMX service
-(also named SDMX-RI NSI web service (c) Eurostat) to access the .Stat Core Data Store
-
-##### short description
-This plugin is used by the SDMX service to retrieve statistical data structures from a .Stat Core Data Store.
-
-##### technical aspects
-- **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
 
 #### Authorisation service
 
@@ -583,7 +575,7 @@ This web service is used for managing user access rights to data structures and 
 ##### (Dependency) Data Access library to access the .Stat Core Data Store
 
 ##### short description
-This library is used by the SDMX/NSI service plugin and by the Transfer service to retrieve or upload statistical data structures from and to a .Stat Core Data Store.
+This library is used by the Transfer service to retrieve or upload statistical data structures from and to a .Stat Core Data Store.
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access
