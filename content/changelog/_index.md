@@ -52,6 +52,8 @@ ToC
 **[Release .Stat Suite JS 5.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/24)**
 > This new release includes a new minor version of the **data-explorer**, **data-viewer** and  **data-lifecycle-manager** services.
 
+> **Disclaimer**: This new version of the .Stat Suite JavaScript services now uses the **Keycloak access_token** instead of the **id_token**. It is therefore required to change the **Keycloak configuration** accordingly. A good technical procedure is available [here](https://gitlab.com/-/snippets/2000699).
+
 minor changes:
 
 - [dotstatsuite-data-explorer#265](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/265) Enhance the **attribute display** configuration logic. The **footnotes parameter is removed** from the DE configuration. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes))
