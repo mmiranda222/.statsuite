@@ -72,7 +72,7 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
 > Released in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
 
 Make the individual second-level homepage facet values clickable. When a homepage facet returns a **hierarchical** CategoryScheme or ConceptScheme, then it is possible to make the second-level values (sub-level of a root) selectable, so that the search result applies the selection when browsing.   
-By default, the second-level homepage facet values are **not clickable** (`"homeFacetLevel2Clickable": fasle`).
+By default, the second-level homepage facet values are **not clickable** (`"homeFacetLevel2Clickable": false`).
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
