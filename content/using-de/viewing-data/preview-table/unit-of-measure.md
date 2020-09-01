@@ -13,6 +13,7 @@ weight: 2950
 - [Display rules](#display-rules)
 - [Example](#example)
 - [Charts](#charts)
+- [How to identify attributes in the JSON format message](#how-to-identify-attributes-in-the-json-format-message)
 
 ---
 
@@ -169,3 +170,48 @@ Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM la
 
 ### Charts
 Data Explorer **charts** behave in the same way as tables for what concerns the construction of UoM for the chart header.
+
+---
+
+### How to identify attributes in the JSON format message
+To identify an attribute, you should search within the following items chronologically:
+1. AttributeList
+2. ConceptIdentity
+The attribute values are retrieved together with the observation values through a data query to the SDMX API. The API will return all attributes defined for the dataflow.  
+The attributes to be considered are listed in the SDMX-JSON data message.
+
+![DE UoM](/dotstatsuite-documentation/images/DE_UoM_6.png)
+
+In the data message, the attributes can be returned at any of the levels: dataset, (series) and observation. If the URL parameter “dimensionAtObservation=allDimensions” is used then the series level is suppressed.  
+**! Note that the level indicated in the data message can differ from the attachment level defined in the DSD! Thus, while the attribute values are of course to be taken from the data message, their attachment level to be used in the pivot table is to be taken from the DSD.**
+
+![DE UoM](/dotstatsuite-documentation/images/DE_UoM_7.png)
+
+In the data message, the attribute values are returned either together with the observations, (series), or only in the structure part at dataset-level.  
+Example for attribute values returned at observation level (note: the attribute value definition is in the structure part of the data message):  
+
+```json
+"observations":{
+"0:0:0:0:0:0":[1.054290476190476,null,null,0,null,null,null,null,null,null,null,0,null,0,null,0,0,0,0,0,null,null,null],
+"0:0:0:0:0:1":[1.061440909090909,null,null,0,null,null,null,null,null,null,null,0,null,0,null,0,0,0,0,0,null,null,null]
+}
+```
+
+Example for an attribute value returned at dataset level (there can of course only be one single value!):  
+
+```json
+"attributes": {
+"dataset": [ <-- physical attachment within data message which can be at a different (lower) level than defined in the Data Structure
+{
+"id": "PUBL_PUBLIC",
+"name": "Source publication (public)",
+"values": [
+{
+ "id": "302",
+ "name": "IBN 302"
+}
+]
+}
+]
+}
+```
