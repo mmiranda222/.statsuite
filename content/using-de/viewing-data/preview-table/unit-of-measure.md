@@ -177,6 +177,7 @@ Data Explorer **charts** behave in the same way as tables for what concerns the 
 To identify an attribute, you should search within the following items chronologically:
 1. AttributeList
 2. ConceptIdentity
+
 The attribute values are retrieved together with the observation values through a data query to the SDMX API. The API will return all attributes defined for the dataflow.  
 The attributes to be considered are listed in the SDMX-JSON data message.
 
