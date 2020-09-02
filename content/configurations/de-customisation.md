@@ -7,8 +7,10 @@ weight: 73
 
 #### Table of Content
 - [intro](#intro)
-- [main theme](#main-theme)
-- [main theme: how to override Mixins](#main-theme-how-to-override-mixins)
+- [general theme settings](#general-theme-settings)
+- [theme settings: how to override mixins](#theme-settings-how-to-override-mixins)
+- [theme settings: palette](#theme-settings-palette)
+- [theme settings: first loader](#theme-settings-first-loader)
 - [site title and logo](#site-title-and-logo)
 - [homepage background image](#homepage-background-image)
 - [common site logos](#common-site-logos)
@@ -29,7 +31,7 @@ These customisations can be performed by Administrators with access to the .Stat
 
 ---
 
-### Main Theme
+### General theme settings
 >The format and default theme was changed with the release [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)  
 
 It is possible to **override** the default **layout theme** of the application.  
@@ -110,7 +112,7 @@ The default theme is applied if there is no theme added to the settings.json fil
 
 ---
 
-### Main Theme: how to override Mixins
+### Theme settings: how to override mixins
 Data Explorer uses a [Material-ui](https://material-ui.com/) theme, and you can entirely customise it by using your [settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/blob/master/data/dev/configs/oecd/data-explorer/settings.json) file under the `https://material-ui.com/` key. For your help, all components used in Data Explorer are in the website [**Visions**](http://visions-qa-oecd.redpelicans.com/#o).
 
 We try as much as possible to use the Material-ui theme. But sometimes, it is necessary to define **mixins in order to modify the component** with a specific font, font-size, colors, etc...
@@ -199,6 +201,35 @@ Let's see with the previous example how we can manage those other props:
 
 Some styles are now added to the title. Title color is now black with bigger font size and with a yellow background color.  
 You can note that style's props are very close to css, but in javascript we use camelCase (e.g: "background-color" => "backgroundColor").
+
+---
+
+### Theme settings: palette
+**outerPalette**  
+Some colors are used several times in the DE theme. For this purpose, we use **outerPalette**.  
+Each property defined in "innerPalette" ([**theme used by data-explorer**](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/blob/master/src/theme.js)) is available in the settings.
+
+example
+```js
+{
+  "theme": {
+    "outerPalette": {
+      "primaryMain": '#ff00ff', 
+    }
+  }
+}
+```
+
+---
+
+### Theme settings: first loader
+To override the first loader (spinner) color, when the application is not yet loaded, you need to add a **specific class** to your file `styles.css` in your assets config.
+
+```css
+.path {
+  stroke: "#ff00ff";
+}
+```
 
 ---
 
