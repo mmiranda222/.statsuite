@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [September 2, 2020](#september-2-2020)
 - [August 25, 2020](#august-25-2020)
 - [July 23, 2020](#july-23-2020)
 - [July 7, 2020](#july-7-2020)
@@ -47,6 +48,21 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### September 2, 2020
+**[Release .Stat Suite JS 5.3.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/26)**
+> This **patch release** includes a new minor version of the **data-explorer** service.
+
+minor changes:
+
+- [dotstatsuite-data-explorer#328](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/328) How to customize the DE layout theme with pre-built packages. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#general-theme-settings) and new following [sections](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#theme-settings-how-to-override-mixins))
+- [dotstatsuite-data-explorer#337](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/337) Missing label for `datasource` filter.
+
+patch:
+
+- [dotstatsuite-data-explorer#388](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/388) Units of measure is displayed 2 times in the DE table view *(issue resulting from the last JS v.5.3.0 release)*.
+
+---
 
 ### August 25, 2020
 **[Release .Stat Suite JS 5.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/24)**
