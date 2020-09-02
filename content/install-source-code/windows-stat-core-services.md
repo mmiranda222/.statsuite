@@ -459,6 +459,30 @@ From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the followin
 cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-design-app.config /c/dotstatsuite-website/nsiws-design/config/app.config
 ```
 
+>  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
+ 
+ In line 80 modify the xml block FROM:
+```xml
+...
+  <root>
+    <level value="ALL"/>
+    <appender-ref ref="SystemActivityAppender"/>
+    <appender-ref ref="UserActivityAppender"/>
+  </root>
+...
+```
+
+TO:
+```xml
+...
+  <root>
+    <level value="WARN"/>
+    <appender-ref ref="SystemActivityAppender"/>
+    <appender-ref ref="UserActivityAppender"/>
+  </root>
+...
+```
+
 **Step 6.** Create a new IIS application called **nsiws-design** in port 81, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
 
 >  Make sure git bash is running in admin mode.
@@ -560,6 +584,30 @@ From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the followin
 
 ```sh
 cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-disseminate-app.config /c/dotstatsuite-website/nsiws-disseminate/config/app.config
+```
+
+>  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
+ 
+ In line 80 modify the xml block FROM:
+```xml
+...
+  <root>
+    <level value="ALL"/>
+    <appender-ref ref="SystemActivityAppender"/>
+    <appender-ref ref="UserActivityAppender"/>
+  </root>
+...
+```
+
+TO:
+```xml
+...
+  <root>
+    <level value="WARN"/>
+    <appender-ref ref="SystemActivityAppender"/>
+    <appender-ref ref="UserActivityAppender"/>
+  </root>
+...
 ```
 
 **Step 6.** Create a new IIS application called **nsiws-disseminate** in port 80, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)  
