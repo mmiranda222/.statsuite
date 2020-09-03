@@ -90,7 +90,7 @@ Once you applied your filter(s) selection(s), it is possible to review it and mo
 ![DLM Excel-Addin modify selections](/dotstatsuite-documentation/images/dlm-excel-addin-07.png)
 
 **Paste a selection**  
-You selection is returned as a SDMX Rest query, but you can also edit this query from this field and apply the wished modifications. The filters selections will thus be updated accordingly in the above data filters:
+Your selection is returned as a SDMX Rest query, but you can also edit this query from this field and apply the wished modifications. The filters selections will thus be updated accordingly in the above data filters:
 
 ![DLM Excel-Addin paste selection](/dotstatsuite-documentation/images/dlm-excel-addin-08.png)
 
@@ -149,7 +149,7 @@ Applying new options all the way through "Step 2" and "Get data" will generate a
 ---
 
 ### Save to database
-Based on your access rights and permisisons over the sourced data, **edited data can be saved back** to the sourced database. The DLM Excel-Addin checks if you are allowed to submit data for the given dataflow and disable the "Save to database" buttons if you do not have the required access rights.
+Based on your access rights and permisisons over the source data, **edited data can be saved back** to the source database. The DLM Excel-Addin checks if you are allowed to submit data for the given dataflow and disable the "Save to database" buttons if you do not have the required access rights.
 
 You can select a range of edited data and request for saving back only the selection by clikcing on **"Selected data"**, or request for saving all changes made on the entire sheet/dataflow by clicking on **"Entire table"**.  
 When requesting to save back edited data to Database, a pop-up **"Login"** window requests you to provide your credentials in order to check your access rights.
@@ -163,7 +163,7 @@ The new data are then submitted and a pop-up notification message confirms the n
 ---
 
 ### Refresh
-Two **data refresh** options allow you to empty the cache of the currently concerned data before requesting fresh data from the web service. you can request to refresh your current sheet/Excel table, or all sheets/Excel table from all related databases/underlying web services.
+Two **data refresh** options allow you to empty the cache of the currently concerned data before requesting fresh data from the web service. You can request to refresh your current sheet/Excel table, or all sheets/Excel table from all related databases/underlying web services.
 
 ![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-17.png)
 
