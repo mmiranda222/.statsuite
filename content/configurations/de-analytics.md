@@ -17,11 +17,7 @@ weight: 75
 
 ### Tracking ID
 You can enable [Google Analytics](https://analytics.google.com/) to receive hits on audience and usages of a .Stat Data Explorer instance.  
-In order to activate the analytics functionality, you must create your own **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)** and add it to your `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json` file, e.g.
-
-```json
-    "ga": {UA-123456789-0}
-```
+In order to acticate the analytics functionality, you need to create your own **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)** and add it as **`GA_TOKEN`** in your **`.env`**.
 
 To make sure that the tracking ID is well configured, the F12 console of your DE homepage instance should return the following:
 
