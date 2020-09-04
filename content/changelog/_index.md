@@ -65,6 +65,7 @@ patches:
 - [dotstatsuite-core-sdmxri-nsi-ws#65](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/65) NSIWS no longer creates log files in the log folder.
 - [dotstatsuite-excel-addin#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/8) CPU usage too high when auto-refresh formulae is on.
 
+---
 
 **[Release .Stat Suite JS 5.3.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/26)**
 > This **patch release** includes a new minor version of the **data-explorer** service.
