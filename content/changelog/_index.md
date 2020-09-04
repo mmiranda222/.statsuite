@@ -51,7 +51,7 @@ ToC
 
 ### September 2, 2020
 **[Release .Stat Suite .NET 4.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/25)**
-> This release includes a new minor version of the **core-sdmxri-nsi-plugin** and  **dlm-excel-addin** services. 
+> This release includes a new minor version of the **core-sdmxri-nsi-plugin** service and a major [3.0.0.4 version](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/blob/master/CHANGELOG.md) of the **dlm-excel-addin**. 
 
 minor changes:
 
