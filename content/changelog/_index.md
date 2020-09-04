@@ -50,6 +50,22 @@ ToC
  -->
 
 ### September 2, 2020
+**[Release .Stat Suite .NET 4.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/25)**
+> This release includes a new minor version of the **core-sdmxri-nsi-plugin** and  **dlm-excel-addin** services. 
+
+minor changes:
+
+- [dotstatsuite-excel-addin#3](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/3) DLM Excel-Addin: save back edited observation and attribute values in a flat or time-series oriented table view. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/))
+- [dotstatsuite-excel-addin#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/4) Add a compiled executable (.zip) version of the DLM Excel-Addin, with a self-signed certificate for test and demo purposes. ([ready-made file](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/tree/master/install))
+- [dotstatsuite-excel-addin#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/6) Add a refresh button to clean-up the cache in the DLM Excel-Addin. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/#get-data-step-1-select-data))
+- [dotstatsuite-excel-addin#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/7) DLM Excel-Addin icons.
+
+patches:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#65](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/65) NSIWS no longer creates log files in the log folder.
+- [dotstatsuite-excel-addin#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/8) CPU usage too high when auto-refresh formulae is on.
+
+
 **[Release .Stat Suite JS 5.3.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/26)**
 > This **patch release** includes a new minor version of the **data-explorer** service.
 
