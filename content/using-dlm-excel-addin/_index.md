@@ -9,9 +9,9 @@ weight: 800
 #### Table of Content
 - [Introduction](#introduction)
 - [DLM Excel-Addin in the Excel ribbon](#dlm-excel-addin-in-the-excel-ribbon)
-- [Get data: new table - select the source](#get-data-new-table-select-the-source)
-- [Get data: step 1 - select data](#get-data-step-1-select-data)
-- [Get data: step 2 - specify output](#get-data-step-2-specify-output)
+- [Get data: select the source](#get-data-select-the-source)
+- [Get data step 1: select data](#get-data-step-1-select-data)
+- [Get data step 2: specify output](#get-data-step-2-specify-output)
 - [Get data: result table](#get-data-result-table)
 - [Change selection](#change-selection)
 - [Save to database](#save-to-database)
@@ -46,14 +46,14 @@ Once installed, the .Stat DLM Excel-Addin will appear in your Excel ribbon. Clic
 
 ---
 
-### Get data: new table - select the source
+### Get data: select the source
 To start using DLM Excel-Addin, you first need to select the source of data:
 
 ![DLM Excel-Addin select source](/dotstatsuite-documentation/images/dlm-excel-addin-02.png)
 
 ---
 
-### Get data: step 1 - select data
+### Get data step 1: select data
 Once the source has been selected, you will be able to:
 - Show all dataflows for the selected source **(1)**
 - Show only your favorites dataflows **(2)**
@@ -105,7 +105,7 @@ Your selection is returned as an SDMX Rest query, but you can also edit this que
 
 ---
 
-### Get data: step 2 - specify output
+### Get data step 2: specify output
 After completing step 1, you can click on "Next step". Step 2 offers the following options before lauching the data extraction:
 - Choose where the output table should start (Excel sheet and cell) **(1)** 
 - Specify the output table type **(2)**
