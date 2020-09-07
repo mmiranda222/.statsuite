@@ -6,9 +6,18 @@ weight: 4000
 
 ---
 
+#### Table of Content
+- [Adding or replacing structures](#adding-or-replacing-structures)
+- [Adding data](#adding-data)
+- [Deleting structures](#deleting-structures)
+- [Known issues around replaced structures and subsequent data imports](#known-issues-around-replaced-structures-and-subsequent-data-imports)
+- [Management of embargoed data](#management-of-embargoed-data)
+
+---
+
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
 
-## Adding or replacing structures
+### Adding or replacing structures
 
 The simplest method to add or replace structural resources (maintainable SDMX artefacts) is to POST them (one by one or many at the same time) as a valid SDMX-ML snippet in the request body to the SDMX web service (`structure` path), e.g.
 
@@ -28,8 +37,9 @@ If it is required to allow inserting new Codes in final or referenced non-final 
 
 Note: Using this "InsertNewItems" parameter has not yet been fully tested.
 
+---
 
-## Adding data
+### Adding data
 
 Data can be added to a data space using the Transfer web service using one of these methods:
 - Import (`/import/sdmxFile`, `/import/excel`): Upload data from an SDMX file, Excel file (together with the related table structure "EDD" file) or an external SDMX web service
@@ -44,7 +54,9 @@ Data uploaded into the fact table of a specific DSD (version) through another da
 curl -X POST "http://transfer-siscc.redpelicans.com/1.2/init/dataflow" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "dataspace=MyDataspace" -F "dataflow=AGENCYID:DFID(1.0.0)"
 ```
 
-## Deleting structures
+---
+
+### Deleting structures
 
 Individual structural resources can be deleted using the specific resource URL (including the artefact's agency, ID and version) and the HTTP verb `DELETE`, e.g.:
 
@@ -54,7 +66,9 @@ curl -X DELETE http://nsi-stable-siscc.redpelicans.com/rest/codelist/OECD/COUNTR
 
 **Important:** Artifacts have to be deleted one by one, and in the appropriate order according to their dependency tree. E.g. in order to delete a Dataflow, first any possible Content Constraint that references this Dataflow must be deleted. Before deleting a Codelist, any Data Structure Definitions referencing it must also be deleted.
 
-## Known issues around replaced structures and subsequent data imports
+---
+
+### Known issues around replaced structures and subsequent data imports
 
 If you have used the API to load data against a DSD, then deleted it and its associated codelists, and recreated them with different items, attempts to load data against the DSD will fail (with complaints about detecting changes in the codelist).
 
@@ -72,7 +86,9 @@ curl -X DELETE "http://transfer-siscc.redpelicans.com/1.2/cleanup/orphans" -H "a
 
 Only afterwards, modified structures and the related data can be uploaded again.
 
-## Management of embargoed data
+---
+
+### Management of embargoed data
 
 To obtain information about the current Point-In-Time release, use the Transfer web service method `/pointintime​/PITInfo`.
 
