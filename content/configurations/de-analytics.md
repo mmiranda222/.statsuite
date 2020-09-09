@@ -17,7 +17,9 @@ weight: 75
 
 ### Tracking ID
 You can enable [Google Analytics](https://analytics.google.com/) to receive hits on audience and usages of a .Stat Data Explorer instance.  
-In order to activate the analytics functionality, you need to create your own **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)** and add it as **`GA_TOKEN`** in your **`.env`**.
+In order to activate the analytics functionality, you need to create your own **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)** and use the value in env variable named **`GA_TOKEN`** in the scope of compliant service (ie data-explorer).  
+You can add the env variable in your **`.env`** file and start data-explorer service.  
+If you are using Docker-Compose, you have to declare the env variable at the service level in the compose file (see [example](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/js/docker-compose.yml#L82))
 
 To make sure that the tracking ID is well configured, the F12 console of your DE homepage instance should return the following:
 
