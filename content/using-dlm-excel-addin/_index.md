@@ -13,7 +13,7 @@ weight: 800
 - [Get data step 1: select data](#get-data-step-1-select-data)
 - [Get data step 2: specify output](#get-data-step-2-specify-output)
 - [Get data: result table](#get-data-result-table)
-- [Change selection](#change-selection)
+- [Get data: change selection](#get-data-change-selection)
 - [Save to database](#save-to-database)
 - [Refresh](#refresh)
 
@@ -149,7 +149,7 @@ Clicking on **"Get data"** from Step 2 generates the flat or time-series oriente
 
 ---
 
-### Change selection  
+### Get data: change selection  
 Clicking on "Change selection" will bring you back to Step 1 where you can modify your previous choices.  
 Applying new options all the way through "Step 2" and "Get data" will generate a new Excel table with the new choices, and thus replacing the previous ones.
 
