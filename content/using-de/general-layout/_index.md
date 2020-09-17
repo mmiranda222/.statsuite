@@ -7,22 +7,21 @@ weight: 1200
 ---
 
 #### Table of Content
-- [User Interface Design](#user-interface-design)
+- [User Interface Design Specifications](#user-interface-design-specifications)
 - [Header](#header)
 - [Web Content Accessibility Support](#web-content-accessibility-support)
 - [Login](#login)
 - [Language](#language)
 - [Footer](#footer)
 
-### User Interface Design
+### User Interface Design Specifications
 
->**Disclaimer**: It is possible to see some differences between the principles of the UI design from the referenced documentation, and the look and feel of the latest versions of .Stat DE, this being due to the timing of implementation.  
-Also, theming the Data Explorer is largely flexible (see our documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/) about the topic), you can thus meet tenants of the .Stat DE applying layouts, colors or fonts that are entirely different from the default ones.  
-
-.Stat Data Explorer (DE) **UI design** and layouts are following and applying the principles described in the **[UI documentation](https://sis-cc.gitlab.io/design/demo/ui-documentation/index.html)**.  
-**[DE mockups](https://sis-cc.gitlab.io/design/demo/de-material/index.html)** are also made and maintained up-to-date in order to illustrate how the design principles apply to the expected user experience.
+The UI design of the .Stat Data Explorer (DE) is following the specifications described in the [UI documentation](https://sis-cc.gitlab.io/design/demo/ui-documentation/index.html).  [Mockups](https://sis-cc.gitlab.io/design/demo/de-material/index.html) are also available to illustrate the expected user experience. The UI design respects the general Data Explorer [design principles](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/design-principles/) agreed within SIS-CC.
 
 ![DE UI documentation](/dotstatsuite-documentation/images/de-ui-doc.png)
+
+>**Disclaimer**: It is possible to see some differences between the specifications of the UI design, the mockups and the look and feel of the latest implementation version of .Stat DE, which is due to the sequential timing of design and implementation.  
+Also, theming the Data Explorer is largely flexible (see the related documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/)), you can thus see particular tenants of the .Stat DE demo instance that apply different layouts, colours or fonts.  
 
 ---
 
@@ -30,9 +29,9 @@ Also, theming the Data Explorer is largely flexible (see our documentation [here
 
 The Data Explorer header is common to all pages of the application, and consists of:
 * a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo
-* a switch to enable [**Accessibility support**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support)
-* a link to [**Login**](#login) to the application
-* a [**Language**](#language) switch option
+* a switch to enable [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support)
+* a link to [Login](#login) to the application
+* a [Language](#language) switch option
 
 ![DE Header](/dotstatsuite-documentation/images/de-header.png)
 
@@ -42,7 +41,7 @@ The Data Explorer header is common to all pages of the application, and consists
 
 > Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
 
-The Data Explorer **endorses [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) 2.1 to Level AA**, in order to make its content **accessible to people with disabilities**.  
+The Data Explorer endorses [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) 2.1 to Level AA, in order to make its content **accessible to people with disabilities**.  
 The WCAG 2.1 accessibility standards are made of prioritised criteria improving the accessibility. While all the technical content of the Data Explorer meets WCAG 2.1 criteria at Level AA, large parts also already meet Level AAA criteria.  
 The prioritised criteria include key areas of adaptability such as:
 * Semantic mark-up code enabling screen readers accessibility;
@@ -50,7 +49,7 @@ The prioritised criteria include key areas of adaptability such as:
 * Correct contrast ratio across the entire design colours;
 * Alternative features (see below) when the defaults ones are limited in terms of accessibility criteria.
 
-In order to apply the Data Explorer content accessibility features, the user can **enable accessibility support** using the related button in the application header.   
+In order to apply the Data Explorer content accessibility features, the user can 'enable accessibility support' using the related button in the application header.   
 The option can be used to enable or disable accessibility support at any time during the user journey in the Data Explorer.  
 With this feature enabled, the data table view and its 'Customise' panel become accessible by screen readers.  
 
@@ -69,7 +68,7 @@ When accessibility support is enabled, using the `Tab` key of the keyboard allow
 
 ![DE Accessibility](/dotstatsuite-documentation/images/de-accessibility3.png)
 
-> Note: We used [ANDI](https://www.ssa.gov/accessibility/andi/help/howtouse.html), the **Accessible Name and Description Inspector** accessibility testing tool, in the developments and tests of the accessibility compliance features.
+> Note: We used [ANDI](https://www.ssa.gov/accessibility/andi/help/howtouse.html), the 'Accessible Name and Description Inspector' accessibility testing tool, in the developments and tests of the accessibility compliance features.
 
 ---
 
