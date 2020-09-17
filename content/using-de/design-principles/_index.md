@@ -1,5 +1,5 @@
 ---
-title: "Design Principles & Functional Vision"
+title: "Design principles & functional vision"
 subtitle: 
 comments: false
 weight: 200
