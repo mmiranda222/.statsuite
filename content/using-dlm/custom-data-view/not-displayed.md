@@ -72,7 +72,7 @@ In this attached example, one code of a Codelist is defined with the `NOT_DISPLA
 
 Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1 compliant's backoffice system) for Data Explorer dissemination, it will result hiding the value from the sub-title of the dataflow when this value is selected form the filter.
 
-![Example of NOT_DISPLAYED annotation](/dotstatsuite-documentation/using-dlm/files/NOT_DISPLAYED.png)
+![Example of NOT_DISPLAYED annotation](/dotstatsuite-documentation/images/NOT_DISPLAYED.png)
 
 
 ## Automatic hide of specific values
@@ -88,4 +88,4 @@ In the following illustrations:
 * When I select "Overnight visitors" from the filter, the selection appears in the sub-title of the dataflow;
 * When I select **ONLY** "Total" from the same filter, the selection is applied to the view BUT the selection is NOT displayed in the sub-title of the dataflow.
 
-![Example of hidden special value](/dotstatsuite-documentation/using-dlm/files/HIDE_SPECIAL_VALUES.png)
+![Example of hidden special value](/dotstatsuite-documentation/images/HIDE_SPECIAL_VALUES.png)

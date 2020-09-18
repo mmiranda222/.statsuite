@@ -33,4 +33,4 @@ Use the following syntax when defining the annotation in the DSD definition:
   Whenever a *DSD-specific* MaxTextAttributeLength parameter is increased after a first data upload, then the new length parameter is applied.  
   When uploading the DSD structure with the annotation `MAXTEXTATTRIBUTELENGTH` in its definition, the end-user is also notified, through the usual email report, that the new parameter has been taken into account:
 
-![Example of mail with annotation MAXTEXTATTRIBUTELENGTH](/dotstatsuite-documentation/using-dlm/files/MAXTEXTATTRIBUTELENGTH.png)
+![Example of mail with annotation MAXTEXTATTRIBUTELENGTH](/dotstatsuite-documentation/images/MAXTEXTATTRIBUTELENGTH.png)

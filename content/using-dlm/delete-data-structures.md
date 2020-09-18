@@ -8,7 +8,7 @@ weight: 250
 
 With the DLM, data structures can be deleted separately for each structure object (artifact), e.g. a particular Dataflow, Codelist or Data Structure Definition, using the contextual 'delete structure' menu:
 
-![DLM delete structures](/dotstatsuite-documentation/using-dlm/files/delete_structures.png)  
+![DLM delete structures](/dotstatsuite-documentation/images/delete_structures.png)  
 
 Data structures can also be deleted directly through the *SDMX* (NSI) web service API, using the DELETE HTTP verb with the appropriate resource URL. Example of deleting a Codelist:
 
