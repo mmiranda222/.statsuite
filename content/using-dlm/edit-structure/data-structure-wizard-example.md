@@ -58,7 +58,7 @@ Category Scheme is a specific case of an Item Scheme (abstract artefact).
 ---
 
 ### Agency Schemes and their Agencies
-Agency Scheme is a flat list of Agencies (OECD directorates) that can be used to define owners of individual SDMX artefacts.  
+Agency Scheme is a flat list of Agencies (e.g. directorates) that can be used to define owners of individual SDMX artefacts.  
 Agency Scheme is a specific case of an Item Scheme.
 
 ![dsw agency](/dotstatsuite-documentation/images/dsw-agency1.png)
