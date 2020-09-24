@@ -10,7 +10,13 @@ Currently, the Data Lifecycle Manager itself doesn't directly offer data structu
 
 We recommend using the following tools for data structure creation or editions:
 
-## Generic DSD Matrix SDMX-ML generator
+#### Table of Content
+- [Generic DSD Matrix SDMX-ML generator](#generic-dsd-matrix-sdmx-ml-generator)
+- [SDMX ISTAT Framework](#sdmx-istat-framework)
+- [SDMX Data Structure Wizard (DSW)](#sdmx-data-structure-wizard)
+- [Fusion Registry Community Edition](#fusion-registry-community-edition)
+
+### Generic DSD Matrix SDMX-ML generator
 
 - technology: Excel macro [.xlsm file]
 - link: https://github.com/OECDSTD/sdmx-matrix-generator
@@ -31,7 +37,7 @@ The "How to use" worksheet of the generator tool contains a Step-by-step guide.
 
 A video record of a demo of the tool is available from [here online](https://oecdtv.webtv-solution.com/embed/6650/en/video).
 
-## SDMX ISTAT Framework
+### SDMX ISTAT Framework
 
 - technology: Javascript web application with .Net-based server backend
 - link: https://gitlab.com/sis-cc/istat-framework (an older version is available here: https://github.com/SDMXISTATTOOLKIT)
@@ -45,7 +51,7 @@ The SDMX Istat Toolkit is a set of pick-and-choose building blocks allowing a st
 - SDMX Metamanager – provides a graphical user interface for browsing, download, create and submit structural metadata. It can be used as a “switch” towards different SDMX Web Services based on the SDMX-RI. In this context a user can browse metadata stored in distributed repositories. The application allows to handle the order in the Code Lists and to add further items in already final Code Lists.
 
 
-## SDMX Data Structure Wizard (DSW)
+### SDMX Data Structure Wizard
 
 - technology: Java standalone desktop application
 - link: http://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/dsw
@@ -62,8 +68,9 @@ In the on-line mode, the tool communicates with any standard-compliant SDMX Regi
 
 It should be possible to connect the DSW to a .Stat Suite CORE data space (its related SDMX web service) to retrieve data structures. However, update functionality is not guaranteed due to the incompatibility in the authentication method.
 
+**Overview of the tool given by screenshots can be found in [this page](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/edit-structure/data-structure-wizard-example)**.
 
-## Fusion Registry Community Edition
+### Fusion Registry Community Edition
 
 - technology: Java application with web interface
 - link: https://metadatatechnology.com/software/communityTools.php
