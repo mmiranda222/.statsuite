@@ -8,12 +8,12 @@ weight: 46
 #### Table of Content
 
 - [pre-requisites](#pre-requisites)
-- [1. config service](#1. config service)
-- [2. search service](#2. search service)
-- [3. share service](#3. share service)
-- [4. data explorer app](#4. data explorer app)
-- [5. data viewer app](#5. data viewer app)
-- [6. data-lifecycle-manager app](#6. data-lifecycle-manager app)
+- [1. config service](#1-config-service)
+- [2. search service](#2-search-service)
+- [3. share service](#3-share-service)
+- [4. data explorer app](#4-data-explorer-app)
+- [5. data viewer app](#5-data-viewer-app)
+- [6. data-lifecycle-manager app](#6-data-lifecycle-manager-app)
 
 ---
 
