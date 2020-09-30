@@ -7,28 +7,31 @@ weight: 52
 
 #### Table of Content
 - [.Stat Data Explorer components](#stat-data-explorer-components)
+  - [Data Explorer app](#data-explorer-app)
+  - [Share service](#share-service)
+  - [Share-Viewer App](#share-viewer-app)
+  - [Search service](#search-service)
+  - [Proxy service](#proxy-service)
+  - [Config Service](#config-service)
 - [.Stat Data Lifecycle Manager components](#stat-data-lifecycle-manager-components)
 - [.Stat Core components](#stat-core-components)
+  - [Transfer service](#transfer-service)
+  - [SDMX service](#sdmx-service)
+  - [Authorisation service](#authorisation-service)
 - [Docker compose example(s)](#docker-compose-examples)
 
----
-
-Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use Docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in their own cloud or premises.
-
+Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use Docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in their own cloud or premises.  
 This section describes where to find and how to use the .Stat Suite Docker images.
+
+All **.Stat Suite Docker images** are located under https://hub.docker.com/u/siscc. Please see each repository for detailed information on how to use these.
 
 > **Note**: Docker technology is a commonly used containerisation technology, and we will mainly list here our ready-to-use Docker images.
 
 ---
 
-<br>
+### .Stat Data Explorer components
 
-All **.Stat Suite Docker images** are located under https://hub.docker.com/u/siscc. Please see each repository for detailed information on how to use these.
-
-
-## .Stat Data Explorer components
-
-### Data Explorer app
+#### Data Explorer app
 
 This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
 
@@ -36,8 +39,7 @@ This web app is the main GUI for (external) users to find, understand and use th
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-explorer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer
 
-
-### Share service
+#### Share service
 
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.  
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
@@ -46,14 +48,11 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 - share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
 - POST bodies are limited in size to `maxChartSize`
 
-<br>
-
 - **demo**: http://share-staging-oecd.redpelicans.com/api/charts/3
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-share
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
 
-
-### Share-Viewer App
+#### Share-Viewer App
 
 This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
@@ -63,8 +62,7 @@ This web app is a compagnon GUI for (external) users to display user-defined, sh
 - server-side rendered (configuration is injected in index.html), no request required from the client to get the configuration
 - client bundle expects configuration in `window.SETTINGS`, `window.I18N` and `window.CONFIG` for those who want to use directly the static files
 
-
-### Search service
+#### Search service
 
 This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows categorised and accessible in one or more SDMX end points and to execute faceted search queries on these SDMX dataflows. A static schema is defined in the config. A dynamic schema is derivated from the indexed SDMX dataflows.
 
@@ -80,15 +78,14 @@ Limitations:
 - how to index (e.g. individual dataset = SDMX dataflow)
 
 
-### Proxy service
+#### Proxy service
 
 The Proxy service handles route requests by mapping the hostname part of URLs to tenant-application pairs. Requests with hostnames that match the defined mappings are forwarded to the matched target application, and tenant headers are set for the matched tenant.
 
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-kube-proxy
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
 
-
-### Config Service
+#### Config Service
 
 The Configuration service centralises all configuration resources used by other services. It is a web server providing requested configuration, not exposed to users. Based on git versioned configuration data.
 
@@ -97,10 +94,8 @@ The Configuration service centralises all configuration resources used by other 
 
 ---
 
-
-## .Stat Data Lifecycle Manager components
-
-### Data Lifecycle Manager app
+### .Stat Data Lifecycle Manager components
+#### Data Lifecycle Manager app
 
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
@@ -110,9 +105,8 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 
 ---
 
-## .Stat Core components
-
-### Transfer service
+### .Stat Core components
+#### Transfer service
 
 This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores: 
 
@@ -120,13 +114,11 @@ This web service is used for statistical data (and later referential metadata) f
 - Upload of Excel data files (using a specific data mapping definition) into a .Stat Core data store
 - Transfer of data between two .Stat Core data stores  
 
-<br>
-
 - **demo**: http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-transfer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
 
-#### Configuration
+##### Configuration
 
 Configuration values can be set using a **config** file located in the [root of application](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/tree/master/DotStatServices.Transfer/config) or by using **environment variables**.  
 All files with `*.json` extension and which are located in the config folder are considered as configuration files. The name of the file is arbitrary (except for the log4net.config file) and configuration values can be loaded from a single or multiple files.
@@ -199,8 +191,8 @@ access-nuget --> data_db
 end
 {{< /mermaid >}}
 
-
-### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
+#### SDMX service
+(also named SDMX-RI NSI web service (c) Eurostat)
 
 This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store. The docker image is using a vanilla Eurostat NSI web service image as a base image. It is enriched with a special .Stat Core plugin used to retrieve statistical data structures from a .Stat Core Data Store.  
 
@@ -210,8 +202,7 @@ This web service is used for statistical data structures for their upload and do
 - **repository of .Stat Core plugin**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
 - **repository of original Eurostat SDMX-RI NSI web service**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 
-#### Configuration
-
+##### Configuration
 Configuration is loaded from **config** directory located in the [root of application](https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config).  
 All files with *.json extension are considered as configuration files. The name of the file is not important (except app.config & log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.  
 
@@ -272,8 +263,7 @@ access-nuget --> data_db
 end
 {{< /mermaid >}}
 
-
-### Authorisation service
+#### Authorisation service
 
 This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
 
@@ -285,7 +275,7 @@ This web service is used for managing user access rights to data structures and 
 
 ---
 
-## Docker-compose example(s)
+### Docker-compose example(s)
 
 [Docker Compose](https://docs.docker.com/compose/overview/) is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. To learn more about all the features of Compose, see [the list of features](https://docs.docker.com/compose/overview/#features).  
 

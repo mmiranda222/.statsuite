@@ -16,6 +16,8 @@ For each type, when creating the new issue, be specific in the title, and we wil
 
 If you want to fix a bug yourself, then please refer to the [Development guidelines](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-guidelines/).  
 
+---
+
 ### Writing a good issue
 When reporting a **bug**:  
  - Describe what went wrong, what is the expected behavior and if relevant, what caused the problem;

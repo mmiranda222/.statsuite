@@ -6,6 +6,13 @@ weight: 77
 
 ---
 
+#### Table of Content
+- [OpenID connect Middleware for NSIWS](#openid-connect-middleware-for-nsiws)
+  - [Intro](#intro)
+  - [Setup](#setup)
+  - [Configuration](#configuration)
+  - [Configuration settings](#configuration-settings)
+
 > Since the [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020), The Data Explorer now works in both anonymous and authenticated modes.  
 
 .Stat Suite is based on openid-connect authentication. Any openid-connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab.  
@@ -20,7 +27,7 @@ The original SDMX web service (NSI) openid-connect auth configuration manual can
 
 For convenience, the content has been replicated here:
 
------------------------------------------------------------
+---
 
 ### OpenID connect Middleware for NSIWS
 
@@ -78,8 +85,7 @@ add auth.json file to a config directory with following contents:
 
 -----------------------------------------------------------
 
-Note that 
-
+Note that  
 - If NSI is configured to process sent JWT token then it's essential to configure it to `allowAnonymous=true` for the DE to work. 
 - With NSI openid-connect authentication turned ON, structure upload/retrieval remain anonymous (we just haven't implemented the authorization for it yet).
 - With NSI openid-connect authentication turned ON, on data retrieval, there is a check if user has a Data read permission in authorization DB (managed through the authorization service) even if request is anonymous (using the .Stat Suite AuthorizationManagement web service, there must be appropriate (probably read) permissions defined for anonymous users).

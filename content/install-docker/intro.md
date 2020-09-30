@@ -18,10 +18,9 @@ See the full Docker overview [here](https://docs.docker.com/engine/docker-overvi
 
 ---
 
-## Next steps
+### Next steps
 
 - Read about installing [Docker](https://docs.docker.com/install/overview/).  
 - Get hands-on experience with the Getting started with [Docker tutorial](https://docs.docker.com/engine/getstarted/).  
 - Check out examples and deep dive topics in the [Docker Engine user guide](https://docs.docker.com/engine/userguide/).  
 
----

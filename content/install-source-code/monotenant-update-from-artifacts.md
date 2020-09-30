@@ -5,11 +5,25 @@ comments: false
 weight: 46
 ---
 
-**pre-requisites:**
+#### Table of Content
+
+- [pre-requisites](#pre-requisites)
+- [1. config service](#1. config service)
+- [2. search service](#2. search service)
+- [3. share service](#3. share service)
+- [4. data explorer app](#4. data explorer app)
+- [5. data viewer app](#5. data viewer app)
+- [6. data-lifecycle-manager app](#6. data-lifecycle-manager app)
+
+---
+
+### pre-requisites
 
 - running install, see [install](/install-source-code/monotenant-install-from-artifacts)
 
-**1. config service**
+---
+
+### 1. config service
 
  1. download artifact archives and package.json file from gitlab:  
 
@@ -21,7 +35,9 @@ weight: 46
  
   - (in git bash) run `PORT=5007 npm run dist:run`
 
-**2. search service**
+---
+
+### 2. search service
 
  1. download artifact archives and package.json file from gitlab:  
 
@@ -33,7 +49,9 @@ weight: 46
  
   - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
 
-**3. share service**
+---
+
+### 3. share service
 
  1. download artifact archives and package.json file from gitlab:  
 
@@ -45,7 +63,9 @@ weight: 46
 
   - (in git bash) run `PORT=3006 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SITE_URL=http://localhost:3006  npm run dist:run`
 
-**4. data explorer app**
+---
+
+### 4. data explorer app
 
  1. download artifact archives and package.json file from gitlab:  
 
@@ -57,7 +77,9 @@ weight: 46
  
   - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 AUTH_SERVER_URL=http://localhost:8080 npm run start:run`
 
-**5. data viewer app**
+---
+
+### 5. data viewer app
 
  1. download artifact archives and package.json file from gitlab:  
 
@@ -69,7 +91,9 @@ weight: 46
  
  - (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
 
-**6. data-lifecycle-manager app**
+---
+
+### 6. data-lifecycle-manager app
 
 1. download artifact archives and package.json files from gitlab:
 

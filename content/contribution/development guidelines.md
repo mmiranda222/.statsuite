@@ -7,19 +7,23 @@ weight: 93
 
 #### Table of Content
 - [git-flow](#git-flow)
+  - [Overview](#overview)
+  - [Rules](#rules)
+  - [Good practices](#good-practices)
+  - [Use case of a git-feature](#use-case-of-a-git-feature)
+  - [Use case of a git-conflict](#use-case-of-a-git-conflict)
 - [process](#process)
 - [coding standards](#coding-standards)
 - [linting utilities](#linting-utilities)
 - [contributing to an open source repository](#contributing-to-an-open-source-repository)
 
----
-
 > **NOTE**: these guidelines describe how the .Stat Suite developer team members are applying the git-flow process and what coding standards are followed.  
 **As an external contributor** of the project, you can directly jump in the very well described [contributing to an open source repository](https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/), where it is explained how to contribute to an open-source project by submitting Merge Requests to the project maintainers.
 
-### Git-flow
+---
 
-**Overview**  
+### Git-flow
+#### Overview
 The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) have the following branches:
 
 - master (name=master)
@@ -42,7 +46,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - fixing critical bug(s) in production
     - avoid blocking dev while fixing master
 
-**Rules**  
+#### Rules
 
 - feature/patch branches are created from dev (after a merge in dev) <br>
 - feature/patch branches must be merged back into dev when the feature is done <br>
@@ -51,7 +55,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
 - hotfix branches are created from master (after a merge in master) <br>
 - hotfix branches must be merged back into dev and master <br>
 
-**Good practices**  
+#### Good practices
 
 - perform atomic commits (ie commit a lot) <br>
     - git history is detailed <br>
@@ -61,7 +65,7 @@ The [.Stat Suite gitlab repositories](https://gitlab.com/sis-cc/.stat-suite) hav
     - backup your work (commits are local) <br>
     - share your work <br>
 
-**Use case of a git-feature**<br>
+#### Use case of a git-feature
 lifecycle of a feature (morebanana).<br>
 
 ```
@@ -100,7 +104,7 @@ $ git branch -d feature/morebanana
 $ git push
 ```
 
-**Use case of a git-conflict**  
+#### Use case of a git-conflict
 I am working on a new feature, while updating my feature branch with dev, I get a conflict.<br>
 
 ```

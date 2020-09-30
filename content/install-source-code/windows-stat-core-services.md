@@ -17,18 +17,20 @@ weight: 44
 - [5. Deploy the Design NSI web service in port 81](#5-deploy-the-design-nsi-web-service-in-port-81)
 - [6. Deploy the Disseminate NSI web service in port 80](#6-deploy-the-disseminate-nsi-web-service-in-port-80)
 
----
-
 The following example, contains the list of steps required to deploy a **specific topology** of the dotstatsuite-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
 
-## Disclaimer
+---
+
+### Disclaimer
 
 > **`This example SHOULD NOT be used as is for production deployments.`**
 > 
 > In this installation example all sensitive information is set to use default values, including connection strings, SQL users and passwords, database names, application folders, among others.  
 >  **This information is publically available, making your deployment vulnerable.**
 
-## Pre-requisites
+---
+
+### Pre-requisites
 Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.
 
 - **SQL server 2017** or higher
@@ -53,11 +55,15 @@ Make sure that the windows machine which will be used in this installation proce
 
 > **`WARNING!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
 
-## Topology
+---
+
+### Topology
 
 ![.Stat Core topology two spaces](/dotstatsuite-documentation/images/stat-core-topology-two-spaces.PNG)
 
-## Installation overview
+---
+
+### Installation overview
 1.   [Download the source code](#1-download-the-source-code)
 2.   [Compile the source code](#2-compile-the-source-code)
 3.   [Initialize the databases](#3-initialize-the-databases)
@@ -71,11 +77,13 @@ Make sure that the windows machine which will be used in this installation proce
 5.   [Deploy the Design NSI web service](#5-deploy-the-design-nsi-web-service-in-port-81)
 6.   [Deploy the Disseminate NSI web service](#6-deploy-the-disseminate-nsi-web-service-in-port-80)
 
-## 1 Download the source code
+---
+
+### 1 Download the source code
 
 In this section we'll download the source code for the databases and for each of the applications.
 
-### A word on versions
+#### A word on versions
 
 The versions of the source code we download here need to work together. This means that we need to download compatible versions of all the various components, which is why none of the clone statements refer to branches such as "master" or "develop", but instead refer to tags we know to be compatible.
 
@@ -130,7 +138,9 @@ git clone -b 7.13.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 git clone -b 4.2.4 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
-## 2 Compile the source code
+---
+
+### 2 Compile the source code
 
   1 .  Compile the dotstatsuite-core-dbup tool
 ```sh
@@ -160,11 +170,13 @@ dotnet publish /c/git/dotstatsuite-core-sdmxri-nsi-plugin
 dotnet publish /c/git/dotstatsuite-core-transfer
 ```
 
-## 3 Initialize the databases
+---
+
+### 3 Initialize the databases
 
 For this step you will need the Microsoft SQL sysadmin user and password.  
 
-### Initialize the DotStatSuiteCore_Common database  
+#### Initialize the DotStatSuiteCore_Common database  
 
 ![.Stat Core topology Common](/dotstatsuite-documentation/images/stat-core-topology-common.PNG)  
 
@@ -174,7 +186,8 @@ Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ```sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(\!)Password" --force
 ```
-### Initialize one Design DotStatSuiteCore_Data database  
+
+#### Initialize one Design DotStatSuiteCore_Data database  
 
 ![.Stat Core topology designData](/dotstatsuite-documentation/images/stat-core-topology-designData.PNG)  
 
@@ -184,7 +197,8 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 ``` sh
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(\!)Password" --force
 ```
-### Initialize one Disseminate DotStatSuiteCore_Data database  
+
+#### Initialize one Disseminate DotStatSuiteCore_Data database  
 
 ![.Stat Core topology disseminateData](/dotstatsuite-documentation/images/stat-core-topology-disseminateData.PNG)  
 
@@ -195,7 +209,7 @@ Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb  --loginName testLoginDisseminateData --loginPwd "testLogin(\!)Password" --force
 ```
 
-### Configure the maapi.net tool 
+#### Configure the maapi.net tool 
 
 The maapi.net tool is used to initialize DotStatSuiteCore_Struct (mappingStore) databases. In this example we will use it to initialize two DotStatSuiteCore_Struct databases (design and disseminate).
 
@@ -227,7 +241,7 @@ Estat.Sri.Mapping.Tool.dll.config
 cp -r -f /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/maapi-app.config Estat.Sri.Mapping.Tool.dll.config 
 ```
 
-### Initialize one Design DotStatSuiteCore_Struct database (MappingStore db)  
+#### Initialize one Design DotStatSuiteCore_Struct database (MappingStore db)  
 
 ![.Stat Core topology designStruct](/dotstatsuite-documentation/images/stat-core-topology-designStruct.PNG)
 
@@ -248,7 +262,7 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publis
 dotnet Estat.Sri.Mapping.Tool.dll init -m DesignStructDb -f 
 ```
 
-### Initialize one Disseminate DotStatSuiteCore_Struct database (MappingStore db)  
+#### Initialize one Disseminate DotStatSuiteCore_Struct database (MappingStore db)  
 
 ![.Stat Core topology disseminateStruct](/dotstatsuite-documentation/images/stat-core-topology-disseminateStruct.PNG)
    
@@ -269,7 +283,9 @@ dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publis
 dotnet Estat.Sri.Mapping.Tool.dll init -m DisseminateStructDb -f 
 ```
 
-## 4 Deploy the Transfer service  
+---
+
+### 4 Deploy the Transfer service  
 
 ![.Stat Core topology transfer](/dotstatsuite-documentation/images/stat-core-topology-transfer.PNG)
 
@@ -412,7 +428,9 @@ Open a web browser and open the url localhost:83/health
 ```
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\transfer-service\logs\
 
-## 5 Deploy the Design NSI web service in port 81  
+---
+
+### 5 Deploy the Design NSI web service in port 81  
 
 ![.Stat Core topology nsiwsDesign](/dotstatsuite-documentation/images/stat-core-topology-nsiwsDesign.PNG)
 
@@ -536,7 +554,9 @@ Open a web browser and open the url localhost:81
 
 >  Note: By default all the logs will be stored at C:/ProgramData/Eurostat/logs/
 
-## 6 Deploy the Disseminate NSI web service in port 80  
+---
+
+### 6 Deploy the Disseminate NSI web service in port 80  
 
 ![.Stat Core topology nsiwsDisseminate](/dotstatsuite-documentation/images/stat-core-topology-nsiwsDisseminate.PNG)
 

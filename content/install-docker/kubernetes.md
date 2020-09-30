@@ -5,8 +5,17 @@ comments: false
 weight: 55
 ---
 
+#### Table of Content
+- [Intro](#intro)
+- [Multi-tenant architecture](#Multi-tenant architecture)
+  - [Examples of tenants defined in our DevOps (qa/staging) environments](#Examples of tenants defined in our DevOps (qa/staging) environments)
+  - [Technical overview](#technical overview)
+  - [Demo of adding/updating a tenant](#demo-of-adding-updating-a-tenant)
+  - [Demo of adding/updating an app for the tenant](#demo-of-adding-updating-an-app-for-the-tenant)
 
-## Intro
+---
+
+### Intro
 
 The three .Stat Suite main modules **Data Explorer**, **.Stat Core** and **Data Lifecycle Manager** [*to come*] are containerised and packaged as fully-functional, ready-to-use services using [Kubernetes](https://kubernetes.io/docs/home/) technology, which can be freely re-used by anyone in its own cloud or premises.
 
@@ -29,17 +38,18 @@ Our DevOps chain is also using these kubernetes cluster definitions, see the fol
 
 The kubernetes cluster definitions implement a "multi-tenant architecture" that allows for sharing the kubernetes cluster between different tenants (organisations, projects, domains, portals, etc.)
 
+---
 
-## Multi-tenant architecture
+### Multi-tenant architecture
 
-### Examples of tenants defined in our DevOps (qa/staging) environments
+#### Examples of tenants defined in our DevOps (qa/staging) environments
 
 |tenant|specs|url|
 |---|---|---|
 |oecd|own sdmx oecd qa endpoint, siscc design|http://de-qa-oecd.redpelicans.com/|
 
 
-### technical overview
+#### technical overview
 
 {{< mermaid align="left" >}}
 graph LR
@@ -84,8 +94,7 @@ id14 --> id15
 end
 {{< /mermaid >}}
 
-
-### demo: add/update a tenant
+#### Demo of adding/updating a tenant
 
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
@@ -93,7 +102,8 @@ end
 1. check the tenant at http://de-staging-oecd.redpelicans.com/?tenant= `tenant`
 1. update something in the configuration and check the update
 
-### demo: add/update an app for the tenant (see sis-cc workshop hands-on)
+#### Demo of adding/updating an app for the tenant
+*(see sis-cc workshop hands-on)*
 
 1. fork from webapp
 1. inject pre-coded app (to create)
