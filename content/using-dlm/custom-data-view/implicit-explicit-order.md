@@ -52,6 +52,8 @@ After ordering:
 
 This annotation is to be used to automatically order dimension values in the filters of the visualisations according to the current locale. It should also be used for displaying correctly ordered dimension values in the visualisation's data table.
 
+---
+
 ### localized order in data message for DE table
 Explicit order of items in an ItemScheme as described above is also applied to the data table view, once the explicit order of codes is returned in the SDMX-JSON data message.
 

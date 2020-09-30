@@ -28,6 +28,8 @@ When several dataflows are selected from the list as inputs for transfer, then t
 
 ![copy data](/dotstatsuite-documentation/images/dlm-copy-data-4.png)  
 
+---
+
 ### Visuals and messages
 Once the data transfer is launched, the user is made aware by the highlighted transfer icon ![dlm transfer icon](/dotstatsuite-documentation/images/dlm-copy-data-structures-icon.png):
 * green for a successful transfer, 

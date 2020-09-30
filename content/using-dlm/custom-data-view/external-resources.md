@@ -18,6 +18,8 @@ To do so, you can use the SDMX `EXT_RESOURCE` annotation to define one or severa
 * The feature being localised also means that the localised annotation text is applied according to the current locale of the Data Explorer.
 * The contents of the annotation text/texts are valid `HTML` href elements with href properties (hyperlinks to the resource). It can also include an icon.
 
+---
+
 ### Syntax
 Use the following syntax when defining the annotation in the dataflow or dataset definition for additional download options for external resources:  
 
@@ -37,6 +39,8 @@ Use the following syntax when defining the annotation in the dataflow or dataset
 			"fr": "<a href='http://www.ilo.org/ilostat-files/Documents/Metadata/Ref_MD_FR.xlsx'>Informations explicatives en pdf</a>	}
 	}]
 ```
+
+---
 
 ### Example
 In the below screenshot, the dataflow structure definition contains 3 annotations of `EXT_RESOURCE` typefor localised (in English and French) externally stored files.
