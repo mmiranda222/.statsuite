@@ -6,7 +6,7 @@ weight: 60
 
 ---
 
-## Cloud-hosting for SIS-CC member organisations and their partners for test, demo and pilot purposes
+### Cloud-hosting for SIS-CC member organisations and their partners for test, demo and pilot purposes
 Using our DevOps environment with the "multi-tenant architecture", we can propose to our collaboration partners an out-of-the-box, easy-to-setup cloud hosting of the .Stat Suite for test, demo or pilot purposes.  
 No need for locally hosting servers, building complex infrastructures or worrying about security plans:
 
@@ -19,7 +19,8 @@ No need for locally hosting servers, building complex infrastructures or worryin
 
 [Contact us](mailto:contact@siscc.org) for further information and to set up a new tenant for you.
 
+---
 
-## Cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes
+### Cloud-hosting by any organisation for their own partners for test, demo, pilot or full-production purposes
 Our kubernetes cluster definitions with the "multi-tenant architecture" can be freely re-used and adapted by any organisation wishing to provide their own out-of-the-box, easy-to-setup cloud hosting of the .Stat Suite for their partner organisations.
  

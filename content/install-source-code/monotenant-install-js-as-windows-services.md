@@ -7,6 +7,9 @@ weight: 47
 
 #### Table of Content
 - [prerequisites](#prerequisites)
+  - [git bash](#git-bash)
+  - [nodejs & npm](#nodejs-&-npm)
+  - [java v8 (for solr)](#java-v8-for-solr)
 - [folders](#folders)
 - [nssm](#nssm)
 - [solr](#solr)
@@ -19,7 +22,7 @@ weight: 47
 
 ---
 
-## Prerequisites
+### Prerequisites
 > Since [February 28, 2020 Release .Stat Suite JS v4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), .Stat Data Explorer requires **nodejs version 13.3.x**.
 
 
@@ -48,20 +51,26 @@ weight: 47
   - open git bash
   - run `which java`
 
-## Folders
+---
+
+### Folders
 > hint: folders should not contain user specific
 
 - open git bash
 - run `cd && cd /c && mkdir dotstatsuitejs && cd dotstatsuitejs && mkdir pm2 nssm keycloak redis solr config search share explorer viewer dlm && ll`
 
-## NSSM
+---
+
+### NSSM
 > hint: use to have solr as a windows service
 
 - download nssm: https://nssm.cc/download at version 2.24
 - unzip in dotstatsuitejs/nssm
   - result: dotstatsuitejs/nssm/nssm-2.24
 
-## Solr
+---
+
+### Solr
 - download solr 7.x: https://lucene.apache.org/solr/downloads.html
 - unzip it in dotstatsuitejs/solr
   - result: dotstatsuitejs/solr/solr-7.7.2
@@ -76,7 +85,9 @@ weight: 47
 - start the service from services (solr772)
 - go in chrome to http://localhost:8983
 
-## Create a solr core
+---
+
+### Create a solr core
 > hint: use powershell to avoid apache cli error
 
 - open powershell
@@ -84,7 +95,9 @@ weight: 47
 - run `.\solr create -c sdmx-facet-search -p 8983`
 - check in chrome to http://localhost:8983/solr/#/sdmx-facet-search/core-overview
 
-## Redis
+---
+
+### Redis
 > hint: the msi setup redis as a windows service
 
 - download redis: https://github.com/microsoftarchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi
@@ -96,7 +109,9 @@ weight: 47
   - open git bash
   - run `redis-cli ping`
 
-## Keycloak
+---
+
+### Keycloak
 
 - download keycloak: https://downloads.jboss.org/keycloak/7.0.0/keycloak-7.0.0.zip
 - unzip it in dotstatsuitejs/keycloak
@@ -120,7 +135,9 @@ weight: 47
 
 A very useful tutorial on how to get a Keycloak server ready to work with the .Stat suite is also available [here](https://github.com/Kyelin25/dotstat-tutorials/blob/master/KeycloakConfiguration/KeycloakConfiguration.md) (Thanks [Ben](https://github.com/Kyelin25)!).
 
-## Dotstatsuitejs
+---
+
+### Dotstatsuitejs
 > hint: pm2 is a tool that monitors nodejs services  
 > pm2-service-install makes it run as a windows service
 
@@ -135,8 +152,9 @@ A very useful tutorial on how to get a Keycloak server ready to work with the .S
   - ? Set PM2_SERVICE_PM2_DIR C:\Users\Nico\AppData\Roaming\npm\node_modules\pm2\index.js
 - close git bash
 
+---
 
-## Artefacts
+### Artefacts
 > hint: you need a token in order to script the artefacts download  
 
 - download artefact and pm2 scripts https://gitlab.com/sis-cc/dotstatsuite-documentation/tree/master/dotstatsuitejs
@@ -182,7 +200,9 @@ A very useful tutorial on how to get a Keycloak server ready to work with the .S
   - viewer: http://localhost:3005 (no id)
   - dlm: http://localhost:7000
 
-## Indexation
+---
+
+### Indexation
 > hint: default api-key value is secret
 
 - get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret`

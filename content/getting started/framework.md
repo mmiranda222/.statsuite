@@ -9,15 +9,29 @@ weight: 32
 - [Introduction](#introduction)
 - [Technical stack](#technical-stack)
 - [.Stat Data Explorer module](#stat-data-explorer-module)
+  - [Non-technical overview](#Non-technical overview)
+  - [Data Explorer app](#Data Explorer app)
+  - [Share service](#Share service)
+  - [Share-Viewer App](#Share-Viewer App)
+  - [Search service](#Search service)
+  - [Proxy Service](#Proxy Service)
+  - [Config Service](#Config Service)
+  - [Dependencies](#Dependencies)
+  - [Multi-tenant architecture](#Multi-tenant architecture)
 - [.Stat Data Lifecycle Manager module](#stat-data-lifecycle-manager-module)
 - [.Stat Core module](#stat-core-module)
+  - [Transfer service](#transfer-service)
+  - [SDMX service](#sdmx-service)
+  - [Plugin for SDMX service](#plugin-for-sdmx-service)
+  - [Authorisation service](#authorisation-service)
+  - [Dependencies](#dependencies)
 - [DevOps implementation](#devops-implementation)
 - [Component list and dependency matrix](#component-list-and-dependency-matrix)
 - [Contributing to an open source repository](#contributing-to-an-open-source-repository)
 
 ---
 
-## Introduction
+### Introduction
 The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
 
 The .Stat Suite has three **main modules**: 
@@ -31,14 +45,14 @@ The .Stat Suite has three **main modules**:
 ![3 main modules](/dotstatsuite-documentation/images/home_splash.png)
 
 
-### The high-level technical architecture can be schematised as follow:
-![Stat Suite high-level architecture](/dotstatsuite-documentation/images/architecture.png)
+**The high-level technical architecture can be schematised as follow:**
 
+![Stat Suite high-level architecture](/dotstatsuite-documentation/images/architecture.png)
 
 Each main module (as well as their components) can be used together or separately.
 
+**In the following are a few **typical use cases** on how an organisation can make use of these modules:**
 
-### In the following are a few **typical use cases** on how an organisation can make use of these modules:
 **A) Adding the Data Explorer to an existing fully-fledged back-end solution**
 
 *Pre-requisites*: A statistical database with its own data management features and with a public SDMX API (SDMX 2.1 Rest incl. SDMX-JSON); hardware (see the system requirements in the installation guides)
@@ -76,7 +90,7 @@ Each main module (as well as their components) can be used together or separatel
 
 ---
 
-## Technical stack
+### Technical stack
 The following technologies are used for the development of the **.Stat Data Explorer** components and the **.Stat Data Lifecycle Manager** components:
 
 <table>
@@ -143,9 +157,9 @@ The following technologies are used for the development of the **.Stat Core** co
 
 ---
 
-## .Stat Data Explorer module
+### .Stat Data Explorer module
 
-### non-technical overview
+#### Non-technical overview
 
 {{< mermaid align="left" >}}
 graph LR;
@@ -169,12 +183,12 @@ graph LR;
 {{< /mermaid >}}
 
 
-### Data Explorer app
+#### Data Explorer app
 
-#### short description
+##### short description
 This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
 
-#### demo (light)
+##### demo (light)
 1. go to http://data-explorer.staging.oecd.redpelicans.com (tenant: oecd, env: staging)
 1. home page
 1. search by facets (click on a facet)
@@ -183,7 +197,7 @@ This web app is the main GUI for (external) users to find, understand and use th
 1. fine-tune data selection (play with filter selection)
 1. fine-tune data view (play with customize)
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-data-explorer
 - forked from https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-webapp (boilerplate to help crafting web application fully integrated within dotstat-data-explorer-suite)
@@ -191,9 +205,9 @@ This web app is the main GUI for (external) users to find, understand and use th
 - client bundle expects configuration in `window.SETTINGS`, `window.I18N` and `window.CONFIG` for those who want to use directly the static files
 
 
-### Share service
+#### Share service
 
-#### short description
+##### short description
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.
 A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
 
@@ -201,7 +215,7 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 * share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
 * POST bodies are limited in size to `maxChartSize`
 
-#### demo
+##### demo
 1. go to http://webapp.staging.oecd.redpelicans.com/?tenant=oecd
 1. click on share button
 1. fill the form (email, recaptcha)
@@ -211,7 +225,7 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 1. follow the confirmation link
 1. check the shared chart
 
-#### flow
+##### flow
 
 {{< mermaid align="left" >}}
 graph LR
@@ -232,7 +246,7 @@ id2 -->|7. redirect user|id4
 {{< /mermaid >}}
 
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
 - a redis database is used to store shared charts
@@ -241,29 +255,27 @@ id2 -->|7. redirect user|id4
   - share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
   - POST bodies are limited in size to `maxChartSize`
 
+#### Share-Viewer App
 
-### Share-Viewer App
-
-#### short description
+##### short description
 This web app is a companion GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
-#### demo (light)
+##### demo (light)
 1. Go to http://data-viewer.staging.oecd.redpelicans.com/?chartId=3 (tenant: oecd, env: staging)
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-data-viewer
 - ? forked from https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-webapp (boilerplate to help crafting web application fully integrated within dotstat-data-explorer-suite)
 - ? server-side rendered (configuration is injected in index.html), no request required from the client to get the configuration
 - ? client bundle expects configuration in `window.SETTINGS`, `window.I18N` and `window.CONFIG` for those who want to use directly the static files
 
+#### Search service
 
-### Search service
-
-#### short description
+##### short description
 This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows categorised and accessible in one or more SDMX end points and to execute faceted search queries on these SDMX dataflows.
 
-#### features/demos
+##### features/demos
 - free-text faceted search
 - results are sorted by relevance and paginated
 - free-text search hit: highlight the first occurance of all search terms 
@@ -275,7 +287,7 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 - [multiple tagged search with phrase](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series%20description%3A%22employment-to-population%22): `name:seasonally adjusted series description:"employment-to-population"`
 - [negate search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
 
-#### architecture
+##### architecture
 
 {{< mermaid align="left" >}}
 graph LR
@@ -297,107 +309,103 @@ graph LR
 {{< /mermaid >}}
 
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-sdmx-faceted-search
 - a static schema is defined in the config
 - a dynamic schema is derived from dataflows
 
-#### limitations
+##### limitations
 - reconciliate sdmx and search data (e.g. dataset order, facet value order) -> cache server
 - datasources & config
 - performance (benchmark to do)
 - how to index (e.g. individual dataset = SDMX dataflow)
 
-
-### Proxy Service
-
-#### short description
+#### Proxy Service
+##### short description
 
 The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct target application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
 - handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`)
 - set tenant headers depending on host to instruct target application
 - `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, ie `https://<app>.<env>.oecd.org`
 
+#### Config Service
 
-### Config Service
-
-#### short description
+##### short description
 
 The Configuration service centralises all configuration resources used by other services. It is a web server providing requested configuration, not exposed to users. Based on git versioned configuration data.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-config-dev
 - centralize all configuration resources used by other services
 - web server to provide requested configuration, not exposed to users
 - git versioned configuration data
 
+#### Dependencies
 
-### Dependencies
+##### (Dependency) sis-footer
 
-#### (Dependency) sis-footer
-
-#### short description
+##### short description
 A footer view component for Table and Charts.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer
 - **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-ui-footer
 
-#### (Dependency) rcw-charts
+##### (Dependency) rcw-charts
 
-#### short description
+##### short description
 Set of configurable charts based on d3.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts
 - **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-d3-charts
 
-#### (Dependency) visions
+##### (Dependency) visions
 
-#### short description
+##### short description
 Visions is a library of React components. The goal is to handle interfaces and very limited logic.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components
 - **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-ui-components
 
-#### (Dependency) sis-header
+##### (Dependency) sis-header
 
-#### short description
+##### short description
 A header view component for Tables and Charts.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header
 - **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-ui-header
 
-#### (Dependency) dotstatsuite components
+##### (Dependency) dotstatsuite components
 
-#### short description
+##### short description
 Is a library of components. [*more discription to come*]
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components
 - **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-components
 
-#### (Dependency) dotstatsuite-sdmxjs
+##### (Dependency) dotstatsuite-sdmxjs
 
-#### short description
+##### short description
 Is a library of components for the parsing of SDMX-JSON messages. [*more discription to come*]
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs
 - **package**: https://www.npmjs.com/package/@sis-cc/dotstatsuite-sdmxjs
 
 
-### Multi-tenant architecture
+#### Multi-tenant architecture
 
-#### demo (staging)
+##### demo (staging)
 
 |tenant|specs|url|
 |---|---|---|
@@ -407,7 +415,7 @@ Is a library of components for the parsing of SDMX-JSON messages. [*more discrip
 |cam|independent external sdmx cambodia pilot endpoint, cam design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=cam|
 
 
-#### technical overview
+##### technical overview
 
 {{< mermaid align="left" >}}
 graph LR
@@ -453,14 +461,14 @@ end
 {{< /mermaid >}}
 
 
-#### demo: add/update a tenant
+##### demo: add/update a tenant
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
 1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
 1. check the tenant at http://data-explorer.staging.oecd.redpelicans.com/?tenant=<tenant>
 1. update something in the configuration and check the update
 
-#### demo: add/update an app for the tenant (siscc workshop hands-on)
+##### demo: add/update an app for the tenant (siscc workshop hands-on)
 1. fork from wepapp
 1. inject pre-coded app (to create)
 1. declare it somewhere
@@ -470,25 +478,25 @@ end
 
 ---
 
-## .Stat Data Lifecycle Manager module
+### .Stat Data Lifecycle Manager module
 
-### Data Data Lifecycle Manager app
+#### Data Data Lifecycle Manager app
 
-#### short description
+##### short description
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
-#### demo (light)
+##### demo (light)
 1. go to http://data-lifecycle-manager.qa.oecd.redpelicans.com/
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-lifecycle-manager
 
 ---
 
-## .Stat Core module
+### .Stat Core module
 
-### technical overview
+#### technical overview
 
 {{< mermaid align="left" >}}
 graph LR
@@ -525,87 +533,89 @@ id6 --> id8
 {{< /mermaid >}}
 
 
-### Transfer service
+#### Transfer service
 
-#### short description
+##### short description
 This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores.
 
-#### demo (light)
+##### demo (light)
 1. go to http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html (tenant: oecd, env: qa)
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-transfer
 
 
-### SDMX service (also named SDMX-RI NSI web service (c) Eurostat)
-
-#### short description
+#### SDMX service
+(also named SDMX-RI NSI web service (c) Eurostat)
+##### short description
 This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store.
 It is based on the SDMX compliant REST web service developed by Eurostat and (through a plugin - see below) enriched with an access to a .Stat Core data storage. The web service allows for retrieval of data structures and data and for submission of data structures. 
 
-#### demo (light)
+##### demo (light)
 1. go to http://nsi.qa.core.oecd.redpelicans.com/ (tenant: oecd, env: qa)
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-sdmxri-nsi
 - **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
 
-### Plugin for SDMX service (also named SDMX-RI NSI web service (c) Eurostat) to access the .Stat Core Data Store
+#### Plugin for SDMX service
+(also named SDMX-RI NSI web service (c) Eurostat) to access the .Stat Core Data Store
 
-#### short description
+##### short description
 This plugin is used by the SDMX service to retrieve statistical data structures from a .Stat Core Data Store.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin
 
-### Authorisation service
+#### Authorisation service
 
-#### short description
+##### short description
 This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
 
-#### demo (light)
+##### demo (light)
 1. go to [*to come*]
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-core-auth-management
 
-### Dependencies
+#### Dependencies
 
-#### (Dependency) Data Access library to access the .Stat Core Data Store
+##### (Dependency) Data Access library to access the .Stat Core Data Store
 
-#### short description
+##### short description
 This library is used by the SDMX/NSI service plugin and by the Transfer service to retrieve or upload statistical data structures from and to a .Stat Core Data Store.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access
 - **package**: https://www.nuget.org/packages/DotStat.DataAccess.NuGet
 
-#### (Dependency) Core Common library
+##### (Dependency) Core Common library
 
-#### short description
+##### short description
 This library is used for shared code in the .Stat Core components. These inlude logs, localisation and configuration.
 
-#### technical aspects
+##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common
 - **package**: https://www.nuget.org/packages/DotStat.Common
 
 ---
 
-## DevOps implementation
+### DevOps implementation
 
 See: [.Stat DevOps implementation](/getting-started/devops) 
 
+---
 
-## Component list and dependency matrix
+### Component list and dependency matrix
 
 [FlowMatrixInfo__1_.xlsx](/uploads/27643af0f690545d46d897fe1935d8a1/FlowMatrixInfo__1_.xlsx)
 
 ---
 
-## Contributing to an open source repository
+### Contributing to an open source repository
 
 https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/
 

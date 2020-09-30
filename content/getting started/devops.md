@@ -7,6 +7,8 @@ weight: 33
 
 #### Table of Content
 - [open-source development business requirements](#open-source-development-business-requirements)
+    - [quality assurance QA environment](#quality-assurance-qa-environment)
+    - [functional pre-production STAGING environment](#functional-pre-production-staging-environment)
 - [technical stack](#technical-stack)
 - [technical environment (cloud)](#technical-environment-cloud)
 - [flow](#flow)
@@ -18,9 +20,10 @@ weight: 33
 - [nuget](#nuget)
 - [list of webapps/services/packages](#list-of-webapps-services-packages)
 
-## open-source development business requirements
+---
 
-### quality assurance (**qa**) environment
+### open-source development business requirements
+#### quality assurance QA environment
 
 - Automated update triggered by **Dev** branch merge (part of “peer-review” Kanban step) 
 - Used by **Product Management team** to:  
@@ -43,7 +46,7 @@ weight: 33
   - [Share ws](http://share-qa-oecd.redpelicans.com/healthcheck)
   - [Search ws](http://sfs-qa-oecd.redpelicans.com/healthcheck)
 
-### functional pre-production (**staging**) environment
+#### functional pre-production STAGING environment
 
 - Automated update triggered by **Master** branch merge (part of “release” Kanban step)
 - Hosting stable instances for **OECD Practice Building team** of: 
@@ -82,7 +85,9 @@ weight: 33
   - either plugged to their own SDMX APIs
   - or plugged into above mentioned SIS-CC Demo-related instances of .Stat CORE services
 
-## technical stack
+---
+
+### technical stack
 
 The following technologies and cloud services are used for the DevOps implementation:
 
@@ -113,8 +118,9 @@ The following technologies and cloud services are used for the DevOps implementa
 </tbody>
 </table>
 
+---
 
-## technical environment (cloud)
+### technical environment (cloud)
 
 * .Stat Data Explorer components and .Stat Data Lifecycle Manager
   - 1 cluster of 3 nodes with 2 namespaces (qa and staging) on google cloud platform
@@ -131,7 +137,9 @@ The following technologies and cloud services are used for the DevOps implementa
   - repository: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp  
     ° holds kubernetes configuration files
 
-## flow
+---
+
+### flow
 
 {{< mermaid align="left" >}}
 graph TB
@@ -155,8 +163,9 @@ id2 -. pull image .-> id4
 id5 -. pull code .-> id4
 {{< /mermaid >}}
 
+---
 
-## process
+### process
 
 {{< mermaid align="left" >}}
 graph TD;
@@ -199,17 +208,23 @@ id9 -. pull image .-> id14
 id11 -. pull code .-> id14
 {{< /mermaid >}}
 
+---
 
-## mapping
+### mapping
+
 |env|git branch|cluster namespace|
 |---|---|---|
 |qa|develop|qa|
 |staging|master|staging|
 
-## git
+---
+
+### git
 - see [git-flow](http://nvie.com/posts/a-successful-git-branching-model/)
 
-## gitlab
+---
+
+### gitlab
 - all repositories are under https://gitlab.com/sis-cc/.stat-suite
 - each repository defines its pipelines in `gitlab-ci.yml` file
 - 2 types of pipeline:
@@ -239,17 +254,24 @@ build --> publish
 end
 {{< /mermaid >}}
 
+---
 
-## npm
+### npm
 - npm packages are published under https://www.npmjs.com/settings/sis-cc/packages
 - tags are only on commits in master and trigger a publish
 
-## nuget
+---
+
+### nuget
+
 - nuget packages are published under https://www.nuget.org/profiles/SIS-CC
 - tags are only on commits in master and trigger a publish
 - this page provides information about [Usage of semantic versioning in .Stat Suite CORE components and services](/getting-started/semantic-version)
 
-## list of webapps/services/packages
+---
+
+### list of webapps/services/packages
+
 |kind|name|status master|status dev|coverage|
 |---|---|---|---|---|
 |infra|[kubernetes de](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp)|-|-|-|

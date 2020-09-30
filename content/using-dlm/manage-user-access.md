@@ -9,6 +9,8 @@ weight: 220
 #### Table of Content
 - [Introduction](#introduction)
 - [List of available permissions](#list-of-available-permissions)
+  - [Basic permissions](#basic-permissions)
+  - [Combined permissions](#combined-permissions)
 - [List of available SDMX artefact types](#list-of-available-sdmx-artefact-types)
 - [Visibility of permission rules](#visibility-of-permission-rules)
 

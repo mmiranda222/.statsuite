@@ -22,6 +22,8 @@ The full workflow goes from open to PO, Graphical Design and Dev Teams (.NET/SQL
 In some cases of course some steps are skipped, e.g. a bug will not go through Graphical Design steps.  
 If at some point an issue has a very low activity after 12 months, it should then be closed. Nonetheless, re-opening an issue might still happen if someone is still willing to work on it.
 
+---
+
 ### Production Cycle
 The below diagram gives an overview of the Production cycle ran for each of the opened issues and according to the acceptance criteria, and for all types of issues (bugs or features).  
 The Technical (Dev) Team is here divided into .NET/SQL and JavaScript technologies.  
@@ -40,10 +42,14 @@ DevJavaScript-xclosed: ;
 PO--xclosed: rejected issues;
 {{< /mermaid >}}
 
+---
+
 ### Common rules
 - An issue can go through several iterations of the process cycle through Product Owner, Graphical Design, .NET/SQL Dev and JavaScript Dev teams.
 - At any step of a process, an issue can be put on hold or be returned to an earlier step.
 - A Definition of Done (DoD) of a process step must be met and completed before an issue goes to any next step of the workflow.
+
+---
 
 ### Product Owner workflow
 1. Review  
@@ -58,7 +64,6 @@ For a feature: a member of the PO Team defines and describes the functional spec
 For all types of issue, the PO Team sets a priority indication.  
 **DoD**: the issue is quality checked, prioritised, and functional specifications for a feature are described.  
 
-
 3. Peer-review  
 The PO Team reviews the issue and its priority indication.  
 **DoD**: the issue meets the PO quality criteria and it is ready for Graphical Design (if relevant) or Dev Team review.  
@@ -68,6 +73,8 @@ _skipped_
 
 5. Release  
 _skipped_
+
+---
 
 ### Graphical Design workflow
 1. Review  
@@ -88,6 +95,8 @@ The PO Team tests the implementation of the graphical design in the quality-assu
 
 5. Release  
 _skipped_
+
+---
 
 ### Technical (Dev) workflow
 1. Review  
@@ -114,6 +123,8 @@ The feature is documented.
 The issue is released as part of the latest production version of the code.  
 **NOTE**: at this stage, when an issue needs to be implemented by both .NET/SQL and JavaScript Dev Teams (see Production Cycle diagram): the Dev workflow is applied once by the .NET/SQL Dev Team, then it goes to the JavaScript Dev Team for review. The issue goes again through the same workflow until final release.  
 
+---
+
 ### Technical (JavaScriptDev) workflow (wip)
 {{< mermaid align="left" >}}
 sequenceDiagram;
@@ -129,6 +140,3 @@ Review->Implement: bug/patch/feature = new branch from develop;
 Review->Implement: production related = new branch from master;
 Implement->>PeerReview: development done;
 {{< /mermaid >}}
-
-
-

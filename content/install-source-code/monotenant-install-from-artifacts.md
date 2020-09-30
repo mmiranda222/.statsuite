@@ -5,11 +5,26 @@ comments: false
 weight: 45
 ---
 
+#### Table of Content
+
+- [pre-requisites](#pre-requisites)
+- [summary](#summary)
+- [1. setup](#1-setup)
+- [2. config service](#2-config-service)
+- [3. search service](#3-search-service)
+- [4. share service](#4-share-service)
+- [5. data-explorer app](#5-data-explorer-app)
+- [6. data-viewer app](#6-data-viewer-app)
+- [7. data-lifecycle-manager app](#7-data-lifecycle-manager-app)
+
+
 *slightly different than the source code approach; git is not mandatory anymore and side-effects related to dependencies are avoided*.
 
-> Since [February 28, 2020 Release .Stat Suite JS v4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), .Stat Data Explorer requires **nodejs version 13.3.x**.
+---
 
-**pre-requisites:**
+### pre-requisites
+
+> Since [February 28, 2020 Release .Stat Suite JS v4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), .Stat Data Explorer requires **nodejs version 13.3.x**.
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) SDMX v6.x endpoint
 - [nodejs 13.3.x](https://nodejs.org/fr/download/current/) and [npm 6.x](https://www.npmjs.com/package/npm) installed
@@ -23,11 +38,15 @@ weight: 45
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
 - ports can be freely picked, if different than defaults they should be specified when launching services
 
-**summary**
+---
+
+### summary
 
 ![from gitlab artifacts summary](/dotstatsuite-documentation/images/from_gitlab_artifacts.png)
 
-**1. setup**
+---
+
+### 1. setup
 
 1. (temporary) `npm i -g cross-env`
 1. create folders as follow:
@@ -42,7 +61,9 @@ weight: 45
 |   ├── data-lifecycle-manager
 ```
 
-**2. config service**
+---
+
+### 2. config service
 
 1. download artifact archives and package.json file from gitlab:
 
@@ -89,7 +110,9 @@ weight: 45
 - (in git bash) run `PORT=5007 npm run dist:run`
 - check if everything is fine: http://localhost:5007/healthcheck
 
-**3. search service**
+---
+
+### 3. search service
 
 1. download artifact archives and package.json files from gitlab:
 
@@ -128,7 +151,9 @@ weight: 45
 - if the config is not fine, update the datasources.json and/or settings.json file(s) in the config service, restart the config service then restart the search service
 - the search service is not coupled with its clients, the search endpoint is configurable from settings.json of the data-explorer app in the config service
 
-**4. share service**
+---
+
+### 4. share service
 
 1. download artifact archives and package.json files from gitlab:
 
@@ -155,7 +180,9 @@ weight: 45
 
 - SITE_URL should be an accessible url for a user, ie http://share.qa.oecd.redpelicans.com if used out of localhost
 
-**5. data-explorer app**
+---
+
+### 5. data-explorer app
 
 1. download artifact archives and package.json files from gitlab:
 
@@ -179,7 +206,9 @@ weight: 45
   - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 AUTH_SERVER_URL=http://localhost:8080 npm run start:run`
   - check if everything is fine: http://localhost:3009 (proxy with a route mapped to data-explorer)
 
-**6. data-viewer app**
+---
+
+### 6. data-viewer app
 
 1. download artifact archives and package.json files from gitlab:
 
@@ -202,8 +231,9 @@ weight: 45
 
   - (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
 
+---
 
-**7. data-lifecycle-manager app**
+### 7. data-lifecycle-manager app
 
 1. download artifact archives and package.json files from gitlab:
 

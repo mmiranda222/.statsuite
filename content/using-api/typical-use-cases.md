@@ -8,8 +8,6 @@ weight: 5000
 
 #### Table of Content
 
-This section describes how to generate the SDMX structure and data queries and explore their responses for typical use cases.  
-
 - [Retrieve the content of the DE filters from the SDMX API](#retrieve-the-content-of-the-de-filters-from-the-sdmx-api)
 - [Retrieve the data corresponding to the current DE filters from the SDMX API](#retrieve-the-data-corresponding-to-the-current-de-filters-from-the-sdmx-api)
 - [How to identify dimensions with specific roles for both xml and json](#how-to-identify-dimensions-with-specific-roles-for-both-xml-and-json)
@@ -17,6 +15,8 @@ This section describes how to generate the SDMX structure and data queries and e
   - [Frequency value (time period length)](#frequency-value-time-period-length)
   - [Reference area dimension](#reference-area-dimension)
   - [Time dimension](#time-dimension)
+
+This section describes how to generate the SDMX structure and data queries and explore their responses for typical use cases.  
 
 ---
 

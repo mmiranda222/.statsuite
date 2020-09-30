@@ -8,11 +8,14 @@ weight: 12
 #### Table of Content
 - [introduction](#introduction)
 - [details about the main .Stat Suite modules](#details-about-the-main-stat-suite-modules)
+  - [.Stat Data Explorer (DE)](#stat-data-explorer-de)
+  - [.Stat Data Lifecycle Manager (DLM)](#stat-data-lifecycle-manager-dlm)
+  - [.Stat Core](#stat-core)
 - [flight planner](#flight-planner)
 
 ---
 
-## Introduction
+### Introduction
 
 The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
 
@@ -28,10 +31,9 @@ The .Stat Suite has three **main modules**:
 
 ---
 
-## Details about the main .Stat Suite modules
+### Details about the main .Stat Suite modules
 
-
-### .Stat Data Explorer (DE)
+#### .Stat Data Explorer (DE)
 
 **Functional vision from the user's perspective**: *“Let me easily access the organisation’s statistical data. Let me find, understand and use the data I need.”*
 
@@ -71,7 +73,7 @@ The .Stat Suite has three **main modules**:
 
 ---
 
-### .Stat Data Lifecycle Manager (DLM)
+#### .Stat Data Lifecycle Manager (DLM)
 
 **Functional vision from the user's perspective**: *“Let me easily produce the organisation’s statistical data. Let me define, run, automate, control and evaluate the data processes I need.”*
 
@@ -254,7 +256,7 @@ Requires features for import, create, edit, transfer & export of data structures
 ---
 
 
-### .Stat Core
+#### .Stat Core
 
 Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on standard protocols to store and retrieve statistical data, structural and referential metadata, data process information and security settings.
 
@@ -266,7 +268,7 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 ---
 
 
-## Flight planner
+### Flight planner
 
 **This flight planner allows travellers [*implementers*] getting a better understanding of the foreseen flight stops [*availability of features*] and their approximate timing according to the current fuel level [*resource capacity*] and Community priorities, and so to plan their own flight boarding [*deployment strategy*] as best as possible.**
 

@@ -13,9 +13,9 @@ weight: 4000
 - [Known issues around replaced structures and subsequent data imports](#known-issues-around-replaced-structures-and-subsequent-data-imports)
 - [Management of embargoed data](#management-of-embargoed-data)
 
----
-
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
+
+---
 
 ### Adding or replacing structures
 

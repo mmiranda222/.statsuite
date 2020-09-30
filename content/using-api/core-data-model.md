@@ -13,8 +13,6 @@ weight: 4700
 - [Constraints](#constraints)
 - [Uniqueness of Observations](#uniqueness-of-observations)
 
----
-
 This section details the characteristics of the statistical data model described by SDMX and implemented to large parts in the .Stat Suite Core database storage. This storage is composed of 4 parts:
 - (data) structure database - based on MappingStore (component of Eurostat's SDMX-RI solution)
 - data (values) database
@@ -22,6 +20,8 @@ This section details the characteristics of the statistical data model described
 - authorisation management database
 
 This page concentrates on the data model features supported by the data database for the storage of observation values, attribute values and (later also) referential metadata values conforming to the SDMX information model.
+
+---
 
 ### Data structure components
 
@@ -59,6 +59,8 @@ When allowed values (Representations) of Dimensions, Attributes or Measures are 
 Codes in a Codelist, even if enumerated, can be defined by the following allowed values (Representations): String, Alpha, AlphaNumeric, Numeric, BigInteger, Integer, Long, Short, Boolean, URI, Count, InclusiveValueRange, ExclusiveValueRange, Incremental, ObservationalTimePeriod, StandardTimePeriod, BasicTimePeriod, GregorianTimePeriod, GregorianYear, GregorianYearMonth, GregorianDay, ReportingTimePeriod, ReportingYear, ReportingSemester, ReportingTrimester, ReportingQuarter, ReportingMonth, ReportingWeek, ReportingDay, Month, MonthDay, Day, Duration. 
 
 Codes in a Codelist can additionally be restrained through the following parameters: isSequence (xs:boolean), interval (xs:integer), startValue (xs:integer), endValue (xs:integer), timeInterval (xs:duration), startTime (StandardTimePeriod), endTime (StandardTimePeriod), minLength (xs:positiveInteger), maxLength (xs:positiveInteger), minValue (xs:integer), maxValue (xs:integer), pattern (xs:string)
+
+---
 
 ### Data type definitions
 
@@ -103,11 +105,15 @@ Codes in a Codelist can additionally be restrained through the following paramet
 - Duration: A time datatype corresponding to W3C XML Schema's xs:duration datatype.
 - XHTML: This value indicates that the content of the component can contain XHTML markup.
 
+---
+
 ### Data querying
 
 In SDMX 2.1, users can query for data by distinct values for the Dimensions, incl. MeasureDimension. However, the TimeDimension can only be queried through a time period range.
 
 In SDMX 3.0, it is expected to be able to query for data by distinct values for the Dimensions, Measures and Attributes. Likely, the TimeDimension can still only be queried through a time period range.
+
+---
 
 ### Constraints
 
@@ -119,6 +125,8 @@ Constraints can be defined through 2 means:
 2. A DataKeySet: Constraints are defined through distinct full or partial data keys, e.g. specific Observations, specific Time Series, or specific Dimension value combinations are allowed or forbidden.
 
 Constraints are resolved/respected when importing or exporting Observations (with their Dimension values, Measure values and Attribute values), depending on to which level they relate (Data Structure Definition, Dataflow (or later Provision Agreement)).
+
+---
 
 ### Uniqueness of Observations
 
