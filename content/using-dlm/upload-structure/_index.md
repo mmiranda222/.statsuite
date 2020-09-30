@@ -18,7 +18,7 @@ Data structures can be uploaded using the main menu feature “Upload structures
 
 ![dlm-upload-structure-1-banner](/dotstatsuite-documentation/images/dlm-upload-structure-1-banner.png)
 
-The "Upload structures" feature supports the SDMX-ML format with a limit size of 30MB.
+The "Upload structures" feature supports the SDMX-ML 2.1 format with a limit size of 30MB. The SDMX-ML file can containe one or several data structure artefact(s).
 
 ### Upload data structure file
 
@@ -28,7 +28,7 @@ The required actions are to drop the data structure file in the dashed area, and
 
 ![dlm-upload-structure-2-BeforeUpload](/dotstatsuite-documentation/images/dlm-upload-structure-2-BeforeUpload.png) 
 
-After selecting the file and dataspace(s), cicking on the "Upload" button launches the data structure file upload and a contextual notification will appear at the bottom of the screen.
+After selecting the file and dataspace(s), clicking on the "Upload" button launches the data structure file upload and a contextual notification will appear at the bottom of the screen.
 
 ---
 
@@ -40,7 +40,7 @@ When dragging or adding in the dashed area a file with a size **higher than 30MB
 ![dlm-upload-structure-3-Notifications](/dotstatsuite-documentation/images/dlm-upload-structure-3-TooBigFileSizeErrorMsg.png)
 
 #### successful, warning, multi-status, and error
-The data structure upload can return three type of notifications:
+The data structure upload can return three types of notifications
 * a green **successful** notification
 * an orange **warning/multi-status** notification
 * a red **error** notification
