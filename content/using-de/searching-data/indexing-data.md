@@ -8,7 +8,16 @@ weight: 1600
 
 #### Table of Content
 - [What is indexed](#what-is-indexed)
+  - [Conditions and exceptions](#conditions-and-exceptions)
 - [When and how to index](#when-and-how-to-index)
+  - [API format](#api-format)
+  - [GET search sfs config.](#get-search-sfs-config)
+  - [DELETE search sfs config](#delete-search-sfs-config)
+  - [GET search sfs report](#get-search-sfs-report)
+  - [Index all dataflows](#index-all-dataflows)
+  - [Delete all dataflows](#delete-all-dataflows)
+  - [Delete one specific dataflow](#delete-one-specific-dataflow)
+  - [Update an already indexed dataflow](#update-an-already-indexed-dataflow)
 
 ---
 
