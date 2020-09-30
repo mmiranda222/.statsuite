@@ -10,8 +10,7 @@ weight: 260
 - [Transfer artefact menu](#transfer-artefact-menu)
 - [Transfer process and notifications](#transfer-process-and-notifications)
 
-The user can transfer (make a copy of) a given data structure artefact from one source (dataspace or external source) to another (except external source), by using the 'Transfer' icon *(double arrows)*  
-![transfer artefact icon](/dotstatsuite-documentation/images/dlm-copy-data-structures-icon.png).  
+The user can transfer (make a copy of) a given data structure artefact from one source (dataspace or external source) to another (except external source), by using the 'Transfer' icon *(double arrows)* ![transfer artefact icon](/dotstatsuite-documentation/images/dlm-copy-data-structures-icon.png).  
 
 The combination of the data structure artefact type and its triple identifier (ID, Agency ID and Version) must be unique within a dataspace. If there already exists a data structure artefact with the same combination, then the transfer (copy) will fail.
 
@@ -23,7 +22,7 @@ The combination of the data structure artefact type and its triple identifier (I
 * Make a copy of only the selected artefact **(without referenced structures)**
 * Make a copy of the selected data structure artefact AND all its associated referenced data structures **(with referenced structures)**
 
-![dlm copy data structures 2](/dotstatsuite-documentation/iamges/dlm-copy-data-structures-2.png)  
+![dlm copy data structures 2](/dotstatsuite-documentation/images/dlm-copy-data-structures-2.png)  
 
 2. Once the option *with or without referenced structures* is selected, a second sub-menu (as shown above) will request the user to choose for a destination space to copy the data structure artefact.  
 **Note** that the copy can **only** be performed in a different dataspace (the source space is only displayed in this feature as a reminder of the source).

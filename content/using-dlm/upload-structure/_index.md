@@ -18,7 +18,7 @@ Data structures can be uploaded using the main menu feature “Upload structures
 
 ![dlm-upload-structure-1-banner](/dotstatsuite-documentation/images/dlm-upload-structure-1-banner.png)
 
-The "Upload structures" feature supports the SDMX-ML 2.1 format with a limit size of 30MB. The SDMX-ML file can containe one or several data structure artefact(s).
+The "Upload structures" feature supports the SDMX-ML 2.1 format with a limit size of 30MB. The SDMX-ML file can contain one or several data structure artefact(s).
 
 ### Upload data structure file
 
