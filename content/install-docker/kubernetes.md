@@ -7,9 +7,9 @@ weight: 55
 
 #### Table of Content
 - [Intro](#intro)
-- [Multi-tenant architecture](#Multi-tenant architecture)
-  - [Examples of tenants defined in our DevOps (qa/staging) environments](#Examples of tenants defined in our DevOps (qa/staging) environments)
-  - [Technical overview](#technical overview)
+- [Multi-tenant architecture](#multi-tenant-architecture)
+  - [Examples of tenants defined in our DevOps (qa/staging) environments](#examples-of-tenants-defined-in-our-devops-qa-staging-environments)
+  - [Technical overview](#technical-overview)
   - [Demo of adding/updating a tenant](#demo-of-adding-updating-a-tenant)
   - [Demo of adding/updating an app for the tenant](#demo-of-adding-updating-an-app-for-the-tenant)
 
