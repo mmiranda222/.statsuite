@@ -10,7 +10,9 @@ weight: 260
 - [Transfer artefact menu](#transfer-artefact-menu)
 - [Transfer process and notifications](#transfer-process-and-notifications)
 
-The user can transfer (make a copy of) a given data structure artefact from one source (dataspace or external source) to another (except external source), by using the 'Transfer' icon *(double arrows)* ![transfer artefact icon](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm-copy-data-structures-icon.png).  
+The user can transfer (make a copy of) a given data structure artefact from one source (dataspace or external source) to another (except external source), by using the 'Transfer' icon *(double arrows)*  
+![transfer artefact icon](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm-copy-data-structures-icon.png).  
+
 The combination of the data structure artefact type and its triple identifier (ID, Agency ID and Version) must be unique within a dataspace. If there already exists a data structure artefact with the same combination, then the transfer (copy) will fail.
 
 ---

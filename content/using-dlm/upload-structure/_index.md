@@ -40,7 +40,7 @@ When dragging or adding in the dashed area a file with a size **higher than 30MB
 ![dlm-upload-structure-3-Notifications](/dotstatsuite-documentation/images/dlm-upload-structure-3-TooBigFileSizeErrorMsg.png)
 
 #### successful, warning, multi-status, and error
-2. The data structure upload can return three type of notifications:
+The data structure upload can return three type of notifications:
 * a green **successful** notification
 * an orange **warning/multi-status** notification
 * a red **error** notification
