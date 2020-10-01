@@ -9,6 +9,14 @@ weight: 2900
 #### Table of Content
 - [Definition](#definition)
 - [Level of display](#level-of-display)
+  - [Use case 1a: the attribute value is the same for all cells in the table](#use-case-1a-the-attribute-value-is-the-same-for-all-cells-in-the-table)
+  - [Use case 1b: the attribute value has only one dimension relationship](#use-case-1b-the-attribute-value-has-only-one-dimension-relationship)
+  - [Use case 2a: the attribute value is the same for all cells in any row section of the table](#use-case-2a-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table)
+  - [Use case 2b: the attribute value is the same for all cells in any row section of the table](#use-case-2b-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table)
+  - [Use case 3: the attribute value is the same for one dimension in the rows of the table](#use-case-3-the-attribute-value-is-the-same-for-one-dimension-in-the-rows-of-the-table)
+  - [Use case 4a: the attribute value is the same for all cells in any column of the table](#use-case-4a-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
+  - [Use case 4b: the attribute value is the same for all cells in any column of the table](#use-case-4b-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
+  - [Use case 5: the attribute value is different between the cells in the table](#use-case-5-the-attribute-value-is-different-between-the-cells-in-the-table)
 
 ---
 
@@ -47,7 +55,7 @@ These different levels of display are represented in the following use cases.
 **When** an attribute is attached to only one single dimension, and that dimension has only one single value (and thus that dimension is in the data view subtitle),  
 **Then** the `(*)` icon is shown behind the dimension name shown in the **subtitle**.
 
-![Case 1b](images/using-de-footnotes-one-dim-relationship.png)
+![Case 1b](/dotstatsuite-documentation/images/using-de-footnotes-one-dim-relationship.png)
 
 #### Use case 2a: the attribute value is the same for all cells in any row section of the table
 **When**:

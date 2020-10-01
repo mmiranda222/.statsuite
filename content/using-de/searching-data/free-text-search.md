@@ -9,7 +9,15 @@ weight: 1700
 #### Table of Content
 - [Where search is performed](#where-search-is-performed)
 - [How to search](#how-to-search)
+  - [Exact single match word or multiword](#exact-single-match-word-or-multiword)
+  - [Exact phrase](#exact-phrase)
+  - [Partial match of a word](#partial-match-of-a-word)
 - [How free text search hits are displayed](#how-free-text-search-hits-are-displayed)
+  - [Found in ID and localised name of a dataflow](#found-in-id-and-localised-name-of-a-dataflow)
+  - [Found in ID and localised name of the categories (and their parent categories) in which the dataflow is categorised](#found-in-id-and-localised-name-of-the-categories-and-their-parent-categories-in-which-the-dataflow-is-categorised)
+  - [Found in the localised description of the dataflow](#found-in-the-localised-description-of-the-dataflow)
+  - [Found in IDs and localised names of the concepts used as dimensions, as well as the dimension IDs](#found-in-ids-and-localised-names-of-the-concepts-used-as-dimensions-as-well-as-the-dimension-ids)
+  - [Found in IDs and localised names of the codes used as dimension values](#found-in-ids-and-localised-names-of-the-codes-used-as-dimension-values)
 
 ![DE Free text search](/dotstatsuite-documentation/images/de-free-text-search.png)
 

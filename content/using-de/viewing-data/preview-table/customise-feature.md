@@ -10,9 +10,9 @@ weight: 2650
 - [Time Period reverse order](#time-period-reverse-order)
 - [Accessibility](#accessibility)
 
----
-
 > This section describes how to customise the **table preview layout**. For the customisation of the chart views, please see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/customise-feature/) of the documentation.
+
+---
 
 ### General behavior
 

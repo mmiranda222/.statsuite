@@ -12,6 +12,11 @@ weight: 3500
 - [Customise](#customise)
 - [Share](#share)
 - [Download](#download)
+  - [Table in Excel](#table-in-excel)
+  - [Filter data in tabular text (CSV)](#filter-data-in-tabular-text-csv)
+  - [Unfiltered data in tabular text (CSV)](#unfiltered-data-in-tabular-text-csv)
+  - [Additional downloads of external resources](#additional-downloads-of-external-resources)
+  - [Chart as picture (PNG)](#chart-as-picture-png)
 - [Full screen](#full-screen)
 - [Developer API](#developer-api)
 
@@ -89,7 +94,7 @@ The download options form the dropdown button are described below.
 
 ![Download](/dotstatsuite-documentation/images/de-download1.png)
 
-**Table in Excel**  
+#### Table in Excel  
 Only the filtered data contained in the online table (or chart) view is downloaded in **.xlsx** file format.  
 All online table's layout, styles, cell and text formatting are maintained in the downloaded Excel file.  
 The online **table limitation** (maximum number of observations to be returned by the *SDMX* web service) is maintained in the downloaded file (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/)).  
@@ -100,18 +105,18 @@ The online **table footer**'s copyright is to replicated in a separate line belo
 
 ![Download](/dotstatsuite-documentation/images/de-download2.png)
 
-**Filter data in tabular text (CSV)**  
+#### Filter data in tabular text (CSV)
 Only the filtered data contained in the online table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
 This format does not contains header or footer, and the downloaded data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
 
-**Unfiltered data in tabular text (CSV)**  
+#### Unfiltered data in tabular text (CSV)
 The full (unfiltered) data contained in the online request behind a table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
 This format does not contains header or footer, and the downloaded full data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
 
-**Additional download(s) of external resources**  
+#### Additional downloads of external resources
 Additional downloads of external resources can be added to a dataflow and be made available in the Download option. See the [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/) related to this option.
 
-**Chart as picture (PNG)**  
+#### Chart as picture (PNG)
 > Released in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020)  
 
 All graphical reprensentations of a data view (chart types) are available for **download as picture** in a **.png** format with high quality screenshot rendering (using the https://html2canvas.hertzen.com/ library).  

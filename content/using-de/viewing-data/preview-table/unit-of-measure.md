@@ -11,7 +11,12 @@ weight: 2950
 - [Reminders](#reminders)
 - [Underlying data model](#underlying-data-model)
 - [Display rules](#display-rules)
-- [Example](#example)
+- [Examples](#examples)
+  - [Case 1: Table Header](#case-1-table-header)
+  - [Case 2](#case-2)
+  - [Case 3](#case-3)
+  - [Case 4](#case-4)
+  - [Case 5](#case-5)
 - [Charts](#charts)
 - [How to identify attributes in the JSON format message](#how-to-identify-attributes-in-the-json-format-message)
 
@@ -65,7 +70,7 @@ Based on the original placement of all dimensions that are finally combined into
 
 ---
 
-### Example
+### Examples
 See a stylised DSD (inspired by National Accounts) with the following concepts and codelist samples:  
 
 ![Data model example](/dotstatsuite-documentation/images/DE_UoM_data_model_example.png)
@@ -76,7 +81,7 @@ Therefor:
 - A typical full UoM label could read in the above defined order: "Non-transformed, Thousands, Australian Dollar, Current Price, Not-applicable, Non-seasonally adjusted".  
 - The **derived attachment level of the full UoM** would be: Measure, Country, Transformation, UnitMeasure, PriceBase and Adjustment 
 
-#### Case 1: Table Header  
+#### Case 1: Table Header
 The UoM label (which includes the labels for all dimensions in UNIT_MEASURE_CONCEPTS) is shown in the **second "Unit of measure" table subtitle**. The dimensions defined in UNIT_MEASURE_CONCEPTS are **not** displayed separately in the first table subtitle.
 
 ![Example case 1](/dotstatsuite-documentation/images/DE_UoM_Case1.png)  
