@@ -6,7 +6,7 @@ weight: 400
 
 ---
 
-When the user wants to make a copy of data from one dataspace to another for the same dataflow (same Agency/Id/Version), the user selects the option "transfer data" from the hamburger menu of the corresponding dataflow:  
+When the user wants to make a copy of data from one dataspace (or external source) to another for the same dataflow (same Agency/Id/Version), the user selects the option "transfer data" from the hamburger menu of the corresponding dataflow:  
 
 ![copy data](/dotstatsuite-documentation/images/dlm-copy-data-1.png)
 
