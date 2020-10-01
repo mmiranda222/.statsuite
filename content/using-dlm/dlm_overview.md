@@ -21,7 +21,7 @@ weight: 230
 - [List of artefacts](#list-of-artefacts)
   - [Display Options](#display-options)
   - [Contents of the list](#contents-of-the-list)
-  - [Export](#export)
+- [Export](#export)
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-1.png)
 
@@ -141,7 +141,9 @@ For Dataflows **only**, The user can view the following additional information:
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9.png)
 
-#### Export
+---
+
+### Export
 Each result from the list can be exported/downloaded using the corresponding hamburger menu feature.
 
 **Export data structure artefact**  
