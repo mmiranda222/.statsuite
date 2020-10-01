@@ -21,6 +21,7 @@ weight: 230
 - [List of artefacts](#list-of-artefacts)
   - [Display Options](#display-options)
   - [Contents of the list](#contents-of-the-list)
+  - [Export](#export)
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-1.png)
 
@@ -131,7 +132,7 @@ For each artefact, the following details are shown:
 * Owner: Maintenance agency of the artefact
 * Action: Hamburger menu button that offers a context-aware list of specific actions to perform over the artefact (see related documentation for each action: [Transfer artefact](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data-structures), [Transfer data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data), [Delete structure](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures), Export structure and Export data)  
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-10.png)  
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-10.png)
 
 For Dataflows **only**, The user can view the following additional information:
 * Preview: the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
@@ -139,3 +140,18 @@ For Dataflows **only**, The user can view the following additional information:
 * Number of observation values
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9.png)
+
+#### Export
+Each result from the list can be exported/downloaded using the corresponding hamburger menu feature.
+
+**Export data structure artefact**  
+A data structure artefact can be downloaded in .xml format:
+* without referenced structures, or
+* with all referenced structures *(e.g. a DSD with all its referenced codelists, content constraint, dataflow, category scheme, etc)*.
+
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-11.png)
+
+**Export data**  
+Data associated to a dataflow can be downloaded, from the list of dataflows, in .xml or in .csv format.
+
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-12.png)
