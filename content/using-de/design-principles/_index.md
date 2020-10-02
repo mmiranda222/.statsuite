@@ -44,7 +44,10 @@ weight: 200
   - [Table pagination](#table-pagination)
   - [Response time](#response-time)
 - [Annex 1: User personas of the OECD Data Portal](#annex-1-user-personas-of-the-oecd-data-portal)
+  - [About these personas](#about-these-personas)
+  - [Policy Advisor](#policy-advisor) | [Business Analyst](#business-analyst) | [Researcher / Statistician](#researcher-statistician) | [University Librarian](#university-librarian) | [Journalist](#journalist) | [NGO / Citizen with cause](#ngo-citizen-with-cause) | [Undergraduate Student](#undergraduate-student) | [Information Officer](#information-officer) | [PhD Student](#phd-student) | [General user](#general-user) | [General business user](#general-business-user)
 - [Annex 2: Use cases identified for the OECD Data Portal](#annex-2-use-cases-identified-for-the-oecd-data-portal)
+  - [Preparing for a conference](#preparing-for-a-conference) | [Client business advice](#client-business-advice) | [Data crunching for a report](#data-crunching-for-a-report) | [Assisting advanced data query](#assisting-advanced-data-query) | [Creating a topical graphic](#creating-a-topical-graphic) | [Financial trends report](#financial-trends-report) | [Digging into the data](#digging-into-the-data) 
 
 ---
 
