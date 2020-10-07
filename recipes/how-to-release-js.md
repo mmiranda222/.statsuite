@@ -7,6 +7,7 @@
 1. assign [issues](https://gitlab.com/groups/sis-cc/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=s%3A%3Arelease) to the milestone
 1. for each service/app:
     1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
+    1. bump version
     1. create a release branch based on this commit following the name convention: `release-v<semver>`
     1. create a merge request from the release into master (default based on branch name is fine), bind it the the milestone
     1. check diff and wait for pipeline to pass and merge it to master
