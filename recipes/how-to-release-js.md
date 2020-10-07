@@ -9,7 +9,7 @@
     1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
     1. bump version
     1. create a release branch based on this commit following the name convention: `release-v<semver>`
-    1. create a merge request from the release into master (default based on branch name is fine), bind it the the milestone
+    1. create a merge request from the release into master (default based on branch name is fine), bind it the the milestone, no squash but rm branch afterwards
     1. check diff and wait for pipeline to pass and merge it to master
     1. if needed (last minute fixes), merge back to develop
     1. close related issues
