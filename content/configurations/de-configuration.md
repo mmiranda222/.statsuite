@@ -26,6 +26,7 @@ weight: 72
 - [Localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
 - [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
 - [Unit of measure support](#unit-of-measure-support)
+- [Disabled share option](#disabled-share-option)
 
 ---
 
@@ -452,3 +453,21 @@ In the above template:
 * `"defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"]` is the list of attributes/dimensions to retrieve if no annotation is found;
 * `"rejectedValueIds": ["_L", "_T", "_Z"]` is the list of values to not display if they belong to dimensions or attributes defined in the Unit of Measure.
 
+---
+
+### Disabled share option
+>Released in [October 7, 2020 Release .Stat Suite JS 5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020)
+
+The **share** option in the Data Explorer visualisation pages can be hidden from the end-user, so it is not possible to use the share table and chart features.  
+This configuration simply works by removing the **share endpoint URL** from the configuration settings.json file of the application: when the **`share endpoint`** is left blank (or the `"endpoint"` entry is entirely removed), then the share option button is hidden from the DE visualisation toolbar. 
+
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+"share": {
+    ...,
+    "endpoint": ""
+    ...
+  }
+
+```
