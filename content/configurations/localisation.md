@@ -128,7 +128,7 @@ The alternative translations always overwrite the corresponding default translat
 
 ### Rich-text translations
 
-> Introduced in [mmmm XX, 2020 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmm-XX-2020)
+> Introduced in [October 7, 2020 Release .Stat Suite JS 5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020)
 
 All translations can be formatted using whitelisted **rich text elements**.  This allows using basic formatting syntax in the `<locale>.json` translation files.
 
