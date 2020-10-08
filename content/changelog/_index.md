@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 7, 2020](#october-7-2020)
 - [September 2, 2020](#september-2-2020)
 - [August 25, 2020](#august-25-2020)
 - [July 23, 2020](#july-23-2020)
@@ -48,6 +49,74 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### October 7, 2020
+**DISCLAIMER for [Release .Stat Suite .NET 4.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/28)** and **[Release .Stat Suite JS 5.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/29)**
+
+> Both releases of the **.NET and JS services** of the .Stat Suite include **backward-incompatible** changes due to an update of the underlying **SDMX-JSON format** to its [first official version within the SDMX standard](https://github.com/sdmx-twg/sdmx-json). This update was included in ESTAT **NSIWS v7.13.1** (deployed along with v7.13.2 here), and implied changes also in the JS services and applications.  
+It is therefore **absolutely necessary**, when upgrading your .Stat Suite instances to any future version, to **simultaneously upgrade the .NET and JS services at least to versions .NET 4.3.0 and JS 5.4.0**, in order to prevent misbehaviour or functional issues due to a backward-incompatibility of either of these services.  
+> If your deployment topology does not include the .Stat Suite CORE (.NET) services (e.g. when only deploying the Data Explorer and its underlying services), you need either to align your NSIWS version to v7.13.1 minimum (v7.13.2 at best), or use an SDMX web service that is compatible with the [official SDMX-JSON release version](https://github.com/sdmx-twg/sdmx-json).
+
+> **.Stat DLM Excel-Addin:**
+> The .NET v4.3.0 release also contains a new version of the .Stat DLM Excel-addin, namely **v3.0.0.5**, including the various changes and patches mentionned in the list below.  
+> *Reminder:* The .Stat DLM Excel-addin is an Excel-based application (using the ClickOnce deployment technology) to be installed individually on each client machine. Therefore there is no Docker image produced for this component, and you need to retrieve it directly from its [GitLab master branch](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin).
+
+> **Known limitations and/or deprecating behaviors:**
+> * Inconsistent rendering of DE table views with **Unit of Measure** information. Some cases described in the [functional specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/) may not always behave yet as expected. Note that the Unit of Measure feature behaviour can be temporarily 'switched off' through the [DE configuration settings](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#unit-of-measure-support) (by emtpying the `UNIT_MEASURE_CONCEPTS` annotation).
+> * The table/chart views generated from the DE **Share "Latest available data for the period defined"** option are not always consistent with the original views in the DE browser (e.g. especially in use cases compiling Unit of Measure information).
+
+**[Release .Stat Suite .NET 4.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/28)**  
+> This release includes a new version of the **core-sdmxri-nsi-plugin** and **dlm-excel-addin** services.  
+
+*significant* (non-major) changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/66) Deploy **NSIWS v7.13.2**, including **v7.13.1**. Non backwards compatible changes/breaking changes have been introduced in the **SDMX-JSON message output** following the nsiws v7.13.1 release. Details can be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/7.13.2/CHANGELOG_NSIWS.md#nsiwsnet-v7131-2020-07-23-msdb-v610-authdb-v10).
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#33](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/33) *(Refactoring)* Remove logs per observation in the SDMX-JSON data export.
+- [dotstatsuite-core-sdmxri-nsi-ws#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/38) Zip file download, allowing obtaining extractions compressed as zip file format attachment.
+- [dotstatsuite-docker-compose#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/4) Review of the [Docker Compose installation documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/README.md).
+- [dotstatsuite-excel-addin#13](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/13) *(Refactoring)* Update keycloak server url in DLM Excel-addin.
+
+patches:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/46) Correct the **SDMX-JSON message format**.
+- [dotstatsuite-core-sdmxri-nsi-ws#59](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/59) Error *"Only maintainable are supported by this implementation"* when submitting data structures.
+- [dotstatsuite-data-lifecycle-manager#142](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/142) Hierarchical codelist successfully uploaded does not show in the .Stat DLM list.
+- [dotstatsuite-excel-addin#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/12) Correct DLM Excel-addin menu label and help menu with link to documentation.
+- [dotstatsuite-excel-addin#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/15) Error messages/inappropriate info in DLM Excel-addin.
+- [dotstatsuite-excel-addin#10](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/10) Allowed content constraints are not applied in the DLM Excel-Addin filters of the selector.
+
+
+**[Release .Stat Suite JS 5.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/29)**  
+> This release includes a new version of the **data-explorer**, **data-viewer**, **sdmx-faceted-search** and **data-lifecycle-manager** services.  
+
+*significant* (non-major) changes:
+
+- [dotstatsuite-sdmxjs#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/-/issues/4) JS parsers update according to the **SDMX-JSON format changes** (see related .NET issue [dotstatsuite-core-sdmxri-nsi-ws#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/46)).
+
+minor changes:
+
+- [dotstatsuite-config#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/8) and [dotstatsuite-data-explorer#342](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/342) Ease **management of localisations**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation))
+- [dotstatsuite-data-explorer#354](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/354) Configure visibility of DE Share option, allowing to **hide the 'Share' feature** from the end-user. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#disabled-share-option))
+- [dotstatsuite-data-explorer#308](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/308) Complement the **Unit-of-Measure** (UoM) feature with **additional use cases** (with still knwon limitations, see the disclaimer above). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/))
+- [dotstatsuite-data-lifecycle-manager#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/47) **Export all** structures and data from a DLM dataspace in **dump mode**.
+- [dotstatsuite-chart-generator-legacy#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/7) Show bar/row/stacked-bar labels not only for huge charts.
+- [dotstatsuite-data-lifecycle-manager#133](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/133) Subsequently run transfer cleanup method when deleting a dsd in the DLM.
+- [dotstatsuite-data-explorer#297](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/297) Complement i18n DE for Dutch, Arabic, and Khmer languages.
+- [dotstatsuite-data-lifecycle-manager#150](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/150) *(Refactofing)* DLM should not send token to external datasources.
+- [dotstatsuite-data-explorer#394](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/394) *(Refactoring)* Migrate react-intl to latest.
+
+patches:
+
+- [dotstatsuite-data-explorer#406](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/406) Issues found following the recent 'SDMX-JSON format changes'.
+- [dotstatsuite-share#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/19) Shared 'Latest Data' table misses subtitle footnotes and the 'Unit of Measure' information is incorrectly displayed.
+- [dotstatsuite-data-explorer#397](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/397) Header information not correctly displayed in DE Excel exports.
+- [dotstatsuite-data-explorer#413](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/413) Fix the 'used filters' behavior in the search result page.
+- [dotstatsuite-data-lifecycle-manager#153](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/153) Information about dataflow categorisation(s) is sometimes incorrect in DLM.
+
+---
 
 ### September 2, 2020
 **[Release .Stat Suite .NET 4.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/25)**
