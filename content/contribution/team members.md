@@ -16,7 +16,7 @@ weight: 94
 - Zsolt Lenart [@ZsoltLenart](https://gitlab.com/ZsoltLenart)
 
 #### .Stat Suite developer advocate
-- Ben Ashley [@benashley](https://gitlab.com/benashley)
+*looking for a new candidate*
 
 #### .Stat Suite product owners
 - Jean-Baptiste Nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
