@@ -489,7 +489,7 @@ You can define individual icons that are to be displayed with specific facets va
 
 This is a new entry of the configuration, and is supporting the **SVG path segment** format ONLY.  
 SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.  
-SVG elements should be scaled for a 24 x 24px viewport.  
+The SVG images must be scaled to fit into a 24 x 24px viewport in order to be fully visible.  
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
@@ -497,14 +497,14 @@ SVG elements should be scaled for a 24 x 24px viewport.
 "sdmx": {
   ...others keys,
   "valueIcons": {
-    "topics": {
-      "EDU": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    "topic": {
+      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
     } 
   }
 }
 ```
 
-**Note**: the key of the facet is always in **lowercase e.g. "topics"**, and the key of the facet value is always in **uppercase e.g. "EDU"**.  
+**Note**: the key of the facet is always in **lowercase e.g. "topic"**, and the key of the facet value is always in **uppercase e.g. "HOME"**.  
 
 Facets are localised, thus you must add the translated name of facet and duplicate the value for the icon, e.g.:  
 
@@ -512,11 +512,11 @@ Facets are localised, thus you must add the translated name of facet and duplica
 "sdmx": {
   ...others keys,
   "valueIcons": {
-    "topics": {
-      "EDU": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    "topic": {
+      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
     } 
     "thème": {
-      "EDU": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
     } 
   }
 }
