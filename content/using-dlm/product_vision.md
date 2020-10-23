@@ -330,7 +330,7 @@ Due to the increasing amount of those definitions, they should be easily **manag
 5. Change the data structure* details. 
 6. Save the (partially ready) data structure, return to its editing at any time, and submit to the DB. Any backward-compatibility-braking changes will result in the creation of a new artefact or new version.
 
-(*) All artefacts need ID, Agency (selected from his agency list), version (1.0 by default), name(s), description(s), annotation(s), isfinal. Names, descriptions, annotations can be entered in several languages. User should get a warning when required translations of some data structure elements are missing.
+(*) All artefacts need ID, Agency (selected from his agency list), version (1.0 by default), name(s), description(s), annotation(s), isfinal. Names, descriptions, annotations can be entered in several languages. User should get a warning when required translations of some data structure elements are missing.
 
 #### User Journey #1E: A statistician edits data view(s)
 1. If not already done, select and enter a data space and a statistical domain.
@@ -425,12 +425,12 @@ d. Missing or un-matched codes in the source can be listed on demand
   1.1. For CSV files: The list of all columns in the file using header titles, if available, or simply column numbers.  
   1.2. *Note:* The system might not be able to detect mappings if no values match, and the total number of dimensions, attributes and measures is not necessarily equal to the number of columns in the file (which results in empty cases).  
 
-![dlm userjourney-4b](dlm-userjourney-4b-01.png)
+![dlm userjourney-4b](/dotstatsuite-documentation/images/dlm-userjourney-4b-01.png)
 
 2. Change mapping as appropriate  
   2.1. Including many to one or one to many (e.g. Column 3 and Column 4 to Indicator)
 
-![dlm userjourney-4b](dlm-userjourney-4b-02.png)
+![dlm userjourney-4b](/dotstatsuite-documentation/images/dlm-userjourney-4b-02.png)
 
 3. Then map dimension, attribute and measure values, if necessary  
   3.1. Map available values (also retrieved from CSV files)  
