@@ -1,13 +1,11 @@
-SolDevCycleCharts:
-    title: "Solution Development Cycle charts"
+SolDevCycleChart:
+    title: "Solution Development Kanban"
     charts:
-        - title: "Product Management Kanban board by type"
+        - title: "Solution team Kanban board by type"
           type: bar
           query:
             issuable_type: issue
             issuable_state: opened
-            filter_labels:
-              - "product-management"
             collection_labels:
                 - "t::bug"
                 - "t::devOps"
@@ -17,114 +15,6 @@ SolDevCycleCharts:
                 - "t::refactoring"
                 - "t::support"
                 - "t::techn. design"
-        - title: ".NET/SQL Kanban board by type"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: opened
-            filter_labels:
-              - ".NET/SQL"
-            collection_labels:
-                - "t::bug"
-                - "t::devOps"
-                - "t::documentation"
-                - "t::enhancement"
-                - "t::feature"
-                - "t::refactoring"
-                - "t::support"
-                - "t::techn. design"
-        - title: "JavaScript Kanban board by type"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: opened
-            filter_labels:
-              - "JavaScript"
-            collection_labels:
-                - "t::bug"
-                - "t::devOps"
-                - "t::documentation"
-                - "t::enhancement"
-                - "t::feature"
-                - "t::refactoring"
-                - "t::support"
-                - "t::techn. design"
-
-WeekClosedIssues:
-    title: "Weekly closed issues"
-    charts:
-        - title: "Weekly closed bugs"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::bug"
-            group_by: week
-            period_limit: 24
-        - title: "Weekly closed supports"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::support"
-            group_by: week
-            period_limit: 24
-        - title: "Weekly closed features"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::feature"
-            group_by: week
-            period_limit: 24
-        - title: "Weekly closed enhancements"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::enhancement"
-            group_by: week
-            period_limit: 24
-        - title: "Weekly closed documentation"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::documentation"
-            group_by: week
-            period_limit: 24
-        - title: "Weekly closed DevOps"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::devOps"
-            group_by: week
-            period_limit: 24
-        - title: "Weekly closed refactoring"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::refactoring"
-            group_by: week
-            period_limit: 24
-        - title: "Weekly closed technical design"
-          type: bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            filter_labels:
-                - "t::techn. design"
-            group_by: week
-            period_limit: 24
 
 AllClosedIssues:
     title: "Cumulative closed issues"
@@ -179,17 +69,3 @@ WeeklyOpenedClosedTypes:
                 - "t::techn. design"
             group_by: week
             period_limit: 24
-
-WeeklyDeliveryTrends:
-    title: Weekly .Stat Suite delivery trends
-    charts:
-        - title: "Number of bugs reported by week"
-          type: line
-          query:
-            issuable_type: issue
-            issuable_state: opened
-            collection_labels:
-                - "t::bug"
-            group_by: week
-            period_limit: 52
-            
