@@ -10,6 +10,7 @@ weight: 1900
 - [Introduction](#introduction)
 - [Result content](#result-content)
 - [Pagination](#pagination)
+- [search result URL](#search-result-url)
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
 
 ---
@@ -62,8 +63,26 @@ By using the feature at the bottom right side of the search results page, the us
 
 ---
 
+### search result URL
+The search result page(s) can also be accessed through a direct link, because some of the **user's choices and options are part of the URL**, which can thus be shared or bookmarked.  
+The configurations of the search results included in the URL are listed and explained in the following table:
+
+| key | type | definition | exemple |
+| ------ | ------ | ------ | ------ |
+| locale | string | locale of the app | locale=fr
+| facet | string | open box in side in search results | facet=qmsoRy4r
+| term | string | search term | term=people
+| start | integer | page index of the search | start=0
+| constraints | array | selected facets of the search | constraints[0]=SIS-CC-stable
+| hasAccessibility | boolean | a11y mode of the app | hasAccessibility=false
+| hasDataAvailability | boolean | sdmx data availability mode | hasDataAvailability=false
+
+**Note** that the full set of configurations of the URL is listed in the [Viewing data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/) topic.
+
+---
+
 ### Navigation towards the DE visualisation page
-When the user clicks on a search result name from the search result page, then she/he is forwarded to the DE data visualisation page that corresponds to the selected result.  
+When the user clicks on a search result name from the search result page, then she/he is forwarded to the DE [data visualisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/) page that corresponds to the selected result.  
 The **filter selections are also kept** to the visualisation page that uses it to make the automated filter selections. For example, if the user has selected a reference area in the reference area facet of the search result page, then this selection is maintained in the reference area filter in the data visualisation page.
 
 
