@@ -6,22 +6,29 @@ weight: 2000
 
 ---
 
-When the user clicks on the dataflow name (link) in the search results then the what-is-called Data Explorer **visualisation page** is displayed. It currently initially shows a data preview table. Using the toolbar, the user can switch to show a data chart instead, and vice-versa.
+When the user clicks on the dataflow name (link) in the search results, the what-is-called Data Explorer **visualisation page** is displayed. Currently, it initially shows a data preview table. Using the toolbar, the user can switch to show a data chart instead, and vice-versa.
 
-The visualisation page can also be accessed through a direct link because the most important page configuration options are part of the URL, which can thus be bookmarked. The configurations included in the URL are:  
-- data space ID
-- dataflow identification
-- display type: table or chart type
-- current data selection
-- current language selection
-- curent setting for application of actual content constraints
-- current filter focus  
+The visualisation page can also be accessed through a direct link, because the most important page **configuration options are part of the URL**, which can thus be bookmarked.  
+The full configurations (with the configurations of the search result pages) included in the URL are listed and explained in the following overview table:
 
-The URL configurations do not yet include:
-- current name customisation 
-- current layout customisation
-- current chart customisation
-- current full-screen customisation
+| key | type | definition | exemple |
+| ------ | ------ | ------ | ------ |
+| locale | string | locale of the app | locale=fr
+| facet | string | open box in side in search results | facet=qmsoRy4r
+| term | string | search term | term=people
+| start | integer | page index of the search | start=0
+| constraints | array | selected facets of the search | constraints[0]=SIS-CC-stable
+| dataflow | object | dataflow identifiers | dataflow[datasourceId]=SIS-CC-stable&dataflow[dataflowId]=DF_AIR_EMISSIONS&dataflow[agencyId]=OECD&dataflow[version]=2.1
+| filter | string | open box in side in viz | filter=COU
+| dataquery | string | sdmx dataquery | dataquery=.AUS+AUT.GP.A
+| hasAccessibility | boolean | a11y mode of the app | hasAccessibility=false
+| hasDataAvailability | boolean | sdmx data availability mode | hasDataAvailability=false
+| viewer | string | type of viewer component used | viewer=table
+| period | string | period of the sdmx data request | period=2017,2020
+| frequency | string | frequency of the app | frequency=Q
+| layout | object | layout of the table in the vis page | layout[sections]=&layout[rows]=STO&layout[header]=TIME_PERIOD
+| display | string | display mode of sdmx (label, code, both) | display=code
+| time | object | order of time dimension(s) | time[TIME_PERIOD]=true
 
 **Note** that these URL options allow using the web browser's `Going Back` option to roll back to the corresponding previous state and user selections.
 
