@@ -10,6 +10,8 @@ weight: 3300
 - [Chart size](#chart-size)
 - [Highlight and Baseline](#highlight-and-baseline)
 - [Axes scaling](#axes-scaling)
+- [Timeline chart option for steps on horizontal axis](#timeline-chart-option-for-steps-on-horizontal-axis)
+- [Additional option for authenticated users](#additional-option-for-authenticated-users)
 
 ---
 
@@ -48,4 +50,44 @@ The corresponding selectors allow changing:
 
 **Note**: Currently, for timeline charts, the horizontal axis with its time-period scale cannot be customised. The time periods are taken from the Time Period & Frequency filter. The step size (grid) is automatically calculated from the time periods and the available space. 
 
+---
 
+### Timeline chart option for steps on horizontal axis
+> Released in [October 26, 2020 Release .Stat Suite JS 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-26-2020)
+
+For Timeline chart representations, the user can set a step for labels based on the data frequency.  
+The input value is taken into account :
+* if the value is superior to the default value computed by the engine, and
+* if the value is a multiple of the step value of the minor ticks of the axis.
+
+![chart custom timeline option](/dotstatsuite-documentation/images/chart-custom-timeline-option.png)
+
+---
+
+### Additional option for authenticated users
+> Released in [October 26, 2020 Release .Stat Suite JS 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-26-2020)
+
+When Data Explorer users are authenticated (see the [Login](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#login) specifications), the configuration options for chart include:
+* Title, Subtitle, and Source label editing boxes;
+* The option to remove the logo;
+* The option to remove the copyright logo + link.
+
+**Title, Subtitle, and Source label editing boxes**  
+By default, the original title, subtitle and source labels are auto-generated in each corresponding text boxes.  
+Editing one of the editable labels will be automatically applied when pressing the `Enter` keyboard, or when navigating to another location of the web browser.  
+Once the user starts editing one of the editable labels, a 'Reset' button option appears in the text bow (right aligned) allowing to reset the label to its original state.  
+After editing a title, a footnote associated to the dataflow name is kept. After editing a subtitle, footnotes associated to the dimension items are merged into one single footnote at the end of subtitle:
+
+![chart custom merged footnotes](/dotstatsuite-documentation/images/chart-custom-chart-custom-merged-footnotes.png)
+
+This is applicable also when generating a share view (see the [share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
+
+**Option to remove the logo**  
+A tick box option allows the user to remove the organisation logo from the chart footer placeholder in the current view.  
+This is also applied when generating a share view (see the [share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
+
+**option to remove the copyright logo + link**  
+A tick box option allows the user to remove the copyright logo and the underlying hyperlink from the chart footer placeholder in the current view.  
+This is also applied when generating a share view (see the [share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
+
+![chart custom auth users option](/dotstatsuite-documentation/images/chart-custom-chart-custom-auth-users-option.png)
