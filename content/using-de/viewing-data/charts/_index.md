@@ -15,6 +15,8 @@ The charts share a common header and footer with the preview-table. More informa
 The following types of charts are supported:  
 ![Toolbar](/dotstatsuite-documentation/images/de-toolbar2.png)
 
+More details about our set of configurable charts based on [d3](https://d3js.org/) to be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/README.md), and also [chart responsiveness](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/docs/charts-responsiveness.md).
+
 ---
 
 ### Bar chart
