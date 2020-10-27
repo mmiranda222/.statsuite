@@ -78,16 +78,16 @@ Editing one of the editable labels will be automatically applied when pressing t
 Once the user starts editing one of the editable labels, a 'Reset' button option appears in the text bow (right aligned) allowing to reset the label to its original state.  
 After editing a title, a footnote associated to the dataflow name is kept. After editing a subtitle, footnotes associated to the dimension items are merged into one single footnote at the end of subtitle:
 
-![chart custom merged footnotes](/dotstatsuite-documentation/images/chart-custom-chart-custom-merged-footnotes.png)
+![chart custom merged footnotes](/dotstatsuite-documentation/images/chart-custom-merged-footnotes.png)
 
-This is applicable also when generating a share view (see the [share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
+This is applicable also when generating a share view ([share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
 
 **Option to remove the logo**  
 A tick box option allows the user to remove the organisation logo from the chart footer placeholder in the current view.  
-This is also applied when generating a share view (see the [share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
+This is also applied when generating a share view ([share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
 
-**option to remove the copyright logo + link**  
+**Option to remove the copyright logo + link**  
 A tick box option allows the user to remove the copyright logo and the underlying hyperlink from the chart footer placeholder in the current view.  
-This is also applied when generating a share view (see the [share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
+This is also applied when generating a share view ([share specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#share)).
 
-![chart custom auth users option](/dotstatsuite-documentation/images/chart-custom-chart-custom-auth-users-option.png)
+![chart custom auth users option](/dotstatsuite-documentation/images/chart-custom-auth-users-option.png)
