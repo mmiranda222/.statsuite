@@ -53,7 +53,8 @@ ToC
 
 ### October 26, 2020
 **[Release .Stat Suite JS 6.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/30)**
-> This release includes a new major version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **sdmx-faceted-search** services.
+> This release includes a new major version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **sdmx-faceted-search** services.  
+nsiws compatibility: tested and released in compatibility with the Eurostat nsiws.net v7.13.2
 
 major *(backward-incompatibility)* changes:
 
