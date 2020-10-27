@@ -58,7 +58,7 @@ ToC
 major *(backward-incompatibility)* changes:
 
 - [dotstatsuite-sdmx-faceted-search#83](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/83) Indexing of dataflows in sub-categories misses adding the sub-category to the categoryscheme facet.  
-This resulted from the introduction in the SDMX-JSON format of a change on the `link-type` property (replaced by a `mime-type`) that was not parsed by the data-explorer as expected in the previous JS5.4.0 release, causing the disappearance of the indexed categories (loss of the categories in the DE homepage 'browse by').
+**NB:** This results from the introduction in the SDMX-JSON format of a change on the `link-type` property (replaced by a `mime-type`) that was not parsed by the data-explorer as expected in the previous [JS5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020) release, causing the disappearance of the indexed categories (loss of the categories in the DE homepage 'browse by').
 
 minor changes:
 
@@ -68,7 +68,7 @@ minor changes:
 - [dotstatsuite-chart-generator-legacy#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/8) Timeline charts: enhance axis label step configuration. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/customise-feature/#timeline-chart-option-for-steps-on-horizontal-axis))
 - [dotstatsuite-chart-generator-legacy#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/6) Improve automated and manual chart time axis scale management.
 - [dotstatsuite-data-lifecycle-manager#146](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/146) Remove dataflow selection in the DLM SDMX data upload feature.
-- [dotstatsuite-data-explorer#435](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/435) Add **German locale** to .Stat DE (and write the doc).
+- [dotstatsuite-data-explorer#435](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/435) Add **German locale** to .Stat DE.
 - [dotstatsuite-config#18](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/18) *(Support)* Cleanup obsolete DE i18n overwrites.
 - [dotstatsuite-data-explorer#218](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/218) *(Support)* Create aliases for staging environments.
 - [dotstatsuite-data-explorer#396](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/396) *(Support)* Request for BFS tenanted deploy of DE.
