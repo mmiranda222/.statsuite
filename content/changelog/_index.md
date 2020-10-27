@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 26, 2020](#october-26-2020)
 - [October 7, 2020](#october-7-2020)
 - [September 2, 2020](#september-2-2020)
 - [August 25, 2020](#august-25-2020)
@@ -49,6 +50,39 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### October 26, 2020
+**[Release .Stat Suite JS 6.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/30)**
+> This release includes a new major version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **sdmx-faceted-search** services.
+
+major *(backward-incompatibility)* changes:
+
+- [dotstatsuite-sdmx-faceted-search#83](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/83) Indexing of dataflows in sub-categories misses adding the sub-category to the categoryscheme facet.  
+This resulted from the introduction in the SDMX-JSON format of a change on the `link-type` property (replaced by a `mime-type`) that was not parsed by the data-explorer as expected in the previous JS5.4.0 release, causing the disappearance of the indexed categories (loss of the categories in the DE homepage 'browse by').
+
+minor changes:
+
+- [dotstatsuite-data-explorer#288](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/288) Visualisation **url to include table layout** customisation. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/))
+- [dotstatsuite-data-explorer#226](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/226) **New design** of the DE chart customisations.
+- [dotstatsuite-data-explorer#386](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/386) **Chart customisations** allowing authenticated users to change the header and footer. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/customise-feature/#additional-option-for-authenticated-users))
+- [dotstatsuite-chart-generator-legacy#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/8) Timeline charts: enhance axis label step configuration. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/customise-feature/#timeline-chart-option-for-steps-on-horizontal-axis))
+- [dotstatsuite-chart-generator-legacy#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/6) Improve automated and manual chart time axis scale management.
+- [dotstatsuite-data-lifecycle-manager#146](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/146) Remove dataflow selection in the DLM SDMX data upload feature.
+- [dotstatsuite-data-explorer#435](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/435) Add **German locale** to .Stat DE (and write the doc).
+- [dotstatsuite-config#18](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/18) *(Support)* Cleanup obsolete DE i18n overwrites.
+- [dotstatsuite-data-explorer#218](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/218) *(Support)* Create aliases for staging environments.
+- [dotstatsuite-data-explorer#396](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/396) *(Support)* Request for BFS tenanted deploy of DE.
+- [dotstatsuite-data-explorer#423](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/423) *(Support)* Reindex STATEC tenant of DE.
+- [dotstatsuite-data-lifecycle-manager#165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/165) *(Support)* DLM (in QA) fails to return information about data from (some) external sources.
+
+patches:
+
+- [dotstatsuite-data-explorer#421](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/421) Units of Measure: header regression.
+- [dotstatsuite-data-explorer#409](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/409) Attributes returned as DE flags are displayed in upper case when the actual ID is in lower case.
+- [dotstatsuite-data-lifecycle-manager#157](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/157) Text attributes truncated to the first colon character.
+- [dotstatsuite-chart-generator-legacy#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/5) Repair and improve automated and manual chart axis scale management for time and numeric scales.
+
+---
 
 ### October 7, 2020
 **DISCLAIMER for [Release .Stat Suite .NET 4.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/28)** and **[Release .Stat Suite JS 5.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/29)**
