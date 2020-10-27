@@ -78,7 +78,7 @@ minor changes:
 
 patches:
 
-- [dotstatsuite-data-explorer#421](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/421) Units of Measure: header regression.
+- [dotstatsuite-data-explorer#421](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/421) Units of Measure: header regression. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/))
 - [dotstatsuite-data-explorer#409](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/409) Attributes returned as DE flags are displayed in upper case when the actual ID is in lower case.
 - [dotstatsuite-data-lifecycle-manager#157](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/157) Text attributes truncated to the first colon character.
 - [dotstatsuite-chart-generator-legacy#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/5) Repair and improve automated and manual chart axis scale management for time and numeric scales.
