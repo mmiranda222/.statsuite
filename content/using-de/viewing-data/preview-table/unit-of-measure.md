@@ -115,7 +115,7 @@ Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM la
 #### Case 4: Column axis
 The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed in the Row section axis) are displayed in an additional **"Unit of measure" row**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally on the Column axis are **not** displayed separately.
 
-![Example case 4](/dotstatsuite-documentation/images/DE_UoM_Case4ColumnAxis.PNGpng)
+![Example case 4](/dotstatsuite-documentation/images/DE_UoM_Case4ColumnAxis.PNG)
 
 See also: http://de-qa.siscc.org/vis?locale=en&dataflow[datasourceId]=qa%3Astable&dataflow[dataflowId]=NAMAIN_T0102_A&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=true&period=2015%2C2020&frequency=A&dataquery=A..............&layout[rows]=STO%2CACTIVITY%2CACCOUNTING_ENTRY&layout[header]=TIME_PERIOD%2CPRICES&layout[sections]=REF_AREA  
   
