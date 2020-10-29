@@ -602,7 +602,7 @@ This library is used for shared code in the .Stat Core components. These inlude 
 
 ### DevOps implementation
 
-See: [.Stat DevOps implementation](/getting-started/devops) 
+See: [.Stat DevOps implementation](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/devops/) 
 
 ---
 
@@ -615,6 +615,4 @@ See: [.Stat DevOps implementation](/getting-started/devops)
 ### Contributing to an open source repository
 
 https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/
-
-
 
