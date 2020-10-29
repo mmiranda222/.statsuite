@@ -99,11 +99,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
 <td rowspan="2">de-qa-oecd</td>
-<td>[website](http://de-qa-oecd.redpelicans.com)</td>
+<td>[website](http://de-qa.siscc.org/)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[health](http://de-qa-oecd.redpelicans.com/api/healthcheck)</td>
+<td>[health](http://de-qa.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
