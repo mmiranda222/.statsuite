@@ -13,11 +13,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/badges/develop/coverage.svg?style=flat-square)</td>
 <td>nsi-stable-qa-oecd</td>
-<td>[health](http://nsi-stable-qa-oecd.redpelicans.com/health)</td>
+<td>[health](http://nsi-stable-qa.siscc.org/health)</td>
 <td>-</td>
 <tr>
 <td>nsi-reset-qa-oecd</td>
-<td>[health](http://nsi-reset-qa-oecd.redpelicans.com/health)</td>
+<td>[health](http://nsi-reset-qa.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -35,12 +35,12 @@
 </tr>
 <tr>
 <td>nsi-stable-siscc</td>
-<td>[health](http://nsi-stable-siscc.redpelicans.com/health)</td>
+<td>[health](http://nsi-stable-demo.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
 <td>nsi-reset-siscc</td>
-<td>[health](http://nsi-reset-siscc.redpelicans.com/health)</td>
+<td>[health](http://nsi-reset-demo.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -49,11 +49,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)</td>
 <td rowspan="2">transfer-qa-oecd</td>
-<td>[health](http://transfer-qa-oecd.redpelicans.com/health)</td>
+<td>[health](http://transfer-qa.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://transfer-qa-oecd.redpelicans.com/swagger)</td>
+<td>[swagger](http://transfer-qa.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -61,11 +61,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">transfer-siscc</td>
-<td>[health](http://transfer-siscc.redpelicans.com/health)</td>
+<td>[health](http://transfer-demo.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://transfer-siscc.redpelicans.com/swagger)</td>
+<td>[swagger](http://transfer-demo.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -74,11 +74,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
 <td rowspan="2">authz-qa-oecd</td>
-<td>[health](http://authz-qa-oecd.redpelicans.com/health)</td>
+<td>[health](http://authz-qa.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://authz-qa-oecd.redpelicans.com/swagger)</td>
+<td>[swagger](http://authz-qa.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -86,15 +86,15 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">authz-siscc</td>
-<td>[health](http://authz-siscc.redpelicans.com/health)</td>
+<td>[health](http://authz-demo.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://authz-siscc.redpelicans.com/swagger)</td>
+<td>[swagger](http://authz-demo.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="10">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
+<td rowspan="11">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
 <td rowspan="2">qa/develop</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
@@ -107,9 +107,9 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="8">staging/master</td>
-<td rowspan="8">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="8">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="9">staging/master</td>
+<td rowspan="9">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
+<td rowspan="9">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
 <td rowspan="2">de-staging-oecd</td>
 <td>[website](http://de-staging-oecd.redpelicans.com)</td>
 <td>-</td>
@@ -120,7 +120,7 @@
 </tr>
 <tr>
 <td>de-staging-siscc</td>
-<td>[website](http://de-staging-siscc.redpelicans.com)</td>
+<td>[website](http://de-demo.siscc.org)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -149,12 +149,17 @@
 <td>-</td>
 </tr>
 <tr>
+<td>de-staging-bfs</td>
+<td>[website](http://de-staging-bfs.redpelicans.com/)</td>
+<td>-</td>
+</tr>
+<tr>
 <td rowspan="3">[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)</td>
 <td>qa/develop</td>
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/coverage.svg?style=flat-square)</td>
 <td>dv-qa-oecd</td>
-<td>[website](http://dv-qa-oecd.redpelicans.com)</td>
+<td>[website](http://dv-qa.siscc.org)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -162,7 +167,7 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/coverage.svg?style=flat-square)</td>
 <td>dv-staging-oecd</td>
-<td>[website](http://dv-staging-oecd.redpelicans.com)</td>
+<td>[website](http://dv-demo.siscc.org)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -171,16 +176,25 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="5">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
-<td rowspan="2">qa/develop</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
-<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="7">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
+<td rowspan="4">qa/develop</td>
+<td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
 <td rowspan="2">dlm-qa-oecd</td>
-<td>[website](http://dlm-qa-oecd.redpelicans.com)</td>
+<td>[website](http://dlm-qa.siscc.org)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[health](http://dlm-qa-oecd.redpelicans.com/healthcheck)</td>
+<td>[health](http://dlm-qa.siscc.org/healthcheck)</td>
+<td>-</td>
+</tr>
+<tr>
+<td rowspan="2">dlm2-qa-oecd</td>
+<td>[website](http://dlm2-qa.siscc.org)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>[health](http://dlm2-qa.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -197,7 +211,7 @@
 </tr>
 <tr>
 <td>dlm-staging-siscc</td>
-<td>[website](http://dlm-staging-siscc.redpelicans.com)</td>
+<td>[website](http://dlm-demo.siscc.org)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -206,7 +220,7 @@
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/coverage.svg?style=flat-square)</td>
 <td>sfs-qa-oecd</td>
-<td>[health](http://sfs-qa-oecd.redpelicans.com/healthcheck)</td>
+<td>[health](http://sfs-qa.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -214,7 +228,7 @@
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/master/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/master/coverage.svg?style=flat-square)</td>
 <td>sfs-staging-oecd</td>
-<td>[health](http://sfs-staging-oecd.redpelicans.com/healthcheck)</td>
+<td>[health](http://sfs-demo.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -223,7 +237,7 @@
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/coverage.svg?style=flat-square)</td>
 <td>share-qa-oecd</td>
-<td>[health](http://share-qa-oecd.redpelicans.com/healthcheck)</td>
+<td>[health](http://share-qa.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -231,7 +245,7 @@
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/master/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/master/coverage.svg?style=flat-square)</td>
 <td>share-staging-oecd</td>
-<td>[health](http://share-staging-oecd.redpelicans.com/healthcheck)</td>
+<td>[health](http://share-demo.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
