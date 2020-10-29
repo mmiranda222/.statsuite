@@ -189,7 +189,7 @@ graph LR;
 This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
 
 ##### demo (light)
-1. go to http://data-explorer.staging.oecd.redpelicans.com (tenant: oecd, env: staging)
+1. go to http://de-staging-oecd.redpelicans.com (tenant: oecd, env: staging)
 1. home page
 1. search by facets (click on a facet)
 1. fine-tune search results (play with facet selection)
@@ -261,7 +261,7 @@ id2 -->|7. redirect user|id4
 This web app is a companion GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
 ##### demo (light)
-1. Go to http://data-viewer.staging.oecd.redpelicans.com/?chartId=3 (tenant: oecd, env: staging)
+1. Go to http://dv-demo.siscc.org/?chartId=3 (tenant: oecd, env: staging)
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
@@ -281,11 +281,11 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 - free-text search hit: highlight the first occurance of all search terms 
 - handles hierarchical facet content (from SDMX codelists)
 - multi-language enabled
-- [single term search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status): `Unemployment rate by sex and disability status` 2 results
-- [phrase term search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=%22Unemployment%20rate%20by%20sex%20and%20disability%20status%22): `"Unemployment rate by sex and disability status"` 1 result
-- [tagged search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series): `name:seasonally adjusted series`
-- [multiple tagged search with phrase](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series%20description%3A%22employment-to-population%22): `name:seasonally adjusted series description:"employment-to-population"`
-- [negate search](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://data-explorer.staging.oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
+- [single term search](http://de-staging-oecd.redpelicans.com/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status): `Unemployment rate by sex and disability status` 2 results
+- [phrase term search](http://de-staging-oecd.redpelicans.com/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status?locale=en&term=%22Unemployment%20rate%20by%20sex%20and%20disability%20status%22): `"Unemployment rate by sex and disability status"` 1 result
+- [tagged search](http://de-staging-oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series): `name:seasonally adjusted series`
+- [multiple tagged search with phrase](http://de-staging-oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series%20description%3A%22employment-to-population%22): `name:seasonally adjusted series description:"employment-to-population"`
+- [negate search](http://de-staging-oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://de-staging-oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
 
 ##### architecture
 
@@ -409,10 +409,7 @@ Is a library of components for the parsing of SDMX-JSON messages. [*more discrip
 
 |tenant|specs|url|
 |---|---|---|
-|oecd|own sdmx oecd staging endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com|
-|ilo|independent external sdmx ilo test endpoint, ilo design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=ilo|
-|istat|independent external sdmx istat sistanhub endpoint, siscc design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=istat|
-|cam|independent external sdmx cambodia pilot endpoint, cam design|http://data-explorer.staging.oecd.redpelicans.com/?tenant=cam|
+|oecd|own sdmx oecd staging endpoint, OECD-staging|http://de-staging-oecd.redpelicans.com/|
 
 
 ##### technical overview
@@ -465,7 +462,7 @@ end
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
 1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
-1. check the tenant at http://data-explorer.staging.oecd.redpelicans.com/?tenant=<tenant>
+1. check the tenant at http://de-staging-tenant=<tenant>.redpelicans.com/
 1. update something in the configuration and check the update
 
 ##### demo: add/update an app for the tenant (siscc workshop hands-on)
@@ -486,7 +483,7 @@ end
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
 ##### demo (light)
-1. go to http://data-lifecycle-manager.qa.oecd.redpelicans.com/
+1. go to http://dlm-qa.siscc.org/
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
@@ -539,7 +536,7 @@ id6 --> id8
 This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores.
 
 ##### demo (light)
-1. go to http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html (tenant: oecd, env: qa)
+1. go to http://transfer-qa.siscc.org/swagger (tenant: oecd, env: qa)
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
@@ -553,7 +550,7 @@ This web service is used for statistical data structures for their upload and do
 It is based on the SDMX compliant REST web service developed by Eurostat and (through a plugin - see below) enriched with an access to a .Stat Core data storage. The web service allows for retrieval of data structures and data and for submission of data structures. 
 
 ##### demo (light)
-1. go to http://nsi.qa.core.oecd.redpelicans.com/ (tenant: oecd, env: qa)
+1. go to http://nsi-stable-qa.siscc.org/ (tenant: oecd, env: qa)
 
 ##### technical aspects
 - **repository**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
@@ -575,7 +572,7 @@ This plugin is used by the SDMX service to retrieve statistical data structures 
 This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
 
 ##### demo (light)
-1. go to [*to come*]
+1. go to http://authz-qa.siscc.org/swagger (tenant: oecd, env: qa)
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
