@@ -35,37 +35,23 @@ AllClosedIssues:
                 - "t::techn. design"
 
 WeeklyOpenedClosedTypes:
-    title: Weekly opened & closed issues
+    title: Weekly opened & closed Bugs
     charts:
-        - title: "Opened issues per week"
+        - title: "Opened bugs per week"
           type: stacked-bar
           query:
             issuable_type: issue
             issuable_state: opened
             collection_labels:
                 - "t::bug"
-                - "t::devOps"
-                - "t::documentation"
-                - "t::enhancement"
-                - "t::feature"
-                - "t::refactoring"
-                - "t::support"
-                - "t::techn. design"
             group_by: week
             period_limit: 24
-        - title: "Closed issues per week"
+        - title: "Closed bugs per week"
           type: stacked-bar
           query:
             issuable_type: issue
             issuable_state: closed
             collection_labels:
                 - "t::bug"
-                - "t::devOps"
-                - "t::documentation"
-                - "t::enhancement"
-                - "t::feature"
-                - "t::refactoring"
-                - "t::support"
-                - "t::techn. design"
             group_by: week
             period_limit: 24
