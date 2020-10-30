@@ -124,18 +124,18 @@ git clone -b 1.26.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/m
   6 .  Clone the NSI web service repository from the SIS-CC's mirror of Eurostat repository.
 
 ```sh
-git clone -b 7.13.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
+git clone -b 7.13.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
   7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
 
 ```sh
-git clone -b 7.13.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
+git clone -b 7.13.2 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b 4.2.4 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 5.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ---
