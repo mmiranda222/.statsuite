@@ -273,3 +273,9 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 **This flight planner allows travellers [*implementers*] getting a better understanding of the foreseen flight stops [*availability of features*] and their approximate timing according to the current fuel level [*resource capacity*] and Community priorities, and so to plan their own flight boarding [*deployment strategy*] as best as possible.**
 
 ![Flight Planner](/dotstatsuite-documentation/images/flight_planner_2020.png)  
+
+Information about the .Stat Suite releases can be found in the **[changelog](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/) page**.
+
+You can view the ongoing work and upcoming evolutions of the .Stat Suite products in the **[Kanban boards](https://gitlab.com/groups/sis-cc/-/boards/834539)**.
+
+The full list of recorded feature requests and feature enhancements can be found in the **[prioritized backlog of features](https://gitlab.com/groups/sis-cc/-/issues?label_name%5B%5D=backlog%3A%3Afeature&scope=all&sort=weight_desc&state=opened&utf8=%E2%9C%93)**.
