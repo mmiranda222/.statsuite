@@ -108,7 +108,7 @@ git clone -b 10.2.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 
 ```sh 
 
-git clone -b 1.26.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
+git clone -b 1.26.5 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that points to the original ESTAT's repository in the mirror repository. To change the url of the submodule and to clone it manually (from the SIS-CC's mirror of Eurostat repository) use the following commands:  
