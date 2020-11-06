@@ -274,7 +274,7 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 
 ![Flight Planner](/dotstatsuite-documentation/images/flight_planner_2020.png)  
 
-Information about the .Stat Suite releases can be found in the **[changelog](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/) page**.
+Information about the .Stat Suite releases can be found in the **[changelog](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/){:target="_blank"}** page.
 
 You can view the ongoing work and upcoming evolutions of the .Stat Suite products in the **[Kanban boards](https://gitlab.com/groups/sis-cc/-/boards/834539)**.
 
