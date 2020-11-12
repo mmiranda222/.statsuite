@@ -10,7 +10,7 @@ weight: 240
 - [Upload data structure file](#upload-data-structure-file)
 - [Notifications](#notifications)
   - [Size limit notification](#size-limit-notification)
-  - [successful, warning, multi-status, and error](#successful-warning-multi-status-and-error)
+  - [Successful, warning, multi-status, and error](#successful-warning-multi-status-and-error)
 
 ---
 
@@ -39,11 +39,13 @@ When dragging or adding in the dashed area a file with a size **higher than 30MB
 
 ![dlm-upload-structure-3-Notifications](/dotstatsuite-documentation/images/dlm-upload-structure-3-TooBigFileSizeErrorMsg.png)
 
-#### successful, warning, multi-status, and error
-The data structure upload can return three types of notifications
-* a green **successful** notification
-* an orange **warning/multi-status** notification
-* a red **error** notification
+#### Successful, warning, multi-status, and error
+Each time the user performs an upload (or transfer) action on structural objects in .Stat DLM, a comprehensive message with appropriate details is returned. All returned messages are defined as one of the following mandatory contextual notification:
+* green **successful** notification
+* orange **warning/multi-status** notification
+* red **error** notification
+
+**Note** that error notification contents are derived from the standard HTTP return codes, or the standard SDMX REST status/error codes https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_7_errors.md.
 
 When you select multiple dataspaces, the notification messages appear all at once but split by type and dataspace.
 
