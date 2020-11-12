@@ -40,7 +40,7 @@ When dragging or adding in the dashed area a file with a size **higher than 30MB
 ![dlm-upload-structure-3-Notifications](/dotstatsuite-documentation/images/dlm-upload-structure-3-TooBigFileSizeErrorMsg.png)
 
 #### Successful, warning, multi-status, and error
-Each time the user performs an upload (or transfer) action on structural objects in .Stat DLM, a comprehensive message with appropriate details is returned. All returned messages are defined as one of the following mandatory contextual notification:
+Each time the user performs an upload (or transfer) action on structural objects in .Stat DLM, a comprehensive message with appropriate details is returned. All returned messages are defined as one of the following contextual notification:
 * green **successful** notification
 * orange **warning/multi-status** notification
 * red **error** notification
