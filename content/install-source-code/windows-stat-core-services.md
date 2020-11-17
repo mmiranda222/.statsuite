@@ -41,10 +41,11 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
 - **Microsoft .NET**    
-    - Microsoft .NET Core Runtime - 3.1.\* [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
     - Microsoft .NET Core 3.1.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/3.1) 
-    - Microsoft .NET Core SDK 3.1.\* [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+    - Microsoft .NET Core SDK 3.1.\* (**both x86 and x64 versions**) [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
     - Visual studio 2019 is needed to compile solutions with .net core 3.1 (optional)
+
+**NOTE:** For Git Bash commands, **both x86 and x64 versions of SDK** are necessary. Even though the server is most likely to be x64 architecture nowadays, only x86 version is recognized by Git Bash (for compiling the source code).
 
 - **IIS Web server**  
     - IIS server 7.5 or later  
@@ -304,7 +305,7 @@ icacls "C:\dotstatsuite-website\transfer-service" /grant:r "IIS_IUSRS":"(OI)(CI)
 **Step 3.** Copy the compiled binaries to the new folder 
 
 ```sh
-cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netcoreapp2.2/publish/.* /c/dotstatsuite-website/transfer-service/
+cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netcoreapp3.1/publish/.* /c/dotstatsuite-website/transfer-service/
 ```
 
 **Step 4.** Create a new IIS application called **transfer-service** in port 83, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
