@@ -48,6 +48,6 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 [![Foo](https://childmortality.org/static/media/igme-logo.5d15bc79.png)](https://childmortality.org/)
 
-**United Nations Inter-agency Group** [Child Morality Estimation](https://childmortality.org/)
+**United Nations Inter-agency Group** [Child Mortality Estimation](https://childmortality.org/)
 
 ---
