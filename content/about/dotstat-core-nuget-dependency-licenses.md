@@ -2,7 +2,7 @@
 title: "Licenses of NuGet dependencies of .Stat Core module"
 subtitle: 
 comments: false
-weight: 14
+weight: 18
 ---
 
 #### Table of Content
