@@ -38,7 +38,7 @@ JavaScript components
 
 .NET/SQL (Core) components
 - [Database](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)
-- [Sdmxri Nsi web service](https://citnet.tech.ec.europa.eu/CITnet/stash/scm/sdmxri/nsiws.net.oecd.git)
+- [SDMX-RI NSI web service](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored) mirrored from ESTAT's [NSIWS.net repository](https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/)
 - [Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)
 - [Authorisation management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)
 
