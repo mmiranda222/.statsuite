@@ -33,26 +33,24 @@ The following example, contains the list of steps required to deploy a **specifi
 ### Pre-requisites
 Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.
 
-- **SQL server 2017** or higher
-
-    - SQL authentication enabled  
-    - Named pipes enabled  
-    - SQL browser service running  
-    - SQL Server Agent running  
-    - User and password with **sysadmin** role  
-- **Microsoft .NET**    
-    - Microsoft .NET Core 3.1.\* - Windows Server Hosting [download](https://dotnet.microsoft.com/download/dotnet-core/3.1) 
-    - Microsoft .NET Core SDK 3.1.\* (**both x86 and x64 versions**) [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-    - Visual studio 2019 is needed to compile solutions with .net core 3.1 (optional)
-
-**NOTE:** For Git Bash commands, **both x86 and x64 versions of SDK** are necessary. Even though the server is most likely to be x64 architecture nowadays, only x86 version is recognized by Git Bash (for compiling the source code).
-
 - **IIS Web server**  
     - IIS server 7.5 or later  
     - ASP.Net application roles/features enabled  
     - Microsoft Visual C++ 2015 Redistributable [download](https://www.microsoft.com/en-US/download/details.aspx?id=52685) 
 
-- **Git for windows** [download](https://git-scm.com/download/win).  
+- **SQL server 2017** or higher
+    - SQL authentication enabled  
+    - Named pipes enabled  
+    - SQL browser service running  
+    - SQL Server Agent running  
+    - User and password with **sysadmin** role  
+
+- **Microsoft .NET**    
+    - Microsoft .NET Core SDK 3.1.\* (x64 version) [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+    - Microsoft .NET Core 3.1.\* - Windows Server Hosting Bundle [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)  (IIS must be restarted after installation)
+    - (Optional) Visual studio 2019 is to compile solutions with .net core 3.1
+
+- **Git for windows** (x64 version) [download](https://git-scm.com/download/win).  
 
 > **`WARNING!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
 
@@ -330,7 +328,7 @@ There are two options to configure the transfer service:
 
 1.  Json config files.- `NOT RECOMMENDED`
 
->  Copy the sample file dataspaces.private.json and auth.private.json from C:\git\dotstatsuite-core-transfer\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\transfer-service\config). 
+>  Copy the sample file dataspaces.private.json from C:\git\dotstatsuite-core-transfer\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\transfer-service\config). 
 
 2.  Saving the configuration setting as environment variables for the IIS site (transfer-service). `Recommended`
 
