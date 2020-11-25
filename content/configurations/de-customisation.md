@@ -7,6 +7,7 @@ weight: 73
 
 #### Table of Content
 - [intro](#intro)
+- [Warning](#warning)
 - [general theme settings](#general-theme-settings)
 - [theme settings: how to override mixins](#theme-settings-how-to-override-mixins)
 - [theme settings: palette](#theme-settings-palette)
@@ -28,6 +29,12 @@ weight: 73
 This page is a guide on how to customise and interact with some of the .Stat Data Explorer look and feel and layout features.  
 
 These customisations can be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.<br>
+
+---
+
+### Warning
+When editing the configuration .json file(s) of the .Stat Suite applications, the **default encoding** on your server/system could potentially be **different than UTF-8**, e.g. **UTF-8-BOM**.  
+`BOM` being an issue to handle in web client rendering, whenever editing your config. files, make sure that this is always managed in the right **UTF-8 encoding format**, in order to avoid introducing extra invisible BOM characters to your file.
 
 ---
 
