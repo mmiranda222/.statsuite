@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [November 24, 2020](#november-24-2020)
 - [October 26, 2020](#october-26-2020)
 - [October 7, 2020](#october-7-2020)
 - [September 2, 2020](#september-2-2020)
@@ -50,6 +51,18 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### November 24, 2020
+**[Patch Release .Stat Suite .NET 4.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/31)**
+> This **patch release** includes a new version of the **core-sdmxri-nsi-ws** service. This version resolves a change of default properties in the configuration of the nsiws. This applies ONLY to our custom nsiws plugin (on top of the nsiws.net v7.13.2), and this should be obsolete/by-design in the next versions of both nsiws.net (v8.x) and generic nsi plugin.  
+Find more about the nsiws.net configurations [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md).
+
+patches:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#72](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/72) Set the nsiws configurations `createStubCategory` to "false" and `StructureUsage` to "dataflow".
+- [dotstatsuite-core-sdmxri-nsi-ws#73](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/73) `structureUsage.structureType`nsiws config. is not applied.
+
+---
 
 ### October 26, 2020
 **[Release .Stat Suite JS 6.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/30)**
