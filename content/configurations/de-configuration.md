@@ -7,6 +7,7 @@ weight: 72
 
 #### Table of Content
 - [Intro](#intro)
+- [Warning](#warning)
 - [Homepage facets](#homepage-facets)
 - [Selectable second-level homepage facet values](#selectable-second-level-homepage-facet-values)
 - [Limit for indexing dimensions per dataflow](#limit-for-indexing-dimensions-per-dataflow)
@@ -35,6 +36,12 @@ This page is a guide on how to setup, configure and interact with most of the .S
 
 These configurations are tasks to be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.  
 Some of the desired configurations or settings (e.g. how to add a new sdmx public endpoint) are not available from here because they must happen in a previous step or they are refering to server-side decisions, and you should therefore refer to the installation guides.
+
+---
+
+### Warning
+When editing the configuration .json file(s) of the .Stat Suite applications, the **default encoding** on your server/system could potentially be **different than UTF-8**, e.g. **UTF-8-BOM**.  
+`BOM` being an issue to handle in web client rendering, whenever editing your config. files, make sure that this is always managed in the right **UTF-8 encoding format**, in order to avoid introducing extra invisible BOM characters to your file.
 
 ---
 
