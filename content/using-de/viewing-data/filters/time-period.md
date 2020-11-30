@@ -34,6 +34,11 @@ If there is no Frequency dimension returned for a data view, then the **Frequenc
 The configuration "vis.period.boundaries": [1970, 2020] is used to return the list of available years in the **Time Period** selector. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#time-period-boundaries)  
 The configuration "vis.period.default": [2008, 2018] is used to display the default range selected for a given data view. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#default-time-period)
 
+**Exceptions**  
+If the content constraints are not defined (see [data availability](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)), then the DE relies on default boundaries and default period (defined in the settings of the instance).  
+If the content constraints are defined but do not have boundaries period, then the DE relies on the default boundaries and default period.  
+If the content constraints are defined and have boundaries, then the DE uses the default periods in order to fit to the boundaries of the content constraints.
+
 **Specificities**  
 In the "Used filters" area, **Frequency** cannot be removed, but only replaced. Thus there is no cross in front of the selected **Frequency**.  
 For **Time Period** ranges, each start / end can be removed, and thus no filter will be applied for each.  
