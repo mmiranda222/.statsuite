@@ -60,7 +60,7 @@ nsiws compatibility: tested and released in compatibility with the Eurostat **ns
 
 significant (non-major) and minor changes:
 
-- [dotstatsuite-data-explorer#320](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/320) Make **DE authentication optional**. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#optional-authentication-of-de)
+- [dotstatsuite-data-explorer#320](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/320) Make **DE authentication optional**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#optional-authentication-of-de))
 - [dotstatsuite-share#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/4) **Cleanup** feature for outdated **share db objects**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#cleanup-feature-for-outdated-shared-objects))
 - [dotstatsuite-sdmx-faceted-search#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/38) **Hub feature** allowing to index externally defined dataflows. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows))
 - [dotstatsuite-data-explorer#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/96) **Hub feature** allowing to visualize and download externally defined dataflows. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/#externally-defined-dataflows))
