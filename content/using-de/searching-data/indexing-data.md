@@ -9,6 +9,7 @@ weight: 1600
 #### Table of Content
 - [What is indexed](#what-is-indexed)
   - [Conditions and exceptions](#conditions-and-exceptions)
+  - [Indexing externally defined dataflows](#indexing-externally-defined-dataflows)
 - [When and how to index](#when-and-how-to-index)
   - [API format](#api-format)
   - [GET search sfs config.](#get-search-sfs-config)
@@ -53,6 +54,23 @@ If the same dataflow (same ID, whatever Agency or Version) is retrieved from dif
   - a *non-empty* Actual Content Constraint
   - no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
 * A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
+
+#### Indexing externally defined dataflows
+> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
+
+It is possible to index externally defined dataflows for browse and search capabilities in .Stat DE, in the case when the dataflow is stored only as stubs (without content, e.g. without the link to its DSD), meaning that the full definition and content of the corresponding dataflow is stored externally.  
+Therefore, the locally stored dataflow stub includes the references (`URL link`) to the original external full dataflow definition, with the following artefact properties: `isExternalReference=true`, and link `{external structure link}`.  
+Note also that the locally stored dataflow stub must be categorised in the CategoryScheme that will be used by the index process.
+
+Example of a dataflow stub definition with external reference:  
+```
+<structure:Dataflows>
+  <structure:Dataflow id="DF_SDG_ALL_SDG_A871_SEX_AGE_RT" agencyID="ILO" version="1.0" isExternalReference="true" isFinal="true" structureURL="https://ilo.org/sdmx-test/rest/dataflow/ILO/DF_SDG_ALL_SDG_A871_SEX_AGE_RT/1.0">
+    <common:Name xml:lang="en">SDG indicator 8.7.1 - Proportion of children engaged in economic activity</common:Name>
+    <common:Description xml:lang="en">Estimates on economic activity among children aged 5-17...</common:Description>
+  </structure:Dataflow>
+</structure:Dataflows>
+```
 
 ---
 
