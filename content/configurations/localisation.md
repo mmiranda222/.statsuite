@@ -35,7 +35,8 @@ The following describes how locales are set and maintained in these .Stat Suite 
 
 1) Each locale has one **default**, application-independent and tenantless language version of all static UI element labels/texts. 
    They are stored in the corresponding `<locale>.json` file in the `./data/[dev|prod]>/i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
-   The file contains the complete list of keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Browse by"`).
+   The file contains the complete list of keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Browse by"`).  
+   One single localised file contains all translations for **both .Stat DE and .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order. 
 
 2) If an application tenant needs an **alternative** localised value that is different from the default, then this value can be entered in the corresponding `<locale>.json` file in the `./data/[dev|prod]/configs/<tenant>/<app>/i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
    The file contains only those keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Select a"`) that should be used to overwrite the above mentioned default values.

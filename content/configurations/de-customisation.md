@@ -12,7 +12,7 @@ weight: 73
 - [theme settings: how to override mixins](#theme-settings-how-to-override-mixins)
 - [theme settings: palette](#theme-settings-palette)
 - [theme settings: first loader](#theme-settings-first-loader)
-- [site title and logo](#site-title-and-logo)
+- [site logo](#site-logo)
 - [homepage background image](#homepage-background-image)
 - [common site logos](#common-site-logos)
 - [add hyperlink on header logo](#add-hyperlink-on-header-logo)
@@ -240,14 +240,15 @@ To override the first loader (spinner) color, when the application is not yet lo
 
 ---
 
-### Site title and logo
+### Site logo
+> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name of the application (*`"title": "OECD Data Explorer"`*) is moved to its natural behavior in the [localisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
+
 Define your website name and logo.<br>
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "app": {
-          "title": "OECD Data Explorer",
           "favicon": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/favicon.ico"
     }
 ```
@@ -358,14 +359,16 @@ The source can be a binary image or a link.<br>
 ---
 
 ### Table and chart footer terms and conditions
-Define the name and hyperlink in the footer of the table and chart views behind the "c" copyright icon.<br>
+
+> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name displayed on top of the hyperlink (*`"label": "Terms & Conditions"`*) is moved to its natural behavior in the [localisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
+
+Define the hyperlink in the footer of the table and chart views behind the "c" copyright icon.<br>
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "viewer": {
         "terms": {
-            "label": "Terms & Conditions",
             "link": "http://www.oecd.org/termsandconditions/",
     }
     }
