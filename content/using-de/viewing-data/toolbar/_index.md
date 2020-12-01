@@ -11,6 +11,7 @@ weight: 3500
 - [Labels](#labels)
 - [Customise](#customise)
 - [Share](#share)
+  - [Cleanup feature for outdated shared objects](#cleanup-feature-for-outdated-shared-objects)
 - [Download](#download)
   - [Table in Excel](#table-in-excel)
   - [Filter data in tabular text (CSV)](#filter-data-in-tabular-text-csv)
@@ -80,6 +81,16 @@ Once the user clicks on "Validate your email address", the shared content is *ac
 The shared view contains the data table or chart view, including the header (title and sub-title) and footer (copyright link and source url id):
 
 ![Share](/dotstatsuite-documentation/images/de-share4.png)
+
+#### Cleanup feature for outdated shared objects
+> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
+
+In order to keep infrastructure needs minimal and performance high, an *admin* API feature of the Share service allows to manually delete all outdated shared views.
+
+e.g.  
+`GET http://share-<tenant>.<organisation>.org/admin/cleanup?api-key=<secret>`
+
+The deletion of these shared charts/tables views (uniquely identified by their unique URLs) will concern all shared views generated before a date this is defined and set up in the configuration of the share servcie during its deployment (see full documentation in the [readme.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/tree/develop#share-server) file of the share service).
 
 ---
 
