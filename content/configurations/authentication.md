@@ -7,25 +7,34 @@ weight: 77
 ---
 
 #### Table of Content
+- [Introduction](introduction)
+- [Optional authentication of DE](#optional-authentication-of-de)
 - [OpenID connect Middleware for NSIWS](#openid-connect-middleware-for-nsiws)
   - [Intro](#intro)
   - [Setup](#setup)
   - [Configuration](#configuration)
   - [Configuration settings](#configuration-settings)
 
+---
+
+### Introduction
 > Since the [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020), The Data Explorer now works in both anonymous and authenticated modes.  
 
-.Stat Suite is based on openid-connect authentication. Any openid-connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab.  
+.Stat Suite is based on openid-connect authentication. Any openid-connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab. A very useful **tutorial on how to get a Keycloak server ready to work with the .Stat Suite** is available [**here**](https://github.com/Kyelin25/dotstat-tutorials/blob/master/KeycloakConfiguration/KeycloakConfiguration.md) (Thanks [Ben](https://github.com/Kyelin25)!).
 
-A very useful **tutorial on how to get a Keycloak server ready to work with the .Stat Suite** is available [**here**](https://github.com/Kyelin25/dotstat-tutorials/blob/master/KeycloakConfiguration/KeycloakConfiguration.md) (Thanks [Ben](https://github.com/Kyelin25)!).
+The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing). The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token). 
 
-The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing). 
+The original SDMX web service (NSI) openid-connect auth configuration manual can be found [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/openid-middleware.md). For convenience, the content has been replicated in this section.
 
-The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token). 
+---
 
-The original SDMX web service (NSI) openid-connect auth configuration manual can be found [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/openid-middleware.md). 
+### Optional authentication of DE
+> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
 
-For convenience, the content has been replicated here:
+The Data Explorer can be configured to not use an authentication provider (in our case Keycloak) and thus not support the authentication mode and feature for users' log in.   
+If provided, the (`env.` variable) **`AUTH_PROVIDER`** in your deployment process can be set to 'keycloak' and returns the expected log in mechanism and feature.  
+If **`AUTH_PROVIDER`** is not provided, DE will be considered as 'public', and no request from the DE is made to any authentication provider. In addition, the 'Log in' feature in the DE header is not displayed.  
+By default, `AUTH_PROVIDER` is not provided.
 
 ---
 
