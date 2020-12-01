@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [November 30, 2020](#november-30-2020)
 - [November 24, 2020](#november-24-2020)
 - [October 26, 2020](#october-26-2020)
 - [October 7, 2020](#october-7-2020)
@@ -51,6 +52,58 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### November 30, 2020
+**[Release .Stat Suite JS 6.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/32)**
+> This release includes a new version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, **sdmx-faceted-search**, and **share** (patch version 6.1.1) services.  
+nsiws compatibility: tested and released in compatibility with the Eurostat **nsiws.net v7.13.2**.
+
+significant (non-major) and minor changes:
+
+- [dotstatsuite-data-explorer#320](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/320) Make **DE authentication optional**. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#optional-authentication-of-de)
+- [dotstatsuite-share#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/4) **Cleanup** feature for outdated **share db objects**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#cleanup-feature-for-outdated-shared-objects))
+- [dotstatsuite-sdmx-faceted-search#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/38) **Hub feature** allowing to index externally defined dataflows. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows))
+- [dotstatsuite-data-explorer#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/96) **Hub feature** allowing to visualize and download externally defined dataflows. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/#externally-defined-dataflows))
+- [dotstatsuite-data-explorer#433](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/433) Shortening the DE browser URL. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/))
+- [dotstatsuite-data-lifecycle-manager#170](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/170) *(Refactoring)* Migrate i18n localised elements of the DLM to the tenantless level (same as DE). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#technical-architecture))
+- [dotstatsuite-sdmx-faceted-search#84](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/84) SDMX Faceted Search supports **API Keys**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/sfs-api-keys/))
+- [dotstatsuite-data-explorer#400](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/400) Enhance the default chart's width field and ease chart size/axis editing options.
+- [dotstatsuite-data-explorer#434](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/434) Quarterly end time periods should always be included in pre-selections.
+- [dotstatsuite-data-explorer#319](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/319) Add `BOM` to support the Excel display of accentuated characters in the CSV exports.
+- [dotstatsuite-data-explorer#432](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/432) Remaining chart enhancements based on the original [business rules and Charte Graphique](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/chart-generation-business-rules/).
+- [dotstatsuite-data-explorer#314](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/314) Enhance DE header options for accessibility, localisation and login.
+- [dotstatsuite-data-viewer#9](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/9) Chart responsiveness for small chart sizes where chart title should be replaced by the (i) icon.
+- [dotstatsuite-data-lifecycle-manager#166](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/166) DLM filters reordering and increase of width.
+- [dotstatsuite-data-explorer#404](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/404) Style enhancements of the data table's row height when including footnotes/flags.
+- [dotstatsuite-visions#20](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/20) Correct the default styles for dataflow title and subtitle.
+- [dotstatsuite-data-explorer#446](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/446) *(Refactoring)* Remove unused translations.
+- [dotstatsuite-sdmx-faceted-search#87](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/87) *(Support)* Remove default ILO's excludedCategorySchemeFacets.
+- [dotstatsuite-data-explorer#419](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/419) *(Support)* Change to footer text 'Built by SIS-CC using .Stat Suite'.
+- [dotstatsuite-config#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/19) *(Support)* Complement topic icons and facet configs.
+
+patches:
+
+- [dotstatsuite-data-explorer#439](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/439) GoogleAnalytics rejects the @ character from the dataflow names or ID. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/#google-analytics-default-events))
+- [dotstatsuite-data-explorer#241](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/241) Data Explorer does not open in Microsoft Edge.
+- [dotstatsuite-data-explorer#393](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/393) WCAG AA contrast level is incorrect at column header placeholder for footnotes.
+- [dotstatsuite-data-explorer#408](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/408) When downloading csv using the 'Unfiltered data in tabular format' option, the `Labels=Identifier` selection is not taken into account.
+- [dotstatsuite-data-lifecycle-manager#159](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/159) Data transfer is indicated in DLM as 'successful' when it is not necessarily the case.
+- [dotstatsuite-data-explorer#418](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/418) Email share content misses the DE logo.
+- [dotstatsuite-data-explorer#437](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/437) 'Pinned' filters are not always correctly ordered.
+- [dotstatsuite-data-explorer#441](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/441) DE full csv download fails (generating wrong content).
+- [dotstatsuite-data-explorer#443](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/443) Broken frequency pre-selection in default views when the frequency is not Annual.
+- [dotstatsuite-data-explorer#445](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/445) Encodage Search issue returns the wrong highlighted information from a free text search. 
+- [dotstatsuite-data-explorer#447](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/447) The URL of a data visualisation page is wrongly generated when triggered as new tab from the search result.
+- [dotstatsuite-data-explorer#450](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/450) Period invalid dates and empty dates in some use cases with content constraints.
+- [dotstatsuite-share#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/21) 'Share latest data' view is generated with broken names (header and footer).
+- [dotstatsuite-data-lifecycle-manager#174](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/174) Data availability option is wrongly set to false when opening a data preview from the DLM.
+- [dotstatsuite-data-explorer#455](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/455) Filter 'data availability' occasionally appears in DE.
+
+deprecations:
+
+- [dotstatsuite-config#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/17) Make remaining UI labels translatable by deprecating 2 tenants' configurations. (Updated documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-logo) and [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#table-and-chart-footer-terms-and-conditions))
+
+---
 
 ### November 24, 2020
 **[Patch Release .Stat Suite .NET 4.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/31)**
