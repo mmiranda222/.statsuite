@@ -1,5 +1,5 @@
 ---
-title: "How the Faceted Search Service can support API keys"
+title: "How the search service can support API keys"
 subtitle: 
 comments: false
 weight: 80
