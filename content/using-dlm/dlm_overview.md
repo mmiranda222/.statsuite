@@ -15,7 +15,7 @@ weight: 230
   - [Spaces and external sources](#spaces-and-external-sources)
   - [Types](#types)
   - [Category](#category)
-  - [Owner and My artefacts](#owner-and-my-artefacts)
+  - [Owner](#owner)
   - [Version](#version)
 - [List of artefacts](#list-of-artefacts)
   - [Display Options](#display-options)
@@ -90,7 +90,7 @@ For each selected Category Scheme or Category, only those artefacts are listed t
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-4.png)
 
-#### Owner and My artefacts
+#### Owner
 The multi-selection filter "**Filter by owner**" displays all *SDMX* Agency Schemes contained in the currently selected data space(s) in hierarchical trees, meaning that the Agencies listed in the **_top SDMX_** Agency Scheme are listed first and once the user clicks on one of these Agencies, it additionally displays the Agencies contained in the related **_sub_** Agency Scheme. Users can continue in this way to navigate through the full hierarchy of sub Agencies.  
 For each selected Agency, only those artefacts are listed that are maintained by any of the selected Agencies (Means: The Agency ID is used as the Maintenance Agency in the unique identification of the maintainable artefact).  
 
@@ -98,14 +98,14 @@ Note that even though each Agency Scheme is a flat list of agencies, the SDMX st
 
 This filter allows for a spotlight search if there is a sufficient number of agencies listed.  
 
-The **"My artefacts"** option is currently unused and will be removed.  
-
 Note:  
 - Agencies are uniqually identified by their concatenated "agencyID" which includes all perent agencies except the top SDMX agency, e.g. "OECD.ECO". These concatenanted agencyIDs are used when defining an agency as a maintenance agency of an artefact.
 - Agencies are not versioned and always have a version "1.0"
 - Agencies are always non-final (with "isFinal=false")
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-5.png)
+
+The filter option **My artefact** was deprecated and has been removed as this was unused *([November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020))*.
 
 #### Version
 The filter "**Filter by version**" allows users selecting:  
