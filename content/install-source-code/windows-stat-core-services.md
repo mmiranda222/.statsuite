@@ -54,6 +54,9 @@ Make sure that the windows machine which will be used in this installation proce
 
 > **`WARNING!`** - **`This installation example will fail if any of the pre-requisites is missing.`**  
 
+
+> **As a general rule, we suggest to limit the amount of memory allocated to the MSSQL server**; A maximum of 75% of the total memory should be allocated to MSSQL.
+> - For example, based on the [recommended minimum requirements](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/infrastructure-requirements/) of at total of 16GB, MSSQL server should use a maximum of 10GB. [See more how to set this limit in the official documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/server-memory-server-configuration-options?view=sql-server-ver15)
 ---
 
 ### Topology
