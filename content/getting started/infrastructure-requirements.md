@@ -31,7 +31,8 @@ Although the requirements could vary depending on the size of your data and the 
 - **Disk:** 250 GB         
 
 > As a general rule, we suggest to limit the amount of memory allocated to the MSSQL server; A maximum of 75% of the total memory should be allocated to MSSQL.
-> Based on the recommended minimum requirements, MSSQL server should use a maximum of 10GB. 
+> Based on the recommended minimum requirements, MSSQL server should use a maximum of 10GB.
+
 ---
 
 ### .Stat Data Explorer
@@ -46,9 +47,10 @@ Although the requirements could vary depending on the size of your data and the 
 - **redis** downloaded and running on port 6379 (default)
 
 *notes:*  
-
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
 - ports can be freely picked, if different than defaults they should be specified when launching services
+
+> Generally speaking, we would recommend 2Go allocated Solr to have safety nets, and 1Go for redis should be enough.
 
 ---
 

@@ -90,7 +90,7 @@ In order to keep infrastructure needs minimal and performance high, an *admin* A
 e.g.  
 `GET http://share-<tenant>.<organisation>.org/admin/cleanup?api-key=<secret>`
 
-The deletion of these shared charts/tables views (uniquely identified by their unique URLs) will concern all shared views generated before a date this is defined and set up in the configuration of the share servcie during its deployment (see full documentation in the [readme.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/tree/master#share-server) file of the share service).
+The deletion of these shared charts/tables views (uniquely identified by their unique URLs) will concern all shared views generated before a date this is defined and set up in the configuration of the share servcie during its deployment: `env.` viarable: `OUT_OF_DATE` ((see full documentation in the [readme.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/tree/master#share-server) file of the share service)).
 
 ---
 

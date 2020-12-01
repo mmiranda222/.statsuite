@@ -29,11 +29,15 @@ The original SDMX web service (NSI) openid-connect auth configuration manual can
 ---
 
 ### Optional authentication of DE
-> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
+> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020).  
+**WARNING:** this release will not break you DE instance but it will make it public, if not the case before, thus action is required (add `AUTH_PROVIDER` to keycloak while restarting) to avoid this.
 
-The Data Explorer can be configured to not use an authentication provider (in our case Keycloak) and thus not support the authentication mode and feature for users' log in.   
-If provided, the (`env.` variable) **`AUTH_PROVIDER`** in your deployment process can be set to 'keycloak' and returns the expected log in mechanism and feature.  
-If **`AUTH_PROVIDER`** is not provided, DE will be considered as 'public', and no request from the DE is made to any authentication provider. In addition, the 'Log in' feature in the DE header is not displayed.  
+The Data Explorer is public by default, but it can be configured to support authentication. Authentication requires a provider and an url (of the authentication server).  
+Today, the only tested and included provider to .Stat Suite is [Keycloak](https://www.keycloak.org/), but others can be added (OpenId compliant ones, and others can be tested).  
+Using authentication is critical and is thus configured at server level through 2 env. variables: `AUTH_PROVIDER` and `AUTH_SERVER_URL`. The authentication provider configuration per tenant is in `tenants.json` files in `config/data` where each provider could have a dedicated configuration per tenant (ie realm for Keycloak).  
+ 
+When provided, the `env.` variable **`AUTH_PROVIDER`** in your deployment process can be set to 'keycloak' and returns the expected log in mechanism and feature.  
+If **`AUTH_PROVIDER`** is not provided, DE is considered as 'public', and no request from the DE is made to any authentication provider. In addition, the 'Log in' feature in the DE header is not displayed.  
 By default, `AUTH_PROVIDER` is not provided.
 
 ---
