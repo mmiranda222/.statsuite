@@ -45,6 +45,11 @@ By default, .Stat Data Explorer sends information to [Google Analytics](https://
 * a **session** is a group of user interactions with your website that take place within a given period. A single session can thus contain several page views and events.
 * a **user** is a unique identified user who can initiate a single or several sessions within a given period. A user is counted once he has launched at least one session during a given time range. By extend, users can then be monitored as new users or returning users.  
 
+**Exception:**  
+*(since [Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020))* Due to the fact that Google Analytics wants to prevent breaking the privacy users through their Privacy Policies and Personally Identifiable Information (PII) best practices,  
+then whenever the **`@`** character is found in the data source (Dataflow name, dataflow ID, AgencyID, or Source ID), then this character is replaced by **`[at]`** before it is sent to GoogleAnalytics.  
+E.g. a dataflow with the ID **SDD@IDD** will be retrieved as **SDD[at]IDD** in Google Analytics.
+
 ---
 
 ### Events API
