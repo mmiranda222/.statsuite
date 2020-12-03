@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [December 2, 2020](december-2-2020)
 - [November 30, 2020](#november-30-2020)
 - [November 24, 2020](#november-24-2020)
 - [October 26, 2020](#october-26-2020)
@@ -52,6 +53,16 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### December 2, 2020
+**[Patch Release .Stat Suite JS 6.1.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/32)**
+> This **patch release** includes a new minor version of the **data-explorer** service.
+
+patches:
+
+- [dotstatsuite-data-explorer#457](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/457) Fix choropleth map translations.
+
+---
 
 ### November 30, 2020
 **[Release .Stat Suite JS 6.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/32)**
