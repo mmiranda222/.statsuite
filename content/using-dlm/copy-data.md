@@ -32,7 +32,11 @@ When several dataflows are selected from the list as inputs for transfer, then t
 
 ### Visuals and messages
 Once the data transfer is launched, the user is made aware by the highlighted transfer icon ![dlm transfer icon](/dotstatsuite-documentation/images/dlm-copy-data-structures-icon.png):
-* green for a successful transfer, 
+* green for a successful transfer,   
 * red for an unsuccessful transfer.
 
-![successful copy data ](/dotstatsuite-documentation/images/dlm-copy-data-5.png)
+Hovering the highlighted icon will display the acknowledgment message about the data transfer being processed, along with its request ID.
+
+![successful copy data ](/dotstatsuite-documentation/images/dlm-copy-data-5.png)  
+  
+An email is sent to the end-user once the data request is completed. See [Email notifications for data management]((https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/message-throug-mail.md) for more details.
