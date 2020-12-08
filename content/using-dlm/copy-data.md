@@ -39,4 +39,4 @@ Hovering the highlighted icon will display the acknowledgment message about the 
 
 ![successful copy data ](/dotstatsuite-documentation/images/dlm-copy-data-5.png)  
   
-An email is sent to the end-user once the data request is completed. See [Email notifications for data management]((https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/message-throug-mail.md) for more details.
+An email is sent to the end-user once the data request is completed. See [Email notifications for data management](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/message-through-mail/) for more details.

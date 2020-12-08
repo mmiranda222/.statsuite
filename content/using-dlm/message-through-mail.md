@@ -18,19 +18,19 @@ weight: 420
 
 ### Process description
 
-Each time the user performs an action over data (observation and attribute values) in .Stat DLM, an acknowledgment message states that the request is being performed and registered with an ID of the request. Once the data request and related action is being complete, a meaningful message with appropriate details is sent to the user in an email to the user's email address that is used along with its credentials. The content of the email is described below respecting the structure of the email content, its subject, and a summary of the action followed by the log details. 
+Each time the user performs an action over data (observation and attribute values) in .Stat DLM, an acknowledgment message states that the request is being performed and registered with an ID of the request. Once the data request and associated action is complete, a meaningful message with appropriate details is sent in an email to the user's email address that is also used for its credentials. The content of the email is described below respecting the structure of the email content, its subject, and a summary of the action followed by the log details. 
 
 ---
 
 ### Email subject
-The subject of the email will display the status of the process `failed` or `successfully completed` followed by the full ID of the related SDMX dataflow artefact (agencyID:artefactID(version)) impacted by the action, its related datasource and the request ID.  
+The subject of the email will display the status of the request: **`successfully completed`** or **`failed`**, followed by the full ID of the related SDMX dataflow artefact (`agencyID:artefactID(version)`) impacted by the request, its related datasource and the request ID.  
 
 ![message-through-mail-subject](/dotstatsuite-documentation/images/dlm-mail-subject.png)  
 
 ---
 
 ### Email content
-The email content is split into two parts: a summary of the process status, and the log details.
+The email content is split into two parts: a summary of the request status, and the log details.
 
 #### Summary
 The summary of the message shows information about the action:
@@ -49,8 +49,8 @@ The summary of the message shows information about the action:
 ![message-through-mail-summary](/dotstatsuite-documentation/images/dlm-mail-summary.png)
 
 #### Log details
-The log details part will display each timestamped step of the processed request, with the status of each, and a explanation with some guidance when a step failed.  
-Here below is a list of examples that can be encountered during a data request:
+The log details part will display each timestamped step of the processed request, with the status of each, and a explanation with some guidance when a step has failed.  
+Below is a list of examples that can be encountered during a data request:
 
 * **status of the ID registration**:  
 12/03/2020 15:47:05 `   NOTICE   ` The request with ID 154 was successfully registered.  
