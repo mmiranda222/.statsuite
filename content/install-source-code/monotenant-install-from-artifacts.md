@@ -103,7 +103,13 @@ weight: 45
 
 - a: [see configs samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/master/data/prod/configs)
 - b: [see assets samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/master/data/prod/assets)
-- in settings, assets should contain the whole path, ie http://localhost:5007/assets/... because the proxy is not used in a mono-tenant approach
+- in settings, assets should have the right path, if you change the name folder by default make sure to change path assets url
+
+```json
+"viewer": {
+  "logo": "/assets/default/data-explorer/images/sis-cc-logo.png",
+}
+```
 
 3 . start the service:
 
@@ -198,10 +204,13 @@ weight: 45
 │   │   ├── node_modules                       # from setup artifact
 │   │   ├── dist                               # from build artifact (server files)
 │   │   ├── build                              # from build artifact (client bundle)
+│   │   │   ├── assets                         # assets from config
 │   │   ├── package.json
 ```
 
-3. start the service:
+3. Copy your assets from config and put them in build folder
+
+4. start the service:
 
   - (in git bash) run `SERVER_PORT=3009 CONFIG_URL=http://localhost:5007 AUTH_SERVER_URL=http://localhost:8080 npm run start:run`
   - check if everything is fine: http://localhost:3009 (proxy with a route mapped to data-explorer)
@@ -224,10 +233,13 @@ weight: 45
 │   │   ├── node_modules                       # from setup artifact
 │   │   ├── dist                               # from build artifact (server files)
 │   │   ├── build                              # from build artifact (client bundle)
+│   │   │   ├── assets                         # assets from config
 │   │   ├── package.json
 ```
 
-3. start the service:
+3. Copy your assets from config and put them in build folder
+
+4. start the service:
 
   - (in git bash) run `SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 npm run start:run`
 
@@ -249,9 +261,12 @@ weight: 45
 │   │   ├── node_modules                       # from setup artifact
 │   │   ├── dist                               # from build artifact (server files)
 │   │   ├── build                              # from build artifact (client bundle)
+│   │   │   ├── assets                         # assets from config
 │   │   ├── package.json
 ```
 
-3. start the service:
+3. Copy your assets from config and put them in build folder
+
+4. start the service:
 
   - (in git bash) run `SERVER_PORT=7000 CONFIG_URL=http://localhost:5007 AUTH_SERVER_URL=http://localhost:8080 npm run start:run`
