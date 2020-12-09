@@ -2,7 +2,7 @@
 title: "Email notifications for data management"
 subtitle: 
 comments: false
-weight: 420
+weight: 7000
 
 ---
 
@@ -14,11 +14,13 @@ weight: 420
   - [Log details](#log-details)
 - [Meaningful colors in email content](#meaningful-colors-in-email-content)
 
+This section describes the features of the .Stat Suite transfer API for the management of email notifications for data requests, when performing actions over data by whether using directly the API or the .Stat Data Lifecycle Manager (DLM).
+
 ---
 
 ### Process description
 
-Each time the user performs an action over data (observation and attribute values) in .Stat DLM, an acknowledgment message states that the request is being performed and registered with an ID of the request. Once the data request and associated action is complete, a meaningful message with appropriate details is sent in an email to the user's email address that is also used for its credentials. The content of the email is described below respecting the structure of the email content, its subject, and a summary of the action followed by the log details. 
+Each time the user performs an action over data (observation and attribute values) in .Stat DLM, or using the API, an acknowledgment message states that the request is being performed and registered with an ID of the request. Once the data request and associated action is complete, a meaningful message with appropriate details is sent in an email to the user's email address that is also used for its credentials. The content of the email is described below respecting the structure of the email content, its subject, and a summary of the action followed by the log details. 
 
 ---
 
