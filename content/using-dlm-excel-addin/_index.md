@@ -165,7 +165,8 @@ You can select a range of edited data and request for saving back only the curre
 
 ![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-15.png)
 
-The new data are then submitted and a pop-up notification message confirms the number of saved observation(s).
+The new data are then submitted and a pop-up notification message confirms the number of saved observation(s).  
+An email is sent to the end-user once this data request is completed. See [Email notifications for data management](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/message-through-mail/) for more details.
 
 ![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-16.png)
 

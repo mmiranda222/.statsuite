@@ -14,7 +14,7 @@ weight: 7000
   - [Log details](#log-details)
 - [Meaningful colors in email content](#meaningful-colors-in-email-content)
 
-This section describes the features of the .Stat Suite transfer API for the management of email notifications for data requests, when performing actions over data by whether using directly the API or the .Stat Data Lifecycle Manager (DLM).
+This section describes the features of the .Stat Suite transfer API for the management of email notifications for data requests, when performing actions over data by whether using directly the API, the .Stat Data Lifecycle Manager (DLM), or the DLM Excel-Addin.
 
 ---
 
