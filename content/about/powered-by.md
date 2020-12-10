@@ -12,7 +12,9 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ![Australian Bureau of Statistics (ABS)](/dotstatsuite-documentation/images/logo-abs.png)
 
-**Australian Bureau of Statistics (ABS)** [ABS Indicator API *(api.gov.au Beta)*](https://staging.api.gov.au/service/04c49a07-a637-44d0-8245-414d4e7fe595)
+**Australian Bureau of Statistics (ABS)**  
+[ABS Data API](https://api.gov.au/service/715cdfd0-4742-402e-8729-086a7fd42a51)  
+[ABS Indicator API](https://api.gov.au/service/f0b31e10-54c0-4f1e-bf0d-cc531eb2b2b8)
 
 ---
 
