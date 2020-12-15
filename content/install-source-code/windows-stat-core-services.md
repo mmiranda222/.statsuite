@@ -16,8 +16,9 @@ weight: 44
 - [4. Deploy the Transfer service](#4-deploy-the-transfer-service)
 - [5. Deploy the Design NSI web service in port 81](#5-deploy-the-design-nsi-web-service-in-port-81)
 - [6. Deploy the Disseminate NSI web service in port 80](#6-deploy-the-disseminate-nsi-web-service-in-port-80)
+- [7. Additional IIS configuration](#7-additional-iis-configuration)
 
-The following example, contains the list of steps required to deploy a **specific topology** of the dotstatsuite-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
+The following example contains the list of steps required to deploy a **specific topology** of the dotstatsuite-core components. The configuration of the components has been **predefined with default values** to ease the installation process. The installation process is based on **Git Bash commands** as a way to standardize and reduce the installation steps.
 
 ---
 
@@ -686,3 +687,25 @@ Open a web browser and open the url localhost:80
 **You should see a page with a banner of the European Commission**
 
 >  Note: By default all the logs will be stored at C:/ProgramData/Eurostat/logs/
+
+### 7. Additional IIS configuration
+#### 7.1 Changing maximum lenght of URL segments
+*Symptoms*:  
+A valid SDMX data query with many query filter values produces the following error, even though the length of the url is below 4096 characters:
+```
+400 Bad request
+HTTP Error 400. The request URL is invalid.
+```
+
+When the filter section of the query is shorter (than 260 characters) or removed, then the request produces regular response.
+
+*Solution*:  
+When using IIS, the maximum number of characters in a URL path segment (the area between the slashes in the URL) is controled by a *[HTTP.sys](https://docs.microsoft.com/en-us/troubleshoot/iis/httpsys-registry-windows)* configuration parameter called `UrlSegmentMaxLength`.  
+This can be changed in `HKLM\SYSTEM\CurrentControlSet\Services\HTTP\Parameters` with `DWORD` value `UrlSegmentMaxLength`.  
+The default value of this parameter (when this value is missing from registry) is 260, so by default this restriction is applied on IIS.
+
+**Increasing this parameter to a larger value** (e.g. to 2048) **resolves the issue reported.**  
+If value is set to zero, then the length is bounded by the maximum value of a ULONG, but having no limitation on this value is not recommended.
+Please note that other settings may still limit the entire url, e.g. maximum number of url segments or maximum url length.
+
+Please also note that after changing this value in registry, the **restart** of the Windows machine is **required**.
