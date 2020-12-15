@@ -694,7 +694,7 @@ Open a web browser and open the url localhost:80
 #### 7.1 Changing maximum lenght of URL segments
 *Symptoms*:  
 A valid SDMX data query with many query filter values produces the following error, even though the length of the url is below 4096 characters:
-```json
+```
 400 Bad request
 HTTP Error 400. The request URL is invalid.
 ```
