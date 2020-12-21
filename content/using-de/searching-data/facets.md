@@ -71,6 +71,7 @@ The free text search and the navigation through pre-defined facets are exclusive
 #### Facets on the search result page
 The facets shown in the search result page are fully dependent on the current search context.  
 Common facet dimensions can be automatically removed (hidden) from the search result page when specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).  
+Impactless facets, i.e. all of the facet's values have a number of the related search results equal to the number of currently already available search results, are also automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.  
 When browsing and filtering the search result content, Only one facet can be expanded at a time. This also includes the 'Used filters' panel who is behaving as a facet. When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.
 
 ![de facet result](/dotstatsuite-documentation/images/de-facet-3.png)
