@@ -34,24 +34,24 @@ AllClosedIssues:
                 - "t::support"
                 - "t::techn. design"
 
-WeeklyOpenedClosedTypes:
-    title: Weekly opened & closed Bugs
+MonthlyOpenedClosedTypes:
+    title: Monthly opened & closed Bugs
     charts:
-        - title: "Opened bugs per week"
+        - title: "Opened bugs per month"
           type: stacked-bar
           query:
             issuable_type: issue
             issuable_state: opened
             collection_labels:
                 - "t::bug"
-            group_by: week
+            group_by: month
             period_limit: 24
-        - title: "Closed bugs per week"
+        - title: "Closed bugs per month"
           type: stacked-bar
           query:
             issuable_type: issue
             issuable_state: closed
             collection_labels:
                 - "t::bug"
-            group_by: week
+            group_by: month
             period_limit: 24
