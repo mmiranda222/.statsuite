@@ -41,7 +41,6 @@ MonthlyOpenedClosedTypes:
           type: stacked-bar
           query:
             issuable_type: issue
-            issuable_state: opened
             collection_labels:
                 - "t::bug"
             group_by: month
