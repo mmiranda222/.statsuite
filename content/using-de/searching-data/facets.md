@@ -58,7 +58,7 @@ Dimension values of a dataflow are indexed only if there are data available for 
 
 ### How facets are used
 #### Homepage facets
-The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service.  
+The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service. By configuration (see [here]https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/##auto-expanded-homepage-facet)), one facet can be expanded by default at page launch.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-2.png)
 
