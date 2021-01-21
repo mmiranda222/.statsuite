@@ -344,7 +344,7 @@ To add an hyperlink/URL behind the logo of the common site header (top-left part
 
 ### Table and chart footer logo
 Define the logo of the organisation in the footer of the table and chart views. The source can be a binary image or a link.  
-Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021-js), the table and chart footer logo is **localised**. When .Stat DE is configured with several languages, then you can also have a table and chart footer logo different for each language *(e.g. "OECD" logo in English and "OCDE" logo in French)*.
+Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021), the table and chart footer logo is **localised**. When .Stat DE is configured with several languages, then you can also have a table and chart footer logo different for each language *(e.g. "OECD" logo in English and "OCDE" logo in French)*.
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
