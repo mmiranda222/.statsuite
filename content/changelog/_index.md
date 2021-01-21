@@ -58,8 +58,8 @@ ToC
 ### January 21, 2021
 **[Release .Stat Suite JS 7.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/33)**
 > This **major** release includes a new version of the **data-lifecycle-manager**, **data-explorer**, **data-viewer**, **sdmx-faceted-search**, and **share** services.  
-*Tip:* you can also upgrade your **config** and **proxy** services version, even though no changes were made resutling in modifications to the .Stat Suite product.  
-nsiws compatibility: tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+*Tip:* you can also upgrade your **config** and **proxy** services, even though no changes were made resutling in modifications to the .Stat Suite product.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
 
 major *(backward-incompatibility)* changes:
 - [dotstatsuite-data-explorer#472](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/472) DE **search result download is now optional** (New entry in Javascript settings `search.downloadableDataflowResults`). Since this option is not compatible with the indexation of externally defined/stored dataflows (see related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows)), thus **this feature is disabled by default**. When upgrading to this release, you must set this new configuration to `true` if you want to keep the download option on the search result page. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page))
