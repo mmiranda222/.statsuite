@@ -9,6 +9,7 @@ weight: 72
 - [Intro](#intro)
 - [Warning](#warning)
 - [Homepage facets](#homepage-facets)
+- [Auto-expanded homepage facet](#auto-expanded-homepage-facet)
 - [Selectable second-level homepage facet values](#selectable-second-level-homepage-facet-values)
 - [Limit for indexing dimensions per dataflow](#limit-for-indexing-dimensions-per-dataflow)
 - [Search results page pinned facets](#search-results-page-pinned-facets)
@@ -75,6 +76,25 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
     }
 ```
 
+---
+
+### Auto-expanded homepage facet
+> Released in [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021-js)
+
+Define one of the homepage facet to be opened/expanded by default, by using the property `expandedHomeFacets`.  
+In the property `expandedHomeFacets`, you must provide the localised values of the facet to be expanded at page launch.  
+If this property is missing or if the provided value does not match a facet localised name, then no facet is expanded at launch.
+
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+    "search": {  
+        "expandedHomeFacets": ["Topic", "Thème"]
+    }
+```
+
+![Homepage expanded facets](/dotstatsuite-documentation/images/faq-homepage-expanded.png)  
+  
 ---
 
 ### Selectable second-level homepage facet values
