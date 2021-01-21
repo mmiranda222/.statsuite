@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 21, 2021](january-21-2021)
 - [December 2, 2020](december-2-2020)
 - [November 30, 2020](#november-30-2020)
 - [November 24, 2020](#november-24-2020)
@@ -53,6 +54,62 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### January 21, 2021
+**[Release .Stat Suite JS 7.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/33)**
+> This **major** release includes a new version of the **data-lifecycle-manager**, **data-explorer**, **data-viewer**, **sdmx-faceted-search**, and **share** services.  
+*Tip:* you can also upgrade your **config** and **proxy** services version, even though no changes were made resutling in modifications to the .Stat Suite product.  
+nsiws compatibility: tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+major *(backward-incompatibility)* changes:
+- [dotstatsuite-data-explorer#472](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/472) DE **search result download is now optional** (New entry in Javascript settings `search.downloadableDataflowResults`). Since this option is not compatible with the indexation of externally defined/stored dataflows (see related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows)), thus **this feature is disabled by default**. When upgrading to this release, you must set this new configuration to `true` if you want to keep the download option on the search result page. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page))
+- [dotstatsuite-share#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/24) New dedicated *redis* **databases for share and sfs** services. Share and sfs are using a redis service to store objects (`REDIS_HOST`, `REDIS_PORT`). **Until now**, share and sfs were using the same database by default, which is an issue when sfs flushes its data. **From now on**, share and sfs will have their **dedicated databases (`REDIS_DB`)**:
+  *  share will use the existing database by default (0) to keep existing data
+  * sfs will use a new database by default (1) and a re-index will restore previous data  
+Notes:
+  * `REDIS_HOST`, `REDIS_PORT` and `REDIS_DB` are environment variables than can be overridden
+  * `REDIS_DB` is an integer (up to 15 without creating new databases in redis)
+  * by default means that **without changing anything**, restarting sfs and share will apply the update
+- [dotstatsuite-data-explorer#456](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/456) & [dotstatsuite-share#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/12) **Translations keys** have changed and been updated (here below with default English examples):
+  * 1 key was deleted `"vx.no.data.available": "There is no data available."` and replaced by 3 new keys: `"log.error.sdmx.404": "There is no data available."`, `"log.error.sdmx.40x": "You are not permitted to see this data. Please try again after logging in with another account."`, and `"log.error.sdmx.xxx": "Whoops, something went wrong on our side. We are working to solve this. Please try again later."`
+  * 2 keys were deleted `"de.app.viewer.owner": "SIS-CC"`, `"de.app.viewer.term.label": "Terms & Conditions"` and replaced by 3 new keys: `"de.viewer.copyright.label": "©"`, `"de.viewer.copyright.content.label": "SIS-CC {link}"`, and `"de.viewer.copyright.content.link.label": "Terms & Conditions"`
+  * 2 new keys were added for the data-viewer in order to better handle error notifications: `"data.not.found": "Oops, the view you are looking for doesn't exist. Make sure to use a correct and complete link."`, `"data.pending": "Oops, this view isn't accessible yet. Make sure to validate the related email address first."`
+
+significant & minor changes:
+
+- [dotstatsuite-data-explorer#456](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/456) Update of settings: table/chart **footer logo *(asset)* is localisable**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#table-and-chart-footer-logo))
+- [dotstatsuite-data-lifecycle-manager#180](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/180) DLM new feature for a **tree visualisation of related artefacts**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/list-related-data-structures/))
+- [dotstatsuite-data-lifecycle-manager#163](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/163) Display a proper error message when a user does not have the rights to upload data to a dataflow.
+- [dotstatsuite-data-explorer#454](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/454) Define, by configuration, one **homepage facet to be expanded by default**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#auto-expanded-homepage-facet))
+- [dotstatsuite-data-explorer#131](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/131) DE **filters with advanced selection features on scopelists** (visualisation page only). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#multi-selection-filters))
+- [dotstatsuite-data-explorer#462](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/462) DE **filters with keyboard selection options** on scopelists (visualisation page only). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#keyboard-selection-options))
+- [dotstatsuite-data-explorer#463](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/463) Bulk selections (level 1, level 2, etc.) shown in the 'Used filters' area.
+- [dotstatsuite-data-explorer#285](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/285) Implement the new design of the scopelist component.
+- [dotstatsuite-data-explorer#76](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/76) Ease usage and understanding of search filters through hiding impact-less filter options. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facets-on-the-search-result-page))
+- [dotstatsuite-data-explorer#458](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/458) The 'used filters' component shows path(s) in a tooltip.
+- [dotstatsuite-data-explorer#256](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/256) Display better error messages on DE visualisation page when the nsi-ws requests fail. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/error-messages/))
+- [dotstatsuite-share#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/12) Share service to return clear error messages.
+- [dotstatsuite-data-explorer#453](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/453) Enhance DE labels (including slogan).
+- [dotstatsuite-core-data-access#60](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/60) *(DevOps)* Limit the amount of RAM used by the MSSQL. (Updated documentation on Infrastructure recommendations [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/infrastructure-requirements/#stat-core-data-store))
+- [dotstatsuite-config#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/21) *(Support)* Repair/Improve API queries tab on the DE, by moving 'Developer API' to the main menu level & displaying (again) the API documentation link.
+- [dotstatsuite-data-explorer#456](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/456) *(Refactoring)* Migrate table/chart footer to Visions & apply UI doc/Charte Graphique styles.
+- [dotstatsuite-d3-charts#3](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/3) *(Refactoring)* Errors in map rendering.
+- [dotstatsuite-data-lifecycle-manager#175](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/175) *(Refactoring)* Breaking change in nsiws.net v8.1.1 in ErrorMessage format.
+
+patches:
+
+- [dotstatsuite-data-explorer#476](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/476) GoogleAnalytics fails to return PNG download & shared objects' name.
+- [dotstatsuite-data-explorer#472](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/472) Gix GoogleAnalytics troubleshoot and misc.
+- [dotstatsuite-data-explorer#468](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/468) Decimals in table views are not applied.
+- [dotstatsuite-data-explorer#464](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/464) Default `TimePeriod` and `DEFAULT` annotations for `LastNObs` are not applied.
+- [dotstatsuite-share#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/24) Shared objects become invalid after a release update.
+- [dotstatsuite-data-explorer#471](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/471) Constraints from the search result make the visualisation page empty.
+- [dotstatsuite-data-lifecycle-manager#181](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/181) Categories are not always applied on DLM artefact request.
+- [dotstatsuite-data-lifecycle-manager#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/164) Translated French labels are not (always) displayed in DLM and in DE when switching locale to French.
+- [dotstatsuite-data-explorer#477](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/477) fix `JS` rendering error.
+- [dotstatsuite-visions#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/23) Tooltip in the data-header freezes the web-browser for shared views.
+
+---
 
 ### December 2, 2020
 **[Patch Release .Stat Suite JS 6.1.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/32)**
