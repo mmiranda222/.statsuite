@@ -90,7 +90,7 @@ The facet header contains the number of facet values available, and the number o
 In case of a hierarchy in the dimension items, the facet displays the root parents’ list at first. A blue arrow next to an item and right-aligned indicates when this item is a parent of sub-item(s).  
 If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.
 
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootparents-1.png) [Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootchildren-1.png)  
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootparents-1.png) ![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootchildren-1.png)  
 
 #### Data availability
 
