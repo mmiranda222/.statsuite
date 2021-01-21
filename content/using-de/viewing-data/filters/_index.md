@@ -9,6 +9,7 @@ weight: 2100
 #### Table of Content
 - [Filter area](#filter-area)
 - [Multi selection filters](#multi-selection-filters)
+  - [Keyboard selection options](#keyboard-selection-options)
 - [Frequency & time period filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/)
 - [Data availability](#data-availability)
 - [Hierarchical content](#hierarchical-content)
@@ -47,6 +48,30 @@ All filters are standardised multi-selection filters, except the ['Frequency & T
 
 ![Multi selection filters](/dotstatsuite-documentation/images/de-filters1.png)
 
+When a filter contains 8 items or more, it triggers a **bulk selection** option displayed on the right of the spotlight, allowing to select all the items of the current list at once, or any level of the list if it is hierarchical.  
+If the filter list is **hierarchical**, then the bulk selection menu becomes contextual and displays options to select any "entire hierarchy level" according to the number of levels in the hierarchy (e.g. entire hierarchy level 1, level 2, etc.).
+
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-multiselection-bulkselectionmenu-1.png)  
+
+#### Keyboard selection options
+> ([January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021-js))  
+
+The keyboard's **Ctrl** and **Shift** keys, as well as **holding mouse click**, can be used to ease multiple selections.  
+
+- **Using the Shift key**:  
+If you first press `Shift` and select an item of a list, then selecting another item while still holding `Shift` will result in selecting all intermediate items (between those 2 selections) of the list.  
+As long as the `shift` key is held, the data table is not updated.  
+- **Using the Ctrl key**:  
+If you first press `Ctrl` and select an item of a list, then selecting another item while still holding `Ctrl` will result in selecting this second item too. You can keep on selecting new items as long as `Ctrl` is held.  
+As long as the `ctrl` key is held, the data table is updated.  
+  *Remark*: The combination of `ctrl` and `shift` keys is not possible.   
+  
+- **Holding mouse click**:  
+If you click on one item and hold the mouse button without releasing it, then moving the mouse cursor down/up to another item of the same list will select both items and all intermediate ones.  
+As long as the mouse button is held, the data table is not updated.
+
+*Note* that these keyboard selection options are not compatible with the web content accessibility support. 
+
 ---
 
 ### Frequency & time period filter
@@ -75,23 +100,25 @@ When the user switches the filter check box, the URL automatically updates accor
 
 In case of a hierarchy in the dimension items, they are shown as 'scope list', which means that the filter will display at first only the root parents' list. A blue arrow next to an item indicates that this item is a parent of sub-item(s).
 
-![Hierarchical contents](/dotstatsuite-documentation/images/de-filters2.png)
-
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootparents-1.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-1.png)   
+  
 By clicking on the arrow, which doesn't require the parent to be selected first, the child items of that parent item will be displayed instead. Above the children list, the parent appears (with a blue background if previously selected, or without background if not selected) in a distinct zone separated by a thick light grey line, named 'children breadcrumb'.
 
 The same behaviour is applied if some of the child items have themselves child items.  The 'children breadcrumb' is progressively extended with each new parent (which is clickable and has the tooltip "Back to this level") while descending in the hierarchy. This allows the user going back to a previous parent at any level.     
 
-![Hierarchical contents](/dotstatsuite-documentation/images/de-filters21.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootchildren-1.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-children-1.png)   
 
 If for a parent (at any level) there are no data available (according to the Actual ContentConstraint related to the Dataflow), then the parent item is not selectable (and marked in light grey). Still, the user can navigate to the children and back to the parent again. 
 
-Parents without data:  
-![Hierarchical contents](/dotstatsuite-documentation/images/DE-filter-parents-without-data.png)
+| Parents without data | Children of parents without data |
+|----------------------|----------------------------------|
+|![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-without-data-1.png) |![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-childrenofroot-without-data-1.png) |  
+  
+Selected root items are displayed ordinarily in the ['Used filters' panel](#used-filters-panel). Selected children items are displayed prefixed with `...>` in the ['Used filters' panel](#used-filters-panel) and the details of the parent hierarchy are shown in a tooltip.
 
-Children of parents without data:  
-![Hierarchical contents](/dotstatsuite-documentation/images/DE-filter-children-of-parents-without-data.png)
-
-Selected root items are displayed normally in the ['Used filters' panel](#used-filters-panel).Selected child items are displayed prefixed with `...>` in the ['Used filters' panel](#used-filters-panel) and the details of the parent hierarchy are available in a tooltip.
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-used-filters-1.png)     
 
 ---
 
@@ -116,6 +143,9 @@ The 'Used filters' panel displays all currently selected items per dimension.
 This panel provides an overview of the current selection and an easy mean to unselect individual dimension items or whole dimension selections:
 * one single item by clicking on the `x` next to the item label, or
 * all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
-* all selections by clicking on `Clear all filters`.
+* all selections by clicking on `Clear all filters`.  
+  
+To ease the readibility of the used filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number being the number of selected items for the specific facet.
 
-![Used filters](/dotstatsuite-documentation/images/de-filters5.png)
+![Used filters](/dotstatsuite-documentation/images/de-filters5.png)  
+![Used filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
