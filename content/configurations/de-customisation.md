@@ -343,18 +343,25 @@ To add an hyperlink/URL behind the logo of the common site header (top-left part
 ---
 
 ### Table and chart footer logo
-Define the logo of the organisation in the footer of the table and chart views.  
-The source can be a binary image or a link.<br>
+Define the logo of the organisation in the footer of the table and chart views. The source can be a binary image or a link.  
+Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021-js), the table and chart footer logo is **localised**. When .Stat DE is configured with several languages, then you can also have a table and chart footer logo different for each language *(e.g. "OECD" logo in English and "OCDE" logo in French)*.
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-    "viewer": {
-        "logo": "dotstat-suite-config/data/prod/assets/oecd-logo.png",
+    "assets": {
+    ...
+    "viewerFooter": {
+      "en": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
+      "fr": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
     }
+  },
+
 ```
 
 ![viewer footer logo](/dotstatsuite-documentation/images/faq-viewer-logo.png)
+
+**Note:** If no locale is added to `"viewerFooter"`, then only the default logo asset is displayed for all languages. If at least one locale is added to `"viewerFooter"`, then all configured languages will expect a dedicated logo asset, hence if there is in this case one missing logo for a given language, then no footer logo will be returned in that specific language.
 
 ---
 
