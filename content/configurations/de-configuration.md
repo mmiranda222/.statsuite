@@ -28,6 +28,7 @@ weight: 72
 - [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
 - [Unit of measure support](#unit-of-measure-support)
 - [Disabled share option](#disabled-share-option)
+- [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
 
 ---
 
@@ -478,3 +479,23 @@ This configuration simply works by removing the **share endpoint URL** from the 
   }
 
 ```
+
+---
+
+### Enabled download option on the search result page
+Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021-js) release, the option to **download** the unfiltered dataflow data in tabular text (SDMX-CSV format) **from the search result page is optional**.  
+When the configuration parameter `search.downloadableDataflowResults` is set to **true**, then the download option is available in the search result for each result item/dataflow.  
+**Note** that, for dataflows that are externally defined/stored (see related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows)), this option will not work with the current verison of the DE, even though the download option in any format will work on the visualisation page for those dataflows too.
+
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+"search": {
+    ...,
+    "downloadableDataflowResults": true
+    ...
+  }
+
+```
+
+By default, the configuration is disabled **`search.downloadableDataflowResults:false`**.

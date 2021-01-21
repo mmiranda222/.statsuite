@@ -47,7 +47,7 @@ The default information is still visible with the entire description (if it was 
 
 3. **Options**
 * Expand/Collapse option for displaying additional information of a search result
-* Download the complete unfiltered dataflow data in tabular text (SDMX-CSV format) using the current language.
+* Download the complete unfiltered dataflow data in tabular text (SDMX-CSV format) using the current language *([configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page))*.
 
 When a free text search is performed, then the search term(s) is/are highlighted in each of the above information. If the term(s) was/were found in a concept name/ID or dimension codes, then this information is also added to the dataflow information. See documentation on [How free text search hits are displayed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/free-text-search/).  
   
