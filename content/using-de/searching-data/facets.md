@@ -74,7 +74,7 @@ Common facet dimensions can be automatically removed (hidden) from the search re
 Impactless facets, i.e. all of the facet's values have a number of the related search results equal to the number of currently already available search results, are also automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.  
 When browsing and filtering the search result content, Only one facet can be expanded at a time. This also includes the 'Used filters' panel who is behaving as a facet. When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.
 
-![de facet result](/dotstatsuite-documentation/images/de-facet-3.png)
+![de facet result](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage.png)
 
 #### Facet types
 All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values) **except** for the **Time Period** facet. The Time Period facet is a range selection facet that shows a start year and end year independently from the currently selected frequency.  
@@ -84,19 +84,21 @@ All facets are **multi-selection** facets (an existing facet value selection doe
 #### Facet information
 The facet header contains the number of facet values available, and the number of currently selected facets (green numbers). The facet values show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
 
-![de facet information](/dotstatsuite-documentation/images/de-facet-5.png)
+![de facet information](/dotstatsuite-documentation/images/de-searchingdata-facets-facetinformation.png)
 
 #### Hierarchical contents
 In case of a hierarchy in the dimension items, the facet displays the root parents’ list at first. A blue arrow next to an item and right-aligned indicates when this item is a parent of sub-item(s).  
 If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.
 
-![de facet types](/dotstatsuite-documentation/images/de-facet4bis.png)
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootparents-1.png) [Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootchildren-1.png)  
 
 #### Data availability
 
 In hierarchical search facets, parent values, for which any of the resulting dataflows do not have data, are not selectable and are marked in light grey colour. Still, the user can navigate to the children and back to the parent again.
 
-![de facet types](/dotstatsuite-documentation/images/de-facet5bis.png)
+| Parents without data | Children of parents without data |
+|----------------------|----------------------------------|
+|![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-without-data-1.png) |![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-childrenofroot-without-data-1.png) | 
 
 ---
 
@@ -109,7 +111,11 @@ Users can unselected:
 * all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
 * all selections by clicking on `Clear all filters`. When all filters are unselected, then the user is brought back to the home page.
 
-![de used filters](/dotstatsuite-documentation/images/de-facet-6.png)
+To ease the readibility of the used filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number, the number of selected items of this facet.  
+
+![Used filters](/dotstatsuite-documentation/images/de-filters5.png)
+![Used filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
+
 
 ---
 
