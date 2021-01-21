@@ -104,14 +104,14 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 10.2.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 11.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository from the SIS-CC's mirror of Eurostat repository - *This tool will be used to initialize the structure databases.* 
 
 ```sh 
 
-git clone -b 1.26.5 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
+git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that points to the original ESTAT's repository in the mirror repository. To change the url of the submodule and to clone it manually (from the SIS-CC's mirror of Eurostat repository) use the following commands:  
@@ -127,18 +127,18 @@ git clone -b 1.26.5 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/m
   6 .  Clone the NSI web service repository from the SIS-CC's mirror of Eurostat repository.
 
 ```sh
-git clone -b 7.13.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
+git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
-  7 .  Clone the dotstatsuite-core-sdmxri-nsi-plugin repository.- *This plugin will be used to retrieve data form the DotStatSuiteCore_Data databases.* 
+  7 .  Clone the authorization.net repository from the SIS-CC's mirror of Eurostat repository.- *For authorization plugin.* 
 
 ```sh
-git clone -b 7.13.2 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin.git
+git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b 5.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 6.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ---
@@ -164,9 +164,9 @@ dotnet build /c/git/nsiws.net/NSIWebServices.sln
 ```sh
 dotnet publish /c/git/nsiws.net/NSIWebServices.sln
 ```
-  4 .  Compile the dotstatsuite-core-sdmxri-nsi-plugin
+  4 .  Compile the authorization plugin
 ```sh
-dotnet publish /c/git/dotstatsuite-core-sdmxri-nsi-plugin
+dotnet publish /c/git/authorization.net/src/estat.sri.ws.auth.dotstat/estat.sri.ws.auth.dotstat.csproj
 ```
   5 .  Compile the dotstatsuite-core-transfer
 ```sh
@@ -232,16 +232,17 @@ The  tool requires a pre-configured list of connection strings of each of the da
 ...
 ```
 
-To simplify the process, we will use the configuration example maapi-app.config, from the dotstatsuite-core-sdmxri-nsi-plugin repository.
+To simplify the process, we will use the configuration example [maapi-app.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/docs/installation/config-examples/maapi-app.config) file from dotstatsuite-core-sdmxri-nsi-ws repository.
 
 -  Move to the maapi.net folder
 ```sh
 cd /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/bin/Debug/netcoreapp3.1/publish/
 ```
-- From the dotstatsuite-core-sdmxri-nsi-plugin repository, copy the content of the example configuration file `maapi-app.config` to the 
+
+- From the dotstatsuite-core-sdmxri-nsi-ws repository, download the example configuration file `maapi-app.config` to the 
 Estat.Sri.Mapping.Tool.dll.config 
 ```sh
-cp -r -f /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/maapi-app.config Estat.Sri.Mapping.Tool.dll.config 
+curl https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/raw/master/docs/installation/config-examples/maapi-app.config?inline=false >Estat.Sri.Mapping.Tool.dll.config
 ```
 
 #### Initialize one Design DotStatSuiteCore_Struct database (MappingStore db)  
@@ -307,7 +308,7 @@ icacls "C:\dotstatsuite-website\transfer-service" /grant:r "IIS_IUSRS":"(OI)(CI)
 **Step 3.** Copy the compiled binaries to the new folder 
 
 ```sh
-cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netcoreapp3.1/publish/.* /c/dotstatsuite-website/transfer-service/
+cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/transfer-service/
 ```
 
 **Step 4.** Create a new IIS application called **transfer-service** in port 83, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
@@ -391,44 +392,44 @@ curl localhost:83/health
 *  **Using a web browser**  
 Open a web browser and open the url localhost:83/health
 
-**You should see the following result:**
+**You should see similar result:**
 ```json
 {
   "service": {
     "status": "Healthy",
     "details": {
-      "version": "2.1.53+06130ed127",
+      "version": "5.0.96+dc43333a28",
       "auth_enabled": false
     },
-    "responseTime": 0.3027
+    "responseTime": 7.1725
   },
   "database": {
     "status": "Healthy",
     "details": {
       "design": {
-        "structureAlive": true,
-        "dataAlive": true
+        "structureDbVersion": "6.12",
+        "dataDbVersion": "3.6"
       },
       "disseminate": {
-        "structureAlive": true,
-        "dataAlive": true
+        "structureDbVersion": "6.12",
+        "dataDbVersion": "3.6"
       }
     },
-    "responseTime": 4.7351
+    "responseTime": 243.1098
   },
   "memory": {
     "status": "Healthy",
     "details": {
-      "allocatedMb": 10.3886,
-      "gen0Collections": 0,
+      "allocatedMb": 11.0912,
+      "gen0Collections": 1,
       "gen1Collections": 0,
       "gen2Collections": 0
     },
-    "responseTime": 0.02
+    "responseTime": 3.5734
   },
-  "totalResponseTime": 5.4551
+  "totalResponseTime": 250.5597
 }
-```
+
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\transfer-service\logs\
 
 ---
@@ -455,29 +456,28 @@ icacls "C:\dotstatsuite-website\nsiws-design" /grant:r "IIS_IUSRS":"(OI)(CI)F"
 cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/nsiws-design/
 ```
 
-**Step 4.** Copy the following dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Design DotStatSuiteCore_Data database.
+**Step 4.** Copy the following binaries from authorization.net to the *Plugins* folder. 
+This will allow the NSI web service to retrieve authorization rules from .Stat common database when the authorization is enabled.
 
 - DotStat.Common.dll
 - DotStat.DB.dll
 - DotStat.Domain.dll
 - DotStat.MappingStore.dll
-- DotStat.NSI.DataRetriever.dll
-- DotStat.NSI.RetrieverFactory.deps.json
-- DotStat.NSI.RetrieverFactory.dll
+- estat.sri.ws.auth.dotstat.dll
+- estat.sri.ws.auth.dotstat.deps.json
 
 ```sh
-cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp3.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,DotStat.NSI.DataRetriever.dll,DotStat.NSI.RetrieverFactory.deps.json,DotStat.NSI.RetrieverFactory.dll,MicroKnights.Log4NetAdoNetAppender.dll} /c/dotstatsuite-website/nsiws-design/Plugins
+cp -r /c/git/authorization.net/src/estat.sri.ws.auth.dotstat/bin/Debug/netstandard2.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,estat.sri.ws.auth.dotstat.dll,estat.sri.ws.auth.dotstat.deps.json} /c/dotstatsuite-website/nsiws-design/Plugins
 ```
 
 **Step 5.** Configure the nsi web service 
+From the dotstatsuite-core-sdmxri-nsi-ws repository, download the following sample configuration files to the deployment folder:
+*  [nsiws-design-app.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/docs/installation/config-examples/nsiws-design-app.config) to the file */config/app.config* 
 
-From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:
-*  *nsiws-design-app.config* to the file */config/app.config* 
-
->  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
+>  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/readme.md).
 
 ```sh
-cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-design-app.config /c/dotstatsuite-website/nsiws-design/config/app.config
+curl https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/raw/master/docs/installation/config-examples/nsiws-design-app.config?inline=false >/c/dotstatsuite-website/nsiws-design/config/app.config
 ```
 
 >  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
@@ -512,7 +512,7 @@ TO:
 /c/Windows/System32/inetsrv/appcmd add site /name:nsiws-design /physicalPath:C:\\dotstatsuite-website\\nsiws-design /bindings:http/*:81:
 ```
 
-**Step 7.** Create a new IIS application pool (NSIWSDesignAppPool) 
+**Step 6.** Create a new IIS application pool (NSIWSDesignAppPool) 
 ```sh
 /c/Windows/System32/inetsrv/appcmd add apppool /name:NSIWSDesignAppPool /managedRuntimeVersion:"" /managedPipelineMode:Integrated
 ```
@@ -521,26 +521,38 @@ TO:
 /c/Windows/System32/inetsrv/appcmd set app "nsiws-design/" /applicationPool:NSIWSDesignAppPool
 ```
 
-**Step 8.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
+**Step 8.** Configure the authentication and the authorization plugin for retrieval of .Stat authorization rules
 
-There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
+There are two options to configure the authorization plugin:  
   1 .  Json config file.- `NOT RECOMMENDED`
 
->  Copy the sample file dataspaces-design.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-design\config). 
+>  Download the sample files [nsiws-authentication.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/docs/installation/config-examples/nsiws-authentication.json) and [nsiws-design-authorization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/docs/installation/config-examples/nsiws-design-authorization.json) from *dotstatsuite-core-sdmxri-nsi-ws* repository to the deployment folder (C:\dotstatsuite-website\nsiws-design\config). 
 
   2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-design). `Recommended`
 
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
+>  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/readme.md).
 
 For this example we will use the second option: 
 
-*  Set the design dataspace values:
+*  Set authentication turned OFF
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='design']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignStructDb;User ID=testLoginDesignStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignDataDb;User ID=testLoginDesignData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__enabled',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__allowAnonymous',value='true']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__requireHttps',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__validateIssuer',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__showPii',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__clientId',value='stat-suite']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__authority',value='']" /commit:apphost
+```
+
+*  Set authorization turned OFF
+```sh
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__enabled',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__method',value='dotstat']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__PrincipalFrom',value='context']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__Default',value='design']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__FromQueryParameter',value='Never']" /commit:apphost
 ```
 
 **Step 9.** Start the new application
@@ -550,10 +562,51 @@ For this example we will use the second option:
 
 **Step 10.** Test that the application is up and running
 
-*  **Using a web browser**  
-Open a web browser and open the url localhost:81
 
-**You should see a page with a banner of the European Commission**
+*  **Using curl**
+```sh
+curl localhost:81/health
+```
+
+*  **Using a web browser**  
+Open a web browser and open the url localhost:81/health
+
+**You should see similar result:**
+```json
+{
+  "service": {
+    "status": "Healthy",
+    "details": {
+      "version": "8.1.2",
+      "retriever": "MappingStoreRetrieversFactory",
+      "retriever-version": "8.1.2",
+      "middleware": "CorsMiddlewareBuilder,OpenIdMiddlewareBuilder,LoggingOptionsBuilder,UserAuthorizationRulesMiddlerwareBuilder",
+      "maxRequestBodySize": 30000000
+    },
+    "responseTime": 6.1152
+  },
+  "db": {
+    "status": "Healthy",
+    "details": {
+      "storeId": "design",
+      "version": "6.12",
+      "isLatest": true
+    },
+    "responseTime": 252.2288
+  },
+  "memory": {
+    "status": "Healthy",
+    "details": {
+      "allocatedMb": 9.3896,
+      "gen0Collections": 1,
+      "gen1Collections": 0,
+      "gen2Collections": 0
+    },
+    "responseTime": 5.1278
+  },
+  "totalResponseTime": 401.745
+}
+```
 
 >  Note: By default all the logs will be stored at C:/ProgramData/Eurostat/logs/
 
@@ -581,32 +634,28 @@ icacls "C:\dotstatsuite-website\nsiws-disseminate" /grant:r "IIS_IUSRS":"(OI)(CI
 cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/nsiws-disseminate/
 ```
 
-**Step 4.** Copy the following dotstatsuite-core-sdmxri-nsi-plugin binaries to the *Plugins* folder. This will allow the NSI web service to extract data from the Disseminate DotStatSuiteCore_Data database.
+**Step 4.** Copy the following binaries from authorization.net to the *Plugins* folder. 
+This will allow the NSI web service to retrieve authorization rules from .Stat common database when the authorization is enabled.
 
 - DotStat.Common.dll
-- DotStat.Config.dll
 - DotStat.DB.dll
 - DotStat.Domain.dll
 - DotStat.MappingStore.dll
-- DotStat.NSI.DataRetriever.dll
-- DotStat.NSI.RetrieverFactory.deps.json
-- DotStat.NSI.RetrieverFactory.dll
-- MicroKnights.Log4NetAdoNetAppender.dll
-
+- estat.sri.ws.auth.dotstat.dll
+- estat.sri.ws.auth.dotstat.deps.json
 
 ```sh
-cp -r /c/git/dotstatsuite-core-sdmxri-nsi-plugin/DotStat.NSI.RetrieverFactory/bin/Debug/netcoreapp3.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,DotStat.NSI.DataRetriever.dll,DotStat.NSI.RetrieverFactory.deps.json,DotStat.NSI.RetrieverFactory.dll,MicroKnights.Log4NetAdoNetAppender.dll} /c/dotstatsuite-website/nsiws-disseminate/Plugins
+cp -r /c/git/authorization.net/src/estat.sri.ws.auth.dotstat/bin/Debug/netstandard2.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,estat.sri.ws.auth.dotstat.dll,estat.sri.ws.auth.dotstat.deps.json} /c/dotstatsuite-website/nsiws-disseminate/Plugins
 ```
 
 **Step 5.** Configure the nsi web service  
-From the local dotstatsuite-core-sdmxri-nsi-plugin repository, copy the following sample configuration to the deployment folder:  
+From the dotstatsuite-core-sdmxri-nsi-ws repository, download the following sample configuration files to the deployment folder:
+*  [nsiws-disseminate-app.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/docs/installation/config-examples/nsiws-disseminate-app.config) to the file */config/app.config* 
 
-*  *nsiws-disseminate-app.config* to the file */config/app.config* 
-
->  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
+>  This sample configuration file has been set to use the databases and users that were previously created in this guide. [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/readme.md).
 
 ```sh
-cp /c/git/dotstatsuite-core-sdmxri-nsi-plugin/docs/installation/config-examples/nsiws-disseminate-app.config /c/dotstatsuite-website/nsiws-disseminate/config/app.config
+curl https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/raw/master/docs/installation/config-examples/nsiws-disseminate-app.config?inline=false >/c/dotstatsuite-website/nsiws-disseminate/config/app.config
 ```
 
 >  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
@@ -651,27 +700,38 @@ TO:
 /c/Windows/System32/inetsrv/appcmd set app "nsiws-disseminate/" /applicationPool:NSIWSDisseminateAppPool
 ```
 
-**Step 8.** Configure the dotstatsuite-core-sdmxri-nsi-plugin
+**Step 8.** Configure the authentication and the authorization plugin for retrieval of .Stat authorization rules
 
-There are two options to configure the dotstatsuite-core-sdmxri-nsi-plugin:  
+There are two options to configure the authorization plugin:  
   1 .  Json config file.- `NOT RECOMMENDED`
 
->  Copy the sample file dataspaces-disseminate.json from C:\git\dotstatsuite-core-sdmxri-nsi-plugin\docs\installation\config-examples to the deployment folder (C:\dotstatsuite-website\nsiws-disseminate\config). 
+>  Download the sample files [nsiws-authentication.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/docs/installation/config-examples/nsiws-authentication.json) and [nsiws-design-authorization.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/docs/installation/config-examples/nsiws-design-authorization.json) from *dotstatsuite-core-sdmxri-nsi-ws* repository to the deployment folder (C:\dotstatsuite-website\nsiws-disseminate\config). 
 
   2 .  Saving the configuration setting as environment variables for the IIS site (nsiws-disseminate). `Recommended`
 
->  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/readme.md).
+>  [See more about the configuration settings](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/blob/master/readme.md).
 
-For this example we will use the second option:  
+For this example we will use the second option:   
 
-*  Set the disseminate dataspace values:
-
+*  Set authentication turned OFF
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__Id',value='disseminate']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreStructDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateStructDb;User ID=testLoginDisseminateStruct;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__enabled',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__allowAnonymous',value='true']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__requireHttps',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__validateIssuer',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__showPii',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__clientId',value='stat-suite']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__authority',value='']" /commit:apphost
+```
+
+*  Set authorization turned OFF
+```sh
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__enabled',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__method',value='dotstat']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__PrincipalFrom',value='context']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__Default',value='disseminate']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__FromQueryParameter',value='Never']" /commit:apphost
 ```
 
 **Step 9.** Start the new application
@@ -681,10 +741,50 @@ For this example we will use the second option:
 
 **Step 10.** Test that the application is up and running
 
-*  **Using a web browser**  
-Open a web browser and open the url localhost:80
+*  **Using curl**
+```sh
+curl localhost:80/health
+```
 
-**You should see a page with a banner of the European Commission**
+*  **Using a web browser**  
+Open a web browser and open the url localhost:80/health
+
+**You should see similar result:**
+```json
+{
+  "service": {
+    "status": "Healthy",
+    "details": {
+      "version": "8.1.2",
+      "retriever": "MappingStoreRetrieversFactory",
+      "retriever-version": "8.1.2",
+      "middleware": "CorsMiddlewareBuilder,OpenIdMiddlewareBuilder,LoggingOptionsBuilder,UserAuthorizationRulesMiddlerwareBuilder",
+      "maxRequestBodySize": 30000000
+    },
+    "responseTime": 6.0177
+  },
+  "db": {
+    "status": "Healthy",
+    "details": {
+      "storeId": "disseminate",
+      "version": "6.12",
+      "isLatest": true
+    },
+    "responseTime": 245.2298
+  },
+  "memory": {
+    "status": "Healthy",
+    "details": {
+      "allocatedMb": 9.5320,
+      "gen0Collections": 1,
+      "gen1Collections": 0,
+      "gen2Collections": 0
+    },
+    "responseTime": 3.7186
+  },
+  "totalResponseTime": 355.0478
+}
+```
 
 >  Note: By default all the logs will be stored at C:/ProgramData/Eurostat/logs/
 

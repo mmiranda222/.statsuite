@@ -38,7 +38,7 @@ JavaScript components
 
 .NET/SQL (Core) components
 - [Database](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)
-- [Sdmxri Nsi plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin)
+- [SDMX-RI NSI web service](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored) mirrored from ESTAT's [NSIWS.net repository](https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/)
 - [Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)
 - [Authorisation management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)
 
@@ -58,7 +58,7 @@ The installation must performed in the following order:
 
 **I. Install the .Stat Suite Core (.NET/SQL) components**  
 1. [Install the Database layer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/blob/master/docs/installation/CodeBaseApproach.md). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/blob/master/qa/mssql.yaml) for a topology configuration example.
-1. [Install the SDMX/NSI web service with the .Stat Suite plugin](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/blob/master/docs/installation/CodeBaseApproach.md). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/nsi-reset.yaml) for a topology configuration example of a `nsi-reset` and [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/nsi-stable.yaml) for a topology configuraiton example of a `nsi-stable`.
+1. [Install the SDMX/NSI web service](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/INSTALL.md). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/nsi-reset.yaml) for a topology configuration example of a `nsi-reset` and [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/blob/master/qa/nsi-stable.yaml) for a topology configuraiton example of a `nsi-stable`.
 1. [Install the Transfer service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/master/docs/installation/CodeBaseApproach.md). See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/blob/master/qa/transfer.yaml) for a topology configuration example.
 1. [*to come*] [Install the Authentication Management service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)
 
