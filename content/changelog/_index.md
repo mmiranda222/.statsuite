@@ -58,10 +58,10 @@ ToC
 ### January 21, 2021
 **[Release .Stat Suite JS 7.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/33)**
 > This **major** release includes a new version of the **data-lifecycle-manager**, **data-explorer**, **data-viewer**, **sdmx-faceted-search**, and **share** services.  
-*Tip:* you can also upgrade your **config** and **proxy** services, even though no changes were made resutling in modifications to the .Stat Suite product.  
+*Tip:* we also recommend that you upgrade your **config** and **proxy** services, even though no changes were made for those services directly resutling in modifications to the .Stat Suite product.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
 
-major *(backward-incompatibility)* changes:
+major *(**backward-incompatibility**)* changes:
 - [dotstatsuite-data-explorer#472](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/472) DE **search result download is now optional** (New entry in Javascript settings `search.downloadableDataflowResults`). Since this option is not compatible with the indexation of externally defined/stored dataflows (see related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows)), thus **this feature is disabled by default**. When upgrading to this release, you must set this new configuration to `true` if you want to keep the download option on the search result page. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page))
 - [dotstatsuite-share#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/24) New dedicated *redis* **databases for share and sfs** services. Share and sfs are using a redis service to store objects (`REDIS_HOST`, `REDIS_PORT`). **Until now**, share and sfs were using the same database by default, which is an issue when sfs flushes its data. **From now on**, share and sfs will have their **dedicated databases (`REDIS_DB`)**:
   *  share will use the existing database by default (0) to keep existing data
@@ -190,7 +190,7 @@ patches:
 > This release includes a new major version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **sdmx-faceted-search** services.  
 nsiws compatibility: tested and released in compatibility with the Eurostat nsiws.net v7.13.2
 
-major *(backward-incompatibility)* changes:
+major *(**backward-incompatibility**)* changes:
 
 - [dotstatsuite-sdmx-faceted-search#83](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/83) Indexing of dataflows in sub-categories misses adding the sub-category to the categoryscheme facet.  
 **NB:** This results from the introduction in the SDMX-JSON format of a change on the `link-type` property (replaced by a `mime-type`) that was not parsed by the data-explorer as expected in the previous [JS5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020) release, causing the disappearance of the indexed categories (loss of the categories in the DE homepage 'browse by').
