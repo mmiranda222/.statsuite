@@ -64,6 +64,15 @@ Each a .Stat space has a different web service entry point which should replace 
 
 ![API Restful](/dotstatsuite-documentation/images/api-resftul5.png)
 
+**Note** that in the .Stat Suite, the SDMX NSI web service is **configured to apply Allowed ContentConstraints** for both dimension values as well as attribute values to all data extractions:
+
+config/Properties.json file:
+```
+{
+  "applyContentConstraintsOnDataQueries": "true"
+}
+```
+
 ---
 
 ### Examples of data queries
