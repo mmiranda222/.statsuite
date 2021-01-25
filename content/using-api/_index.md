@@ -11,7 +11,7 @@ weight: 4000
 - [Adding data](#adding-data)
 - [Deleting structures](#deleting-structures)
 - [Known issues around replaced structures and subsequent data imports](#known-issues-around-replaced-structures-and-subsequent-data-imports)
-- [Management of embargoed data](#management-of-embargoed-data)
+- [Management of embargoed data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management.md)
 
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
 
@@ -85,13 +85,3 @@ curl -X DELETE "http://transfer-siscc.redpelicans.com/1.2/cleanup/orphans" -H "a
 ```
 
 Only afterwards, modified structures and the related data can be uploaded again.
-
----
-
-### Management of embargoed data
-
-To obtain information about the current Point-In-Time release, use the Transfer web service method `/pointintime​/PITInfo`.
-
-To rollback a Point-In-Time release, use the Transfer web service method `​/pointintime​/rollback`.
-
-To restore previous data to an already released Point-In-Time version, use the Transfer web service method `​/pointintime​/restoration`.
