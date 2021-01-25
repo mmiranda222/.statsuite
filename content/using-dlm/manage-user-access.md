@@ -18,9 +18,9 @@ weight: 220
 
 ### Introduction
 
-Currently, the Data Lifecycle Manager doesn't include yet user-interface features to manage user access rights to the content of the .Stat Suite data spaces. Therefore, user permissions still need to be entered, updated or deleted using the AuthorisationManagement web service. The following pieces of information give more information on the usage and parameters of this API.
+Currently, the Data Lifecycle Manager does not include yet user-interface features to manage user access rights to the content of the .Stat Suite data spaces. Therefore, user permissions still need to be entered, updated or deleted using the AuthorisationManagement web service. The following pieces of information give more information on the usage and parameters of this API.
 
-Please see here a Demo version of the AuthorisationManagement web service: http://authz-siscc.redpelicans.com/swagger/index.html
+Please see here a Demo version of the AuthorisationManagement web service: http://authz-demo.siscc.org/swagger/index.html
 
 Access permissions can be defined individually for the following contexts:
  - per user (e-mail, e.g. user@domain.org), group of users (Project_Team) or any user (*)
@@ -31,9 +31,9 @@ Access permissions can be defined individually for the following contexts:
  - per SDMX artefact version (e.g. 1.0) or any version (*)
  - permission type (e.g. 3)
 
- For the list of avaiable Permission types and SDMX artfact types, pleasse see below.
+ For the list of available **Permission types** and **SDMX artefact types**, pleasse see below.
 
- In order to be able using the AuthorisationManagement web service, the user needs to be authenticated and provide a valid access token.
+ In order to be able to use the AuthorisationManagement web service, the user needs to be authenticated and to provide a valid access token.
 
 ---
 
@@ -51,17 +51,20 @@ The basic permissions listed below are permissions associated to a single and sp
 | 8 | CanPerformInternalMappingConfig | Can perform internal mapping configuration attribute |
 | 16 | CanImportStructures | Can import structures attribute |
 | 32 | CanImportData | Can import data attribute |
-| 64 | CanModifyStoreSettings | Can modify store settings attribute |
+| 64* | CanModifyStoreSettings | Can modify store settings attribute |
 | 128 | CanUpdateStructuralMetadata | Can update structural metadata attribute |
 | 256 | CanUpdateData | Can update data |
 | 512 | CanDeleteStructuralMetadata | Can delete structural metadadata attribute |
 | 1024 | CanDeleteData | Can delete data |
+| 2048 | CanReadPitData | Can read Point-in-Time (PiT) Data |
+
+**Permission id:64 is implemented (as provided by the Eurostat's source code) but not yet used in the .Stat Suite context.*
 
 #### Combined permissions
-Combined permissions are the combination of several basic permissions.   
-A combination of permissions **must** be a combination of basic permissions as described in the table above, obtained by addition. For example, adding together CanReadStructuralMetadata [1] and CanReadData [2] to get 3, creates a combined permission that has the ability to read both structural metadata and data. 
+Combined permissions are the combination of several basic permissions.  
+A combination of permissions **must be** a combination of basic permissions as described in the table above, obtained by addition. For example, **adding together CanReadStructuralMetadata [1] and CanReadData [2] to get 3**, will create a combined permission that has the ability to read both structural metadata and data.  
 Below is a table of the most used combinations, but others are acceptable.  
- 
+
 | **id** | **Permission** | **Definition** |
 | ------ | ------ | ------ |
 | 3 | WsUserRole | Underlying CanReadStructuralMetadata[1], CanReadData[2] |
@@ -70,7 +73,7 @@ Below is a table of the most used combinations, but others are acceptable.
 | 291 | DataImporterRole_U | Underlying WsUserRole[3], CanImportData[32], CanUpdateData[256] |
 | 657 | StructureImporterRole | Underlying StructureImporterRole_U[145], CanDeleteStructuralMetadata[512] |
 | 1315 | DataImporterRole | Underlying DataImporterRole_U[657], CanDeleteData[1024] |
-| 2047 | AdminRole | Underlying DomainUserRole[15], CanModifyStoreSettings[64], StructureImporterRole[657], DataImporterRole[1315] |
+| 4095 | AdminRole | Underlying DomainUserRole[15], CanModifyStoreSettings[64], StructureImporterRole[657], DataImporterRole[1315], CanReadPitData[2048] |
 
 ---
 
@@ -141,7 +144,7 @@ Below is a table of the most used combinations, but others are acceptable.
 
 Using the AuthorizationRules method of the AuthorisationManagement web service:
 - A non-admin user (or member of a non-admin group) can only see all those permissions that grant this user with a permission.
-- An admin user (or member of an admin group) - with admin permission #2047 - can see all permissions defined on those spaces on which that user has admin rights.
+- An admin user (or member of an admin group) - with admin permission #4095 - can see all permissions defined on those spaces on which that user has admin rights.
 
 **Example:**  
 
@@ -168,12 +171,12 @@ Considering the following fictive authorization rules (one per line), the *visib
 
 | USERMASK           | ISGROUP | DATASPACE | PERMISSION |*full-admin-1*|*full-admin-2*|*reset-admin-1*|*reset-admin-2*|*stable-admin-1*|*stable-admin-2*|*full-user-1*|*full-user-2*|*reset-user-1*|*reset-user-2*|*stable-user-1*|*stable-user-2*|*reset-admin-stable-user-1*|*new-user-1*|
 |--------------------|---------|-----------|------------|--------------|--------------|---------------|---------------|----------------|----------------|-------------|-------------|--------------|--------------|---------------|---------------|---------------------------|------------|
-| fa1@auth.test      | 0       | *         | 2047       | y            | y            | y             | y             | y              | y              | n           | n           | n            | n            | n             | n             | y                         | n          |
-| full-admin-group   | 1       | *         | 2047       | y            | y            | y             | y             | y              | y              | n           | n           | n            | n            | n             | n             | y                         | n          |
-| ra1@auth.test      | 0       | reset     | 2047       | y            | y            | y             | y             | n              | n              | n           | n           | n            | n            | n             | n             | y                         | n          |
-| reset-admin-group  | 1       | reset     | 2047       | y            | y            | y             | y             | n              | n              | n           | n           | n            | n            | n             | n             | y                         | n          |
-| sa1@auth.test      | 0       | stable    | 2047       | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | n             | n             | n                         | n          |
-| stable-admin-group | 1       | stable    | 2047       | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | n             | n             | n                         | n          |
+| fa1@auth.test      | 0       | *         | 4095       | y            | y            | y             | y             | y              | y              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| full-admin-group   | 1       | *         | 4095       | y            | y            | y             | y             | y              | y              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| ra1@auth.test      | 0       | reset     | 4095       | y            | y            | y             | y             | n              | n              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| reset-admin-group  | 1       | reset     | 4095       | y            | y            | y             | y             | n              | n              | n           | n           | n            | n            | n             | n             | y                         | n          |
+| sa1@auth.test      | 0       | stable    | 4095       | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | n             | n             | n                         | n          |
+| stable-admin-group | 1       | stable    | 4095       | y            | y            | n             | n             | y              | y              | n           | n           | n            | n            | n             | n             | n                         | n          |
 | fu1@auth.test      | 0       | *         | 3          | y            | y            | y             | y             | y              | y              | y           | n           | n            | n            | n             | n             | y                         | n          |
 | full-user-group    | 1       | *         | 3          | y            | y            | y             | y             | y              | y              | n           | y           | n            | n            | n             | n             | y                         | n          |
 | ru1@auth.test      | 0       | reset     | 3          | y            | y            | y             | y             | n              | n              | n           | n           | y            | n            | n             | n             | y                         | n          |
