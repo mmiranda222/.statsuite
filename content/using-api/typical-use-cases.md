@@ -108,25 +108,23 @@ Notes:
 
 ### Retrieve the data corresponding to the current DE filters from the SDMX API
 
-The SDMX data query has the following syntax:
-
+The SDMX data query has the following syntax:  
 **protocol://ws-entry-point**/data/**dataflowRef**/**key**/**providerRef**&startPeriod=xxxx&endPeriod=yyyy&updatedAfter=zzzz&firstNObservations=aa&lastNObservations=bb&dimensionAtObservation=AllDimensions&detail=full
 
-Parameters of the SDMX query:
-
+**Parameters of the SDMX query:**
 - **dataflowRef**: agency, id and version of dataflow. This information comes from the URL of the visualisation page or from the previous search page. See guidelines below on what to do if agency or version are not provided as input to the visualisation page.
 - **key**: dimension member selection using the '+' symbol as separator between Code IDs and the '.' symbol for separation between dimensions (dimensions in the order as defined in the DSD except TIME dimension). If there is no selection in a dimension, then it is left empty (it means that this dimension is not filtered). If there are no selections in any dimension, then the single keyword 'all' is to be used as key (it means that there is no data filter applied).
 
 **!!!** The number of dimensions in ‘key’ must be the same than the number of dimensions in the DSD. This means that the dimensions that are not used for the filters (dimensions with one value) should have their value present in the SDMX request in order to fetch the data. To make sure that the number of dimensions is correct, the number of spots in the ‘key’ parameter must be size(dimensions) – 1. The dimensions of the query must come in the same order than in the DSD. **!!!**
 
 - **providerRef**: use keyword 'all' or ‘OECD' (***configurable!***) for the moment
-- startPeriod: if user selected a starting time period in the TIME dimension
+- **startPeriod**: if user selected a starting time period in the TIME dimension
 - endPeriod: if user selected an ending time period in the TIME dimension
-- updatedAfter: Not implemented yet in .Stat Suite.
-- firstNObservations: Not implemented yet in .Stat Suite. Would return the first N observations per series as defined by the dimensionAtObservation parameter. If dimensionAtObservation=AllDimensions then the API returns the first N observations of the query. This parameter is not needed for preview table.
-- lastNObservations: Not implemented yet in .Stat Suite. Would return the last N observations per series as defined by the dimensionAtObservation parameter. If dimensionAtObservation=AllDimensions then the API returns the last N observations of the query. This parameter is not needed for pivot table.
-- dimensionAtObservation: Use as appropriate for best display of results in pivot table (which dimension is to be attached at the observation level to create series). 'AllDimensions' is used for data visualisation page (in this case the API returns a flat list of observations). 
-- detail: Not used in .Stat Suite
+- **updatedAfter**: Not implemented yet in .Stat Suite.
+- *(Released in [January 25, 2021 Release .Stat Suite .NET 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-25-2021))* **firstNObservations**: Return the first N observations per series as defined by the dimensionAtObservation parameter. If dimensionAtObservation=AllDimensions then the API returns the first N observations of the query. This parameter is not needed for preview table.
+- *(Released in [January 25, 2021 Release .Stat Suite .NET 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-25-2021))* **lastNObservations**: Return the last N observations per series as defined by the dimensionAtObservation parameter. If dimensionAtObservation=AllDimensions then the API returns the last N observations of the query. This parameter is not needed for pivot table.
+- **dimensionAtObservation**: Use as appropriate for best display of results in pivot table (which dimension is to be attached at the observation level to create series). 'AllDimensions' is used for data visualisation page (in this case the API returns a flat list of observations). 
+- **detail**: Not used in .Stat Suite
 
 The web service will return all relevant observations together with all relevant attributes at 2 (or 3) levels: dataset, (series) and observation, as well as all related structural information including definition of dimensions and attributes.
 
