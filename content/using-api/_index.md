@@ -11,7 +11,7 @@ weight: 4000
 - [Adding data](#adding-data)
 - [Deleting structures](#deleting-structures)
 - [Known issues around replaced structures and subsequent data imports](#known-issues-around-replaced-structures-and-subsequent-data-imports)
-- [Management of embargoed data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management.md)
+- [Management of embargoed data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management)
 
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
 
