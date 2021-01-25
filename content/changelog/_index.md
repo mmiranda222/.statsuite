@@ -8,8 +8,9 @@ weight: 120
 
 <!-- 
 ToC
-- [January 21, 2021](january-21-2021)
-- [December 2, 2020](december-2-2020)
+- [January 25, 2021](#january-25-2021)
+- [January 21, 2021](#january-21-2021)
+- [December 2, 2020](#december-2-2020)
 - [November 30, 2020](#november-30-2020)
 - [November 24, 2020](#november-24-2020)
 - [October 26, 2020](#october-26-2020)
@@ -54,6 +55,85 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### January 25, 2021
+**[Release .Stat Suite .NET 5.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/27)**
+> This **major** release includes a new version of the **core-transfer**, **core-sdmxri-nsi-ws**, **core-auth-management**, and **core-data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+> **WARNING:** While this first .Stat Suite Core (.NET) version using the SDMX-RI NSI web service default data plugin approach (according to the [DB model review](https://gitlab.com/groups/sis-cc/.stat-suite/-/epics/15) step 1) includes the related basic features such as PIT features, authorisations and new REST features, it does not contain yet the necessary [performance enhancements](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/50) foreseen in step 2. This does not represent an issue for data structure definitions that have only a few dimensions and attributes, but those with more dimensions and attributes are now too slow for production mode. These performance enhancements of step 2 are expected to be released very soon. We therefore **recommend to not use this release in production mode** but to wait for the next .Stat Suite Core (.NET) release, especially if you manage dataflows with many dimensions and attributes.
+
+> **DISCLAIMER:** Starting with this release, the SDMX-RI NSI web service within the .Stat Suite will use the default NSI data plugin instead of the previous .Stat Suite-specific data plugin. This requires the usage of a SDMX-RI MappingSet object (stored in the MappingStore structure database) for each of the dataflows. Except for MappingSets that are manually entered by the user through the SDMX-RI MappingAssistant, **all MappingSets must be generated specifically in the context of the .Stat Suite**. This is to be done through the following methods:
+>
+> - **Before** you generate the MappingSets (see next bullet), if during the migration/upgrade to version 5.0.0 with the DBUP tool some DSDs/Dataflows migrations fail (check the logs using the transfer service `/status/requests` method), then you should **migrate these dataflows manually** using the Transfer service method `/init/dataflow`. Note that his should happen only extremely rarely, and would be caused by previous inconsistencies in the DB state. In case the manual dataflow migration is still unsuccessful then it is recommended to delete the underlying DSD, cleanup the related DB objects (using the Transfer service method `/cleanup/dsd`), recreate the data structures and reload the related data. 
+> - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
+> - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
+> - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+> **Important NOTE:** From this release on, any new/additional attribution of an admin permission (AdminRole) to the authorization service must use the new **permission id:4095** (see major change below).
+
+major *(backward-incompatibility)* changes:
+
+- [dotstatsuite-core-sdmxri-nsi-plugin#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/48) **Remove the custom .Stat Suite nsi-plugin** (Replace NSI-Plugin).
+- [dotstatsuite-core-auth-management#20](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/20) **AdminRole permission id** is changed from '2047' to '4095' in auth DB.
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#103](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/103) Deploy NSI version 8.1.2.
+- [dotstatsuite-core-sdmxri-nsi-ws#91](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/91) Deploy NSI version 8.1.1.
+- [dotstatsuite-core-sdmxri-nsi-ws#92](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/92) Support of **allowed content constraints** in the NSI WS. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/restful/#data-queries))
+- [dotstatsuite-core-transfer#173](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/173) Allow listing logs of `init-type` transactions via the Swagger UI of the transfer service.
+- [dotstatsuite-core-sdmxri-nsi-ws#54](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/54) Implement the **PIT feature in the nsiws** *(Replace NSI-Plugin)*. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management/))
+- [dotstatsuite-core-transfer#120](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/120) Feature to consult the status of the data imports/transactions.
+- [dotstatsuite-core-data-access#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/21) Add **"lastNObservations"** and **"firstNObservations"** query parameters. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/typical-use-cases/#retrieve-the-data-corresponding-to-the-current-de-filters-from-the-sdmx-api))
+- [dotstatsuite-core-sdmxri-nsi-ws#69](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/69) Allow referencing **non-final codelists in a non-final hierarchical codelist**.
+- [dotstatsuite-core-sdmxri-nsi-ws#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/8) Implement observer interface for structure updates.
+- [dotstatsuite-core-transfer#154](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/154) For transfers, check existence of target dataflow and necessary permissions before responding with transaction ID.
+- [dotstatsuite-core-transfer#152](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/152) Ability to transfer data **from Live to PIT** data version.
+- [dotstatsuite-kube-core-rp#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/-/issues/12) *(DevOps)* Automate **performance tests** for Transfer data uploads and for NSI data retrievals.
+- [dotstatsuite-core-data-access#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/48) *(Refactoring)* Automatically create the database views for DSDs and dataflows *(Replace NSI-Plugin)*.
+- [dotstatsuite-core-data-access#49](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/49) *(Refactoring)* Automatically create mapping sets in the mapping store database *(Replace NSI-Plugin)*.
+- [dotstatsuite-core-common#108](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/issues/108) *(Refactoring)* Use **ESTAT PermissionType** (includes one new permission type `id:2048 CanReadPitData` : Can read Point-in-Time (PiT) Data). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/#list-of-available-permissions))
+- [dotstatsuite-core-transfer#161](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/161) *(Refactoring)* Fix the data views for Non-mandatory attributes at DSD level.
+- [dotstatsuite-core-auth-management#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/23) *(Refactoring)* Authorization Management & Transfer : update ESTAT NuGet references to nsiws v8.1.1.
+- [dotstatsuite-core-auth-management#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/17) *(Refactoring)* Authorization Management : update ESTAT NuGet references to v8.1.
+- [keycloak#7](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/issues/7) *(Refactoring)* Disable implicit code flow for Keycloak in the transfer service.
+- [dotstatsuite-core-transfer#149](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/149) *(Support)* Upload issue of uncoded dataset attributes using the EDD mechanism.
+- [dotstatsuite-core-sdmxri-nsi-ws#67](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/67) *(Support)* Possibility to delete a code from a non-final codelist.
+- [dotstatsuite-core-sdmxri-nsi-ws#68](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/68) *(Support)* Issues related to the management of Metadata Structure Definition.
+- [dotstatsuite-core-data-access#58](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/58) *(Support)* Incorrect Content-Range response header in the ESTAT nsiws.
+- [dotstatsuite-core-transfer#142](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/142) *(Support)* Update Transfer-service references to NSI version 7.13.0 (incl. 7.12.2).
+
+patches:
+
+- [dotstatsuite-core-data-access#65](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/65) Add dbup functionality to clear orphan records in Artefact table.
+- [dotstatsuite-core-data-access#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/66) Fix of bug in `SqlManagementRepository.CleanUpDsd` deleting extra data tables.
+- [dotstatsuite-core-sdmxri-nsi-ws#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/17) Deletion of several artefacts at once fails.
+- [dotstatsuite-core-sdmxri-nsi-ws#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/75) Annotation update issue & wrong HTTP status code for structure requests.
+- [dotstatsuite-core-common#110](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/issues/110) Validation of the allowed content constraint for coded-attributes in upload requests.
+- [dotstatsuite-core-sdmxri-nsi-ws#88](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/88) Fix bug with select statements having **reserved SQL words**.
+- [dotstatsuite-core-sdmxri-nsi-ws#63](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/63) Data query returns "Error executing generated SQL and populating SDMX model".
+- [dotstatsuite-core-sdmxri-nsi-ws#62](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/62) **Foreign Key constraint violation** exception when creating SDMX artefacts.
+- [dotstatsuite-core-sdmxri-nsi-ws#82](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/82) Mappingsets with "valid to" as max datetime fails in the context of the Point in Time release feature.
+- [dotstatsuite-core-transfer#165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/165) Transfer fix/allDataflows fails with a Timed-Out error.
+- [dotstatsuite-core-transfer#163](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/163) Re-creation of dataflow view fails for dataflows with no dataset-level attributes.
+- [dotstatsuite-core-sdmxri-nsi-ws#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/48) **Querying actual constraint or allowed constraint by version** fails.
+- [dotstatsuite-core-data-access#63](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/63) Fix issues with Mappingsets initialisation in transfer service.
+- [dotstatsuite-core-data-access#59](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/59) Automatically created mapping sets do not work for dataflows with **full ID longer than 30 characters**.
+- [dotstatsuite-core-transfer#166](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/166) "Error while trying to create the MappingSet" error in the data transfer e-mail (when data upload is successful).
+- [dotstatsuite-core-data-access#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/12) Authenticated / role based restrictions in default NSI plugin for both Live and Point-in-time data.
+- [dotstatsuite-core-transfer#157](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/157) Mappingsets of Point in Time data fails when no release time is provided.
+- [dotstatsuite-core-transfer#133](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/133) Failure in data upload for some dataflows due to auto-generated categories (with same ID but different level).
+- [dotstatsuite-core-sdmxri-nsi-ws#70](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/70) When StartPeriod is 'March' in monthly data query, data for January and February are also returned.
+- [dotstatsuite-core-auth-management#20](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/20) Update **Admin permission id** from '2047' to '4095' in auth DB.
+- [dotstatsuite-core-transfer#61](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/61) Some **CSV load behaviours** are incorrect and do not respect the SDMX-CSV standard.
+- [dotstatsuite-core-transfer#113](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/113) **Free-text attributes with special caracters** (?) cut during the SDMX-CSV data upload.
+- [dotstatsuite-core-transfer#148](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/148) Missing rights for dostatwriter db user to create views.
+- [dotstatsuite-core-transfer#105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/105) SDMX-CSV upload from **remote URL** is not working.
+- [dotstatsuite-core-transfer#140](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/140) Loading XML data file returns a misleading successful e-mail with 0 observation processed (instead of numerous observations values).
+- [dotstatsuite-core-transfer#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/99) Observation values disappear when uploading SDMX-ML data with `dimensionAtObservation=AllDimensions` format.
+
+---
 
 ### January 21, 2021
 **[Release .Stat Suite JS 7.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/33)**
