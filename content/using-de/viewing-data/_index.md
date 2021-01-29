@@ -32,35 +32,7 @@ The linked sections describe in more detail the behaviors and functionalities of
 ---
 
 ### Visualisation page URL
-The visualisation page can also be accessed through a direct link, because the most important page **configuration options are part of the URL**, which can thus be bookmarked.  
-The full configurations (with the configurations of the search result pages) included in the URL are listed and explained in the following overview table:
-
-| key | type | definition | exemple |
-| ------ | ------ | ------ | ------ |
-| lc | string | locale of the app | lc=fr
-| fc | string | open box in side in search results | fc=qmsoRy4r
-| tm | string | search term | tm=people
-| pg | integer | page index of the search | pg=0
-| fs | array | facet values selected in the search | fs[0]=SIS-CC-stable
-| df[ds,id,ag,vs] | object | dataflow identifiers | df[ds]=SIS-CC-stable&df[id]=DF_AIR_EMISSIONS&df[ag]=OECD&df[vs]=2.1
-| dq | string | sdmx dataquery | dq=.AUS+AUT.GP.A
-| ac=true,false | boolean | accessibility mode of the app | ac=false
-| av=true,false | boolean | sdmx data availability mode | av=false
-| vw=tb,br,rw,sp,hs,vs,tl,sb,cp | string | type of viewer component used | vw=table
-| mp[id,lv] | string | map information: ID of the map and ID of the map level | mp[id]=world_countries&mp[lv]=countries
-| pd | string | period of the sdmx data request | pd=2017,2020
-| lt[rs,rw,cl] | object | layout of the table in the vis page (row section, row, column) | lt[rs]=&lt[rw]=STO&lt[cl]=TIME_PERIOD
-| lb=nm,id,bt | string | display mode of sdmx (name, identifier, both) | lb=id
-| to[]=true,false | object | order of time dimension(s) | to[TIME_PERIOD]=true
-| lo | integer | last N observations per time series | lo=1
-
-
-> **Note** that, since the [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the keys in the above table have been shortened in order to reduce the browser url size and avoid reaching browser limitations as much as possible. Previous bookmarked urls with long keys will still work because the application converts them to their shorter match.  
-As part of this refactoring work, the following keys have also been removed:
-> * filter (open box in side in viz)
-> * frequency (frequency of the app)
-
-**Note** also that these URL options allow using the web browser's `Going Back` option to roll back to the corresponding previous state and user selections.
+*Moved to the main upper-topic [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters).*
 
 ---
 

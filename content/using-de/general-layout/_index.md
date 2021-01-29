@@ -13,6 +13,7 @@ weight: 1200
 - [Login](#login)
 - [Language](#language)
 - [Footer](#footer)
+- [URL parameters](#url-parameters)
 
 ### User Interface Design Specifications
 
@@ -116,3 +117,36 @@ The Data Explorer footer is common to all pages of the application, and consists
 
 ![DE Footer](/dotstatsuite-documentation/images/de-footer.png)
 
+---
+
+### URL parameters
+
+The Data Explorer pages let the user drive the page content through URL parameters. This allows bookmarking and URL sharing of DE pages. 
+
+| key | legacy key (for backward-compatibility) | type | definition | exemple |
+| ------ | ------ | ------ | ------ | ------ |
+| lc | locale | string | locale of the app | lc=fr
+| fc | facet | string | open facet box in side in search results | fc=qmsoRy4r
+| tm | term | string | search term | tm=people
+| pg | start | integer | page index of the search | pg=0
+| fs | constraints | array | facet values selected in the search | fs[0]=SIS-CC-stable
+| df[ds\|id\|ag\|vs] _or better_ df={source},{agency},{id},{version} | dataflow[datasourceId\|dataflowId\|agencyId\|version] | object | dataflow identifiers | df[ds]=SIS-CC-stable&df[id]=DF_AIR_EMISSIONS&df[ag]=OECD&df[vs]=2.1
+| _- removed -_ | filter | string | open filter box in side in viz | filter=COU
+| dq | dataquery | string | sdmx dataquery | dq=.AUS+AUT.GP.A
+| ac=true\|false | hasAccessibility=true\|false | boolean | a11y mode of the app | ac=false
+| av=true\|false | hasDataAvailability=true\|false | boolean | sdmx data availability mode | av=false
+| pd | period | string | period of the sdmx data request | pd=2017,2020
+| _- removed -_ | frequency | string | frequency of the app | frequency=Q
+| lt[rs\|rw\|cl] | layout[sections\|rows\|header] | object | layout of the table in the vis page | lt[rs]=&lt[rw]=STO&lt[cl]=TIME_PERIOD
+| lb=nm\|id\|bt | display=label\|code\|both | string | display mode of sdmx (label, code, both) | lb=code
+| to[]=true\|false | time[]=true\|false | object | order of time dimension(s) | to[TIME_PERIOD]=true
+| mp[id\|lv] | map[mapId\|levelId]| string | map information:ID of the map and ID of the map level | mp[id]=world_countries&mp[lv]=countries
+| vw=tb\|br\|rw\|sp\|hs\|vs\|tl\|sb\|cp | viewer=table\|BarChart\|RowChart\|ScatterChart\|<br>HorizontalSymbolChart\|VerticalSymbolChart\|<br>TimelineChart\|StackedBarChart\|<br>ChoroplethChart  | string | type of viewer component used | vw=tb |
+| lo | lastNObservations | integer | last N observations per time series | lo=1 |
+
+> **Note** that, since the [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the keys in the above table have been shortened in order to reduce the browser url size and avoid reaching browser limitations as much as possible. Previous bookmarked urls with long keys will still work because the application converts them to their shorter match.  
+As part of this refactoring work, the following keys have also been removed:
+> * filter (open box in side in viz)
+> * frequency (frequency of the app)
+
+**Note** also that these URL options allow using the web browser's `Going Back` option to roll back to the corresponding previous state and user selections.
