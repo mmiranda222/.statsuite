@@ -276,6 +276,6 @@ Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on stand
 
 Information about the .Stat Suite releases can be found in the **[changelog](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/)** page.
 
-You can view the ongoing work and upcoming evolutions of the .Stat Suite products in the **[Kanban boards](https://gitlab.com/groups/sis-cc/-/boards/834539)**.
+Our **scheduled backlog** represents our short-term delivery strategy for the upcoming evolutions of the .Stat Suite products. In this [board view](https://gitlab.com/groups/sis-cc/-/boards/2352801), each iteration will be an attempt to produce a .NET/SQL or a JavaScript release. The tickets in each iteration can be subject to change of order or delay. You can view the ongoing work (iteration(s) in progress) in the **[Kanban boards](https://gitlab.com/groups/sis-cc/-/boards/834539)**.
 
-The full list of recorded feature requests and feature enhancements can be found in the **[prioritized backlog of features](https://gitlab.com/groups/sis-cc/-/issues?label_name%5B%5D=backlog%3A%3Afeature&scope=all&sort=weight_desc&state=opened&utf8=%E2%9C%93)**.
+The full list of recorded feature requests and feature enhancements can be found in the prioritized **[whish list](https://gitlab.com/groups/sis-cc/-/issues?label_name%5B%5D=wish+list&scope=all&sort=weight_desc&state=opened&utf8=%E2%9C%93)**.
