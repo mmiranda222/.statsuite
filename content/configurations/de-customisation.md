@@ -474,7 +474,10 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
                 "id": "world_map",
                 "projection": ,
                 "path": "/assets/<tenant>/data-explorer/maps/world_map.json",
-                "levels": ["continents", "countries"],
+                "levels": [
+                  { "id": "continents", "names": { "en": "World Continents", "fr": "Continents du Monde" } },
+                  { "id": "countries", "names": { "en": "World Countries", "fr": "Pays du Monde" } }
+                ],
                 "scale": 
             }
         }
@@ -484,19 +487,16 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
 A very important aspect here above is about `projection` and `scale` entries. Both are linked to the api specification of the D3 library for map rendering. Detailed specifications of D3 projection mechanism are to be found [here](https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md).  
 Keep in mind that `projection` stands for the specific D3 projection you want to use (e.g. `mercator` for `d3.geo.mercator`).  
 
+As you may have noticed in this example, each area level is declared with the associated localised names which will be used by the application, in order to display all the possible maps selection for a chart display.
 
-**Last step** is to make sure that each area level of the map has its label properly put in the translation files.  
-For the English example of the world map, it should look like:  
+Know that all these area levels labels will be pass as `map` variables to the generic label of the Map Chart, registered under `chart.choropleth` key in the translation files. Here is an English example:
 `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/i18n/en.json`
 ```json
 {
     "chart.choropleth": "Map of {map}",
-    "map.world_map.continents": "Continents",
-    "map.world_map.countries": "Countries"
 }
 ```
-
-This example above will result with 2 options (in the menu of the Data Explorer chart drop-down feature) labelled in English: "Map of Continents" and "Map of Countries".
+This example, associated with the previous settings example will result with 2 options (in the menu of the Data Explorer chart drop-down feature) labelled in English: "Map of World Continents" and "Map of World Countries".
 
 ---
 
