@@ -48,12 +48,12 @@
 <td rowspan="2">qa/develop</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)</td>
-<td rowspan="2">transfer-qa-oecd</td>
-<td>[health](http://transfer-qa.siscc.org/health)</td>
+<td rowspan="2">https://transfer-qa.siscc.org/health</td>
+<td>[health](https://transfer-qa.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://transfer-qa.siscc.org/swagger)</td>
+<td>[swagger](https://transfer-qa.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -73,12 +73,12 @@
 <td rowspan="2">qa/develop</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
-<td rowspan="2">authz-qa-oecd</td>
-<td>[health](http://authz-qa.siscc.org/health)</td>
+<td rowspan="2">https://authz-qa.siscc.org</td>
+<td>[health](https://authz-qa.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://authz-qa.siscc.org/swagger)</td>
+<td>[swagger](https://authz-qa.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
