@@ -4,7 +4,7 @@
 
 <table>
 <thead>
-<tr><th>name/repo</th><th>env/branch</th><th>status</th><th>coverage</th><th>subdomain(s)</th><th>endpoint(s)</th><th>note(s)</th></tr>
+<tr><th>name/repo</th><th>env/branch</th><th>status</th><th>coverage</th><th>url(s)</th><th>endpoint(s)</th><th>note(s)</th></tr>
 </thead>
 <body>
 <tr>
@@ -12,12 +12,12 @@
 <td rowspan="2">qa/develop</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/coverage.svg?style=flat-square)</td>
-<td>nsi-stable-qa-oecd</td>
-<td>[health](http://nsi-stable-qa.siscc.org/health)</td>
+<td>https://nsi-qa-stable.siscc.org</td>
+<td>[health](https://nsi-qa-stable.siscc.org/health)</td>
 <td>-</td>
 <tr>
-<td>nsi-reset-qa-oecd</td>
-<td>[health](http://nsi-reset-qa.siscc.org/health)</td>
+<td>https://nsi-qa-reset.siscc.org</td>
+<td>[health](https://nsi-qa-reset.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
