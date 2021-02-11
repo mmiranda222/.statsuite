@@ -73,7 +73,7 @@
 <td rowspan="2">qa/develop</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
-<td rowspan="2">https://authz-qa.siscc.org</td>
+<td rowspan="2">https://authz-qa.siscc.org/health</td>
 <td>[health](https://authz-qa.siscc.org/health)</td>
 <td>-</td>
 </tr>
