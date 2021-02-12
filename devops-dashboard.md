@@ -275,6 +275,12 @@
 </body>
 </table>
 
+## special services
+
+MSSQL access for reading (debug) purpose:
+- qa 35.190.220.253
+- staging 35.205.244.142
+
 ## packages
 
 |name|version|status|coverage|demo|note(s)|
