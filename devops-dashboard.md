@@ -227,18 +227,22 @@
 <td>[website](http://dlm-demo.siscc.org)</td>
 <td>-</td>
 </tr>
+</body>
+</table>
 
-<td rowspan="2">[keycloak](https://gitlab.com/sis-cc/.stat-suite/keycloak)</td>
-<td rowspan="2">develop</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/keycloak/badges/develop/pipeline.svg?style=flat-square)</td>
-<td rowspan="2">-</td>
-<td>keycloak-oecd</td>
-<td>[admin UI](http://keycloak-oecd.redpelicans.com)</td>
-<td>v6.0.1</td>
-</tr>
+## cross services
+
+<table>
+<thead>
+<tr><th>name/repo</th><th>branch</th><th>status</th><th>url(s)</th><th>endpoint(s)</th><th>note(s)</th></tr>
+</thead>
+<body>
 <tr>
-<td>keycloak-staging-oecd</td>
-<td>[admin UI](http://keycloak-oecd.redpelicans.com)</td>
+<td>[keycloak](https://gitlab.com/sis-cc/.stat-suite/keycloak)</td>
+<td>develop</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/keycloak/badges/develop/pipeline.svg?style=flat-square)</td>
+<td>https://keycloak.siscc.org</td>
+<td>:cop: [admin UI](https://keycloak.siscc.org)</td>
 <td>v7.0.0</td>
 </tr>
 </body>
