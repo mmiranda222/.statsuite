@@ -177,28 +177,25 @@
 <td>[website](http://de-staging-bfs.redpelicans.com/)</td>
 <td>-</td>
 </tr>
+<tr><td colspan="7"></td></tr>
 <tr>
-<td rowspan="3">[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)</td>
+<td rowspan="2">[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)</td>
 <td>qa/develop</td>
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/coverage.svg?style=flat-square)</td>
-<td>dv-qa-oecd</td>
-<td>[website](http://dv-qa.siscc.org)</td>
+<td>https://dv-qa.siscc.org</td>
+<td>:globe_with_meridians: [website](https://dv-qa.siscc.org) - :ambulance: [health](https://dv-qa.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="2">staging/master</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/coverage.svg?style=flat-square)</td>
-<td>dv-staging-oecd</td>
-<td>[website](http://dv-demo.siscc.org)</td>
+<td>staging/master</td>
+<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/pipeline.svg?style=flat-square)</td>
+<td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/coverage.svg?style=flat-square)</td>
+<td>https://dv-demo.siscc.org</td>
+<td>:globe_with_meridians: [website](https://dv-demo.siscc.org) - :ambulance: [health](https://dv-demo.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
-<tr>
-<td>dv-staging-siscc</td>
-<td>[website](http://dv-staging-siscc.redpelicans.com)</td>
-<td>-</td>
-</tr>
+<tr><td colspan="7"></td></tr>
 <tr>
 <td rowspan="7">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
 <td rowspan="4">qa/develop</td>
