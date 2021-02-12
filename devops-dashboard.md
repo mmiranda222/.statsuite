@@ -199,12 +199,12 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
 <td>https://dlm-qa.siscc.org</td>
-<td>:globe_with_meridians: [website](https://dlm-qa.siscc.org) - :ambulance: [health](https://dlm-qa.siscc.org/healthcheck)</td>
+<td>:globe_with_meridians: [website](https://dlm-qa.siscc.org) - :ambulance: [health](https://dlm-qa.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
 <td>https://dlm2-qa.siscc.org</td>
-<td>:globe_with_meridians: [website](https://dlm2-qa.siscc.org) - :ambulance: [health](https://dlm2-qa.siscc.org/healthcheck)</td>
+<td>:globe_with_meridians: [website](https://dlm2-qa.siscc.org) - :ambulance: [health](https://dlm2-qa.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -212,18 +212,18 @@
 <td rowspan="3">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="3">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/coverage.svg?style=flat-square)</td>
 <td>https://dlm-demo.siscc.org</td>
-<td>:globe_with_meridians: [website](https://dlm-demo.siscc.org) - :ambulance: [health](https://dlm-demo.siscc.org/healthcheck)</td>
+<td>:globe_with_meridians: [website](https://dlm-demo.siscc.org) - :ambulance: [health](https://dlm-demo.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 </tr>
 <tr>
 <td>https://dlm-demo-oecd.siscc.org</td>
-<td>:globe_with_meridians: [website](https://dlm-demo-oecd.siscc.org) - :ambulance: [health](https://dlm-demo-oecd.siscc.org/healthcheck)</td>
+<td>:globe_with_meridians: [website](https://dlm-demo-oecd.siscc.org) - :ambulance: [health](https://dlm-demo-oecd.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
 <td>https://dlm-demo-oecd-eco.siscc.org</td>
-<td>:globe_with_meridians: [website](https://dlm-demo-oecd-eco.siscc.org) - :ambulance: [health](https://dlm-demo-oecd-eco.siscc.org/healthcheck)</td>
+<td>:globe_with_meridians: [website](https://dlm-demo-oecd-eco.siscc.org) - :ambulance: [health](https://dlm-demo-oecd-eco.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 </body>
