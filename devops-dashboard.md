@@ -13,36 +13,37 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/coverage.svg?style=flat-square)</td>
 <td>https://nsi-qa-stable.siscc.org</td>
-<td>[health](https://nsi-qa-stable.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-qa-stable.siscc.org/health)</td>
 <td>-</td>
 <tr>
 <td>https://nsi-qa-reset.siscc.org</td>
-<td>[health](https://nsi-qa-reset.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-qa-reset.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
 <td rowspan="4">staging/master</td>
 <td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/master/coverage.svg?style=flat-square)</td>
-<td>nsi-design-oecd</td>
-<td>[health](http://nsi-design-oecd.redpelicans.com/health)</td>
+<td>https://nsi-demo-oecd-design.siscc.org</td>
+<td>:ambulance: [health](https://nsi-demo-oecd-design.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>nsi-staging-oecd</td>
-<td>[health](http://nsi-staging-oecd.redpelicans.com/health)</td>
+<td>https://nsi-demo-oecd-staging.siscc.org</td>
+<td>:ambulance: [health](https://nsi-demo-oecd-staging.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>nsi-stable-siscc</td>
-<td>[health](http://nsi-stable-demo.siscc.org/health)</td>
+<td>https://nsi-demo-stable.siscc.org</td>
+<td>:ambulance: [health](https://nsi-demo-stable.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>nsi-reset-siscc</td>
-<td>[health](http://nsi-reset-demo.siscc.org/health)</td>
+<td>https://nsi-demo-reset.siscc.org</td>
+<td>:ambulance: [health](https://nsi-demo-reset.siscc.org/health)</td>
 <td>-</td>
 </tr>
+<tr><td colspan="7"></td></tr>
 <tr>
 <td rowspan="4">[transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)</td>
 <td rowspan="2">qa/develop</td>
