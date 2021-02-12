@@ -189,42 +189,36 @@
 </tr>
 <tr><td colspan="7"></td></tr>
 <tr>
-<td rowspan="7">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
-<td rowspan="4">qa/develop</td>
-<td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
-<td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
-<td rowspan="2">dlm-qa-oecd</td>
-<td>[website](http://dlm-qa.siscc.org)</td>
+<td rowspan="5">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
+<td>https://dlm-qa.siscc.org</td>
+<td>:globe_with_meridians: [website](https://dlm-qa.siscc.org) - :ambulance: [health](https://dlm-qa.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[health](http://dlm-qa.siscc.org/healthcheck)</td>
-<td>-</td>
-</tr>
-<tr>
-<td rowspan="2">dlm2-qa-oecd</td>
-<td>[website](http://dlm2-qa.siscc.org)</td>
-<td>-</td>
-</tr>
-<tr>
-<td>[health](http://dlm2-qa.siscc.org/healthcheck)</td>
+<td>https://dlm2-qa.siscc.org</td>
+<td>:globe_with_meridians: [website](https://dlm2-qa.siscc.org) - :ambulance: [health](https://dlm2-qa.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
 <td rowspan="3">staging/master</td>
 <td rowspan="3">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="3">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/coverage.svg?style=flat-square)</td>
-<td rowspan="2">dlm-staging-oecd</td>
-<td>[website](http://dlm-staging-oecd.redpelicans.com)</td>
+<td>https://dlm-demo.siscc.org</td>
+<td>:globe_with_meridians: [website](https://dlm-demo.siscc.org) - :ambulance: [health](https://dlm-demo.siscc.org/healthcheck)</td>
+<td>-</td>
+</tr>
+</tr>
+<tr>
+<td>https://dlm-demo-oecd.siscc.org</td>
+<td>:globe_with_meridians: [website](https://dlm-demo-oecd.siscc.org) - :ambulance: [health](https://dlm-demo-oecd.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[health](http://dlm-staging-oecd.redpelicans.com/healthcheck)</td>
-<td>-</td>
-</tr>
-<tr>
-<td>dlm-staging-siscc</td>
-<td>[website](http://dlm-demo.siscc.org)</td>
+<td>https://dlm-demo-oecd-eco.siscc.org</td>
+<td>:globe_with_meridians: [website](https://dlm-demo-oecd-eco.siscc.org) - :ambulance: [health](https://dlm-demo-oecd-eco.siscc.org/healthcheck)</td>
 <td>-</td>
 </tr>
 </body>
