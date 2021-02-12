@@ -60,12 +60,12 @@
 <td rowspan="2">staging/master</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/coverage.svg?style=flat-square)</td>
-<td rowspan="2">transfer-siscc</td>
-<td>[health](http://transfer-demo.siscc.org/health)</td>
+<td rowspan="2">https://transfer-demo.siscc.org/health</td>
+<td>[health](https://transfer-demo.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://transfer-demo.siscc.org/swagger)</td>
+<td>[swagger](https://transfer-demo.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -85,12 +85,12 @@
 <td rowspan="2">staging/master</td>
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/coverage.svg?style=flat-square)</td>
-<td rowspan="2">authz-siscc</td>
-<td>[health](http://authz-demo.siscc.org/health)</td>
+<td rowspan="2">https://authz-demo.siscc.org/health</td>
+<td>[health](https://authz-demo.siscc.org/health)</td>
 <td>-</td>
 </tr>
 <tr>
-<td>[swagger](http://authz-demo.siscc.org/swagger)</td>
+<td>[swagger](https://authz-demo.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
