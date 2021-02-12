@@ -127,11 +127,16 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="8">staging/master</td>
-<td rowspan="8">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="8">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="9">staging/master</td>
+<td rowspan="9">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
+<td rowspan="9">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
 <td>https://de-demo.siscc.org</td>
 <td>:globe_with_meridians: [website](https://de-demo.siscc.org) - :ambulance: [health](https://de-demo.siscc.org/api/healthcheck)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>https://de-demo-oecd.siscc.org</td>
+<td>:globe_with_meridians: [website](https://de-demo-oecd.siscc.org) - :ambulance: [health](https://de-demo-oecd.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
