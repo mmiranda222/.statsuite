@@ -286,6 +286,10 @@ MSSQL access for reading (debug) purpose:
 - qa 35.190.220.253
 - staging 35.205.244.142
 
+ECO oecd internal network nsiws:
+- https://em-sbx-dev-7.main.oecd.org - :ambulance: [health](https://em-sbx-dev-7.main.oecd.org/health)
+- https://em-sbx-dev-7.main.oecd.org:81 - :ambulance: [health](https://em-sbx-dev-7.main.oecd.org:81/health)
+
 ## packages
 
 |name|version|status|coverage|demo|note(s)|
