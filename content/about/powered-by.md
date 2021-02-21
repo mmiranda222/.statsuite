@@ -24,9 +24,9 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ---
 
-![Federal Competitiveness and Statistics Authority (FCSA)](/dotstatsuite-documentation/images/logo-fcsa.png)
+![Federal Competitiveness and Statistics Centre (FCSC)](/dotstatsuite-documentation/images/logo-fcsc.png)
 
-**Federal Competitiveness and Statistics Authority (FCSA)** [UAE.Stat](https://uaestat.fcsa.gov.ae/en)
+**Federal Competitiveness and Statistics Centre (FCSC)** [UAE.Stat](https://uaestat.fcsa.gov.ae/en)
 
 ---
 
