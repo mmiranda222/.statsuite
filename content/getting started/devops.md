@@ -8,7 +8,7 @@ weight: 33
 #### Table of Content
 - [open-source development business requirements](#open-source-development-business-requirements)
     - [quality assurance QA environment](#quality-assurance-qa-environment)
-    - [functional pre-production STAGING environment](#functional-pre-production-staging-environment)
+    - [functional staging DEMO environment](#functional-staging-demo-environment)
 - [technical stack](#technical-stack)
 - [technical environment (cloud)](#technical-environment-cloud)
 - [flow](#flow)
@@ -18,7 +18,7 @@ weight: 33
 - [gitlab](#gitlab)
 - [npm](#npm)
 - [nuget](#nuget)
-- [list of webapps/services/packages](#list-of-webapps-services-packages)
+- [dashboard](#dashboard)
 
 ---
 
@@ -27,60 +27,63 @@ weight: 33
 
 - Automated update triggered by **Dev** branch merge (part of “peer-review” Kanban step) 
 - Used by **Product Management team** to:  
-  -	directly test through API/Swagger/Postman candidate .Stat CORE services:  
-    ° [**NSI ws with stable content** (upgraded database) called 'stable'](http://nsi-stable-qa.siscc.org)  
-    ° [**NSI ws with re-initialised content** (new database) called 'reset'](http://nsi-reset-qa.siscc.org)  
-    ° [**Transfer ws**](http://transfer-qa.siscc.org/swagger/index.html)  
-    ° [**Authorisation ws**](http://authz-qa.siscc.org/swagger/index.html)  
-  - test [**'PM' tenant**  of candidate **DE**](http://de-qa.siscc.org) plugged to:  
-    ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
-    ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
-    ° [Data viewer app](http://dv-qa.siscc.org)
-  - test [**'PM' tenant**  of candidate **DLM**](http://dlm-qa.siscc.org) plugged to:  
-    ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'SIS-CC-stable'   
-    ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'SIS-CC-reset'  
+  -	directly test through API/Swagger/Postman candidate .Stat CORE services:   
+    ° [**NSI ws with stable content** (upgraded database) called 'qa:stable'](https://nsi-qa-stable.siscc.org)  
+    ° [**NSI ws with re-initialised content** (new database) called 'qa:reset'](https://nsi-qa-reset.siscc.org)  
+    ° [**Transfer ws**](https://transfer-qa.siscc.org/swagger/)  
+    ° [**Authorisation ws**](https://authz-qa.siscc.org/swagger/)  
+  - test [**'PM' tenant**  of candidate **DE**](https://de-qa.siscc.org) plugged to:  
+    ° indexing SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'staging:SIS-CC-stable'   
+    ° indexing QA instance of NSI ws with stable content (upgraded database) called 'qa:stable'  
+    ° [Data viewer app](https://dv-qa.siscc.org)  
+  - test [**'PM' tenant**  of candidate **DLM**](https://dlm-qa.siscc.org) with internal data spaces plugged to:  
+    ° SIS-CC Demo-related staging instance of NSI ws with stable content (upgraded database) called 'staging:SIS-CC-stable'   
+    ° SIS-CC Demo-related staging instance of NSI ws with re-initialised content (new database) called 'staging:SIS-CC-reset'  
     ° SIS-CC Demo-related staging instance of Transfer ws  
-    ° SIS-CC Demo-related staging instance of Authorisation ws  
+  - test [**'PM' tenant**  of candidate **DLM**](https://dlm2-qa.siscc.org) with internal data spaces plugged to:  
+    ° QA instance of NSI ws with stable content (upgraded database) called 'qa:stable'   
+    ° QA instance of NSI ws with re-initialised content (new database) called 'qa:reset'  
+    ° QA instance of Transfer ws  
 - Other links:
-  - [User identity management](http://keycloak-oecd.redpelicans.com)
-  - [Share ws](http://share-qa.siscc.org/healthcheck)
-  - [Search ws](http://sfs-qa.siscc.org/healthcheck)
+  - [User identity management](https://keycloak.siscc.org)
+  - [Share ws](https://share-qa.siscc.org/healthcheck)
+  - [Search ws](https://sfs-qa.siscc.org/healthcheck)
 
-#### functional pre-production STAGING environment
+#### functional staging DEMO environment
 
 - Automated update triggered by **Master** branch merge (part of “release” Kanban step)
-- Hosting stable instances for **OECD Practice Building team** of: 
-  - [**NSI ws with stable content** (upgraded database) called 'OECD-design'](http://nsi-design-oecd.redpelicans.com/)
-  - [**NSI ws with stable content** (upgraded database) called 'OECD-staging'](http://nsi-staging-oecd.redpelicans.com/)
-  - [**Transfer ws**](http://transfer-demo.siscc.org/swagger)
-  - [**Authorisation ws**](http://authz-demo.siscc.org/swagger)
-  - [**'OECD' tenant** of **DE**](http://de-staging-oecd.redpelicans.com/) plugged to:  
-    ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
-    ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
-    ° [Data viewer app](http://dv-demo.siscc.org)
-  - [**'OECD' tenant** of **DLM**](http://dlm-staging-oecd.redpelicans.com/) plugged to:  
-    ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
-    ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
-    ° stable Transfer ws  
-    ° stable Authorisation ws  
 - Hosting stable instances for **SIS-CC (for Demo purposes)** of:
-  - [**NSI ws with stable content** (upgraded database) called 'SIS-CC-stable'](http://nsi-stable-demo.siscc.org)
-  - [**NSI ws with re-initialised content** (new  database) called 'SIS-CC-reset'](http://nsi-reset-demo.siscc.org)
-  - [**Transfer ws**](http://transfer-demo.siscc.org/swagger)
-  - [**Authorisation ws**](http://authz-demo.siscc.org/swagger)
-  - [**'SIS-CC' tenant** of **DE**](http://de-demo.siscc.org) plugged to:  
-    ° stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'  
-    ° stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'  
-    ° [Data viewer app](http://dv-staging-siscc.redpelicans.com/)
-  - [**'SIS-CC' tenant** of **DLM**](http://dlm-demo.siscc.org) plugged to:  
-    ° stable NSI ws with stable content (upgraded database) called 'SIS-CC-stable'  
-    ° stable NSI ws with re-initialised content (new  database) called 'SIS-CC-reset'  
+  -	directly test through API/Swagger/Postman candidate .Stat CORE services:  
+    ° [**NSI ws with stable content** (upgraded database) called 'staging:SIS-CC-stable'](https://nsi-demo-stable.siscc.org)  
+    ° [**NSI ws with re-initialised content** (new  database) called 'staging:SIS-CC-reset'](https://nsi-demo-reset.siscc.org)  
+    ° [**Transfer ws**](https://transfer-demo.siscc.org/swagger)  
+    ° [**Authorisation ws**](https://authz-demo.siscc.org/swagger)  
+  - [**'SIS-CC' tenant** of **DE**](https://de-demo.siscc.org) plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'staging:SIS-CC-stable'   
+    ° stable NSI ws with re-initialised content (new  database) called 'staging:SIS-CC-reset'  
+    ° [Data viewer app](https://dv-demo.siscc.org)  
+  - [**'SIS-CC' tenant** of **DLM**](https://dlm-demo.siscc.org) plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'staging:SIS-CC-stable'  
+    ° stable NSI ws with re-initialised content (new  database) called 'staging:SIS-CC-reset'  
     ° stable Transfer ws  
-    ° stable Authorisation ws  
+- Hosting stable instances for **OECD Practice Building team** of: 
+  -	directly test through API/Swagger/Postman candidate .Stat CORE services:  
+    ° [**NSI ws with stable content** (upgraded database) called 'OECD-design'](https://nsi-demo-oecd-design.siscc.org)  
+    ° [**NSI ws with stable content** (upgraded database) called 'OECD-staging'](https://nsi-demo-oecd-staging.siscc.org)  
+    ° [**Transfer ws**](https://transfer-demo.siscc.org/swagger)  
+    ° [**Authorisation ws**](https://authz-demo.siscc.org/swagger)  
+  - [**'OECD' tenant** of **DE**](hhttps://de-demo-oecd.siscc.org) plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
+    ° [Data viewer app](https://dv-demo.siscc.org)
+  - [**'OECD' tenant** of **DLM**](https://dlm-demo-oecd.siscc.org) plugged to:  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-design'  
+    ° stable NSI ws with stable content (upgraded database) called 'OECD-staging'  
+    ° stable Transfer ws  
 - Other links:
-  - [User identity management](http://keycloak-oecd.redpelicans.com)
-  - [Share ws](http://share-demo.siscc.org/healthcheck)
-  - [Search ws](http://sfs-demo.siscc.org/healthcheck)
+  - [User identity management](https://keycloak.siscc.org)
+  - [Share ws](https://share-demo.siscc.org/healthcheck)
+  - [Search ws](https://sfs-demo.siscc.org/healthcheck)
 - Other tenants of DE and DLM for specific SIS-CC members 
   - either plugged to their own SDMX APIs
   - or plugged into above mentioned SIS-CC Demo-related instances of .Stat CORE services
@@ -270,44 +273,8 @@ end
 
 ---
 
-### list of webapps/services/packages
+### dashboard
 
-|kind|name|status master|status dev|coverage|
-|---|---|---|---|---|
-|infra|[kubernetes de](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp)|-|-|-|
-|infra|[kubernetes core](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp)|-|-|-|
-|-|-|-|-|-|
-|service|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/badges/develop/coverage.svg?style=flat-square)|
-|service|[sdmx-faceted-search](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/badges/develop/coverage.svg?style=flat-square)|
-|service|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/badges/develop/coverage.svg?style=flat-square)|
-|service|[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/badges/develop/coverage.svg?style=flat-square)|
-|-|-|-|-|-|
-|service|[core-auth-management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)|
-|service|[core-transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)|
-|-|-|-|-|-|
-|webapp|[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)|
-|webapp|[data-viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/badges/develop/coverage.svg?style=flat-square)|
-|webapp|[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)|
-|-|-|-|-|-|
-|package|[ui-footer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/coverage.svg?style=flat-square)|
-|package|[ui-header](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/coverage.svg?style=flat-square)|
-|package|[components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/coverage.svg?style=flat-square)|
-|package|[ui-components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/coverage.svg?style=flat-square)|
-|package|[d3-charts](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/coverage.svg?style=flat-square)|
-|package|[sdmxjs](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/badges/master/coverage.svg?style=flat-square)|
-|package|[visions](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/badges/master/build.svg?style=flat-square)|-|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/badges/master/coverage.svg?style=flat-square)|
-|-|-|-|-|-|
-|package|[core-data-access](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/badges/develop/coverage.svg?style=flat-square)|
-|package|[core-common](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/build.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/develop/build.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/develop/coverage.svg?style=flat-square)|
-
-**packages**  
-
-|name|version|status|coverage|demo|note(s)|
-|-|-|-|-|-|-|
-|[sdmxjs](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs)|![npm package](https://img.shields.io/npm/v/@sis-cc/dotstatsuite-sdmxjs?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/badges/master/coverage.svg?style=flat-square)|[sdmxjs](http://sdmxjs-qa-oecd.redpelicans.com/)|:muscle: @RedPDRoncoli|
-|[visions](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions)|![npm package](https://img.shields.io/npm/v/@sis-cc/dotstatsuite-visions?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/badges/master/coverage.svg?style=flat-square)|[visions](http://visions-qa-oecd.redpelicans.com/)|:sparkles: @mike.velluet|
-|[ui-footer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer)|![npm package](https://img.shields.io/npm/v/@sis-cc/dotstatsuite-ui-footer?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-footer/badges/master/coverage.svg?style=flat-square)|-|will be included visions|
-|[ui-header](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header)|![npm package](https://img.shields.io/npm/v/@sis-cc/dotstatsuite-ui-header?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-header/badges/master/coverage.svg?style=flat-square)|-|will be included visions|
-|[components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components)|![npm package](https://img.shields.io/npm/v/@sis-cc/dotstatsuite-components?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/badges/master/coverage.svg?style=flat-square)|-|tests are scattered inside|
-|[ui-components](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components)|![npm package](https://img.shields.io/npm/v/@sis-cc/dotstatsuite-ui-components?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-ui-components/badges/master/coverage.svg?style=flat-square)|-|will be merged with visions|
-|[d3-charts](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts)|![npm package](https://img.shields.io/npm/v/@sis-cc/dotstatsuite-d3-charts?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/badges/master/coverage.svg?style=flat-square)|-|complex to test|
+- kubernetes JS-based components: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp
+- kubernetes .NET-based components: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp
+- **dashboard**: https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
