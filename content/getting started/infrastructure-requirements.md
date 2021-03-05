@@ -15,9 +15,8 @@ weight: 38
 ### .Stat Core Data Store
 **Software requirements**
 
-- **SQL server 2017** or higher 
-    - Not all columnstore features are available in express and standard editions of MS SQL for versions older than 2017
-    - SQL server 2016 contains columnstore features only on enterprise edition. 
+- **SQL Server 2016 (13.x) SP1** or any higher edition (including Express)
+    - Argument: requirement for the feature **Updatable columnstore index**. [See more](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-what-s-new?view=sql-server-ver15) 
 - **IIS Web server 7\.5** or higher
 - **Microsoft .NET Core 3\.1**
 - **Microsoft SQL server management studio** (Optional)
