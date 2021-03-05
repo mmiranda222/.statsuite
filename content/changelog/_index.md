@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 5, 2021](#march-5-2021)
 - [January 25, 2021](#january-25-2021)
 - [January 21, 2021](#january-21-2021)
 - [December 2, 2020](#december-2-2020)
@@ -55,6 +56,81 @@ ToC
 - [Release 28.09.2018](#release-28092018)
 - [Release 10.07.2018](#release-10072018)
  -->
+
+### March 5, 2021
+**[Release .Stat Suite .NET 6.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/34)**
+> This **major** release includes a new version of the **core-transfer**, **core-sdmxri-nsi-ws**, **core-auth-management**, and **core-data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+**Disclaimer on the performance evolutions** in this release. Here below is a summary of comparison of the performance before and after using the SDMX-RI NSI web service default data plugin in .Stat Suite (all performance tests processes, definitions and types are  [documented here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/blob/master/PerformanceTests/README.md)). Although a series of improvements can already be noticed with this release, **it does not yet meet the expected performance improvements** for high-load situations (many parallel data queries). Additionally required improvements (related mainly to the default nsi-ws-plugin) are being addressed with [dotstatsuite-core-sdmxri-nsi-ws#111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/111).  
+
+- ***Comparison of the performance before and after using the SDMX-RI NSI web service default data plugin***  
+  Smoke-test data imports (time increase by 15%)  
+  ```
+  data_import_time................: avg=16.85s --> avg=19.42s  
+  ✓ { datasetSize:extraSmall }....: avg=2.36s --> avg=2.6s  
+  ✓ { datasetSize:small }.........: avg=31.34s --> avg=36.24
+  ```
+  Smoke-test data extractions (time decrease by 20%)  
+  ```
+  http_req_duration...............: avg=227.65ms --> avg=182.51ms
+  ```
+  Load-test data extractions (**time increase by 605%**)  
+  ```
+  http_req_duration...............: avg=1.33s --> avg=8.05s  
+  ✓ { datasetSize:extraSmall }....: avg=1.6s --> avg=7.07s  
+  ✓ { datasetSize:small }.........: avg=1.39s --> avg=8.85s
+  ```
+  Stress-test data extractions (**time increase by 29%**)  
+  ```
+  http_req_duration................: avg=1.89s --> avg=2.43s  
+  ✓ { datasetSize:extraSmall }.....: avg=2.27s --> avg=2.3s  
+  ✓ { datasetSize:small }..........: avg=1.99s --> avg=2.63s
+  ```
+  Spike-test data extractions (time decrease by 3%)  
+  ```
+  http_req_duration................: avg=3.8s --> avg=3.68s  
+  ✗ { datasetSize:extraSmall }.....: avg=4.25s --> avg=4.11s  
+  ✗ { datasetSize:small }..........: avg=3.88s --> avg=3.76s 
+  ```
+  Soak-test data extractions (**time increase by 97%**)  
+  ```
+  http_req_duration..........: avg=670.42ms --> avg=1.32s
+  ```
+
+major *(backward-incompatible)* changes:
+
+- [dotstatsuite-core-sdmxri-nsi-plugin#37](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-plugin/-/issues/37) **Always protect non-public data**. Whether openid-connect authentication is turned ON or OFF in the NSI web-service configuration, anonymous users ALWAYS only get data that is especially made public (through appropriate permissions).  
+  This represents a major change from previous releases, where with NSI openid-connect authentication was turned OFF, all users (necessarily unauthenticated) could get all data.
+  **Now**, Docker image with authorization is **enabled (turned ON) by default**.  
+- **Known limitation**: the current DLM feature for viewing artefact content (in xml format) in a new web-browser tab by clicking on the (hyperlinked) name of an artefact does not work anymore with the new nsi-ws authentication in place, unless a generic *CanReadStructures* permission is granted to all users incl. anonymous users. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/))
+- [dotstatsuite-core-transfer#124](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/124) Allow for **non-numeric and coded measures** (observation values) in .Stat CORE. Now, according to the SDMX standard, **`String` is the default SDMX data TextType format** when it is not specified in the data structure definition (previsouly, `Double` was the default TextType format). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#data-type-definitions))
+
+minor changes:
+
+- [dotstatsuite-core-data-access#16](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/16) **Data model review** of the current codelist-based approach of **time dimension**. All standard time period formats can now be used, e.g. daily or weekly time periods, without maintaining an internal time period code table.
+- [dotstatsuite-core-sdmxri-nsi-ws#84](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/84) Support for DSD without Time dimension.
+- [dotstatsuite-core-transfer#159](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/159) Allow for attributes at group-level that includes the time dimension (part 1). *First partial implementation of this feature, which will be completed once [dotstatsuite-core-transfer#189](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/189) is released.*
+- [dotstatsuite-core-transfer#167](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/167) *(DevOps)* Validate the data database version used by the transfer-service.
+
+patch changes:
+
+- [dotstatsuite-core-data-access#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/50) *(Refactoring)* Storage of non-observation attributes at series and observation levels. This improves performance.
+- [dotstatsuite-core-data-access#57](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/57) *(Refactoring)* Modify the `IObservation` producers to allow SQL bulk insert in a single process. This improves performance.
+- [dotstatsuite-core-data-access#51](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/51) *(Refactoring)* Performance improvement: Remove ROW_ID from DSDs with less than 34 dimensions. This improves performance for data structures with many dimensions.
+- [dotstatsuite-core-data-access#67](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/67) Manage `ExecutionTimeout` with DbUp.
+- [dotstatsuite-core-data-access#69](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/69) *(DevOps)* Run dbup upgrade in a single user mode. 
+- [dotstatsuite-core-auth-management#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/25) Authorisation management : permissions `ID=0` and `ID=1` not working as expected. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/#basic-permissions))
+- [dotstatsuite-core-sdmxri-nsi-ws#90](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/90) SdmxSource csv & xml generic readers do not support dataflows without Time dimension.
+- [dotstatsuite-core-transfer#168](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/168) Issues with data upload and data retrieval when `CoreRepresentation` and `LocalRepresentation` use different versions of the same codelist.
+- [dotstatsuite-core-transfer#136](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/136) Incorrect error when uploading data with attributes (while data is fully ok and also importing same data in slices is ok).
+- [dotstatsuite-core-transfer#60](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/60) Improve error messages for mistakes in the csv layout.
+- [dotstatsuite-core-sdmxri-nsi-ws#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/96) Issue with ESTAT:DEMOGRAPHY(2.3).
+- [dotstatsuite-core-data-access#68](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/68) Fix datetime format issue in `UpdateMappingSet`.
+- [dotstatsuite-quality-assurance#1](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/1) *(DevOps)* Migrate performance tests out of the dotstatsuite-core-sdmxri-nsi-plugin repository.
+- [dotstatsuite-data-lifecycle-manager#156](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/156) *(Support)* Attribute attached to time dimension : Dimension not found in management db.
+
+---
 
 ### January 25, 2021
 **[Release .Stat Suite .NET 5.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/27)**
