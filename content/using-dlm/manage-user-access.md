@@ -59,7 +59,7 @@ The basic permissions listed below are permissions associated to a single and sp
 
 **Permission id:64 is implemented (as provided by the Eurostat's source code) but not yet used in the .Stat Suite context.*  
   
->* **Note** that since [release .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2021), **permission id:0 is no longer supported** in .Stat Suite.* 
+>**Note** that since [release .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2021), **permission id:0 is no longer supported** in .Stat Suite.
 
 #### Combined permissions
 Combined permissions are the combination of several basic permissions.  
