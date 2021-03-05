@@ -100,7 +100,7 @@ add auth.json file to a config directory with following contents:
 
 Note that  
 - If NSI is configured to process sent JWT token then it's essential to configure it to `allowAnonymous=true` for the DE to work. 
-- With NSI openid-connect authentication turned ON, structure upload/retrieval remain anonymous (we just haven't implemented the authorization for it yet).
+- *(since [release .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2021))*, NSI openid-connect authentication is turned ON by default. When the NSI openid-connect authentication is turned OFF, all users (necessarily unauthenticated) can get all (even non-public) data.
 - With NSI openid-connect authentication turned ON, on data retrieval, there is a check if user has a Data read permission in authorization DB (managed through the authorization service) even if request is anonymous (using the .Stat Suite AuthorizationManagement web service, there must be appropriate (probably read) permissions defined for anonymous users).
 
 **P.S.** If you setup your environment just for testing turning ON openid-connect, authentication is not a mandatory thing. DLM/DE will perfectly work with NSI without it. NSI will just ignore JWT token sent from DLM.

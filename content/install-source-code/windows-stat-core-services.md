@@ -545,15 +545,19 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__authority',value='']" /commit:apphost
 ```
 
-*  Set authorization turned OFF
+*  Set authorization turned ON
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__enabled',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__enabled',value='true']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__method',value='dotstat']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__PrincipalFrom',value='context']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__Default',value='design']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-design" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__FromQueryParameter',value='Never']" /commit:apphost
 ```
+
+Please note that with the configuration above the NSI WS instance is configured to allow only anonymous access (as authentication is turned off).
+The authorization rules can be managed via Authorization Management service (e.g. using the Swagger UI of the service).
+Permissions granted to anonymous user is controlled by rules assigned to all users (userId="*"). 
 
 **Step 9.** Start the new application
 ```sh
@@ -724,15 +728,19 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='auth__authority',value='']" /commit:apphost
 ```
 
-*  Set authorization turned OFF
+*  Set authorization turned ON
 ```sh
-/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__enabled',value='false']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__enabled',value='true']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__method',value='dotstat']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='authorization__PrincipalFrom',value='context']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='DotStatSuiteCoreCommonDbConnectionString',value='Data Source=localhost;Initial Catalog=CommonDb;User ID=testLoginCommon;Password=testLogin(\!)Password']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__Default',value='disseminate']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "nsiws-disseminate" -section:system.webServer/aspNetCore /+"environmentVariables.[name='mappingStore__Id__FromQueryParameter',value='Never']" /commit:apphost
 ```
+
+Please note that with the configuration above the NSI WS instance is configured to allow only anonymous access (as authentication is turned off).
+The authorization rules can be managed via Authorization Management service (e.g. using the Swagger UI of the service).
+Permissions granted to anonymous user is controlled by rules assigned to all users (userId="*"). 
 
 **Step 9.** Start the new application
 ```sh
