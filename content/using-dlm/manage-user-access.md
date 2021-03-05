@@ -40,11 +40,10 @@ Access permissions can be defined individually for the following contexts:
 ### List of available permissions
 
 #### Basic permissions
-The basic permissions listed below are permissions associated to a single and specific action.
+The basic permissions listed below are permissions associated to a single and specific action.  
 
 | **id** | **Permission** | **Definition** |
 | ------ | ------ | ------ |
-| 0 | None | None |
 | 1 | CanReadStructuralMetadata | Can read structural metadata attribute |
 | 2 | CanReadData | Can read data attribute |
 | 4 | CanIgnoreProductionFlag | Can ignore production flag attribute |
@@ -58,7 +57,9 @@ The basic permissions listed below are permissions associated to a single and sp
 | 1024 | CanDeleteData | Can delete data |
 | 2048 | CanReadPitData | Can read Point-in-Time (PiT) Data |
 
-**Permission id:64 is implemented (as provided by the Eurostat's source code) but not yet used in the .Stat Suite context.*
+**Permission id:64 is implemented (as provided by the Eurostat's source code) but not yet used in the .Stat Suite context.*  
+  
+>* **Note** that since [release .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2021), **permission id:0 is no longer supported** in .Stat Suite.* 
 
 #### Combined permissions
 Combined permissions are the combination of several basic permissions.  
@@ -144,7 +145,25 @@ Below is a table of the most used combinations, but others are acceptable.
 
 Using the AuthorizationRules method of the AuthorisationManagement web service:
 - A non-admin user (or member of a non-admin group) can only see all those permissions that grant this user with a permission.
-- An admin user (or member of an admin group) - with admin permission #4095 - can see all permissions defined on those spaces on which that user has admin rights.
+- An admin user (or member of an admin group) - with admin permission `id:4095` - can see all permissions defined on those spaces on which that user has admin rights.
+
+When a user is individually granted with a specific permission, and this user also belongs to a group which has its own permissions, then the **user permissions are cumulative** with its individual permissions and the group permissions he belongs to.  
+User permissions are also cumulative with the generic user permission ("*") if any.  
+
+**It is important to check** that the NSI web service configuration parameters (Authentication, Allow anonymous, Authorisation) correspond to one of the following tryptics, knowing that if they match with one of the **bold** tryptics, then the specific authorisations won't be taken into consideration.  
+
+
+| NSI WS config  |                 |               | 
+|----------------|-----------------|---------------|
+| Authentication | Allow anonymous | Authorization |
+| On             | TRUE            | On            |
+| On             | FALSE           | On            |
+| Off            | TRUE            | On            |
+| Off            | FALSE           | On            |
+| **On**         | **TRUE**        | **Off**       |
+| On             | FALSE           | Off           |
+| **Off**        | **TRUE**        | **Off**       |
+| **Off**        | **FALSE**       | **Off**       |
 
 **Example:**  
 
