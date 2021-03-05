@@ -63,34 +63,36 @@ Codes in a Codelist can additionally be restrained through the following paramet
 ---
 
 ### Data type definitions
+> Since [March 5, 2021 Release .Stat Suite .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-5-2021), .Stat Suite supports the use of **non-numeric and coded measure values**. Following are the lists of the SDMX standard for possible data types (representations) for observation values.
 
-- String: A string datatype corresponding to W3C XML Schema's xs:string datatype.
-- Alpha: A string datatype which only allows for the simple aplhabetic charcter set of A-Z, a-z.
-- AlphaNumeric: A string datatype which only allows for the simple alphabetic character set of A-Z, a-z plus the simple numeric character set of 0-9.
-- Numeric: A string datatype which only allows for the simple numeric character set of 0-9. This format is not treated as an integer, and therefore can having leading zeros.
+The possible values for the optional TextFormat attribute **"textType"** are:
+- String: A string datatype corresponding to W3C XML Schema's xs:string datatype. **Note that `String` is the default data type** when it is not specified in the structure definition. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_STRING&df%5Bag%5D=OECD.CFE&df%5Bvs%5D=5.0&av=true&pd=2015%2C2018&dq=AU....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
+- Alpha: A string datatype which only allows for the simple aplhabetic charcter set of A-Z, a-z. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_ALPHA&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=2015%2C2018&dq=AU....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
+- AlphaNumeric: A string datatype which only allows for the simple alphabetic character set of A-Z, a-z plus the simple numeric character set of 0-9. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_ALPHANUMERIC&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=AT....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
+- Numeric: A string datatype which only allows for the simple numeric character set of 0-9. This format is not treated as an integer, and therefore can having leading zeros. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_NUMERIC&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=2015%2C2017&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
 - BigInteger: An integer datatype corresponding to W3C XML Schema's xs:integer datatype.
-- Integer: An integer datatype corresponding to W3C XML Schema's xs:int datatype.
-- Long: A numeric datatype corresponding to W3C XML Schema's xs:long datatype.
-- Short: A numeric datatype corresponding to W3C XML Schema's xs:short datatype.
+- Integer: An integer datatype corresponding to W3C XML Schema's xs:int datatype. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_INTEGER&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD&lt%5Brs%5D=REF_AREA)
+- Long: A numeric datatype corresponding to W3C XML Schema's xs:long datatype. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_LONG&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD&lt%5Brs%5D=REF_AREA)
+- Short: A numeric datatype corresponding to W3C XML Schema's xs:short datatype. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_SHORT&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD&lt%5Brs%5D=REF_AREA)
 - Decimal: A numeric datatype corresponding to W3C XML Schema's xs:decimal datatype.
-- Float: A numeric datatype corresponding to W3C XML Schema's xs:float datatype.
+- Float: A numeric datatype corresponding to W3C XML Schema's xs:float datatype. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_FLOAT&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD&lt%5Brs%5D=REF_AREA)
 - Double: A numeric datatype corresponding to W3C XML Schema's xs:double datatype.
-- Boolean: A datatype corresponding to W3C XML Schema's xs:boolean datatype.
+- Boolean: A datatype corresponding to W3C XML Schema's xs:boolean datatype. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_BOOLEAN&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD&lt%5Brs%5D=REF_AREA)
 - URI: A datatype corresponding to W3C XML Schema's xs:anyURI datatype.
 - Count: A simple incrementing Integer type. The isSequence facet must be set to true, and the interval facet must be set to "1".
 - InclusiveValueRange: This value indicates that the startValue and endValue attributes provide the inclusive boundaries of a numeric range of type xs:decimal.
 - ExclusiveValueRange: This value indicates that the startValue and endValue attributes provide the exclusive boundaries of a numeric range, of type xs:decimal.
 - Incremental: This value indicates that the value increments according to the value provided in the interval facet, and has a true value for the isSequence facet.
-- ObservationalTimePeriod: Observational time periods are the superset of all time periods in SDMX. It is the union of the standard time periods (i.e. Gregorian time periods, the reporting time periods, and date time) and a time range.
+- ObservationalTimePeriod: Observational time periods are the superset of all time periods in SDMX. It is the union of the standard time periods (i.e. Gregorian time periods, the reporting time periods, and date time) and a time range. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DRAFT_POV&df%5Bag%5D=UNICEF_DRAFT&df%5Bvs%5D=1.0&av=true&pd=2005%2C2017&dq=...)
 - StandardTimePeriod: Standard time periods is a superset of distinct time period in SDMX. It is the union of the basic time periods (i.e. the Gregorian time periods and date time) and the reporting time periods.
 - BasicTimePeriod: BasicTimePeriod time periods is a superset of the Gregorian time periods and a date time.
 - GregorianTimePeriod: Gregorian time periods correspond to calendar periods and are represented in ISO-8601 formats. This is the union of the year, year month, and date formats.
 - GregorianYear: A Gregorian time period corresponding to W3C XML Schema's xs:gYear datatype, which is based on ISO-8601.
 - GregorianYearMonth: A time datatype corresponding to W3C XML Schema's xs:gYearMonth datatype, which is based on ISO-8601.
-- GregorianDay: A time datatype corresponding to W3C XML Schema's xs:date datatype, which is based on ISO-8601.
+- GregorianDay: A time datatype corresponding to W3C XML Schema's xs:date datatype, which is based on ISO-8601. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_GREGORIANDAY&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=2015%2C2017&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
 - ReportingTimePeriod: Reporting time periods represent periods of a standard length within a reporting year, where to start of the year (defined as a month and day) must be defined elsewhere or it is assumed to be January 1. This is the union of the reporting year, semester, trimester, quarter, month, week, and day.
 - ReportingYear: A reporting year represents a period of 1 year (P1Y) from the start day of the reporting year (day-month) specified in the specialized reporting year start day attribute. In the absence of a start day for the reporting year, a day of January 1 is assumed. In this case a reporting year will coincide with a calendar year. The format of a reporting year is YYYY-A1 (e.g. 2000-A1). Note that the period value of 1 is fixed. Pattern: ".{5}A1.*"
-- ReportingSemester: A reporting semester represents a period of 6 months (P6M) from the start day of the reporting year (day-month) specified in the specialized reporting year start day attribute. In the absence of a start day for the reporting year, a day of January 1 is assumed. The format of a reporting semester is YYYY-Ss (e.g. 2000-S1), where s is either 1 or 2. Pattern: ".{5}S[1-2].*"
+- ReportingSemester: A reporting semester represents a period of 6 months (P6M) from the start day of the reporting year (day-month) specified in the specialized reporting year start day attribute. In the absence of a start day for the reporting year, a day of January 1 is assumed. The format of a reporting semester is YYYY-Ss (e.g. 2000-S1), where s is either 1 or 2. Pattern: ".{5}S[1-2].*" [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_REPORTINGSEMESTER&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=2015%2C2017&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
 - ReportingTrimester: A reporting trimester represents a period of 4 months (P4M) from the start day of the reporting year (day-month) specified in the specialized reporting year start day attribute. In the absence of a start day for the reporting year, a day of January 1 is assumed. The format of a reporting trimester is YYYY-Tt (e.g. 2000-T1), where s is either 1, 2, or 3. Pattern: ".{5}T[1-3].*"
 - ReportingQuarter: A reporting quarter represents a period of 3 months (P3M) from the start day of the reporting year (day-month) specified in the specialized reporting year start day attribute. In the absence of a start day for the reporting year, a day of January 1 is assumed. The format of a reporting quarter is YYYY-Qq (e.g. 2000-Q1), where q is a value between 1 and 4. Pattern: ".{5}Q[1-4].*"
 - ReportingMonth: A reporting month represents a period of 1 month (P1M) from the start day of the reporting year (day-month) specified in the specialized reporting year start day attribute. In the absence of a start day for the reporting year, a day of January 1 is assumed. In this case a reporting month will coincide with a calendar month. The format of a reporting month is YYYY-Mmm (e.g. 2000-M01), where mm is a two digit month (i.e. 01-12). Pattern: ".{5}M(0[1-9]|1[0-2]).*"
@@ -98,17 +100,47 @@ Codes in a Codelist can additionally be restrained through the following paramet
 - ReportingDay: A reporting day represents a period of 1 day (P1D) from the start day of the reporting year (day-month) specified in the specialized reporting year start day attribute. In the absence of a start day for the reporting year, a day of January 1 is assumed. The format of a reporting day is YYYY-Dddd (e.g. 2000-D001), where ddd is a three digit day (i.e. 001-366). Pattern: ".{5}D(0[0-9][1-9]|[1-2][0-9][0-9]|3[0-5][0-9]|36[0-6]).*"
 - DateTime: A time datatype corresponding to W3C XML Schema's xs:dateTime datatype.
 - TimeRange: TimeRange defines a time period by providing a distinct start (date or date time) and a duration. It is generally described as [xs:date or xs:dateTime]\[xs:duration], where the referenced types are defined by XML Schema. Patterns: ".+/P.*T(\d+H)?(\d+M)?(\d+(.\d+)?S)?", ".+/P[^T]+"
-- Month: A time datatype corresponding to W3C XML Schema's xs:gMonth datatype.
+- Month: A time datatype corresponding to W3C XML Schema's xs:gMonth datatype. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_MONTH&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=2015%2C2017&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
 - MonthDay: A time datatype corresponding to W3C XML Schema's xs:gMonthDay datatype.
 - Day: A time datatype corresponding to W3C XML Schema's xs:gDay datatype.
 - Time: A time datatype corresponding to W3C XML Schema's xs:time datatype.
 - Duration: A time datatype corresponding to W3C XML Schema's xs:duration datatype.
 - XHTML: This value indicates that the content of the component can contain XHTML markup.
 
+**Example:**
+```xml
+<structure:PrimaryMeasure id="OBS_VALUE">
+    <structure:ConceptIdentity>
+        <Ref id="OBS_VALUE" maintainableParentID="CS_TOURISM" maintainableParentVersion="1.0" agencyID="OECD" package="conceptscheme" class="Concept" />
+    </structure:ConceptIdentity>
+        <structure:LocalRepresentation>
+            <structure:TextFormat textType="Float"/>
+        </structure:LocalRepresentation>
+</structure:PrimaryMeasure>
+```
+
+The other optional TextFormat attributes and properties that .Stat Suite supports are:
+- "minLength" type="xs:positiveInteger": The minLength attribute specifies the minimum and length of the value in characters.
+- "maxLength" type="xs:positiveInteger": The maxLength attribute specifies the maximum length of the value in characters.
+- "minValue" type="xs:integer": The minValue attribute is used for inclusive and exclusive ranges, indicating what the lower bound of the range is. If this is used with an inclusive range, a valid value will be greater than or equal to the value specified here. If the inclusive and exclusive data type is not specified (e.g. this facet is used with an integer data type), the value is assumed to be inclusive. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_SHORT&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD&lt%5Brs%5D=REF_AREA)
+- "maxValue" type="xs:integer": The maxValue attribute is used for inclusive and exclusive ranges, indicating what the upper bound of the range is. If this is used with an inclusive range, a valid value will be less than or equal to the value specified here. If the inclusive and exclusive data type is not specified (e.g. this facet is used with an integer data type), the value is assumed to be inclusive. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_SHORT&df%5Bag%5D=OECD&df%5Bvs%5D=1.0&av=true&pd=%2C&dq=....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD&lt%5Brs%5D=REF_AREA)
+- "pattern" type="xs:string": The pattern attribute holds any regular expression permitted in the similar facet in W3C XML Schema. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=MG&df%5Bag%5D=UNICEF&df%5Bvs%5D=1.0&av=true&pd=2017%2C2017&dq=AFG%2BALB%2BDZA%2BAND%2BAGO%2BAIA%2BATG%2BARG..)
+
+**Example:**
+```xml
+<structure:PrimaryMeasure id="OBS_VALUE">
+    <structure:ConceptIdentity>
+        <Ref id="OBS_VALUE" maintainableParentID="CS_TOURISM" maintainableParentVersion="1.0" agencyID="OECD" package="conceptscheme" class="Concept"/>
+    </structure:ConceptIdentity>
+        <structure:LocalRepresentation>
+            <structure:TextFormat textType="Short" minValue="-10" maxValue="10"/>
+        </structure:LocalRepresentation>
+</structure:PrimaryMeasure>
+```
+
 ---
 
 ### Data querying
-
 In SDMX 2.1, users can query for data by distinct values for the Dimensions, incl. MeasureDimension. However, the TimeDimension can only be queried through a time period range.
 
 In SDMX 3.0, it is expected to be able to query for data by distinct values for the Dimensions, Measures and Attributes. Likely, the TimeDimension can still only be queried through a time period range.
