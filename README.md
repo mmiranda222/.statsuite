@@ -21,7 +21,7 @@ This project is used for publishing the official .Stat Suite documentation to th
 - Your merge request will be reviewed according to our **[Gitflow](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-guidelines/) process**.
 
 ### Search using Algolia
-Free text search on documentation is enabled and by using [algolia](https://www.algolia.com/doc/).  
+Free text search on documentation is enabled and is using [algolia](https://www.algolia.com/doc/).  
 In order to properly index the pages and their sub-sections within each page, each header of a `.md` content file must contain the table of contents as `keywords`.  
 
 Example:  
