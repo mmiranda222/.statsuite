@@ -57,6 +57,14 @@ ToC
 - [Release 10.07.2018](#release-10072018)
  -->
 
+> **General disclaimer:** If you **upgrade a .Stat Suite installation from a .NET version below 5.0.0, to .NET v5.0.0 or higher**, you must follow the migration procedure explained as follows. **All MappingSets must be generated specifically in the context of the .Stat Suite**. This is to be done through the following methods:  
+> - **Before** you generate the MappingSets (see next bullet), if during the migration/upgrade to version 5.0.0 or higher with the DBUP tool, some DSDs/Dataflows migrations fail (check the logs using the transfer service `/status/requests` method), then you should **migrate these dataflows manually** using the Transfer service method `/init/dataflow`. Note that his should happen only extremely rarely, and would be caused by previous inconsistencies in the DB state. In case the manual dataflow migration is still unsuccessful then it is recommended to delete the underlying DSD, cleanup the related DB objects (using the Transfer service method `/cleanup/dsd`), recreate the data structures and reload the related data. 
+> - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
+> - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
+> - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+
 ### March 5, 2021
 **[Release .Stat Suite .NET 6.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/34)**
 > This **major** release includes a new version of the **core-transfer**, **core-sdmxri-nsi-ws**, **core-auth-management**, and **core-data-access** services.  
