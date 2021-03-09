@@ -3,7 +3,14 @@ title: "Manage user access"
 subtitle: 
 comments: false
 weight: 220
-
+keywords: [
+  'Introduction', '#introduction',
+  'List of available permissions', '#list-of-available-permissions',
+  'Basic permissions', '#basic-permissions',
+  'Combined permissions', '#combined-permissions',
+  'List of available SDMX artefact types', '#list-of-available-sdmx-artefact-types',
+  'Visibility of permission rules', '#visibility-of-permission-rules',
+]
 ---
 
 #### Table of Content

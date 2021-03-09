@@ -3,6 +3,9 @@ title: ".Stat DLM configuration"
 subtitle: 
 comments: false
 weight: 76
+keywords: [
+  'InsertNewItems parameter', '#insertnewitemsparameter',
+]
 
 ---
 

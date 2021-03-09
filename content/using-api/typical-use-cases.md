@@ -3,6 +3,15 @@ title: "Typical use cases"
 subtitle: Generating the SDMX structure and data queries and exploring their responses to retrieve the required content from the SDMX API response for typical use cases
 comments: false
 weight: 5000
+keywords: [
+  'Retrieve the content of the DE filters from the SDMX API', '#retrieve-the-content-of-the-de-filters-from-the-sdmx-api',
+  'Retrieve the data corresponding to the current DE filters from the SDMX API', '#retrieve-the-data-corresponding-to-the-current-de-filters-from-the-sdmx-api',
+  'How to identify dimensions with specific roles for both xml and json', '#how-to-identify-dimensions-with-specific-roles-for-both-xml-and-json',
+  'Frequency dimension', '#frequency-dimension',
+  'Frequency value (time period length)', '#frequency-value-time-period-length',
+  'Reference area dimension', '#reference-area-dimension',
+  'Time dimension', '#time-dimension',
+]
 
 ---
 

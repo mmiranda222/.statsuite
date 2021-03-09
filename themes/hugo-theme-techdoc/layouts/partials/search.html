@@ -1,11 +1,23 @@
-<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.0.0/dist/algoliasearch-lite.umd.js" integrity="sha256-MfeKq2Aw9VAkaE9Caes2NOxQf6vUa8Av0JqcUXUGkd0=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js" integrity="sha256-6S7q0JJs/Kx4kb/fv0oMjS855QTz5Rc2hh9AkIUjUsk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.8.5/dist/algoliasearch.umd.js" integrity="sha256-gyk3c0Wg6fTf02Ohy/5CWfdqL+m/9pPXB+2sgfxN+vo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.16.1/dist/instantsearch.production.min.js" integrity="sha256-AYwEMXJiYzczpzHSQHQfViSoIAO6MsabCYKK+T3dyL8=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ramda@0.25.0/dist/ramda.min.js"></script>
 
-<div id="searchbox"></div>
-<div id="stats"></div>
-<div id="hits"></div>
-<div id="pagination"></div>
+<div class="dropdown">
+  <div id="searchbox"></div>
+  <div class="dropdown-container">
+    <div class='dropdown-content'>
+      <div class='dropwon-header'>
+        <div id="stats"></div>
+        <div class="agolia-logo">
+          <img src="/dotstatsuite-documentation/images/search-by-algolia-light-background.png" alt="search by algolia">
+        </div>
+      </div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+  </div>
+</div>
 
 <script>
 var search = instantsearch({
@@ -19,15 +31,42 @@ var search = instantsearch({
 
 const renderHits = (renderOptions, isFirstRender) => {
   const { hits } = renderOptions;
-
-  document.querySelector('#hits').innerHTML = `
-    ${hits
-      .map(
-        item =>
-          `<div class="ais-Hits-item"><h3><a href="${ item.permalink }">${ item.title }</a></h3><p><span class="lastmod">${ dayjs(item.lastmod).format("YYYY/MM/DD") }</span> - ${ item.description ? item.description : item.content.length > 200 ? item.content.substring( 0, 200 ) + '...' : item.content }</p></div>`
+  document.querySelector('#hits').innerHTML = R.pipe(
+    R.map((item) => {
+      const { _highlightResult } = item;
+      const keywords = R.zip(
+        R.pipe(R.propOr([], 'keywords'), R.splitEvery(2), R.map(R.pipe(R.head, R.prop('value'))))(_highlightResult),
+        R.pipe(R.when(R.isNil, R.always([])), R.splitEvery(2), R.map(R.last))(item.keywords)
       )
-      .join('')}
-  `;
+      return `
+        <div class="ais-Hits-item">
+          <h3>
+            <a href="${ item.permalink }">${ _highlightResult.title.value || item.content.substring( 0, 10 )+ '...' }</a>
+          </h3>
+          <p>
+            <span class="lastmod">${ dayjs(item.lastmod).format("YYYY/MM/DD") }</span>
+            - ${ _highlightResult.content.value.length > 200 
+                ? _highlightResult.content.value.substring( 0, 200 ) + '...'
+                : _highlightResult.content.value 
+              }
+          </p>
+          <div class="keywords">
+            ${R.pipe(
+                R.map((keyword) => {
+                  const [label, link] = keyword;
+                  const url = R.pipe(R.head, R.equals('#'))(link) 
+                    ? R.pipe(R.slice(0, -1), R.flip(R.concat)(link))(item.permalink)
+                    : link;
+                  return `<a href="${url}">${label}</a>`;
+                }),
+                R.join(' - ')
+              )(keywords)}
+          </div>
+        </div>
+      `;
+    }),
+    R.join('')
+  )(hits);
 };
 
 const customHits = instantsearch.connectors.connectHits( renderHits );
@@ -35,9 +74,10 @@ const customHits = instantsearch.connectors.connectHits( renderHits );
 search.addWidgets([
   instantsearch.widgets.searchBox({
     container: '#searchbox',
+    placeholder: 'Search by keywords',
     showReset: false,
   }),
-
+  
   instantsearch.widgets.stats({
     container: '#stats',
   }),
@@ -48,7 +88,7 @@ search.addWidgets([
 
   instantsearch.widgets.pagination({
     container: '#pagination',
-    maxPages: 20,
+    maxPages: 20
   })
 ]);
 

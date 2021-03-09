@@ -3,6 +3,14 @@ title: "Customise chart layout"
 subtitle: 
 comments: false
 weight: 3300
+keywords: [
+  'Chart series', '#chart-series',
+  'Chart size', '#chart-size',
+  'Highlight and Baseline', '#highlight-and-baseline',
+  'Axes scaling', '#axes-scaling',
+  'Timeline chart option for steps on horizontal axis', '#timeline-chart-option-for-steps-on-horizontal-axis',
+  'Additional option for authenticated users', '#additional-option-for-authenticated-users',
+]
 ---
 
 #### Table of Content

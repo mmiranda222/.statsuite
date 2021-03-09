@@ -3,7 +3,10 @@ title: "Frequency & Time-Period"
 subtitle: 
 comments: false
 weight: 2130
-
+keywords: [
+  'Frequency & Time Period', '#frequency-and-time-period-selectors',
+  'Last N Periods', '#last-n-periods',
+]
 ---
 
 #### Table of Content

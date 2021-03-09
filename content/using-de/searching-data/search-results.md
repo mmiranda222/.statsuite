@@ -3,6 +3,13 @@ title: "Search results"
 subtitle: 
 comments: false
 weight: 1900
+keywords: [
+  'Introduction', '#introduction',
+  'Result content', '#result-content',
+  'Pagination', '#pagination',
+  'search result URL', '#search-result-url',
+  'Navigation towards the DE visualisation page', '#navigation-towards-the-de-visualisation-page',
+]
 
 ---
 

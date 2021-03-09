@@ -3,6 +3,18 @@ title: "Embargo management"
 subtitle: 
 comments: false
 weight: 6000
+keywords: [
+  'Point in time (PIT) release feature', '#point-in-time-release-feature',
+  'Basic characteristics', '#basic-characteristics',
+  'Storage', '#storage',
+  'Using the API to manage the PIT version', '#using-the-api-to-manage-the-pit-version',
+  'Prepare a (new) PIT version', '#prepare-a-new-pit-version',
+  'Check the current PIT version status', '#check-the-current-pit-version-status',
+  'Automated release of the PIT version', '#automated-release-of-the-pit-version',
+  'Rollback and Restoration', '#rollback-and-restoration',
+  'Data retrieval', '#data-retrieval',
+  'PIT access permissions', '#pit-access-permissions',
+]
 
 ---
 

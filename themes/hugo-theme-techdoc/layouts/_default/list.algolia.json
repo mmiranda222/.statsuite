@@ -17,10 +17,11 @@
     {{ if ne ( $page.Lastmod.Format "2006-01-02" ) "0001-01-01" }}
       {{- .Scratch.SetInMap "temp" "lastmod" $page.Lastmod -}}
     {{- end -}}
-    {{- .Scratch.SetInMap "temp" "content" ($page.Plain | truncate 2000) -}}
     {{- .Scratch.SetInMap "temp" "title" $page.Title -}}
+    {{- .Scratch.SetInMap "temp" "content" ($page.Plain | truncate 2000) -}}
     {{- .Scratch.SetInMap "temp" "permalink" $page.Permalink -}}
     {{- .Scratch.SetInMap "temp" "description" $page.Description -}}
+    {{- .Scratch.SetInMap "temp" "keywords" $page.Keywords -}}
 
     {{/* Include valid page vars */}}
     {{- range $key, $param := (.Scratch.Get "temp") -}}

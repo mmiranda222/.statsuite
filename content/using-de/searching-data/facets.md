@@ -3,7 +3,19 @@ title: "Facets"
 subtitle: 
 comments: false
 weight: 1800
-
+keywords: [
+  'What information is presented as facets', '#what-information-is-presented-as-facets',
+  'Indexation content restrictions', '#indexation-content-restrictions',
+  'How facets are used', '#how-facets-are-used',
+  'Homepage facets', '#homepage-facets',
+  'Facets on the search result page', '#facets-on-the-search-result-page',
+  'Facet types', '#facet-types',
+  'Facet information', '#facet-information',
+  'Hierarchical contents', '#hierarchical-contents',
+  'Data availability', '#data-availability',
+  'Used filters', '#used-filters',
+  'Pinned facets', '#pinned-facets',
+]
 ---
 
 #### Table of Content

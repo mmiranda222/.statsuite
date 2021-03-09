@@ -3,6 +3,18 @@ title: "Development guidelines"
 subtitle: 
 comments: false
 weight: 93
+keywords: [
+  'git-flow', '#git-flow',
+  'Overview', '#overview',
+  'Rules', '#rules',
+  'Good practices', '#good-practices',
+  'Use case of a git-feature', '#use-case-of-a-git-feature',
+  'Use case of a git-conflict', '#use-case-of-a-git-conflict',
+  'process', '#process',
+  'coding standards', '#coding-standards',
+  'linting utilities', '#linting-utilities',
+  'contributing to an open source repository', '#contributing-to-an-open-source-repository',
+]
 ---
 
 #### Table of Content

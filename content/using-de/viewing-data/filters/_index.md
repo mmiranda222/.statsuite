@@ -3,7 +3,17 @@ title: "Filters"
 subtitle: 
 comments: false
 weight: 2100
+keywords: [
+  'Filter area', '#filter-area',
+  'Multi selection filters', '#multi-selection-filters',
+  'Keyboard selection options', '#keyboard-selection-options',
+  'Frequency & time period filter', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/',
+  'Data availability', '#data-availability',
+  'Hierarchical content', '#hierarchical-content',
+  'Local search', '#local-search',
+  'Used filters panel', '#used-filters-panel',
 
+]
 ---
 
 #### Table of Content

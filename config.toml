@@ -60,31 +60,12 @@ enableMissingTranslationPlaceholders = false
 
     # Algolia site search section
     # See https://www.algolia.com/doc/
-    # algolia_search_enable = true
-    algolia_indexName = "hugo-demo-techdoc"
-    algolia_appId = "7W4SAN4PLK"
-    algolia_apiKey = "cbf12a63ff72d9c5dc0c10c195cf9128" # Search-Only API Key
+    algolia_search_enable = true
+    algolia_indexName = "dotstatsuite-documentation"
+    algolia_appId = "3LL2TKA2C3"
+    algolia_apiKey = "dd696726747f6b757f54bd9cb1ebc22a" # Search-Only API Key
 
-# Global menu section
-# See https://gohugo.io/content-management/menus/
-# [menu]
-#     [[menu.main]]
-#         name = "Home"
-#         url = "/"
-#         weight = 1
-#     
-#     [[menu.main]]
-#         name = "About"
-#         url = "/about"
-#         weight = 2
-# 
-#     [[menu.main]]
-#         name = "Twitter"
-#         url = "https://twitter.com/thingsym"
-#         weight = 2
 
-# Markup configure section
-# See https://gohugo.io/getting-started/configuration-markup/
 [markup]
     defaultMarkdownHandler = "goldmark"
     [markup.goldmark.renderer]

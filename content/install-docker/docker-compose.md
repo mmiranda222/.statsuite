@@ -3,7 +3,11 @@ title: "Installation using Docker-Compose"
 subtitle: 
 comments: false
 weight: 53
-
+keywords: [
+  'Introduction and prerequisites', '#introduction-and-prerequisites',
+  'Complete, ready-made demo example of a Docker-Compose setup of .Stat Suite', '#complete-ready-made-demo-example-of-a-docker-compose-setup-of-stat-suite',
+  'Hints for optional Docker-Compose setup customisations and usage', '#hints-for-optional-docker-compose-setup-customisations-and-usage',
+]
 ---
 
 #### Table of Content

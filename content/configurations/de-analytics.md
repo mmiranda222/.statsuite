@@ -3,7 +3,13 @@ title: ".Stat DE analytics"
 subtitle: 
 comments: false
 weight: 75
-
+keywords: [
+  'Tracking ID', '#tracking-id',
+  'Google Analytics default events', '#google-analytics-default-events',
+  'Events API', '#events-api',
+  'Default overviews for audiences and behaviours', '#default-overviews-for-audiences-and-behaviours',
+  'How to create a custom dashboard', '#how-to-create-a-custom-dashboard',
+]
 ---
 
 #### Table of Content

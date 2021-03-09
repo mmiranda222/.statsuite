@@ -3,6 +3,24 @@ title: ".Stat DE customisation"
 subtitle: 
 comments: false
 weight: 73
+keywords: [
+  'intro', '#intro',
+  'Warning', '#warning',
+  'general theme settings', '#general-theme-settings',
+  'theme settings: how to override mixins', '#theme-settings-how-to-override-mixins',
+  'theme settings: palette', '#theme-settings-palette',
+  'theme settings: first loader', '#theme-settings-first-loader',
+  'site logo', '#site-logo',
+  'homepage background image', '#homepage-background-image',
+  'common site logos', '#common-site-logos',
+  'add hyperlink on header logo', '#add-hyperlink-on-header-logo',
+  'table and chart footer logo', '#table-and-chart-footer-logo',
+  'table and chart footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
+  'api documentation hyperlink', '#api-documentation-hyperlink',
+  'contact us hyperlink', '#contact-us-hyperlink',
+  'map chart configuration', '#map-chart-configuration',
+  'add icons to specific facet values', '#add-icons-to-specific-facet-values',
+]
 ---
 
 #### Table of Content

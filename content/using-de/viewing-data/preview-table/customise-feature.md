@@ -3,6 +3,11 @@ title: "Customise table layout"
 subtitle: 
 comments: false
 weight: 2650
+keywords: [
+  'General behavior', '#general-behavior',
+  'Time Period reverse order', '#time-period-reverse-order',
+  'Accessibility', '#accessibility',
+]
 ---
 
 #### Table of Content

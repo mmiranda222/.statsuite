@@ -3,7 +3,12 @@ title: "Upload data structures"
 subtitle: 
 comments: false
 weight: 240
-
+keywords: [
+  'Upload data structure file', '#upload-data-structure-file',
+  'Notifications', '#notifications',
+  'Size limit notification', '#size-limit-notification',
+  'Successful, warning, multi-status, and error', '#successful-warning-multi-status-and-error',
+]
 ---
 
 #### Table of Content

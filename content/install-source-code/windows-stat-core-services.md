@@ -3,6 +3,19 @@ title: "Source code Windows installation example of .Stat Core services"
 subtitle: 
 comments: false
 weight: 44
+keywords: [
+  'Disclaimer', '#disclaimer',
+  'Pre-requisites', '#pre-requisites',
+  'Topology', '#topology',
+  'Installation overview', '#installation-overview',
+  '1. Download the source code', '#1-download-the-source-code',
+  '2. Compile the source code', '#2-compile-the-source-code',
+  '3. Initialize the databases', '#3-initialize-the-databases',
+  '4. Deploy the Transfer service', '#4-deploy-the-transfer-service',
+  '5. Deploy the Design NSI web service in port 81', '#5-deploy-the-design-nsi-web-service-in-port-81',
+  '6. Deploy the Disseminate NSI web service in port 80', '#6-deploy-the-disseminate-nsi-web-service-in-port-80',
+  '7. Additional IIS configuration', '#7-additional-iis-configuration',
+]
 ---
 
 #### Table of Content

@@ -3,6 +3,14 @@ title: "Installation based on a ready-to-use service package"
 subtitle: 
 comments: false
 weight: 55
+keywords: [
+  'Intro', '#intro',
+  'Multi-tenant architecture', '#multi-tenant-architecture',
+  'Examples of tenants defined in our DevOps (qa/staging) environments', '#examples-of-tenants-defined-in-our-devops-qa-staging-environments',
+  'Technical overview', '#technical-overview',
+  'Demo of adding/updating a tenant', '#demo-of-adding-updating-a-tenant',
+  'Demo of adding/updating an app for the tenant', '#demo-of-adding-updating-an-app-for-the-tenant',
+]
 ---
 
 #### Table of Content

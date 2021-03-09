@@ -3,6 +3,10 @@ title: "Common header & footer for all views"
 subtitle: "Applies to both preview-tables and charts"
 comments: 
 weight: 2050
+keywords: [
+  'Visualisation header', '#visualisation-header',
+  'Visualisation footer', '#visualisation-footer',
+]
 
 ---
 

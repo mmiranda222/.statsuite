@@ -3,7 +3,17 @@ title: "Using .Stat DLM Excel-Addin"
 subtitle: 
 comments: false
 weight: 800
-
+keywords: [
+  'Introduction', '#introduction',
+  'DLM Excel-Addin in the Excel ribbon', '#dlm-excel-addin-in-the-excel-ribbon',
+  'Get data: select the source', '#get-data-select-the-source',
+  'Get data step 1: select data', '#get-data-step-1-select-data',
+  'Get data step 2: specify output', '#get-data-step-2-specify-output',
+  'Get data: result table', '#get-data-result-table',
+  'Get data: change selection', '#get-data-change-selection',
+  'Save to database', '#save-to-database',
+  'Refresh', '#refresh',
+]
 ---
 
 #### Table of Content

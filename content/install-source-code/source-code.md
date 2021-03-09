@@ -3,6 +3,13 @@ title: "Full installation from source code"
 subtitle: 
 comments: false
 weight: 43
+keywords: [
+  'intro', '#intro',
+  'Source code of each component of the main .Stat Suite modules', '#source-code-of-each-component-of-the-main-stat-suite-modules',
+  'Example of topologies', '#example-of-topologies',
+  'Installing the .Stat Suite full stack with one tenant', '#installing-the-stat-suite-full-stack-with-one-tenant',
+  'Best practice when updating an installation', '#best-practice-when-updating-an-installation',
+]
 ---
 
 #### Table of Content
