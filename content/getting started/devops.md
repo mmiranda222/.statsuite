@@ -3,6 +3,21 @@ title: ".Stat DevOps implementation"
 subtitle: 
 comments: false
 weight: 33
+keywords: [
+  'open-source development business requirements', '#open-source-development-business-requirements',
+  'quality assurance QA environment', '#quality-assurance-qa-environment',
+  'functional staging DEMO environment', '#functional-staging-demo-environment',
+  'technical stack', '#technical-stack',
+  'technical environment (cloud)', '#technical-environment-cloud',
+  'flow', '#flow',
+  'process', '#process',
+  'mapping', '#mapping',
+  'git', '#git',
+  'gitlab', '#gitlab',
+  'npm', '#npm',
+  'nuget', '#nuget',
+  'dashboard', '#dashboard',
+]
 ---
 
 #### Table of Content

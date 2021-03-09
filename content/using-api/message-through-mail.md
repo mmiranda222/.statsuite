@@ -3,6 +3,14 @@ title: "Email notifications for data management"
 subtitle: 
 comments: false
 weight: 7000
+keywords: [
+  'Process description', '#process-description',
+  'Email subject', '#email-subject',
+  'Email content', '#email-content',
+  'Summary', '#summary',
+  'Log details', '#log-details',
+  'Meaningful colors in email content', '#meaningful-colors-in-email-content',
+]
 
 ---
 

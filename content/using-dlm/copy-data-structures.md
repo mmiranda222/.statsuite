@@ -3,7 +3,10 @@ title: "Copy data structures"
 subtitle: 
 comments: false
 weight: 260
-
+keywords: [
+  'Transfer artefact menu', '#transfer-artefact-menu',
+  'Transfer process and notifications', '#transfer-process-and-notifications',
+]
 ---
 
 #### Table of Content

@@ -3,6 +3,19 @@ title: "Localisation"
 subtitle: 
 comments: false
 weight: 82
+keywords: [
+  'Scope, technical architecture, main change processes', '#scope-technical-architecture-main-change-processes',
+  'Scope', '#scope',
+  'Technical architecture', '#technical-architecture',
+  'Management of the complete list of keys for default translations', '#management-of-the-complete-list-of-keys-for-default-translations',
+  'Management of translations', '#management-of-translations',
+  'Translation gathering process', '#translation-gathering-process',
+  'Overwriting default translations', '#overwriting-default-translations',
+  'Rich-text translations', '#rich-text-translations',
+  'Supported locales', '#supported-locales',
+  'Adding a new locale', '#adding-a-new-locale',
+  'Defining a sub-set of locales to be used in an application tenant', '#defining-a-sub-set-of-locales-to-be-used-in-an-application-tenant',
+]
 
 ---
 

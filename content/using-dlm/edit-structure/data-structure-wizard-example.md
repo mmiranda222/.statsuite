@@ -3,7 +3,20 @@ title: "Example of the ESTAT Data Structure Wizard"
 subtitle: 
 comments: false
 weight: 267
-
+keywords: [
+  'Codelists and their Codes', '#codelists-and-their-codes',
+  'Concept Schemes and their Concepts', '#concept-schemes-and-their-concepts',
+  'Category Schemes and their Categories', '#category-schemes-and-their-categories',
+  'Agency Schemes and their Agencies', '#agency-schemes-and-their-agencies',
+  'Other SDMX Item Scheme artefacts', '#other-sdmx-item-scheme-artefacts',
+  'Hierarchical Codelists', '#hierarchical-codelists',
+  'Data Structure Definitions', '#data-structure-definitions',
+  'Dataflows, Content Constraints and Categorisations', '#dataflows-content-constraints-and-categorisations',
+  'Metadata Structure Definitions', '#metadata-structure-definitions',
+  'Metadataflows', '#metadataflows',
+  'Structure Sets', '#structure-sets',
+  'Annotations', '#annotations',
+]
 ---
 
 The following provides an example of user interfaces showing how to manage (creation and edition) SDMX artefacts. The examples are given by screenshots of the User Interface of the **[Eurostat's Data Structure Wizard (DSW)](https://webgate.ec.europa.eu/fpfis/wikis/pages/viewpage.action?pageId=488314869)**.

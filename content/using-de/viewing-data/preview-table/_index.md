@@ -3,7 +3,19 @@ title: "Preview table"
 subtitle: 
 comments: false
 weight: 2500
+keywords: [
+  'Role of preview-tables', '#role-of-preview-tables',
+  'Preview-table components', '#preview-table-components',
+  'Initial layout', '#initial-layout',
+  'Layout variations from changing user selections', '#layout-variations-from-changing-user-selections',
+  'Extreme cases of layout', '#extreme-cases-of-layout',
+  'Display of observations values', '#display-of-observations-values',
+  'Management of empty columns', '#management-of-empty-columns',
+  'Management of empty rows', '#management-of-empty-rows',
+  'Management of empty row sections', '#management-of-empty-row-sections',
+  'Vertical scroll and freezing table header and Rows section rows', '#vertical-scroll-and-freezing-table-header-and-rows-section-rows',
 
+]
 ---
 
 ### Table of Content

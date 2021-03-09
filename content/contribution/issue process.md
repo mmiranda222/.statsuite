@@ -3,6 +3,15 @@ title: "Issue process and Definitions of Done (DoD)"
 subtitle: 
 comments: false
 weight: 92
+keywords: [
+  'intro', '#intro',
+  'production cycle', '#production-cycle',
+  'common rules', '#common-rules',
+  'product owner workflow', '#product-owner-workflow',
+  'graphical design workflow', '#graphical-design-workflow',
+  'technical (dev) workflow', '#technical-dev-workflow',
+  'technical (javascriptdev) workflow (wip)', '#technical-javascriptdev-workflow-wip',
+]
 ---
 
 #### Table of Content

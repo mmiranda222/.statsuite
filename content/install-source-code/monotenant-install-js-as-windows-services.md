@@ -3,6 +3,21 @@ title: "Mono-tenant installation of .Stat DE as Windows services"
 subtitle: 
 comments: false
 weight: 47
+keywords: [
+  'prerequisites', '#prerequisites',
+  'git bash', '#git-bash',
+  'nodejs & npm', '#nodejs-&-npm',
+  'java v8 (for solr)', '#java-v8-for-solr',
+  'folders', '#folders',
+  'nssm', '#nssm',
+  'solr', '#solr',
+  'solr core', '#create-a-solr-core',
+  'redis', '#redis',
+  'keycloak', '#keycloak',
+  'dotstatsuitejs', '#dotstatsuitejs',
+  'artefacts', '#artefacts',
+  'indexation', '#indexation',
+]
 ---
 
 #### Table of Content

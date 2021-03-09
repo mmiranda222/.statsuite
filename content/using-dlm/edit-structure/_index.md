@@ -3,6 +3,12 @@ title: "Edit data structures"
 subtitle: 
 comments: false
 weight: 265
+keywords: [
+  'Generic DSD Matrix SDMX-ML generator', '#generic-dsd-matrix-sdmx-ml-generator',
+  'SDMX ISTAT Framework', '#sdmx-istat-framework',
+  'SDMX Data Structure Wizard (DSW)', '#sdmx-data-structure-wizard',
+  'Fusion Registry Community Edition', '#fusion-registry-community-edition',
+]
 
 ---
 

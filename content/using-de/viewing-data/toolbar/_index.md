@@ -3,6 +3,21 @@ title: "Toolbar"
 subtitle: 
 comments: false
 weight: 3500
+keywords: [
+  'View type', '#view-type',
+  'Labels', '#labels',
+  'Customise', '#customise',
+  'Share', '#share',
+  'Cleanup feature for outdated shared objects', '#cleanup-feature-for-outdated-shared-objects',
+  'Download', '#download',
+  'Table in Excel', '#table-in-excel',
+  'Filter data in tabular text (CSV)', '#filter-data-in-tabular-text-csv',
+  'Unfiltered data in tabular text (CSV)', '#unfiltered-data-in-tabular-text-csv',
+  'Additional downloads of external resources', '#additional-downloads-of-external-resources',
+  'Chart as picture (PNG)', '#chart-as-picture-png',
+  'Full screen', '#full-screen',
+  'Developer API', '#developer-api',
+]
 
 ---
 

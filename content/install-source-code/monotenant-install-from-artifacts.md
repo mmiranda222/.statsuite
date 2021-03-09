@@ -3,6 +3,17 @@ title: "Mono-tenant installation of DE and DLM services from gitlab pipeline art
 subtitle: 
 comments: false
 weight: 45
+keywords: [
+  'pre-requisites', '#pre-requisites',
+  'summary', '#summary',
+  '1. setup', '#1-setup',
+  '2. config service', '#2-config-service',
+  '3. search service', '#3-search-service',
+  '4. share service', '#4-share-service',
+  '5. data-explorer app', '#5-data-explorer-app',
+  '6. data-viewer app', '#6-data-viewer-app',
+  '7. data-lifecycle-manager app', '#7-data-lifecycle-manager-app',
+]
 ---
 
 #### Table of Content

@@ -3,7 +3,20 @@ title: "Special display for 'Unit of measure' in preview table"
 subtitle: "Whenever possible, display of all concepts related to the 'Unit of measure' as if they were one single component"
 comments: false
 weight: 2950
-
+keywords: [
+  'Introduction', '#introduction',
+  'Reminders', '#reminders',
+  'Underlying data model', '#underlying-data-model',
+  'Display rules', '#display-rules',
+  'Examples', '#examples',
+  'Case 1: Table Header', '#case-1-table-header',
+  'Case 2: Rows section', '#case-2-rows-section',
+  'Case 3: Row axis', '#case-3-row-axis',
+  'Case 4: Column axis', '#case-4-column-axis',
+  'Case 5: Cell level', '#case-5-cell-level',
+  'Charts', '#charts',
+  'How to identify attributes in the JSON format message', '#how-to-identify-attributes-in-the-json-format-message',
+]
 ---
 
 #### Table of Content

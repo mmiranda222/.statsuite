@@ -3,6 +3,21 @@ title: Description of .Stat Suite Docker images
 subtitle: 
 comments: false
 weight: 52
+keywords: [
+  '.Stat Data Explorer components', '#stat-data-explorer-components',
+  'Data Explorer app', '#data-explorer-app',
+  'Share service', '#share-service',
+  'Share-Viewer App', '#share-viewer-app',
+  'Search service', '#search-service',
+  'Proxy service', '#proxy-service',
+  'Config Service', '#config-service',
+  '.Stat Data Lifecycle Manager components', '#stat-data-lifecycle-manager-components',
+  '.Stat Core components', '#stat-core-components',
+  'Transfer service', '#transfer-service',
+  'SDMX service', '#sdmx-service',
+  'Authorisation service', '#authorisation-service',
+  'Docker compose example(s)', '#docker-compose-examples',
+]
 ---
 
 #### Table of Content

@@ -3,7 +3,22 @@ title: "DLM homepage overview"
 subtitle: 
 comments: false
 weight: 230
-
+keywords: [
+  'Common navigation header', '#common-navigation-header',
+  'Logo', '#logo',
+  'Menu buttons', '#menu-buttons',
+  'Selectors & Filters', '#selectors-filters',
+  'Required selections', '#required-selections',
+  'Spaces and external sources', '#spaces-and-external-sources',
+  'Types', '#types',
+  'Category', '#category',
+  'Owner', '#owner',
+  'Version', '#version',
+  'List of artefacts', '#list-of-artefacts',
+  'Display Options', '#display-options',
+  'Contents of the list', '#contents-of-the-list',
+  'Export', '#export',
+]
 ---
 
 #### Table of Content

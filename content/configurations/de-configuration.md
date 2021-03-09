@@ -3,6 +3,32 @@ title: ".Stat DE configuration"
 subtitle: 
 comments: false
 weight: 72
+keywords: [
+  'Intro', '#intro',
+  'Warning', '#warning',
+  'Homepage facets', '#homepage-facets',
+  'Auto-expanded homepage facet', '#auto-expanded-homepage-facet',
+  'Selectable second-level homepage facet values', '#selectable-second-level-homepage-facet-values',
+  'Limit for indexing dimensions per dataflow', '#limit-for-indexing-dimensions-per-dataflow',
+  'Search results page pinned facets', '#search-results-page-pinned-facets',
+  'Search results page excluded facets', '#search-results-page-excluded-facets',
+  'Exclude specific CategorySchemes from the search index', '#search-exclude-categoryschemes',
+  'Search result page: number of results per page', '#search-result-page-number-of-results-per-page',
+  'Time period boundaries', '#time-period-boundaries',
+  'Default time period', '#default-time-period',
+  'LastNObservations support', '#lastnobservations-support',
+  'Maximum number of observations in tables and charts', '#maximum-number-of-observations-in-tables-and-charts',
+  'Maximum number of cells in table', '#maximum-number-of-cells-in-table',
+  'Preferred scale attribute', '#preferred-scale-attribute',
+  'Decimals rule attribute', '#decimals-rule-attribute',
+  'Coded attributes returned as flags', '#coded-attributes-returned-as-flags',
+  'Coded and uncoded attributes returned as footnotes', '#coded-and-uncoded-attributes-returned-as-footnotes',
+  'Localised observation values separators for thousands and decimals', '#localised-observation-values-separators-for-thousands-and-decimals',
+  'Localised time period values for monthly frequency', '#localised-time-period-values-for-monthly-frequency',
+  'Unit of measure support', '#unit-of-measure-support',
+  'Disabled share option', '#disabled-share-option',
+  'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
+]
 ---
 
 #### Table of Content

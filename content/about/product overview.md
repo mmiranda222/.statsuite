@@ -3,6 +3,14 @@ title: "Product overview and flight planner"
 subtitle: 
 comments: false
 weight: 12
+keywords: [
+  'introduction', '#introduction',
+  'details about the main .Stat Suite modules', '#details-about-the-main-stat-suite-modules',
+  '.Stat Data Explorer (DE)', '#stat-data-explorer-de',
+  '.Stat Data Lifecycle Manager (DLM)', '#stat-data-lifecycle-manager-dlm',
+  '.Stat Core', '#stat-core',
+  'flight planner', '#flight-planner',
+]
 ---
 
 #### Table of Content

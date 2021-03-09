@@ -3,6 +3,17 @@ title: "Semantic versioning of CORE services"
 subtitle: 
 comments: false
 weight: 36
+keywords: [
+  'semantic version', '#semantic-version',
+  'nuget generation', '#nuget-generation',
+  'in gitlab pipeline', '#in-gitlab-pipeline',
+  'locally', '#locally',
+  'referencing nuget package in other projects', '#referencing-nuget-package-in-other-projects',
+  'releasing a new major.minor version', '#releasing-a-new-major-minor-version',
+  'tips and tricks', '#tips-and-tricks',
+  'links', '#links',
+
+]
 ---
 
 #### Table of Content

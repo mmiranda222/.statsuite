@@ -3,6 +3,30 @@ title: ".Stat Suite Open Source Framework"
 subtitle: 
 comments: false
 weight: 32
+keywords: [
+  'Introduction', '#introduction',
+  'Technical stack', '#technical-stack',
+  '.Stat Data Explorer module', '#stat-data-explorer-module',
+  'Non-technical overview', '#non-technical-overview',
+  'Data Explorer app', '#data-explorer-app',
+  'Share service', '#share-service',
+  'Share-Viewer App', '#share-viewer-app',
+  'Search service', '#search-service',
+  'Proxy Service', '#proxy-service',
+  'Config Service', '#config-service',
+  'Dependencies', '#dependencies',
+  'Multi-tenant architecture', '#multi-tenant-architecture',
+  '.Stat Data Lifecycle Manager module', '#stat-data-lifecycle-manager-module',
+  '.Stat Core module', '#stat-core-module',
+  'Transfer service', '#transfer-service',
+  'SDMX service', '#sdmx-service',
+  'Plugin for SDMX service', '#plugin-for-sdmx-service',
+  'Authorisation service', '#authorisation-service',
+  'Dependencies', '#dependencies',
+  'DevOps implementation', '#devops-implementation',
+  'Component list and dependency matrix', '#component-list-and-dependency-matrix',
+  'Contributing to an open source repository', '#contributing-to-an-open-source-repository',
+]
 ---
 
 #### Table of Content

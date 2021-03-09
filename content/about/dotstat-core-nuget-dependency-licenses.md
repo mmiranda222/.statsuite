@@ -3,6 +3,12 @@ title: "Licenses of NuGet dependencies of .Stat Core module"
 subtitle: 
 comments: false
 weight: 18
+keywords: [
+  'dotstatsuite-core-common', '#dotstatsuite-core-common',
+  'dotstatsuite-core-data-access', '#dotstatsuite-core-data-access',
+  'dotstatsuite-core-transfer', '#dotstatsuite-core-transfer',
+  'dotstatsuite-core-auth-management', '#dotstatsuite-core-auth-management',
+]
 ---
 
 #### Table of Content

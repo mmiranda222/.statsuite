@@ -3,7 +3,15 @@ title: "General layout and common features"
 subtitle: 
 comments: false
 weight: 1200
-
+keywords: [
+  'User Interface Design Specifications', '#user-interface-design-specifications',
+  'Header', '#header',
+  'Web Content Accessibility Support', '#web-content-accessibility-support',
+  'Login', '#login',
+  'Language', '#language',
+  'Footer', '#footer',
+  'URL parameters', '#url-parameters',
+]
 ---
 
 #### Table of Content

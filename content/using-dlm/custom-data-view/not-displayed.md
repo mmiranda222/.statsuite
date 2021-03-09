@@ -3,7 +3,17 @@ title: "Hide information of a data view"
 subtitle: 
 comments: false
 weight: 345
-
+keywords: [
+  'Hide information of a data view', '#hide-information-of-a-data-view',
+  'Scenario 1: Hide dimensions', '#scenario-1-hide-dimensions',
+  'Scenario 2: Hide dimension values', '#scenario-2-hide-dimension-values',
+  'Scenario 3: Hide attributes', '#scenario-3-hide-attributes',
+  'Scenario 4: Hide attribute values', '#scenario-4-hide-attribute-values',
+  'Syntax', '#syntax',
+  'Example', '#example',
+  'Automatic hide of specific values', '#automatic-hide-of-specific-values',
+  'Example', '#example',
+]
 ---
 
 #### Table of Content

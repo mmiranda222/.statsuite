@@ -3,6 +3,13 @@ title: ".Stat Suite Core data model"
 subtitle: 
 comments: false
 weight: 4700
+keywords: [
+  'Data structure components', '#data-structure-components',
+  'Data type definitions', '#data-type-definitions',
+  'Data querying', '#data-querying',
+  'Constraints', '#constraints',
+  'Uniqueness of Observations', '#uniqueness-of-observations',
+]
 
 ---
 

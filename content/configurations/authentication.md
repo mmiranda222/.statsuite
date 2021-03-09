@@ -3,6 +3,15 @@ title: ".Stat authentication configuration"
 subtitle: 
 comments: false
 weight: 77
+keywords: [
+'Introduction', '#introduction',
+'Optional authentication of DE', '#optional-authentication-of-de',
+'OpenID connect Middleware for NSIWS', '#openid-connect-middleware-for-nsiws',
+'Intro', '#intro',
+'Setup', '#setup',
+'Configuration', '#configuration',
+'Configuration settings', '#configuration-settings',
+]
 
 ---
 

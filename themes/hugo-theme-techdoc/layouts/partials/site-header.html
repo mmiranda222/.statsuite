@@ -10,6 +10,7 @@
     {{ with .Site.Params.description }}
       <p class="description">{{ . }}</p>
     {{end}}
+    {{- partial "search.html" . -}}
   </div>
 <div>
   {{- with .Site.Params.gitlab_link -}}

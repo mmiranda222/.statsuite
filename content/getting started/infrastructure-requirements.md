@@ -3,6 +3,11 @@ title: "Infrastructure requirements"
 subtitle: 
 comments: false
 weight: 38
+keywords: [
+  '.stat core data store', '#stat-core-data-store',
+  '.stat data explorer', '#stat-data-explorer',
+  '.stat data lifecycle manager', '#stat-data-lifecycle-manager',
+]
 ---
 
 #### Table of Content

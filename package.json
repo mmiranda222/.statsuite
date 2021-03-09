@@ -1,0 +1,14 @@
+{
+  "name": "dotstatsuite-documentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:sis-cc/dotstatsuite-documentation.git",
+  "author": "mvelluet <mike.velluet@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "algolia": "atomic-algolia"
+  },
+  "dependencies": {
+    "atomic-algolia": "^0.3.19"
+  }
+}
