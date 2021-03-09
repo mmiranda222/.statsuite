@@ -310,6 +310,11 @@ ECO oecd internal network nsiws:
 
 ## snapshots
 
-- [technical documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp#backup-restore) from dotstatsuite-kube-core-rp repository
-- redis disk is snapshotted every day at 3am with 14 days of retention
-- mssql disk is snapshotted every day at 3am with 14 days of retention
+[technical documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp#backup-restore) from dotstatsuite-kube-core-rp repository
+
+|name|target|namespace|schedule frequency|autodelete after|
+|---|---|---|---|---|
+schedule-mssql-qa-0|mssql|qa|Every day between 3:00 AM and 4:00 AM|14 days|
+schedule-mssql-staging-0|mssql|staging|Every day between 3:00 AM and 4:00 AM|14 days|
+schedule-redis-qa-0|redis|qa|Every day between 3:00 AM and 4:00 AM|14 days|
+schedule-redis-staging-0|redis|staging|Every day between 3:00 AM and 4:00 AM|14 days|
