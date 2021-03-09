@@ -4,9 +4,14 @@
 <script src="https://cdn.jsdelivr.net/npm/ramda@0.25.0/dist/ramda.min.js"></script>
 
 <div class="dropdown">
-  <div id="searchbox"></div>
-  <div class="dropdown-container">
+  <div onclick="toggleMenu()" id="searchbox"></div>
+  <div id="menu-searchbox" class="dropdown-container">
     <div class='dropdown-content'>
+      <div class="close-menu">
+        <button onclick="toggleMenu()" class="button-close-menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
       <div class='dropwon-header'>
         <div id="stats"></div>
         <div class="agolia-logo">
@@ -20,6 +25,23 @@
 </div>
 
 <script>
+const menuBox = document.getElementById('menu-searchbox');    
+
+const toggleMenu = () => {  
+  if(menuBox.style.display == "block") { // if is menuBox displayed, hide it
+    menuBox.style.display = "none";
+  }
+  else { // if is menuBox hidden, display it
+    menuBox.style.display = "block";
+  }
+}
+
+$(document).keyup((e) => {
+  if (e.keyCode == 27) { // escape key maps to keycode `27`
+    menuBox.style.display = "none";
+ }
+});
+
 var search = instantsearch({
   indexName: '{{ .Site.Params.algolia_indexName }}',
   searchClient: algoliasearch(
