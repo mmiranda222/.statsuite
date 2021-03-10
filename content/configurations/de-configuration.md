@@ -7,6 +7,7 @@ keywords: [
   'Intro', '#intro',
   'Warning', '#warning',
   'Homepage facets', '#homepage-facets',
+  'Homepage facets alignement', '#homepage-facets-alignment',
   'Auto-expanded homepage facet', '#auto-expanded-homepage-facet',
   'Selectable second-level homepage facet values', '#selectable-second-level-homepage-facet-values',
   'Limit for indexing dimensions per dataflow', '#limit-for-indexing-dimensions-per-dataflow',
