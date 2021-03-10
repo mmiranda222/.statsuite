@@ -6,11 +6,11 @@ weight: 1900
 keywords: [
   'Introduction', '#introduction',
   'Result content', '#result-content',
+  'Optional download feature', #optional-download-feature',
   'Pagination', '#pagination',
   'search result URL', '#search-result-url',
   'Navigation towards the DE visualisation page', '#navigation-towards-the-de-visualisation-page',
 ]
-
 ---
 
 #### Table of Content
