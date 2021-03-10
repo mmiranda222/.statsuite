@@ -20,8 +20,9 @@ keywords: [
 ### .Stat Core Data Store
 **Software requirements**
 
-- **SQL Server 2016 (13.x) SP1** or any higher edition (including Express)
-    - Argument: requirement for the feature **Updatable columnstore index**. [See more](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-what-s-new?view=sql-server-ver15) 
+- **SQL Server** 
+   - **Minimum required** SQL Server 2017 or above, all editions (including free SQL Express edition)
+   - **Recommended** SQL Server 2019
 - **IIS Web server 7\.5** or higher
 - **Microsoft .NET Core 3\.1**
 - **Microsoft SQL server management studio** (Optional)
