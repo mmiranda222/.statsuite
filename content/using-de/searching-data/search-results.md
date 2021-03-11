@@ -16,6 +16,7 @@ keywords: [
 #### Table of Content
 - [Introduction](#introduction)
 - [Result content](#result-content)
+    - [Optional download feature](#optional-download-feature)
 - [Pagination](#pagination)
 - [search result URL](#search-result-url)
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
@@ -54,12 +55,19 @@ The default information is still visible with the entire description (if it was 
 
 3. **Options**
 * Expand/Collapse option for displaying additional information of a search result
-* Download the complete unfiltered dataflow data in tabular text (SDMX-CSV format) using the current language *([configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page))*.
+* Download *(see the sub-section below)*
 
 When a free text search is performed, then the search term(s) is/are highlighted in each of the above information. If the term(s) was/were found in a concept name/ID or dimension codes, then this information is also added to the dataflow information. See documentation on [How free text search hits are displayed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/free-text-search/).  
   
-![de search result content highlight](/dotstatsuite-documentation/images/de-result-highlight-1.png)  
-  
+![de search result content highlight](/dotstatsuite-documentation/images/de-result-highlight-1.png)
+
+#### Optional download feature
+When this option is enabled (see the [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page)), then two options of download are made available in the search result objects:
+* Download of the complete unfiltered dataflow data in tabular text (SDMX-CSV format) using the current language *([configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page))*;
+* Download any additional files that are attached to the dataflow through the SDMX `EXT_RESOURCE` annotation (see the related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/)).
+
+![de search result content highlight](/dotstatsuite-documentation/images/de-search-result-download.png)
+
 ---
 
 ### Pagination
