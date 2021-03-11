@@ -63,8 +63,8 @@ When a free text search is performed, then the search term(s) is/are highlighted
 
 #### Optional download feature
 When this option is enabled (see the [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page)), then two options of download are made available in the search result objects:
-* Download of the complete unfiltered dataflow data in tabular text (SDMX-CSV format) using the current language *([configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page))*;
-* Download any additional files that are attached to the dataflow through the SDMX `EXT_RESOURCE` annotation (see the related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/)).
+* Download of the complete unfiltered dataflow data in tabular text (**SDMX-CSV** format) using the current language;
+* (since [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)) Download any additional files that are attached to the dataflow through the **SDMX `EXT_RESOURCE` annotation** (see the related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/)).
 
 ![de search result content highlight](/dotstatsuite-documentation/images/de-search-result-download.png)
 
