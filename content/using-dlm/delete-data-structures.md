@@ -3,30 +3,101 @@ title: "Delete data structures"
 subtitle: 
 comments: false
 weight: 250
+keywords: [
+  'Delete a single structure artefact', '#delete-a-single-structure-artefact',
+  'Dependencies between artefacts in SDMX', '#dependencies-between-artefacts-in-sdmx',
+  'Delete an artefact and its related structure artefacts', '#delete-an-artefact-and-its-related-structure-artefacts',
+  'Delete several similar artefacts', '#delete-several-similar-artefacts',
+]
+---
+
+#### Table of Content
+- [Delete a single structure artefact](#delete-a-single-structure-artefact)
+- [Dependencies between artefacts in SDMX](#dependencies-between-artefacts-in-sdmx)
+- [Delete an artefact and its related structure artefacts](#delete-an-artefact-and-its-related-structure-artefacts)
+- [Delete several similar artefacts](#delete-several-similar-artefacts)
+
+In the DLM, data structures can be deleted separately, several similar structure objects at a time, or several of different types according to their dependency(ies).
+
+**Note**  that data structures can also be deleted directly through the *SDMX* (NSI) web service API, using the DELETE HTTPS verb with the appropriate resource URL. Example of deleting a Codelist:  
+```bash
+curl -X DELETE https://nsi-stable-siscc.redpelicans.com/rest/codelist/OECD/COUNTRY/1.0.0
+```
+
+### Dependencies between artefacts in SDMX
+SDMX artefacts must be deleted in the appropriate order according to their dependency tree. E.g. in order to delete a Dataflow, first any possible Content Constraint that references this Dataflow must be deleted. Before deleting a Codelist, any Data Structure Definitions referencing it must also be deleted.  
+
+**In SDMX:**  
+A parent is an artefact that references another artefact.  
+A child is an artefact that is being referenced by another artefact.  
+Example:
+* ContentConstraint
+    * Dataflow
+        * DSD
+            * ConceptScheme
+                * Codelist A
+            * Codelist A
+            * Codelist B
+
+The same child can be referenced by different parents. More information on the SDMX artefact dependency can be found here: https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_3_structural_queries.md#applicability-and-meaning-of-references-attribute.  
+**However**, in the context of the deletion of artefacts in the DLM and the need to delete referencing artefacts first, **the hierarchy tree is inverse**.
 
 ---
 
-With the DLM, data structures can be deleted separately for each structure object (artifact), e.g. a particular Dataflow, Codelist or Data Structure Definition, using the contextual 'delete structure' menu:
+### Delete a single structure artefact
+From the DLM list of artefacts, you can select from the left menu, the option to delete a structure artefact **without related structures**. 
 
-![DLM delete structures](/dotstatsuite-documentation/images/delete_structures.png)  
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete1.png)
 
-Data structures can also be deleted directly through the *SDMX* (NSI) web service API, using the DELETE HTTP verb with the appropriate resource URL. Example of deleting a Codelist:
+Once you click, it automatically triggers the deletion of the object. Once the deletion process is complete, the appropriate notification is returned in a green/ banner, and the deleted artefact (when successful) is automatically removed from the list.
 
-```bash
-curl -X DELETE http://nsi-stable-siscc.redpelicans.com/rest/codelist/OECD/COUNTRY/1.0.0
-```
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete2.png)
 
-**Important:** Artifacts have to be deleted one by one, and in the appropriate order according to their dependency tree. E.g. in order to delete a Dataflow, first any possible Content Constraint that references this Dataflow must be deleted. Before deleting a Codelist, any Data Structure Definitions referencing it must also be deleted.  
+If the deletion fails (e.g. dependency conflict), the appropriate error message is returned through a red bin icon next to the artefact name.
 
---------------------------------
-**Current limitation**:   
-When a Data Structure Definition (DSD) is deleted using the *SDMX* (NSI) web service, then the related database objects for the storage of observations are not currently automatically deleted. 
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete3.png)
 
-**Work-around**:  
-The storage of related observations can be manually cleaned up by calling the Transfer service **/cleanup/dsd** method with the appropriate parameters.  
+---
 
---------------------------------
+### Delete an artefact and its related structure artefacts
+> Release in [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)
 
-**Future outlook**:  
-It is also planed to enhance the DLM, so that the deletion of a Data Structure Definition in the DLM will automatically call this method and make the cleanup of the storage of the related observations. Approximate delivery: 2020  
-In the further future, it is planed to automatically trigger the cleanup directly from the *SDMX* (NSI) web service call (service-bus feature). Approximate delivery: 2021
+From the DLM list of artefacts, you can select from the left menu, the option to delete a structure artefact **and/or related structures**.
+
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete4.png)
+
+Once you click, it displays a popup window with all listed artefacts using a tree control and selectable items. It details the artefact type, name, ID, version, "finality" and agency.  
+1) The original item is pre-selected as well as all below items.  
+2) Non-delete-able artefacts are marked as such with a red forbidden icon. A tooltip explains the reason and solution: "Cannot be deleted since referenced by: XXXX, XXXX. First delete those structures and then try again.". When there are more than 3 "outside" references, then the number of references is mentioned.
+
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete5.png)
+
+3) A warning orange icon informs the user of prerequisites awaited for deleting some of the items. For example (see in screenshots below), when a codelist needs also the "above" ConceptScheme deletion, it is mentioned as such: "In order to delete this artefact, you must select conceptscheme XXXXX".
+
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete6.png)
+
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete7.png)
+
+4) Cliking on "Delete" will automatically initiate the deletion of all the selected artefacts structures and in the order that respect the top/down dependencies.  
+The outcome of each deletion is:  
+    - success: green-coloured bin icon.
+    - failure: red-coloured icon with the tooltip displaying the corresponding error message.
+  The "Cancel" button interrupts the deletion process, then changes its text to "Close" and re-activates the "Delete selected structures" button.  
+  Once the deletion actions are completed, the "Delete selected structures" button becomes hidden and the "Cancel" button changes the text back to "Close".  
+
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete8.png)
+
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete9.png)
+
+**Note** that for dataflow and DSD artefacts, two bins are displayed because a technical/intermediate action is required for automatically cleaning the db objects.
+
+5) The "Close" button closes the popup window.
+
+---
+
+### Delete several similar artefacts
+From the DLM list of artefacts, if you select several artefacts of the same type, you can select from the left menu, the option to **delete structures** all at once. 
+
+![DLM delete](/dotstatsuite-documentation/images/dlm-delete10.png)
+
+Clicking on "delete structures" will simultaneously initiate the deletion of each artefact. The completion of the deletion will results in a green or red bin icon next to each corresponding selected artefact.
