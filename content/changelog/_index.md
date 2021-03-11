@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 10, 2021](#march-10-2021)
 - [March 5, 2021](#march-5-2021)
 - [January 25, 2021](#january-25-2021)
 - [January 21, 2021](#january-21-2021)
@@ -62,6 +63,41 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+
+### March 10, 2021
+**[Release .Stat Suite JS 7.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/35)**
+> This release includes a new version of the **data-explorer**, **data-viewer**, **sdmx-faceted-search**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+significant and minor changes:
+
+- [dotstatsuite-data-explorer#221](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/221) **Microdata storage and display**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/))
+- [dotstatsuite-data-explorer#483](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/483) In search results, add **additional downloads for external resources** through specific dataflow annotation. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#optional-download-options))
+- [dotstatsuite-data-explorer#480](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/480) Keyboard selections in scopelist to instantly change highlight state.
+- [dotstatsuite-data-explorer#334](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/334) Configurable alignment of the homepage facets. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#homepage-facets-alignment))
+- [dotstatsuite-data-explorer#207](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/207) Backward navigation from the visualisation page to the search page needs too many clicks.
+- [dotstatsuite-data-explorer#469](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/469) Unfiltered csv download in viz page must not include filter selection in csv file name.
+- [dotstatsuite-data-explorer#493](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/493) Update sfs to node version 14.x.
+- [dotstatsuite-data-explorer#387](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/387) Active/Hover table cell with colored frame instead of colored background.
+- [dotstatsuite-data-lifecycle-manager#182](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/182) New option to **delete also referencing/referenced (thus "related") artefacts**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures/#delete-an-artefact-and-its-related-structure-artefacts))
+- [dotstatsuite-data-lifecycle-manager#185](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/185) Run transfer's `mappingSet cleanup` method before deleting a dataflow.
+- [dotstatsuite-docker-compose#10](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/10) *(Documentation) Docker-compose redis doc update.
+- [dotstatsuite-data-explorer#474](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/474) *(Support)* Thousand separators not showing up when a particular category is selected.
+- [dotstatsuite-data-explorer#225](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/225) *(Refactoring)* Improve and harmonise the identification of `frequency` and `ref_area` dimension.
+- [dotstatsuite-data-explorer#402](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/402) *(Refactoring)* Update home facet layout on narrow view.
+- [dotstatsuite-data-explorer#479](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/479) *(Refactoring)* Cascading requests (small) rework.
+- [dotstatsuite-data-explorer#405](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/405) *(Refactoring)* `getIsRtl` origin.
+
+patch changes:
+
+- [dotstatsuite-data-viewer#19](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/19) Issues with shared charts when not displayed and/or with incorrect size.
+- [dotstatsuite-data-explorer#488](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/488) Switching language while viewing a chart freezes the data explorer.
+- [dotstatsuite-data-explorer#485](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/485) Legend of a chart is not correctly updated when changing the chart type.
+- [dotstatsuite-data-explorer#442](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/442) Decimals and thousand separators format are incorrect after changing the language of the UI.
+- [dotstatsuite-data-explorer#436](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/436) Error of interpretaiton in the data explorer between "timeDimensions" and "concepts".
+- [dotstatsuite-data-explorer#392](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/392) Side layout with unexpected scroll in the "Used filters" area.
 
 ---
 
