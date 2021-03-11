@@ -105,14 +105,14 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
 ```
 ---
 
-### Homepage facet alignment
+### Homepage facets alignment
 > Released in [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)
 
-The homepage facet alignment is configurable to centered or left-aligned. The alignment only concerns the facet buttons within the homepage screen. The text inside the buttons is always left-aligned.
+The homepage facets alignment is configurable to centered or left-aligned. The alignment only concerns the facet buttons within the homepage screen. The text inside the buttons is always left-aligned.
 
 ![Homepage expanded facets](/dotstatsuite-documentation/images/faq-homepage-facet-button-alignment.png) 
 
-In order to change the aligment from left-aligned to centered, the configuration must be as such:  
+In order to change the alignment from left-aligned to centered, the configuration must be as such:  
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`  
   
@@ -122,7 +122,7 @@ In order to change the aligment from left-aligned to centered, the configuration
     }
 ```
 
-By default, hoepage facets are left-aligned: `"homeFacetCentered": true`.
+By default, the homepage facets are left-aligned: `"homeFacetCentered": false`.
 
 ---
 
