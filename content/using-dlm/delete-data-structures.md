@@ -4,25 +4,27 @@ subtitle:
 comments: false
 weight: 250
 keywords: [
-  'Delete a single structure artefact', '#delete-a-single-structure-artefact',
   'Dependencies between artefacts in SDMX', '#dependencies-between-artefacts-in-sdmx',
+  'Delete a single structure artefact', '#delete-a-single-structure-artefact',
   'Delete an artefact and its related structure artefacts', '#delete-an-artefact-and-its-related-structure-artefacts',
   'Delete several similar artefacts', '#delete-several-similar-artefacts',
 ]
 ---
 
 #### Table of Content
-- [Delete a single structure artefact](#delete-a-single-structure-artefact)
 - [Dependencies between artefacts in SDMX](#dependencies-between-artefacts-in-sdmx)
+- [Delete a single structure artefact](#delete-a-single-structure-artefact)
 - [Delete an artefact and its related structure artefacts](#delete-an-artefact-and-its-related-structure-artefacts)
 - [Delete several similar artefacts](#delete-several-similar-artefacts)
 
-In the DLM, data structures can be deleted separately, several similar structure objects at a time, or several of different types according to their dependency(ies).
 
+In the DLM, data structures can be deleted separately, several similar structure objects at a time, or several of different types according to their dependency(ies).  
 **Note**  that data structures can also be deleted directly through the *SDMX* (NSI) web service API, using the DELETE HTTPS verb with the appropriate resource URL. Example of deleting a Codelist:  
 ```bash
 curl -X DELETE https://nsi-stable-siscc.redpelicans.com/rest/codelist/OECD/COUNTRY/1.0.0
 ```
+
+---
 
 ### Dependencies between artefacts in SDMX
 SDMX artefacts must be deleted in the appropriate order according to their dependency tree. E.g. in order to delete a Dataflow, first any possible Content Constraint that references this Dataflow must be deleted. Before deleting a Codelist, any Data Structure Definitions referencing it must also be deleted.  
