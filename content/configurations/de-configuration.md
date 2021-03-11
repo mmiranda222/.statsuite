@@ -7,7 +7,7 @@ keywords: [
   'Intro', '#intro',
   'Warning', '#warning',
   'Homepage facets', '#homepage-facets',
-  'Homepage facets alignement', '#homepage-facets-alignment',
+  'Homepage facets alignment', '#homepage-facets-alignment',
   'Auto-expanded homepage facet', '#auto-expanded-homepage-facet',
   'Selectable second-level homepage facet values', '#selectable-second-level-homepage-facet-values',
   'Limit for indexing dimensions per dataflow', '#limit-for-indexing-dimensions-per-dataflow',
@@ -36,6 +36,7 @@ keywords: [
 - [Intro](#intro)
 - [Warning](#warning)
 - [Homepage facets](#homepage-facets)
+- [Homepage facets alignment](#homepage-facets-alignment)
 - [Auto-expanded homepage facet](#auto-expanded-homepage-facet)
 - [Selectable second-level homepage facet values](#selectable-second-level-homepage-facet-values)
 - [Limit for indexing dimensions per dataflow](#limit-for-indexing-dimensions-per-dataflow)
@@ -102,6 +103,26 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
         "homeFacetIds": ["Topics", "Thème", "Country", "Pays", "Disability status", "Statut d'invalidité"]
     }
 ```
+---
+
+### Homepage facet alignment
+> Released in [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)
+
+The homepage facet alignment is configurable to centered or left-aligned. The alignment only concerns the facet buttons within the homepage screen. The text inside the buttons is always left-aligned.
+
+![Homepage expanded facets](/dotstatsuite-documentation/images/faq-homepage-facet-button-alignment.png) 
+
+In order to change the aligment from left-aligned to centered, the configuration must be as such:  
+
+* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`  
+  
+```json
+    "search": {
+        "homeFacetCentered": true
+    }
+```
+
+By default, hoepage facets are left-aligned: `"homeFacetCentered": true`.
 
 ---
 
