@@ -74,7 +74,7 @@ ToC
 significant and minor changes:
 
 - [dotstatsuite-data-explorer#221](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/221) **Microdata storage and display**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/))
-- [dotstatsuite-data-explorer#483](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/483) In search results, add **additional downloads for external resources** through specific dataflow annotation. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#optional-download-options))
+- [dotstatsuite-data-explorer#483](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/483) In search results, add **additional downloads for external resources** through specific dataflow annotation. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#optional-download-feature))
 - [dotstatsuite-data-explorer#480](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/480) Keyboard selections in scopelist to instantly change highlight state.
 - [dotstatsuite-data-explorer#334](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/334) Configurable alignment of the homepage facets. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#homepage-facets-alignment))
 - [dotstatsuite-data-explorer#207](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/207) Backward navigation from the visualisation page to the search page needs too many clicks.
