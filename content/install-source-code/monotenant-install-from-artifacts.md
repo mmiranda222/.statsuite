@@ -35,10 +35,8 @@ keywords: [
 
 ### pre-requisites
 
-> Since [February 28, 2020 Release .Stat Suite JS v4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), .Stat Data Explorer requires **nodejs version 13.3.x**.
-
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) SDMX v6.x endpoint
-- [nodejs 13.3.x](https://nodejs.org/fr/download/current/) and [npm 6.x](https://www.npmjs.com/package/npm) installed
+- [nodejs 14.x](https://nodejs.org/en/download/) and [npm 6.14.x](https://www.npmjs.com/package/npm) installed
 - [git](https://gitforwindows.org/) installed ; only to use git bash instead of cmd.exe for process variables
 - [solr 7.x](https://lucene.apache.org/solr/downloads.html) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - [redis](https://redis.io/download) downloaded and running on port 6379 (default)

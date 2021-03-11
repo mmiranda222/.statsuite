@@ -213,7 +213,7 @@ graph LR;
 This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
 
 ##### demo (light)
-1. go to http://de-staging-oecd.redpelicans.com (tenant: oecd, env: staging)
+1. go to https://de-qa.siscc.org (tenant: oecd, env: staging)
 1. home page
 1. search by facets (click on a facet)
 1. fine-tune search results (play with facet selection)

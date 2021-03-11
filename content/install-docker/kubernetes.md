@@ -36,12 +36,11 @@ Please see each repository for detailed information on how to use these.
 
 Our DevOps chain is also using these kubernetes cluster definitions, see the following running apps/services in our qa/staging environments:
 
-* http://de-staging-oecd.redpelicans.com/
-* http://webapp-staging-oecd.redpelicans.com/?tenant=oecd
-* http://dv-staging-oecd.redpelicans.com/?chartId=2
-* http://transfer-siscc.redpelicans.com/swagger/index.html
-* http://nsi-staging-oecd.redpelicans.com/
-* http://dlm-staging-oecd.redpelicans.com/
+* https://de-qa.siscc.org/
+* https://dv-qa.siscc.org/?chartId=2
+* https://transfer-demo.siscc.org/swagger/index.html
+* https://nsi-demo-oecd-staging.siscc.org/
+* https://dlm-qa.siscc.org/
 
 
 The kubernetes cluster definitions implement a "multi-tenant architecture" that allows for sharing the kubernetes cluster between different tenants (organisations, projects, domains, portals, etc.)
@@ -107,7 +106,7 @@ end
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
 1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
-1. check the tenant at http://de-staging-oecd.redpelicans.com/?tenant= `tenant`
+1. check the tenant at https://de-qa.siscc.org/?tenant= `tenant`
 1. update something in the configuration and check the update
 
 #### Demo of adding/updating an app for the tenant

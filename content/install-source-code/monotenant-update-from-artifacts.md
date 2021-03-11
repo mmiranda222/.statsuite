@@ -28,7 +28,7 @@ keywords: [
 
 ### pre-requisites
 
-- running install, see [install](/install-source-code/monotenant-install-from-artifacts)
+- running install, see [install](/dotstatsuite-documentation/install-source-code/monotenant-install-from-artifacts)
 
 ---
 

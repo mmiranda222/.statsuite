@@ -33,7 +33,6 @@ keywords: [
   - [Transfer service](#transfer-service)
   - [SDMX service](#sdmx-service)
   - [Authorisation service](#authorisation-service)
-- [Docker compose example(s)](#docker-compose-examples)
 
 Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use Docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in their own cloud or premises.  
 This section describes where to find and how to use the .Stat Suite Docker images.
@@ -50,7 +49,7 @@ All **.Stat Suite Docker images** are located under https://hub.docker.com/u/sis
 
 This web app is the main GUI for (external) users to find, understand and use the statistical data stored in the SDMX end point(s).
 
-- **demo**: http://de-staging-oecd.redpelicans.com/
+- **demo**: https://de-qa.siscc.org/
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-explorer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer
 
@@ -63,7 +62,7 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 - share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
 - POST bodies are limited in size to `maxChartSize`
 
-- **demo**: http://share-staging-oecd.redpelicans.com/api/charts/3
+- **demo**: https://share-qa.siscc.org/api/charts/3
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-share
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
 
@@ -71,7 +70,7 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 
 This web app is a compagnon GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
-- **demo**: http://dv-staging-oecd.redpelicans.com/?chartId=3
+- **demo**: https://dv-qa.siscc.org/?chartId=3
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-viewer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
 - server-side rendered (configuration is injected in index.html), no request required from the client to get the configuration
@@ -81,7 +80,7 @@ This web app is a compagnon GUI for (external) users to display user-defined, sh
 
 This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows categorised and accessible in one or more SDMX end points and to execute faceted search queries on these SDMX dataflows. A static schema is defined in the config. A dynamic schema is derivated from the indexed SDMX dataflows.
 
-- **demo**: http://sfs-staging-oecd.redpelicans.com/api/config
+- **demo**: https://sfs-qa.siscc.org/api/config
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-sdmx-faceted-search
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
 
@@ -114,7 +113,7 @@ The Configuration service centralises all configuration resources used by other 
 
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
-- **demo**: http://dlm-staging-oecd.redpelicans.com/
+- **demo**: https://dlm-qa.siscc.org/
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-data-lifecycle-manager
 
@@ -129,7 +128,7 @@ This web service is used for statistical data (and later referential metadata) f
 - Upload of Excel data files (using a specific data mapping definition) into a .Stat Core data store
 - Transfer of data between two .Stat Core data stores  
 
-- **demo**: http://transfer.qa.core.oecd.redpelicans.com/swagger/index.html
+- **demo**: https://transfer-qa.siscc.org/swagger/index.html
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-transfer
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
 
@@ -211,7 +210,7 @@ end
 
 This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store.  
 
-- **demo**: http://nsi-staging-oecd.redpelicans.com/
+- **demo**: https://nsi-demo-oecd-staging.siscc.org/
 - **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
 - **repository of original Eurostat SDMX-RI NSI web service**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
 
@@ -240,8 +239,10 @@ siscc/dotstatsuite-core-sdmxri-nsi
 
 This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
 
-- **demo**: http://authz-siscc.redpelicans.com/swagger/index.html
+- **demo**: https://authz-qa.siscc.org/swagger/index.html
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-auth-management
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
 
->  See more about the **[Recommended infrastructure requirements](/getting-started/infrastructure-requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**.
+---
+
+>  See more about the **[Recommended infrastructure requirements](/dotstatsuite-documentation/getting-started/infrastructure-requirements)** for all the **.Stat Core components** listed above; Including the **Transfer service**, **SDMX service** and **Authorisation service**.
