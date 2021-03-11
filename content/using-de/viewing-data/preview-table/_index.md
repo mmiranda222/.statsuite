@@ -14,7 +14,7 @@ keywords: [
   'Management of empty rows', '#management-of-empty-rows',
   'Management of empty row sections', '#management-of-empty-row-sections',
   'Vertical scroll and freezing table header and Rows section rows', '#vertical-scroll-and-freezing-table-header-and-rows-section-rows',
-
+  'Links to underlying microdata', '#links-to-underlying-microdata',
 ]
 ---
 
@@ -29,6 +29,7 @@ keywords: [
 - [Management of empty rows](#management-of-empty-rows)
 - [Management of empty row sections](#management-of-empty-row-sections)
 - [Vertical scroll and freezing table header and Rows section rows](#vertical-scroll-and-freezing-table-header-and-rows-section-rows)
+- [Links to underlying microdata](#links-to-underlying-microdata)
 
 ---
 
@@ -160,3 +161,13 @@ Also the Row sections rows stay sticky on the top of the table while scrolling a
 ![DE_table_scrolling](/dotstatsuite-documentation/images/DE_table_scrolling.png)
 
 Table header and Row section row freezing is disabled when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+
+---
+
+### Links to underlying microdata
+
+For any DSD and dataflow fulfilling the conditions for microdata, the Data Explorer will add a hyperlink to each table value cell that allows (through clicking the link) opening the microdata viewer tab which displays those microdata that are linked to that aggregated data value.
+
+![de-microdata-1](/dotstatsuite-documentation/images/de-microdata-1.png)
+
+For more information, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/).
