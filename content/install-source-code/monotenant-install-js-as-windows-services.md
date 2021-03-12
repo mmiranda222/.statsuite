@@ -193,14 +193,26 @@ A very useful tutorial on how to get a Keycloak server ready to work with the .S
 │   │   │   │   │   │   ├── i18n
 │   │   │   │   │   │   ├── settings.json
 │   │   ├── assets
-│   │   │   ├── default
-│   │   │   │   ├── data-explorer
-│   │   │   │   │   │   ├── images
-│   │   │   │   │   │   ├── styles*
+│   │   |   ├── default
+│   │   |   │   │   ├── data-explorer
+│   │   |   │   │   │   │   ├── images
+│   │   |   │   │   │   │   ├── styles
 │   │   │   │   ├── data-viewer
 │   │   │   │   │   │   ├── images
-│   │   │   │   │   │   ├── styles*
+│   │   │   │   │   │   ├── styles
 │   │   ├── package.json
+│   ├── data-explorer                          # application
+│   │   ├── build
+│   │   |   ├── assets
+│   │   |   │   ├── default
+│   │   |   │   │   ├── data-explorer
+│   │   |   │   │   │   │   ├── images
+│   │   |   │   │   │   │   ├── styles
+```
+- copy assets folder into build applications (**no need to change assets url anymore in settings**)   
+link in settings assets should stay like below:   
+```
+"favicon": "/assets/siscc/data-explorer/images/favicon.ico"
 ```
 - edit pm2.sh to set your personnal environnement variable (e.g TRANSFER_SERVER_URL)
 - run `./pm2.sh` *start services, save pm2 dump and delete all services*
