@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 15, 2021](#march-15-2021)
 - [March 10, 2021](#march-10-2021)
 - [March 5, 2021](#march-5-2021)
 - [January 25, 2021](#january-25-2021)
@@ -63,6 +64,17 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+
+### March 15, 2021
+**[Patch Release .Stat Suite JS 7.1.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/35)**
+> This release includes a new *patch* version of the **data-explorer** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+patch change:
+
+- [dotstatsuite-data-explorer#500](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/500) Search results additional downloads for external resources does not work. *All use cases for internally/externally stored dataflows, and externally stored materials to download must be handled.*
 
 ---
 
