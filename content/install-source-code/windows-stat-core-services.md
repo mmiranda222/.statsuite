@@ -131,8 +131,7 @@ git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/ma
 >
 >   ```sh
 >   cd maapi.net
->   git submodule set-url authdb https://gitlab.com/sis-cc/eurostat-sdmx-ri/authdb.sql.mirrored.git
->   git submodule update --init --single-branch
+>   git submodule add https://gitlab.com/sis-cc/eurostat-sdmx-ri/authdb.sql.mirrored.git authdb
 >   cd ..
 >   ```
 >
@@ -442,6 +441,7 @@ Open a web browser and open the url localhost:83/health
   },
   "totalResponseTime": 250.5597
 }
+```
 
 >  Note: By default all the logs will be stored at C:\dotstatsuite-website\transfer-service\logs\
 
