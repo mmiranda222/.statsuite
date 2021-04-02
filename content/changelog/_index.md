@@ -70,19 +70,19 @@ ToC
 
 ### April 1, 2021
 **[Release .Stat Suite JS 7.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/36)**
-> This release includes a new version of the **data-explorer**, **data-lifecycle-manager**, **data-viewer**, and **share**, **config**, and **proxy** services.  
+> This release includes a new version of the **data-explorer**, **data-lifecycle-manager**, **data-viewer**, **share**, **config**, and **proxy** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
 
-**Disclaimer for .Stat Suite Docker setup:** as a result of [dotstatsuite-config#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/27), a new Docker image needs to be used for Docker setup: `siscc/dotstatsuite-config-prod:master` ->  `siscc/dotstatsuite-config:master`. Note that the previous `siscc/dotstatsuite-config-prod:master` will still work and will be removed at some point in the future.  
-In addition, the `i18n` translations were implicitly loaded, now it is done explicitly: folder `i18n` to mount `config/data/prod/i18n` ->  `opt/i18n`.
+**Disclaimer for .Stat Suite Docker setup:** as a result of [dotstatsuite-config#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/27), a new Docker image needs to be used for Docker setup: `siscc/dotstatsuite-config-prod:master` ->  **`siscc/dotstatsuite-config:master`**. Note that the previous `siscc/dotstatsuite-config-prod:master` will still work and will be removed at some point in the future.  
+In addition, the `i18n` translations were implicitly loaded, now it is done explicitly: folder `i18n` to mount `config/data/prod/i18n` ->  **`opt/i18n`**.
 
 minor changes:
 
 - [dotstatsuite-data-explorer#145](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/145) **Table view with highlight** of cells, rows and columns. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#highlighted-cells-rows-and-columns))
-- [dotstatsuite-share#20](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/20) Options in emails to **list and delete all shared objects** related to the user's email address. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/))
+- [dotstatsuite-share#20](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/20) Options in emails to **list and delete all shared objects** related to the user's email address. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/#list-of-shared-objects))
 - [dotstatsuite-data-explorer#481](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/481) Localise the "Terms and Conditions" URL (copyright icon).
-- [dotstatsuite-data-explorer#473](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/473) Solve encoding conflict in DE URL parameter when sending links through HTML-encoded e-mail. The layout `lt[rs|rw|cl]` parameter name is replaced with **`ly[rs|rw|cl]`**. Note that The `lt` parameter will not be recognised as URL input, and (older) URLs using it will generate the default dataflow view.
-- [dotstatsuite-data-lifecycle-manager#194](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/194) Feature to **categorise a dataflow** in DLM. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/publish-data/))
+- [dotstatsuite-data-explorer#473](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/473) Solve encoding conflict in DE URL parameter when sending links through HTML-encoded e-mail. The layout `lt[rs|rw|cl]` parameter name is replaced with **`ly[rs|rw|cl]`**. Note that The `lt` parameter will not be recognised as URL input anymore, and (older) URLs using it will not break but only generate the default dataflow view.
+- [dotstatsuite-data-lifecycle-manager#194](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/194) Feature to **categorise a dataflow** in DLM. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/publish-data/#categorise-a-data-view))
 - [dotstatsuite-data-lifecycle-manager#193](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/193) DLM to open artefact links in authenticated mode.
 - [dotstatsuite-data-lifecycle-manager#173](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/173) Extend display of artefact identification information. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#contents-of-the-list))
 - [dotstatsuite-config#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/27) and [dotstatsuite-proxy#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/issues/6) *(Refactoring)* config and proxy update/data
