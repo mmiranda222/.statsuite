@@ -21,8 +21,8 @@ keywords: [
 ### Categorise a data view
 > Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)
 #### General behavior
-By using the option **"Categorise structure"**, DLM users can **categorise a dataflow** in one or several of the categories in any of the available *SDMX* CategorySchemes of a dedicated data space, which avoids manually creating and uploading *SDMX* Categorisation structural artefact files.  
-**Categorising dataflows is required for their indexing in the Data Explorer search** (see related functional specifications of [What is indexed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed) in .Stat DE).
+When using the option **"Categorise structure"**, DLM users can **categorise a dataflow** in one or several of the categories in any of the available *SDMX* CategorySchemes of a dedicated data space. Users can thus avoid manually creating and uploading *SDMX* Categorisation artefacts in .xml files.  
+**Categorising dataflows is required for their index in the Data Explorer search** (see related functional specifications of [What is indexed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed) in .Stat DE).
 
 1) A menu option to "Categorise structure" is available in the contextual menu of dataflows (as well as in the multi-selection menu for dataflows) for an **internal** data space.
 
@@ -32,7 +32,7 @@ By using the option **"Categorise structure"**, DLM users can **categorise a dat
 
 ![Categorise a dataflow](/dotstatsuite-documentation/images/dlm-categorise-dataflow2.png)
 
-3) The user can select one or several of the categories in any CategoryScheme and then click on "Categorise".
+3) The user can select one or several of the categories in any CategoryScheme, and then click on "Categorise".
 
 ![Categorise a dataflow](/dotstatsuite-documentation/images/dlm-categorise-dataflow3.png)
 
@@ -44,7 +44,7 @@ In addition, the newly categorisation(s) is/are displayed in the detailed inform
 
 ![Categorise a dataflow](/dotstatsuite-documentation/images/dlm-categorise-dataflow5.png)
 
-When listing the related structures of a dataflow from the left menu option, the Categorisation(s) is/are also listed as children of the dataflow:
+When listing the related structures of a dataflow from the left menu option, the Categorisation(s) is/are also listed as child(ren) of the dataflow:
 
 ![Categorise a dataflow](/dotstatsuite-documentation/images/dlm-categorise-dataflow6.png)
 
@@ -80,7 +80,7 @@ The SDMX Categorisation is created on the following naming convention:
 - [@CS_VERSION]: Agency of CategyScheme
 - [@CS_VERSION_ALTER]: same as [@CS_VERSION] with dots '.' replaced by underscore '_'
 
-**Note:** If the category selected is a child category, then the IDs of all parent categories involved in the branch are concatenated using '.', e.g. if the category with ID "THIRD" in the following category-tree was selected, then [@CAT_ID] would stand for "TOP.SECOND.THIRD":  
+**Note:** If the selected category is a child category, then the IDs of all parent categories involved in the branch are concatenated using '.', e.g. if the category with ID "THIRD" in the following category-tree was selected, then [@CAT_ID] would stand for "TOP.SECOND.THIRD":  
 - TOP
   - SECOND
     - THIRD
