@@ -46,6 +46,8 @@ The shared view contains the data table or chart view, including the header (tit
 
 ![Share](/dotstatsuite-documentation/images/de-share4.png)
 
+---
+
 ### List of shared objects
 > Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)
 
@@ -68,6 +70,8 @@ The end then receives a new email containing the full list of (active) shared ob
 
 *Limitation:* The current state of this feature allows only to request for the full list of shared object from the hyperlink in the footer of a "Validate your email address" email. An enhancement should allow in the future to request the same list directly from the Data Explorer UI.
 
+---
+
 ### Delete shared objects
 > Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)
 
@@ -82,6 +86,8 @@ The end will then receive a new email "Confirm your deletion request" with a fin
 
 Once validated, the shared object is deleted and permanently removed from the database, and the user receives the automatic confirmation message in a new webpage: "The shared object [ChartId=XX] was successfully deleted".
 
+---
+
 ### Cleanup feature for outdated shared objects
 > Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
 
@@ -91,3 +97,4 @@ e.g.
 `GET http://share-<tenant>.<organisation>.org/admin/cleanup?api-key=<secret>`
 
 The deletion of these shared charts/tables views (uniquely identified by their unique URLs) will concern all shared views generated before a date this is defined and set up in the configuration of the share servcie during its deployment: `env.` viarable: `OUT_OF_DATE` ((see full documentation in the [readme.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/tree/master#share-server) file of the share service)).
+
