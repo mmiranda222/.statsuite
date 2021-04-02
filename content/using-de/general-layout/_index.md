@@ -145,7 +145,7 @@ The Data Explorer pages let the user drive the page content through URL paramete
 | av=true\|false | hasDataAvailability=true\|false | boolean | sdmx data availability mode | av=false
 | pd | period | string | period of the sdmx data request | pd=2017,2020
 | _- removed -_ | frequency | string | frequency of the app | frequency=Q
-| lt[rs\|rw\|cl] | layout[sections\|rows\|header] | object | layout of the table in the vis page | lt[rs]=&lt[rw]=STO&lt[cl]=TIME_PERIOD
+| ly[rs\|rw\|cl] | layout[sections\|rows\|header] | object | layout of the table in the vis page | ly[rs]=&ly[rw]=STO&ly[cl]=TIME_PERIOD
 | lb=nm\|id\|bt | display=label\|code\|both | string | display mode of sdmx (label, code, both) | lb=code
 | to[]=true\|false | time[]=true\|false | object | order of time dimension(s) | to[TIME_PERIOD]=true
 | mp[id\|lv] | map[mapId\|levelId]| string | map information:ID of the map and ID of the map level | mp[id]=world_countries&mp[lv]=countries
