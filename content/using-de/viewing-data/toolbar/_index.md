@@ -8,7 +8,6 @@ keywords: [
   'Labels', '#labels',
   'Customise', '#customise',
   'Share', '#share',
-  'Cleanup feature for outdated shared objects', '#cleanup-feature-for-outdated-shared-objects',
   'Download', '#download',
   'Table in Excel', '#table-in-excel',
   'Filter data in tabular text (CSV)', '#filter-data-in-tabular-text-csv',
@@ -26,7 +25,6 @@ keywords: [
 - [Labels](#labels)
 - [Customise](#customise)
 - [Share](#share)
-  - [Cleanup feature for outdated shared objects](#cleanup-feature-for-outdated-shared-objects)
 - [Download](#download)
   - [Table in Excel](#table-in-excel)
   - [Filter data in tabular text (CSV)](#filter-data-in-tabular-text-csv)
@@ -72,40 +70,7 @@ For the data **chart views**, check the docmentation [here](https://sis-cc.gitla
 ---
 
 ### Share
-The **Share** option allows sharing the data view in table or chart mode.
-
-![Share](/dotstatsuite-documentation/images/de-share1.png)
-
-There are two options for sharing the data view:
-* 1) **Data snapshot**: The current data is to be saved with the data view and redisplayed as such.
-* 2) **Latest available data** for the period defined: The current data query is saved with the data view and re-executed before the data view is redisplayed. The time period is fixed to the current time span covered.
-
-Before having the expected URL and the code to embed for sharing the information, the user must fill up his/her **email address** to make the request by clicking on the button "Request URL and embed code".  
-Once clicked, the user receives the following message:
-
-![Share](/dotstatsuite-documentation/images/de-share2.png)
-
-... Then the following email:
-
-![Share](/dotstatsuite-documentation/images/de-share3.png)
-
-The email contains two parts, the first one to let the user validating its email and so its requested of sharing table or chart view. In the second part, the email displays the URL and the embedded code for sharing the table or the chart previously requested.  
-There is also a warning message that the URL and the embedded code are only available once the user has validated its email.
-
-Once the user clicks on "Validate your email address", the shared content is *activated* and opened in a new webpage with a unique URL id.  
-The shared view contains the data table or chart view, including the header (title and sub-title) and footer (copyright link and source url id):
-
-![Share](/dotstatsuite-documentation/images/de-share4.png)
-
-#### Cleanup feature for outdated shared objects
-> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
-
-In order to keep infrastructure needs minimal and performance high, an *admin* API feature of the Share service allows to manually delete all outdated shared views.
-
-e.g.  
-`GET http://share-<tenant>.<organisation>.org/admin/cleanup?api-key=<secret>`
-
-The deletion of these shared charts/tables views (uniquely identified by their unique URLs) will concern all shared views generated before a date this is defined and set up in the configuration of the share servcie during its deployment: `env.` viarable: `OUT_OF_DATE` ((see full documentation in the [readme.md](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/tree/master#share-server) file of the share service)).
+The **Share** option allows sharing the data view in table or chart mode. For details, go to the [Share](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/) page.
 
 ---
 
