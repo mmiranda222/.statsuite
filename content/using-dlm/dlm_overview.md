@@ -158,9 +158,11 @@ For each artefact, the following details are shown:
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-10.png)
 
 For Dataflows **only**, The user can view the following additional information:
-* Preview: the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
-* Categories with information about thematic categorisation. Note that a Dataflow can be categorised into one or more Categories
-* Number of observation values
+* **Preview:** the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
+* **Number** of observation values
+* **Categories** with information about thematic categorisation. Note that a Dataflow can be categorised into one or more Categories
+* Space name
+* **ID flavours** with 2 alternative dataflow identification flavours: `AGENCY_ID:DATAFLOW_ID(VERSION)` and `AGENCY_ID/DATAFLOW_ID/VERSION`
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9.png)
 
