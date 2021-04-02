@@ -1,6 +1,8 @@
 # How to create a GitLab website page using a theme based on markdown content
 
-> This how-to procedure isn't meant to re-write what already exists in the excellent and well done GitLab documentation. The purpose is to guide to the right reference and explain how we reused the **GitLab website page** features and **Hugo template** for creating and deploying https://sis-cc.gitlab.io/dotstatsuite-documentation/.
+> This how-to procedure isn't meant to re-write what already exists in the excellent and well done GitLab documentation. The purpose is to guide through the right references and explain how we used the **GitLab website page** features and **Hugo template** for creating and deploying https://sis-cc.gitlab.io/dotstatsuite-documentation/.
+
+---
 
 ### Follow all steps described in https://about.gitlab.com/stages-devops-lifecycle/pages/
 The 5 following steps are also very well explained in this 3 minutes' video: https://www.youtube.com/watch?v=TWqh9MtT4Bg
@@ -21,10 +23,14 @@ Commit & push at least one change, e.g. edit your `README.md` file, save it and 
 #### Step 05: Visit your website
 Once your pipeline has ran and built successfully, go to your website url (depending on the name provided during step 03).
 
+---
+
 ### Hugo Theme
 As mentioned in Step 01, we chose a Hugo template. You can whether decide to use the default proposed theme (styles and layout), or you can choose another Theme from [here](https://themes.gohugo.io/). Themes are various and will depend on the types of content you want to publish (simple texts, blog, pictures, videos, etc.).  
 In our `dotstatsuite-documentation` context, we chose the [Techdoc](https://themes.gohugo.io/hugo-theme-techdoc/) theme that offers a fixed header, a left dropdown menu, and simple custom configurations.  
 When you go for one specific theme, retrieve the files/folder from the source code, copy and paste it to your forked template project, replacing thus the previous `themes` folder.
+
+---
 
 ### `dotstatsuite-documentation` specific adds
 In addition to the default behavior and theme offered by GitLab and the Hugo Theme template, we have invested extra resources and skills for enhancing and customizing the https://sis-cc.gitlab.io/dotstatsuite-documentation/:
