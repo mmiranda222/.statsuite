@@ -14,6 +14,7 @@ keywords: [
   'Management of empty rows', '#management-of-empty-rows',
   'Management of empty row sections', '#management-of-empty-row-sections',
   'Vertical scroll and freezing table header and Rows section rows', '#vertical-scroll-and-freezing-table-header-and-rows-section-rows',
+  'Highlighted cells, rows and columns', '#highlighted-cells-rows-and-columns',
   'Links to underlying microdata', '#links-to-underlying-microdata',
 ]
 ---
@@ -29,6 +30,7 @@ keywords: [
 - [Management of empty rows](#management-of-empty-rows)
 - [Management of empty row sections](#management-of-empty-row-sections)
 - [Vertical scroll and freezing table header and Rows section rows](#vertical-scroll-and-freezing-table-header-and-rows-section-rows)
+- [Highlighted cells, rows and columns](#highlighted-cells-rows-and-columns)
 - [Links to underlying microdata](#links-to-underlying-microdata)
 
 ---
@@ -161,6 +163,18 @@ Also the Row sections rows stay sticky on the top of the table while scrolling a
 ![DE_table_scrolling](/dotstatsuite-documentation/images/DE_table_scrolling.png)
 
 Table header and Row section row freezing is disabled when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+
+---
+
+### Highlighted cells, rows and columns
+> Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)
+
+A table cell is highlighted with a blue border when mouse-hovered or selected.    
+Cells can be selected and deselected through double-click.  
+When a cell is selected, then also all cells in the same row and same column (except column header cells) are background-coloured with a specific highlight colour (Neutral lighten-3 #FEF4E6). Row sections and column headers are not impacted.  
+The highlight remains when switching the representation from table to chart and table again, but is removed when either the cell selection, the table layout or the data selection change.
+
+![DE table view highlight](/dotstatsuite-documentation/images/de-preview-table-highlight.png)
 
 ---
 
