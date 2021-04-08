@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 8, 2021](#april-8-2021)
 - [April 1, 2021](#april-1-2021)
 - [March 15, 2021](#march-15-2021)
 - [March 10, 2021](#march-10-2021)
@@ -65,6 +66,19 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+
+### April 8, 2021
+
+**[Patch Release .Stat Suite JS 7.2.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/36)**
+> This release includes a new *patch* version of the **data-explorer** and **data-viewer** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#507](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/507) Backward-Compatible `lt[rs|rw|cl]` layout parameter name *(replaced with `ly[rs|rw|cl]` in JS 7.2.0 release [dotstatsuite-data-explorer#473](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/473))*.
+- [dotstatsuite-chart-generator-legacy#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/15) Fix infinite loop for small timeline charts.
 
 ---
 
