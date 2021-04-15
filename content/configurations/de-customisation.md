@@ -60,7 +60,7 @@ When editing the configuration .json file(s) of the .Stat Suite applications, th
 >The format and default theme was changed with the release [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)  
 
 It is possible to **override** the default **layout theme** of the application.  
-The **default theme** is stored under `dotstatsuite-data-explorer/src/web/theme/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`.  
+The **default theme** is stored under `dotstatsuite-visions/src/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`.  
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
 ```json
