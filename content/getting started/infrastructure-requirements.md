@@ -63,7 +63,7 @@ Although the requirements could vary depending on the size of your data and the 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
 - **nodejs 14.x** and **npm 6.14.x** installed
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
-- **keycloak 7.x** installed and running on port 8080 (default)
+- **keycloak v7.x (minimum) - v11.0.2 (latest tested and recommended)** installed and running on port 8080 (default)
 - **postgres 12.x** installed and running on port 5432 (default) or any other relational database usable by keycloak (for more information see [here](https://www.keycloak.org/docs/4.8/server_installation/#_database))
 
 *notes:*
