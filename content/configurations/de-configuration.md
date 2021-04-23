@@ -6,18 +6,20 @@ weight: 72
 keywords: [
   'Intro', '#intro',
   'Warning', '#warning',
-  'Homepage facets', '#homepage-facets',
-  'Homepage facets alignment', '#homepage-facets-alignment',
-  'Auto-expanded homepage facet', '#auto-expanded-homepage-facet',
-  'Selectable second-level homepage facet values', '#selectable-second-level-homepage-facet-values',
-  'Limit for indexing dimensions per dataflow', '#limit-for-indexing-dimensions-per-dataflow',
-  'Search results page pinned facets', '#search-results-page-pinned-facets',
-  'Search results page excluded facets', '#search-results-page-excluded-facets',
-  'Exclude specific CategorySchemes from the search index', '#search-exclude-categoryschemes',
-  'Search result page: number of results per page', '#search-result-page-number-of-results-per-page',
+  'Search: Data sources to be indexed', '#search-data-sources-to-be-indexed',
+  'Search: Homepage facets', '#search-homepage-facets',
+  'Search: Homepage facets alignment', '#search-homepage-facets-alignment',
+  'Search: Auto-expanded homepage facet', '#search-auto-expanded-homepage-facet',
+  'Search: Selectable second-level homepage facet values', '#search-selectable-second-level-homepage-facet-values',
+  'Search: Limit for indexing dimensions per dataflow', '#search-limit-for-indexing-dimensions-per-dataflow',
+  'Search: Result page pinned facets', '#search-result-page-pinned-facets',
+  'Search: Result page excluded facets', '#search-result-page-excluded-facets',
+  'Search: Exclude specific CategorySchemes from the search index', '#search-exclude-categoryschemes',
+  'Search: Result page: number of results per page', '#search-result-page-number-of-results-per-page',
   'Time period boundaries', '#time-period-boundaries',
   'Default time period', '#default-time-period',
-  'LastNObservations support', '#lastnobservations-support',
+  'Support of Last-N-Observations feature', '#support-of-last-n-observations-feature',
+  'Support of Partial-References feature', '#support-of-partial-references-feature',
   'Maximum number of observations in tables and charts', '#maximum-number-of-observations-in-tables-and-charts',
   'Maximum number of cells in table', '#maximum-number-of-cells-in-table',
   'Preferred scale attribute', '#preferred-scale-attribute',
@@ -35,18 +37,20 @@ keywords: [
 #### Table of Content
 - [Intro](#intro)
 - [Warning](#warning)
-- [Homepage facets](#homepage-facets)
-- [Homepage facets alignment](#homepage-facets-alignment)
-- [Auto-expanded homepage facet](#auto-expanded-homepage-facet)
-- [Selectable second-level homepage facet values](#selectable-second-level-homepage-facet-values)
-- [Limit for indexing dimensions per dataflow](#limit-for-indexing-dimensions-per-dataflow)
-- [Search results page pinned facets](#search-results-page-pinned-facets)
-- [Search results page excluded facets](#search-results-page-excluded-facets)
-- [Exclude specific CategorySchemes from the search index](#search-exclude-categoryschemes)
-- [Search result page: number of results per page](#search-result-page-number-of-results-per-page)
+- [Search: Data sources to be indexed](#search-data-sources-to-be-indexed)
+- [Search: Homepage facets](#search-homepage-facets)
+- [Search: Homepage facets alignment](#search-homepage-facets-alignment)
+- [Search: Auto-expanded homepage facet](#search-auto-expanded-homepage-facet)
+- [Search: Selectable second-level homepage facet values](#search-selectable-second-level-homepage-facet-values)
+- [Search: Limit for indexing dimensions per dataflow](#search-limit-for-indexing-dimensions-per-dataflow)
+- [Search: Result page pinned facets](#search-result-page-pinned-facets)
+- [Search: Result page excluded facets](#search-result-page-excluded-facets)
+- [Search: Exclude specific CategorySchemes from the search index](#search-exclude-categoryschemes)
+- [Search: Number of results per result page](#search-number-of-results-per-result-page)
 - [Time period boundaries](#time-period-boundaries)
 - [Default time period](#default-time-period)
-- [LastNObservations support](#lastnobservations-support)
+- [Support of Last-N-Observations feature](#support-of-last-n-observations-feature)
+- [Support of Partial-References feature](#support-of-partial-references-feature)
 - [Maximum number of observations in tables and charts](#maximum-number-of-observations-in-tables-and-charts)
 - [Maximum number of cells in table](#maximum-number-of-cells-in-table)
 - [Preferred scale attribute](#preferred-scale-attribute)
@@ -75,7 +79,24 @@ When editing the configuration .json file(s) of the .Stat Suite applications, th
 
 ---
 
-### Homepage facets
+### Search: Data sources to be indexed
+Define, for an internal or external data space, the content to be indexed and retrievable by the search engine. A data source is determined by one or more CategorySchemes of an internal or external data space.   
+When for a data space the parameter `"indexed"` is set to `true`, and at east one CategoryScheme triptych (version, id, agency) is provided in the `"queries"` parameter, then all dataflows categorised in the provided CategoryScheme(s) will be indexed. More functional specifcations to be found [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/).
+
+* in `dotstatsuite-config/data/<env>/configs/datasources.json`
+
+```json
+  "qa:process": {
+    "indexed": true,
+    "queries": [
+      { "version": "1.0", "categorySchemeId": "OECDCS1", "agencyId": "OECD" }
+    ]
+  }
+```
+
+---
+
+### Search: Homepage facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
 Define the facets that are displayed on the homepage below "browse by", by their names and in the order in which you want them to appear.  
@@ -105,7 +126,7 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
 ```
 ---
 
-### Homepage facets alignment
+### Search: Homepage facets alignment
 > Released in [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)
 
 The homepage facets alignment is configurable to centered or left-aligned. The alignment only concerns the facet buttons within the homepage screen. The text inside the buttons is always left-aligned.
@@ -126,7 +147,7 @@ By default, the homepage facets are left-aligned: `"homeFacetCentered": false`.
 
 ---
 
-### Auto-expanded homepage facet
+### Search: Auto-expanded homepage facet
 > Released in [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021)
 
 Define one of the homepage facet to be opened/expanded by default, by using the property `expandedHomeFacets`.  
@@ -145,7 +166,7 @@ If this property is missing or if the provided value does not match a facet loca
   
 ---
 
-### Selectable second-level homepage facet values
+### Search: Selectable second-level homepage facet values
 > Released in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
 
 Make the individual second-level homepage facet values clickable. When a homepage facet returns a **hierarchical** CategoryScheme or ConceptScheme, then it is possible to make the second-level values (sub-level of a root) selectable, so that the search result applies the selection when browsing.   
@@ -163,7 +184,7 @@ By default, the second-level homepage facet values are **not clickable** (`"home
 
 ---
 
-### Limit for indexing dimensions per dataflow
+### Search: Limit for indexing dimensions per dataflow
 > Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
 
 A parameter of the `SFS` configuration at server level (docker-compose, kubernetes strategy) named `DIMENSION_VALUES_LIMIT` excludes those dimensions of a dataflow from the indexing that have more values than this limit.  
@@ -177,7 +198,7 @@ Because this limit is applied per dataflow per dimension:
 
 ---
 
-### Search results page pinned facets
+### Search: Result page pinned facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
 Define the facets that are always displayed in the first position(s) in the search result page, when available.  
@@ -203,7 +224,7 @@ Facets are **localised**, thus you must add the translated name of the pinned fa
 
 ---
 
-### Search results page excluded facets
+### Search: Result page excluded facets
 > Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
 Define the facets that will always be excluded from the search result page. Replace spaces in your facet names by underline `_`.  
@@ -225,7 +246,7 @@ Facets are **localised**, thus you must add the translated name of the excluded 
 
 ---
 
-### Search: exclude categoryschemes
+### Search: Exclude categoryschemes
 > Available since [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020).  
 
 Exclude some specific CategorySchemes from the search index (**by ID**). Browsing and free-text search will not return related dataflows when related Categories are used as search/browsing criteria.  
@@ -246,7 +267,7 @@ Exclude some specific CategorySchemes from the search index (**by ID**). Browsin
 
 ---
 
-### Search result page: number of results per page
+### Search: Number of results per result page
 Define the number of results displayed per page in the search result pages.  
 
 * in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
@@ -266,7 +287,7 @@ Define the minimum and maximum values of the time period range in the visualisat
 
 ```json
     "period": {
-        "boundaries": [1970, 2020]
+        "boundaries": [1970, 2021]
     }
 ```
 
@@ -283,7 +304,7 @@ Define the default time period selection of the visualisation page views, accord
 
 ```json
     "period": {
-        "default": [2018, 2018]
+        "default": [2016, 2021]
     }
 ```
 
@@ -291,10 +312,10 @@ Define the default time period selection of the visualisation page views, accord
 
 ---
 
-### LastNObservations support
+### Support of Last-N-Observations feature
 >Released in [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)
 
-Define, **per datasource**, the support of the `LastNObservations` features from your SDMX web service.  
+Define, **per data source**, the support of the `LastNObservations` features from your SDMX web service.  
 
 in `dotstatsuite-config/data/<env>/configs/<tenant>/datasources.json`
 
@@ -308,6 +329,20 @@ When set to `true`, then the **LastNPeriod** feature is displayed in the DataExp
 The feature is set to `false` by default.
 
 ![Time period default range](/dotstatsuite-documentation/images/lastnobs-config.png)
+
+---
+
+### Support of Partial-References feature
+Indicate if an internal or external data space supports the `detail=referencepartial` SDMX query parameter.  
+If the data space parameter `supportsReferencePartial` is set to `true`, it means that the underlying SDMX-compliant web service allows querying for referenced item schemes that only include items used by the artefact to be returned. This feature allows increasing the performance of structure retrievals from the web service, since non-necessary items are not retrieved. See the related SDMX documentation [here](https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_3_structural_queries.md#parameters-used-to-further-describe-the-desired-results).
+
+* in `dotstatsuite-config/data/<env>/configs/datasources.json`
+
+```json
+  "qa:process": {
+    "supportsReferencePartial": true
+  }
+```
 
 ---
 
