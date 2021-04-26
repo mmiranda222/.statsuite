@@ -5,6 +5,7 @@
 1. define a semver compliant with changes of 1. and upper than all underlying releases from all service/app (see template for the list).
 1. create a **milestone** at [.stat-suite level](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones) following the name convention: `dotstatsuiteJS@v<semver>`
 1. assign [issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=s%3A%3Arelease) to the milestone
+1. qa default translations (keys and values) override staging translations `siscc-config-data/qa/i18n -> siscc-config-data/staging/i18n`
 1. for each service/app:
     1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
     1. bump version
