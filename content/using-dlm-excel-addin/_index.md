@@ -7,6 +7,7 @@ keywords: [
   'Introduction', '#introduction',
   'DLM Excel-Addin in the Excel ribbon', '#dlm-excel-addin-in-the-excel-ribbon',
   'Get data: select the source', '#get-data-select-the-source',
+  'Authentication', '#authentication',
   'Get data step 1: select data', '#get-data-step-1-select-data',
   'Get data step 2: specify output', '#get-data-step-2-specify-output',
   'Get data: result table', '#get-data-result-table',
@@ -19,6 +20,7 @@ keywords: [
 #### Table of Content
 - [Introduction](#introduction)
 - [DLM Excel-Addin in the Excel ribbon](#dlm-excel-addin-in-the-excel-ribbon)
+- [Authentication](#authentication)
 - [Get data: select the source](#get-data-select-the-source)
 - [Get data step 1: select data](#get-data-step-1-select-data)
 - [Get data step 2: specify output](#get-data-step-2-specify-output)
@@ -42,10 +44,11 @@ Also included in the zipped package is a short text procedure for easing the ins
 
 **Main features**  
 The DLM Excel-Addin allows:
+- authenticating for access-restricted internal .Stat Suite data sources
 - browsing through categorised dataflows in SDMX-enabled internal and external data sources
 - downloading data from these sources into various flavours of Excel tables  
 - refreshing the content of these Excel tables through re-downloading the data that might have been updated in these sources  
-- updating or adding data in internal data sources (provided the user has sufficient permissions) through editing of these Excel tables
+- editing/adding and uploading data to internal data sources (provided the user has sufficient permissions)
 
 ---
 
@@ -53,6 +56,26 @@ The DLM Excel-Addin allows:
 Once installed, the .Stat DLM Excel-Addin will appear in your Excel ribbon. Click on it to access the menu.
 
 ![DLM Excel-Addin ribbon](/dotstatsuite-documentation/images/dlm-excel-addin-01.png)
+
+---
+
+### Authentication
+When extracting data for a new table, changing a selection, refreshing a table or saving data related to an internal data source, and if you haven't authenticated for that data source within the current Excel session yet, then you will be redirected to your default web browser in order to provide your login credentials to the (optional) configured third-party identity provider within your organisation.  
+> Note that this is only necessary for internal data sources and/or organisations having an authentication service put in place. For more information, see [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/).
+
+![DLM Excel-Addin login step 2](/dotstatsuite-documentation/images/dlm-excel-addin-login-01.png)
+
+![DLM Excel-Addin login step 2](/dotstatsuite-documentation/images/dlm-excel-addin-login-02.png)
+
+Once successfully authenticated, the Excel-Addin will automatically proceed executing the currently requested action on the data source as well as  regularly and automatically update the access token in order to always have a currently valid token until the Excel workbook for which the identity was required is closed.
+
+When returning from the web authentication to Excel, the Excel-addin ribbon will display a "Log out" button with a dropdown menu showing:
+* your email address
+* the list of data sources (data spaces) for which you have default or advanced permissions.
+
+![DLM Excel-Addin login step 3](/dotstatsuite-documentation/images/dlm-excel-addin-login-03.png)
+
+Whenever you are authenticated, the access token is used for all data retrievals as well as for all data saving for the relevant data sources.
 
 ---
 
@@ -168,17 +191,13 @@ Applying new options all the way through "Step 2" and "Get data" will generate a
 ---
 
 ### Save to database
-Based on your access permissions on the source data, **edited data can be saved back** to the (internal) source database. When you try to save data in the data source, the DLM Excel-Addin asks through a pop-up **"Login"** window for your credentials to check if you are allowed to submit data for the given dataflow. The credentials are stored in the current Excel session and are re-used when you use the save feature again. 
-When data are extracted from an external datasource, the "Save to Database" buttons are not shown.
-
-You can select a range of edited data and request for saving back only the current selection by clicking on **"Selected data"**, or request for saving all changes made on the current table by clicking on **"Entire table"**.  
+Depending on your access permissions on the source data, **edited data can be saved back** to the (internal) source database. When data are extracted from an external datasource, the "Save to Database" buttons are not shown.  
+You can select a range of edited data and request for saving back only the current selection by clicking on **"Selected data"**, or request for saving all changes made on the current table by clicking on **"Entire table"**.
 
 ![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-15.png)
 
 The new data are then submitted and a pop-up notification message confirms the number of saved observation(s).  
 An email is sent to the end-user once this data request is completed. See [Email notifications for data management](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/message-through-mail/) for more details.
-
-![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-16.png)
 
 ---
 
