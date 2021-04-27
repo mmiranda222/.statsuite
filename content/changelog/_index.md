@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 27, 2021](#april-27-2021)
 - [April 8, 2021](#april-8-2021)
 - [April 1, 2021](#april-1-2021)
 - [March 15, 2021](#march-15-2021)
@@ -66,6 +67,34 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+
+### April 27, 2021
+**[Release .Stat Suite .NET 6.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/37)**
+> This release includes a new version of the **core-transfer**, **core-data-access**, and **excel-addin** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+minor changes:
+
+- [dotstatsuite-core-transfer#123](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/123) Change the **validation process** for data uploads. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#data-validation-process))
+- [dotstatsuite-core-transfer#170](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/170) Allow deleting data DB objects for a DSD even if the DSD still exists.
+- [dotstatsuite-excel-addin#18](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/18) **DLM Excel-Addin** to support authentication with **third-party identity providers** and add "Log In/Out" button(s). ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/#authentication))
+- [dotstatsuite-core-transfer#174](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/174) Create a transaction record in the `/init/allMappingsets` method.
+- [dotstatsuite-core-config#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/issues/4) Update some error messages of the Transfer service.
+- [dotstatsuite-core-auth-management#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/29) Provide method/way to obtain only the permissions that apply to the calling user.
+- [dotstatsuite-core-data-access#44](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/44) Generation of empty actual content constraint for "live" version when first data upload targets PIT release.
+- [dotstatsuite-core-auth-management#31](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/31) Set `CORS` in the AuthMgmt web service.
+- [dotstatsuite-core-transfer#130](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/130) *(Refactoring)* Cleanup temporary files when upload is finished.
+- [dotstatsuite-core-data-access#71](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/71) *(Refactoring)* SQL server compatible issues.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#205](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/205) Dataflow Content Constraint not updated when transferring data between dataspaces.
+- [dotstatsuite-core-transfer#201](dotstatsuite-core-transfer) Live to PIT SQL transfer fails.
+- [dotstatsuite-core-transfer#198](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/198) Issue recreating DSDs with different data type and remaining shared codelist(s).
+- [dotstatsuite-core-data-access#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/64) Dataflow initialization fails for some dataflows referencing non-final dsd and codelists.
+- [dotstatsuite-core-transfer#160](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/160) Exception of type `DotStat.Db.Exception.KeyValueReadException` in Excel+EDD upload response.
 
 ---
 
