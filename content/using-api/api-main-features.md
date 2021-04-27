@@ -67,8 +67,8 @@ curl -X POST "http://transfer-siscc.redpelicans.com/1.2/init/dataflow" -H "accep
 
 ### Data validation process
 Since the [April 27, 2021 Release .Stat Suite .NET 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-27-2021), the validation process for data uploads is split into **basic** and **advanced** validations.  
-Basic validations can be performed upon data imports for SDMX compliance, allowed/complete dimensions values, or representation requirements. Basic validations provide simplified error explanations.  
-Advanced validations such as duplicate coordinates, consistent non-observational values, or mandatory attribute values have been moved to a new transfer method (/{version}/import/sdmxFile & validationType (0/1)). Advanced validations provide detailed error explanations.
+**Basic validations** can be performed upon data imports for SDMX compliance, allowed/complete dimensions values, or representation requirements. Basic validations provide simplified error explanations.  
+**Advanced validations** such as duplicate coordinates, consistent non-observational values, or mandatory attribute values are part of the transfer method `/{version}/import/sdmxFile`. Advanced validations provide detailed error explanations.
 
 In details, the API methods of the core-transfer service used for the data validation process:
   - Parameter `_validationType_` for basic or advanced validation (default basic) to the functions:
