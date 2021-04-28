@@ -72,7 +72,7 @@ ToC
 
 ### April 27, 2021
 **[Release .Stat Suite .NET 6.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/37)**
-> This release includes a new version of the **core-transfer**, **core-data-access**, and **excel-addin** services.  
+> This release includes a new version of the **core-transfer**, **core-data-access**, **core-auth-management**, and **excel-addin** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
 
 minor changes:
