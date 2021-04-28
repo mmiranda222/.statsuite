@@ -17,6 +17,7 @@ keywords: [
   'SDMX service', '#sdmx-service',
   'Authorisation service', '#authorisation-service',
   'Docker compose example(s)', '#docker-compose-examples',
+  'Database configuration tool', '#database-configuration-too',
 ]
 ---
 
@@ -33,6 +34,7 @@ keywords: [
   - [Transfer service](#transfer-service)
   - [SDMX service](#sdmx-service)
   - [Authorisation service](#authorisation-service)
+- [Database configuration tool](#database-configuration-tool)
 
 Using [Docker](https://www.docker.com/) technology, the three .Stat Suite main modules **Data Explorer**, **Data Lifecycle Manager** and **.Stat Core** or their components are containerised as ready-to-use Docker images, which can be freely re-used to easily compose a new topology (system architecture) by anyone in their own cloud or premises.  
 This section describes where to find and how to use the .Stat Suite Docker images.
@@ -242,6 +244,18 @@ This web service is used for managing user access rights to data structures and 
 - **demo**: https://authz-qa.siscc.org/swagger/index.html
 - **docker**: https://hub.docker.com/r/siscc/dotstatsuite-core-auth-management
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management
+
+---
+
+### Database configuration tool
+
+The **Database Configuration Tool** can be used for the configuration of MS SQL server databases in situations where those databases cannot be accessed directly, e.g. in containerised environments like the SIS-CC DevOps environments.
+
+It currently supports the following tasks:
+* Set database recovery mode set to `SIMPLE` *(always executed)*
+* Adjust maximum size of Data & Log files *(optional)*
+
+Detailed information can be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/tree/master/DotStat.Devops.Db.Config).
 
 ---
 
