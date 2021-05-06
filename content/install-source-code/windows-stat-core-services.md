@@ -189,7 +189,19 @@ dotnet publish /c/git/dotstatsuite-core-transfer
 
 ### 3 Initialize the databases
 
-For this step you will need the Microsoft SQL sysadmin user and password.  
+For this step you will need the Microsoft SQL sysadmin user and password (server admin when using Azure SQL Database or Azure SQL Managed Instance).  
+
+#### Azure SQL Database pricing tier requirements
+Please note that for .Stat *data* databases (e.g. *DesignDataDb* and *DisseminateDataDb* below) on Azure SQL Database the minimum pricing tier required is **Standard S3** because of the usage of columnstore indexes.
+
+.Stat DbUp tool creates all databases at Standard S0 pricing on Azure SQL Database and the pricing tiers of *data* databases are upgraded to Standard S3.
+Pricing tiers of *common* and *structure* databases remain at Standard S0.
+At later updates DbUp will not change the pricing tier of any of the databases.
+
+If the databases are not created by DbUp tool then the pricing tier of a *data* database is changed only to *Standard S3* if the already existing database is at *Basic*, *Standard S0*, *Standard S1* or *Standard S2* tier.
+This upgrade of pricing tier is done only at the first run of DbUp tool, at later updates DbUp will not change the pricing tier of any of the databases.
+
+After successful initialization of the databases the pricing tiers may be changed according to the needs, keeping in mind that the minimum required tier is *Standard S3* for .Stat *data* databases.
 
 #### Initialize the DotStatSuiteCore_Common database  
 
