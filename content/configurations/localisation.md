@@ -47,11 +47,11 @@ The following describes how locales are set and maintained in these .Stat Suite 
 > Introduced in [October 7, 2020 Release .Stat Suite JS 5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020)
 
 1) Each locale has one **default**, application-independent and tenantless language version of all static UI element labels/texts. 
-   They are stored in the corresponding `<locale>.json` file in the `./data/[dev|prod]>/i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
+   They are stored in the corresponding `<locale>.json` file in the `./i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
    The file contains the complete list of keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Browse by"`).  
-   One single localised file contains all translations for **both .Stat DE and .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order. 
+   One single localised file contains all translations for **.Stat DE, .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)) and **.Stat DV** (since [ADD NEW RELEASE DATE])). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order and finaly by DV used elements. 
 
-2) If an application tenant needs an **alternative** localised value that is different from the default, then this value can be entered in the corresponding `<locale>.json` file in the `./data/[dev|prod]/configs/<tenant>/<app>/i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
+2) If an application tenant needs an **alternative** localised value that is different from the default, then this value can be entered in the corresponding `<locale>.json` file in the `./configs/<tenant>/<app>/i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
    The file contains only those keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Select a"`) that should be used to overwrite the above mentioned default values.
 
 3) The `dotstatsuite-config` service is responsible for serving these (default and alternative) `<locale>.json` files to the consuming applications.
@@ -67,13 +67,10 @@ The following describes how locales are set and maintained in these .Stat Suite 
 The list of *keys* of default translations is managed by the **developers**. If functional requirements and related developments have an impact on translation keys, then one script needs to be run in the host app and one script in the config service before pushing changes from host app and config service into git. The script automatically extracts the necessary keys from the source code and updates the default localisation files. 
 
 *how-to:*  
-1. go to [data-explorer repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer) *(0)*
-1. update codebase with an impact on keys (e.g. add or remove, renaming a key is a add and a remove) *(1)*
-1. run `yarn i18n:extract` to extract keys of data-explorer in a temporary `keys.json` file at the root of the repo *(2)*
 1. go to [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)
-1. run `yarn i18n:update data-explorer` to: *(3)* *(4)*
-    - update default keys from data-explorer at `./data/default/i18n/data-explorer.json` *(5)*
-    - update locales at `data/[dev|prod]/i18n` *(6)* *(7)*
+1. run `yarn i18n:update data-explorer branch-name` to: *(3)* *(4)*
+    - update default keys from data-explorer at `./i18n/data-explorer.json` *(5)*
+    - update locales at `/i18n` *(6)* *(7)*
 
 *notes*:
 * (0) currently only the data-explorer supports the default translations 
@@ -91,22 +88,8 @@ The default translations - the underlying localised labels/texts, but not their 
 
 *How to:* 
 1. go to [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config);
-1. go to `./data/[dev|prod]/i18n/<locale>.json` to update **default** translation values of `<locale>`;
-1. go to `./data/[dev|prod]/configs/<tenant>/<app>/i18n/<locale>.json` to **overwrite** translations values of `<locale>` for a specific `<app>` of a specific `<tenant>`.
-
-**Remember** that the **`develop`** branch of the **`dev`** folder is used for automated deployments to the **QA** environment, while the **`master`** branch of the **`prod`** folder is used for automated deployments to the **functional staging (demo)** environment. When default translations are to be added, edited or removed, it is thus recommended to (manually) immediately update both **`dev`** and **`prod`** folders and submit a corresponding merge request to push these changes to the **`develop`** branch. When the merge is done by the developers, then the QA environment is automatically updated. Once the feature is validated in QA, then the merge into the **`master`** branch will allow an automated deployment of the feature to the functional staging (demo) environment. This contributes to streamlining the release process.    
-
-**Note** also that, while differences in the application's `./data/[dev|prod]/configs/<tenant>/<app>/settings.json` files of the **`dev`** and **`prod`** folders are more frequent, translations are likely to be similar due to their link to the codebase. However, an example of exception is the following:
-
-**`./data/dev/i18n/en.json`**:
-```json
-  "de.footer.disclaimer": "This is a non-released quality assurance version of the .Stat Data Explorer.{br}It is to be used for test purposes only."
-```
-
-**`./data/prod/i18n/en.json`**:
-```json
-  "de.footer.disclaimer": "This is the demo version of the .Stat Data Explorer.{br}It demonstrates the currently implemented features."
-```
+1. go to `./i18n/<locale>.json` to update **default** translation values of `<locale>`;
+1. go to `./configs/<tenant>/<app>/i18n/<locale>.json` to **overwrite** translations values of `<locale>` for a specific `<app>` of a specific `<tenant>`.
 
 ---
 
@@ -119,8 +102,8 @@ For the other currently included locales, we can only rely on the users and stak
 The process to contribute with translations is as follow:
 
 1. as soon as possible in our [development process](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/issue-process/), the product managers identify when a new translation key is created for one of the .Stat Suite applications;
-1. any new key is added by the developer to the default `./data/[dev|prod]/i18n/<locale>.json` files for all supported locales, and translation values are left blank *(1)*. See [Management of the complete list of keys for default translations](#management-of-the-complete-list-of-keys-for-default-translations);
-1. for any new key, the product managers enter translation values for both international English and international French. The values are either provided in the description of the corresponding GitLab ticket, or directly in the default `./data/[dev|prod]/i18n/[en|fr].json` files (new branch + new merge request) - see [Management of translations](#management-of-translations). In the first case, the implementing developer makes the updates in these files;
+1. any new key is added by the developer to the default `./i18n/<locale>.json` files for all supported locales, and translation values are left blank *(1)*. See [Management of the complete list of keys for default translations](#management-of-the-complete-list-of-keys-for-default-translations);
+1. for any new key, the product managers enter translation values for both international English and international French. The values are either provided in the description of the corresponding GitLab ticket, or directly in the default `./i18n/[en|fr].json` files (new branch + new merge request) - see [Management of translations](#management-of-translations). In the first case, the implementing developer makes the updates in these files;
 1. the product managers contact and ask the stakeholders for each supported locale to provide the translation values for all new keys. The communication with the stakeholders is done at best through GitLab by submitting a merge request, or simply through comments in the related ticket;
 1. translations provided in due time are released along with the corresponding feature and their default international English and international French translations. Missing translations are left blank until a translation value is provided. Subsequently provided translation values can be included in any following release of the corresponding application.
 
