@@ -42,19 +42,19 @@ More options are available in the [full SDMX REST API standard](https://github.c
 ---
 
 ### Examples of structural metadata queries  
-These examples use an entry point of http://nsi-staging-oecd.redpelicans.com/ This may be swapped out for your target space.
+These examples use an entry point of https://nsi-demo-oecd-staging.siscc.org This may be swapped out for your target space.
 
 | Use case | Example querystring |
 |:-------------|:-------------|
-| All data structures, all versions | http://nsi-staging-oecd.redpelicans.com/rest/datastructure/all/all/all |
-| A data structure and its references | http://nsi-staging-oecd.redpelicans.com/rest/datastructure/OECD.CFE/DSD_TOURISM_TRIPS/5.0?references=all |
-| Full Dataflow with complete concept schemes, codelists, categorisations and constraints | http://nsi-staging-oecd.redpelicans.com/rest/dataflow/OECD.CFE/DF_DOMESTIC_TOURISM/5.0?references=all |
-| Full Dataflow with partial concept schemes, codelists, categorisations and content constraints containing only allowed and/or actually used items | http://nsi-staging-oecd.redpelicans.com/rest/dataflow/OECD.CFE/DF_DOMESTIC_TOURISM/5.0?references=all&detail=referencepartial |
-| Latest versions of all Codelists | http://nsi-staging-oecd.redpelicans.com/rest/codelist/all/all/latest |
-| Latest versions of all codelists returned as stubs | http://nsi-staging-oecd.redpelicans.com/rest/codelist/all/all/latest?detail=allstubs |
-| A Concept Scheme | http://nsi-staging-oecd.redpelicans.com/rest/conceptscheme/OECD.CFE/CS_TOURISM/latest |
-| All category schemes (there is usually one), latest version | http://nsi-staging-oecd.redpelicans.com/rest/categoryscheme/all/all/latest |
-| All agency schemes | http://nsi-staging-oecd.redpelicans.com/rest/agencyscheme/all/all/all |
+| All data structures, all versions | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/all/all/all |
+| A data structure and its references | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/OECD.CFE/DSD_TOURISM_TRIPS/5.0?references=all |
+| Full Dataflow with complete concept schemes, codelists, categorisations and constraints | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DF_DOMESTIC_TOURISM/5.0?references=all |
+| Full Dataflow with partial concept schemes, codelists, categorisations and content constraints containing only allowed and/or actually used items | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DF_DOMESTIC_TOURISM/5.0?references=all&detail=referencepartial |
+| Latest versions of all Codelists | https://nsi-demo-oecd-staging.siscc.org/rest/codelist/all/all/latest |
+| Latest versions of all codelists returned as stubs | https://nsi-demo-oecd-staging.siscc.org/rest/codelist/all/all/latest?detail=allstubs |
+| A Concept Scheme | https://nsi-demo-oecd-staging.siscc.org/rest/conceptscheme/OECD.CFE/CS_TOURISM/latest |
+| All category schemes (there is usually one), latest version | https://nsi-demo-oecd-staging.siscc.org/rest/categoryscheme/all/all/latest |
+| All agency schemes | https://nsi-demo-oecd-staging.siscc.org/rest/agencyscheme/all/all/all |
 
 **Note** that with the `detail=referencepartial` query parameter, the server automatically applies the **allowed** content constraint on the codelists (and other ItemSchemes) and returns only partial (and thus shorter) codelists.  
 Using the query with the `references=all`, `references=constraint`, or `references=actualconstraint` parameter (with or without the `detail=referencepartial` parameter) returns a content constraint of type **actual** within the response if data was already uploaded. If such a content constraint is not returned by a .Stat Suite SDMX web service, then data was not yet uploaded or the underlying dataflow has not yetr been initialised.
@@ -81,16 +81,16 @@ config/Properties.json file:
 ---
 
 ### Examples of data queries
-These examples use an entry point of http://nsi-staging-oecd.redpelicans.com. This may be swapped out for your target space.  
+These examples use an entry point of https://nsi-demo-oecd-staging.siscc.org. This may be swapped out for your target space.  
 
 | Use case | Example querystring |
 |:-------------|:-------------|
-| All data for a Dataflow, time series view | http://nsi-staging-oecd.redpelicans.com/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0 |
-| All data for a partial key (Total Visitors measure), time series view | http://nsi-staging-oecd.redpelicans.com/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/..TOTAL_VISITORS........ |
-| All data for a partial key (Argentina, Total Visitors measure, Annual frequency), time series view | http://nsi-staging-oecd.redpelicans.com/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/AR..TOTAL_VISITORS........A |
-| Annual data for period 2010-2020 in a flat view | http://nsi-staging-oecd.redpelicans.com/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/.........A?startPeriod=2010&endPeriod=2020&dimensionAtObservation=AllDimensions |
-| Dataflow with only 1 observation returned for each of the matching series, starting from the first observation | http://nsi-stable-qa.siscc.org/rest/data/OECD,AIR_EMISSIONS_DF,1.0/all?firstNObservations=1 |
-| Dataflow with only 1 observation returned for each of the matching series, counting back from the most recent observation | http://nsi-stable-qa.siscc.org/rest/data/OECD,AIR_EMISSIONS_DF,1.0/all?lastNObservations=1 |
+| All data for a Dataflow, time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0 |
+| All data for a partial key (Total Visitors measure), time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/..TOTAL_VISITORS........ |
+| All data for a partial key (Argentina, Total Visitors measure, Annual frequency), time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/AR..TOTAL_VISITORS........A |
+| Annual data for period 2010-2020 in a flat view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/.........A?startPeriod=2010&endPeriod=2020&dimensionAtObservation=AllDimensions |
+| Dataflow with only 1 observation returned for each of the matching series, starting from the first observation | https://nsi-qa-stable.siscc.org/rest/data/OECD,AIR_EMISSIONS_DF,1.0/all?firstNObservations=1 |
+| Dataflow with only 1 observation returned for each of the matching series, counting back from the most recent observation | https://nsi-qa-stable.siscc.org/rest/data/OECD,AIR_EMISSIONS_DF,1.0/all?lastNObservations=1 |
 
 ![API Restful](/dotstatsuite-documentation/images/api-resftul6.png)
 
