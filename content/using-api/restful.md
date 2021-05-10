@@ -47,7 +47,7 @@ These examples use an entry point of https://nsi-demo-oecd-staging.siscc.org Thi
 | Use case | Example querystring |
 |:-------------|:-------------|
 | All data structures, all versions | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/all/all/all |
-| A data structure and its references | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/OECD.CFE/DOMESTIC@TOURISM_TRIPS/2.0?references=all |
+| A data structure and its references | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/OECD.CFE/TOURISM_TRIPS/2.0?references=all |
 | Full Dataflow with complete concept schemes, codelists, categorisations and constraints | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DOMESTIC@TOURISM_TRIPS/2.0?references=all |
 | Full Dataflow with partial concept schemes, codelists, categorisations and content constraints containing only allowed and/or actually used items | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DOMESTIC@TOURISM_TRIPS/2.0?references=all&detail=referencepartial |
 | Latest versions of all Codelists | https://nsi-demo-oecd-staging.siscc.org/rest/codelist/all/all/latest |
