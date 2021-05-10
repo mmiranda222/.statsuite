@@ -47,9 +47,9 @@ These examples use an entry point of https://nsi-demo-oecd-staging.siscc.org Thi
 | Use case | Example querystring |
 |:-------------|:-------------|
 | All data structures, all versions | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/all/all/all |
-| A data structure and its references | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/OECD.CFE/DSD_TOURISM_TRIPS/5.0?references=all |
-| Full Dataflow with complete concept schemes, codelists, categorisations and constraints | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DF_DOMESTIC_TOURISM/5.0?references=all |
-| Full Dataflow with partial concept schemes, codelists, categorisations and content constraints containing only allowed and/or actually used items | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DF_DOMESTIC_TOURISM/5.0?references=all&detail=referencepartial |
+| A data structure and its references | https://nsi-demo-oecd-staging.siscc.org/rest/datastructure/OECD.CFE/DOMESTIC@TOURISM_TRIPS/2.0?references=all |
+| Full Dataflow with complete concept schemes, codelists, categorisations and constraints | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DOMESTIC@TOURISM_TRIPS/2.0?references=all |
+| Full Dataflow with partial concept schemes, codelists, categorisations and content constraints containing only allowed and/or actually used items | https://nsi-demo-oecd-staging.siscc.org/rest/dataflow/OECD.CFE/DOMESTIC@TOURISM_TRIPS/2.0?references=all&detail=referencepartial |
 | Latest versions of all Codelists | https://nsi-demo-oecd-staging.siscc.org/rest/codelist/all/all/latest |
 | Latest versions of all codelists returned as stubs | https://nsi-demo-oecd-staging.siscc.org/rest/codelist/all/all/latest?detail=allstubs |
 | A Concept Scheme | https://nsi-demo-oecd-staging.siscc.org/rest/conceptscheme/OECD.CFE/CS_TOURISM/latest |
@@ -85,12 +85,12 @@ These examples use an entry point of https://nsi-demo-oecd-staging.siscc.org. Th
 
 | Use case | Example querystring |
 |:-------------|:-------------|
-| All data for a Dataflow, time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0 |
-| All data for a partial key (Total Visitors measure), time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/..TOTAL_VISITORS........ |
-| All data for a partial key (Argentina, Total Visitors measure, Annual frequency), time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/AR..TOTAL_VISITORS........A |
-| Annual data for period 2010-2020 in a flat view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DF_DOMESTIC_TOURISM,5.0/.........A?startPeriod=2010&endPeriod=2020&dimensionAtObservation=AllDimensions |
-| Dataflow with only 1 observation returned for each of the matching series, starting from the first observation | https://nsi-qa-stable.siscc.org/rest/data/OECD,AIR_EMISSIONS_DF,1.0/all?firstNObservations=1 |
-| Dataflow with only 1 observation returned for each of the matching series, counting back from the most recent observation | https://nsi-qa-stable.siscc.org/rest/data/OECD,AIR_EMISSIONS_DF,1.0/all?lastNObservations=1 |
+| All data for a Dataflow, time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DOMESTIC@TOURISM_TRIPS,2.0 |
+| All data for a partial key (Total Visitors measure), time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DOMESTIC@TOURISM_TRIPS,2.0/..TOTAL_VISITORS........ |
+| All data for a partial key (Argentina, Total Visitors measure, Annual frequency), time series view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DOMESTIC@TOURISM_TRIPS,2.0/AU..TOTAL_VISITORS........A |
+| Annual data for period 2010-2020 in a flat view | https://nsi-demo-oecd-staging.siscc.org/rest/data/OECD.CFE,DOMESTIC@TOURISM_TRIPS,2.0/.........A?startPeriod=2010&endPeriod=2020&dimensionAtObservation=AllDimensions |
+| Dataflow with only 1 observation returned for each of the matching series, starting from the first observation | https://nsi-qa-stable.siscc.org/rest/data/OECD.CFE,DOMESTIC@TOURISM_TRIPS,2.0/all?firstNObservations=1 |
+| Dataflow with only 1 observation returned for each of the matching series, counting back from the most recent observation | https://nsi-qa-stable.siscc.org/rest/data/OECD.CFE,DOMESTIC@TOURISM_TRIPS,2.0/all?lastNObservations=1 |
 
 ![API Restful](/dotstatsuite-documentation/images/api-resftul6.png)
 
