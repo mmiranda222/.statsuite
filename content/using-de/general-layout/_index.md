@@ -25,7 +25,8 @@ keywords: [
 
 ### User Interface Design Specifications
 
-The UI design of the .Stat Data Explorer (DE) is following the specifications described in the [UI documentation](https://sis-cc.gitlab.io/design/demo/ui-documentation/index.html).  [Mockups](https://sis-cc.gitlab.io/design/demo/de-material/index.html) are also available to illustrate the expected user experience. The UI design respects the general Data Explorer [design principles](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/design-principles/) agreed within SIS-CC.
+The UI design of the .Stat Data Explorer (DE) is following the specifications described in the [UI documentation](https://sis-cc.gitlab.io/.stat-suite/design/demo/ui-documentation/index.html).  
+[Mockups](https://sis-cc.gitlab.io/.stat-suite/design/demo/de-material/index.html) are also available to illustrate the expected user experience. The UI design respects the general Data Explorer [design principles](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/design-principles/) agreed within SIS-CC.
 
 ![DE UI documentation](/dotstatsuite-documentation/images/de-ui-doc.png)
 
