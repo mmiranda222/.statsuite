@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 11, 2021](#may-11-2021)
 - [April 27, 2021](#april-27-2021)
 - [April 8, 2021](#april-8-2021)
 - [April 1, 2021](#april-1-2021)
@@ -67,6 +68,19 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+
+### May 11, 2021
+**[Release .Stat Suite .NET 6.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/39)**
+> This release includes a new minor version of the **core-data-access** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+minor changes:
+
+- [dotstatsuite-core-data-access#72](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/72) Add support for creation of **read only** user to DbUp scripts.
+- [dotstatsuite-core-common#116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/issues/116) *Support* .StatSuite has issues with Managed Azure SQL. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/windows-stat-core-services/#3-initialize-the-databases))
+- [dotstatsuite-docker-compose#16](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/16) *Support* Cannot upload data file with demo instance.
 
 ---
 
