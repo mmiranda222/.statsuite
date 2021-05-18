@@ -2,7 +2,7 @@
 title: ".Stat RESTful Web Service Cheat Sheet"
 subtitle: 
 comments: false
-weight: 4500
+weight: 6000
  'Introduction', '#introduction',
  'Structural metadata queries', '#structural-metadata-queries',
  'Examples of structural metadata queries', '#examples-of-structural-metadata-queries',

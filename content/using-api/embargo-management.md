@@ -2,7 +2,7 @@
 title: "Embargo management"
 subtitle: 
 comments: false
-weight: 6000
+weight: 7000
 keywords: [
   'Point in time (PIT) release feature', '#point-in-time-release-feature',
   'Basic characteristics', '#basic-characteristics',

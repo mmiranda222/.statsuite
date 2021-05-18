@@ -2,7 +2,7 @@
 title: "Email notifications for data management"
 subtitle: 
 comments: false
-weight: 7000
+weight: 8000
 keywords: [
   'Process description', '#process-description',
   'Email subject', '#email-subject',
