@@ -125,7 +125,7 @@ keywords: [
 ---
 
 ### Keycloak
-**keycloak v7.x (minimum) - v11.0.2 (latest tested and recommended)**
+**keycloak v7.x (minimum) - v12.0.4 (latest tested and recommended)**
 - download keycloak: https://downloads.jboss.org/keycloak/7.0.0/keycloak-7.0.0.zip
 - unzip it in dotstatsuitejs/keycloak
   - result: dotstatsuitejs/keycloak/keycloak-7.0.0
