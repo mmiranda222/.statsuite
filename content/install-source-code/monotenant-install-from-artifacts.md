@@ -40,7 +40,7 @@ keywords: [
 - [git](https://gitforwindows.org/) installed ; only to use git bash instead of cmd.exe for process variables
 - [solr 7.x](https://lucene.apache.org/solr/downloads.html) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - [redis](https://redis.io/download) downloaded and running on port 6379 (default)
-- [keycloak](https://www.keycloak.org/downloads.html) v7.x (minimum) - v11.0.2 (latest tested and recommended) downloaded and running on port 8080 (default)
+- [keycloak](https://www.keycloak.org/downloads.html) v7.x (minimum) - v12.0.4 (latest tested and recommended) downloaded and running on port 8080 (default)
 
 *notes:*
 
