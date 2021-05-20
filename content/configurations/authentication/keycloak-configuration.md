@@ -3,7 +3,20 @@ title: "Keycloak configuration"
 subtitle: 
 comments: false
 weight: 78
-
+keywords: [
+  'Disclaimer', '#disclaimer',
+  'Introduction', 'introduction',
+  'Installing Keycloak', '#installing-keycloak',
+  'Configuring Keycloak', '#configuring-keycloak',
+  'Creating a Realm', '#creating-a-realm',
+  'Configuring the Realm', '#configuring-the-realm',
+  'Creating a Client Scopes', '#creating-a-client-Scopes',
+  'Creating a Client', '#creating-a-client',
+  'Configuring a Client', '#configuring-a-client',
+  'Creating a User', '#creating-a-user',
+  'Making the User an Administrator', '#making-the-user-an-administrator',
+  'Making .Stat use your Keycloak', '#making-stat-use-your-keycloak',
+]
 ---
 
 #### Table of Content
@@ -13,7 +26,7 @@ weight: 78
 - [Configuring Keycloak](#configuring-keycloak)
   - [Creating a Realm](#creating-a-realm)
   - [Configuring the Realm](#configuring-the-realm)
-  - [Creating a Client Scopes](#creating-a-client-Scopes)
+  - [Creating a Client Scopes](#creating-a-client-scopes)
   - [Creating a Client](#creating-a-client)
   - [Configuring a Client](#configuring-a-client)
   - [Creating a User](#creating-a-user)
@@ -36,9 +49,9 @@ The purpose of this tutorial is to describe how to set up a Keycloak server to w
 
 ### Installing Keycloak
 
-The actual installation of the Keycloak server is beyond the scope of this tutorial, but we will give here a few pointers. First up, there are some instructions [on the SIS-CC documentation page](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/monotenant-install-js-as-windows-services/#keycloak) describing how to install it as a Windows service. Also, the [official Keycloak documentation](https://www.keycloak.org/docs/12.0/server_installation/#_standalone-mode) is great, if a little intimidating (due to the sheer number of options). For reference, we are running it locally in standalone-mode, which is almost certainly what you need to do too.
+The actual installation of the Keycloak server is beyond the scope of this tutorial, but we will give here a few pointers. First up, there are some instructions [in here](https://sis-cc.gitlab.io/dotstatsuite-documentation/install-source-code/monotenant-install-js-as-windows-services/#keycloak) describing how to install it as a Windows service. Also, the [official Keycloak documentation](https://www.keycloak.org/docs/12.0/server_installation/#_standalone-mode) is great, if a little intimidating (due to the sheer number of options). For reference, we are running it locally in standalone-mode, which is almost certainly what you need to do too.
 
-Finally, and this is important: use Keycloak 12.0.4! The .Stat JavaScript services are written to work with this version, not the latest.
+Finally, and this is important: use **Keycloak 12.0.4**! Since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021), the .Stat Suite JavaScript services are written to work with this version.
 
 ```
 Use Keycloak 12.0.4

@@ -2,9 +2,8 @@
 title: "SQL Server configuration without SQL Mgmt Studio"
 subtitle: 
 comments: false
-weight: 79
-keywords: [
-]
+weight: 83
+
 ---
 
 **Database configuration tool**
