@@ -98,7 +98,20 @@ The configurations of the search results included in the URL are listed and expl
 
 ### Navigation towards the DE visualisation page
 When the user clicks on a search result name from the search result page, then she/he is forwarded to the DE [data visualisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/) page that corresponds to the selected result.  
-The **filter selections are also kept** to the visualisation page that uses it to make the automated filter selections. For example, if the user has selected a reference area in the reference area facet of the search result page, then this selection is maintained in the reference area filter in the data visualisation page.
+The **filter selections are also kept** to the visualisation page that uses it to make the automated filter selections. For example, if the user has selected a reference area in the reference area facet of the search result page, then this selection is maintained in the reference area filter in the data visualisation page.  
+
+*(since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021))* If the **free-text search is used** and a "perfect match" (excluding non-alphanumeric characters) search hit is found within a dimension value, and if such dimension has no facet selection, then instead of DEFAULT selections, automatically  the (perfect match) value(s) is selected in the filter of the data visualisation page for that dimension. 
+
+Example with searching terms "GDP current prices France":
+ 
+![de search result content visualisation page](/dotstatsuite-documentation/images/de-search-result-free-text.png)  
+  
+* In the dataflow "SDMX-CountryData" visualisation:
+  * The "Series" dimension will only be filtered on the value "GDP (current prices)";
+  * The "Reference Area" dimension will only be filtered on the value "France";
+  * The DEFAULT selections -if any- will apply on the other dimensions not concerned by the hit of the free-text search.   
+* In the dataflow "SDMX_-CountryData_UIS_UNData" visualisation:
+  * The "Reference Area" dimension will only be filtered on the value "France".
 
 
 
