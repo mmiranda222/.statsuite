@@ -84,7 +84,7 @@ keywords: [
 ---
 
 ### Solr
-- download solr 7.x: https://lucene.apache.org/solr/downloads.html
+- download solr 7.x: https://lucene.apache.org/solr/downloads.html (**solr 8.7** from **[May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)**)
 - unzip it in dotstatsuitejs/solr
   - result: dotstatsuitejs/solr/solr-7.7.2
 - open git bash
