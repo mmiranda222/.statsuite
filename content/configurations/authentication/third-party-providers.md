@@ -1,11 +1,21 @@
 ---
-Title: "ADFS as a SAML provider to Keycloak"
+Title: "Third-party Identity Providers in Keycloak"
 subtitle: 
 comments: false
 weight: 81
+keywords: [
+  'Active Directory ADFS', '#active-directory-adfs',
+  'GitLab', '#gitlab',
+]
+---
+
+#### Table of Content
+- [Active Directory ADFS](#active-directory-adfs)
+- [GitLab](#gitlab)
 
 ---
 
+### Active Directory ADFS
 How to configure **ADFS** as a **SAML provider to Keycloak**
 
 1. Add a new SAML provider
@@ -39,4 +49,22 @@ The last step is to map claims coming from ADFS to Keycloak attributes. Go to **
 |firstName|http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname|firstName
 |lastName|http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname|lastName
 
+---
+### Gitlab
+All steps to add GitLab identity provider with keycloak in order to connect to .Stat Suite applications using a GitLab account.
 
+1. First, go to the **Identity Providers** left menu item and select **GitLab** from the **Add provider** drop-down list. This will bring you to the 'Add identity provider' page.
+
+![Gitlab in keycloak](/dotstatsuite-documentation/images/config-keycloak-gitlab1.png)
+
+2. You will have to get the **Client Id** and **Client Secret** from Gitlab, by using the redirect URI provided here.  
+Default Scopes: by default, GitLab is configured to take **API** and **openid**, you can change to **read_user** and **open_id**.
+
+![Gitlab in keycloak](/dotstatsuite-documentation/images/config-keycloak-gitlab2.png)
+
+3. In GitLab, go to **Preferences** and then **Applications**.  
+Paste the **redirect URI** provided by keycloak and make sure that **read_user** and **openId** scopes options are selected.
+
+![Gitlab in keycloak](/dotstatsuite-documentation/images/config-keycloak-gitlab3.png)
+
+4. Once you save your changes, you obtain an **Application ID** and **secret**. Copy those two respectively in **Client Id** and **Client Secret** in Keycloak and save.
