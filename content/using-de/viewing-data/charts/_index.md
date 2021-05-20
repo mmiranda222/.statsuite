@@ -12,7 +12,14 @@ All charts are downloadable in png format.
 
 The charts share a common header and footer with the preview-table. More information is available [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/common-header-and-footer/).
 
-The following types of charts are supported:  
+*(since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021))* Below each chart, there is a collapsed localised help text with hints on what to do if the generated chart doesn't correspond to the chart that the user has expected.
+
+![Hints](/dotstatsuite-documentation/images/chart-hints.png)  
+
+By expanding this field, the help text indicates specifically for each type of chart how the user can change chart options or data selections in order to design the chart according to her/his needs under the given chart business rules.  
+  
+The following types of charts are supported:
+
 ![Toolbar](/dotstatsuite-documentation/images/de-toolbar2.png)
 
 More details about our set of configurable charts based on [d3](https://d3js.org/) to be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/README.md), and also [chart responsiveness](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/docs/charts-responsiveness.md).
@@ -22,54 +29,54 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 ### Bar chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/bar.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-bar.png)
 
 ---
 
 ### Row chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/row.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-row.png)
 
 ---
 
 ### Stacked bar chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/stacked-bar.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-stacked.png)
 
 ---
 
 ### Scatter plot chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/scatter.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-scatter.png)
 
 ---
 
 ### Horizontal symbol chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/horiz-symbol.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-horizontal-symbol.png)
 
 ---
 
 ### Vertical symbol chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/vertic-symbol.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-vertical-symbol.png)
 
 ---
 
 ### Timeline chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/timeline.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-timeline.png)
 
 ---
 
 ### Choropleth map
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/map.png)
+![Toolbar](/dotstatsuite-documentation/images/chart-choropleth.png)
 
