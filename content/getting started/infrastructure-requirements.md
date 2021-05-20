@@ -46,7 +46,7 @@ Although the requirements could vary depending on the size of your data and the 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
 - **nodejs 14.x** and **npm 6.14.x** installed
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
-- **solr 7.x** installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
+- **solr 7.x** and **solr 8.7** from **[May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)** installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - **redis** downloaded and running on port 6379 (default)
 
 *notes:*  
@@ -63,7 +63,7 @@ Although the requirements could vary depending on the size of your data and the 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
 - **nodejs 14.x** and **npm 6.14.x** installed
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
-- **keycloak 7.x** installed and running on port 8080 (default)
+- **keycloak v7.x (minimum) - v12.0.4 (latest tested and recommended)** installed and running on port 8080 (default)
 - **postgres 12.x** installed and running on port 5432 (default) or any other relational database usable by keycloak (for more information see [here](https://www.keycloak.org/docs/4.8/server_installation/#_database))
 
 *notes:*
