@@ -102,15 +102,18 @@ The examples provided below are made using the free version of the API platform 
 #### API format
 The API is protected by an API key (see `src/server/params/[env] apiKey`). In the following examples, the API key is `xxx`.  <br>
 All requests need a header made of:
-* the api URL, e.g. `http://sfs-qa.siscc.org/`
+* the api URL, e.g. `https://sfs-qa.siscc.org/`
 * a role, in all cases `/admin/`
 * the target of the request, e.g. `/dataflows/`, `/dataflow/` or `/config/`
 * the api key, in these example `?api-key=xxx`
+* *(since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021))* a **tenant**, e.g. `&tenant=test`
 * actions' variables, e.g. depending on the request `&datasourceId&dataflowId`
+
+**Note** that, if you are using a `defaulttenant` collection, then all calls without a tenant will use the value of `DEFAULT_TENANT` as a tenant, and thus the request header `&tenant=test` becomes optional.
 
 #### GET search sfs config.
 Example:  
-`GET` `http://sfs-qa.siscc.org/admin/config?api-key=xxx`
+`GET` `https://sfs-qa.siscc.org/admin/config?api-key=xxx&tenant=test`
 
 ![GET search sfs config](/dotstatsuite-documentation/images/de-index-get-config.png)
 
@@ -118,11 +121,11 @@ This request returns the `sfs` dynamic configuration with full details on config
 
 #### DELETE search sfs config
 Example:  
-`DELETE` `http://sfs-qa.siscc.org/admin/config?api-key=xxx`
+`DELETE` `https://sfs-qa.siscc.org/admin/config?api-key=xxx&tenant=test`
 
 #### GET search sfs report
 Example:  
-`GET` `http://sfs-qa.siscc.org/admin/report?api-key=xxx`
+`GET` `https://sfs-qa.siscc.org/admin/report?api-key=xxx&tenant=test`
 
 ![GET search sfs report](/dotstatsuite-documentation/images/de-index-get-report.png)
 
@@ -130,7 +133,7 @@ This request returns the `sfs` in memory loadings statuses.
 
 #### Index all dataflows
 Example:  
-`POST` `http://sfs-qa.siscc.org/admin/dataflows?api-key=xxx`
+`POST` `https://sfs-qa.siscc.org/admin/dataflows?api-key=xxx&tenant=test`
 
 ![Index all dataflows](/dotstatsuite-documentation/images/de-index-post-all.png)
 
@@ -141,7 +144,7 @@ This request indexes **all dataflows** from **all configured sdmx endpoints**. I
 
 #### Delete all dataflows
 Example:  
-`DELETE` `http://sfs-qa.siscc.org/admin/dataflows?api-key=xxx`
+`DELETE` `https://sfs-qa.siscc.org/admin/dataflows?api-key=xxx&tenant=test`
 
 ![Delete all dataflows](/dotstatsuite-documentation/images/de-index-delete-all.png)
 
@@ -151,7 +154,7 @@ This request results in deleting all dataflows from the index and search of Solr
 >Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
 Example:  
-`DELETE` `http://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&datasourceId=staging:SIS-CC-reset&dataflowId=AIR_EMISSIONS_DF`
+`DELETE` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&datasourceId=staging:SIS-CC-reset&dataflowId=AIR_EMISSIONS_DF`
 
 ![Delete one specific dataflow](/dotstatsuite-documentation/images/de-index-delete-dataflow.png)
 
@@ -161,7 +164,7 @@ This request results in deleting one specific dataflow from the index and search
 >Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
 Example:  
-`PATCH` `http://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0`
+`PATCH` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0`
 
 ![Update an already indexed dataflow](/dotstatsuite-documentation/images/de-index-patch-dataflow.png)
 
