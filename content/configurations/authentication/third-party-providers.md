@@ -2,15 +2,17 @@
 Title: "Third-party Identity Providers in Keycloak"
 subtitle: 
 comments: false
-weight: 81
+weight: 80
 keywords: [
   'Active Directory ADFS', '#active-directory-adfs',
+  'Add attribute mappings', '#add-attribute-mappings',
   'GitLab', '#gitlab',
 ]
 ---
 
 #### Table of Content
 - [Active Directory ADFS](#active-directory-adfs)
+  - [Add attribute mappings](#add-attribute-mappings)
 - [GitLab](#gitlab)
 
 ---
@@ -39,7 +41,7 @@ Once this is done, the main configuration is complete and connection should func
 
 ![Export keycloak config](/dotstatsuite-documentation/images/saml-config-export.png)
 
-### Add attribute mappings
+#### Add attribute mappings
 The last step is to map claims coming from ADFS to Keycloak attributes. Go to **Mappers** tab and create mappings for **firstName** & **lastName** claims. Use built in **Attribute Importer** as a Mapper type.
 
 ![Attribute map](/dotstatsuite-documentation/images/attribute-maps.png)
@@ -50,6 +52,7 @@ The last step is to map claims coming from ADFS to Keycloak attributes. Go to **
 |lastName|http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname|lastName
 
 ---
+
 ### Gitlab
 All steps to add GitLab identity provider with keycloak in order to connect to .Stat Suite applications using a GitLab account.
 

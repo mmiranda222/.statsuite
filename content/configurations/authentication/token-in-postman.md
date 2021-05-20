@@ -2,7 +2,7 @@
 title: "How to get an Access Token in Postman"
 subtitle: 
 comments: false
-weight: 80
+weight: 81
 
 ---
 
