@@ -38,7 +38,7 @@ keywords: [
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) SDMX v6.x endpoint
 - [nodejs 14.x](https://nodejs.org/en/download/) and [npm 6.14.x](https://www.npmjs.com/package/npm) installed
 - [git](https://gitforwindows.org/) installed ; only to use git bash instead of cmd.exe for process variables
-- [solr 7.x](https://lucene.apache.org/solr/downloads.html) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
+- [solr 7.x](https://lucene.apache.org/solr/downloads.html) to **solr 8.7** from **[May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)** installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - [redis](https://redis.io/download) downloaded and running on port 6379 (default)
 - [keycloak](https://www.keycloak.org/downloads.html) v7.x (minimum) - v12.0.4 (latest tested and recommended) downloaded and running on port 8080 (default)
 
@@ -193,7 +193,7 @@ keywords: [
 
 *notes:*
 
-- SITE_URL should be an accessible url for a user, ie http://share.qa.oecd.redpelicans.com if used out of localhost
+- SITE_URL should be an accessible url for a user, ie https://share-demo.siscc.org/healthcheck if used out of localhost
 
 ---
 
