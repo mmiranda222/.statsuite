@@ -2,7 +2,7 @@
 title: "Localisation"
 subtitle: 
 comments: false
-weight: 82
+weight: 86
 keywords: [
   'Scope, technical architecture, main change processes', '#scope-technical-architecture-main-change-processes',
   'Scope', '#scope',
