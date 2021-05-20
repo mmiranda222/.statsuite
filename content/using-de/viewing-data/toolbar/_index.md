@@ -53,12 +53,15 @@ The "Labels" option allows to display the information using names, identifiers (
 
 ![Toolbar](/dotstatsuite-documentation/images/de-toolbar3.png)
 
-This option applies to all the table and chart contents, including their header and footer. When the option `Both` is selected, then it shows the Identifer bewteen brakets, then a space, then the name.  
+This option applies to all the table and chart contents, including their header and footer. When the option `Both` is selected, then it shows the Identifer bewteen brakets, then a space, then the name. If there is no corresponding localised name, then the identifier is shown instead and displayed between squared brackets [].  
 
 Example with the dimension label `Reference area`:
 * with option **Name**, it displays **`Reference area`**
 * with option **Identifier**, it displays **`REF_AREA`**
 * with option **Both**, it displays **`(REF_AREA) Reference area`** 
+
+Since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021),  
+The option is also applied to all filter titles and filter values. It is also possible to spotlight search by code ID in filters, meaning searching for dimension items by their IDs, if the user selected Labels->ID or Labels->Both option.
 
 ---
 
