@@ -14,6 +14,7 @@ keywords: [
   'Management of empty rows', '#management-of-empty-rows',
   'Management of empty row sections', '#management-of-empty-row-sections',
   'Vertical scroll and freezing table header and Rows section rows', '#vertical-scroll-and-freezing-table-header-and-rows-section-rows',
+  'Horizontal merged column header cells', '#horizontal-merged-column-header-cells',
   'Highlighted cells, rows and columns', '#highlighted-cells-rows-and-columns',
   'Links to underlying microdata', '#links-to-underlying-microdata',
 ]
@@ -30,6 +31,7 @@ keywords: [
 - [Management of empty rows](#management-of-empty-rows)
 - [Management of empty row sections](#management-of-empty-row-sections)
 - [Vertical scroll and freezing table header and Rows section rows](#vertical-scroll-and-freezing-table-header-and-rows-section-rows)
+- [Horizontal merged column header cells](#horizontal-merged-column-header-cells)
 - [Highlighted cells, rows and columns](#highlighted-cells-rows-and-columns)
 - [Links to underlying microdata](#links-to-underlying-microdata)
 
@@ -163,6 +165,19 @@ Also the Row sections rows stay sticky on the top of the table while scrolling a
 ![DE_table_scrolling](/dotstatsuite-documentation/images/DE_table_scrolling.png)
 
 Table header and Row section row freezing is disabled when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+
+---
+
+### Horizontal merged column header cells
+> Released in [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)
+
+When 2 or more dimensions are positioned on the Column axis, and if 2 or more horizontally neighboured cells have the same value (dimension item), then **these cells are merged**.  
+Merging is not applied to cells that have different cells in rows above them, thus never to cells in the last (lowest) column header row.  
+The merged column header labels are centered by default, but whenever the table width is larger than the width of the table display space, then it sufficiently moves within the cell to the left or right in order to stay visible even **when scrolling horizontally**.
+
+![DE table merged header cells](/dotstatsuite-documentation/images/de-table-merged-cells.png)
+
+**Note** that this feature doesn't apply to the [html WCAG table](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support).
 
 ---
 
