@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 19, 2021](#may-19-2021)
 - [May 11, 2021](#may-11-2021)
 - [April 27, 2021](#april-27-2021)
 - [April 8, 2021](#april-8-2021)
@@ -64,10 +65,72 @@ ToC
  -->
 
 > **General disclaimer:** If you **upgrade a .Stat Suite installation from a .NET version below 5.0.0, to .NET v5.0.0 or higher**, you must follow the migration procedure explained as follows. **All MappingSets must be generated specifically in the context of the .Stat Suite**. This is to be done through the following methods:  
-> - **Before** you generate the MappingSets (see next bullet), if during the migration/upgrade to version 5.0.0 or higher with the DBUP tool, some DSDs/Dataflows migrations fail (check the logs using the transfer service `/status/requests` method), then you should **migrate these dataflows manually** using the Transfer service method `/init/dataflow`. Note that his should happen only extremely rarely, and would be caused by previous inconsistencies in the DB state. In case the manual dataflow migration is still unsuccessful then it is recommended to delete the underlying DSD, cleanup the related DB objects (using the Transfer service method `/cleanup/dsd`), recreate the data structures and reload the related data. 
+> - **Before** you generate the MappingSets (see next bullet), if during the migration/upgrade to version 5.0.0 or higher with the DBUP tool, some DSDs/Dataflows migrations fail (check the logs using the transfer service `/status/requests` method), then you should **migrate these dataflows manually** using the Transfer service method `/init/dataflow`. Note that this should happen only extremely rarely, and would be caused by previous inconsistencies in the DB state. In case the manual dataflow migration is still unsuccessful then it is recommended to delete the underlying DSD, cleanup the related DB objects (using the Transfer service method `/cleanup/dsd`), recreate the data structures and reload the related data. 
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+### May 19, 2021
+**[Release .Stat Suite JS 8.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/38)**
+> This **major** release includes a new version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **share**, **config**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.2**.
+
+major *(backward-incompatible)* changes:
+
+- [dotstatsuite-sdmx-faceted-search#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/40) **Solr upgrade to version 8.7**. (Updated [API documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search#api-documentation))  
+**Disclaimer:**
+  - `sfs` is now multi-tenant, which means that each API call should include a **tenant**. Providing a tenant can be done in 2 ways:
+    - as a query param: `&tenant=test`
+    - as a header: `x-tenant=test`
+  - _Existing data can be dropped, it is reindexed (new solr major version, no need to struggle with a migration). No need to create a SOLR Core anymore!_
+  - **Create a Collection** in solr named `defaulttenant`: `http://0.0.0.0:8983/solr/admin/collections?action=CREATE&name=defaulttenant&numShards=1&collection.configName=_default`
+  - **Add `DEFAULT_TENANT`** env. variable with the value `defaulttenant` to sfs
+  - **Note** that sfs API is unchanged when using `DEFAULT_TENANT`, all calls without a tenant will use the value of `DEFAULT_TENANT` as a tenant
+  - data-explorer will request sfs without a tenant until the upcoming new sfs model is released (see [this list of iteration D issues](https://gitlab.com/groups/sis-cc/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=search&label_name[]=i%3A%3Aiteration-D))
+  - _On-premise installation: http call to solr api locally (since solr should be exposed)_
+  - _Docker installation: http call to solr locally or from sfs container (see latest docker-compose)_
+- [keycloak#8](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/issues/8) & [keycloak#11](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/issues/11) *(DevOps)* **Keycloak upgrade to version 12.0.4**.  
+**Disclaimer:**
+  -	Migration process to this new major version is quite sensitive even though not backward-incompatible
+  -	**Backup your data** before processing with the upgrade!
+  -	See [this tutorial page](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/keycloak-configuration/) about Keycloak configuration, and also Kubernetes strategy and historical migrations documented [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/blob/master/keycloak.md) (as *source of inspiration* from our DevOps deployment process)
+- [dotstatsuite-share#9](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/9) *(Refactoring)* Remove hard-coded dependency on third-party mail service **MailGun**.  
+**Disclaimer:**
+  - This allows the **full SMTP setup** of the share service: see updated documentation about using [SMTP connection](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#smtp).
+  - **Add the new `MAIL_FROM`** env. variable with the contextual value `'"Share" share@your-domain.org'` (was previsouly hard-coded)
+  - Mailgun API key is kept as a param for an extra period of time (until September 30, 2021). **After this date**, the Mailgun API key will be definitely removed from the source code.
+- [dotstatsuite-data-explorer#525](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/525) *(Refactoring)* Align **i18n versions of data-viewer** with data-explorer.  
+**Disclaimer:**
+  - data-viewer i18n is now using the default translations similarly to the data-explorer, hence no need to create overrides specific to data-viewer.
+
+significant and minor changes:
+
+- [dotstatsuite-data-explorer#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/11) In table view, **horizontally merge** column header cells and keep label visible when scrolling horizontally. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#horizontal-merged-column-header-cells))
+- [dotstatsuite-data-explorer#501](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/501) Label format options also applied to visualisation filters. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#labels))
+- [dotstatsuite-data-explorer#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/99) Extend the behaviour of the **`DEFAULT` filter selections** by applying also hit terms from search *(part 2: use of search terms found in dimension values)*. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#navigation-towards-the-de-visualisation-page))
+- [dotstatsuite-data-explorer#407](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/407) Usability support **"You did not get the expected chart?"** ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/))
+- [dotstatsuite-data-explorer#526](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/526) Search enhancement of download both internal and external sources.
+- [dotstatsuite-data-lifecycle-manager#148](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/148) Return meaningful error message in DLM for HTTP code "413 Request Entity Too Large".
+- [dotstatsuite-data-lifecycle-manager#82](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/82) *(DevOps)* DLM (and other relevant components) allow using GitLab accounts. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/third-party-providers/#gitlab))
+- [dotstatsuite-docker-compose#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/7) *(DevOps)* Upgrade Keycloak with version 12.0.4 in docker-compose.
+- [dotstatsuite-components#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/4) *(Refactoring)* Remove deprecated components and dependencies.
+- [dotstatsuite-docker-compose#14](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/14) *(Support)* Script clones unavailable repository.
+- [dotstatsuite-data-explorer#520](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/520) *(Support)* Change privacy policy text in share dialog.
+- [dotstatsuite-data-explorer#384](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/384) *(Docker Compose)* Documenting mono & multi tenants with Docker (without exposing config).
+- [dotstatsuite-data-explorer#505](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/505) SIS-CC license update.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#518](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/518) Fix the unnecessary double search requests.
+- [dotstatsuite-data-explorer#504](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/504) Bugs in weekly time selector.
+- [dotstatsuite-data-explorer#511](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/511) We lost *(again)* the `Roboto Slab` font in the visualisation page.
+- [dotstatsuite-data-explorer#512](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/512) Correct web accessibility issues.
+- [dotstatsuite-data-explorer#517](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/517) Download in Excel isn't working anymore.
+- [dotstatsuite-data-explorer#513](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/513) We lost the chart in the .png chart download.
+- [dotstatsuite-data-explorer#355](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/355) Customise the colour of charts in DE.
+- [dotstatsuite-data-explorer#519](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/519) Fix sharing of cutomized time axis labels for Timeline charts.
+- [dotstatsuite-data-lifecycle-manager#203](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/203) DLM Filter by owner is out-of-service.
 
 ---
 
