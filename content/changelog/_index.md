@@ -104,7 +104,7 @@ major *(backward-incompatible)* changes:
 **Disclaimer:**
   - data-viewer i18n is now using the default translations similarly to the data-explorer, hence no need to create overrides specific to data-viewer.
 
-**Additional disclaimer:** This release implies to *temporarily* retrieve any new and default i18n key and translation values in a new public project and from its `master` branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/i18n. The fluid process of releasing i18n default translations as part of the open-source .Stat Suite source code will be complete with the next [iteration C delivery](https://gitlab.com/groups/sis-cc/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=i%3A%3Aiteration-C))
+**Additional disclaimer:** This release implies to *temporarily* retrieve any new and default i18n key and translation values in a new public project and from its `master` branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/i18n. The fluid process of releasing i18n default translations as part of the open-source .Stat Suite source code will be complete with the next [iteration C delivery](https://gitlab.com/groups/sis-cc/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=i%3A%3Aiteration-C).
 
 significant and minor changes:
 
