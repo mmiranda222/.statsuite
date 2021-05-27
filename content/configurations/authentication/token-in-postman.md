@@ -16,11 +16,13 @@ Navigate to the Postman **Authorization** tab of your request. From the **Type**
 
 Click on the **Get New Access Token** button that will open a dialog box for configuring the identity server (Keycloak in our case). Fill in the appropriate fields with the corresponding values for your environment, as such:
 * **Token name** => give any name here
-* **Grant Type** => select **Authorization Code**
+* **Grant Type** => select **Authorization Code** (or **Authorization Code with PKCE** depending on your auth. configuration)
 * **Auth URL** => http://{YOUR-KEYCLOAK-BASE-URL}/auth/realms/{YOUR-REALM}/protocol/openid-connect/auth
 * **Access Token URL** => http://{YOUR-KEYCLOAK-BASE-URL}/auth/realms/{YOUR-REALM}/protocol/openid-connect/token
 * **Client ID** => Id of a client in your Keycloak setup
 * **Scope** => which resource you want to provide (email openid profile)
+
+**Authorize using browser** should also be ticked if required to open keycloak authentication from a web page.
 
 ![Postman get new token fields](/dotstatsuite-documentation/images/postman-step1.png)
 
