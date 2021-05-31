@@ -76,7 +76,7 @@ where [content-type] should be replaced with the desired content-type (i.e.: gen
  
 #### Example
 
-http://nsi-stable-demo.siscc.org/rest/dataflow/OECD/DF_KEI/1.0?references=all&detail=referencepartial
+https://nsi-demo-stable.siscc.org/rest/dataflow/OECD/DF_KEI/1.0?references=all&detail=referencepartial
 
 Note that the option **references=all** assures that all required information is returned (this simplified API calls):
 
@@ -296,7 +296,7 @@ For frequency value, we should search for the following ID: **TIME_FORMAT**
  
 ##### Structure message
 
-http://nsi-stable-demo.siscc.org/rest/datastructure/OECD/DSD_KEI/1.0
+https://nsi-demo-stable.siscc.org/rest/datastructure/OECD/DSD_KEI/1.0
 
 Attribute definition:
 

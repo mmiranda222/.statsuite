@@ -1,8 +1,8 @@
 ---
-title: ".Stat authentication configuration"
+title: "Authentication"
 subtitle: 
 comments: false
-weight: 77
+weight: 76
 keywords: [
 'Introduction', '#introduction',
 'Optional authentication of DE', '#optional-authentication-of-de',
@@ -113,3 +113,4 @@ Note that
 - With NSI openid-connect authentication turned ON, on data retrieval, there is a check if user has a Data read permission in authorization DB (managed through the authorization service) even if request is anonymous (using the .Stat Suite AuthorizationManagement web service, there must be appropriate (probably read) permissions defined for anonymous users).
 
 **P.S.** If you setup your environment just for testing turning ON openid-connect, authentication is not a mandatory thing. DLM/DE will perfectly work with NSI without it. NSI will just ignore JWT token sent from DLM.
+

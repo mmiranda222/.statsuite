@@ -27,7 +27,7 @@ We recommend using the following tools for data structure creation or editions:
 ### Generic DSD Matrix SDMX-ML generator
 
 - technology: Excel macro [.xlsm file]
-- link: https://github.com/OECDSTD/sdmx-matrix-generator
+- link: https://gitlab.com/sis-cc/sdmx-tools/sdmx-matrix-generator
 - developed by: OECD
 - target audience: statisticians with basic (non-technical) SDMX data modelling knowledge
 
@@ -50,7 +50,7 @@ A video record of a demo of the tool is available from [here online](https://oec
 ### SDMX ISTAT Framework
 
 - technology: Javascript web application with .Net-based server backend
-- link: https://gitlab.com/sis-cc/istat-framework (an older version is available here: https://github.com/SDMXISTATTOOLKIT)
+- link: https://github.com/SDMXISTATTOOLKIT/META-DATA.MANAGER
 - developed by: ISTAT (Italian National Statistical Office)
 - target audience: statisticians with (non-technical) SDMX data modelling knowledge
 
@@ -80,6 +80,8 @@ In the on-line mode, the tool communicates with any standard-compliant SDMX Regi
 It should be possible to connect the DSW to a .Stat Suite CORE data space (its related SDMX web service) to retrieve data structures. However, update functionality is not guaranteed due to the incompatibility in the authentication method.
 
 **An overview of the tool with screenshots can be found in [this page](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/edit-structure/data-structure-wizard-example)**.
+
+---
 
 ### Fusion Registry Community Edition
 
