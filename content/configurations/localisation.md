@@ -44,53 +44,60 @@ By extrapolation, the internationalization - abbreviated **i18n** - of our JavaS
 The following describes how locales are set and maintained in these .Stat Suite web applications.
 
 #### Technical architecture  
-> Introduced in [October 7, 2020 Release .Stat Suite JS 5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020)
 
 1) Each locale has one **default**, application-independent and tenantless language version of all static UI element labels/texts. 
-   They are stored in the corresponding `<locale>.json` file in the `./i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
+   They are stored in the corresponding `<locale>.json` file in the `./i18n/` folder of the [config data](https://gitlab.com/sis-cc/topologies/siscc-config-data).  
    The file contains the complete list of keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Browse by"`).  
-   One single localised file contains all translations for **.Stat DE, .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)) and **.Stat DV** (since [ADD NEW RELEASE DATE])). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order and finaly by DV used elements. 
+   One single localised file contains all translations for **.Stat DE, .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)) and **.Stat DV** (since [19 Mai, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order and finaly by DV used elements. 
 
 2) If an application tenant needs an **alternative** localised value that is different from the default, then this value can be entered in the corresponding `<locale>.json` file in the `./configs/<tenant>/<app>/i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
    The file contains only those keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Select a"`) that should be used to overwrite the above mentioned default values.
 
 3) The `dotstatsuite-config` service is responsible for serving these (default and alternative) `<locale>.json` files to the consuming applications.
 
-4) The back-ends of the consuming applications, such as the Data Explorer or the Data Lifecycle Manager, handle the localised value reconciliation between defaults and alternatives. The alternatives always replace the corresponding default values, including if the default value changed. If a default key is removed or renamed, then the alternative value is ignored.
+4) The back-ends of the consuming applications, such as the Data Explorer or the Data Lifecycle Manager or Data viewer, handle the localised value reconciliation between defaults and alternatives. The alternatives always replace the corresponding default values, including if the default value changed. If a default key is removed or renamed, then the alternative value is ignored.
 
 ![localisation](/dotstatsuite-documentation/images/localisation.png)
 
-*Note:* in the following, the term 'translation' is frequencly being used instead of 'localised version of a static UI element label/text' or shorter 'localised value'. The term 'i18n' stands for 'internationalization' (where 18 stands for the number of letters between the first i and the last n in the word). 
+*Note:* in the following, the term 'translation' is frequently being used instead of 'localised version of a static UI element label/text' or shorter 'localised value'. The term 'i18n' stands for 'internationalization' (where 18 stands for the number of letters between the first i and the last n in the word). 
 
 #### Management of the complete list of keys for default translations
 
 The list of *keys* of default translations is managed by the **developers**. If functional requirements and related developments have an impact on translation keys, then one script needs to be run in the host app and one script in the config service before pushing changes from host app and config service into git. The script automatically extracts the necessary keys from the source code and updates the default localisation files. 
 
-*how-to:*  
-1. go to [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)
-1. run `yarn i18n:update data-explorer branch-name` to: *(3)* *(4)*
-    - update default keys from data-explorer at `./i18n/data-explorer.json` *(5)*
-    - update locales at `/i18n` *(6)* *(7)*
+*how-to-extract:*  
+1. go in your folder application (data-explore,  data-lifecycle-manager, data-viewer)
+1. run `yarn i18n:extract
+
+*how-to-update:*  
+*(0)* *(1)*
+1. go to [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data)
+1. run `yarn i18n:update data-explorer branch-name` to: *(3)* *(4)* *(5)*
+    - update default keys from data-explorer at `./keys.json` *(6)*
+    - update locales at `/i18n` *(7)* *(8)*
 
 *notes*:
-* (0) currently only the data-explorer supports the default translations 
+* (0) before updated your application, you should extract keys from the application you have modified
 * (1) localisation of dynamic keys is not supported, only statically defined keys are extractible
-* (2) the file is ignored by git and overwritten by the script, you should leave it as is
-* (3) the script expects to find the keys file in the adjacent dotstatsuite repo, use `KEYS_PATH` to override
-* (4) the source (data-explorer) is required to handle key removal (if a key is removed from data-explorer, then check if the key is not used in another app before removing it from default keys)
-* (5) handled by the script only and not ignored by git, not to be touched
-* (6) only existing files are updated, the script *discovers* locales through files not with hardcoded var or a cmd arg that may unsync locales if not everything is updated at once
-* (7) overrides are not covered by the automatic update, *(could be an evolution)*
+* (2) the file generated by the extract script will be use by update script
+* (3) the script expects to find the keys file in dotstatsuite applications
+* (4) the source (data-explorer, or another app) is required
+* (5) the branch-name (develop, or another branch) is required
+* (6) handled by the script only, must not to be touched
+* (7) only existing files are updated, the script *discovers* locales through files not with hardcoded var or a cmd arg that may unsync locales if not everything is updated at once
+* (8) overrides are not covered by the automatic update, *(could be an evolution)*
 
 #### Management of translations
 
 The default translations - the underlying localised labels/texts, but not their keys - are managed by the **product managers**. In addition, they also keep up-to-date the alternative translations for the applications running in the SIS-CC quality assurance (QA) and functional staging (demo) environments.
 
-*How to:* 
-1. go to [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config);
+*How to manage default:* 
+1. go to [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data);
 1. go to `./i18n/<locale>.json` to update **default** translation values of `<locale>`;
-1. go to `./configs/<tenant>/<app>/i18n/<locale>.json` to **overwrite** translations values of `<locale>` for a specific `<app>` of a specific `<tenant>`.
 
+*How to manage overrides:* 
+1. go to [siscc-config-data repo](https://gitlab.com/sis-cc/topologies/siscc-config-data);
+1. go to `./configs/<tenant>/<app>/i18n/<locale>.json` to **overwrite** translations values of `<locale>` for a specific `<app>` of a specific `<tenant>`.
 ---
 
 ### Translation gathering process
@@ -152,7 +159,7 @@ The currently defined format whitelist is:
 
 ### Supported locales
 
-.Stat Suite supports a large number of locales. Check our [dotstatsuite-config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/master/data/dev/i18n) to see if your locale is supported. Each translation file corresponds to one locale, which identifier is constructed according to the https://tools.ietf.org/html/bcp47 standard with a primary sub-code that identifies the language (e.g., "en" according to  ISO 639-1 alpha-2), and an optional sub-code in capital letters that specifies the national variety (e.g., "GB" or "US" according to ISO 3166-1 alpha-2), both being linked with a hyphen (e.g. "en-GB").
+.Stat Suite supports a large number of locales. Check our [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/i18n) to see if your locale is supported. Each translation file corresponds to one locale, which identifier is constructed according to the https://tools.ietf.org/html/bcp47 standard with a primary sub-code that identifies the language (e.g., "en" according to  ISO 639-1 alpha-2), and an optional sub-code in capital letters that specifies the national variety (e.g., "GB" or "US" according to ISO 3166-1 alpha-2), both being linked with a hyphen (e.g. "en-GB").
 
 ---
 
