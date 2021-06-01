@@ -42,22 +42,21 @@ keywords: [
 
 ### Before indexing data
 
-In the release [Mai 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021), we have introduced **collection** with solr. 
+Since the [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021), we introduced the **collection** concept with Solr. 
 
-Before indexing data for the first time, if you are using docker or on premise **you have to create a collection for each tenant**.
-Those collections allow us to separate data between tenants
+Before indexing your data for the first time, if you are using Docker or on-premise installation strategy, then **you must create a collection for each tenant**.  
+Those collections allow to separate data between tenants.
 
 #### How to create a collection
 
-To create a collection is easy, you have to copy the url below and replace the name by your tenant:
+Creating a collection is easy, you just need to copy the url below and replace the name with your tenant.  
+For example, this url allows to create a collection that will be used by the **oecd** tenant.
 
-For example, this url allow you to create a collection that will be used by the tenant **oecd**.
 ```
 http://localhost:8983/solr/admin/collections?action=CREATE&name=oecd&numShards=1&collection.configName=_default
 ```
 
-Like mention before, you have to create collection as much as you have tenants.   
-If you are in monotenant installation, you have to create only one collection and the name must be "default".
+Create as many collections as you have tenants. If you are in a mono-tenant installation, then create only one collection and name it **"default"**.
 
 ### What is indexed
 The languages used for the search features are configurable per Data Explorer instance (part of the installation process), and there must be at least one language defined. If the below localised elements for a defined language are not available, then they are replaced by their corresponding IDs.  
