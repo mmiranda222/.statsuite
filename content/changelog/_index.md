@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 1, 2021](#june-1-2021)
 - [May 19, 2021](#may-19-2021)
 - [May 11, 2021](#may-11-2021)
 - [April 27, 2021](#april-27-2021)
@@ -69,6 +70,43 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+### June 1, 2021
+**[Release .Stat Suite .NET 6.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/40)**
+> This release includes a new version of the **sdmxri-nsi-ws** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.3**.
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#129](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/129) Deploy **NSI version 8.1.3** in DevOps.
+- [dotstatsuite-core-sdmxri-nsi-ws#112](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/112) Support for **DSD without Time dimension** *(part 2 for appropriate SDMX-JSON export)*.
+- [dotstatsuite-core-sdmxri-nsi-ws#105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/105) **Performance improvements** for 0-0 range requests.
+- [dotstatsuite-core-sdmxri-nsi-ws#104](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/104) *(Support)* `SdmxRegistryService` URL configuration.
+- [dotstatsuite-core-transfer#181](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/181) *(Support)* Data upload of large files.
+
+patch changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#109](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/109) Values of attributes at group attachment level not written in series node in sdmx-json.
+- [dotstatsuite-core-sdmxri-nsi-ws#107](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/107) Fix writing of `NULL` value in JSON data message.
+- [dotstatsuite-core-sdmxri-nsi-ws#106](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/106) Last N periods wrongly selecting the first N periods (based on the `lastNObservations` parameter).
+- [dotstatsuite-core-sdmxri-nsi-ws#101](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/101) Not possible to update parent relations in a non-final codelist used in a DSD. **Disclaimer:** additional enhancements for the successful returned message of this specific transaction will be followed with [dotstatsuite-core-sdmxri-nsi-ws#137](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/137).
+- [dotstatsuite-core-sdmxri-nsi-ws#98](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/98) Allowed content constraint structure message validation to align with *SDMX* standards. **Disclaimer:** a remaining unclear message (when uploading a Content Constraint for which the referenced dataflow doesn't exist) will be followed with [dotstatsuite-core-sdmxri-nsi-ws#136](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/136).
+- [dotstatsuite-core-sdmxri-nsi-ws#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/35) Improve error and status messages for all structure updates.
+- [dotstatsuite-core-sdmxri-nsi-ws#31](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/31) Incorrect header sender/receiver ID in the SDMX messages.
+
+**[Release .Stat Suite JS 8.0.1 - Keycloak](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/38)**
+> This release **only** includes a new *custom* image of the **keycloak** Docker image.  
+.Stat Suite compatibility to **[JS 8.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/38)** and **[.NET 6.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/40)**  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.1.3**.
+
+significant change:
+
+- **Connect Keycloak to Active Directory ADFS**.  This is a release of the new and 'custom' **Keycloak Docker image** including the new **plugin** that allows to connect an Active Directory ADFS as a third-party provider to Keycloak:
+- [Docker hub image](https://hub.docker.com/layers/siscc/dotstatsuite-keycloak/v8.0.0/images/sha256-47e969faef79f1ae05e37e64ca6a1b7b7671a2498a626e74ecc108cdad8136ec)
+- Newly made public [Keycloak project](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/tree/master)
+- [ADFS-to-keycloak plugin](https://gitlab.com/sis-cc/.stat-suite/keycloak/-/tree/master/src/main)
+- [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/third-party-providers/) on how to configure ADFS as a SAML provider to Keycloak
 
 ---
 ### May 19, 2021
@@ -170,7 +208,7 @@ minor changes:
 patch changes:
 
 - [dotstatsuite-core-transfer#205](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/205) Dataflow Content Constraint not updated when transferring data between dataspaces.
-- [dotstatsuite-core-transfer#201](dotstatsuite-core-transfer) Live to PIT SQL transfer fails.
+- [dotstatsuite-core-transfer#201](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/201) Live to PIT SQL transfer fails.
 - [dotstatsuite-core-transfer#198](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/198) Issue recreating DSDs with different data type and remaining shared codelist(s).
 - [dotstatsuite-core-data-access#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/64) Dataflow initialization fails for some dataflows referencing non-final dsd and codelists.
 - [dotstatsuite-core-transfer#160](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/160) Exception of type `DotStat.Db.Exception.KeyValueReadException` in Excel+EDD upload response.
