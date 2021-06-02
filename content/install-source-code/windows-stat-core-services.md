@@ -117,14 +117,14 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 11.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 12.4.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository from the SIS-CC's mirror of Eurostat repository - *This tool will be used to initialize the structure databases.* 
 
 ```sh 
 
-git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
+git clone -b 8.1.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that points to the original ESTAT's repository in the mirror repository. To change the url of the submodule and to clone it manually (from the SIS-CC's mirror of Eurostat repository) use the following commands:  
@@ -139,18 +139,18 @@ git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/ma
   6 .  Clone the NSI web service repository from the SIS-CC's mirror of Eurostat repository.
 
 ```sh
-git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
+git clone -b 8.1.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
   7 .  Clone the authorization.net repository from the SIS-CC's mirror of Eurostat repository.- *For authorization plugin.* 
 
 ```sh
-git clone -b 8.1.2 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
+git clone -b 8.1.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b 6.0.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 7.1.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ---
