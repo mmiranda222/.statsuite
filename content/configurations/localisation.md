@@ -48,7 +48,7 @@ The following describes how locales are set and maintained in these .Stat Suite 
 #### Technical architecture  
 
 1) Each locale has one **default**, application-independent and tenantless language version of all static UI element labels/texts. 
-   They are stored in the corresponding `<locale>.json` file in the `./i18n/` folder of the [config data](https://gitlab.com/sis-cc/topologies/siscc-config-data).  
+   They are stored in the corresponding `<locale>.json` file in the `./i18n/` folder of the [config data](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data).  
    The file contains the complete list of keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Browse by"`).  
    One single localised file contains all translations for **.Stat DE, .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)) and **.Stat DV** (since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order and finaly by DV used elements. 
 
@@ -98,7 +98,7 @@ The default translations - the underlying localised labels/texts, but not their 
 1. go to `./i18n/<locale>.json` to update **default** translation values of `<locale>`;
 
 *How to manage overrides:* 
-1. go to [siscc-config-data repo](https://gitlab.com/sis-cc/topologies/siscc-config-data);
+1. go to [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data);
 1. go to `./configs/<tenant>/<app>/i18n/<locale>.json` to **overwrite** translations values of `<locale>` for a specific `<app>` of a specific `<tenant>`.
 
 #### Dev flow
