@@ -25,6 +25,8 @@ keywords: [
   * [Technical architecture](#technical-architecture)
   * [Management of the complete list of keys for default translations](#management-of-the-complete-list-of-keys-for-default-translations)
   * [Management of translations](#management-of-translations)
+  * [Dev flow](#dev-flow)
+  * [DevOps flow](#devops-flow)
 - [Translation gathering process](#translation-gathering-process)
 - [Overwriting default translations](#overwriting-default-translations)
 - [Rich-text translations](#rich-text-translations)
@@ -98,6 +100,15 @@ The default translations - the underlying localised labels/texts, but not their 
 *How to manage overrides:* 
 1. go to [siscc-config-data repo](https://gitlab.com/sis-cc/topologies/siscc-config-data);
 1. go to `./configs/<tenant>/<app>/i18n/<locale>.json` to **overwrite** translations values of `<locale>` for a specific `<app>` of a specific `<tenant>`.
+
+#### Dev flow
+
+![Dev flow](/dotstatsuite-documentation/images/i18n-dev-flow.png)
+
+#### DevOps flow
+
+![DevOps flow](/dotstatsuite-documentation/images/i18n-devops-flow.png)
+
 ---
 
 ### Translation gathering process
