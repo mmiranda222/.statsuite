@@ -56,7 +56,7 @@ keywords: [
 
  2. restart the service: 
  
-  - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
+  - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 DEFAULT_TENANT=default REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
 
 ---
 

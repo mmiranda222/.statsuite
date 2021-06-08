@@ -29,7 +29,7 @@ keywords: [
 ### Introduction
 > Since the [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020), The Data Explorer now works in both anonymous and authenticated modes.  
 
-.Stat Suite is based on openid-connect authentication. Any openid-connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab. A very useful **tutorial on how to get a Keycloak server ready to work with the .Stat Suite** is available [**here**](https://github.com/Kyelin25/dotstat-tutorials/blob/master/KeycloakConfiguration/KeycloakConfiguration.md) (Thanks [Ben](https://github.com/Kyelin25)!).
+.Stat Suite is based on openid-connect authentication. Any openid-connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab. [**here**](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/keycloak-configuration/) (Thanks [Ben](https://github.com/Kyelin25)!).
 
 The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing). The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token). 
 

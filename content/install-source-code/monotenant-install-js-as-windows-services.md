@@ -100,14 +100,8 @@ keywords: [
 
 ---
 
-### Create a solr core
-> hint: use powershell to avoid apache cli error
-
-- open powershell
-- go to dotstatsuitejs\solr\solr-7.7.2\bin
-- run `.\solr create -c sdmx-facet-search -p 8983`
-- check in chrome to http://localhost:8983/solr/#/sdmx-facet-search/core-overview
-
+### Create a solr collection
+  - create a collection [How to create a collection](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#how-to-create-a-collection)
 ---
 
 ### Redis
@@ -146,7 +140,7 @@ keywords: [
     - Root URL (http://localhost:7000)
   - add user
 
-A very useful tutorial on how to get a Keycloak server ready to work with the .Stat suite is also available [here](https://github.com/Kyelin25/dotstat-tutorials/blob/master/KeycloakConfiguration/KeycloakConfiguration.md) (Thanks [Ben](https://github.com/Kyelin25)!).
+A very useful tutorial on how to get a Keycloak server ready to work with the .Stat suite is also available [**here**](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/keycloak-configuration/).
 
 ---
 
