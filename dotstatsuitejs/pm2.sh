@@ -7,7 +7,7 @@ NODE_ENV=$NODE_ENV DEBUG=config* PORT=5007 pm2 start --no-autorestart -n config 
 cd ..
 
 cd search
-NODE_ENV=$NODE_ENV DEBUG=sfs* PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost pm2 start --no-autorestart -n search dist/server
+NODE_ENV=$NODE_ENV DEBUG=sfs* SERVER_PORT=3007 CONFIG_URL=http://localhost:5007 DEFAULT_TENANT=default REDIS_HOST=localhost SOLR_HOST=localhost pm2 start --no-autorestart -n search dist/server
 cd ..
 
 cd share

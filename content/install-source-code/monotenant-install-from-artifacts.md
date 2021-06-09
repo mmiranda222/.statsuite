@@ -151,7 +151,8 @@ keywords: [
   - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
   - check if everything is fine: http://localhost:3007/healthcheck
   - check if the config (mostly to check datasources) is fine: http://localhost:3007/api/config
-
+  - create a collection [How to create a collection](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#how-to-create-a-collection)
+  
 4. handle index (that are indexable):
 
   - get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret`
