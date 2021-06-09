@@ -11,7 +11,7 @@ keywords: [
   'folders', '#folders',
   'nssm', '#nssm',
   'solr', '#solr',
-  'solr core', '#create-a-solr-core',
+  'Create a solr collection', '#create-a-solr-collection',
   'redis', '#redis',
   'keycloak', '#keycloak',
   'dotstatsuitejs', '#dotstatsuitejs',
@@ -28,7 +28,7 @@ keywords: [
 - [folders](#folders)
 - [nssm](#nssm)
 - [solr](#solr)
-- [solr core](#create-a-solr-core)
+- [Create a solr collection](#create-a-solr-collection)
 - [redis](#redis)
 - [keycloak](#keycloak)
 - [dotstatsuitejs](#dotstatsuitejs)

@@ -43,6 +43,6 @@ weight: 70
 
 |**FEATURES**|  |  |
 |---|---|---|
-| DATA EXPLORE | Data explorer settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/data-explorer/settings.json)|
+| DATA EXPLORER | Data explorer settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/data-explorer/settings.json)|
 | DATA VIEWER | Data viewer settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/data-viewer/settings.json)|
 | DATA LIFECYCLE MANAGER |DLM settings|[settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/data-lifecycle-manager/settings.json)|
