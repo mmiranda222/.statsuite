@@ -13,7 +13,7 @@ keywords: [
 
 includes:
 
-* [Report an issue](/contribution/report-an-issue)
-* [Issue process & Definitions of Done](/contribution/issue-process)
-* [Development guidelines](/contribution/development-guidelines)
-* [Team members](/contribution/team-members)
+* [Report an issue](/dotstatsuite-documentation/contribution/report-an-issue)
+* [Issue process & Definitions of Done](/dotstatsuite-documentation/contribution/issue-process)
+* [Development guidelines](/dotstatsuite-documentation/contribution/development-guidelines)
+* [Team members](/dotstatsuite-documentation/contribution/team-members)
