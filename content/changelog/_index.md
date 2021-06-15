@@ -82,6 +82,7 @@ minor changes:
 - [dotstatsuite-core-sdmxri-nsi-ws#129](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/129) Deploy **NSI version 8.1.3** in DevOps.
 - [dotstatsuite-core-sdmxri-nsi-ws#112](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/112) Support for **DSD without Time dimension** *(part 2 for appropriate SDMX-JSON export)*.
 - [dotstatsuite-core-sdmxri-nsi-ws#105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/105) **Performance improvements** for 0-0 range requests.
+- [dotstatsuite-core-sdmxri-nsi-ws#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/99) Automatic deletion of mapping sets belonging to the dataflow when the dataflow is deleted. This is done with a new `autoDeleteMappingSets` variable (default value in the Docker image is set to `true`, which normally should not be changed).
 - [dotstatsuite-core-sdmxri-nsi-ws#104](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/104) *(Support)* `SdmxRegistryService` URL configuration.
 - [dotstatsuite-core-transfer#181](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/181) *(Support)* Data upload of large files.
 
