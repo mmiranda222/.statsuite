@@ -6,6 +6,8 @@
   "author": "mvelluet <mike.velluet@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "hugo": "hugo server",
+    "build": "hugo",
     "algolia": "atomic-algolia"
   },
   "dependencies": {
