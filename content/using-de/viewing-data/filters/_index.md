@@ -48,9 +48,8 @@ If the user has made selection(s) in the previous search result page, if a defau
 
 Any filter selection change will automatically trigger the update of the data view (table/chart/API query), and these changes will also be reflected in the ['Used filters' panel](#used-filters-panel).  
 
-Whenever there is no filter selection, then it is indicated by "all", e.g. `"all/39"`. When all filter items are selected, it is mentioned as `"39/39"` (the difference between none "all" or all "38" is necessary for evoluting contents in time).  
-
-**Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve.  
+Whenever there is no filter item selection, then it is indicated in the filter title by "all", e.g. `"all/39"`. When all filter items are selected, the number of selected items is displayed instead `"39/39"`.  
+Because making no selections and complete selections return the same data, the usage of "all" should help to clarify this effect, while there remains a visual distinction for the fact that a saved selection is static while the items concerned by no selection may evolve over time. Indeed, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve.  
 Therefore, while a full selection would always correspond to 39 items, for no filter selection the number of actually considered dimension items might increase, e.g. 40, 41 etc.
 
 ---
