@@ -94,7 +94,7 @@ All facets are **multi-selection** facets (an existing facet value selection doe
 ![de facet types](/dotstatsuite-documentation/images/de-facet-4.png)
 
 #### Facet information
-The facet header contains the number of facet values available, and the number of currently selected facets (green numbers). Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, it is mentioned as `"38/38"` (the difference between none "all" or all "38" is necessary for evoluting contents in time).  
+The facet header contains the number of facet values available, and the number of currently selected facets (white numbers with green background). Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, it is mentioned as `"38/38"` (the difference between none "all" or all "38" is necessary for evoluting contents in time). When "all", the items are not listed in the used filters while selected, they are listed in the used filters.  
 The facet values show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
 
 ![de facet information](/dotstatsuite-documentation/images/de-searchingdata-facets-facetinformation.png)
