@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 16, 2021](#june-16-2021)
 - [June 1, 2021](#june-1-2021)
 - [May 19, 2021](#may-19-2021)
 - [May 11, 2021](#may-11-2021)
@@ -70,6 +71,25 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+### June 16, 2021
+**[Release .Stat Suite .NET 6.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/41)**
+> This release includes a new version of the **sdmxri-nsi-ws** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.2.0**.
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#139](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/139) Deploy **NSI version 8.2.0** in DevOps.
+- [dotstatsuite-core-sdmxri-nsi-ws#140](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/140) **Improve performance** when getting the Frequency dimension from a DSD.
+- [dotstatsuite-core-sdmxri-nsi-ws#138](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/138) **(Performance improvements)** Make rest data retrievals asynchronous.
+
+patch changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#136](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/136) Unclear error message for content constraint with missing referenced dataflow.
+- [dotstatsuite-core-sdmxri-nsi-ws#97](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/97) Treatments of `afterPeriod` and `beforePeriod` values are mixed up in the TimeRangeCore implementation.
+- [dotstatsuite-core-data-access#73](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/73) Start Date of a `ContentConstraintObjectCore` instance can be changed to invalid value.
+- [dotstatsuite-core-sdmxri-nsi-ws#119](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/119) Fix PointInTime related code in Eurostat's `maapi.net` library.
 
 ---
 ### June 1, 2021

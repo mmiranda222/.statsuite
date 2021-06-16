@@ -124,7 +124,7 @@ git clone -b 12.4.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotsta
 
 ```sh 
 
-git clone -b 8.1.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
+git clone -b 8.2.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that points to the original ESTAT's repository in the mirror repository. To change the url of the submodule and to clone it manually (from the SIS-CC's mirror of Eurostat repository) use the following commands:  
@@ -139,13 +139,13 @@ git clone -b 8.1.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/ma
   6 .  Clone the NSI web service repository from the SIS-CC's mirror of Eurostat repository.
 
 ```sh
-git clone -b 8.1.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
+git clone -b 8.2.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
   7 .  Clone the authorization.net repository from the SIS-CC's mirror of Eurostat repository.- *For authorization plugin.* 
 
 ```sh
-git clone -b 8.1.3 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
+git clone -b 8.2.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
