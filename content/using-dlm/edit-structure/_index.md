@@ -27,7 +27,8 @@ We recommend using the following tools for data structure creation or editions:
 ### Generic DSD Matrix SDMX-ML generator
 
 - technology: Excel macro [.xlsm file]
-- link: https://gitlab.com/sis-cc/sdmx-tools/sdmx-matrix-generator
+- source code: https://gitlab.com/sis-cc/sdmx-tools/sdmx-matrix-generator
+- documentation: https://sis-cc.gitlab.io/sdmx-tools/documentation/using-matrix-gen/
 - developed by: OECD
 - target audience: statisticians with basic (non-technical) SDMX data modelling knowledge
 
@@ -40,8 +41,6 @@ This tool maps to these GSBPM sub-processes:
   - 2.2 Design variable descriptions (decomposition and creation of indicators in Indicator-Concept Matrix worksheet)
   - 3.1 Reuse or build collection instruments (generating SDMX-ML for reporting Dataflows)
   - 3.3 Reuse or build dissemination instruments (generating SDMX-ML for dissemination Dataflows)
-
-The "How to use" worksheet of the generator tool contains a Step-by-step guide.
 
 A video record of a demo of the tool is available from [here online](https://oecdtv.webtv-solution.com/embed/6650/en/video).
 
