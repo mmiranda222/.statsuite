@@ -437,7 +437,11 @@ In the OECD context, the underlying codelist would be “CL_AREA” but there mi
 
 #### Time dimension
 
-For the time dimension, we should search for one of the following IDs: **TIME_PERIOD**, **TIME**, **YEAR**
+For the time dimension, we should search for the ID **TIME_PERIOD**.
+
+Note:
+Other IDs, such as **TIME** and **YEAR**, are not supported as TimeDimension for now. 
+However, those IDs can be used as non-TimeDimension dimensions with the associated Codelist to be created.
  
 ##### Structure xml
 
