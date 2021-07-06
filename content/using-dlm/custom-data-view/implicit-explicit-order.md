@@ -3,10 +3,19 @@ title: "Implicit and explicit orders"
 subtitle: 
 comments: false
 weight: 350
+keywords: [
+  'Localised order in the items of all ItemSchemes', '#localised-order-in-the-items-of-all-itemschemes',
+  'Localized order in data message for DE filters, table and chart views', '#localized-order-in-data-message-for-de-filters-table-and-chart-views',
+]
+---
+
+#### Table of Content
+- [Localised order in the items of all ItemSchemes](#localised-order-in-the-items-of-all-itemschemes)
+- [Localized order in data message for DE filters, table and chart views](#localized-order-in-data-message-for-de-filters-table-and-chart-views)
 
 ---
 
-### localised order in the items of all ItemSchemes
+### Localised order in the items of all ItemSchemes
 **Implicit** means the order of items (e.g. codes) as returned within the array of codes. There are thus always naturally given in a structure definition.  
 **Explicit** order is the order provided through annotations and is optional. Explicit order prevails implicit order.  
 
@@ -50,10 +59,19 @@ After ordering:
 * Bbb, Explicit order=4
 * Aaa, Explicit order=5
 
-This annotation is to be used to automatically order dimension values in the filters of the visualisations according to the current locale. It should also be used for displaying correctly ordered dimension values in the visualisation's data table.
-
 ---
 
-### localized order in data message for DE table
-Explicit order of items in an ItemScheme as described above is also applied to the data table view, once the explicit order of codes is returned in the SDMX-JSON data message.
+### Localized order in data message for DE filters, table and chart views
+Explicit order of items in an ItemScheme as described above are **applied to the DE visualisation page**, once the explicit order of codes is returned in the SDMX-JSON data message, and according to the current locale. This means that items of a dimension with a defined order, will be displayed according to that order in the **filter selections**, and in the **rows and columns of the table view**.  
+In some cases, the order is also applied to the **chart views** for:
+- Chart series dimension in vertical and horizontal symbol charts;
+- Stack dimension in stacked bar charts.
 
+In the context of a **hierarchical dimension**, order is always applied per hierarchy branch level. Children always follow subsequently their parents even if the implicit or explicit order number of the child is smaller than that of the parent or greater than that of the following parent.  
+The table/chart layout has no influence on the dimension value order. Whatever the calculated order is, it is to be applied exactly as calculated, even if the dimension is layered out vertically and the items may be indented, or if the dimension is layered out horizontally and the items are not indented.
+
+When an item of a dimension has **no explicit order**, then this item will be displayed first in the filter or the table row/column before all the items with an explicit order.
+
+**Current known limitations:**
+- **Items without explicit orders** are sometimes returned differently by the back-end structure and data messages. In consequence it may happen that, if a dimension has several items without order, then these items are not listed in the same order in the filter and in the table, because filters and table are building their representation with each of the data or structure message.
+- In a hierarchy of a dimension, **for children items when their parent are not selected**, the table lists the children based on their explicit order and in correspondance with the other selections, meaning that children can be displayed "randomly" if they have no parent selected in the table view.
