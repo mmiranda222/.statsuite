@@ -5,7 +5,6 @@
 1. define a semver compliant with changes of 1. and upper than all underlying releases from all service/app (see template for the list).
 1. create a **milestone** at [.stat-suite level](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones) following the name convention: `dotstatsuiteJS@v<semver>`
 1. assign [issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=s%3A%3Arelease) to the milestone
-1. qa default translations (keys and values) override staging translations `siscc-config-data/qa/i18n -> siscc-config-data/staging/i18n`
 1. for each service/app:
     1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
     1. bump version
@@ -17,6 +16,8 @@
     1. create a **tag** on master (default latest) with a **release** (add a description in optional release description) following the name convention: `v<semver>`
     1. paste the tag link in the milestone description (releases row)
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
+1. restart config service (especially if translations or config data has been updated) to load config from buckets
+1. restart search service to load updated config (clean and re-index if major change related to search or if space/datasources have been updated)
 1. the milestone should contain:
     - a list of related issues with their related merge requests (discrete diffs)
     - a list of merge requests from develop to master branches (global diffs)
@@ -26,13 +27,3 @@
 
 **notes**:
 - a change of data in config is not considered as a release since the service itself hasn't changed
-
-**template**:
-
-|icon|[explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)|[viewer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer)|[dlm](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)|[sfs](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search)|[share](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share)|[config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config)|[proxy](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy)|
-|---|---|---|---|---|---|---|---|
-|releases|-|-|-|-|-|-|-|
-|commits|-|-|-|-|-|-|-|
-|docker|-|-|-|-|-|-|-|
-
-> use https://gitmoji.carloscuesta.me/ for visual help
