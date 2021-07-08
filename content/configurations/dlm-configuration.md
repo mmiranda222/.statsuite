@@ -56,6 +56,7 @@ Define a specific **http accept header** for a given dataspace that will overrid
     }
   }
 ```
+---
 
 ### Data space names
 Define the name of an internal or external data space displayed to the end-user in the DLM UI, regardless the `datasourceIds`.
