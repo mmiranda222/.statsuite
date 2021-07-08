@@ -14,7 +14,7 @@
     1. if needed (last minute fixes), merge back to develop
     1. close related issues
     1. create a **tag** on master (default latest) with a **release** (add a description in optional release description) following the name convention: `v<semver>`
-    1. paste the tag link in the milestone description (releases row)
+    1. paste the tag link in the milestone description (releases row) and attached it to the milestone
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
 1. restart config service (especially if translations or config data has been updated) to load config from buckets
 1. restart search service to load updated config (clean and re-index if major change related to search or if space/datasources have been updated)
