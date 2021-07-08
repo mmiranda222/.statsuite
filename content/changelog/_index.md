@@ -75,7 +75,7 @@ ToC
 
 ---
 ### July 8, 2021
-**[Release .Stat Suite JS 9.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/38)**
+**[Release .Stat Suite JS 9.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**
 > This **major** release includes a new version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **config**, and **data-lifecycle-manager** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.3.0**.
 
@@ -109,13 +109,13 @@ For your **migration/upgrade process**, think about:
 
 major *(backward-incompatible)* changes:
 
-- [dotstatsuite-config-data#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/4) **New tenant model** adaptation. See above disclaimer and [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/tenant-model/). Also available a [video record](XXXXXXXXXXXXXXX) demoing and explaining the adaptation of this new tenant model.
+- [dotstatsuite-config-data#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/4) **New tenant model** adaptation. See above disclaimer and [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/tenant-model/). Also available a [video record](https://oecdtv.webtv-solution.com/embed/8262/en/video) demoing and explaining the adaptation of this new tenant model.
 - [dotstatsuite-sdmx-faceted-search#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/28) Allow **individually adding new dataflows in the search index**. The previous `sfs` query to update an individual dataflow `PATCH /admin/dataflow` is replaced by the new 'upsert' `POST /admin/dataflow` query ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#index-or-update-one-individual-dataflow)).
 - [dotstatsuite-config#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/29) *Refactoring* config data i18n follow up. Final migration of app configs from `.stat-suite/dotstatsuite-config` to `.stat-suite/dotstatsuite-config-data`
 
 significant and minor changes:
 
-- [dotstatsuite-data-explorer#536](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/536) Add option to avoid or enable indexing by **external search engine crawlers** through config. See the above technical disclaimer and [this documentation](XXXXXXXXXXXXXXXX).
+- [dotstatsuite-data-explorer#536](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/536) Add option to avoid or enable indexing by **external search engine crawlers** through config. See the above technical disclaimer and [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/web-crawlers-optimisation/).
 - [dotstatsuite-share#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/23) Allow **parameterised share for smart embeds**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/param-shared-views/))
 - [dotstatsuite-data-explorer#163](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/163) Support for non-numeric and coded measures (observation values) in the DE.
 - [dotstatsuite-sdmx-faceted-search#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/45) Search **facet items ordered by explicit annotation "ORDER"**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facet-items-ordered-by-explicit-order-annotation))
