@@ -177,8 +177,7 @@ A very useful tutorial on how to get a Keycloak server ready to work with the .S
 │   │   ├── node_modules                       # from setup artifact
 │   │   ├── dist                               # from build artifact
 │   │   ├── configs
-│   │   │   ├── datasources.json               # datasources definition
-│   │   │   ├── tenants.json                   # tenants definition
+│   │   │   ├── tenants.json                   # tenants & datasources definition
 │   │   │   │   ├── default
 │   │   │   │   │   ├── data-explorer
 │   │   │   │   │   │   ├── i18n
@@ -224,7 +223,7 @@ link in settings assets should stay like below:
 ### Indexation
 > hint: default api-key value is secret
 
-- get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret`
-- index dataflows: `curl -X POST http://localhost:3007/admin/dataflows?api-key=secret`
-- get report: `curl -X GET http://localhost:3007/admin/report?api-key=secret`
-- delete dataflows and config: `curl -X DELETE http://localhost:3007/admin/config?api-key=secret`
+- get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret&tenant=default`
+- index dataflows: `curl -X POST http://localhost:3007/admin/dataflows?api-key=secret&tenant=default`
+- get report: `curl -X GET http://localhost:3007/admin/report?api-key=secret&tenant=default`
+- delete dataflows and config: `curl -X DELETE http://localhost:3007/admin/config?api-key=secret&tenant=default`

@@ -6,14 +6,39 @@ weight: 84
 
 ---
 
-> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
+
 
 ### Original use case
 Some externally-available NSI services have an API Gateway on front that limits the rate at which users can call the services. It is possible to call the service with or without an API Key attached to the request. Requests with an API Key are throttled according to that key's usage plan. Requests without an API Key are considered to be all on the same plan, with a relatively low acceptable rate of calls. 
 
 The SDMX Faceted Search calling the services in order to index them without an API Key could quickly reach the rate limit and fail. The ability to specify an API Key for the service to use was therefore required, or the ability for the SDMX Faceted Search service to avoid calling the endpoints that require an API key.
 
-### Implemented solution
+### New implemented solution
+> Released in [MMMMMMMMMMM XX, 2021 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#MMMMMMMMM-XX-2021)
+
+According to the [new tenant model](https://sis-cc.gitlab.io/dotstatsuite-documentation/tenant-model/) of .Stat Suite JavaScript services, the override entry `searchUrl` is defined in a **space** in the **`tenants.json`** file that will only be used by the `sfs` service, e.g.:
+
+```json
+{
+  "spaces": {
+    "space1": {},
+    "qa-reset": {
+      "label": "SIS-CC-reset",
+      "hasRangeHeader": true,
+      "supportsReferencePartial": true,
+      "hasLastNObservations": true,
+      "searchUrl": "alternative/url",
+      "url": "https://nsi-qa-reset.siscc.org"
+    }
+  }
+}
+```
+
+*Warning:* this is a temporary fix until later implementation of [dotstatsuite-sdmx-faceted-search#91](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/91).
+
+### First original implementation
+> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
+
 The feature is implemented to answer the use case is adding a new config. file named `datasources.json` and depending on the `env`, it will overrides the `datasources.json` from the configuration service, without being spread over network and with a lot of flexibility. In other words, it overrides datasources at the `sfs` level thus allowing using API keys while indexing. An example of overriden `datasource.json` file:
 
 ```json

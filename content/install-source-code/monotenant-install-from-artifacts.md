@@ -88,8 +88,7 @@ keywords: [
 │   │   ├── node_modules                       # from setup artifact
 │   │   ├── dist                               # from build artifact
 │   │   ├── configs                            # see note a
-│   │   │   ├── datasources.json               # datasources definition
-│   │   │   ├── tenants.json                   # tenants definition
+│   │   │   ├── tenants.json                   # tenants & datasources definition
 │   │   │   │   ├── default
 │   │   │   │   │   ├── data-explorer
 │   │   │   │   │   │   ├── i18n

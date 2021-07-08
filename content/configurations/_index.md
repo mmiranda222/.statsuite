@@ -10,7 +10,7 @@ weight: 70
 
 |**TOPOLOGY**|  |  |
 |---|---|---|
-| |Datasources definition|[datasources.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/datasources.json)|
+| |Datasources definition|[tenants.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)|
 | |Tenants definition|[tenants.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)|
 | TRANSFER Service| | | 
 | |Connection string+Parameters|[dataspace.pivate.json](hhttps://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/master/DotStatServices.Transfer/config/dataspaces.private.json.sample)|
