@@ -17,7 +17,7 @@ keywords: [
 
 ### Frequency and Time-Period selectors
 **Frequency & Time Period** is a combined set of selectors in the visualisation page, enabling to filter a data view for time-period range in the context of a pre-selected frequency. **Frequency** is a single-selection filter, and **Time Period** is a range selector.  
-Most of the (*standard SDMX*) used frequencies are supported: Annual, biannual, quarterly, monthly, weekly, daily, daily (business week), hourly. Minutely and secondly are nice to have options.  
+Most of the (*standard SDMX*) used frequencies are supported: Annual, biannual, quarterly, monthly, weekly, daily, daily (business week), hourly. Minutely and secondly are *nice to have* options.  
 
 **Frequencies**  
 The frequencies returned in the **Frequency** dimension of a data view are displayed in the filter, and only the frequencies returned for the given data view are displayed in it. If there is only one frequency, then the filter isn't displayed, and **Frequency** is shown only in the data view table/chart header.  
@@ -40,7 +40,10 @@ The configuration "vis.period.default": [2008, 2018] is used to display the defa
 **Exceptions**  
 If the content constraints are not defined (see [data availability](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)), then the DE relies on default boundaries and default period (defined in the settings of the instance).  
 If the content constraints are defined but do not have boundaries period, then the DE relies on the default boundaries and default period.  
-If the content constraints are defined and have boundaries, then the DE uses the default periods in order to fit to the boundaries of the content constraints.
+If the content constraints are defined and have boundaries, then the DE uses the default periods in order to fit to the boundaries of the content constraints.  
+*(since [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021))* It is **never possible** to select an end period that is before the start period, and vice-versa, a start period that is after the end period. This means that each dropdown box content takes into account the selection in the other dropdown.  
+Example: assuming that the start and end periods are open. When the user selects a start period then the dropdown content of the end period is automatically restricted to start only from the selected start period. Vice-versa, under the same assumption, when the user selects an end period, then the dropdown content of the start period is automatically restricted to end latest on the selected end period.  
+Last, when a date selector is **empty**, then selecting a start date will select the first available date, and selecting an end date will select the latest date available.
 
 **Specificities**  
 In the "Used filters" area, **Frequency** cannot be removed, but only replaced. Thus there is no cross in front of the selected **Frequency**.  
