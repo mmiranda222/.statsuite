@@ -16,8 +16,7 @@ keywords: [
   'Search: Result page excluded facets', '#search-result-page-excluded-facets',
   'Search: Exclude specific CategorySchemes from the search index', '#search-exclude-categoryschemes',
   'Search: Result page: number of results per page', '#search-result-page-number-of-results-per-page',
-  'Time period boundaries', '#time-period-boundaries',
-  'Default time period', '#default-time-period',
+  'Default time period boundaries and default time period selection', '#default-time-period-boundaries-and-default-time-period-selection',
   'Support of Last-N-Observations feature', '#support-of-last-n-observations-feature',
   'Support of Partial-References feature', '#support-of-partial-references-feature',
   'Maximum number of observations in tables and charts', '#maximum-number-of-observations-in-tables-and-charts',
@@ -47,8 +46,7 @@ keywords: [
 - [Search: Result page excluded facets](#search-result-page-excluded-facets)
 - [Search: Exclude specific CategorySchemes from the search index](#search-exclude-categoryschemes)
 - [Search: Number of results per result page](#search-number-of-results-per-result-page)
-- [Time period boundaries](#time-period-boundaries)
-- [Default time period](#default-time-period)
+- [Default time period boundaries and default time period selection](#default-time-period-boundaries-and-default-time-period-selection)
 - [Support of Last-N-Observations feature](#support-of-last-n-observations-feature)
 - [Support of Partial-References feature](#support-of-partial-references-feature)
 - [Maximum number of observations in tables and charts](#maximum-number-of-observations-in-tables-and-charts)
@@ -280,35 +278,49 @@ Define the number of results displayed per page in the search result pages.
 
 ---
 
-### Time period boundaries
-Define the minimum and maximum values of the time period range in the visualisation page views.<br> 
+### Default time period boundaries and default time period selection
+> Feature updated with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
 
-* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
+Default time period boundaries and/or a default time period selection are required in the configuration for cases when an actual content constraint containing the time period range of available data cannot be retrieved from the SDMX web service, and/or when the default time period selection is not defined in the dataflow annotation of type "DEFAULT".  
+In such cases, the "Time Period" filter in the Data Explorer visualisation page uses the configured default time period boundaries to define which time periods should be shown in the start and end period dropdowns. It uses the configured default time period selection to automatically pre-select the start and end periods. 
+
+The start and end period boundaries finally applied in the "Time Period" filter in the Data Explorer visualisation page respect the following rules in this order of increasing priority:
+
+* The start period and end period take the current year.
+* The start period and end period take the default boundaries config settings, if available.
+* The start period and end period take the data availability, if available.
+* The start period must always be smaller than or equal to the end period.
+
+The initial start and end period selection finally applied in the "Time Period" filter in the Data Explorer visualisation page respects the following rules in this order of increasing priority:
+
+* The start period and end period take the above boundaries settings.
+* The start period and end period take the default selection config settings, if available and if within the final boundaries settings.
+* The start period and end period take the default selection annotation settings, if available and if within the final boundaries settings.
+* The start period must always be smaller than or equal to the end period.
+
+Therefore, if the default time period boundaries and the default time period selection are not defined, they will be based on the current year.  
+Any value of the time period boundaries and the default time period selection can be `null`ed or left empty  `""`.   
+
+* in `dotstatsuite-config-data/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "period": {
         "boundaries": [1970, 2021]
-    }
-```
-
-![Time period boundaries](/dotstatsuite-documentation/images/faq-period-boundaries.png)
-
----
-
-### Default time period
-Define the default time period selection of the visualisation page views, according to data availability.<br>
-
-> **Warning** Sometimes business rules (e.g. sdmx annotations) can supersede the default selection.<br>
-
-* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-explorer/settings.json`
-
-```json
-    "period": {
         "default": [2016, 2021]
     }
 ```
-
-![Time period default range](/dotstatsuite-documentation/images/faq-period-default.png)
+```json
+    "period": {
+        "boundaries": [1970, null]
+        "default": [2016, null]
+    }
+```
+```json
+    "period": {
+        "boundaries": [1970, ""]
+        "default": [2016, ""]
+    }
+```
 
 ---
 
