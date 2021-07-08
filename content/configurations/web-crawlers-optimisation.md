@@ -6,7 +6,6 @@ weight: 83
 
 ---
 
-### intro
 This page is a guide on how to configure the policy for search engine crawlers on the 3 .Stat Suite applications Data Explorer, Data Viewer and Data Lifecycle Manager.
 
 ### robots tags
@@ -15,7 +14,7 @@ For each application, both HTML header `<meta name="robots" />` and HTTP header 
 ### robots.txt file
 For each application, a default `robots.txt` is served with the default content:
 
-```
+```txt
 User-agent: *
 Disallow: /
 ```
