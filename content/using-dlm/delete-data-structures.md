@@ -74,6 +74,8 @@ Once you click, it displays a popup window with all listed artefacts using a tre
 
 ![DLM delete](/dotstatsuite-documentation/images/dlm-delete5.png)
 
+Note that, since [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021), a check for each of the listed structures is made to determine if the current user is entitled to delete it. If the user is not authorised to delete a specific artefact, then it is also marked as non-delete-able, and the tooltip feature displays: *"Cannot be deleted due to an insufficient permission. Contact the owner of the artefact to gain the deletion permission."*
+
 3) A warning orange icon informs the user of prerequisites awaited for deleting some of the items. For example (see in screenshots below), when a codelist needs also the "above" ConceptScheme deletion, it is mentioned as such: "In order to delete this artefact, you must select conceptscheme XXXXX".
 
 ![DLM delete](/dotstatsuite-documentation/images/dlm-delete6.png)
