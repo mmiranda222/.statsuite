@@ -69,11 +69,11 @@ If the filter list is **hierarchical**, then the bulk selection menu becomes con
 The keyboard's **Ctrl** and **Shift** keys, as well as **holding mouse click**, can be used to ease multiple selections.  
 
 - **Using the Shift key**:  
-If you first press `Shift` and select an item of a list, then selecting another item while still holding `Shift` will result in selecting all intermediate items (between those 2 selections) of the list.  
-As long as the `shift` key is held, the data table is not updated.  
+If you first press `Shift` and select an item of a list, then selecting another item while still holding `Shift` will result in selecting all intermediate items (between those 2 selections) of the list. The same principle will apply in de-selection mode. 
+As long as the `ctrl` key is held, the data table is not updated.
 - **Using the Ctrl key**:  
 If you first press `Ctrl` and select an item of a list, then selecting another item while still holding `Ctrl` will result in selecting this second item too. You can keep on selecting new items as long as `Ctrl` is held.  
-As long as the `ctrl` key is held, the data table is updated.  
+As long as the `ctrl` key is held, the data table is not updated.  
   *Remark*: The combination of `ctrl` and `shift` keys is not possible.   
   
 - **Holding mouse click**:  
