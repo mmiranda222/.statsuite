@@ -4,6 +4,7 @@ subtitle:
 comments: false
 weight: 75
 keywords: [
+  'Specific accept header per data space', '#specific-accept-header-per-data-space',
   'Data space names', '#data-space-names',
   'Data space colors', '#data-space-colors',
   'Data space InsertNewItems parameter', '#data-space-insertnewitems-parameter',
@@ -14,6 +15,7 @@ keywords: [
 ---
 
 #### Table of Content
+- [Specific accept header per data space](#specific-accept-header-per-data-space)
 - [Data space names](#data-space-names)
 - [Data space colors](#data-space-colors)
 - [Data space InsertNewItems parameter](#data-space-insertnewitems-parameter)
@@ -21,6 +23,39 @@ keywords: [
 - [Upload size limit](#upload-size-limit)
 
 ---
+
+### Specific accept header per data space
+>Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+
+Define a specific **http accept header** for a given dataspace that will override the default header, allowing a specific accept header value for both structures and data.
+
+* in `dotstatsuite-config/data/<env>/configs/tenants.json`
+
+```json
+{
+  "tenant": {
+    "id": "xxxx",
+    "label": "xxxx",
+    "spaces": {
+      "XXXX-prod": {
+        "label": "XXXX-prod",
+        "url": "https://...",
+        "headers": {
+          "data": {
+            "csv": "application/vnd.sdmx.data+csv",
+            "json": "application/vnd.sdmx.data+json;version=1.0.0",
+            "xml": "application/xml"
+          },
+          "structure": {
+            "json": "application/vnd.sdmx.structure+json;version=1.0.0",
+            "xml": "application/vnd.sdmx.structure+xml;version=2.1"
+          }
+        }
+      },
+      }
+    }
+  }
+```
 
 ### Data space names
 Define the name of an internal or external data space displayed to the end-user in the DLM UI, regardless the `datasourceIds`.
