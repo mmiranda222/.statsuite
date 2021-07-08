@@ -14,7 +14,7 @@ Some externally-available NSI services have an API Gateway on front that limits 
 The SDMX Faceted Search calling the services in order to index them without an API Key could quickly reach the rate limit and fail. The ability to specify an API Key for the service to use was therefore required, or the ability for the SDMX Faceted Search service to avoid calling the endpoints that require an API key.
 
 ### New implemented solution
-> Released in [MMMMMMMMMMM XX, 2021 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#MMMMMMMMM-XX-2021)
+> Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
 
 According to the [new tenant model](https://sis-cc.gitlab.io/dotstatsuite-documentation/tenant-model/) of .Stat Suite JavaScript services, the override entry `searchUrl` is defined in a **space** in the **`tenants.json`** file that will only be used by the `sfs` service, e.g.:
 
