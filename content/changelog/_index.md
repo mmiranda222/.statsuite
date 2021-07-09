@@ -89,11 +89,11 @@ Config folder contents significantly change: `tenants.json` contains more ; `set
   - references to datasources in `settings.json` moved in `tenants.json`
   - routes (when proxy is used) can use tenant slug: `<tenantId>` or `<tenantId>:<scopeId>`
 - **Major change** in the search service (new tenant model adaptation):
-  - reminder from previous release, a **collection** is required for each tenant
+  - reminder from previous release, a **collection** is required for each tenant ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#how-to-create-a-collection))
   - clean and re-index all data for all tenants to avoid side-effects
 - **`ROBOTS_POLICY`** env var in DE and DV to configure search engine indexation (default enabled), don't forget to override `robot.txt` file accordingly to the env var value
 - **`AUTHZ_SERVER_URL`** env var is now used to bind the DLM to AUTHZ (previously in `settings.json`)
-- **`TRANSFER_SERVER_URL`** env var **dropped** (was used in DLM) and **replaced by** `transferUrl` in `tenants.json` (at scope level): DLM is no bound to a transfer, it is the spaces used within its scope that are bound to a transfer (which is more flexible because different transfers can be used without deploying several DLM)
+- **`TRANSFER_SERVER_URL`** env var **dropped** (was used in DLM) and **replaced by** `transferUrl` in `tenants.json` (at scope level): DLM is not bound to a transfer, it is the spaces used within its scope that are bound to a transfer (which is more flexible because different transfers can be used without deploying several DLM)
 - **To override space** definition in search service:
   - temporary fix waiting for a better integration in the new tenant model
   - no more `datasources.json` file to mount at sfs level
@@ -111,7 +111,7 @@ major *(backward-incompatible)* changes:
 
 - [dotstatsuite-config-data#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/4) **New tenant model** adaptation. See above disclaimer and [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/tenant-model/). Also available a [video record](https://oecdtv.webtv-solution.com/embed/8262/en/video) demoing and explaining the adaptation of this new tenant model.
 - [dotstatsuite-sdmx-faceted-search#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/28) Allow **individually adding new dataflows in the search index**. The previous `sfs` query to update an individual dataflow `PATCH /admin/dataflow` is replaced by the new 'upsert' `POST /admin/dataflow` query ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#index-or-update-one-individual-dataflow)).
-- [dotstatsuite-config#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/29) *Refactoring* config data i18n follow up. Final migration of app configs from `.stat-suite/dotstatsuite-config` to `.stat-suite/dotstatsuite-config-data`
+- [dotstatsuite-config#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/29) *(Refactoring)* config data i18n follow up. Final migration of app configs from `.stat-suite/dotstatsuite-config` to `.stat-suite/dotstatsuite-config-data`
 
 significant and minor changes:
 
@@ -132,11 +132,11 @@ significant and minor changes:
 - [dotstatsuite-data-explorer#528](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/528) Mismatch in default time period selection. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection))
 - [dotstatsuite-data-lifecycle-manager#183](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/183) Enhance the DLM deletion of related artefacts with preliminary check for access rights. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures/#delete-an-artefact-and-its-related-structure-artefacts))
 - [dotstatsuite-data-lifecycle-manager#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/99) Set a specific list of file extensions in "custom filter" settings of DLM file uploads.
-- [dotstatsuite-config#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/32) *Refactoring* Add warning in the script `"init:data"` when nothing happens.
-- [dotstatsuite-data-explorer#542](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/542) *Refactoring* WCAG `defineMessages` & fix dynamic keys.
-- [dotstatsuite-data-explorer#544](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/544) *Support* Remove blueprintjs unused dependency in Data Explorer.
-- [dotstatsuite-data-explorer#540](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/540) *Support* CSS trying to serve up HTML displaying configs.
-- [dotstatsuite-docker-compose#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/17) *DevOps* Docker upgrade solr 8.2 + create `sfs` collection.
+- [dotstatsuite-config#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/32) *(Refactoring)* Add warning in the script `"init:data"` when nothing happens.
+- [dotstatsuite-data-explorer#542](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/542) *(Refactoring)* WCAG `defineMessages` & fix dynamic keys.
+- [dotstatsuite-data-explorer#544](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/544) *(Support)* Remove blueprintjs unused dependency in Data Explorer.
+- [dotstatsuite-data-explorer#540](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/540) *(Support)* CSS trying to serve up HTML displaying configs.
+- [dotstatsuite-docker-compose#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/17) *(DevOps)* Docker upgrade solr 8.2 + create `sfs` collection.
 
 patch changes:
 
