@@ -22,7 +22,7 @@ keywords: [
 *Recorded presentation at the SIS-CC ATF meeting on Tue 29-Jun-2021: [online video](https://oecdtv.webtv-solution.com/embed/8262/en/video)*
 
 ### Tenant model definition
-Allow for multi-tenant deployements with multi search engines
+Allow for multi-tenant deployments with multi search engines
 
 **Tenant** is the root definition of an organisation configuration, to which you can attach **scope(s)**, **data space(s)**, and **data source(s)**.  
 **Data space** is a SDMX endpoint with an URL and optional headers or options' overrides (e.g. `hasLastNObservations`).  

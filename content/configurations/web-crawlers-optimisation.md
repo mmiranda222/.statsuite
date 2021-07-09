@@ -11,6 +11,14 @@ This page is a guide on how to configure the policy for search engine crawlers o
 ### robots tags
 For each application, both HTML header `<meta name="robots" />` and HTTP header `x-robots-tag` contents can be configured through an **environment variable `ROBOTS_POLICY`**. For both Data Explorer and Data Viewer, the default value is set to `all`, while default `none` is set for Data Lifecycle Manager.
 
+Main functions for the search engine crawlers:
+- `<meta name =”robots” content=”follow”>` : a command for the search engine crawler to follow the links in that webpage
+- `<meta name =”robots” content=”index”>` : a command for the search engine crawler to index that webpage
+- `<meta name =”robots” content=”nofollow”>` : a command for the search engine crawler NOT to follow the links in that webpage
+- `<meta name =”robots” content=”noindex”>` : a command for the search engine crawler NOT to index that webpage
+- `<meta name =”robots” content=”none”>` : corresponds to the combination of ”noindex,nofollow”
+- `<meta name =”robots” content=”all”>` : corresponds to the combination of ”index,follow”
+
 ### robots.txt file
 For each application, a default `robots.txt` is served with the default content:
 
