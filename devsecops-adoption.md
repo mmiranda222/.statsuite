@@ -59,7 +59,7 @@
 </body>
 </table>
 
-# Plan
+# :repeat: Plan
 ### Wish-list
 The wish list is the public full list of recorded feature requests and feature enhancements yet to be reviewed and prioritized.  
 https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=wish%20list
@@ -85,7 +85,7 @@ The objective is to improve reporting on time-intensive tickets to the SIS-CComm
 
 :eyes: PM team to ensure the full application of this rule, and start drafting new indicators for reporting/metrics periodic reports.
 
-# Create
+# :repeat: Create
 ### Git flow
 Git workflow fully adopted and applied. See full documentaiton and process:  
 https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-guidelines/#git-flow
@@ -112,7 +112,7 @@ quick pushes, local demos
 
 Exceptions: JavaScript services are following the same rules, with the exception that the JS Lead dev. manage the roles and permissions for Maintainers with overridenn rules for senior developers. 
 
-# Check
+# :repeat: Check
 ### CI
 https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
 
@@ -132,7 +132,7 @@ End to end tests (E2E tests) for testing the applications workflows from beginni
 
 :eyes: PM team starts drafting end-to-end test scenarios to be integrated once RedPelicans delivers the E2E automated integration (by end of 2021 summer): https://gitlab.com/sis-cc/dotstatsuite-documentation/-/quality/test_cases
 
-# Package
+# :repeat: Package
 ### Checklist on doc and install guides updates
 
 ### Release evidence
@@ -150,7 +150,7 @@ Link to all .Stat Suite milestones: https://gitlab.com/dashboard/milestones
 ### Docker Trusted Publisher
 https://docs.docker.com/docker-hub/publish/
 
-# Secure
+# :repeat: Secure
 ### SAST
 
 ### DAST
@@ -168,7 +168,7 @@ Third-party components vulnerability dashboard *(for team members only)*: https:
 
 ### Code quality
 
-# Release
+# :repeat: Release
 ### Continuous delivery
 https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
 
@@ -194,7 +194,7 @@ The total number of releases is automatically reported in GitLab [here](https://
 
 ### Recorded demos
 
-# Monitor
+# :repeat: Monitor
 ### Incident management
 Support, Bugs, reactivity & priority
 
@@ -214,7 +214,7 @@ https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/tree/mast
 
 ### Usability tests
 
-# Manage & Protect
+# :repeat: Manage & Protect
 ### Groups & Subgroups
 Projects are managed by groups and sub-groups under the root GitLab SIS-CC group: https://gitlab.com/sis-cc.  
 Each sub-group is independent from the others in terms of projects, meaning no limitation of numbers, and members, meaning that new members can be added to specific sub-groups.  
