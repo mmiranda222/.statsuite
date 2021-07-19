@@ -156,7 +156,7 @@
 <td>-</td>
 </tr>
 <tr>
-<td>https://de-demo-oecd-daf-dti.siscc.org/</td>
+<td>https://de-demo-oecd-daf-dti.siscc.org</td>
 <td>:globe_with_meridians: [website](https://de-demo-oecd-daf-dti.siscc.org/) - :ambulance: [health](https://de-demo-oecd-daf-dti.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
