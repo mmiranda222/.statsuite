@@ -110,7 +110,7 @@ quick pushes, local demos
   - allowed to merge = Maintainers
   - allowed to push = Maintainers
 
-Exceptions: JavaScript services are following the same rules, with the exception that the JS Lead dev. manage the roles and permissions for Maintainers with overridenn rules for senior developers. 
+Exceptions: JavaScript services are following the same rules, with the exception that the JS Lead developer manages roles and permissions with overriden roles for Senior developers. 
 
 # :repeat: Check
 ### CI
