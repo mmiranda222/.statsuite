@@ -14,6 +14,7 @@ keywords: [
 - [Tenant model definition](#tenant-model-definition)
 - [Example of a tenant](#example-of-a-tenant)
 - [Example of a tenant deployment strategy](#example-of-a-tenant-deployment-strategy)
+- [Additional specifications](#additional-specifications)
 
 --- 
 
@@ -231,7 +232,7 @@ The DE scope contains a space and data sources (only IDs): data sources are used
 ```
 
 #### Example of a tenant deployment strategy
-`routes.json` file exmaple of a deployment strategy using a proxy: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/blob/master/qa/proxy/routes.json
+`routes.json` file example of a deployment strategy using a proxy: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/blob/master/qa/proxy/routes.json
 
 ```json
 [
@@ -247,3 +248,13 @@ The DE scope contains a space and data sources (only IDs): data sources are used
   {"host": "de-qa.siscc.org", "target": "http://data-explorer", "tenant": "oecd:de" }
 ]
 ```
+
+---
+
+### Additional specifications
+
+**Multi-tenant index**  
+If you want 2 different Solr search indexations, you need **2 tenant definitions** in your `tenants.json` file, following the above example.
+
+**`searchUrl` override**  
+The `searchUrl` parameter can be used in some cases to override the url of the space when requested by the search service. If you have a request limiter for your web services (e.g. NSIWS), you may want to bypass this limit when indexing (because there will be a lot of requests and they won't be from a malicious origin). In that case, `searchUrl` is a temporary solution to address this issue, where the `sfs` search service uses `searchUrl` instead of `url` for the space definition.
