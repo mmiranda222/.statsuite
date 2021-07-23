@@ -54,7 +54,7 @@
 <td>[Usability tests](#usability-tests)</td>
 </tr>
 <tr>
-<td colspan="7"><b>Manage & Protect</b><br> [Groups & Subgroups](#groups-subgroups) ![Level3](https://img.shields.io/badge/M-3-brightgreen)<br> [Open-source compliance](#open-source-compliance) ![Level3](https://img.shields.io/badge/M-3-brightgreen)<br> [Metrics on issues, cycle-time, bottlenecks, Build vs. Run](#metrics-issues-cycle-time-bottlenecks-build-vs-run) ![Level2](https://img.shields.io/badge/M-2-blue)<br> [2FA](#2fa) ![Level1](https://img.shields.io/badge/M-1-orange)<br> [Container scan](#container-scan)<br> [GitLab backup](#gitLab-backup)</td>
+<td colspan="7"><b>Manage & Protect</b><br> [Groups & Subgroups](#groups-subgroups) ![Level3](https://img.shields.io/badge/M-3-brightgreen)<br> [Open-source compliance](#open-source-compliance) ![Level3](https://img.shields.io/badge/M-3-brightgreen)<br> [Metrics on issues, cycle-time, bottlenecks, Build vs. Run](#metrics-issues-cycle-time-bottlenecks-build-vs-run) ![Level2](https://img.shields.io/badge/M-2-blue)<br> [2FA](#2fa) ![Level1](https://img.shields.io/badge/M-1-orange)<br> [Container scan](#container-scan) ![Level0](https://img.shields.io/badge/M-0-lightgrey)<br> [GitLab backup](#gitLab-backup)</td>
 </tr>
 </body>
 </table>
@@ -239,6 +239,7 @@ Two-factor Authentication (2FA) provides an additional level of security to user
 :eyes: To be adopted by all members having a minimum of *Reporter* permission (or we enforce it to all users https://docs.gitlab.com/ee/security/two_factor_authentication.html#enforcing-2fa-for-all-users).
 
 ### Container scan
+:eyes: Enable "Vulnerability scanning" to identify vulnerabilities in all SIS-CC .Stat Suite container images https://hub.docker.com/orgs/siscc/repositories
 
 ### GitLab backup
 Being able to manually or automatically schedule a full backup of GitLab content, meaning code + issues.  
