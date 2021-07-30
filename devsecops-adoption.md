@@ -1,4 +1,6 @@
 # SIS-CC DevSecOps Adoption
+*DevSecOps adoption according to GitLab's criteria https://gitlab.com/groups/sis-cc/-/analytics/devops_adoption*
+
 
 ### Level of Maturity  
 ![Level0](https://img.shields.io/badge/M-0-lightgrey) planned ![Level1](https://img.shields.io/badge/M-1-orange) initiated ![Level2](https://img.shields.io/badge/M-2-blue) available ![Level3](https://img.shields.io/badge/M-3-brightgreen) fully adopted
