@@ -57,25 +57,27 @@
             "color": "white",
             "backgroundColor": "#222222",
             "label": "qa-stable",
-            "dataExplorerUrl": "http://localhost:7001",
-            "isExternal": true
+            "transferUrl": "https://transfer-qa.siscc.org/1.2",
+            "dataExplorerUrl": "http://localhost:7001"
           },
           {
             "id": "qa:reset",
             "color": "white",
             "backgroundColor": "#aa332f",
             "label": "qa-reset",
-            "dataExplorerUrl": "http://localhost:7001",
-            "isExternal": true
+            "transferUrl": "https://transfer-qa.siscc.org/1.2",
+            "dataExplorerUrl": "http://localhost:7001"
           },
           {
             "id": "staging:SIS-CC-stable",
             "color": "white",
             "backgroundColor": "#4d77d8",
             "label": "staging:SIS-CC-stable",
-            "dataExplorerUrl": "http://localhost:7001"
+            "dataExplorerUrl": "http://localhost:7001",
+            "isExternal": true
           }
         ]
+      },
       },
       "de": {
         "type": "de",
