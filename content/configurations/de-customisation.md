@@ -138,7 +138,7 @@ The default theme is applied if there is no theme added to the settings.json fil
 ---
 
 ### Theme settings: how to override mixins
-Data Explorer uses a [Material-ui](https://material-ui.com/) theme, and you can entirely customise it by using your [settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/data-explorer/settings.json) file under the `https://material-ui.com/` key. For your help, all components used in Data Explorer are in the website [**Visions**](http://visions-qa-oecd.redpelicans.com/#o).
+Data Explorer uses a [Material-ui](https://material-ui.com/) theme, and you can entirely customise it by using your [settings.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/data-explorer/settings.json) file under the `https://material-ui.com/` key. For your help, all components used in Data Explorer are in the website [**Visions**](https://visions-qa.siscc.org/#o).
 
 We try as much as possible to use the Material-ui theme. But sometimes, it is necessary to define **mixins in order to modify the component** with a specific font, font-size, colors, etc...
 
@@ -167,7 +167,7 @@ All mixins are available using the following link: [**theme used by data-explore
 
 **Example**  
 Here is an example on **how to change the header of the DE table and charts**.  
-you can find this component in visions [(**DataHeader**)](http://visions-qa-oecd.redpelicans.com/#oDataHeader), the name of this component being "DataHeader".
+you can find this component in visions [(**DataHeader**)](https://visions-qa.siscc.org/#oDataHeader), the name of this component being "DataHeader".
 
 Taking our general use case, you need to replace the "nameOfTheComponents" by "dataHeader".  
 /**!**\ **You need to change the first capitalize letter into a lower letter to use camelCase mode ("DataHeader" => "dataHeader")** /**!**\
