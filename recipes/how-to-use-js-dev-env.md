@@ -9,4 +9,4 @@
 
 ## Authentification
 - keycloak: **https://keycloak.siscc.org**
-- reserved ports for localhost: [7000-7003]
+- reserved ports for localhost: [7000-7001]
