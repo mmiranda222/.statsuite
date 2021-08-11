@@ -1,20 +1,12 @@
-# How to use dev env
-
-The name current collection: **oecd**
-
-The tenant should use the same name than the collection's name.
-
-To setup your dev environnement, you can use the file **tenants.dev.json**
-
-Rename the tenant by the current name used. and the folder with your applications should have the same name.
+# How to setup dev env
+1. go to your local dotstatsuite-config and run `yarn init:data`
+2. the current collection name in solr in the devops env (qa): **oecd**  
+   rename the tenant id to: **oecd** (previously named default)  
+   *tenant id and collection are mapped together*
+3. paste **tenants.dev.json** content into your local tenants.json
+4. replace in tenants.json dev by oecd
+5. add `DEFAULT_TENANT="oecd:de"` in your local .env (to avoid query param usage)
 
 ## Authentification
-
 - keycloak: **https://keycloak.siscc.org**
-
-opened port:
-
-|     | srv  | proxy |
-|-----|------|-------|
-| DE  | 7001 | 7003  |
-| DLM | 7000 | 7002  |
+- reserved ports for localhost: [7000-7003]
