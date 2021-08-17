@@ -24,6 +24,6 @@
     - a changelog for none obvious changes
     - a list of tags/releases
     - a list of commits to ease update from source code
-
+    - a i18n-changelog from dotstatsuite-config-data (pipeline trigger only on tags)
 **notes**:
 - a change of data in config is not considered as a release since the service itself hasn't changed
