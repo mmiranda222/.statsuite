@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [August 17, 2021](#august-17-2021)
 - [July 8, 2021](#july-8-2021)
 - [June 16, 2021](#june-16-2021)
 - [June 1, 2021](#june-1-2021)
@@ -73,6 +74,16 @@ ToC
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
 
+---
+### August 17, 2021  
+  
+**[Patch Release .Stat Suite JS 9.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**  
+> This release includes a new *patch* version of the **data-explorer** services.  
+  
+patch changes:    
+  
+- [dotstatsuite-data-explorer#571](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/571) No data displayed because of wrong time period selected by the DE.    
+   
 ---
 ### July 8, 2021
 **[Release .Stat Suite JS 9.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**
