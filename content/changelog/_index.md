@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [September 2, 2021](#september-2-2021)
 - [August 17, 2021](#august-17-2021)
 - [July 8, 2021](#july-8-2021)
 - [June 16, 2021](#june-16-2021)
@@ -75,16 +76,29 @@ ToC
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
 
 ---
+
+### September 2, 2021
+
+**[Patch Release .Stat Suite JS 9.0.2](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**  
+> This release includes a new *patch* version of the **data-explorer** and **data-lifecycle-manager** services.  
+
+patch changes:    
+  
+- [dotstatsuite-data-explorer#566](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/566) DE microdata viewer does not take the cell's time period value into account.
+- [dotstatsuite-data-lifecycle-manager#216](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/216) Incorrect artefact clean up status displayed when deleting related artefacts.
+- [dotstatsuite-data-lifecycle-manager#217](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/217) Error in structure deletion.
+
 ### August 17, 2021  
   
 **[Patch Release .Stat Suite JS 9.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**  
-> This release includes a new *patch* version of the **data-explorer** services.  
+> This release includes a new *patch* version of the **data-explorer** service.  
   
 patch changes:    
   
 - [dotstatsuite-data-explorer#571](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/571) No data displayed because of wrong time period selected by the DE.    
    
 ---
+
 ### July 8, 2021
 **[Release .Stat Suite JS 9.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**
 > This **major** release includes a new version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **config**, and **data-lifecycle-manager** services.  
@@ -157,6 +171,7 @@ patch changes:
 - [dotstatsuite-visions#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/25) WCAG drag & drop error whenusing the customise table feature.
 
 ---
+
 ### June 16, 2021
 **[Release .Stat Suite .NET 6.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/41)**
 > This release includes a new version of the **sdmxri-nsi-ws** service.  
@@ -176,6 +191,7 @@ patch changes:
 - [dotstatsuite-core-sdmxri-nsi-ws#119](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/119) Fix PointInTime related code in Eurostat's `maapi.net` library.
 
 ---
+
 ### June 1, 2021
 **[Release .Stat Suite .NET 6.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/40)**
 > This release includes a new version of the **sdmxri-nsi-ws** service.  
@@ -214,6 +230,7 @@ significant change:
 - [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/third-party-providers/) on how to configure ADFS as a SAML provider to Keycloak
 
 ---
+
 ### May 19, 2021
 **[Release .Stat Suite JS 8.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/38)**
 > This **major** release includes a new version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **share**, **config**, and **data-lifecycle-manager** services.  
