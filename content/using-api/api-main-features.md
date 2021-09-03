@@ -5,6 +5,7 @@ comments: false
 weight: 4500
 keywords: [
   'Adding or replacing structures', '#adding-or-replacing-structures',
+  'Support of high-frequency time periods using SDMX annotation', '#support-of-high-frequency-time-periods-using-sdmx-annotation',
   'Adding data', '#adding-data',
   'Data validation process', '#data-validation-process',
   'Deleting structures', '#deleting-structures',
@@ -16,6 +17,7 @@ keywords: [
 
 #### Table of Content
 - [Adding or replacing structures](#adding-or-replacing-structures)
+- [Support of high-frequency time periods using SDMX annotation](#support-of-high-frequency-time-periods-using-sdmx-annotation)
 - [Adding data](#adding-data)
 - [Data validation process](#data-validation-process)
 - [Deleting structures](#deleting-structures)
@@ -45,6 +47,20 @@ If it is required to allow inserting new Codes in final or referenced non-final 
 ```
 
 Note: Using this "InsertNewItems" parameter has not yet been fully tested.
+
+---
+
+### Support of high-frequency time periods using SDMX annotation
+SDMX time periods with **frequencies higher than daily** (e.g. hours, minutes, seconds) need a special DSD annotation of type **"SUPPORT_DATETIME"**.
+
+```json
+        "annotations": [{
+                 "type": "SUPPORT_DATETIME"
+         }]
+```
+
+If this annotation is defined at the DSD level, then uploading data with values for e.g. a time period for minutely frequency will be successful.  
+If the user imports data with minutely time periods into a DSD not yet ready for this type of time periods, due to the missing "SUPPORT_DATETIME" annotation, then the transfer (at least in advanced validations) logs an appropriate error message: "_Error found in_ {... info on place of error, like row number, component etc. ...}.  _Datetime time periods are not supported by default. To allow supporting this special type of time periods, you need to add an annotation of type "SUPPORT_DATETIME" to the underlying Data Structure Definition and re-initialise the data DB objects using the transfer method /init/dataflow._"   
 
 ---
 
