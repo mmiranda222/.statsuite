@@ -83,7 +83,7 @@ Currently, the following parameters are supported:
 
 In case PIT data should be released immediately, then a new import is to be submitted with the release date time as the current date-time or a past date-time. 
 
-**IMPORTANT NOTE**: since [September 03, 2021 Release .Stat Suite .NET 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-03-2021), for the release date-time, the PITReleaseDate parameter is a datetime value with the time zone designator, according to technical standards (see: https://www.w3.org/TR/NOTE-datetime).  
+**IMPORTANT NOTE**: since [September 03, 2021 Release .Stat Suite .NET 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-03-2021), for the release date-time, the PITReleaseDate parameter is a datetime value with the time zone designator, according to technical standards (see: https://www.w3.org/TR/NOTE-datetime). This time zone designator allows specifying a precise target release datetime independently from the current time zone of the server where the NSI web service is running.   
 Example: **1997-07-16T19:20:30.45+01:00**.
 
 When transfering data between internal data spaces using the Transfer service `/transfer/dataflow` method, then the following scenarios are supported through the `targetVersion` and `sourceVersion` parameters:
