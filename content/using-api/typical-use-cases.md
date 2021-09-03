@@ -6,11 +6,13 @@ weight: 5000
 keywords: [
   'Retrieve the content of the DE filters from the SDMX API', '#retrieve-the-content-of-the-de-filters-from-the-sdmx-api',
   'Retrieve the data corresponding to the current DE filters from the SDMX API', '#retrieve-the-data-corresponding-to-the-current-de-filters-from-the-sdmx-api',
+  'Dynamic data availability for a specific data selection', '#dynamic-data-availability-for-a-specific-data-selection',
   'How to identify dimensions with specific roles for both xml and json', '#how-to-identify-dimensions-with-specific-roles-for-both-xml-and-json',
   'Frequency dimension', '#frequency-dimension',
   'Frequency value (time period length)', '#frequency-value-time-period-length',
   'Reference area dimension', '#reference-area-dimension',
   'Time dimension', '#time-dimension',
+  'Non-calendar reporting periods', '#non-calendar-reporting-periods',
 ]
 
 ---
@@ -19,11 +21,13 @@ keywords: [
 
 - [Retrieve the content of the DE filters from the SDMX API](#retrieve-the-content-of-the-de-filters-from-the-sdmx-api)
 - [Retrieve the data corresponding to the current DE filters from the SDMX API](#retrieve-the-data-corresponding-to-the-current-de-filters-from-the-sdmx-api)
+- [Dynamic data availability for a specific data selection](#dynamic-data-availability-for-a-specific-data-selection)
 - [How to identify dimensions with specific roles for both xml and json](#how-to-identify-dimensions-with-specific-roles-for-both-xml-and-json)
   - [Frequency dimension](#frequency-dimension)
   - [Frequency value (time period length)](#frequency-value-time-period-length)
   - [Reference area dimension](#reference-area-dimension)
   - [Time dimension](#time-dimension)
+- [Non-calendar reporting periods](#non-calendar-reporting-periods)
 
 This section describes how to generate the SDMX structure and data queries and explore their responses for typical use cases.  
 
@@ -172,6 +176,33 @@ For additional information, see SDMX web service guidelines:
 - SOAP https://github.com/sdmx-twg/sdmx-soap
 - REST https://github.com/sdmx-twg/sdmx-rest
 - JSON message syntax https://github.com/sdmx-twg/sdmx-json
+
+---
+
+### Dynamic data availability for a specific data selection
+> *Available in .Stat Suite since [September 03, 2021 Release .Stat Suite .NET 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-03-2021)* 
+The dynamic data availability for a specific data selection is obtained from the NSI web service through the **available content constraint**.  
+
+The Available Content Constraint (also called 'Dynamic Content Constraint' or 'Dynamic Data Availability') indicates the values of dimensions (or attributes) for which any data exists on the server for a dataflow and for a given partial data selection. The constraint can be queried through the following SDMX ws request, which includes the current data selection:  
+`protocol://ws-entry-point/availableconstraint/AGENCYID,DATAFLOWID,VERSION/key/PROVIDERID/COMPONENTID?startPeriod=XXXX&endPeriod=XXXX&references=codelist&mode=exact`
+
+Acceptable parameters:
+- `componentId` used to retrieve the values for one specific dimension only
+- `startPeriod`, `endPeriod`, and `updatedAfter` for Time Period information
+- `references=codelist` used to also retrieve the codelist(s) as references
+
+The `mode=available` parameter instructs the web service to return a ContentConstraint containing values for which data exists for those dimension not part of the submitted data selection. With `mode=exact` (default), the web service includes also values for the dimensions that were part of the submitted data selection.  
+*Note* that the returned values can exceed the submitted values. For instance, a request to retrieve exactly all dimension values for which data exists when 'FRANCE' is selected, includes also 'AUSTRIA' as dimension value if the same data also existed for 'AUSTRIA'.
+
+**Examples:**
+- https://nsi-qa-stable.siscc.org/rest/availableconstraint/LU1,DF_A3205,1.0/
+- https://nsi-qa-stable.siscc.org/rest/availableconstraint/OECD,DF_UOM,3.0/.A.GDP..V+Q.SA+NSA.NT
+- [https://nsi-qa-stable.siscc.org/rest/availableconstraint/UNICEF,MG,1.0/AFG+ALB+DZA+AND.MG_ASYLM_CNTRY_ASYLM+MG_ASYLM_CNTRY_DEST.](https://nsi-qa-stable.siscc.org/rest/availableconstraint/UNICEF,MG,1.0/AFG+ALB+DZA+AND.MG_ASYLM_CNTRY_ASYLM+MG_ASYLM_CNTRY_DEST.) same result than https://nsi-qa-stable.siscc.org/rest/availableconstraint/UNICEF,MG,1.0/AFG+ALB+DZA+AND.MG_ASYLM_CNTRY_ASYLM+MG_ASYLM_CNTRY_DEST.?mode=exact
+- https://nsi-qa-stable.siscc.org/rest/availableconstraint/UNICEF,MG,1.0/AFG+ALB+DZA+AND.MG_ASYLM_CNTRY_ASYLM+MG_ASYLM_CNTRY_DEST.?mode=available
+
+A dedicated Annotation is returned to express metrics (like the number of matching series or observations). Its type is `sdmx_metrics`, its ID one of `series_count` or `obs_count`, and the title contains the measure.
+
+For more information, see https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_6_1_other_queries.md
 
 ---
 
@@ -461,3 +492,41 @@ However, those IDs can be used as non-TimeDimension dimensions with the associat
 
 **Json data**  
 *to be completed*
+
+---
+
+### Non-calendar reporting periods
+> *Available in .Stat Suite since [September 03, 2021 Release .Stat Suite .NET 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-03-2021)*
+
+*SDMX* specifications references:
+- [Section 6 – Technical Notes](http://sdmx.org/wp-content/uploads/SDMX_2-1-1-SECTION_6_TechnicalNotes-march-2013.pdf)
+- [Guidelines on Non-Calendar Year Reporting of Data](https://sdmx.org/?page_id=4345#NonCalendar)
+- [Generic rules for querying time](https://sdmx.org/wp-content/uploads/SDMX_2-1_SECTION_6_TechnicalNotes_2020-07.pdf) See page 21. (Valid for SOAP and REST, some features only exist in SOAP)
+
+In order to allow managing time periods for non-calendar year reporting, .Stat Suite can take the **`REPORTING_YEAR_START_DAY`** and **`REPYEARSTART`** attributes into account when interpreting time periods and time period ranges in data import and data extraction.
+
+**Note** that The *SDMX* standard says the 2 followings:
+- "*A specialized attribute (reporting year start day) exists for the purpose of communicating the reporting year start day. This attribute has a **fixed identifier (`REPORTING_YEAR_START_DAY`)** and a fixed representation (xs:gMonthDay) so that it can always be easily identified and processed in a data message.*"
+- "*The technical note (revision 1.0) suggests that the attribute ID for reporting year start day to be `REPORTING_YEAR_START_DAY`. However, **to maintain EDI compliance, it is suggested to use the IDs `REPYEARSTART`** and `REPYEAREND` when defining DSDs.*"  
+Therefore, the official SDMX standard is `REPORTING_YEAR_START_DAY`, but business-driven recommendations (and some implementations like National Account) use `REPYEARSTART`.
+
+**Data import**  
+When the **`REPORTING_YEAR_START_DAY`** or **`REPYEARSTART`** attribute at dataset(/dataflow), time series or observation level is being used in the DSD (e.g. with a fixed representation (xs:gMonthDay) and with value "--07-01" for specifying 1st of July), then the data are loaded appropriately...
+
+**Data extraction**  
+When the **`REPORTING_YEAR_START_DAY`** or **`REPYEARSTART`** attribute at dataset(/dataflow), time series or observation level is being used in the DSD (e.g. with a fixed representation (xs:gMonthDay) and with value "--07-01" for specifying 1st of July), then the value of this attribute is taken into account when resolving a specific time range request in the SDMX APIs (e.g. startPeriod/endPeriod Rest parameters).
+
+**Period start and period end calculations**  
+When uploading data with a `REPORTING_YEAR_START_DAY` attribute value, then it derives the **`PERIOD_START`** and **`PERIOD_END`** values from the `TIME_PERIOD` value by taking the `REPORTING_YEAR_START_DAY` attribute value into account.
+
+**Example:**  
+
+| TIME_PERIOD | REPORTING_YEAR_START_DAY | calculated PERIOD_START | calculated PERIOD_END |
+|---------------|------------------------|----------------------------|--------------------------|
+| 1997-Q1 | "--07-01" | "1997-07-01" | "1997-09-30" |
+| 1997-Q2 | "--07-01" | "1997-10-01" | "1997-12-31" |
+| 1997-Q3 | "--07-01" | "1998-01-01" | "1998-03-31" |
+| 1997-Q4 | "--07-01" | "1998-04-01" | "1998-06-30" |
+| 1998-Q1 | "--07-01" | "1998-07-01" | "1998-09-30" |
+| 1998-Q2 | "--07-01" | "1998-10-01" | "1998-12-31" |
+
