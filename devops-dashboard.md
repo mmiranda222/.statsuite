@@ -299,8 +299,8 @@
 ## special services
 
 MSSQL access for reading (debug) purpose:
-- qa 35.190.220.253
-- staging 35.205.244.142
+- qa (dynamic)
+- staging (dynamic)
 
 ECO oecd internal network nsiws:
 - https://em-sbx-dev-7.main.oecd.org - :ambulance: [health](https://em-sbx-dev-7.main.oecd.org/health)
