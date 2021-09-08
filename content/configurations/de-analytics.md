@@ -2,7 +2,7 @@
 title: ".Stat DE analytics"
 subtitle: 
 comments: false
-weight: 74
+weight: 73
 keywords: [
   'Tracking ID', '#tracking-id',
   'Google Analytics default events', '#google-analytics-default-events',
