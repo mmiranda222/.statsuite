@@ -154,7 +154,8 @@ https://docs.docker.com/docker-hub/publish/
 
 # :repeat: Secure
 ### SAST
-
+We are currently doing white-box Static Application Security Testing (SAST) using **Checkmarx** and **Gitlab’s built-in plugin**. Checkmarx is ran manually on a regular basis, and the Gitlab plugin is part of our devops build process.  
+Each Checkmarx vulerability report is reviewed, and each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
 List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security
 
 ### DAST
