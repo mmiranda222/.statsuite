@@ -155,6 +155,8 @@ https://docs.docker.com/docker-hub/publish/
 # :repeat: Secure
 ### SAST
 
+List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security
+
 ### DAST
 
 ### Dependency scanning
