@@ -2,7 +2,7 @@
 title: ".Stat DLM configuration"
 subtitle: 
 comments: false
-weight: 75
+weight: 74
 keywords: [
   'Specific accept header per data space', '#specific-accept-header-per-data-space',
   'Data space names', '#data-space-names',

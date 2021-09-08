@@ -2,7 +2,7 @@
 title: ".Stat DE configuration"
 subtitle: 
 comments: false
-weight: 72
+weight: 71
 keywords: [
   'Intro', '#intro',
   'Warning', '#warning',
