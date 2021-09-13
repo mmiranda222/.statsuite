@@ -98,8 +98,20 @@ Please see the [related documentation](https://gitlab.com/sis-cc/.stat-suite/dot
 
 > **General advice on Dataflows deletion:** For a complete deletion of the MappingSet related to a dataflow, it is necessary, when deleting a dataflow, to either use the delete option from the DLM (the MappingSet cleanup is automatic), or manually delete the MappingSet using the Transfer Swagger UI (`https://transfer-env.tenant.org/swagger/`) before deleting the dataflow. This feature will be improved once releasing [dotstatsuite-core-sdmxri-nsi-ws#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/164).
 
+
+**Known issues:** Be aware that this release has known issues described below. If you are concerned by one of these use cases, we suggest to upgrade using the next .NET Patch version.
+- [dotstatsuite-core-data-access#76](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/76): the migration/upgrade script will throw an error for DSDs with non-coded attributes at dimensions/group level.
+- [dotstatsuite-core-data-access#77](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/77): the migration/upgrade script will throw an error in the logs for DSDs with no Time dimension. There is no significant impact and should be ignored.
+- [dotstatsuite-core-transfer#255](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/255): the migration/upgrade script can return errors on Dataflows such as : *`Incomplete mapping set. Please check if all dimensions, measure(s) and mandatory attributes are mapped: Dimension 'FREQ' is not mapped. Dimension 'REF_AREA' is not mapped ...`*  
+This can happen when several dataflows related to the same DSD were previously deleted at once using the DLM, and it will result in failing to request the data view(s).
+If so, running a) the `/cleanup/mappingsets` method, then b) the `/init/dataflow` method should fix the issue.
+
+**Regression:**
+- [dotstatsuite-core-sdmxri-nsi-ws#167](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/167): regression in the LastNObservations feature. Querying for LastNObservations will return the FirstNObservations. A fix will be submitted with high-priority to the SDMX source and integrated to the .Stat Suite with a future version of the nsiws.
+
 major *(backward-incompatible)* changes:
 
+- NSI web service uses **non-capital letters** for resource names in the structure queries, instead of capital letters, e.g. https://ws-entry-point/categoryscheme/all/all instead of https://ws-entry-point/CategoryScheme/all/all. See [SDMX reference](https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_3_structural_queries.md#resources)
 - [dotstatsuite-core-transfer#210](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/210) **PointInTime release** to consider a **required time zone** for the release datetime. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management/#prepare-a-new-pit-version))
 - [dotstatsuite-core-data-access#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/75) Change **primary key** from `PERIOD_SDMX` to `PERIOD_START` and `PERIOD_END`. 
 
