@@ -15,7 +15,7 @@
 <td>[Git flow](#git-flow)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[CI (pipelines, auto-build, tests)](#ci)</td>
 <td>[Checklist on doc and install guides updates](#checklist-on-doc-and-install-guides-updates)</td>
-<td>[SAST](#sast)</td>
+<td>[SAST](#sast-static-application-security-testing)</td>
 <td>[Continuous delivery](#continuous-delivery)</td>
 <td>[Incident management](#incident-management)</td>
 </tr>
@@ -24,7 +24,7 @@
 <td>[Code onwer](#code-onwer)</td>
 <td>[Code coverage](#code-coverage)</td>
 <td>[Release evidence](#release-evidence)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
-<td>[DAST](#dast)</td>
+<td>[DAST](#dast-dynamic-application-security-testing)</td>
 <td>[Changelog](#changelog)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[GTM & Product analytics](#gtm-product-analytics)</td>
 </tr>
