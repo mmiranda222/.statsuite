@@ -117,14 +117,14 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 12.4.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b 13.0.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository from the SIS-CC's mirror of Eurostat repository - *This tool will be used to initialize the structure databases.* 
 
 ```sh 
 
-git clone -b 8.2.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
+git clone -b 8.5.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that points to the original ESTAT's repository in the mirror repository. To change the url of the submodule and to clone it manually (from the SIS-CC's mirror of Eurostat repository) use the following commands:  
@@ -139,18 +139,18 @@ git clone -b 8.2.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/ma
   6 .  Clone the NSI web service repository from the SIS-CC's mirror of Eurostat repository.
 
 ```sh
-git clone -b 8.2.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
+git clone -b 8.5.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
   7 .  Clone the authorization.net repository from the SIS-CC's mirror of Eurostat repository.- *For authorization plugin.* 
 
 ```sh
-git clone -b 8.2.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
+git clone -b 8.5.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b 7.1.0 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b 8.0.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ---
@@ -390,6 +390,7 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DesignDataDb;User ID=testLoginDesignData;Password=testLogin(\!)Password']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DataImportTimeOutInMinutes',value='60']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__0__AutoLog2DB',value='true']" /commit:apphost
 
 ```
 *  Set the disseminate dataspace values:
@@ -399,7 +400,10 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__DotStatSuiteCoreDataDbConnectionString',value='Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__DataImportTimeOutInMinutes',value='60']" /commit:apphost
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__DatabaseCommandTimeoutInSec',value='360']" /commit:apphost
+/c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__AutoLog2DB',value='true']" /commit:apphost
 ```
+
+**NOTE** [AutoLog2DB](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#spacesinternal) is enabled for both dataspaces. This configuration allows the transfer service to store logs in the database. When this setting is enabled, the functions [/status/request](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12statusrequest-get-the-request-information-by-transaction-id-and-dataspace) and [/status/requests](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12allstatusrequests-query-the-status-all-the-requests-and-their-logs) can be used to retrieve logs.
 
 **Step 7.** Start the new application
 ```sh
@@ -503,6 +507,27 @@ From the dotstatsuite-core-sdmxri-nsi-ws repository, download the following samp
 
 ```sh
 curl https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/raw/master/docs/installation/config-examples/nsiws-design-app.config?inline=false >/c/dotstatsuite-website/nsiws-design/config/app.config
+```
+
+*  **NEW - Set data database connection string**
+Modify the configuration file /config/Properties.json - Add the value for the disseminationDbConnection connectionString:
+
+   - Change From:
+   
+```json
+  "disseminationDbConnection": {
+    "dbType": "SqlServer",
+    "connectionString": ""
+  }
+```
+
+   - To
+   
+```json
+  "disseminationDbConnection": {
+    "dbType": "SqlServer",
+    "connectionString": "Data Source=localhost;Initial Catalog=DesignDataDb;User ID=testLoginDesignData;Password=testLogin(\!)Password"
+  }
 ```
 
 >  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
@@ -686,6 +711,27 @@ From the dotstatsuite-core-sdmxri-nsi-ws repository, download the following samp
 ```sh
 curl https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/raw/master/docs/installation/config-examples/nsiws-disseminate-app.config?inline=false >/c/dotstatsuite-website/nsiws-disseminate/config/app.config
 ```
+*  **NEW - Set data database connection string**
+Modify the configuration file /config/Properties.json - Add the value for the disseminationDbConnection connectionString:
+
+   - Change From:
+   
+```json
+  "disseminationDbConnection": {
+    "dbType": "SqlServer",
+    "connectionString": ""
+  }
+```
+
+   - To
+   
+```json
+  "disseminationDbConnection": {
+    "dbType": "SqlServer",
+    "connectionString": "Data Source=localhost;Initial Catalog=DisseminateDataDb;User ID=testLoginDisseminateData;Password=testLogin(\!)Password"
+  }
+```
+
 
 >  **Logging configuration**.- By default, the service has been configured to log all activity. **`This causes performance issues during data extractions`**. To avoid performance issues on production envirements, please make the following changes to the file */config/log4net.config*
  
