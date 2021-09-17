@@ -19,7 +19,7 @@ keywords: [
 - [Delete an artefact and its related structure artefacts](#delete-an-artefact-and-its-related-structure-artefacts)
 - [Delete several similar artefacts](#delete-several-similar-artefacts)
 
-> Technical disclaimer / recommendation on **Dataflow deletion**: For a complete deletion of the mapping set related to a dataflow, it is necessary, when deleting a dataflow, to either use the delete option from the DLM, or manually delete the mapping set using the Transfer Swagger UI first (this process will be improved once we release [this change](dotstatsuite-core-sdmxri-nsi-ws#164).
+> Technical disclaimer / recommendation on **Dataflow deletion**: For a complete deletion of the mapping set related to a dataflow, it is necessary, when deleting a dataflow, to either use the delete option from the DLM, or manually delete the mapping set using the Transfer Swagger UI first (this process will be improved once we release [this change](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/164).
 
 ---
 
