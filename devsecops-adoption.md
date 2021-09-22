@@ -15,7 +15,7 @@
 <td>[Git flow](#git-flow)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[CI (pipelines, auto-build, tests)](#ci)</td>
 <td>[Checklist on doc and install guides updates](#checklist-on-doc-and-install-guides-updates)</td>
-<td>[SAST](#sast-static-application-security-testing)</td>
+<td>[SAST](#sast-static-application-security-testing)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 <td>[Continuous delivery](#continuous-delivery)</td>
 <td>[Incident management](#incident-management)</td>
 </tr>
@@ -24,7 +24,7 @@
 <td>[Code onwer](#code-onwer)</td>
 <td>[Code coverage](#code-coverage)</td>
 <td>[Release evidence](#release-evidence)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
-<td>[DAST](#dast-dynamic-application-security-testing)</td>
+<td>[DAST](#dast-dynamic-application-security-testing)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 <td>[Changelog](#changelog)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[GTM & Product analytics](#gtm-product-analytics)</td>
 </tr>
@@ -42,7 +42,7 @@
 <td>[Live preview](#live-preview)</td>
 <td>[Performance Tests](#performance-tests)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Docker Trusted Publisher](#docker-trusted-publisher)<br> ![Level0](https://img.shields.io/badge/M-0-lightgrey)</td>
-<td>[Third-Party components vulnerability](#third-party-components-vulnerability)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
+<td>[Third-Party components vulnerability](#third-party-components-vulnerability)<br> <br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Recorded demos](#recorded-demos)</td>
 <td>[Metrics: performance results](#metrics-performance-results)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 </tr>
@@ -158,10 +158,14 @@ We are currently doing white-box Static Application Security Testing (SAST) usin
 Each Checkmarx vulnerability report is reviewed, and each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
 List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security
 
+:eyes: review the dev Team process and level of acceptance upon the Gitlab’s built-in plugin scan results.
+
 ### DAST (Dynamic Application Security Testing)
 DAST, also known as black box testing, is a part of the current .Stat Suite devops build process. Each time someone does a Git push to the develop branch for a specific repository, the targeted repository triggers the [Gitlab quality-assurance pipeline](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance) which contains a job for running a [Netsparker](netsparker.com) DAST scan.  
 The outcome of the DAST scan is sent to the .Stat Dev team and reviewed, each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
 List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security   
+
+:eyes: Check with dev Team what is pushed to the Slack "quality assurance channel", what use of use and what actions are made as outcomes.
 
 ### Dependency scanning
 
@@ -173,6 +177,8 @@ Third-party components used in the .Stat Suite can be potentially security vulne
 - When relevant, the Solution team creates a *confidential* GitLab ticket that is added to the kanban board and prioritized according to the level of vulnerability.
 
 Third-party components vulnerability dashboard *(for team members only)*: https://gitlab.com/sis-cc/dotstatsuite-documentation/-/snippets/2148995
+
+:eyes: the current/latest versions for .NET components must be updated by Dev team is order to complete the process.
 
 ### Code quality
 
