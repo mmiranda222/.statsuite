@@ -111,7 +111,6 @@ Example of a dataflow stub definition with external reference:
 ---
 
 ### When and how to index
-
 **CURRENT_STATE** The index is a manual action usually performed by a sysadmin user, who can lively manage the index of the endpoints for updating the dataflows that are published in .Stat DE and available for search and visualisation.  
 The following individual actions are currently enabled for index:
 * Index all datflows for all data sources
@@ -165,7 +164,7 @@ This request indexes **all dataflows** from **all configured sdmx endpoints**. I
 * adds dataflows to Sorl Core
 * updates the existing dynamic sfs schema depending on added dataflows
 
-Note that this *POST* request **does not** clean up the index, meaning that non-categorized or deleted dataflows in the data source that were previsouly indexed, will not be removed from the index. To do so, you first need to run the `DELETE /admin/dataflows` request to clean up the index, and then run the `POST /admin/dataflows` index. 
+Note that this *POST* method **does not** clean up the index, meaning that non-categorized or deleted dataflows in the data source that were previsouly indexed, will not be removed from the index. To do so, you first need to run the `DELETE /admin/dataflows` method to clean up the index, and then run the `POST /admin/dataflows` method to index. 
 
 #### Index or update one individual dataflow
 >Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
