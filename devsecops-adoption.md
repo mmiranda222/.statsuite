@@ -41,7 +41,7 @@
 <td>[Kanban boards](#kanban-boards)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Live preview](#live-preview)</td>
 <td>[Performance Tests](#performance-tests)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
-<td>[Docker Trusted Publisher](#docker-trusted-publisher)<br> ![Level0](https://img.shields.io/badge/M-0-lightgrey)</td>
+<td>[Docker Trusted Publisher](#docker-trusted-publisher)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Third-Party components vulnerability](#third-party-components-vulnerability)<br> <br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Recorded demos](#recorded-demos)</td>
 <td>[Metrics: performance results](#metrics-performance-results)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
@@ -152,6 +152,8 @@ Link to all .Stat Suite milestones: https://gitlab.com/dashboard/milestones
 ### Docker Trusted Publisher
 https://docs.docker.com/docker-hub/publish/
 
+:eyes: *JB* currently exchanging with the Business Development Docker team.
+
 # :repeat: Secure
 ### SAST (Static Application Security Testing)
 We are currently doing white-box Static Application Security Testing (SAST) using **Checkmarx** and **Gitlab’s built-in plugin**. Checkmarx is ran manually on a regular basis, and the Gitlab plugin is part of our devops build process.  
@@ -162,10 +164,8 @@ List of confidential security issues *(for team members only)*: https://gitlab.c
 
 ### DAST (Dynamic Application Security Testing)
 DAST, also known as black box testing, is a part of the current .Stat Suite devops build process. Each time someone does a Git push to the develop branch for a specific repository, the targeted repository triggers the [Gitlab quality-assurance pipeline](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance) which contains a job for running a [Netsparker](netsparker.com) DAST scan.  
-The outcome of the DAST scan is sent to the .Stat Dev team and reviewed, each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
+The outcome of the DAST scan is pushed to a dedicated Slack channel (quality-assurance) for the .Stat Dev team to review, and each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
 List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security   
-
-:eyes: Check with dev Team what is pushed to the Slack "quality assurance channel", what use of use and what actions are made as outcomes.
 
 ### Dependency scanning
 
