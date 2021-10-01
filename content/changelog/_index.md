@@ -8,6 +8,11 @@ weight: 120
 
 <!-- 
 ToC
+- [September 16, 2021](#september-16-2021)
+- [September 03, 2021](#september-03-2021)
+- [September 2, 2021](#september-2-2021)
+- [August 17, 2021](#august-17-2021)
+- [July 8, 2021](#july-8-2021)
 - [June 16, 2021](#june-16-2021)
 - [June 1, 2021](#june-1-2021)
 - [May 19, 2021](#may-19-2021)
@@ -73,6 +78,193 @@ ToC
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
 
 ---
+
+### September 16, 2021
+**[Patch Release .Stat Suite .NET 7.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/42)**  
+> This release includes a new *patch* version of the **core-transfer** and **core-data-access** services.  
+
+patch changes:    
+  
+- [dotstatsuite-core-transfer#255](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/255) Component mapping errors found during the initialization of all mappingsets. 
+- [dotstatsuite-core-data-access#76](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/76) Errors found in the AllowMissingComponents SQL migration script for the recreation of the DSD/DF views.
+- [dotstatsuite-core-data-access#77](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/77) Errors found in the ChangeFactTableIndexes SQL migration script for the recreation of the Fact table indexes.
+
+---
+
+### September 03, 2021
+
+**[Release .Stat Suite .NET 7.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/42)**
+> This **major** release includes a new version of the **sdmxri-nsi-ws**, **core-transfer**, **core-data-access**, and **core-auth-management** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.5.0**.
+
+> **Disclaimers:**
+> 1) With the release of [dotstatsuite-core-transfer#231](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/231) and the introduction of **pagination into the NSIWS for data requests**, and in order for the `/rest/data/...` queries to fully use the pagination mechanism (thus improving performance and properly using Range:start-end), the **mapping sets of the dataflows have to be reinitialized**. To do so, there are 3 options:  
+**Option 1:** Initialize all mappingsets - Right after the release upgrade, run the transfer-service function `/init/allMappingsets`. **This should be ran when no other users are using the transfer-service** _The system administrator should schedule for some down time period_. The function might be long depending on the amount of dataflows.  
+**Option 2:** Initialize the mappingset of specific dataflow - The initialization can be done per dataflow using the transfer-service function `/{version}/init/dataflow` for a given dataflow. _This option does not require a down time period._  
+**Option 3:** Import data to initialize the mappingset of a specific dataflow - At the end of a data import, the mappingset will be initialized as part of the import process. _This option does not require a down time period._  
+If none of the above is applied, the `/rest/data/...` queries will continue to work, but the performance will not be improved, nor the full pagination feature will work (only the first page will be retrieved).  
+> 2) this latest version of the core-transfer service does not save the actual data db connection info into structure database by default, but instead it puts `‘NOT SAVED’` entries in the related `DB_CONNECTION` table.  
+As a result, the **nsiws configuration must be extended** with the following two elements:  
+`disseminationDbConnection.dbType`  
+`disseminationDbConnection.connectionString`  
+Please see the [related documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/tree/master#data-database-connection-overriding-the-ones-stored-in-db_connection-table) for further information.
+
+> **General advice on Dataflows deletion:** For a complete deletion of the MappingSet related to a dataflow, it is necessary, when deleting a dataflow, to either use the delete option from the DLM (the MappingSet cleanup is automatic), or manually delete the MappingSet using the Transfer Swagger UI (`https://transfer-env.tenant.org/swagger/`) before deleting the dataflow. This feature will be improved once releasing [dotstatsuite-core-sdmxri-nsi-ws#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/164).
+
+
+**Known issues:** Be aware that this release has known issues described below. If you are concerned by one of these use cases, we suggest to upgrade using the next .NET Patch version.
+- [dotstatsuite-core-data-access#76](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/76): the migration/upgrade script will throw an error for DSDs with non-coded attributes at dimensions/group level.
+- [dotstatsuite-core-data-access#77](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/77): the migration/upgrade script will throw an error in the logs for DSDs with no Time dimension. There is no significant impact and should be ignored.
+- [dotstatsuite-core-transfer#255](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/255): the migration/upgrade script can return errors on Dataflows such as : *`Incomplete mapping set. Please check if all dimensions, measure(s) and mandatory attributes are mapped: Dimension 'FREQ' is not mapped. Dimension 'REF_AREA' is not mapped ...`*  
+This can happen when several dataflows related to the same DSD were previously deleted at once using the DLM, and it will result in failing to request the data view(s).
+If so, running a) the `/cleanup/mappingsets` method, then b) the `/init/dataflow` method should fix the issue.
+
+**Regression:**
+- [dotstatsuite-core-sdmxri-nsi-ws#167](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/167): regression in the LastNObservations feature. Querying for LastNObservations will return the FirstNObservations. A fix will be submitted with high-priority to the SDMX source and integrated to the .Stat Suite with a future version of the nsiws.
+
+major *(backward-incompatible)* changes:
+
+- NSI web service uses **non-capital letters** for resource names in the structure queries, instead of capital letters, e.g. https://ws-entry-point/categoryscheme/all/all instead of https://ws-entry-point/CategoryScheme/all/all. See [SDMX reference](https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_3_structural_queries.md#resources)
+- [dotstatsuite-core-transfer#210](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/210) **PointInTime release** to consider a **required time zone** for the release datetime. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management/#prepare-a-new-pit-version))
+- [dotstatsuite-core-data-access#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/75) Change **primary key** from `PERIOD_SDMX` to `PERIOD_START` and `PERIOD_END`. 
+
+significant and minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#161](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/161) Deploy **NSI version 8.5.0** in DevOps.
+- [dotstatsuite-core-sdmxri-nsi-ws#155](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/155) Deploy **NSI version 8.4.1** in DevOps.
+- [dotstatsuite-core-sdmxri-nsi-ws#148](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/148) Deploy **NSI version 8.3.0** in DevOps.
+- [dotstatsuite-core-common#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/issues/21) Support for **non-calendar year reporting**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/typical-use-cases/#non-calendar-reporting-periods))
+- [dotstatsuite-core-common#113](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/issues/113) & [dotstatsuite-data-explorer#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/164) Use **`REPORTING_YEAR_START_DAY`** in PERIOD_START & PERIOD_END value calculation, **support irregular "time range"** time periods & distinct points in time. Support of **high-frequency time periods** using SDMX annotation. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#support-of-high-frequency-time-periods-using-sdmx-annotation)) **Known temporary limitation:** Allowed Containt Constraints should not yet contain TimeRange, otherwise data for last periods might not be displayed due to the wrong treatment of the `EndPeriod` property. This will be resolved with [dotstatsuite-core-sdmxri-nsi-ws#163](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/163).
+- [dotstatsuite-core-transfer#231](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/231) Populate ORDER BY information in the [dbo].[DATASET] table in the mappingstore DB.
+- [dotstatsuite-core-sdmxri-nsi-ws#117](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/117) Further **performance improvements for range requests**.
+- [dotstatsuite-core-transfer#178](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/178) **Stream** as much as possible for **data upload** files.
+- [dotstatsuite-core-transfer#237](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/237) Update mapping set creation logic to use PERIOD_END & PERIOD_START column in Eurostat's data retriever.
+- [dotstatsuite-core-transfer#226](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/226) Add the number of observations to pre-generated actual content constraints.
+- [dotstatsuite-core-sdmxri-nsi-ws#81](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/81) Implement **SDMX-JSON writer** for **StructureSets**, **MSD**, **Metadataflow** and **ProvisionAgreement**.
+- [dotstatsuite-core-transfer#223](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/223) Improve the "batch" log message for large data uploads.
+- [dotstatsuite-core-sdmxri-nsi-ws#137](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/137) Improve the successful message when updating a non-final codelist.
+- [dotstatsuite-core-data-access#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/75) Change primary key from PERIOD_SDMX to PERIOD_START and PERIOD_END.
+- [dotstatsuite-core-sdmxri-nsi-ws#123](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/123) Implement the **"available content constraint" in the *SDMX* API**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/typical-use-cases/#dynamic-data-availability-for-a-specific-data-selection))
+- [dotstatsuite-core-sdmxri-nsi-ws#115](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/115) Week numbers incorrectly treated by the nsiws. 
+- [dotstatsuite-core-sdmxri-nsi-ws#121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/121) Change the nsiws response code to 404 when mappingsets are missing.
+- [dotstatsuite-core-transfer#212](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/212) Warning message (when initialising data DB) if a DSD has no measure representation.
+- [dotstatsuite-core-transfer#242](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/242) Mapping Sets should be saved with no data db connection information.
+- [dotstatsuite-quality-assurance#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/8) Add range request test cases to the performance tests.
+- [dotstatsuite-quality-assurance#2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/2) *(DevOps)* Collect performance test cases from OECD-ECO. (Documented in the [Performance objectives](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/tree/master/PerformanceTests#performance-objectives))
+- [dotstatsuite-core-auth-management#33](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/33) *(Support)* Auth. with Azure AD.
+
+patch changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#157](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/157) NSI uses wrong period end of the filter's endPeriod parameter & high-frequency values are ignored.
+- [dotstatsuite-core-sdmxri-nsi-ws#147](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/147) Unabled to upload a non-final Metadata Structure Definition (MSD).
+- [dotstatsuite-core-sdmxri-nsi-ws#146](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/146) Escape dimension column in sql query for dynamic actual constraint.
+- [dotstatsuite-core-sdmxri-nsi-ws#134](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/134) AnnotationTitle is still limited to 70 characters when not attached to a dataflow (and all SDMX objects by extension).
+- [dotstatsuite-core-sdmxri-nsi-ws#108](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/108) Replace `ReferencePeriod` by `CubeRegion-TimeRange` for Available Content Constraints.
+- [dotstatsuite-core-sdmxri-nsi-ws#95](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/95) Incorrect HTTP status code returned for failed data queries.
+- [dotstatsuite-core-transfer#215](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/215) SDMX-CSV file reader to allow for missing SDMX components (any attribute, measure) when updating data.
+- [dotstatsuite-core-transfer#214](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/214) "Object reference not set to an instance of an object." error in the data upload e-mail.
+- [dotstatsuite-core-transfer#238](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/238) Error "Component Mapping without constant value or columns is not valid for component `'DD_ID'` with parent `'50175'`".
+- [dotstatsuite-core-transfer#245](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/245) Transfer failure : the given key was not present in the dictionary.
+
+---
+
+### September 2, 2021
+
+**[Patch Release .Stat Suite JS 9.0.2](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**  
+> This release includes a new *patch* version of the **data-explorer** and **data-lifecycle-manager** services.  
+
+patch changes:    
+  
+- [dotstatsuite-data-explorer#566](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/566) DE microdata viewer does not take the cell's time period value into account.
+- [dotstatsuite-data-lifecycle-manager#216](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/216) Incorrect artefact clean up status displayed when deleting related artefacts.
+- [dotstatsuite-data-lifecycle-manager#217](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/217) Error in structure deletion.
+
+---
+
+### August 17, 2021  
+  
+**[Patch Release .Stat Suite JS 9.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**  
+> This release includes a new *patch* version of the **data-explorer** service.  
+  
+patch changes:    
+  
+- [dotstatsuite-data-explorer#571](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/571) No data displayed because of wrong time period selected by the DE.    
+   
+---
+
+### July 8, 2021
+**[Release .Stat Suite JS 9.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/43)**
+> This **major** release includes a new version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **config**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.3.0**.
+
+**TECHNICAL DISCLAIMERS:**  
+Config folder contents significantly change: `tenants.json` contains more ; `settings.json` has no more relation to dataspace or datasource ; `datasources.json` is removed.
+
+- **New tenant model:**
+  - `tenants.json` is bigger with centralized spaces/datasources information
+  - separation between **spaces** and **datasources** concepts
+  - **new concept of scope** used to bind spaces/datasources to apps
+  - references to datasources in `settings.json` moved in `tenants.json`
+  - routes (when proxy is used) can use tenant slug: `<tenantId>` or `<tenantId>:<scopeId>`
+- **Major change** in the search service (new tenant model adaptation):
+  - reminder from previous release, a **collection** is required for each tenant ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#how-to-create-a-collection))
+  - clean and re-index all data for all tenants to avoid side-effects
+- **`ROBOTS_POLICY`** env var in DE and DV to configure search engine indexation (default enabled), don't forget to override `robot.txt` file accordingly to the env var value
+- **`AUTHZ_SERVER_URL`** env var is now used to bind the DLM to AUTHZ (previously in `settings.json`)
+- **`TRANSFER_SERVER_URL`** env var **dropped** (was used in DLM) and **replaced by** `transferUrl` in `tenants.json` (at scope level): DLM is not bound to a transfer, it is the spaces used within its scope that are bound to a transfer (which is more flexible because different transfers can be used without deploying several DLM)
+- **To override space** definition in search service:
+  - temporary fix waiting for a better integration in the new tenant model
+  - no more `datasources.json` file to mount at sfs level
+  - define `searchUrl` in spaces definition, sfs will use it if defined in `tenants.json`
+  - define `headers` in datasources definition in `tenants.json`
+
+For your **migration/upgrade process**, think about:
+1. datasources are inside the spaces
+2. Define your datasources in `tenants.json`
+3. From your `settings.json` file, retrieve your datasources IDs and add it in scope(s) inside your `tenants.json`, then once this is done, remove the obsolete datasources IDs from your `settings.json` file.
+4. Then delete your `datasources.json` file (becoming useless).
+5. When using proxy, change of root: the tenant identification is made of a tenant and a scope for applications supporting scopes: DLM, DE, but not DV.
+
+major *(backward-incompatible)* changes:
+
+- [dotstatsuite-config-data#4](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/4) **New tenant model** adaptation. See above disclaimer and [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/tenant-model/). Also available a [video record](https://oecdtv.webtv-solution.com/embed/8262/en/video) demoing and explaining the adaptation of this new tenant model.
+- [dotstatsuite-sdmx-faceted-search#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/28) Allow **individually adding new dataflows in the search index**. The previous `sfs` query to update an individual dataflow `PATCH /admin/dataflow` is replaced by the new 'upsert' `POST /admin/dataflow` query ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#index-or-update-one-individual-dataflow)).
+- [dotstatsuite-config#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/29) *(Refactoring)* config data i18n follow up. Final migration of app configs from `.stat-suite/dotstatsuite-config` to `.stat-suite/dotstatsuite-config-data`
+
+significant and minor changes:
+
+- [dotstatsuite-data-explorer#536](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/536) Add option to avoid or enable indexing by **external search engine crawlers** through config. See the above technical disclaimer and [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/web-crawlers-optimisation/).
+- [dotstatsuite-share#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/23) Allow **parameterised share for smart embeds**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/param-shared-views/))
+- [dotstatsuite-data-explorer#163](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/163) Support for non-numeric and coded measures (observation values) in the DE.
+- [dotstatsuite-sdmx-faceted-search#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/45) Search **facet items ordered by explicit annotation "ORDER"**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facet-items-ordered-by-explicit-order-annotation))
+- [dotstatsuite-data-explorer#510](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/510) Apply explicit order rules also to dimension items in data table and chart views. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/implicit-explicit-order/#localized-order-in-data-message-for-de-filters-table-and-chart-views))
+- [dotstatsuite-data-explorer#521](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/521) Make the `Shift` key usage in DE visualisation page similar to Excel. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#keyboard-selection-options))
+- [dotstatsuite-sdmxjs#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/-/issues/7) Allow configuring the required accept header per data space. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#specific-accept-header-per-data-space)
+- [dotstatsuite-data-explorer#494](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/494) Start & end period mismatch in the Time Period filter. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/#frequency-and-time-period-selectors))
+- [dotstatsuite-data-explorer#538](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/538) Enhance understanding of filter count when a filter is not applied. (Documented [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facet-information) and [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#filter-area))
+- [dotstatsuite-chart-generator-legacy#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-chart-generator-legacy/-/issues/17) Enhance the Time axis computing for Weekly, Daily, Hourly and Minutely frequencies in the Timeline charts.
+- [dotstatsuite-data-explorer#516](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/516) Textual observation values in microdata tab displayed as `[undefined]`.
+- [dotstatsuite-data-explorer#515](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/515) Issue with data visualisation when observation value is a long text containing special characters.
+- [dotstatsuite-data-explorer#529](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/529) Move the "Fullscreen" action button in the DE action menu.
+- [dotstatsuite-data-explorer#530](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/530) Share Privacy policy hyperlink should be localised.
+- [dotstatsuite-data-explorer#528](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/528) Mismatch in default time period selection. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection))
+- [dotstatsuite-data-lifecycle-manager#183](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/183) Enhance the DLM deletion of related artefacts with preliminary check for access rights. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures/#delete-an-artefact-and-its-related-structure-artefacts))
+- [dotstatsuite-data-lifecycle-manager#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/99) Set a specific list of file extensions in "custom filter" settings of DLM file uploads.
+- [dotstatsuite-config#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/32) *(Refactoring)* Add warning in the script `"init:data"` when nothing happens.
+- [dotstatsuite-data-explorer#542](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/542) *(Refactoring)* WCAG `defineMessages` & fix dynamic keys.
+- [dotstatsuite-data-explorer#544](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/544) *(Support)* Remove blueprintjs unused dependency in Data Explorer.
+- [dotstatsuite-data-explorer#540](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/540) *(Support)* CSS trying to serve up HTML displaying configs.
+- [dotstatsuite-docker-compose#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/17) *(DevOps)* Docker upgrade solr 8.2 + create `sfs` collection.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#547](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/547) Codelist labels displayed with 'invalid Date'.
+- [dotstatsuite-data-lifecycle-manager#206](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/206) DLM Dump feature inconsistently downloads the wrong total of contents.
+- [dotstatsuite-data-lifecycle-manager#209](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/209) Incorrect query for Metadata structure definitions (MSD) with references.
+- [dotstatsuite-visions#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/25) WCAG drag & drop error whenusing the customise table feature.
+
+---
+
 ### June 16, 2021
 **[Release .Stat Suite .NET 6.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/41)**
 > This release includes a new version of the **sdmxri-nsi-ws** service.  
@@ -92,6 +284,7 @@ patch changes:
 - [dotstatsuite-core-sdmxri-nsi-ws#119](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/119) Fix PointInTime related code in Eurostat's `maapi.net` library.
 
 ---
+
 ### June 1, 2021
 **[Release .Stat Suite .NET 6.3.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/40)**
 > This release includes a new version of the **sdmxri-nsi-ws** service.  
@@ -130,6 +323,7 @@ significant change:
 - [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/third-party-providers/) on how to configure ADFS as a SAML provider to Keycloak
 
 ---
+
 ### May 19, 2021
 **[Release .Stat Suite JS 8.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/38)**
 > This **major** release includes a new version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **share**, **config**, and **data-lifecycle-manager** services.  

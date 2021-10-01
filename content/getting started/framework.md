@@ -143,7 +143,7 @@ The following technologies are used for the development of the **.Stat Data Expl
 <td align="center"><img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" style="height: 40px;" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1280px-Npm-logo.svg.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" style="height: 40px;" /></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" style="height: 40px;" /></td>
+<td align="center"><img src="/dotstatsuite-documentation/images/gitlab-logo-gray-rgb.png" style="height: 40px;" /></td>
 </tr>
 </tbody>
 </table>
@@ -170,7 +170,7 @@ The following technologies are used for the development of the **.Stat Core** co
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" style="height: 40px;" /></td>
 <td align="center"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" style="height: 40px;" /></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" style="height: 40px;" /></td>
+<td align="center"><img src="/dotstatsuite-documentation/images/gitlab-logo-gray-rgb.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://fr-wiki.ikoula.com/images/5/55/Sqlserver.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/150px-.NET_Core_Logo.svg.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/04/BrandVisualStudioWin2019.png" style="height: 40px;" /></td>

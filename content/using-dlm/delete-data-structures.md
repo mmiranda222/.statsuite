@@ -4,6 +4,7 @@ subtitle:
 comments: false
 weight: 250
 keywords: [
+  'Introduction', '#introduction',
   'Dependencies between artefacts in SDMX', '#dependencies-between-artefacts-in-sdmx',
   'Delete a single structure artefact', '#delete-a-single-structure-artefact',
   'Delete an artefact and its related structure artefacts', '#delete-an-artefact-and-its-related-structure-artefacts',
@@ -12,12 +13,17 @@ keywords: [
 ---
 
 #### Table of Content
+- [Introduction](#introduction)
 - [Dependencies between artefacts in SDMX](#dependencies-between-artefacts-in-sdmx)
 - [Delete a single structure artefact](#delete-a-single-structure-artefact)
 - [Delete an artefact and its related structure artefacts](#delete-an-artefact-and-its-related-structure-artefacts)
 - [Delete several similar artefacts](#delete-several-similar-artefacts)
 
+> Technical disclaimer / recommendation on **Dataflow deletion**: For a complete deletion of the mapping set related to a dataflow, it is necessary, when deleting a dataflow, to either use the delete option from the DLM, or manually delete the mapping set using the Transfer Swagger UI first (this process will be improved once we release [this change](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/164).
 
+---
+
+### Introduction
 In the DLM, data structures can be deleted separately, several similar structure objects at a time, or several of different types according to their dependency(ies).  
 **Note**  that data structures can also be deleted directly through the *SDMX* (NSI) web service API, using the DELETE HTTPS verb with the appropriate resource URL. Example of deleting a Codelist:  
 ```bash
@@ -73,6 +79,8 @@ Once you click, it displays a popup window with all listed artefacts using a tre
 2) Non-delete-able artefacts are marked as such with a red forbidden icon. A tooltip explains the reason and solution: "Cannot be deleted since referenced by: XXXX, XXXX. First delete those structures and then try again.". When there are more than 3 "outside" references, then the number of references is mentioned.
 
 ![DLM delete](/dotstatsuite-documentation/images/dlm-delete5.png)
+
+Note that, since [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021), a check for each of the listed structures is made to determine if the current user is entitled to delete it. If the user is not authorised to delete a specific artefact, then it is also marked as non-delete-able, and the tooltip feature displays: *"Cannot be deleted due to an insufficient permission. Contact the owner of the artefact to gain the deletion permission."*
 
 3) A warning orange icon informs the user of prerequisites awaited for deleting some of the items. For example (see in screenshots below), when a codelist needs also the "above" ConceptScheme deletion, it is mentioned as such: "In order to delete this artefact, you must select conceptscheme XXXXX".
 

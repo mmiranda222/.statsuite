@@ -43,7 +43,7 @@ The original SDMX web service (NSI) openid-connect auth configuration manual can
 
 The Data Explorer is public by default, but it can be configured to support authentication. Authentication requires a provider and an url (of the authentication server).  
 Today, the only tested and included provider to .Stat Suite is [Keycloak](https://www.keycloak.org/), but others can be added (OpenId compliant ones, and others can be tested).  
-Using authentication is critical and is thus configured at server level through 2 env. variables: `AUTH_PROVIDER` and `AUTH_SERVER_URL`. The authentication provider configuration per tenant is in `tenants.json` files in `config/data` where each provider could have a dedicated configuration per tenant (ie realm for Keycloak).  
+Using authentication is critical and is thus configured at server level through 2 env. variables: `AUTH_PROVIDER` and `AUTH_SERVER_URL`. The authentication provider configuration per tenant is in `tenants.json` files in `config-data/configs` where each application, defined as `scopes`, could have a dedicated configuration (ie realm & clientId for Keycloak).
  
 When provided, the `env.` variable **`AUTH_PROVIDER`** in your deployment process can be set to 'keycloak' and returns the expected log in mechanism and feature.  
 If **`AUTH_PROVIDER`** is not provided, DE is considered as 'public', and no request from the DE is made to any authentication provider. In addition, the 'Log in' feature in the DE header is not displayed.  

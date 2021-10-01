@@ -2,8 +2,9 @@
 title: ".Stat DLM configuration"
 subtitle: 
 comments: false
-weight: 75
+weight: 74
 keywords: [
+  'Specific accept header per data space', '#specific-accept-header-per-data-space',
   'Data space names', '#data-space-names',
   'Data space colors', '#data-space-colors',
   'Data space InsertNewItems parameter', '#data-space-insertnewitems-parameter',
@@ -14,6 +15,7 @@ keywords: [
 ---
 
 #### Table of Content
+- [Specific accept header per data space](#specific-accept-header-per-data-space)
 - [Data space names](#data-space-names)
 - [Data space colors](#data-space-colors)
 - [Data space InsertNewItems parameter](#data-space-insertnewitems-parameter)
@@ -22,29 +24,74 @@ keywords: [
 
 ---
 
+### Specific accept header per data space
+>Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+
+Define a specific **http accept header** for a given dataspace that will override the default header, allowing a specific accept header value for both structures and data.
+
+* in `dotstatsuite-config/data/<env>/configs/tenants.json`
+
+```json
+{
+  "tenant": {
+    "id": "xxxx",
+    "label": "xxxx",
+    "spaces": {
+      "XXXX-prod": {
+        "label": "XXXX-prod",
+        "url": "https://...",
+        "headers": {
+          "data": {
+            "csv": "application/vnd.sdmx.data+csv",
+            "json": "application/vnd.sdmx.data+json;version=1.0.0",
+            "xml": "application/xml"
+          },
+          "structure": {
+            "json": "application/vnd.sdmx.structure+json;version=1.0.0",
+            "xml": "application/vnd.sdmx.structure+xml;version=2.1"
+          }
+        }
+      },
+      }
+    }
+  }
+```
+---
+
 ### Data space names
 Define the name of an internal or external data space displayed to the end-user in the DLM UI, regardless the `datasourceIds`.
 
-* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`  
+* in `dotstatsuite-config-data/<env>/configs/tenants.json`  
 
 ```json
-      "qa:process": {
-        "label": "QA-data process"
-      }
+    "spaces": {
+      "staging:SIS-CC-stable": {
+        "label": "SIS-CC stable"
+      },
+    }
 ```
 
 ---
 
 ### Data space colors
-Define the font color and background color for each internal and external data space. The colors defined are applied in all options, features and representations of the data sources (e.g. in the selectors and list of results, upload and transfer features, etc.)
+Define the font color and background color for each internal and external data space. The colors defined are applied in all options, features and representations of the data spaces (e.g. in the selectors and list of results, upload and transfer features, etc.)
 
-* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`  
+* in `dotstatsuite-config-data/<env>/configs/tenants.json` under a DLM `scope`  
 where `"color"` refers to the font color of the name, and `"backgroundColor"` refers to the background colored area.
 
 ```json
-      "qa:process": {
-        "color": "white",
-        "backgroundColor": "#4EA397",
+    "scopes": {
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm"
+        },
+        "spaces": [
+          {
+            "id": "staging:SIS-CC-stable",
+            "color": "#0549ab",
+            "backgroundColor": "#b7def6",
+            "label": "staging:SIS-CC-stable"
+          }
       }
 ```
 
@@ -68,9 +115,10 @@ Then it is possible for instance to add a new code in a codelist without modifyi
 ### List of SDMX artefact types
 Define the types of SDMX structural artefacts selectable in the DLM 'Filter by type' selector (see [functional specs](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#types)). Only artefacts of those types can be displayed in the DLM user interface.
 
-* in `dotstatsuite-config/data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
 
 ```json
+  "sdmx": {
     "typeIds": [
       "agencyscheme",
       "categoryscheme",
@@ -85,6 +133,7 @@ Define the types of SDMX structural artefacts selectable in the DLM 'Filter by t
       "metadataflow",
       "structureset"
     ]
+  }
 ```
 
 ---
@@ -92,6 +141,8 @@ Define the types of SDMX structural artefacts selectable in the DLM 'Filter by t
 ### Upload size limit
 Define the file size limitation when uploading data or strutures files using the DLM user interface.  
 Provided in number of bites, the upload file size limit is usually set to 30MB by default (like in the example below).  
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
 
 ```json
 "uploadSizeLimit": 30000000

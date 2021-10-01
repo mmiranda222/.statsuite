@@ -15,9 +15,9 @@ keywords: [
   'DELETE search sfs config', '#delete-search-sfs-config',
   'GET search sfs report', '#get-search-sfs-report',
   'Index all dataflows', '#index-all-dataflows',
+  'Index or update one individual dataflow', '#index-or-update-one-individual-dataflow',
   'Delete all dataflows', '#delete-all-dataflows',
-  'Delete one specific dataflow', '#delete-one-specific-dataflow',
-  'Update an already indexed dataflow', '#update-an-already-indexed-dataflow',
+  'Delete one individual dataflow', '#delete-one-individual-dataflow',
 ]
 
 ---
@@ -34,9 +34,9 @@ keywords: [
   - [DELETE search sfs config](#delete-search-sfs-config)
   - [GET search sfs report](#get-search-sfs-report)
   - [Index all dataflows](#index-all-dataflows)
+  - [Index or update one individual dataflow](#index-or-update-one-individual-dataflow)
   - [Delete all dataflows](#delete-all-dataflows)
-  - [Delete one specific dataflow](#delete-one-specific-dataflow)
-  - [Update an already indexed dataflow](#update-an-already-indexed-dataflow)
+  - [Delete one individual dataflow](#delete-one-individual-dataflow)
 
 ---
 
@@ -111,13 +111,13 @@ Example of a dataflow stub definition with external reference:
 ---
 
 ### When and how to index
-
 **CURRENT_STATE** The index is a manual action usually performed by a sysadmin user, who can lively manage the index of the endpoints for updating the dataflows that are published in .Stat DE and available for search and visualisation.  
 The following individual actions are currently enabled for index:
 * Index all datflows for all data sources
-* Delete all dataflows
-* Delete one specific dataflow
+* Index one individual dataflow
 * Update an already indexed dataflow
+* Delete all dataflows
+* Delete one individual dataflow
 
 The examples provided below are made using the free version of the API platform [Postman](https://www.postman.com/).
 
@@ -129,7 +129,7 @@ All requests need a header made of:
 * the target of the request, e.g. `/dataflows/`, `/dataflow/` or `/config/`
 * the api key, in these example `?api-key=xxx`
 * *(since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021))* a **tenant**, e.g. `&tenant=test`
-* actions' variables, e.g. depending on the request `&datasourceId&dataflowId`
+* actions' variables, e.g. depending on the request `spaceId` and dataflow `&id&agencyId&version`
 
 **Note** that, if you are using a `defaulttenant` collection, then all calls without a tenant will use the value of `DEFAULT_TENANT` as a tenant, and thus the request header `&tenant=test` becomes optional.
 
@@ -139,7 +139,7 @@ Example:
 
 ![GET search sfs config](/dotstatsuite-documentation/images/de-index-get-config.png)
 
-This request returns the `sfs` dynamic configuration with full details on configUrl, data source(s), fileds, RedisServer, fields and indexed dataflows.
+This request returns the `sfs` dynamic configuration with full details on configUrl, data source(s), RedisServer, fields and indexed dataflows.
 
 #### DELETE search sfs config
 Example:  
@@ -151,7 +151,7 @@ Example:
 
 ![GET search sfs report](/dotstatsuite-documentation/images/de-index-get-report.png)
 
-This request returns the `sfs` in memory loadings statuses.
+This request returns the `sfs` in memory loading statuses.
 
 #### Index all dataflows
 Example:  
@@ -162,7 +162,22 @@ Example:
 This request indexes **all dataflows** from **all configured sdmx endpoints**. In details, it:
 * requests all sdmxDataSources
 * adds dataflows to Sorl Core
-* updates existing dynamic sfs schema depending on added dataflows
+* updates the existing dynamic sfs schema depending on added dataflows
+
+Note that this *POST* method **does not** clean up the index, meaning that non-categorized or deleted dataflows in the data source that were previsouly indexed, will not be removed from the index. To do so, you first need to run the `DELETE /admin/dataflows` method to clean up the index, and then run the `POST /admin/dataflows` method to index. 
+
+#### Index or update one individual dataflow
+>Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+
+Example:  
+`POST` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&spaceId=staging:SIS-CC-reset&id=AIR_EMISSIONS_DF&agencyId=OECD&version=1.0`
+
+This request results in **indexing** one individual dataflow from the index and search.  
+The request will result in **updating** one individual dataflow **if** this dataflow was already indexed by Solr.
+
+**Note** that, with this "upsert" request, the previous single `PATCH` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0` query for updating an individual dataflow already indexed is no longer supported.
+
+![GET search sfs config](/dotstatsuite-documentation/images/de-index-individual-dataflow.png)
 
 #### Delete all dataflows
 Example:  
@@ -172,24 +187,12 @@ Example:
 
 This request results in deleting all dataflows from the index and search of Solr for all configured sdmxDataSources.
 
-#### Delete one specific dataflow
+#### Delete one individual dataflow
 >Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
 Example:  
-`DELETE` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&datasourceId=staging:SIS-CC-reset&dataflowId=AIR_EMISSIONS_DF`
+`DELETE` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&spaceId=staging:SIS-CC-reset&id=AIR_EMISSIONS_DF&agencyId=OECD&version=1.0`
 
 ![Delete one specific dataflow](/dotstatsuite-documentation/images/de-index-delete-dataflow.png)
 
 This request results in deleting one specific dataflow from the index and search. It is thus no longer avaibale in .Stat DE for search and visualisation.
-
-#### Update an already indexed dataflow
->Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
-
-Example:  
-`PATCH` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0`
-
-![Update an already indexed dataflow](/dotstatsuite-documentation/images/de-index-patch-dataflow.png)
-
-This request results in updating one single dataflow **ONLY IF** this dataflow was already indexed by Solr.
-
-

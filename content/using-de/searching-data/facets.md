@@ -13,6 +13,7 @@ keywords: [
   'Facet information', '#facet-information',
   'Hierarchical contents', '#hierarchical-contents',
   'Data availability', '#data-availability',
+  'Facet items ordered by explicit ORDER annotation', '#facet-items-ordered-by-explicit-order-annotation',
   'Used filters', '#used-filters',
   'Pinned facets', '#pinned-facets',
 ]
@@ -28,6 +29,7 @@ keywords: [
   - [Facet information](#facet-information)
   - [Hierarchical contents](#hierarchical-contents)
   - [Data availability](#data-availability)
+- [Facet items ordered by explicit ORDER annotation](#facet-items-ordered-by-explicit-order-annotation)
 - [Used filters](#used-filters)
 - [Pinned facets](#pinned-facets)
 
@@ -94,7 +96,10 @@ All facets are **multi-selection** facets (an existing facet value selection doe
 ![de facet types](/dotstatsuite-documentation/images/de-facet-4.png)
 
 #### Facet information
-The facet header contains the number of facet values available, and the number of currently selected facets (green numbers). The facet values show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
+The facet title contains the number of facet values available, and the number of currently selected facets (numbers surrounded by a frame). Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, the number of selected values is displayed instead, e.g. `"38/38"`.   
+When there is no facet value selection, the items are not listed in the "used filters" area because no filtering is requested by the end-user.  
+
+The facet values themselves show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
 
 ![de facet information](/dotstatsuite-documentation/images/de-searchingdata-facets-facetinformation.png)
 
@@ -111,6 +116,72 @@ In hierarchical search facets, parent values, for which any of the resulting dat
 | Parents without data | Children of parents without data |
 |----------------------|----------------------------------|
 |![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-without-data-1.png) |![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-childrenofroot-without-data-1.png) | 
+
+---
+
+### Facet items ordered by explicit ORDER annotation
+> Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+
+Facet items displayed on the home and search result pages can be ordered according to the **explicit order** of the codes and categories using the *SDMX* **"ORDER" annotation** of data type integer, and according to the current locale: see more information **[here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/implicit-explicit-order/)** about creating an ItemScheme with localised order(s).
+
+In case an explicit "ORDER" annotation is provided for an item or items of a codelist returned as a facet of the DE, then this explicit order is applied to the home and search result facets.
+
+**Localised and non-localised** order annotation types are both supported and applied, in the sense that the localised order value is applied first when provided, otherwise it is the non-localised order value if provided. 
+
+In case of hierarchical facets, hierarchy always prevails over the explicit "ORDER" annotation, and explicit order is then applied in each level of the hierarchy independently from the other levels.
+
+In case any two or more facet items have the same "ORDER" value, then these items are ordered 'naturally' based on hits. Note that the same "ORDER" values for different facet items are likely when several codelists are merged into the same facet (when the concept name is the same). Logically, the facet items are always first ordered by "ORDER" and then by hits.
+
+In case an explicit "ORDER" annotation is not provided for an item, then this item is ordered as "0" value, and thus displayed first in the facet, before the ordered items.
+
+**Example of an item of a codleisty with a localised "ORDER" value:**
+
+```xml
+  <structure:Code id="Y5-14">
+    <common:Annotations>
+      <common:Annotation>
+        <common:AnnotationTitle>55</common:AnnotationTitle>
+        <common:AnnotationType>ORDER</common:AnnotationType>
+        <common:AnnotationText xml:lang="en">55</common:AnnotationText>
+        <common:AnnotationText xml:lang="es">80</common:AnnotationText>
+        <common:AnnotationText xml:lang="fr">85</common:AnnotationText>
+      </common:Annotation>
+    </common:Annotations>
+    <common:Name xml:lang="en">5 to 14</common:Name>
+    <common:Name xml:lang="es">5 a 14</common:Name>
+    <common:Name xml:lang="fr">5 à 14</common:Name>
+    <structure:Parent>
+      <Ref id="_T"/>
+    </structure:Parent>
+  </structure:Code>
+```  
+
+**Example of a conbination of facets items with the same "ORDER" values, and combined with search hits:**
+
+```txt
+>* Aaa, Explicit order=5, Hit: 14
+>* Bbb, Explicit order=4, Hit: 4
+>* Ccc, Explicit order=3, Hit: 9
+>* Ddd, Explicit order=3, Hit: 8
+>* Eee, Explicit order=2, Hit: 11
+>* Fff, Hit: 12
+>* Ggg, Explicit order=1, Hit: 10
+>* Hhh, Hit: 20  
+>* Iii, Explicit order=1, Hit: 15
+>* Jjj, Hit: 4
+>
+>Display order:
+>* Hhh, Assumed order=0, Hit: 20
+>* Fff, Assumed order=0, Hit: 12
+>* Jjj, Assumed order=0, Hit: 4
+>* Iii, Explicit order=1, Hit: 15
+>* Ggg, Explicit order=1, Hit: 10
+>* Eee, Explicit order=2, Hit: 11
+>* Ccc, Explicit order=3, Hit: 9
+>* Ddd, Explicit order=3, Hit: 8
+>* Bbb, Explicit order=4, Hit: 4
+>* Aaa, Explicit order=5, Hit: 14
+```
 
 ---
 

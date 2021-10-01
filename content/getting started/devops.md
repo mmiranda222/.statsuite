@@ -115,7 +115,7 @@ The following technologies and cloud services are used for the DevOps implementa
 <td align="center" colspan=5><a href="https://docs.gitlab.com/ee/ci/pipelines.html">gitlab: open-source code repository and automation pipelines</a></td>
 </tr>
 <tr>
-<td align="center" colspan=5><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/1108px-GitLab_Logo.svg.png" style="height: 40px;" /></td>
+<td align="center" colspan=5><img src="/dotstatsuite-documentation/images/gitlab-logo-gray-rgb.png" style="height: 40px;" /></td>
 </tr>
 </thead>
 <tbody>

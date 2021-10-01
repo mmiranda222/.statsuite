@@ -48,7 +48,9 @@ If the user has made selection(s) in the previous search result page, if a defau
 
 Any filter selection change will automatically trigger the update of the data view (table/chart/API query), and these changes will also be reflected in the ['Used filters' panel](#used-filters-panel).  
 
-**Note** that, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve. Therefore, the number of selected items is displayed with '0' in case no item is selected, which is functionally different than having all items selected.    
+Whenever there is no filter item selection, then it is indicated in the filter title by "all", e.g. `"all/39"`. When all filter items are selected, the number of selected items is displayed instead `"39/39"`.  
+Because making no selections and complete selections return the same data, the usage of "all" should help to clarify this effect, while there remains a visual distinction for the fact that a saved selection is static while the items concerned by no selection may evolve over time. Indeed, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve.  
+Therefore, while a full selection would always correspond to 39 items, for no filter selection the number of actually considered dimension items might increase, e.g. 40, 41 etc.
 
 ---
 
@@ -69,11 +71,11 @@ If the filter list is **hierarchical**, then the bulk selection menu becomes con
 The keyboard's **Ctrl** and **Shift** keys, as well as **holding mouse click**, can be used to ease multiple selections.  
 
 - **Using the Shift key**:  
-If you first press `Shift` and select an item of a list, then selecting another item while still holding `Shift` will result in selecting all intermediate items (between those 2 selections) of the list.  
-As long as the `shift` key is held, the data table is not updated.  
+If you first press `Shift` and select an item of a list, then selecting another item while still holding `Shift` will result in selecting all intermediate items (between those 2 selections) of the list. The same principle will apply in de-selection mode. 
+As long as the `ctrl` key is held, the data table is not updated.
 - **Using the Ctrl key**:  
 If you first press `Ctrl` and select an item of a list, then selecting another item while still holding `Ctrl` will result in selecting this second item too. You can keep on selecting new items as long as `Ctrl` is held.  
-As long as the `ctrl` key is held, the data table is updated.  
+As long as the `ctrl` key is held, the data table is not updated.  
   *Remark*: The combination of `ctrl` and `shift` keys is not possible.   
   
 - **Holding mouse click**:  

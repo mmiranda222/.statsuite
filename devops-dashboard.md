@@ -24,11 +24,11 @@
 <td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/pipeline.svg?style=flat-square)</td>
 <td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/coverage.svg?style=flat-square)</td>
 <td>https://nsi-qa-stable.siscc.org</td>
-<td>:ambulance: [health](https://nsi-qa-stable.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-qa-stable.siscc.org/health) - :clipboard: [swagger](https://nsi-qa-stable.siscc.org/swagger)</td>
 <td>-</td>
 <tr>
 <td>https://nsi-qa-reset.siscc.org</td>
-<td>:ambulance: [health](https://nsi-qa-reset.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-qa-reset.siscc.org/health) - :clipboard: [swagger](https://nsi-qa-reset.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -36,22 +36,22 @@
 <td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/master/pipeline.svg?style=flat-square)</td>
 <td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/master/coverage.svg?style=flat-square)</td>
 <td>https://nsi-demo-oecd-design.siscc.org</td>
-<td>:ambulance: [health](https://nsi-demo-oecd-design.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-demo-oecd-design.siscc.org/health) - :clipboard: [swagger](https://nsi-demo-oecd-design.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
 <td>https://nsi-demo-oecd-staging.siscc.org</td>
-<td>:ambulance: [health](https://nsi-demo-oecd-staging.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-demo-oecd-staging.siscc.org/health) - :clipboard: [swagger](https://nsi-demo-oecd-staging.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
 <td>https://nsi-demo-stable.siscc.org</td>
-<td>:ambulance: [health](https://nsi-demo-stable.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-demo-stable.siscc.org/health) - :clipboard: [swagger](https://nsi-demo-stable.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
 <td>https://nsi-demo-reset.siscc.org</td>
-<td>:ambulance: [health](https://nsi-demo-reset.siscc.org/health)</td>
+<td>:ambulance: [health](https://nsi-demo-reset.siscc.org/health) - :clipboard: [swagger](https://nsi-demo-reset.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr><td colspan="7"></td></tr>
@@ -129,7 +129,7 @@
 <tr>
 <tr><td colspan="7"></td></tr>
 <tr>
-<td rowspan="10">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
+<td rowspan="11">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
 <td>qa/develop</td>
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
@@ -138,9 +138,9 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="9">staging/master</td>
-<td rowspan="9">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="9">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="10">staging/master</td>
+<td rowspan="10">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
+<td rowspan="10">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
 <td>https://de-demo.siscc.org</td>
 <td>:globe_with_meridians: [website](https://de-demo.siscc.org) - :ambulance: [health](https://de-demo.siscc.org/api/healthcheck)</td>
 <td>-</td>
@@ -153,6 +153,11 @@
 <tr>
 <td>https://de-demo-oecd-eco.siscc.org</td>
 <td>:globe_with_meridians: [website](https://de-demo-oecd-eco.siscc.org) - :ambulance: [health](https://de-demo-oecd-eco.siscc.org/api/healthcheck)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>https://de-demo-oecd-daf-dti.siscc.org</td>
+<td>:globe_with_meridians: [website](https://de-demo-oecd-daf-dti.siscc.org/) - :ambulance: [health](https://de-demo-oecd-daf-dti.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -294,8 +299,8 @@
 ## special services
 
 MSSQL access for reading (debug) purpose:
-- qa 35.190.220.253
-- staging 35.205.244.142
+- qa (dynamic)
+- staging (dynamic)
 
 ECO oecd internal network nsiws:
 - https://em-sbx-dev-7.main.oecd.org - :ambulance: [health](https://em-sbx-dev-7.main.oecd.org/health)
