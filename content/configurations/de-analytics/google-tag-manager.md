@@ -2,7 +2,7 @@
 title: "Google Tag Manager"
 subtitle: 
 comments: false
-weight: 74
+weight: 80
 keywords: [
   'How to configure Google Tag Manager', '#how-to-configure-google-tag-manager',
   'Tracking ID', '#tracking-id',
