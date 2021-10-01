@@ -2,7 +2,7 @@
 title: "Keycloak configuration"
 subtitle: 
 comments: false
-weight: 78
+weight: 88
 keywords: [
   'Disclaimer', '#disclaimer',
   'Introduction', 'introduction',

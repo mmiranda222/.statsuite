@@ -2,7 +2,7 @@
 title: "Contributing"
 subtitle: 
 comments: false
-weight: 90
+weight: 100
 keywords: [
   'Report an issue', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue',
   'Issue process & Definitions of Done', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/issue-process',

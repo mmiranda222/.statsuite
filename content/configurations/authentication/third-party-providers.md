@@ -2,7 +2,7 @@
 Title: "Third-party Identity Providers in Keycloak"
 subtitle: 
 comments: false
-weight: 80
+weight: 90
 keywords: [
   'Active Directory ADFS', '#active-directory-adfs',
   'Add attribute mappings', '#add-attribute-mappings',

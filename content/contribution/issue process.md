@@ -2,7 +2,7 @@
 title: "Issue process and Definitions of Done (DoD)"
 subtitle: 
 comments: false
-weight: 92
+weight: 105
 keywords: [
   'intro', '#intro',
   'production cycle', '#production-cycle',

@@ -2,7 +2,7 @@
 title: "SolR optimisation"
 subtitle: 
 comments: false
-weight: 82
+weight: 92
 keywords: [
   'IR Ranking Functions Introduction - Default Scoring', '#ir-ranking-functions-introduction---default-scoring',
   'Customise Scoring Function', '#customise-scoring-function',
