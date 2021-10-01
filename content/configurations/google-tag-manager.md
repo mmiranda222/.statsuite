@@ -96,6 +96,7 @@ You can enable [Google Tag Manager](https://tagmanager.google.com) to receive hi
 In order to activate the analytics functionality, you need to create your own **[How to configure Google Tag Manager](#how-to-configure-google-tag-manager)* and use the value in env variable named **`GTM_TOKEN`** in the scope of compliant service (ie data-explorer).  
 You can add the env variable in your **`.env`** file and start data-explorer service.  
 If you are using Docker-Compose, you have to declare the env variable at the service level in the compose file (see [example](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/demo/.env))
+
 ---
 
 ### Google Analytics default events
