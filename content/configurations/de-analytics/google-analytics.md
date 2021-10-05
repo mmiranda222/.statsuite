@@ -22,6 +22,9 @@ keywords: [
 ---
 
 ### Tracking ID
+
+![GTM logo](/dotstatsuite-documentation/images/googleanalytics-logo.png)
+
 You can enable [Google Analytics](https://analytics.google.com/) to receive hits on audience and usages of a .Stat Data Explorer instance.  
 In order to activate the analytics functionality, you need to create your own **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)** and use the value in env variable named **`GA_TOKEN`** in the scope of compliant service (ie data-explorer).  
 You can add the env variable in your **`.env`** file and start data-explorer service.  
