@@ -1,11 +1,11 @@
 # how to release (JS)
 
-1. define a scope about issues ([board](https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript)) to include in the release
+1. define issues ([board](https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript)) to include in the release
 1. for each issues:
     - check service to identify what to release (semver major should be mentionned by developer if any)
-    - check kubernetes update to properly update staging (semver major if any)
-    - check non-backward changes in specific data (siscc-config-data) to eventually update staging (semver major if any)
-1. define a semver compliant and upper than all underlying releases from all service/app (see template for the list).
+    - check kubernetes update to properly update staging (semver major if mandatory update to keep default)
+    - check non-backward updates in specific data (siscc-config-data) to eventually update staging (semver major if any)
+1. define a semver and upper than all underlying releases from all service/app (see template for the list).
 1. create a **milestone** at [.stat-suite level](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones) following the name convention: `dotstatsuiteJS@v<semver>`
 1. assign [issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=s%3A%3Arelease) to the milestone
 1. for each service/app:
