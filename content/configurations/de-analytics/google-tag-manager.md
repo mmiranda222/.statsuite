@@ -26,42 +26,44 @@ In the new release, google Analytics has been replaced by google tag manager.
 
 ### How to configure Google Tag Manager
 
-There are few steps to follow to properly configure google tag manager.
+There are few steps to follow in order to properly configure Google Tag Manager (GTM).
 
 #### pre-requisites:
-  - google tag manager account
+  - GTM account
+
+In [GTM](https://tagmanager.google.com), create an account. This account will allow you to create containers and those containers will be enable sending data to your analytics tools.
 
 #### 1. Create a container
 What is a container?   
-A container is a collection of tags, triggers, variables, and related configurations installed on a given website or mobile app is called a container.
+A **container** is a collection of tags, triggers, variables, and related configurations installed on a given website or mobile app.
 
-We have choose to create one container by applications.
-You have to create two containers, one for data-explorer and one for data-viewer
+We have choose to create one container per application. Why???  
+Hence, you need to create two containers, one for data-explorer and one for data-viewer.
 
 ![GTM - create a container](/dotstatsuite-documentation/images/gtm-create-container.png)  
 
-#### 2. Download your settings containers
+#### 2. Download your containers settings
   - <a href="/dotstatsuite-documentation/assets/GTM-template/data-explorer.json" download>data-explorer</a>
   - <a href="/dotstatsuite-documentation/assets/GTM-template/data-viewer.json" download>data-viewer</a>
 
-Those json files are configuration already prepared by our developers needed in the next step
-
-On [google tag manager](https://tagmanager.google.com) you have to create an account. this account will allow you to create container and those container will be able to send data to your analytics tools.
+The settings of the containers are configurations in .json files already prepared and maintained by our developers, and required in the next steps of GTM setup. They contain all the specific tags and triggers created for tracking data explorer and data viewers' usages and statistics.
 
 #### 3. Import container
-After downloaded your pre-configured container you have to import them.
-You have to select your application and then go in admin tab
+After having downloaded your pre-configured container settings, you now need to import it into GTM.  
+Select your application, then go to the 'Admin' tab. In the Caontainer options menu, select "Import Container".
 
 ![GTM - create a container](/dotstatsuite-documentation/images/gtm-import-container.png)   
-Then you have to select the json file you have downloaded. 
-choose your workspace (default workspace, if it is the first your create a container)
-and choose between overwrite and merge. (overwrite, it is the first your create a container)
+
+Then select the .json file you have previously downloaded and that matches the GTm container (data-explorer or data-viewer).  
+Choose your workspace (default workspace, if it is the first time your create a container), and choose import option between overwrite or merge (overwrite, if it is the first your create a container).
 
 ![GTM - create a container next step](/dotstatsuite-documentation/images/gtm-import-container-next-1.png)  
 
+Repeat these steps for each data-explorer and data-viewer container.
+
 #### 4. Configuration of container
 
-To properly setup your container you have to add at least your google analytics token and your domain.  
+To properly setup your container, you need to add your google analytics token and your domain.  
 
 ##### How to configure your domain
 
