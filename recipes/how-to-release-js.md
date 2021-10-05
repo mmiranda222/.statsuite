@@ -5,6 +5,7 @@
     - check service to identify what to release (semver major should be mentionned by developer if any)
     - check kubernetes update to properly update staging (semver major if mandatory update to keep default)
     - check non-backward updates in specific data (siscc-config-data) to eventually update staging (semver major if any)
+    - close issue, except if something is needed in staging (ie MR)
 1. define a semver and upper than all underlying releases from all service/app (see template for the list).
 1. create a **milestone** at [.stat-suite level](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones) following the name convention: `dotstatsuiteJS@v<semver>`
 1. assign [issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues?scope=all&utf8=%E2%9C%93&state=opened&label_name[]=JavaScript&label_name[]=s%3A%3Arelease) to the milestone
@@ -15,7 +16,6 @@
     1. create a merge request from the release into master (default based on branch name is fine), bind it the the milestone, **no squash but rm branch afterwards**
     1. check diff and wait for pipeline to pass and merge it to master
     1. if needed (last minute fixes), merge back to develop
-    1. close related issues
     1. create a **tag** on master (default latest) with a **release** (add a description in optional release description) following the name convention: `v<semver>`
     1. paste the tag link in the milestone description (releases row) and attached it to the milestone
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
