@@ -38,12 +38,12 @@ This section describes the main features of the .Stat Suite data APIs for the ma
 This feature covers the use case when an organisation has to prepare a new revision, but for legal reasons, this data cannot be published before a given date time. The aim is to disseminate updated data at the point in time release date without waiting for a data loading delay. Once the point in time release date is reached, the updated data and attributes are immediately available at once in the disseminate space.
 
 **Scope**  
-The PIT only applies to the data values and associated attribute values, it does not modify the Data Structure Definition (DSD). For a given DSD, the data producer/owner submits PIT revisions of the data values and attributes, which are not visible for the data consumers until a given datetime in the future. Thus the PIT feature allows for only one embargo version for the entire DSD, but it can use any dataflow (or the whole DSD) for the API call. 
+The PIT only applies to the data values and associated attribute values, it does not modify the Data Structure Definition (DSD). For a given DSD, the data producer/owner submits PIT revisions of the data values and attributes, which are not visible for the data consumers until a given datetime in the future. Thus the PIT feature allows for **only one embargo version for the entire DSD**, but it can use any dataflow (or the whole DSD) for the API call. In case separate PIT release processes are required for different dataflows of the same DSD, then it is necessary to define separate DSDs, one for each dataflow.
 
 #### Basic characteristics
 *  The Point in Time feature is not based on SDMX features.
 *  The PIT is done at DSD level, meaning that all dataflows that are part of a DSD will contain a PIT version, when it is created (even if their data might not be changed).
-*  Currently the Data Lifecycle Manager (DLM) does not support the PIT features. It is planned to be added later.
+*  The Data Lifecycle Manager (DLM) also supports the PIT features. See the [upload data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/point-in-time/) and [copy data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data/#point-in-time-release) features.
 *  There can be DSDs with:
    - only live data, no PIT version
    - both live data and PIT version
@@ -70,7 +70,7 @@ Tables involved in the PIT feature:
 The Point in Time release options can be directly specified in **all the Transfer service data upload/copy functions**.
    *  The import will allow to set the release date at some point in the future. If not set, then the release date is undetermined and the release is never executed. The release data can be set or changed subsequently.
    *  Multiple data imports are allowed for the PIT version, which will modify the PIT data values and/or the release date.
-   *  When there is an existing PIT version, the Live version of the data cannot be updated. 
+   *  When there is an existing PIT version, the Live version of the data cannot be updated.
 
 Currently, the following parameters are supported:
 
@@ -81,7 +81,7 @@ Currently, the following parameters are supported:
 | PITReleaseDate | string | When provided, this date will be the date and time when the PIT release is activated (e.g. is made available for data queries). When not provided, the PIT release will not be activated automatically. If its value refers to a date and time in the past, then the PIT release is immediately activated right at the end of the import/copy transaction.<br>Format *dd-MM-yyyy HH:mm:ss* e.g. 17-05-2019 12:30:00 | Optional |
 | restorationOptionRequired | boolean | Optional parameter. Indicates if the current LIVE version should be kept for restoration purposes when the PIT release becomes active. | Optional |
 
-In case PIT data should be released immediately, then a new import is to be submitted with the release date time as the current date-time or a past date-time. 
+In case PIT data should be released immediately, the PITReleaseDate parameter should be set to the current date-time or a past date-time. 
 
 **IMPORTANT NOTE**: since [September 03, 2021 Release .Stat Suite .NET 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-03-2021), for the release date-time, the PITReleaseDate parameter is a datetime value with the time zone designator, according to technical standards (see: https://www.w3.org/TR/NOTE-datetime). This time zone designator allows specifying a precise target release datetime independently from the current time zone of the server where the NSI web service is running.   
 Example: **1997-07-16T19:20:30.45+01:00**.

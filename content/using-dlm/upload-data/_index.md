@@ -15,8 +15,6 @@ The upload supports the following **file formats**:
 
 More detailed information can be found for each of these formats.  
 
-Using a **Point-in-Time (PIT)** date, the uploaded data can be kept under embargo in parallel to the previously available data until the embargo date is reached and the embargo data fully replace the previously available data. Note that there are currently no timezone conversions for the Point-in-Time (PIT) dates, and that the user's date time might not be the same than the server's date time. **When specifying a Point-in-Time (PIT) date, please use the server's timezone.**  
-
 When data are uploaded, then the .Stat Core system automatically (re-)generates **Actual Content Constraints** for all dataflows impacted by the upload.  
 - The IDs of auto-generated Actual Content Constraints are prefixed by "`CR_A_`" or "`CR_B_`", e.g. "`CR_A_DATAFLOWID`" and "`CR_B_DATAFLOWID`".
 - The names of auto-generated Actual Content Constraints are construced using "`Availability (A) for `" or "`Availability (B) for `" and the *name* of the dataflow, e.g. "`Availability (A) for Dataflow name`" and "`Availability (B) for Dataflow name`"
