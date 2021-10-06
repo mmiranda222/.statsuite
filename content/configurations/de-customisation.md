@@ -12,7 +12,7 @@ keywords: [
   'theme settings: first loader', '#theme-settings-first-loader',
   'site logo', '#site-logo',
   'homepage background image', '#homepage-background-image',
-  'common site logos', '#common-site-logos',
+  'localised common site logos', '#localised-common-site-logos',
   'add hyperlink on header logo', '#add-hyperlink-on-header-logo',
   'table and chart footer logo', '#table-and-chart-footer-logo',
   'table and chart footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
@@ -32,7 +32,7 @@ keywords: [
 - [theme settings: first loader](#theme-settings-first-loader)
 - [site logo](#site-logo)
 - [homepage background image](#homepage-background-image)
-- [common site logos](#common-site-logos)
+- [localised common site logos](#localised-common-site-logos)
 - [add hyperlink on header logo](#add-hyperlink-on-header-logo)
 - [table and chart footer logo](#table-and-chart-footer-logo)
 - [table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
@@ -312,17 +312,22 @@ ID_AUTH_PAGE = 'id_auth_page';
 
 ---
 
-### Common site logos
+### Localised common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
+Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021), assets are localised, meaning that, if switching the locale of the DE, it will change the logo source depending on the corresponding language. This can be applied to all assets. If a localised asset is defined but a locale does not match any source image, then it will display a broken link. 
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "assets": {
-        "header": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/sis-cc-logo.png",
-        "subheader": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/dotstat-data-explorer-logo.png",
-        "footer": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/sis-cc-icon.png",
-        "splash": "/assets/siscc/data-explorer/dotstatsuite-documentation/images/dotstat-data-explorer-logo.png"
+        "header": {
+          "en": "/assets/siscc/data-explorer/images/OECD-logo_en_Desktop.png",
+          "fr": "/assets/siscc/data-explorer/images/OECD-logo_fr_Desktop.png",
+          "es": "/assets/siscc/data-explorer/images/OECD-logo_es_Desktop.png"
+        },
+        "subheader": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png",
+        "footer": "/assets/siscc/data-explorer/images/sis-cc-icon.png",
+        "splash": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
     }
 ```
 
@@ -358,7 +363,16 @@ To add an hyperlink/URL behind the logo of the common site header (top-left part
     }
 ```
 
----
+Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021), hyperlinks related to a logo can be **localised**, meaning that a different hyperlink/URL can be defined per each supported locale.
+
+Example:
+
+```json
+    "assets": {
+      "en": "https://www.oecd.org",
+      "fr": "https://www.oecd.org/fr"
+    }
+```
 
 ### Table and chart footer logo
 Define the logo of the organisation in the footer of the table and chart views. The source can be a binary image or a link.  
