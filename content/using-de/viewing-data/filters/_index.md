@@ -32,15 +32,14 @@ keywords: [
 
 ### Filter area
 
-The left-hand side (right-hand in rtl mode) of the visualisation page shows a set of dimension filters that allow dynamically filtering the dimension values to be displayed in the preview table or chart, to be extracted through the download feature 'Filtered data in tabular text (CSV)' or to be applied in the auto-generated data query in 'Developer API' menu.
+The left-hand side (right-hand in rtl mode) of the visualisation page shows a set of dimension filters that allow **dynamically filtering the dimension values** to be displayed in the preview table or chart, to be extracted through the download feature 'Filtered data in tabular text (CSV)' or to be applied in the auto-generated data query in 'Developer API' menu.
 
-The current filter selections are displayed as a summary in the ['Used filters' panel](#used-filters-panel), which is always the top-first panel in the filter area.
-
+The current filter selections are displayed as a summary in the ['Used filters' panel](#used-filters-panel), which is always the top-first panel in the filter area.  
 Other filter panels are created for each of the dimensions of the currently displayed dataflow based on data availability (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)), except if the dimension contains only one possible item, in which case the corresponding filter is hidden, and except for 'Frequency' and 'Time Period' dimensions, which are combined in a common 'Frequency & Time Period' filter (see the related [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/)).
 
 The order of the filter panels respects the order of the dimensions as defined in the underlying data structure definition (DSD), except the ['Frequency & Time Period' filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) panel, which is displayed second after the ['Used filters' panel](#used-filters-panel). 
 
-Next to each filter name is an indication of the number of currently selected items against the number of available items (`selected/available`).
+Next to each filter name is an **indication number** of currently selected items against the number of available items (`selected/available`).
 
 ![Multi selection filters](/dotstatsuite-documentation/images/de-filters12.png)
 
@@ -48,9 +47,16 @@ If the user has made selection(s) in the previous search result page, if a defau
 
 Any filter selection change will automatically trigger the update of the data view (table/chart/API query), and these changes will also be reflected in the ['Used filters' panel](#used-filters-panel).  
 
-Whenever there is no filter item selection, then it is indicated in the filter title by "all", e.g. `"all/39"`. When all filter items are selected, the number of selected items is displayed instead `"39/39"`.  
-Because making no selections and complete selections return the same data, the usage of "all" should help to clarify this effect, while there remains a visual distinction for the fact that a saved selection is static while the items concerned by no selection may evolve over time. Indeed, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve.  
+Whenever there is no filter item selection, then it is indicated in the filter title by **"all"**, e.g. `"all/39"`. When all filter items are selected, the number of selected items is displayed instead `"39/39"`.  
+Because making **no selections and complete selections return the same data**, the usage of "all" should help to clarify this effect, while there remains a visual distinction for the fact that a saved selection is static while the items concerned by no selection may evolve over time. Indeed, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve.  
 Therefore, while a full selection would always correspond to 39 items, for no filter selection the number of actually considered dimension items might increase, e.g. 40, 41 etc.
+
+*(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* Each item of a filter is displayed with a **checkbox** on the left side in the filter list:
+- when the item is not selected, the checkbox is empty;
+- when the item is not selected and the mouse hovers it, the checkbox stays empty and the background is blue;
+- when the item is selected, the checkbox is changed into a tick mark.
+
+![de filter checkbox](/dotstatsuite-documentation/images/de-filters-checkbox.png)
 
 ---
 

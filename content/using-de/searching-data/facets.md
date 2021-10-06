@@ -84,16 +84,19 @@ The free text search and the navigation through pre-defined facets are exclusive
 
 #### Facets on the search result page
 The facets shown in the search result page are fully dependent on the current search context.  
-Common facet dimensions can be automatically removed (hidden) from the search result page when specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).  
-Impactless facets, i.e. all of the facet's values have a number of the related search results equal to the number of currently already available search results, are also automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.  
-When browsing and filtering the search result content, Only one facet can be expanded at a time. This also includes the 'Used filters' panel who is behaving as a facet. When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.
+Common facet dimensions can be automatically removed (hidden) from the search result page when specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/). Impactless facets (i.e. all of the facet values have a number of the related search results equal to the number of currently already available search results) are also automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.  
+When browsing and filtering the search result content, only one facet can be expanded at a time. This also includes the 'Used filters' panel who is behaving as a facet. When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.
 
 ![de facet result](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage.png)
 
 #### Facet types
-All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values) **except** for the **Time Period** facet. The Time Period facet is a range selection facet that shows a start year and end year independently from the currently selected frequency.  
+All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values).  
+*(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* Each item of a facet is displayed with a **checkbox** on the left side in the facet list:
+- when the item is not selected, the checkbox is empty;
+- when the item is not selected and the mouse hovers it, the checkbox stays empty and the background is blue;
+- when the item is selected, the checkbox is changed into a tick mark.
 
-![de facet types](/dotstatsuite-documentation/images/de-facet-4.png)
+![de facet checkbox](/dotstatsuite-documentation/images/de-facets-checkbox.png)
 
 #### Facet information
 The facet title contains the number of facet values available, and the number of currently selected facets (numbers surrounded by a frame). Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, the number of selected values is displayed instead, e.g. `"38/38"`.   
