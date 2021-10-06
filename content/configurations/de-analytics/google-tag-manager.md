@@ -118,5 +118,23 @@ then change the value by your cross domain separate by coma
 
 ---
 
-### Events API
-You can see all events on the google tag manager. Those events are listed on your workspace on trigger tab.
+### Events tags and triggers
+All events in GTM are listed under the **Tags** tab:
+
+- data-explorer Tags
+
+![GTM - data-explorer Tags](/dotstatsuite-documentation/images/gtm-data-explorer-tags.png)
+
+- data-viewer Tags
+
+![GTM - data-viewer Tags](/dotstatsuite-documentation/images/gtm-data-viewer-tags.png)
+
+Another perspective of GTM is to view the list of triggers under the **Triggers** tab:
+
+- data-explorer Triggers
+
+![GTM - data-explorer Triggers](/dotstatsuite-documentation/images/gtm-data-explorer-triggers.png)
+
+- data-viewer Triggers
+
+![GTM - data-viewer Triggers](/dotstatsuite-documentation/images/gtm-data-viewer-triggers.png)
