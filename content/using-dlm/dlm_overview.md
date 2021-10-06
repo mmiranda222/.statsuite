@@ -16,7 +16,7 @@ keywords: [
   'Version', '#version',
   'List of artefacts', '#list-of-artefacts',
   'Display Options', '#display-options',
-  'Contents of the list', '#contents-of-the-list',
+  'Content of the list', '#content-of-the-list',
   'Export', '#export',
 ]
 ---
@@ -34,7 +34,7 @@ keywords: [
   - [Version](#version)
 - [List of artefacts](#list-of-artefacts)
   - [Display Options](#display-options)
-  - [Contents of the list](#contents-of-the-list)
+  - [Content of the list](#content-of-the-list)
 - [Export](#export)
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-1.png)
@@ -145,7 +145,7 @@ When he enters some text, it searches for all artefacts "Name", "Code" or "Descr
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-8.png)
 
-#### Contents of the list
+#### Content of the list
 For each artefact, the following details are shown:
 * Artefact type (e.g. Data Structure Definition, Dataflow, Codelist)
 * Artefact name (e.g. Health Status) in the first available language
@@ -159,12 +159,17 @@ For each artefact, the following details are shown:
 
 For Dataflows **only**, The user can view the following additional information:
 * **Preview:** the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
-* **Number** of observation values
+* **Number** of observation values.
 * **Categories** with information about thematic categorisation. Note that a Dataflow can be categorised into one or more Categories
-* Space name
+* **Space** name
 * **ID flavours** with 2 alternative dataflow identification flavours: `AGENCY_ID:DATAFLOW_ID(VERSION)` and `AGENCY_ID/DATAFLOW_ID/VERSION`
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9.png)
+
+**Note** that *(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)* for some external data sources (e.g. using MT Fusion Registry), the *SDMX* annotation of type `sdmx_metrics` has no id `obs_count`, but the id **`series_count**` instead.  
+In this case, the DLM will display the **number of series** instead of observation values.
+
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-21.png)
 
 ---
 
