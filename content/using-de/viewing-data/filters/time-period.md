@@ -6,12 +6,14 @@ weight: 2130
 keywords: [
   'Frequency & Time Period', '#frequency-and-time-period-selectors',
   'Last N Periods', '#last-n-periods',
+  'Hiding Frequeny & Time Period filters','#hiding-frequency-and-time-period-filters'
 ]
 ---
 
 #### Table of Content
 - [Frequency & Time Period](#frequency-and-time-period-selectors)
 - [Last N Periods](#last-n-periods)
+- [Hiding Frequency & Time Period filters](#hiding-frequency-and-time-period-filters)
 
 ---
 
@@ -77,4 +79,35 @@ Then the default displayed table and chart view can contain data for:
 * time period 2015 for time series 1 (--> if 2015 is the latest time period for this time series within the given new range 2013 to 2015)
 * time period 2015 for time series 2 (--> if 2015 is the latest time period for this time series within the given new range 2013 to 2015) and
 * time period 2014 for time series 3 (--> if 2014 is the latest time period for this time series within the given new range 2013 to 2015).
+
+
+---
+
+### Hiding Frequency and Time Period filters
+> The feature was enhanced with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
+
+The Frequency and Time-Period filters can be hidden in two cases: if the dataflow doesn't have a `TIME_PERIOD` time dimension, or if the dataflow has a `NOT_DISPLAYED` annotation containing the TIME_PERIOD time dimension.
+
+**Case 1: dataflow without `TIME_PERIOD` time dimension**
+
+If your dataflow doesn't contain a TIME_PERIOD, then you won't see the Frequency and Time-Period filter diplayed in the DE. This includes the frequency filter, the start/end date filter and the last N periods filter.
+
+![Dataflow without TIME_PERIOD](static/images/dataflow-without-TIME_PERIOD-time-dimension.PNG)
+
+**Case 2: dataflow with "NOT_DISPLAYED" annotation containing the `TIME_PERIOD` time dimension**
+
+You can decide to hide the Frequency and Time-Period filter even if your dataflow contains a TIME_PERIOD dimension.  
+To do so, you can define the SDMX annotation of type `NOT_DISPLAYED` (see [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/not-displayed/)) to be used for hiding the filter. 
+
+![NOT_DISPLAYED annotation](static/images/NOT_DISPLAYED-annotation-containing-TIME_PERIOD.png) 
+
+![Hidden filters](static/images/Frequency-Time-Period-filters-hidden-using-NOT_DISPLAYED-annotation.png)
+
+![Filters not hidden](static/images/Frequency-Time-Period-filters-not-hidden.png)
+
+**Note:**
+
+If the `NOT_DISPLAYED` annotation contains the frequency dimension (FREQ or FREQUENCY) but does not contain the TIME_PERIOD time dimension:
+Only the frequency filter should be hidden. The start/end date filter and the last N periods filter should remain.
+
 
