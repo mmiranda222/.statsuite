@@ -10,11 +10,7 @@ keywords: [
   'Exact phrase', '#exact-phrase',
   'Partial match of a word', '#partial-match-of-a-word',
   'How free text search hits are displayed', '#how-free-text-search-hits-are-displayed',
-  'Found in ID and localised name of a dataflow', '#found-in-id-and-localised-name-of-a-dataflow',
-  'Found in ID and localised name of the categories (and their parent categories) in which the dataflow is categorised', '#found-in-id-and-localised-name-of-the-categories-and-their-parent-categories-in-which-the-dataflow-is-categorised',
-  'Found in the localised description of the dataflow', '#found-in-the-localised-description-of-the-dataflow',
-  'Found in IDs and localised names of the concepts used as dimensions, as well as the dimension IDs', '#found-in-ids-and-localised-names-of-the-concepts-used-as-dimensions-as-well-as-the-dimension-ids',
-  'Found in IDs and localised names of the codes used as dimension values', '#found-in-ids-and-localised-names-of-the-codes-used-as-dimension-values',
+  'Free text search reset', '#free-text-search-reset',
 ]
 
 ---
@@ -26,11 +22,7 @@ keywords: [
   - [Exact phrase](#exact-phrase)
   - [Partial match of a word](#partial-match-of-a-word)
 - [How free text search hits are displayed](#how-free-text-search-hits-are-displayed)
-  - [Found in ID and localised name of a dataflow](#found-in-id-and-localised-name-of-a-dataflow)
-  - [Found in ID and localised name of the categories (and their parent categories) in which the dataflow is categorised](#found-in-id-and-localised-name-of-the-categories-and-their-parent-categories-in-which-the-dataflow-is-categorised)
-  - [Found in the localised description of the dataflow](#found-in-the-localised-description-of-the-dataflow)
-  - [Found in IDs and localised names of the concepts used as dimensions, as well as the dimension IDs](#found-in-ids-and-localised-names-of-the-concepts-used-as-dimensions-as-well-as-the-dimension-ids)
-  - [Found in IDs and localised names of the codes used as dimension values](#found-in-ids-and-localised-names-of-the-codes-used-as-dimension-values)
+- [Free text search reset](#free-text-search-reset)
 
 ![DE Free text search](/dotstatsuite-documentation/images/de-free-text-search.png)
 
@@ -77,3 +69,14 @@ For each search result (dataflow), search hits found are displayed **highlighted
 
 #### Found in IDs and localised names of the codes used as dimension values
 ![de search hits](/dotstatsuite-documentation/images/de-search-hits-5.png)
+
+---
+
+### Free text search reset
+*Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)*, performing a free text search from the search result page **after** a filter selection will reset the entire search request.
+
+Example:
+* From the DE homepage, I browse by topic 'Health'
+* It displays the related search results
+* From the search results page, I free text search for 'Industry'
+* The previous 'Health' selected facet is reset, and it displays the results according to the 'Industry' text search only.
