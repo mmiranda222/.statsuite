@@ -3,5 +3,27 @@ title: .Stat DE analytics
 subtitle: 
 comments: false
 weight: 76
+keywords: [
+  'Google Analytics', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-analytics/',
+  'Google Tag Manager', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-tag-manager/',
+]
 ---
 
+includes:
+
+* [Google Analytics](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-analytics/)
+* [Google Tag Manager](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-tag-manager/)
+
+---
+
+**DISCLAIMERS:**  
+**Google Analytics** plugged to .Stat Data Explorer was first implemented with [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020).  
+**Google Tag Manager** directly plugged to .Stat Data Explorer (between DE and Google Analytics) was implemenetd with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021).
+
+If you were using Google Analytics plugged to your DE instance in a version older than **JS 10.0.0**, then upgrading to JS 10.0.0 will not break your statistics usage tracking with Google Analytics, unless you decide to move to Google Tag Manager.  
+If you decide to use Google Tag Manager, then when upgrading to **JS 10.0.0**, it is **mandatory** to remove your previous GA_TOKEN from your deployment process, and replace it with the new GTM_TOKENs (refer to our documentation about [GTM setup](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-tag-manager/)).
+
+Google Tag Manager is plugged "between" your website and any compliant statistic and data analytical tool such as Google Analytics. Google Tag Manager's tags may differ from Google Analytics tags, therefore, when upgrading to JS 10.0.0 and deciding to use Google Tag Manager on top of Google Analytics, you must .............................?????????????
+
+
+![GA GTM diagram](/dotstatsuite-documentation/images/ga-gtm-diagram.png)
