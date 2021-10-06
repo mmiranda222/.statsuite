@@ -6,6 +6,7 @@ weight: 76
 keywords: [
 'Introduction', '#introduction',
 'Optional authentication of DE', '#optional-authentication-of-de',
+'How to allow the DE to be accessible only by authenticated users', '#how-to-allow-the-de-to-be-accessible-only-by-authenticated-users',
 'OpenID connect Middleware for NSIWS', '#openid-connect-middleware-for-nsiws',
 'Intro', '#intro',
 'Setup', '#setup',
@@ -18,6 +19,7 @@ keywords: [
 #### Table of Content
 - [Introduction](#introduction)
 - [Optional authentication of DE](#optional-authentication-of-de)
+- [How to allow the DE to be accessible only by authenticated users](#how-to-allow-the-de-to-be-accessible-only-by-authenticated-users)
 - [OpenID connect Middleware for NSIWS](#openid-connect-middleware-for-nsiws)
   - [Intro](#intro)
   - [Setup](#setup)
@@ -48,6 +50,29 @@ Using authentication is critical and is thus configured at server level through 
 When provided, the `env.` variable **`AUTH_PROVIDER`** in your deployment process can be set to 'keycloak' and returns the expected log in mechanism and feature.  
 If **`AUTH_PROVIDER`** is not provided, DE is considered as 'public', and no request from the DE is made to any authentication provider. In addition, the 'Log in' feature in the DE header is not displayed.  
 By default, `AUTH_PROVIDER` is not provided.
+
+---
+
+### How to allow the DE to be accessible only by authenticated users
+> Released in [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
+
+It is possible to allow an instance of the Data Explorer to be accessible **only** by authenticated users.  
+Considering an instance of the DE with a valid Authentication Provider as described above. In your `tenants.json`, if the `"keycloak"` (as an example of a valid auth. provider) entry has the parameter **`"required": true`**, then the DE is in a **strickly authentication mode**, meaning that any URL of this DE instance, when queried, will redirect first to the login page of the auth. provider for authentication (if not already authenticated).
+
+Example:
+
+```json
+"keycloak": {
+  "realm": "demo",
+  "clientId": "stat-suite",
+  "required": true
+},
+```
+
+If `"required": false`, then the DE is accessible in the mode (public or public+authenticated) corresponding to your auth. provider configuration.  
+If `"required": true` and the auth. provider is not valid, then the DE will return a meaningful error message.
+
+**Note** that, even if the DE is only accessible by authenticated users, the shared views generated from it will still be publicly accessible. It is thus possible to disable the share option: see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#disabled-share-option).
 
 ---
 
