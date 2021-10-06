@@ -48,6 +48,31 @@ By default, all data elements (bars, columns, lines, dots, etc.) in the charts a
 - Highlights: ordered list of elements to be coloured in a pre-defined, configurable sequence of colours;
 - Baseline: maximum one item to be coloured in a separate pre-defined, configurable colour (default: #0B1E2D (almost black)).
 
+Note: For the following types, Timeline, Horizontal Symbool and Vertical Symbol, there is a size threshold for which, if the chart contains hilghlights or baseline, only these will be displayed.  
+By default, these thresholds are height of 300px for the vertical axe of a Timeline or Horizontal Symbol, and width of 300px for the horizontal axe of a Vertical Symbol.  
+You can customize these limits with the following options.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json` under `chart` property
+
+```json
+  options = {
+    base: {
+      minDisplayWidth: 300,
+      minDisplayHeight: 300,
+    }
+  }
+```
+
+You can also simply disable this mechanism with the following:
+
+```json
+  options = {
+    serie: {
+      responsiveFocusFilter: false
+    }
+  }
+```
+
 ---
 
 ### Axes scaling
