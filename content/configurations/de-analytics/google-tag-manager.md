@@ -20,7 +20,7 @@ keywords: [
   - [Container IDs for deployment process](#container-ids-for-deployment-process)
   - [Retrieve the containers default settings](#retrieve-the-containers-default-settings)
   - [Import the containers settings](#import-the-containers-settings)
-  - [Configure the containers](#configure-the-containers)
+- [Configure the containers](#configure-the-containers)
   - [Configure your domain](#configure-your-domain)
   - [Configure Google Analytics with Google Tag Manager](#configure-google-analytics-with-google-tag-manager)
   - [Configure your cross domains](#configure-your-cross-domains)
@@ -31,6 +31,8 @@ keywords: [
 > Released in [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
 
 > *Link* to disclaimer on GA --> GTM
+
+---
 
 ### How to configure Google Tag Manager
 
@@ -46,7 +48,7 @@ Create an account in [GTM](https://tagmanager.google.com). This account will all
 What is a container?   
 A **container** is a collection of tags, triggers, variables, and related configurations installed on a given website or mobile app.
 
-We have choose to create one container per application. Why???  
+We have chosen to create **one container per service** for a better maintainability and for further potential evolutions of the scope (e.g. new events to track requiring to include another .Stat Suite service).  
 Hence, you need to create two containers, one for data-explorer and one for data-viewer.
 
 ![GTM - create a container](/dotstatsuite-documentation/images/gtm-create-container.png)
@@ -84,10 +86,12 @@ Choose your workspace (default workspace, if it is the first time your create a 
 
 Repeat the step for each data-explorer and data-viewer container.
 
-#### Configure the containers
+---
+
+### Configure the containers
 To properly setup your container, you need to add your google analytics token and your domain.  
 
-##### Configure your domain
+#### Configure your domain
 This variable is usefull to know when a user click on a link inside your application. That allow us to define is think link is an outbound link or not.  
 
 First click on **Domain** variable  
@@ -96,7 +100,7 @@ First click on **Domain** variable
 then change the value by your domain  
 ![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-domain-next-step0.png)  
 
-##### Configure Google Analytics with Google Tag Manager
+#### Configure Google Analytics with Google Tag Manager
 This variable is the way from google tag manager to send data to google analytics by your token.   
 
 First click on **GA Token** variable  
@@ -105,7 +109,7 @@ First click on **GA Token** variable
 then change the value by your domain  
 ![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-token-next-step0.png)  
 
-##### Configure your cross domains
+#### Configure your cross domains
 First click on **Cross-domain** variable  
 ![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-cross-domain.png)  
 
