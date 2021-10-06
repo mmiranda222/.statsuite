@@ -30,7 +30,12 @@ There are two options for sharing the data view:
 * 2) **Latest available data** for the period defined: The current data query is saved with the data view and re-executed before the data view is redisplayed. The time period is fixed to the current time span covered.
 
 Before having the expected URL and the code to embed for sharing the information, the user must fill up his/her **email address** to make the request by clicking on the button "Request URL and embed code".  
-Once clicked, the user receives the following message:
+
+Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021), the following behaviors are also applied to the email address field:
+* If the user is authenticated, then it is prefilled with the email address used during the authentication. The email address is prefilled as long as the user stays authenticated during his DE journey;
+* If not authenticated, then the email address used during the first shared request will stay prefilled, even when changing the data view selection(s), or even when viewing a different data view (dataflow).
+
+Once clicked on "Request URL and embed code", the user receives the following message:
 
 ![Share](/dotstatsuite-documentation/images/de-share2.png)
 
