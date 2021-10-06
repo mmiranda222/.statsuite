@@ -166,7 +166,7 @@ For Dataflows **only**, The user can view the following additional information:
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9.png)
 
-**Note** that *(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)* for some external data sources (e.g. using MT Fusion Registry), the *SDMX* annotation of type `sdmx_metrics` has no id `obs_count`, but the id **`series_count**` instead.  
+**Note** that *(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* for some external data sources (e.g. using MT Fusion Registry), the *SDMX* annotation of type `sdmx_metrics` has no id `obs_count`, but the id **`series_count`** instead.  
 In this case, the DLM will display the **number of series** instead of observation values.
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-21.png)
