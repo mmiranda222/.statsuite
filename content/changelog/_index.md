@@ -106,7 +106,7 @@ ToC
 
 major changes:
 
-- **New translation keys** were added to the source code (DLM UI related). See the [i18n changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/44#i18n-changelog). Note that these new keys do not all have a default translation provided in all the supported languages, hence you might have missing translations for some dinstinct (DLM) UI labels, unless you provide translations in your overrides, or you submit translations to the code source.
+- **New translation keys** were added to the source code (DLM UI related). See the [i18n changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/44#i18n-changelog). Note that these new keys do not all have a default translation provided in all the supported languages, hence you might have missing translations for some distinct (DLM) UI labels, unless you provide translations in your overrides, or you submit translations to the code source.
 - [dotstatsuite-data-viewer#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/22) Use i18n in the title of the data-viewer. It affects the `settings.json` file by removing the following property (moved to locales):
 ```json
 "app": {
