@@ -18,7 +18,7 @@ includes:
 
 **DISCLAIMERS:**  
 **Google Analytics** plugged to .Stat Data Explorer was first implemented with [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020).  
-**Google Tag Manager** directly plugged to .Stat Data Explorer (between DE and Google Analytics) was implemenetd with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021).
+**Google Tag Manager** directly plugged to .Stat Data Explorer (between DE and Google Analytics) was implemented with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021).
 
 If you were using Google Analytics plugged to your DE instance in a version older than **JS 10.0.0**, then upgrading to JS 10.0.0 will not break your statistics usage tracking with Google Analytics, unless you decide to move to Google Tag Manager.  
 If you decide to use Google Tag Manager, then when upgrading to **JS 10.0.0**, it is **mandatory** to remove your previous GA_TOKEN from your deployment process, and replace it with the new GTM_TOKENs (refer to our documentation about [GTM setup](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-tag-manager/)).
