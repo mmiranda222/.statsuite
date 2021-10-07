@@ -21,6 +21,10 @@ keywords: [
 
 ---
 
+> Read the **[disclaimers](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/)** for a better understanding of the historic implementation of Google Analytics and Google Tag Managers in .Stat Suite.
+
+---
+
 ### Tracking ID
 
 ![GA logo](/dotstatsuite-documentation/images/googleanalytics-logo.png)
