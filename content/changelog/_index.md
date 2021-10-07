@@ -85,7 +85,7 @@ ToC
 > This **major** release includes a new version of the **data-explorer**, **data-viewer**, and **data-lifecycle-manager** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.5.0**.
 
-**Performance evolutions** in this release: here below is a summary of comparison of the performance between the previous release and this one which introduces a new **HTML** table in the DE visualisations ([dotstatsuite-data-explorer#523](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/523)). Note that further performance improvements of the table are expected once we release [dotstatsuite-data-explorer#591](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/591) :
+**Performance evolutions of the DE data table** in this release: here below is a summary of comparison of the performance between the previous release and this one which introduces a new **HTML** table in the DE visualisations ([dotstatsuite-data-explorer#523](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/523)). Note that further performance improvements of the table are expected once we release [dotstatsuite-data-explorer#591](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/591) :
 
 | DE table (version, content & layout) | Total | Scripting | Rendering | System |
 |----------------|----------------|----------------|----------------|----------------|
@@ -106,7 +106,7 @@ ToC
 
 major changes:
 
-- **New translation keys** were added to the source code (DLM UI related). See the [i18n changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/44#i18n-changelog). Note that these new keys do not all have a default translation provided in all the supported languages, hence you might have missing translations for some dinstinct (DLM) UI labels, unless you provide translations in your overrides, or submit translations to the code source.
+- **New translation keys** were added to the source code (DLM UI related). See the [i18n changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/44#i18n-changelog). Note that these new keys do not all have a default translation provided in all the supported languages, hence you might have missing translations for some dinstinct (DLM) UI labels, unless you provide translations in your overrides, or you submit translations to the code source.
 - [dotstatsuite-data-viewer#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/22) Use i18n in the title of the data-viewer. It affects the `settings.json` file by removing the following property (moved to locales):
 ```json
 "app": {
