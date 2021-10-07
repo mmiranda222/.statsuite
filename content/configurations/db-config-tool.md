@@ -2,7 +2,7 @@
 title: "SQL Server configuration without SQL Mgmt Studio"
 subtitle: 
 comments: false
-weight: 85
+weight: 96
 
 ---
 

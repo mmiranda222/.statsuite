@@ -2,7 +2,7 @@
 title: "Development guidelines"
 subtitle: 
 comments: false
-weight: 93
+weight: 108
 keywords: [
   'git-flow', '#git-flow',
   'Overview', '#overview',
