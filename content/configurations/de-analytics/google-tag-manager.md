@@ -41,7 +41,7 @@ keywords: [
 ![GTM logo](/dotstatsuite-documentation/images/googletagmanager-logo.png)
 
 ### How to configure Google Tag Manager
-There are the steps to follow in order to properly **configure Google Tag Manager** (GTM).
+These are the steps to follow in order to properly **configure Google Tag Manager** (GTM).
 
 #### Pre-requisite
   - **GTM account**
