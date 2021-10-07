@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 5, 2021](#october-5-2021)
 - [September 16, 2021](#september-16-2021)
 - [September 03, 2021](#september-03-2021)
 - [September 2, 2021](#september-2-2021)
@@ -76,6 +77,80 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+
+### October 5, 2021
+**[Release .Stat Suite JS 10.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/44)**
+> This **major** release includes a new version of the **data-explorer**, **data-viewer**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.5.0**.
+
+**Performance evolutions** in this release: here below is a summary of comparison of the performance between the previous release and this one which introduces a new **HTML** table in the DE visualisations ([dotstatsuite-data-explorer#523](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/523)). Note that further performance improvements of the table are expected once we release [dotstatsuite-data-explorer#591](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/591) :
+
+| DE table (version, content & layout) | Total | Scripting | Rendering | System |
+|----------------|----------------|----------------|----------------|----------------|
+| **JS 10.0.0** Table 250 observations | 468 ms | 347 ms | 33 ms | 87 ms |
+| JS 9.0.2 Table 250 observations | 449 ms | 343 ms | 28 ms | 78 ms |
+| **JS 10.0.0** Table 2500 observations | 4207 ms | 3817 ms | 102 ms | 288 ms |
+| JS 9.0.2 Table 2500 observations | 5623 ms | 4245 ms | 1016 ms | 361 ms |
+| **JS 10.0.0** Table 240 observations - Rows | 751 ms | 497 ms | 84 ms | 170 ms |
+| JS 9.0.2 Table 240 observations - Rows | 713 ms | 502 ms | 81 ms | 129ms |
+| **JS 10.0.0** Table 2500 observations - Rows | 5499 ms | 4869 ms | 248 ms | 382 ms |
+| JS 9.0.2 Table 2500 observations - Rows | 6661 ms | 5398 ms | 817 ms | 446 ms |
+| **JS 10.0.0** Table 2500 obs - Columns * 3 | 4860 ms | 4358 ms | 139 ms | 363 ms |
+| JS 9.0.2 Table 2500 obs - Columns * 3 | 5754 ms | 4621 ms | 798 ms | 335 ms |
+| **JS 10.0.0** Table 2500 obs - Sections (1 dimension) | 4747 ms | 4135 ms | 223 ms | 389 ms |
+| JS 9.0.2 Table 2500 obs - Sections (1 dimension) | 14137 ms | 7422 ms | 2067 ms | 337 ms |
+| **JS 10.0.0** Table 2500 obs - Sections (3 dimensions) | 15498 ms | 14796 ms | 198 ms | 504 ms |
+| JS 9.0.2 Table 2500 obs - Sections (3 dimensions) | 16808 ms | 15158 ms | 963 ms | 687 ms |
+
+major changes:
+
+- **New translation keys** were added to the source code (DLM UI related). See the [i18n changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/44#i18n-changelog). Note that these new keys do not all have a default translation provided in all the supported languages, hence you might have missing translations for some dinstinct (DLM) UI labels, unless you provide translations in your overrides, or submit translations to the code source.
+- [dotstatsuite-data-viewer#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/22) Use i18n in the title of the data-viewer. It affects the `settings.json` file by removing the following property (moved to locales):
+```json
+"app": {
+  "title": "SIS-CC .Stat Data viewer",
+}
+```
+
+significant and minor changes:
+
+- [dotstatsuite-data-explorer#487](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/487) Make the filter item (de-)selection features more intuitive. It includes the introduction of **checkboxes** for the facets/filters items' selection, and the adjustment of the pages' layout in order to give more space to the facets/filters areas.
+- [dotstatsuite-data-explorer#523](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/523) Table cell mic-mac : **HTML table**.
+- [dotstatsuite-data-explorer#561](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/561) Allow - by configuration - the DE to be **only accessible by authenticated users**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#how-to-allow-the-de-to-be-accessible-only-by-authenticated-users))
+- [dotstatsuite-data-explorer#585](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/585) DE free text search `fts` should reset search. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/free-text-search/#free-text-search-reset))
+- [dotstatsuite-data-explorer#249](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/249) Tracking events in data-explorer & data-viewer with **Google Tag Manager (GTM)**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/google-tag-manager/))
+- [dotstatsuite-data-lifecycle-manager#202](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/202) Extend the DLM with **advanced transfer features**: data validations & embargo release management. (Documentation for [data upload with embargo](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/point-in-time/),  [data upload with data validations](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/data-validation/) & [data transfer](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data/))
+- [dotstatsuite-data-lifecycle-manager#210](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/210) Refactor and enhance how DLM retrieves the number of observations (or series) per dataflow. ([Updated Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#content-of-the-list))
+- [dotstatsuite-data-explorer#514](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/514) Hide the "Time & Frequency" filter for dataflows without `TIME_PERIOD` time dimension or if a `NOT_DISPLAYED` annotation is defined for that dimension. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/#hiding-frequency-and-time-period-filters))
+- [dotstatsuite-data-explorer#580](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/580) Keep the email between actions in DE share text field. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/#general-behavior))
+- [dotstatsuite-data-explorer#577](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/577) Localised DE assets. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#localised-common-site-logos))
+- [dotstatsuite-components#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/6) Enhance highlight filter mechanism for small Charts.
+- [dotstatsuite-components#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/5) Enhance the Stacked bar Chart.
+- [dotstatsuite-data-explorer#568](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/568) Wrong default (end) time period selection.
+- [dotstatsuite-d3-charts#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/5) Remove chart logs for non-development version.
+- [dotstatsuite-data-explorer#579](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/579) *(Refactoring)* Fix deprecated warning (material ui).
+- [dotstatsuite-data-explorer#552](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/552) *(Refactoring)* Bad i18n usage in selector.
+- [dotstatsuite-data-explorer#576](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/576) *(Refactoring)* Datasrouce `ds` in search `sfs` requests.
+- [dotstatsuite-config-data#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/6) *(Support)* Update Spanish i18n locale files.
+- [dotstatsuite-shar#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/29) *(Support)* SMTP mail configuration. ([Updated documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/tree/master#smtp))
+- [dotstatsuite-data-explorer#554](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/554) *(Support)* Number of last observations parameter from URL is not kept embedded when reusing the link.
+- [dotstatsuite-docker-compose#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/26) *(Support)* *DockerCompose* Update config data for docker demo.
+- [dotstatsuite-docker-compose#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/23) *(Support)* *DockerCompose* Error 404 indexing dataflows.
+- [dotstatsuite-docker-compose#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/22) *(SUpport)* *DockerCompose* Search engine is offline causing data explorer to fail.
+- [dotstatsuite-docker-compose#21](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/21) *(Support)* *DockerCompose* DLM demo is not loading : upgrade docker demo to latest v9.0.0.
+
+patch changes:
+
+- [dotstatsuite-sdmx-faceted-search#94](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/94) `ORDER` annotation not working as expected for CategoryScheme.
+- [dotstatsuite-data-explorer#592](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/592) Unnecessary search calls.
+- [dotstatsuite-data-explorer#588](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/588) Narrow filter does not open in search page.
+- [dotstatsuite-d3-charts#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/6) Fix charts tooltip.
+- [dotstatsuite-d3-charts#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/7) Performance issue for Timeline charts rendering.
+- [dotstatsuite-components#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/7) Fix resize mechanism of the Charts.
+- [dotstatsuite-data-viewer#23](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/23) Missing translations in data viewer.
+- [dotstatsuite-data-explorer#572](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/572) Chart config. component reset after changing the selection.
 
 ---
 
