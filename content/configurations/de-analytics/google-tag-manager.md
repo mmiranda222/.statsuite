@@ -4,12 +4,17 @@ subtitle:
 comments: false
 weight: 80
 keywords: [
-  '', '',
-  '', '',
-  '', '',
-  '', '',
-  '', '',
-  '', '',
+'How to configure Google Tag Manager', '#how-to-configure-google-tag-manager',
+'Pre-requisite', '#pre-requisite',
+'Create GTM containers', '#create-gtm-containers',
+'Container IDs for deployment process', '#container-ids-for-deployment-process',
+'Retrieve the containers default settings', '#retrieve-the-containers-default-settings',
+'Import the containers settings', '#import-the-containers-settings',
+'Configure the containers', '#configure-the-containers',
+'Configure your domains', '#configure-your-domains',
+'Configure Google Analytics with Google Tag Manager', '#configure-google-analytics-with-google-tag-manager',
+'Configure your cross domains', '#configure-your-cross-domains',
+'Events tags and triggers', '#events-tags-and-triggers',
 ]
 ---
 
@@ -24,7 +29,7 @@ keywords: [
   - [Configure your domains](#configure-your-domains)
   - [Configure Google Analytics with Google Tag Manager](#configure-google-analytics-with-google-tag-manager)
   - [Configure your cross domains](#configure-your-cross-domains)
-- [](#)
+- [Events tags and triggers](#events-tags-and-triggers)
 
 ---
 
@@ -131,7 +136,7 @@ Keep "Variable Type" to "Element URL", "Component Type" to "Is Outbound", and th
 ---
 
 ### Events tags and triggers
-All events in GTM are listed under the **Tags** tab:
+All events in GTM are listed under the **Tags** tab of the Workspace. Each tag is defined by a name and a one or several **Triggers**.
 
 - data-explorer Tags
 
@@ -141,7 +146,7 @@ All events in GTM are listed under the **Tags** tab:
 
 ![GTM - data-viewer Tags](/dotstatsuite-documentation/images/gtm-data-viewer-tags.png)
 
-Another perspective of GTM is to view the list of triggers under the **Triggers** tab:
+Another useful detailed view of GTM tags is the list of triggers under the **Triggers** tab. Triggers names should be enough self-explenatory for the user to understand what action it refers to in the DE for example: "Browse by", "Download Excel", etc.
 
 - data-explorer Triggers
 
@@ -150,3 +155,8 @@ Another perspective of GTM is to view the list of triggers under the **Triggers*
 - data-viewer Triggers
 
 ![GTM - data-viewer Triggers](/dotstatsuite-documentation/images/gtm-data-viewer-triggers.png)
+
+---
+
+### Example of a Google Analytics monitoring dashboard
+*to be added soon*
