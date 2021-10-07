@@ -7,7 +7,7 @@ keywords: [
 'How to configure Google Tag Manager', '#how-to-configure-google-tag-manager',
 'Pre-requisite', '#pre-requisite',
 'Create GTM containers', '#create-gtm-containers',
-'Container IDs for deployment process', '#container-ids-for-deployment-process',
+'Container IDs in the deployment process', '#container-ids-in-the-deployment-process',
 'Retrieve the containers default settings', '#retrieve-the-containers-default-settings',
 'Import the containers settings', '#import-the-containers-settings',
 'Configure the containers', '#configure-the-containers',
@@ -22,7 +22,7 @@ keywords: [
 - [How to configure Google Tag Manager](#how-to-configure-google-tag-manager)
   - [Pre-requisite](#pre-requisite)
   - [Create GTM containers](#create-gtm-containers)
-  - [Container IDs for deployment process](#container-ids-for-deployment-process)
+  - [Container IDs in the deployment process](#container-ids-in-the-deployment-process)
   - [Retrieve the containers default settings](#retrieve-the-containers-default-settings)
   - [Import the containers settings](#import-the-containers-settings)
 - [Configure the containers](#configure-the-containers)
@@ -34,14 +34,13 @@ keywords: [
 ---
 
 > Released in [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
-> Read the **[disclaimers](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/)** for a better understanding of the historic implementation of Google Analytics and Google Tag Managers in .Stat Suite.
+> Read the **[disclaimers](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/)** for a better understanding of the historical implementations of Google Analytics and Google Tag Manager in .Stat Suite.
 
 ---
 
-### How to configure Google Tag Manager
-
 ![GTM logo](/dotstatsuite-documentation/images/googletagmanager-logo.png)
 
+### How to configure Google Tag Manager
 There are the steps to follow in order to properly **configure Google Tag Manager** (GTM).
 
 #### Pre-requisite
@@ -74,11 +73,13 @@ GTM_TOKEN_DV=GTM-XXXXXXX
 ![GTM - container ID](/dotstatsuite-documentation/images/gtm-container-id.png)
 
 #### Retrieve the containers default settings
-The settings of the containers are configurations in .json files already prepared and maintained by our developers, and required in the next steps of GTM setup. They contain all specific tags and triggers created in advance for tracking data explorer and data viewers' usages and statistics.
+The settings of the containers are configurations in .json files already prepared and maintained by our developers, and required in the next steps of GTM setup. They contain all specific tags, triggers and variables created in advance for tracking data explorer and data viewers' usages and statistics.
 
 Download  the two following .json files:
   - <a href="/dotstatsuite-documentation/assets/GTM-template/gtm-data-explorer.json" download>data-explorer</a>
   - <a href="/dotstatsuite-documentation/assets/GTM-template/gtm-data-viewer.json" download>data-viewer</a>
+
+**Note**  that it is also possible to change, for compatibility with a previous version of your usage of GTM or GA, or for business reasons, to modify the names and definitions of these tags, triggers and variables before importing them into the containers.
 
 #### Import the containers settings
 After having downloaded the pre-configured containers settings, you now need to import it into GTM.  

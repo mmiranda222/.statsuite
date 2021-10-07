@@ -16,7 +16,7 @@ includes:
 
 ---
 
-**DISCLAIMERS:**  
+### DISCLAIMERS
 **Google Analytics** plugged to .Stat Data Explorer was first implemented with [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020).  
 **Google Tag Manager** directly plugged to .Stat Data Explorer (between DE and Google Analytics) was implemented with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021).
 
