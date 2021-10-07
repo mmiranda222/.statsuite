@@ -21,7 +21,7 @@ keywords: [
   - [Retrieve the containers default settings](#retrieve-the-containers-default-settings)
   - [Import the containers settings](#import-the-containers-settings)
 - [Configure the containers](#configure-the-containers)
-  - [Configure your domain](#configure-your-domain)
+  - [Configure your domains](#configure-your-domains)
   - [Configure Google Analytics with Google Tag Manager](#configure-google-analytics-with-google-tag-manager)
   - [Configure your cross domains](#configure-your-cross-domains)
 - [](#)
@@ -55,12 +55,13 @@ Hence, you need to create two containers, one for data-explorer and one for data
 You can name each container "data-explorer" and "data-viewer", or add a notion of env. (e.g. "data-explorer-qa") if you plan to setup GTM on different instances for test purposes. Each container is automatically created with a **Container ID**.
 
 #### Container IDs in the deployment process
-In order to allow GTM retrieving tags from an instance of .Stat Data Explorer and .Stat Data Viewer, you need to provide each respective  **Container ID** in your deployment process as an **env variable named `GTM_TOKEN`** in the scope of compliant service (data-explorer and data-viewer). You can add the env variable in your **`.env`** file and start data-explorer and data-viewer services.  
-If you are using Docker Compose, you have to declare the env variable at the service level in the compose file (see [example](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/demo/.env))
+In order to allow GTM retrieving tags from an instance of .Stat Data Explorer and .Stat Data Viewer, you need to provide each respective  **Container ID** in your deployment process as an **env variable named `GTM_TOKEN`** in the scope of the compliant service (data-explorer and data-viewer). You can add the env variable in your **`.env`** file and start data-explorer and data-viewer services.  
+If you are using Docker Compose, you have to declare the env variable in the compose file (see [example](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/demo/.env))
 
 Example with Docker `.env`:
 
 ```
+# ---------------------------------------- Analytics
 GTM_TOKEN_DE=GTM-XXXXXXX
 GTM_TOKEN_DV=GTM-XXXXXXX
 ```
@@ -92,7 +93,7 @@ Repeat these steps for both data-explorer and data-viewer containers.
 ### Configure the containers
 In order to properly setup and complete your containers' configurations, you need to add your **domain** and a **Google Analytics Token**.
 
-#### Configure your domain
+#### Configure your domains
 From the "Workspace" of your data-explorer container, go to "Variables", then click on the **"Domain"** user-defined variable.
 
 ![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-domain.png)  
@@ -117,13 +118,13 @@ Copy your **GA Tracking ID** in the "Tracking ID" field and save.
 ![GTM - configure your GA Token step 2](/dotstatsuite-documentation/images/gtm-ga-token-step2.png)
 
 #### Configure your cross domains
-This variable is usefull to know when a user click on a link inside your application. That allow us to define is think link is an outbound link or not.
+The **Cross-domain** variable is necessary if you want to track events when a user clicks on a hyperlink from your website to another target (outbound links).
 
-First click on **Cross-domain** variable
+From the "Workspace" of your data-explorer container, go to "Variables", then click on the **"Cross-domain"** user-defined variable.
 
 ![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-cross-domain.png)  
 
-Then change the value by your cross domain hyperlinks separated by comas:
+Keep "Variable Type" to "Element URL", "Component Type" to "Is Outbound", and then change "Affiliated Domains" value by the comma-separated list your cross-domain hyperlink, then save.
 
 ![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-cross-domain-next-step0.png)  
 

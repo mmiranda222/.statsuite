@@ -21,7 +21,7 @@ keywords: [
 
 ---
 
-> Read the **[disclaimers](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/)** for a better understanding of the historic implementation of Google Analytics and Google Tag Managers in .Stat Suite.
+> Read the **[disclaimers](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/)** for a better understanding of the historic implementation of Google Analytics and Google Tag Manager in .Stat Suite.
 
 ---
 
