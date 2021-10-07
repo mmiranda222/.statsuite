@@ -101,21 +101,23 @@ Leave the Variable type as "Constant", then change the Value to your domain URL.
 
 ![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-token-next-step0.png)  
 
-Repeat the same steps in the data-viewer container, the Value of your domain being the URL of the Data Viwer (e.g. https://dv-qa.siscc.org).
+Repeat the same steps in the data-viewer container, the Value of your domain being the URL of the Data Viewer (e.g. https://dv-qa.siscc.org).
 
 #### Configure Google Analytics with Google Tag Manager
-This variable is the way from google tag manager to send data to google analytics by your token.   
+This variable is the way from Google Tag Manager to send data to google analytics by your token.   
 
-First click on **GA Token** variable  
+First click on **GA Token** variable
+
 ![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-token.png)  
 
 #### Configure your cross domains
 This variable is usefull to know when a user click on a link inside your application. That allow us to define is think link is an outbound link or not.
 
-First click on **Cross-domain** variable  
+First click on **Cross-domain** variable
+
 ![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-cross-domain.png)  
 
-then change the value by your cross domain hyperlinks separated by comas:
+Then change the value by your cross domain hyperlinks separated by comas:
 
 ![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-cross-domain-next-step0.png)  
 
