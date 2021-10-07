@@ -93,22 +93,28 @@ Repeat these steps for both data-explorer and data-viewer containers.
 In order to properly setup and complete your containers' configurations, you need to add your **domain** and a **Google Analytics Token**.
 
 #### Configure your domain
-From the Workspace of your data-explorer container, go to "Variables", then click on the "Domain" user-defined variable.
+From the "Workspace" of your data-explorer container, go to "Variables", then click on the **"Domain"** user-defined variable.
 
 ![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-domain.png)  
 
-Leave the Variable type as "Constant", then change the Value to your domain URL.
+Keep the Variable type as "Constant", and change the Value to your domain URL (e.g. https://de-qa.siscc.org/).
 
 ![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-token-next-step0.png)  
 
 Repeat the same steps in the data-viewer container, the Value of your domain being the URL of the Data Viewer (e.g. https://dv-qa.siscc.org).
 
 #### Configure Google Analytics with Google Tag Manager
-This variable is the way from Google Tag Manager to send data to google analytics by your token.   
+The **GA Token** variable is necessary if you want Google Tag Manager to send data to Google Analytics.
 
-First click on **GA Token** variable
+**Pre-requisite**: Create a **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)**.
 
-![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-token.png)  
+From the "Workspace" of your data-explorer container, go to "Variables", then click on the **"GA Token"** user-defined variable.
+
+![GTM - configure your GA Token](/dotstatsuite-documentation/images/gtm-ga-token.png)
+
+Copy your **GA Tracking ID** in the "Tracking ID" field and save.
+
+![GTM - configure your GA Token step 2](/dotstatsuite-documentation/images/gtm-ga-token-step2.png)
 
 #### Configure your cross domains
 This variable is usefull to know when a user click on a link inside your application. That allow us to define is think link is an outbound link or not.
