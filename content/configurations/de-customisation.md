@@ -65,6 +65,7 @@ The default theme is applied if there is no theme added to the settings.json fil
 
 ```json
 {
+  "theme": {
     "overrides": {
       "MuiButton": {
         "root": {
