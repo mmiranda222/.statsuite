@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 11, 2021](#october-11-2021)
 - [October 5, 2021](#october-5-2021)
 - [September 16, 2021](#september-16-2021)
 - [September 03, 2021](#september-03-2021)
@@ -77,6 +78,31 @@ ToC
 > - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
 > - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
 > - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+
+---
+### October 11, 2021
+**[Release .Stat Suite .NET 7.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/45)**
+> This release includes a new version of the **sdmxri-nsi-ws**, **core-transfer**, **core-auth-management**, and **excel-addin** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.7.1**.
+
+> **Disclaimers:**  
+> 1) Known issue: **Time periods below hours** are currently represented with hourly period time ranges. We recommend not to upgrade to this .Stat Suite release if you deal with minutely or secondly data, and wait until we release the patch change [dotstatsuite-core-data-access#79](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/79).  
+> 2) The SdmxSource library of Eurostat now accepts time fragments with **fraction of seconds** as valid date/time values (e.g. 1222-02-22T22:20:02.**202**). .Stat Suite **does not support** time periods below seconds, only down to seconds. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#support-of-high-frequency-time-periods-using-sdmx-annotation))
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#174](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/174) Deploy **NSIWS version 8.7.1** *(incl. 8.7.0)*.
+- [dotstatsuite-core-transfer#189](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/189) Allow for **attributes at group-level** that include the time dimension *(part 2)*.
+- [dotstatsuite-excel-addin#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/32) Apply default sort on `SID` column for SDMX outputs in the DLM Excel-Addin.
+- [dotstatsuite-excel-addin#31](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/31) Enforce TLS 1.2 security protocol in DLM Excel-Addin installation.
+- [dotstatsuite-core-auth-management#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/39) *(Support)* Forbidden response when calling transfer service `/status​/request API` (in case when replacing KeyCloak with Azure AD for auth. mgt). ([Updated documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/tree/master#token-claims-mapping))
+
+patch changes:
+
+- [dotstatsuite-core-transfer#224](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/224) Allow retrieving data with constrained but non-provided optional attributes.
+- [dotstatsuite-core-transfer#275](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/275) Zip file extraction not cleaned from temp folder. A new `filesCount` property has been introduced in the Transfer health page.
+- [dotstatsuite-core-sdmxri-nsi-ws#171](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/171) Regression for the usage of reserved keywords in SQL queries.
+- [dotstatsuite-excel-addin#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/34) Error raised in the Excel-Addin with no detailed reason.
 
 ---
 
