@@ -62,6 +62,8 @@ SDMX time periods with **frequencies higher than daily** (e.g. hours, minutes, s
 If this annotation is defined at the DSD level, then uploading data with values for e.g. a time period for minutely frequency will be successful.  
 If the user imports data with minutely time periods into a DSD not yet ready for this type of time periods, due to the missing "SUPPORT_DATETIME" annotation, then the transfer (at least in advanced validations) logs an appropriate error message: "_Error found in_ {... info on place of error, like row number, component etc. ...}.  _Datetime time periods are not supported by default. To allow supporting this special type of time periods, you need to add an annotation of type "SUPPORT_DATETIME" to the underlying Data Structure Definition and re-initialise the data DB objects using the transfer method /init/dataflow._"   
 
+**Note** that .Stat Suite officially does not support time periods below seconds (fraction of seconds).
+
 ---
 
 ### Adding data
