@@ -7,10 +7,11 @@
 
 <table>
 <thead>
-<tr><th>Plan</th><th>Create</th><th>Check</th><th>Package</th><th>Secure</th><th>Release</th><th>Monitor</th></tr>
+<tr><th>Manage & Protect</th><th>Plan</th><th>Create</th><th>Check</th><th>Package</th><th>Secure</th><th>Release</th><th>Monitor</th></tr>
 </thead>
 <body>
 <tr>
+<td>[Groups & Subgroups](#groups-subgroups)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Wish-list](#wish-list)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Git flow](#git-flow)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[CI (pipelines, auto-build, tests)](#ci)</td>
@@ -20,6 +21,7 @@
 <td>[Incident management](#incident-management)</td>
 </tr>
 <tr>
+<td>[Open-source compliance](#open-source-compliance)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Flight Planner](#flight-planner)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Code onwer](#code-onwer)</td>
 <td>[Code coverage](#code-coverage)</td>
@@ -29,6 +31,7 @@
 <td>[GTM & Product analytics](#gtm-product-analytics)</td>
 </tr>
 <tr>
+<td>[Metrics on issues, cycle-time, bottlenecks, Build vs. Run](#metrics-issues-cycle-time-bottlenecks-build-vs-run)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 <td>[Scheduled backlog & Iterations](#scheduled-backlog-iterations)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 <td>[Code review & Approvers](#code-review-approvers)</td>
 <td>[Usability compliance](#usability-compliance)</td>
@@ -38,6 +41,7 @@
 <td>[Metrics: new bugs](#metrics-new-bugs)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 </tr>
 <tr>
+<td>[2FA](#2fa)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Kanban boards](#kanban-boards)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Live preview](#live-preview)</td>
 <td>[Performance Tests](#performance-tests)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
@@ -47,16 +51,14 @@
 <td>[Metrics: performance results](#metrics-performance-results)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 </tr>
 <tr>
+<td>[GitLab backup](#gitLab-backup)</td>
 <td>[Time tracking](#time-tracking)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Permissions rules](#permisisons-rules)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[E2E tests](#end-to-end-tests)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
-<td>-</td>
+<td>[Container scan](#container-scan)<br> ![Level0](https://img.shields.io/badge/M-0-lightgrey)</td>
 <td>[Code quality](#code-quality)</td>
 <td>-</td>
 <td>[Usability tests](#usability-tests)</td>
-</tr>
-<tr>
-<td colspan="7"><b>Manage & Protect</b><br> [Groups & Subgroups](#groups-subgroups) ![Level3](https://img.shields.io/badge/M-3-brightgreen)<br> [Open-source compliance](#open-source-compliance) ![Level3](https://img.shields.io/badge/M-3-brightgreen)<br> [Metrics on issues, cycle-time, bottlenecks, Build vs. Run](#metrics-issues-cycle-time-bottlenecks-build-vs-run) ![Level2](https://img.shields.io/badge/M-2-blue)<br> [2FA](#2fa) ![Level1](https://img.shields.io/badge/M-1-orange)<br> [Container scan](#container-scan) ![Level0](https://img.shields.io/badge/M-0-lightgrey)<br> [GitLab backup](#gitLab-backup)</td>
 </tr>
 </body>
 </table>
