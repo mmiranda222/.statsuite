@@ -63,6 +63,34 @@
 </body>
 </table>
 
+# :repeat: Manage & Protect
+### Groups & Subgroups
+Projects are managed by groups and sub-groups under the root GitLab SIS-CC group: https://gitlab.com/sis-cc.  
+Each sub-group is independent from the others in terms of projects, meaning no limitation of numbers, and members, meaning that new members can be added to specific sub-groups.  
+
+### Open-source compliance
+The GitLab SIS-CC group, its sub-groups and underlying projects are open-source compliant and meet the following requirements:
+- All of the code hosted in this GitLab group must be published under [OSI-approved open source licenses](https://opensource.org/licenses/category).
+- The organisation (or underlying product) must not seek to make a profit through services or by charging for higher tiers (accepting donations to sustain the efforts is ok).
+- The GitLab group, sub-groups and underlying source code must be publicly visible and publicly available (with the exception to very limited private projects).
+
+Read also our [Code of Conduct](https://sis-cc.gitlab.io/dotstatsuite-documentation/about/code-of-conduct/).
+
+### Metrics: issues, cycle-time, bottlenecks, Build vs. Run
+Metrics reported on a weekly basis: number of issues per production cycle step (whish list, Scheduled backlog, Kanban, delivered), work-in-progress tickets by type of activity, ratio of closed tickets by activity, average cycle time, highlights.  
+*(accessible to members only)* [Weekly reports](https://community.oecd.org/community/siscc-governance/content?filterID=contentstatus%5Bpublished%5D~category%5Bstat-suite-weekly-reports%5D)
+
+:eyes: Better prepare and automate the .Stat Suite weekly reports, using GitLab API + Power BI
+
+### 2FA
+Two-factor Authentication (2FA) provides an additional level of security to users’ GitLab account withint our team members: https://gitlab.com/groups/sis-cc/-/group_members
+
+:eyes: To be adopted by all members having a minimum of *Reporter* permission (or we enforce it to all users https://docs.gitlab.com/ee/security/two_factor_authentication.html#enforcing-2fa-for-all-users).
+
+### GitLab backup
+Being able to manually or automatically schedule a full backup of GitLab content, meaning code + issues.  
+If not possible, being able to perform a manual periodic export of the content.
+
 # :repeat: Plan
 ### Wish-list
 The wish list is the public full list of recorded feature requests and feature enhancements yet to be reviewed and prioritized.  
@@ -156,6 +184,9 @@ https://docs.docker.com/docker-hub/publish/
 
 :eyes: *JB* currently exchanging with the Business Development Docker team.
 
+### Container scan
+:eyes: Enable "Vulnerability scanning" to identify vulnerabilities in all SIS-CC .Stat Suite container images https://hub.docker.com/orgs/siscc/repositories
+
 # :repeat: Secure
 ### SAST (Static Application Security Testing)
 We are currently doing white-box Static Application Security Testing (SAST) using **Checkmarx** and **Gitlab’s built-in plugin**. Checkmarx is ran manually on a regular basis, and the Gitlab plugin is part of our devops build process.  
@@ -229,34 +260,3 @@ https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/tree/mast
 :eyes: establish a periodic report of performances test results, at minimum after each new .Stat Suite release, with baselines and objectives.
 
 ### Usability tests
-
-# :repeat: Manage & Protect
-### Groups & Subgroups
-Projects are managed by groups and sub-groups under the root GitLab SIS-CC group: https://gitlab.com/sis-cc.  
-Each sub-group is independent from the others in terms of projects, meaning no limitation of numbers, and members, meaning that new members can be added to specific sub-groups.  
-
-### Open-source compliance
-The GitLab SIS-CC group, its sub-groups and underlying projects are open-source compliant and meet the following requirements:
-- All of the code hosted in this GitLab group must be published under [OSI-approved open source licenses](https://opensource.org/licenses/category).
-- The organisation (or underlying product) must not seek to make a profit through services or by charging for higher tiers (accepting donations to sustain the efforts is ok).
-- The GitLab group, sub-groups and underlying source code must be publicly visible and publicly available (with the exception to very limited private projects).
-
-Read also our [Code of Conduct](https://sis-cc.gitlab.io/dotstatsuite-documentation/about/code-of-conduct/).
-
-### Metrics: issues, cycle-time, bottlenecks, Build vs. Run
-Metrics reported on a weekly basis: number of issues per production cycle step (whish list, Scheduled backlog, Kanban, delivered), work-in-progress tickets by type of activity, ratio of closed tickets by activity, average cycle time, highlights.  
-*(accessible to members only)* [Weekly reports](https://community.oecd.org/community/siscc-governance/content?filterID=contentstatus%5Bpublished%5D~category%5Bstat-suite-weekly-reports%5D)
-
-:eyes: Better prepare and automate the .Stat Suite weekly reports, using GitLab API + Power BI
-
-### 2FA
-Two-factor Authentication (2FA) provides an additional level of security to users’ GitLab account withint our team members: https://gitlab.com/groups/sis-cc/-/group_members
-
-:eyes: To be adopted by all members having a minimum of *Reporter* permission (or we enforce it to all users https://docs.gitlab.com/ee/security/two_factor_authentication.html#enforcing-2fa-for-all-users).
-
-### Container scan
-:eyes: Enable "Vulnerability scanning" to identify vulnerabilities in all SIS-CC .Stat Suite container images https://hub.docker.com/orgs/siscc/repositories
-
-### GitLab backup
-Being able to manually or automatically schedule a full backup of GitLab content, meaning code + issues.  
-If not possible, being able to perform a manual periodic export of the content.
