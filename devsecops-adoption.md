@@ -24,7 +24,7 @@
 <td>[Open-source compliance](#open-source-compliance)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Flight Planner](#flight-planner)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[Code onwer](#code-onwer)</td>
-<td>[Code coverage](#code-coverage)</td>
+<td>[Code coverage](#code-coverage)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Release evidence](#release-evidence)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[DAST](#dast-dynamic-application-security-testing)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 <td>[Changelog](#changelog)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
@@ -150,6 +150,8 @@ https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashbo
 
 ### Code coverage
 https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
+
+:eyes: nsiws code coverage to update (or to remove if not possible to track), and fix *unkown* broken coverage.
 
 ### Usability compliance
 usability tests, localisation, browsers' compatibility, wcag, SDMX standard
