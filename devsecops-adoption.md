@@ -187,7 +187,11 @@ https://docs.docker.com/docker-hub/publish/
 :eyes: *JB* currently exchanging with the Business Development Docker team.
 
 ### Container scan
-:eyes: Enable "Vulnerability scanning" to identify vulnerabilities in all SIS-CC .Stat Suite container images https://hub.docker.com/orgs/siscc/repositories
+Objective is to identify potential vulnerabilities in the .Stat Suite Docker images.
+
+:eyes: Two options to assess:
+- Use GitLab to audit our Docker-based apps by including an extra job in the pipelines https://docs.gitlab.com/ee/user/application_security/container_scanning/
+- Enable fr each Docker repository the "Vulnerability scanning" in Docker Hub to automatically scan pushed images https://hub.docker.com/orgs/siscc/repositories
 
 # :repeat: Secure
 ### SAST (Static Application Security Testing)
