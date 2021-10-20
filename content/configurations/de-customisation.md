@@ -236,7 +236,7 @@ Some colors are used several times in the DE theme. For this purpose, we use **o
 Each property defined in "innerPalette" ([**theme used by data-explorer**](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/blob/master/src/theme.js)) is available in the settings.
 
 example
-```js
+```json
 {
   "theme": {
     "outerPalette": {
@@ -253,7 +253,7 @@ To override the first loader (spinner) color, when the application is not yet lo
 
 ```css
 .path {
-  stroke: "#ff00ff";
+  stroke: #ff00ff;
 }
 ```
 
