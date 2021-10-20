@@ -36,7 +36,7 @@
 <td>[Code review & Approvers](#code-review-approvers)</td>
 <td>[Usability compliance](#usability-compliance)</td>
 <td>[Milestone](#milestone)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
-<td>[Dependency scanning](#dependency-scanning)</td>
+<td>[Third-Party components vulnerability](#third-party-components-vulnerability)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Metrics: number of releases](#metrics-number-of-releases)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 <td>[Metrics: new bugs](#metrics-new-bugs)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 </tr>
@@ -46,7 +46,7 @@
 <td>[Live preview](#live-preview)</td>
 <td>[Performance Tests](#performance-tests)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Docker Trusted Publisher](#docker-trusted-publisher)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
-<td>[Third-Party components vulnerability](#third-party-components-vulnerability)<br> <br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
+<td>[Code quality](#code-quality)</td>
 <td>[Recorded demos](#recorded-demos)</td>
 <td>[Metrics: performance results](#metrics-performance-results)<br> ![Level2](https://img.shields.io/badge/M-2-blue)</td>
 </tr>
@@ -56,7 +56,7 @@
 <td>[Permissions rules](#permisisons-rules)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[E2E tests](#end-to-end-tests)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Container scan](#container-scan)<br> ![Level0](https://img.shields.io/badge/M-0-lightgrey)</td>
-<td>[Code quality](#code-quality)</td>
+<td>-</td>
 <td>-</td>
 <td>[Usability tests](#usability-tests)</td>
 </tr>
@@ -198,9 +198,7 @@ List of confidential security issues *(for team members only)*: https://gitlab.c
 ### DAST (Dynamic Application Security Testing)
 DAST, also known as black box testing, is a part of the current .Stat Suite devops build process. Each time someone does a Git push to the develop branch for a specific repository, the targeted repository triggers the [Gitlab quality-assurance pipeline](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance) which contains a job for running a [Netsparker](netsparker.com) DAST scan.  
 The outcome of the DAST scan is pushed to a dedicated Slack channel (quality-assurance) for the .Stat Dev team to review, and each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
-List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security   
-
-### Dependency scanning
+List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security
 
 ### Third-Party components vulnerability
 Third-party components used in the .Stat Suite can be potentially security vulnerable, and they are thus tracked by version in order to address and take action upon security disruption in the .Stat Suite.  
