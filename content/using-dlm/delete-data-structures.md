@@ -47,7 +47,7 @@ Example:
             * Codelist A
             * Codelist B
 
-The same child can be referenced by different parents. More information on the SDMX artefact dependency can be found here: https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_3_structural_queries.md#applicability-and-meaning-of-references-attribute.  
+The same child can be referenced by different parents. More information on the SDMX artefact dependency can be found here: https://github.com/sdmx-twg/sdmx-rest/blob/master/doc/structures.md#applicability-and-meaning-of-references-including-referencepartial.  
 **However**, in the context of the deletion of artefacts in the DLM and the need to delete referencing artefacts first, **the hierarchy tree is inverse**.
 
 ---

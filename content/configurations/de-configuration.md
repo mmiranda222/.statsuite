@@ -354,7 +354,7 @@ The feature is set to `false` by default.
 
 ### Support of Partial-References feature
 Indicate if an internal or external data space supports the `detail=referencepartial` SDMX query parameter.  
-If the data space parameter `supportsReferencePartial` is set to `true`, it means that the underlying SDMX-compliant web service allows querying for referenced item schemes that only include items used by the artefact to be returned. This feature allows increasing the performance of structure retrievals from the web service, since non-necessary items are not retrieved. See the related SDMX documentation [here](https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_3_structural_queries.md#parameters-used-to-further-describe-the-desired-results).
+If the data space parameter `supportsReferencePartial` is set to `true`, it means that the underlying SDMX-compliant web service allows querying for referenced item schemes that only include items used by the artefact to be returned. This feature allows increasing the performance of structure retrievals from the web service, since non-necessary items are not retrieved. See the related SDMX documentation [here](https://github.com/sdmx-twg/sdmx-rest/blob/master/doc/structures.md).
 
 * in `dotstatsuite-config-data/<env>/configs/tenants.json`
 
