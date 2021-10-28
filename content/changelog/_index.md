@@ -225,7 +225,7 @@ If so, running a) the `/cleanup/mappingsets` method, then b) the `/init/dataflow
 
 major *(backward-incompatible)* changes:
 
-- NSI web service uses **non-capital letters** for resource names in the structure queries, instead of capital letters, e.g. https://ws-entry-point/categoryscheme/all/all instead of https://ws-entry-point/CategoryScheme/all/all. See [SDMX reference](https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_3_structural_queries.md#resources)
+- NSI web service uses **non-capital letters** for resource names in the structure queries, instead of capital letters, e.g. https://ws-entry-point/categoryscheme/all/all instead of https://ws-entry-point/CategoryScheme/all/all. See [SDMX reference](https://github.com/sdmx-twg/sdmx-rest/blob/master/doc/structures.md#syntax)
 - [dotstatsuite-core-transfer#210](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/210) **PointInTime release** to consider a **required time zone** for the release datetime. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management/#prepare-a-new-pit-version))
 - [dotstatsuite-core-data-access#75](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/75) Change **primary key** from `PERIOD_SDMX` to `PERIOD_START` and `PERIOD_END`. 
 

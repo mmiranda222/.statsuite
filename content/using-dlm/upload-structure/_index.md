@@ -50,7 +50,7 @@ Each time the user performs an upload (or transfer) action on structural objects
 * orange **warning/multi-status** notification
 * red **error** notification
 
-**Note** that error notification contents are derived from the standard HTTP return codes, or the standard SDMX REST status/error codes https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/4_7_errors.md.
+**Note** that error notification contents are derived from the standard HTTP return codes, or the standard SDMX REST status/error codes https://github.com/sdmx-twg/sdmx-rest/blob/master/doc/status.md.
 
 When you select multiple dataspaces, the notification messages appear all at once but split by type and dataspace.
 
