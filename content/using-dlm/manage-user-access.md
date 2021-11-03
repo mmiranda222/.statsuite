@@ -80,7 +80,7 @@ Below is a table of the most used combinations, but others are acceptable.
 | 145 | StructureImporterRole_U | Underlying CanReadStructuralMetadata[1], CanImportStructures[16], CanUpdateStructuralMetadata[128] |
 | 291 | DataImporterRole_U | Underlying WsUserRole[3], CanImportData[32], CanUpdateData[256] |
 | 657 | StructureImporterRole | Underlying StructureImporterRole_U[145], CanDeleteStructuralMetadata[512] |
-| 1315 | DataImporterRole | Underlying DataImporterRole_U[657], CanDeleteData[1024] |
+| 1315 | DataImporterRole | Underlying DataImporterRole_U[291], CanDeleteData[1024] |
 | 4095 | AdminRole | Underlying DomainUserRole[15], CanModifyStoreSettings[64], StructureImporterRole[657], DataImporterRole[1315], CanReadPitData[2048] |
 
 ---
