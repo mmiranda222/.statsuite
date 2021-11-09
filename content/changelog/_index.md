@@ -25,6 +25,7 @@ ToC
 - [March 15, 2021](#march-15-2021)
 - [March 10, 2021](#march-10-2021)
 - [March 5, 2021](#march-5-2021)
+- [General upgrade disclaimer](#general-upgrade-disclaimer)
 - [January 25, 2021](#january-25-2021)
 - [January 21, 2021](#january-21-2021)
 - [December 2, 2020](#december-2-2020)
@@ -73,13 +74,26 @@ ToC
 - [Release 10.07.2018](#release-10072018)
  -->
 
-> **General disclaimer:** If you **upgrade a .Stat Suite installation from a .NET version below 5.0.0, to .NET v5.0.0 or higher**, you must follow the migration procedure explained as follows. **All MappingSets must be generated specifically in the context of the .Stat Suite**. This is to be done through the following methods:  
-> - **Before** you generate the MappingSets (see next bullet), if during the migration/upgrade to version 5.0.0 or higher with the DBUP tool, some DSDs/Dataflows migrations fail (check the logs using the transfer service `/status/requests` method), then you should **migrate these dataflows manually** using the Transfer service method `/init/dataflow`. Note that this should happen only extremely rarely, and would be caused by previous inconsistencies in the DB state. In case the manual dataflow migration is still unsuccessful then it is recommended to delete the underlying DSD, cleanup the related DB objects (using the Transfer service method `/cleanup/dsd`), recreate the data structures and reload the related data. 
-> - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
-> - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
-> - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
+> **Upgrade disclaimer:** A current error is reported when upgrading a mapping store (structure) database from **v6.14** to **v6.17**. .Stat Suite affected versions are when upgrading **from .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly**. Most likely, the issue can also be present when upgrading from any .Stat Suite .NET release prior to .Stat Suite .NET v6.4.0 (structure db prior v6.14) to .Stat Suite .NET v7.1.0 directly.  
+> The problem has been reported to ESTAT and is followed with GitLab issue [dotstatsuite-core-sdmxri-nsi-ws#188](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/188).  
+> As a **temporary workaround,** structure database v6.14 should be upgraded to v6.15 first and then from v6.15 to v6.17. This can be achieved by one of the following methods:
+> -	upgrading all .Net components **incrementally**
+>   - from .NET v6.4.0 to .NET v7.0.1 and then *(in docker installations at least the NSI WS containers should be started in order to perform db upgrade to v6.15)*
+>   - upgrade .NET v7.0.1 to .NET v7.1.0
+> -	upgrading **incrementally** only the problematic component to achieve incremental upgrade of structure databases:
+>   - Docker installation: 
+>     - upgrade image: `siscc/sdmxri-nsi-maapi:8.2.0-2410af09` to image: `siscc/sdmxri-nsi-maapi:8.5.0-4fd592b5` (v7.0.1) and start the related services to let them upgrade the structure db-s to v6.15;
+>     - upgrade image: `siscc/sdmxri-nsi-maapi:8.5.0-4fd592b5` (v7.0.1) to image: `siscc/sdmxri-nsi-maapi:8.7.1-36e7592d` (v7.1.0)
+>     - upgrade the other .NET images from .NET v6.4.0 to .NET v7.1.0
+>   - Source code installation:
+>     - download source code and build maapi.net tool v8.5.0, then use it to upgrade your structure database(s) to v6.15 
+>     - use maapi.tool v8.7.1 to upgrade your structure database(s) from v6.15 to v6.17
+>     - upgrade the other .NET components from .NET v6.4.0 to .NET v7.1.0 directly
+
+> **Upgrade disclaimer** from a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-migration-disclaimer)
 
 ---
+
 ### October 11, 2021
 **[Release .Stat Suite .NET 7.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/45)**
 > This release includes a new version of the **sdmxri-nsi-ws**, **core-transfer**, **core-auth-management**, and **excel-addin** services.  
@@ -692,6 +706,15 @@ patch changes:
 - [dotstatsuite-core-data-access#68](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/68) Fix datetime format issue in `UpdateMappingSet`.
 - [dotstatsuite-quality-assurance#1](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/1) *(DevOps)* Migrate performance tests out of the dotstatsuite-core-sdmxri-nsi-plugin repository.
 - [dotstatsuite-data-lifecycle-manager#156](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/156) *(Support)* Attribute attached to time dimension : Dimension not found in management db.
+
+---
+
+### General upgrade disclaimer
+> If you **upgrade a .Stat Suite installation from a .NET version below 5.0.0, to .NET v5.0.0 or higher**, you must follow the migration procedure explained as follows. **All MappingSets must be generated specifically in the context of the .Stat Suite**. This is to be done through the following methods:  
+> - **Before** you generate the MappingSets (see next bullet), if during the migration/upgrade to version 5.0.0 or higher with the DBUP tool, some DSDs/Dataflows migrations fail (check the logs using the transfer service `/status/requests` method), then you should **migrate these dataflows manually** using the Transfer service method `/init/dataflow`. Note that this should happen only extremely rarely, and would be caused by previous inconsistencies in the DB state. In case the manual dataflow migration is still unsuccessful then it is recommended to delete the underlying DSD, cleanup the related DB objects (using the Transfer service method `/cleanup/dsd`), recreate the data structures and reload the related data. 
+> - **Generate the MappingSets for all already existing dataflows when the .Stat Suite .NET version is migrated to 5.0.0 or higher, using the .Stat Suite Transfer service method `/init/allMappingsets`**. This method must be called manually as the very last step of the deployment of the new version (after all components are deployed/updated, and after the DBUP tool has run to update the databases). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))
+> - **Generate the MappingSet for any newly added dataflow using the .Stat Suite Transfer service method `init/dataflow`**. This can be done using the Transfer service Swagger UI. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12initdataflow-initializes-database-objects-of-a-dataflow-in-datastore-database))
+> - **Generate the MappingSet for any newly added dataflow by uploading any data** (in DLM or with the .Stat Suite Transfer service). In other words, the MappingSet of a newly added dataflow will be automatically generated once you upload data for this dataflow.
 
 ---
 
