@@ -122,7 +122,8 @@ The following individual actions are currently enabled for index:
 The examples provided below are made using the free version of the API platform [Postman](https://www.postman.com/).
 
 #### API format
-The API is protected by an API key (see `src/server/params/[env] apiKey`). In the following examples, the API key is `xxx`.  <br>
+The API is protected by an **API key named API_KEY**. In Docker Compose installation, this key is defined as an env. variable named **`API_KEY_SFS`**. See an example in [Docker compose file](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/demo/.env). In the following examples, the API key is `xxx`.  <br>
+
 All requests need a header made of:
 * the api URL, e.g. `https://sfs-qa.siscc.org/`
 * a role, in all cases `/admin/`
