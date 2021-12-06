@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [December 3, 2021](#december-3-2021)
 - [October 11, 2021](#october-11-2021)
 - [October 5, 2021](#october-5-2021)
 - [September 16, 2021](#september-16-2021)
@@ -74,8 +75,41 @@ ToC
 - [Release 10.07.2018](#release-10072018)
  -->
 
-> **Upgrade disclaimer:** A current error is reported when upgrading a mapping store (structure) database from **v6.14** to **v6.17**. .Stat Suite affected versions are when upgrading **from .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly**. Most likely, the issue can also be present when upgrading from any .Stat Suite .NET release prior to .Stat Suite .NET v6.4.0 (structure db prior v6.14) to .Stat Suite .NET v7.1.0 directly.  
-> The problem has been reported to ESTAT and is followed with GitLab issue [dotstatsuite-core-sdmxri-nsi-ws#188](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/188).  
+> **Upgrade disclaimer** from .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
+
+> **Upgrade disclaimer** from a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### December 3, 2021
+**[Release .Stat Suite .NET 7.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/47)**
+> This release includes a new version of the **sdmxri-nsi-ws**, **core-transfer**, **core-auth-management**, and **core-data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.8.0**.
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#187](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/187) Deploy **NSI version 8.8.0**.
+- [dotstatsuite-core-auth-management#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/29) Provide a method to obtain only the permissions that apply to the calling user.
+- [dotstatsuite-core-data-access#74](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/74) Add a new parameter to DbUp `WithoutDbaScripts`.
+- [dotstatsuite-core-sdmxri-nsi-ws#165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/165) Implement SDMX-CSV 2.0.0 data reader in SdmxSource.
+- [dotstatsuite-core-transfer#230](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/230) SDMX-CSV 2.0.0 for data and referential metadata upload - Part 1
+
+patch changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#188](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/188) Error when upgrading MSDB from v6.14 to v6.17.
+- [dotstatsuite-core-sdmxri-nsi-ws#184](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/184) Wrong (or no) data returned when mixing startPeriod and endPeriod formats or where period is not appropriate for used frequency.
+- [dotstatsuite-core-sdmxri-nsi-ws#143](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/143) AfterPeriod and BeforePeriod in CCs must not be converted to StartPeriod and EndPeriod.
+- [dotstatsuite-core-transfer#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/280) Analyse issue "Expecting the instance to be stored in singleton scope, but..."
+- [dotstatsuite-core-sdmxri-nsi-ws#162](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/162) Wrong class name in URN when retrieving stub artefacts.
+- [dotstatsuite-core-sdmxri-nsi-ws#156](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/156) Inconsistent structure ID in structure-specific data messages.
+- [dotstatsuite-core-transfe#228](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/228) Multiple attribute values for the same series level attribute fails.
+- [dotstatsuite-core-transfer#284](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/284) Transfer service extracts content of imported zip file with original file date.
+
+---
+
+### .NET upgrade disclaimer
+> An error was reported when upgrading a mapping store (structure) database from **v6.14** to **v6.17**. .Stat Suite affected versions are when upgrading **from .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly**. Most likely, the issue can also be present when upgrading from any .Stat Suite .NET release prior to .Stat Suite .NET v6.4.0 (structure db prior v6.14) to .Stat Suite .NET v7.1.0 directly.  
+> The problem was solved with [dotstatsuite-core-sdmxri-nsi-ws#188](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/188) in the **[Release .Stat Suite .NET 7.2.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/47)**.  
 > As a **temporary workaround,** structure database v6.14 should be upgraded to v6.15 first and then from v6.15 to v6.17. This can be achieved by one of the following methods:
 > -	upgrading all .Net components **incrementally**
 >   - from .NET v6.4.0 to .NET v7.0.1 and then *(in docker installations at least the NSI WS containers should be started in order to perform db upgrade to v6.15)*
@@ -89,8 +123,6 @@ ToC
 >     - download source code and build maapi.net tool v8.5.0, then use it to upgrade your structure database(s) to v6.15 
 >     - use maapi.tool v8.7.1 to upgrade your structure database(s) from v6.15 to v6.17
 >     - upgrade the other .NET components from .NET v6.4.0 to .NET v7.1.0 directly
-
-> **Upgrade disclaimer** from a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-migration-disclaimer)
 
 ---
 
