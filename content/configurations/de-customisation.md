@@ -4,46 +4,48 @@ subtitle:
 comments: false
 weight: 74
 keywords: [
-  'intro', '#intro',
+  'Introduction', '#introduction',
   'Warning', '#warning',
-  'general theme settings', '#general-theme-settings',
-  'theme settings: how to override mixins', '#theme-settings-how-to-override-mixins',
-  'theme settings: palette', '#theme-settings-palette',
-  'theme settings: first loader', '#theme-settings-first-loader',
-  'site logo', '#site-logo',
-  'homepage background image', '#homepage-background-image',
-  'localised common site logos', '#localised-common-site-logos',
-  'add hyperlink on header logo', '#add-hyperlink-on-header-logo',
-  'table and chart footer logo', '#table-and-chart-footer-logo',
-  'table and chart footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
-  'api documentation hyperlink', '#api-documentation-hyperlink',
-  'contact us hyperlink', '#contact-us-hyperlink',
-  'map chart configuration', '#map-chart-configuration',
-  'add icons to specific facet values', '#add-icons-to-specific-facet-values',
+  'Visual UI components demo', '#visual-ui-components-demo',
+  'General theme settings', '#general-theme-settings',
+  'Theme settings: how to override mixins', '#theme-settings-how-to-override-mixins',
+  'Theme settings: palette', '#theme-settings-palette',
+  'Theme settings: first loader', '#theme-settings-first-loader',
+  'Site logo', '#site-logo',
+  'Homepage background image', '#homepage-background-image',
+  'Localised common site logos', '#localised-common-site-logos',
+  'Add hyperlink on header logo', '#add-hyperlink-on-header-logo',
+  'Table and chart footer logo', '#table-and-chart-footer-logo',
+  'Table and chart footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
+  'Api documentation hyperlink', '#api-documentation-hyperlink',
+  'Contact us hyperlink', '#contact-us-hyperlink',
+  'Map chart configuration', '#map-chart-configuration',
+  'Add icons to specific facet values', '#add-icons-to-specific-facet-values',
 ]
 ---
 
 #### Table of Content
-- [intro](#intro)
+- [Introduction](#introduction)
 - [Warning](#warning)
-- [general theme settings](#general-theme-settings)
-- [theme settings: how to override mixins](#theme-settings-how-to-override-mixins)
-- [theme settings: palette](#theme-settings-palette)
-- [theme settings: first loader](#theme-settings-first-loader)
-- [site logo](#site-logo)
-- [homepage background image](#homepage-background-image)
-- [localised common site logos](#localised-common-site-logos)
-- [add hyperlink on header logo](#add-hyperlink-on-header-logo)
-- [table and chart footer logo](#table-and-chart-footer-logo)
-- [table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
-- [api documentation hyperlink](#api-documentation-hyperlink)
-- [contact us hyperlink](#contact-us-hyperlink)
-- [map chart configuration](#map-chart-configuration)
-- [add icons to specific facet values](#add-icons-to-specific-facet-values)
+- [Visual UI components demo](#visual-ui-components-demo)
+- [General theme settings](#general-theme-settings)
+- [Theme settings: how to override mixins](#theme-settings-how-to-override-mixins)
+- [Theme settings: palette](#theme-settings-palette)
+- [Theme settings: first loader](#theme-settings-first-loader)
+- [Site logo](#site-logo)
+- [Homepage background image](#homepage-background-image)
+- [Localised common site logos](#localised-common-site-logos)
+- [Add hyperlink on header logo](#add-hyperlink-on-header-logo)
+- [Table and chart footer logo](#table-and-chart-footer-logo)
+- [Table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
+- [Api documentation hyperlink](#api-documentation-hyperlink)
+- [Contact us hyperlink](#contact-us-hyperlink)
+- [Map chart configuration](#map-chart-configuration)
+- [Add icons to specific facet values](#add-icons-to-specific-facet-values)
 
 ---
 
-### intro
+### Introduction
 This page is a guide on how to customise and interact with some of the .Stat Data Explorer look and feel and layout features.  
 
 These customisations can be performed by Administrators with access to the .Stat DE installation files, but they should all be driven by business decisions.<br>
@@ -53,6 +55,18 @@ These customisations can be performed by Administrators with access to the .Stat
 ### Warning
 When editing the configuration .json file(s) of the .Stat Suite applications, the **default encoding** on your server/system could potentially be **different than UTF-8**, e.g. **UTF-8-BOM**.  
 `BOM` being an issue to handle in web client rendering, whenever editing your config. files, make sure that this is always managed in the right **UTF-8 encoding format**, in order to avoid introducing extra invisible BOM characters to your file.
+
+---
+
+### Visual UI components demo
+**Visions** is a library of `React` components that compiles the definition and behavior of all the visual UI components used in the Data Explorer.  
+The dynamic and interactive **[Visions demo site](https://visions-qa.siscc.org/#o)** describes and demoes each (material UI) components' behavior, properties and customisable theme. The Visions demo site is very handy when deciding to customise your DE theme settings.
+
+![Visions](/dotstatsuite-documentation/images/de-visions.png)
+
+The Visions demo site has additional options in the top-right header that are applied to all UI components: palette, right-to-left (RTL) mode, colour (example of an override of the theme in pink), web accessibility.
+
+![Visions options](/dotstatsuite-documentation/images/de-visions-2.png)
 
 ---
 
