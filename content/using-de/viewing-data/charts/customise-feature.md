@@ -28,9 +28,9 @@ keywords: [
 ### Chart series
 
 The corresponding selectors allow changing: 
-- The dimension and their values displayed on the x and y axes for `scatter plots`;
+- The dimension and their values displayed on the x and y axes for `scatter plot chart`;
 - The dimension used for symbols for `horizontal symbol chart` and `vertical symbol chart`;
-- The dimension displayed on the x axis and whether observations are to be displayed as percentage or not for `stacked bar charts`.
+- The dimension displayed on the x axis and whether observations are to be displayed as percentage or not for `stacked bar chart` and `stacked row chart`.
 
 ---
 
@@ -54,7 +54,7 @@ You can customize these limits with the following options.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json` under `chart` property
 
-```json
+```css
   options = {
     base: {
       minDisplayWidth: 300,
@@ -65,7 +65,7 @@ You can customize these limits with the following options.
 
 You can also simply disable this mechanism with the following:
 
-```json
+```css
   options = {
     serie: {
       responsiveFocusFilter: false

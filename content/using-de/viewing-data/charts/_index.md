@@ -20,7 +20,7 @@ By expanding this field, the help text indicates specifically for each type of c
   
 The following types of charts are supported:
 
-![Toolbar](/dotstatsuite-documentation/images/de-toolbar2.png)
+![Toolbar](/dotstatsuite-documentation/images/de-toolbar-chart.png)
 
 More details about our set of configurable charts based on [d3](https://d3js.org/) to be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/README.md), and also [chart responsiveness](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/docs/charts-responsiveness.md).
 
@@ -29,54 +29,63 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 ### Bar chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-bar.png)
+![bar chart](/dotstatsuite-documentation/images/chart-bar.png)
 
 ---
 
 ### Row chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-row.png)
+![row chart](/dotstatsuite-documentation/images/chart-row.png)
 
 ---
 
 ### Stacked bar chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-stacked.png)
+![stacked bar chart](/dotstatsuite-documentation/images/chart-stacked.png)
+
+---
+
+### Stacked row chart
+*[MMMMMMM XX, 2021 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmmmmm-XX-2021)*
+
+**Example**  
+
+![stacked row chart](/dotstatsuite-documentation/images/chart-stacked-row.png)
 
 ---
 
 ### Scatter plot chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-scatter.png)
+![scatter plot chart](/dotstatsuite-documentation/images/chart-scatter.png)
 
 ---
 
 ### Horizontal symbol chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-horizontal-symbol.png)
+![horizontal symbol chart](/dotstatsuite-documentation/images/chart-horizontal-symbol.png)
 
 ---
 
 ### Vertical symbol chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-vertical-symbol.png)
+![vertical symbol chart](/dotstatsuite-documentation/images/chart-vertical-symbol.png)
 
 ---
 
 ### Timeline chart
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-timeline.png)
+![timeline chart](/dotstatsuite-documentation/images/chart-timeline.png)
 
 ---
 
 ### Choropleth map
 **Example**  
 
-![Toolbar](/dotstatsuite-documentation/images/chart-choropleth.png)
+![choropleth map](/dotstatsuite-documentation/images/chart-choropleth.png)
 
