@@ -29,7 +29,7 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 ### Bar chart
 **Example**  
 
-![bar chart](/dotstatsuite-documentation/images/chart-bar.png)
+![bar chart](/dotstatsuite-documentation/images/chart-bar.jpg)
 
 ---
 
