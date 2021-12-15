@@ -15,12 +15,13 @@ keywords: [
   'Homepage background image', '#homepage-background-image',
   'Localised common site logos', '#localised-common-site-logos',
   'Add hyperlink on header logo', '#add-hyperlink-on-header-logo',
-  'Table and chart footer logo', '#table-and-chart-footer-logo',
-  'Table and chart footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
+  'Add icons to specific facet values', '#add-icons-to-specific-facet-values',
   'Api documentation hyperlink', '#api-documentation-hyperlink',
   'Contact us hyperlink', '#contact-us-hyperlink',
-  'Map chart configuration', '#map-chart-configuration',
-  'Add icons to specific facet values', '#add-icons-to-specific-facet-values',
+  'Table and chart: footer logo', '#table-and-chart-footer-logo',
+  'Table and chart: footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
+  'Chart: map configuration', '#chart-map-configuration',
+  'Chart: override stacked charts palette', '#chart-override-stacked-charts-palette',
 ]
 ---
 
@@ -37,7 +38,6 @@ keywords: [
 - [Localised common site logos](#localised-common-site-logos)
 - [Add hyperlink on header logo](#add-hyperlink-on-header-logo)
 - [Add icons to specific facet values](#add-icons-to-specific-facet-values)
-
 - [Api documentation hyperlink](#api-documentation-hyperlink)
 - [Contact us hyperlink](#contact-us-hyperlink)
 - [Table and chart: footer logo](#table-and-chart-footer-logo)
@@ -519,7 +519,7 @@ Define the hyperlink in the footer of the table and chart views behind the "c" c
 
 ### Chart: map configuration
 >*Version history:*  
-> map projection renamed mercator -> `geoMercator`, and `scale` attribute removed with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
+> Map projection renamed mercator -> `geoMercator`, and `scale` attribute removed with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
 > Introduced in [November 19, 2019 Release JS v3.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-19-2019)
 
 Displaying data in a geographical map representation in the Data Explorer visualisation pages, will rely on the providing of one or several maps (regarding the needs) to the application.  
