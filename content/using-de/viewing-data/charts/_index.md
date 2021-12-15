@@ -43,16 +43,16 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 ### Stacked bar chart
 **Example**  
 
-![stacked bar chart](/dotstatsuite-documentation/images/chart-stacked.jpg)
+![stacked bar chart](/dotstatsuite-documentation/images/chart-stacked.png)
 
 ---
 
 ### Stacked row chart
-*[MMMMMMM XX, 2021 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmmmmm-XX-2021)*
+> Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021) 
 
 **Example**  
 
-![stacked row chart](/dotstatsuite-documentation/images/chart-stacked-row.png)
+![stacked row chart](/dotstatsuite-documentation/images/chart-stacked-row.jpg)
 
 ---
 
