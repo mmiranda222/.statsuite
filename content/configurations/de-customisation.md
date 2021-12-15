@@ -36,12 +36,14 @@ keywords: [
 - [Homepage background image](#homepage-background-image)
 - [Localised common site logos](#localised-common-site-logos)
 - [Add hyperlink on header logo](#add-hyperlink-on-header-logo)
-- [Table and chart footer logo](#table-and-chart-footer-logo)
-- [Table and chart footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
+- [Add icons to specific facet values](#add-icons-to-specific-facet-values)
+
 - [Api documentation hyperlink](#api-documentation-hyperlink)
 - [Contact us hyperlink](#contact-us-hyperlink)
-- [Map chart configuration](#map-chart-configuration)
-- [Add icons to specific facet values](#add-icons-to-specific-facet-values)
+- [Table and chart: footer logo](#table-and-chart-footer-logo)
+- [Table and chart: footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
+- [Chart: map configuration](#chart-map-configuration)
+- [Chart: override stacked charts palette](#chart-override-stacked-charts-palette)
 
 ---
 
@@ -389,46 +391,52 @@ Example:
     }
 ```
 
-### Table and chart footer logo
-Define the logo of the organisation in the footer of the table and chart views. The source can be a binary image or a link.  
-Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021), the table and chart footer logo is **localised**. When .Stat DE is configured with several languages, then you can also have a table and chart footer logo different for each language *(e.g. "OECD" logo in English and "OCDE" logo in French)*.
-
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
-
-```json
-    "assets": {
-    ...
-    "viewerFooter": {
-      "en": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
-      "fr": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
-    }
-  },
-
-```
-
-![viewer footer logo](/dotstatsuite-documentation/images/faq-viewer-logo.png)
-
-**Note:** If no locale is added to `"viewerFooter"`, then only the default logo asset is displayed for all languages. If at least one locale is added to `"viewerFooter"`, then all configured languages will expect a dedicated logo asset, hence if there is in this case one missing logo for a given language, then no footer logo will be returned in that specific language.
-
 ---
 
-### Table and chart footer terms and conditions
+### Add icons to specific facet values
 
-> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name displayed on top of the hyperlink (*`"label": "Terms & Conditions"`*) is moved to its natural behavior in the [localisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
+You can define individual icons that are to be displayed with specific facets values in the DE home and search result pages.  
 
-Define the hyperlink in the footer of the table and chart views behind the "c" copyright icon.<br>
+This is a new entry of the configuration, and is supporting the **SVG path segment** format ONLY.  
+SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.  
+The SVG images must be scaled to fit into a 24 x 24px viewport in order to be fully visible.  
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-    "viewer": {
-        "terms": {
-            "link": "http://www.oecd.org/termsandconditions/",
-    }
-    }
+"sdmx": {
+  ...others keys,
+  "valueIcons": {
+    "topic": {
+      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    } 
+  }
+}
 ```
 
-![Terms and Conditions](/dotstatsuite-documentation/images/faq-terms-conditions.png)
+**Note**: the key of the facet is always in **lowercase e.g. "topic"**, and the key of the facet value is always in **uppercase e.g. "HOME"**.  
+
+Facets are localised, thus you must add the translated name of facet and duplicate the value for the icon, e.g.:  
+
+```json
+"sdmx": {
+  ...others keys,
+  "valueIcons": {
+    "topic": {
+      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    } 
+    "thème": {
+      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
+    } 
+  }
+}
+```
+
+The result is as follows:  
+
+![facet icon 1](/dotstatsuite-documentation/images/faq-facet-icon-1.png)
+
+![facet icon 2](/dotstatsuite-documentation/images/faq-facet-icon-2.png)
 
 ---
 
@@ -466,7 +474,50 @@ Define the hyperlink for the "Contact us" feature.<br>
 
 ---
 
-### Map Chart Configuration
+### Table and chart: footer logo
+Define the logo of the organisation in the footer of the table and chart views. The source can be a binary image or a link.  
+Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021), the table and chart footer logo is **localised**. When .Stat DE is configured with several languages, then you can also have a table and chart footer logo different for each language *(e.g. "OECD" logo in English and "OCDE" logo in French)*.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+    "assets": {
+    ...
+    "viewerFooter": {
+      "en": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
+      "fr": "/assets/siscc/data-explorer/images/dotstat-data-explorer-logo.png"
+    }
+  },
+
+```
+
+![viewer footer logo](/dotstatsuite-documentation/images/faq-viewer-logo.png)
+
+**Note:** If no locale is added to `"viewerFooter"`, then only the default logo asset is displayed for all languages. If at least one locale is added to `"viewerFooter"`, then all configured languages will expect a dedicated logo asset, hence if there is in this case one missing logo for a given language, then no footer logo will be returned in that specific language.
+
+---
+
+### Table and chart: footer terms and conditions
+
+> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name displayed on top of the hyperlink (*`"label": "Terms & Conditions"`*) is moved to its natural behavior in the [localisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
+
+Define the hyperlink in the footer of the table and chart views behind the "c" copyright icon.<br>
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+    "viewer": {
+        "terms": {
+            "link": "http://www.oecd.org/termsandconditions/",
+    }
+    }
+```
+
+![Terms and Conditions](/dotstatsuite-documentation/images/faq-terms-conditions.png)
+
+---
+
+### Chart: map configuration
 >*Version history:*  
 > map projection renamed mercator -> `geoMercator`, and `scale` attribute removed with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
 > Introduced in [November 19, 2019 Release JS v3.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-19-2019)
@@ -550,47 +601,26 @@ This example, associated with the previous settings example will result with 2 o
 
 ---
 
-### Add icons to specific facet values
+### Chart: override stacked charts palette
+> Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
 
-You can define individual icons that are to be displayed with specific facets values in the DE home and search result pages.  
-
-This is a new entry of the configuration, and is supporting the **SVG path segment** format ONLY.  
-SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.  
-The SVG images must be scaled to fit into a 24 x 24px viewport in order to be fully visible.  
+By default, the Stacked (bar & row) charts take one color and compute shades to render the different stacks. You can override the default settings in order to apply multiple colors from the options, or compute shades if only one overriden color is provided.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-"sdmx": {
-  ...others keys,
-  "valueIcons": {
-    "topic": {
-      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
-    } 
+  "chart": {
+    "options":{
+      "serie": {
+        "colors": ["#A10100", "#DA1F05", "#F33C04", "#FE650D", "#FFC11F", "#FFF75D", "#aa83be", "#969696", "#333333"],
+        "overColors": ["#DA8079", "#FA9778", "#FBB678", "#F6C960", "#F7D850", "#553488", "#aa83be", "#969696", "#333333"]
+     }
+    }
   }
-}
 ```
 
-**Note**: the key of the facet is always in **lowercase e.g. "topic"**, and the key of the facet value is always in **uppercase e.g. "HOME"**.  
+The preexisting shading computing will still be applied in case of one unique color `"colors": []` provided.  
+If there are more stacks in a chart than colors `"colors": []` are provided, then the stacks will loop and go again with the first colors.  
+Don't forget to also configure the **`overColors`** palette, those are the colors to be displayed when the stack is hovered with the mouse, you can simply duplicate your palette or customize it for a nice shading effect.
 
-Facets are localised, thus you must add the translated name of facet and duplicate the value for the icon, e.g.:  
-
-```json
-"sdmx": {
-  ...others keys,
-  "valueIcons": {
-    "topic": {
-      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
-    } 
-    "thème": {
-      "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
-    } 
-  }
-}
-```
-
-The result is as follows:  
-
-![facet icon 1](/dotstatsuite-documentation/images/faq-facet-icon-1.png)
-
-![facet icon 2](/dotstatsuite-documentation/images/faq-facet-icon-2.png)
+![stacked color palette](/dotstatsuite-documentation/images/de-custom-chart-palette.png)
