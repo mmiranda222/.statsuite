@@ -4,7 +4,7 @@ subtitle:
 comments: false
 weight: 86
 keywords: [
-'Introduction', '#introduction',
+'Generic OpenID Compliance', '#generic-openid-compliance',
 'Optional authentication of DE', '#optional-authentication-of-de',
 'How to allow the DE to be accessible only by authenticated users', '#how-to-allow-the-de-to-be-accessible-only-by-authenticated-users',
 'OpenID connect Middleware for NSIWS', '#openid-connect-middleware-for-nsiws',
@@ -17,7 +17,7 @@ keywords: [
 ---
 
 #### Table of Content
-- [Introduction](#introduction)
+- [Generic OpenID Compliance](#generic-openid-compliance)
 - [Optional authentication of DE](#optional-authentication-of-de)
 - [How to allow the DE to be accessible only by authenticated users](#how-to-allow-the-de-to-be-accessible-only-by-authenticated-users)
 - [OpenID connect Middleware for NSIWS](#openid-connect-middleware-for-nsiws)
@@ -28,18 +28,35 @@ keywords: [
 
 ---
 
-### Introduction
-> Since the [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020), The Data Explorer now works in both anonymous and authenticated modes.  
+### Generic OpenID Compliance
+> Fully empowered since [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021) 
 
-.Stat Suite is based on openid-connect authentication. Any openid-connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab. [**here**](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/keycloak-configuration/) (Thanks [Ben](https://github.com/Kyelin25)!).
+.Stat Suite is based on OpenID-Connect authentication. Any OpenID-Connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab. [**here**](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/keycloak-configuration/) (Thanks [Ben](https://github.com/Kyelin25)!).
 
-The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing). The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token). 
+in `tenants.json` :
 
-The original SDMX web service (NSI) openid-connect auth configuration manual can be found [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/openid-middleware.md). For convenience, the content has been replicated in this section.
+```json
+      "de": {
+        "type": "de",
+        "label": "de",
+        "oidc": {
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app",
+          "required": false
+        }
+```
+
+
+**Notes:**
+- The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing).
+- The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token).
+- The original SDMX web service (NSI) openid-connect auth configuration manual can be found [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/openid-middleware.md). For convenience, the content has been replicated in this section.
 
 ---
 
 ### Optional authentication of DE
+> Since the [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020), The Data Explorer now works in both anonymous and authenticated modes.
+
 > Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020).  
 **WARNING:** this release will not break you DE instance but it will make it public, if not the case before, thus action is required (add `AUTH_PROVIDER` to keycloak while restarting) to avoid this.
 
