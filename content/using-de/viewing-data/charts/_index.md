@@ -43,7 +43,7 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 ### Stacked bar chart
 **Example**  
 
-![stacked bar chart](/dotstatsuite-documentation/images/chart-stacked.png)
+![stacked bar chart](/dotstatsuite-documentation/images/chart-stacked.jpg)
 
 ---
 
