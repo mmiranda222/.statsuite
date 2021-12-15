@@ -20,7 +20,7 @@ By expanding this field, the help text indicates specifically for each type of c
   
 The following types of charts are supported:
 
-![Toolbar](/dotstatsuite-documentation/images/de-toolbar-chart.png)
+![Toolbar](/dotstatsuite-documentation/images/de-toolbar-chart.jpg)
 
 More details about our set of configurable charts based on [d3](https://d3js.org/) to be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/README.md), and also [chart responsiveness](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/docs/charts-responsiveness.md).
 
@@ -29,7 +29,7 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 ### Bar chart
 **Example**  
 
-![bar chart](/dotstatsuite-documentation/images/chart-bar.jpg)
+![bar chart](/dotstatsuite-documentation/images/chart-bar.png)
 
 ---
 
