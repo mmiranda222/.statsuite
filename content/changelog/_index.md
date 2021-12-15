@@ -93,19 +93,19 @@ ToC
 |----------------|----------------|----------------|:---------------:|
 | 250 observations | 468 ms | ~200 ms | **- 260 ms** |
 | 2,500 observations | 4207 ms | ~100 ms | **- 4,1 s** |
-| 240 observations - Rows | 751 ms | ~400 ms | **- 350 ms** |
-| 2,500 observations - Rows | 5499 ms | ~2500 ms | **- 3 s** |
+| 240 observations - No columns | 751 ms | ~400 ms | **- 350 ms** |
+| 2,500 observations - No columns | 5499 ms | ~2500 ms | **- 3 s** |
 | 2,500 observations - Columns x 3 | 4860 ms | ~1500 ms | **- 3,3 s** |
-| 2,500 observations - Sections 1 dimension | 4747 ms | ~2300 ms | **- 2,4 s** |
-| 2,500 observations - Sections 3 dimensions | 15498 ms | ~4000 ms | **- 11,5 s** |
+| 2,500 observations - 1 Row sections - 1 Row | 4747 ms | ~2300 ms | **- 2,4 s** |
+| 2,500 observations - 1 Row sections - 1 Row | 15498 ms | ~4000 ms | **- 11,5 s** |
 
 **Note:** the new performance results are accurate to only tenth of a second because we have corrected the initial performance issues related to scripting, rendering and system. Therefore the calculation only provides an approximate but yet true result for building the data table, and does not impact anymore scripting, rendering or system.
 
 major changes:
 
 - [dotstatsuite-data-explorer#606](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/606), [dotstatsuite-data-lifecycle-manager#230](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/230) **Generic openID-Connect compliance** for .Stat DE and .Stat DLM:
-> - in `tenants.json`, keycloak replaced by **`oidc`** entry (see example in this [diff.](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70)), and the env. variable `AUTH_SERVER_URL` is removed and replaced by the new `oidc` entry.
-> - ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance))
+  - in `tenants.json`, keycloak replaced by **`oidc`** entry (see example in this [diff.](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70)), and the env. variable `AUTH_SERVER_URL` is removed and replaced by the new `oidc` entry.
+  - ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance))
 - **‘MailGun’ API key** is removed from the share service (see the [documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#smtp) about setting up your own SMTP share configuration)
 - [dotstatsuite-config#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/34) Allow reading config files from either a **GCP bucket**, a **MinIO bucket** or a **local filesystem** (see more details in [Readme](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/master#config-server) and check the [env. variables changes](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/merge_requests/35/diffs) on our DevOps).
 - Changes related to the **`settings.json`** configuration file: see the [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/46#technical-changelog) and related [diff. applied to our DevOps](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70).
