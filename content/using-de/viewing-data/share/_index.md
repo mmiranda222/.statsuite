@@ -107,7 +107,7 @@ Clicking on "Delete" permanently removes the shared visualisation from the datab
 ---
 
 ### Delete all own shared visualisations
-> Introduced in [December 13, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-13-2021)
+> Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
 
 When the list of shared visualisations contains more than one element, then a "Delete all" button is displayed at the bottom of the list. Clicking on it opens a popup message requesting to cancel or confirm the deletion of all shared visualisations of the user.
 
