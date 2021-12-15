@@ -12,7 +12,6 @@ keywords: [
   'Hierarchical content', '#hierarchical-content',
   'Local search', '#local-search',
   'Used filters panel', '#used-filters-panel',
-
 ]
 ---
 
@@ -99,18 +98,7 @@ See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-
 ---
 
 ### Data availability
-
-The filters show by default only those items for which data exists anywhere in the Dataflow. There is only one exception to this rule for parent items without data (See [Hierarchical contents](#hierarchical-contents) for more information). In order to allow the filters taking into account the current data availability, the filters apply the Actual ContentConstraints related to the underlying Dataflow.
-
-An additional filter for the 'Data availability' selection can be displayed by adding `dataAvailability=on` to the URL. This will apply the data availability information on the other filters, as is done by default. This URL parameter is added automatically by the DLM, when the DE is used for previewing data. 
-
-![Hierarchical contents](/dotstatsuite-documentation/images/DE-data-availability-filter-on.png)
-
-With `dataAvailability=off` in the URL, the additional 'Data availability' filter is shown. This filter is switched off and data availability is not applied. 
-
-![Hierarchical contents](/dotstatsuite-documentation/images/DE-data-availability-filter-off.png)
-
-When the user switches the filter check box, the URL automatically updates accordingly.
+see https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/
 
 ---
 
