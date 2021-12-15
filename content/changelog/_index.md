@@ -144,9 +144,9 @@ patch changes:
 |----------------|----------------|----------------|:---------------:|
 | 250 observations | 468 ms | ~200 ms | **- 260 ms** |
 | 2,500 observations | 4207 ms | ~100 ms | **- 4,1 s** |
-| 240 observations - No columns | 751 ms | ~400 ms | **- 350 ms** |
-| 2,500 observations - No columns | 5499 ms | ~2500 ms | **- 3 s** |
-| 2,500 observations - Columns x 3 | 4860 ms | ~1500 ms | **- 3,3 s** |
+| 240 observations - No column | 751 ms | ~400 ms | **- 350 ms** |
+| 2,500 observations - No column | 5499 ms | ~2500 ms | **- 3 s** |
+| 2,500 observations - 3 Columns | 4860 ms | ~1500 ms | **- 3,3 s** |
 | 2,500 observations - 1 Row section - 1 Row | 4747 ms | ~2300 ms | **- 2,4 s** |
 | 2,500 observations - 3 Row sections - 1 Row | 15498 ms | ~4000 ms | **- 11,5 s** |
 
