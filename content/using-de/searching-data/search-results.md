@@ -84,12 +84,12 @@ The configurations of the search results included in the URL are listed and expl
 
 | key | type | definition | exemple |
 | ------ | ------ | ------ | ------ |
-| locale | string | locale of the app | locale=fr
-| facet | string | open box in side in search results | facet=qmsoRy4r
-| term | string | search term | term=people
-| start | integer | page index of the search | start=0
+| locale | string | locale of the app | lc=fr
+| facet | string | open box in side in search results | fc=qmsoRy4r
+| term | string | search term | tm=people
+| start | integer | page index of the search | pg=0
 | constraints | array | selected facets of the search | constraints[0]=SIS-CC-stable
-| hasAccessibility | boolean | a11y mode of the app | hasAccessibility=false
+| hasAccessibility | boolean | a11y mode of the app | ac=false
 | hasDataAvailability | boolean | sdmx data availability mode | hasDataAvailability=false
 
 **Note** that the full set of configurations of the URL is listed in the [Viewing data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/) topic.
