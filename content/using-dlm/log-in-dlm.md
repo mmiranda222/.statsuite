@@ -6,17 +6,20 @@ weight: 210
 keywords: [
   'Log in', '#log-in',
   'Log out', '#log-out',
+  'Connect to external sources using the native NSI authentication', '#connect-to-external-sources-using-the-native-nsi-authentication',
 ]
 ---
 
-<!-- 
-ToC
+#### Table of Content
 - [Log in](#log-in)
 - [Log out](#log-out)
- -->
+- [Connect to external sources using the native NSI authentication](#connect-to-external-sources-using-the-native-nsi-authentication)
 
-#### Log in
+---
 
+*Note:* User identities, third-party identity providers and account registrations are managed autonomously by the organisations. For information about the authentication setup, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/). .Stat Suite applications are using **[Keycloak](https://www.keycloak.org/)** as the default authentication service. Keycloak can be configured to act as a simple proxy to third-party identity providers such as ADFS.
+
+### Log in
 The DLM requires and automatically invites users to log in because the DLM is **not accessible in anonymous mode**. Thus, when launching the DLM in a web browser, the user is automatically redirected to the authentication page in order to choose the identiy provider and to enter the username and password.
 
 ![DLM Login](/dotstatsuite-documentation/images/de-login-2.png)
@@ -25,12 +28,26 @@ Once logged in, the DLM header displays the user's name, next to the user icon. 
 
 ![DLM Logout](/dotstatsuite-documentation/images/dlm-log-in.png)
 
-#### Log out
+---
 
+### Log out
 >Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
 When clicking on "Log out", the user is logged out from .Stat DLM and redirected again to the authentication page. The logout feature allows thus changing the user credentials in case a user has different accounts with different roles.
 
-#### Note 
+---
 
-User identities, third-party identity providers and account registrations are managed autonomously by the organisations. For information about the authentication setup, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/). .Stat Suite applications are using **[Keycloak](https://www.keycloak.org/)** as the default authentication service. Keycloak can be configured to act as a simple proxy to third-party identity providers such as ADFS.
+### Connect to external sources using the native NSI authentication
+> Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
+
+When the DLM is connected to an **external source using the native NSI** authentication mechanism, then the user will be invited to provide a dedicated access information.  
+When the user select an external source using the native NSI authentication, a popup dialog box is dislayed an invites to provide a valid Username and Password.
+
+![DLM NSI login](/dotstatsuite-documentation/images/dlm-login-native-nsi.png)
+
+The authentication with credentials is a non-mandatory option, because anonymous users can also be allowed to see the fully public data. Therefore, users can select the "Coonect anonimously instead" option.
+
+Once the 'Login' button is clicked, whether with credentials or anonymous, the system checks if the access request is successful or not. If successful, then the dialog box closes and the list of available artefacts is displayed (given that the user has selected / selects an artefact type).  
+In case of unsuccessful access request, the dialog box reappears and states "Unauthorized: please enter a valid username and password".
+
+**NOTE** that this mechanism requires to be configured in the `tenants.json` file (at the 'space' level) during the installation (see details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#external-source-with-native-nsiws-authentication)).
