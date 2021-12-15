@@ -467,6 +467,10 @@ Define the hyperlink for the "Contact us" feature.<br>
 ---
 
 ### Map Chart Configuration
+>*Version history:*  
+> map projection renamed mercator -> `geoMercator`, and `scale` attribute removed with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
+> Introduced in [November 19, 2019 Release JS v3.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-19-2019)
+
 Displaying data in a geographical map representation in the Data Explorer visualisation pages, will rely on the providing of one or several maps (regarding the needs) to the application.  
 
 **Prerequisites**  
@@ -519,19 +523,18 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
         "maps": {
             "world_map": {
                 "id": "world_map",
-                "projection": ,
+                "projection": "geoMercator",
                 "path": "/assets/<tenant>/data-explorer/maps/world_map.json",
                 "levels": [
                   { "id": "continents", "names": { "en": "World Continents", "fr": "Continents du Monde" } },
                   { "id": "countries", "names": { "en": "World Countries", "fr": "Pays du Monde" } }
                 ],
-                "scale": 
             }
         }
     }
 }
 ```
-A very important aspect here above is about `projection` and `scale` entries. Both are linked to the api specification of the D3 library for map rendering. Detailed specifications of D3 projection mechanism are to be found [here](https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md).  
+A very important aspect here above is about `projection` entry. It is linked to the api specification of the D3 library for map rendering. Detailed specifications of D3 projection mechanism are to be found [here](https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md).  
 Keep in mind that `projection` stands for the specific D3 projection you want to use (e.g. `mercator` for `d3.geo.mercator`).  
 
 As you may have noticed in this example, each area level is declared with the associated localised names which will be used by the application, in order to display all the possible maps selection for a chart display.

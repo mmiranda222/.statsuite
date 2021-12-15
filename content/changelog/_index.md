@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [December 14, 2021](#december-14-2021)
 - [December 3, 2021](#december-3-2021)
 - [October 11, 2021](#october-11-2021)
 - [October 5, 2021](#october-5-2021)
@@ -75,9 +76,81 @@ ToC
 - [Release 10.07.2018](#release-10072018)
  -->
 
-> **Upgrade disclaimer** from .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
+> **Upgrade Disclaimers:**
+> - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
+> - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
 
-> **Upgrade disclaimer** from a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+---
+
+### December 14, 2021
+**[Release .Stat Suite JS 11.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/46)**
+> This **major** release includes a new version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, **sdmx-faceted-search**, **share**, **config**, **proxy**, and **keycloak** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.8.0**.
+
+**New performance improvements of the DE data table**: here below is a summary of comparison of the performance between the previous release and this one, introducing significant evolutions of the time required to build the data table in a web browser page :
+
+| Table content & layout | JS 10.0.0 | JS 11.0.0 | Diff. |
+|----------------|----------------|----------------|:---------------:|
+| 250 observations | 468 ms | ~200 ms | **- 260 ms** |
+| 2,500 observations | 4207 ms | ~100 ms | **- 4,1 s** |
+| 240 observations - Rows | 751 ms | ~400 ms | **- 350 ms** |
+| 2,500 observations - Rows | 5499 ms | ~2500 ms | **- 3 s** |
+| 2,500 observations - Columns x 3 | 4860 ms | ~1500 ms | **- 3,3 s** |
+| 2,500 observations - Sections 1 dimension | 4747 ms | ~2300 ms | **- 2,4 s** |
+| 2,500 observations - Sections 3 dimensions | 15498 ms | ~4000 ms | **- 11,5 s** |
+
+**Note:** the new performance results are accurate to only tenth of a second because we have corrected the initial performance issues related to scripting, rendering and system. Therefore the calculation only provides an approximate but yet true result for building the data table, and does not impact anymore scripting, rendering or system.
+
+major changes:
+
+- [dotstatsuite-data-explorer#606](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/606), [dotstatsuite-data-lifecycle-manager#230](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/230) **Generic openID-Connect compliance** for .Stat DE and .Stat DLM:
+> - in `tenants.json`, keycloak replaced by **`oidc`** entry (see example in this [diff.](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70)), and the env. variable `AUTH_SERVER_URL` is removed and replaced by the new `oidc` entry.
+> - ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance))
+- **‘MailGun’ API key** is removed from the share service (see the [documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#smtp) about setting up your own SMTP share configuration)
+- [dotstatsuite-config#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/34) Allow reading config files from either a **GCP bucket**, a **MinIO bucket** or a **local filesystem** (see more details in [Readme](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/master#config-server) and check the [env. variables changes](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/merge_requests/35/diffs) on our DevOps).
+- Changes related to the **`settings.json`** configuration file: see the [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/46#technical-changelog) and related [diff. applied to our DevOps](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70).
+- Changes related to the **`tenants.json`** file: see the [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/46#technical-changelog) and related [diff. applied to our DevOps](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70).
+
+minor changes:
+
+- [dotstatsuite-share#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/25) **DE shared visualisations** managed in a new dedicated page *(Avoid Outlook and/or corporate E-mail security scans executing links in email messages sent by the Share service)*. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/))
+- [dotstatsuite-share#33](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/33) **Delete all** shared visualisations. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/#delete-all-own-shared-visualisations))
+- [dotstatsuite-share#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/34) Responsiveness of the DE share object list.
+- [dotstatsuite-share#32](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/32) Make the email address field text of the share feature clearer.
+- [dotstatsuite-share#36](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/36) Image size better rendered in emails sent by the share service (e.g. for Outlook desktop display).
+- [dotstatsuite-data-explorer#112](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/112) **Limit the selectable filter values** according to the current data availability and to the current selection. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/#limit-the-selectable-filter-values-according-to-the-current-data-availability-and-to-the-current-selection))
+- [dotstatsuite-data-explorer#496](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/496) DE display for **non-calendar year reporting** at observation level.
+- [dotstatsuite-data-explorer#317](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/317) Improved warning message when reaching the data table range limit. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/))
+- [dotstatsuite-data-lifecycle-manager#207](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/207) Allow **DLM using SDMX-RI authentication** to connect to external NSI web service. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication))
+- [dotstatsuite-data-explorer#411](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/411) Displaying **hierarchies for several dimensions** in the DE table view. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-hierarchical-dimensions))
+- [dotstatsuite-data-explorer#534](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/534) Make indentation of hierarchical dimensions in table dimension more visible. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-hierarchical-dimensions))
+- [dotstatsuite-data-explorer#570](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/570) Observation limit warning is included in the Excel download file. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#table-in-excel))
+- [dotstatsuite-d3-charts#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/8) New **Stacked row chart** type. [Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/#))
+- [dotstatsuite-data-viewer#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/24) Center the map (choropleth world countries chart).
+- [dotstatsuite-data-viewer#25](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/25) Auto scaling of the (choropleth) map according to the chart area.
+- [dotstatsuite-d3-charts#10](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/10) Fix highlighted visibility for Scatter & Timeline charts. 
+- [dotstatsuite-d3-charts#9](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/9) Handle color palette in Stacked Bar. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#chart-override-stacked-charts-palette))
+- [dotstatsuite-components#9](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/9) Add a chart guideline text to inform the user that the number of stack segments is limited.
+- [dotstatsuite-data-explorer#591](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/591), [dotstatsuite-components#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/11), [dotstatsuite-components#10](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/10) DE **data table performance improvements.**
+- [dotstatsuite-data-explorer#549](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/549) Ensure the unauthenticated request mode for external dataflows (when the *SDMX* dataflow definition includes `isExternalReference="true"`).
+- [dotstatsuite-data-lifecycle-manager#211](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/211) Extend parsing of spaces `transferUrls`.
+- [dotstatsuite-config#33](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/33) support Linux (droplet): update script.
+- [dotstatsuite-data-explorer#582](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/582) Show dataflow name (instead of id) in table and chart views while data are still loading.
+- [dotstatsuite-data-explorer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/596) Add **Thai locale** to .Stat Suite.
+- [dotstatsuite-data-explorer#578](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/578) *(Support)* Unit of measure wrongly displayed in the table row section.
+- [dotstatsuite-visions#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/26) Document how the DE theme is used in the Visions `React` component demo. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#visual-ui-components-demo))
+
+patch changes:
+
+- [dotstatsuite-data-explorer#624](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/624) Custom drag dimensions messing up with untouched dimensions.
+- [dotstatsuite-data-explorer#608](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/608) Update data selection lifecycle issue in the visualisation page.
+- [dotstatsuite-data-explorer#607](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/607) Filter display flicker issue.
+- [dotstatsuite-data-explorer#601](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/601) Merged header cell wrongly displays the same UoM for all columns.
+- [dotstatsuite-data-explorer#600](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/600) Time dimension label for October 2017 displayed as "September 2017" in DE.
+- [dotstatsuite-data-explorer#599](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/599) Share object does not udapte after opening it in DE.
+- [dotstatsuite-data-explorer#598](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/598) Hide metadata dimension in the 'used filters' panel.
+- [dotstatsuite-data-explorer#589](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/589) Hiding of impact-less facets is not always respected.
+- [dotstatsuite-data-explorer#587](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/587) ORDER annotation not applied on the visualisation page.
 
 ---
 
