@@ -296,20 +296,18 @@ The exact same suggestion for the stemmers applies here.
 ---
 
 ### Synonyms Search
-Synonyms search is a complex matter and it is a functionality offered by Solr out of the box.  
-Just bear in mind that some particular class of synonyms may require particular care i.e. multi term synonyms (https://lucidworks.com/post/multi-word-synonyms-solr-adds-query-time-support/).  
-This means to fully support synonyms search an upgrade to Solr >=6.6 is recommended.  
-Let’s see what it is necessary to integrate Synonyms search in the current .stat solution:  
+Synonyms search is a complex matter and it is a functionality offered by Solr out of the box, with full support in Solr versions >=6.6.  
+Just bear in mind that some particular class of synonyms may require particular care i.e. multi-term synonyms (https://lucidworks.com/post/multi-word-synonyms-solr-adds-query-time-support/).  
+The approach to implement synonyms search (e.g. in the .Stat Suite Data Explorer search) is as follow:  
 
 #### Synonyms Provision
-Where should Solr fetch the synonyms from?  
-Currently Solr provide 2 flexible approaches:  
+Where should Solr fetch the synonyms from? Currently Solr provide 2 flexible approaches:  
 
-1) **synonyms.txt**, the synonyms are detailed in a txt file and provided to Solr - they can be entered manually or a middleware application may extract them from a database and then populate the file  
-https://lucene.apache.org/solr/guide/6_6/filter-descriptions.html#FilterDescriptions-SynonymGraphFilter  
+1) **synonyms.txt**, the synonyms are detailed in a txt file, one synonym per line as (1) a comma-separated list of words or as (2) two comma-separated lists of words with the symbol "=>" between them, and provided to Solr. They can be entered manually or a middleware application may extract them from a database and then populate the file  
+https://solr.apache.org/guide/8_7/filter-descriptions.html#synonym-graph-filter  
 
 2) **Managed Resources**,  synonyms can be provided to Solr to handy REST endpoints, this gives the possibility of developing your own custom approach in the way you push the synonyms to Solr, it may be a UI, an application that extract them from a DB of whatever necessary  
-https://lucene.apache.org/solr/guide/6_6/managed-resources.html#ManagedResources-Synonyms  
+https://solr.apache.org/guide/8_7/managed-resources.html#managing-synonyms  
 The second approach is normally suggested when complex synonyms provision system are considered.
 
 #### Solr Schema Configuration
@@ -319,19 +317,20 @@ e.g.
 ```xml
     <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
-                   />
-        …
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.SynonymGraphFilterFactory" synonyms="mysynonyms.txt"/>
+        <filter class="solr.FlattenGraphFilterFactory"/> <!-- required on index analyzers after graph filters -->
       </analyzer>
       <analyzer type="query">
         <tokenizer class="solr.StandardTokenizerFactory"/>
-        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.SynonymGraphFilterFactory" synonyms="mysynonyms.txt" ignoreCase="true" expand="true"/>
         …
         …    
       </analyzer>
     </fieldType>
 ```
 
-**N.B.** depending on the synonyms provision choice you made, you may want in the analysis chain to appear the synonyms.txt file or the solr.ManagedSynonymFilterFactory  
+**N.B.** depending on the synonyms provision choice you made, you may want in the analysis chain to appear the mysynonyms.txt file or the solr.ManagedSynonymFilterFactory  
 A query time semantic expansion of your query means that the original terms of your query are expanded with synonyms.  
 e.g.  
 Assuming the set of synonyms:    
@@ -344,7 +343,7 @@ the (mages OR sorcerer OR sorceress) of the (United Kingdon OR Great Britain OR 
 
 Effectively bringing an expansion to the semantic of the query.  
 
-Semantic Expansion Query Time - Synonyms Qyery Style
+Semantic Expansion Query Time - Synonyms Query Style
 - **as_same_term**: Default. Treats all terms as if they're exactly equivalent.  -->  The IDF component will be identical among all results, the TF will drive the score, so (field length + terms matches)    
 - **pick_best**: The rarest synonym will be considered more important.  -->  Only the rarest synonym match drives the score  
 - **as_distinct_terms**: All synonyms matches will contribute, with their IDF and TF  -->  All synonyms matches participate to the score  
