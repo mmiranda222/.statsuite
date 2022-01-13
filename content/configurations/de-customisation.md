@@ -367,28 +367,34 @@ Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/d
 ---
 
 ### Add hyperlink on header logo
-> Released in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020)  
-> (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
+> *Version history:*  
+> Moved the definition of the hypelrink from `assets` to `app` in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)  
+> Hyperlink is made localised with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
+> Intorduced in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020) (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
 
-To add an hyperlink/URL behind the logo of the common site header (top-left part). This feature is useful when the Data Explorer is part of a web portal and thus allows users to browse from one application to another within the same portal.
+To add an hyperlink/URL behind the logo of the common site header (top-left part). This feature is useful when the Data Explorer is part of a web portal allowing thus users to browse from one application to another within the same portal. It is also localised, meaning that a different hyperlink/URL can be defined for each supported locale.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-    "assets": {
-        "logoLink": "https://www.oecd.org",
-    }
+{
+  "app": {
+    "headerLink": "http://siscc.org"
+  }
+}
 ```
 
-Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021), hyperlinks related to a logo can be **localised**, meaning that a different hyperlink/URL can be defined per each supported locale.
-
-Example:
+Localised example:
 
 ```json
-    "assets": {
-      "en": "https://www.oecd.org",
-      "fr": "https://www.oecd.org/fr"
+{
+  "app": {
+    "headerLink": {
+      "fr": "http://siscc.fr",
+      "en": "http://siscc.org"
     }
+  }
+}
 ```
 
 ---
