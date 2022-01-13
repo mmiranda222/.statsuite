@@ -14,6 +14,7 @@ keywords: [
   'Management of empty rows', '#management-of-empty-rows',
   'Management of empty row sections', '#management-of-empty-row-sections',
   'Vertical scroll and freezing table header and Rows section rows', '#vertical-scroll-and-freezing-table-header-and-rows-section-rows',
+  'Horizontal scroll and freezing row headers', '#horizontal-scroll-and-freezing-row-headers',
   'Horizontal merged column header cells', '#horizontal-merged-column-header-cells',
   'Highlighted cells, rows and columns', '#highlighted-cells-rows-and-columns',
   'Extreme cases of layout', '#extreme-cases-of-layout',
@@ -32,6 +33,7 @@ keywords: [
 - [Management of empty rows](#management-of-empty-rows)
 - [Management of empty row sections](#management-of-empty-row-sections)
 - [Vertical scroll and freezing table header and Rows section rows](#vertical-scroll-and-freezing-table-header-and-rows-section-rows)
+- [Horizontal scroll and freezing row headers](#horizontal-scroll-and-freezing-row-headers)
 - [Horizontal merged column header cells](#horizontal-merged-column-header-cells)
 - [Highlighted cells, rows and columns](#highlighted-cells-rows-and-columns)
 - [Extreme cases of layout](#extreme-cases-of-layout)
@@ -155,7 +157,6 @@ Whenever a complete row section is empty, it is automatically excluded from the 
 ---
 
 ### Vertical scroll and freezing table header and Rows section rows
-
 If the table cannot vertically fit on the available screen then the screen should allow vertical scrolling (but infinite dynamic scroll is not impemented).  
 While vertically scrolling, the table grid header rows do not scroll but are frozen.
 Also the Row sections rows stay sticky on the top of the table while scrolling and as long the corresponding child rows are shown on the screen.
@@ -163,6 +164,16 @@ Also the Row sections rows stay sticky on the top of the table while scrolling a
 ![DE_table_scrolling](/dotstatsuite-documentation/images/DE_table_scrolling.png)
 
 Table header and Row section row freezing is disabled when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+
+---
+
+### Horizontal scroll and freezing row headers
+> Released in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)
+
+The row header column(s) are frozen on the left side of the browser window when scrolling horizontally.  
+It/they move(s) to the left when scrolling horizontally until reaching the right border of the browser window and stick(s) there, unless there is not enough space for the remaining data columns (e.g. mobile mode), in which case it/they keep(s) scrolling.
+
+*Limitation*: only the row headers columns are sticky, not the row sections headers (to be done in a second implementation).
 
 ---
 
