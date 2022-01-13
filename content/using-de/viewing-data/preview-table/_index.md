@@ -161,9 +161,9 @@ If the table cannot vertically fit on the available screen then the screen shoul
 While vertically scrolling, the table grid header rows do not scroll but are frozen.
 Also the Row sections rows stay sticky on the top of the table while scrolling and as long the corresponding child rows are shown on the screen.
 
-![DE_table_scrolling](/dotstatsuite-documentation/images/DE_table_scrolling.png)
-
 Table header and Row section row freezing is disabled when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+
+![DE table vertical scrolling](/dotstatsuite-documentation/images/de-table-vertical-scroll.gif)
 
 ---
 
