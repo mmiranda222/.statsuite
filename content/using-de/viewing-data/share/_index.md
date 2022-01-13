@@ -5,6 +5,8 @@ comments: false
 weight: 3600
 keywords: [
  'Visualisation share request', '#visualisation-share-request',
+ 'Email confirmation', '#email-confirmation',
+ 'Shared view generation', '#shared-view-generation',
  'List of own shared visualisations', '#list-of-own-shared-visualisations',
  'Delete own shared visualisation', '#delete-own-shared-visualisation',
  'Delete all own shared visualisations', '#delete-all-own-shared-visualisations',
@@ -16,6 +18,8 @@ keywords: [
 
 #### Table of Content
 - [Visualisation share request](#visualisation-share-request)
+  - [Email confirmation](#email-confirmation)
+  - [Shared view generation](#shared-view-generation)
 - [List of own shared visualisations](#list-of-own-shared-visualisations)
 - [Delete own shared visualisation](#delete-own-shared-visualisation)
 - [Delete all own shared visualisations](#delete-all-own-shared-visualisations)
@@ -48,7 +52,12 @@ Once clicked on "Request URL and embed code", the user gets the following messag
 
 ![DE Share request](/dotstatsuite-documentation/images/de-share2.png)
 
-... Then the following email requesting to confirm the email address:
+**Note** that, since [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022), when the user is authenticated and requests to share a snapshot of data that are not publicly available (e.g. a private dataflow triggered from the DLM preview), then a localised warning message indicates that those data will be publicly accessible even though potentially not yet officially and publicly released.
+
+![DE Share warning snapshot](/dotstatsuite-documentation/images/de-share-snapshot-warning.png)
+
+#### Email confirmation
+Once the request of share object was accepted by the data explorer, the following email request is sent in order to confirm the email address:
 
 ![Share mail confirm visualisation](/dotstatsuite-documentation/images/de-share21.png)
 
@@ -61,6 +70,7 @@ Once the user clicks on "Confirm your email", a new localised share page of the 
 
 ![Share activate](/dotstatsuite-documentation/images/de-share22.png)
 
+#### Shared view generation
 Once the user clicks on "Activate the visualisation", the shared visualisation is *activated* and opened in a new webpage with a unique URL id.  
 The shared view contains the data table or chart view, including the header (title and sub-title) and footer (copyright link and source url id):
 
