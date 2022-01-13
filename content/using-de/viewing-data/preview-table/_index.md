@@ -175,6 +175,8 @@ It/they move(s) to the left when scrolling horizontally until reaching the right
 
 *Limitation*: only the row headers columns are sticky, not the row sections headers (to be done in a second implementation).
 
+![DE table horizontal scrolling](/dotstatsuite-documentation/images/de-table-horizontal-scroll.gif)
+
 ---
 
 ### Horizontal merged column header cells
