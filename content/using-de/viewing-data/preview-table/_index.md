@@ -136,13 +136,11 @@ In cases when a child with an observation value is displayed in the table withou
 ---
 
 ### Management of empty columns
-
 Whenever a column is empty, it is automatically excluded from the table. 
 
 ---
 
 ### Management of empty rows
-
 Whenever a row is empty, it is automatically excluded from the table.  
 If a row with a higher-level hierarchy parent in any row dimension is removed, then all related child rows are displayed one level up in the hierarchical indentation.
 
@@ -151,7 +149,6 @@ If a row with a higher-level hierarchy parent in any row dimension is removed, t
 ---
 
 ### Management of empty row sections
-
 Whenever a complete row section is empty, it is automatically excluded from the table.  
 
 ---
@@ -170,10 +167,10 @@ Table header and Row section row freezing is disabled when [Accessibility suppor
 ### Horizontal scroll and freezing row headers
 > Released in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)
 
-The row header column(s) are frozen on the left side of the browser window when scrolling horizontally.  
+The row header(s) are frozen on the left side of the browser window when scrolling horizontally.  
 It/they move(s) to the left when scrolling horizontally until reaching the right border of the browser window and stick(s) there, unless there is not enough space for the remaining data columns (e.g. mobile mode), in which case it/they keep(s) scrolling.
 
-*Limitation*: only the row headers columns are sticky, not the row sections headers (to be done in a second implementation).
+*Limitation*: only the row headers are sticky, not the row sections headers (to be done in a second implementation).
 
 ![DE table horizontal scrolling](/dotstatsuite-documentation/images/de-table-horizontal-scroll.gif)
 
