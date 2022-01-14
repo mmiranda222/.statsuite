@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 13, 2022](#january-13-2022)
 - [December 14, 2021](#december-14-2021)
 - [December 3, 2021](#december-3-2021)
 - [October 11, 2021](#october-11-2021)
@@ -79,6 +80,35 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### January 13, 2022
+**[Release .Stat Suite JS 12.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/48#technical-changelog)**
+> This **major** release includes a new version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **share** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.8.0**.
+
+major changes: 
+
+- [dotstatsuite-data-explorer#593](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/593) logoLink is not an asset. In the 'settings.json' file, `logoLink` is removed from `assets` and replaced by `headerLink` under `app`. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#add-hyperlink-on-header-logo))
+
+minor changes: 
+
+- [dotstatsuite-visions#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/28) Sticky row headers of the table when scrolling horizontally. This is part 1 of a larger enhancement of the table and visualisation page when scrolling on large table data views (part 2 [dotstatsuite-data-explorer#10](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/10)). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#horizontal-scroll-and-freezing-row-headers))
+- [dotstatsuite-data-explorer#611](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/611) *(WCAG)* Change tag for the Accessibility Support button.
+- [dotstatsuite-data-explorer#652](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/652) Warning message in the DE for shared snapshot when authenticated. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/share/#visualisation-share-request))
+- [dotstatsuite-data-lifecycle-manager#226](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/226) Return a meaningful message in the DLM when no observation is available for export data actions.
+- [dotstatsuite-data-explorer#632](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/632) Unwanted home page facet name capitalisation.
+- [dotstatsuite-data-explorer#573](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/573) e2e tests integration.
+- [dotstatsuite-data-viewer#26](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/26) *(Refactoring)* Range warning `propTypes`.
+- [dotstatsuite-visions#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/29) *(Refactoring)* Revert nwb upgrade.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#644](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/644) *"Whoops, something went wrong on our side"* error when visualising a datafow where time period is null.
+- [dotstatsuite-core-transfer#294](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/294) DE Excel data export not completing for 65751 data points after 1 hour (case when a merged cell in the table header contains a flag).
+- [dotstatsuite-share#37](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/37) Share email URL to paste is cut & incomplete.
+- [dotstatsuite-data-lifecycle-manager#232](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/232) DLM related artefacts are not correctly displayed.
 
 ---
 
