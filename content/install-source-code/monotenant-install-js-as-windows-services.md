@@ -208,14 +208,14 @@ link in settings assets should stay like below:
 "favicon": "/assets/siscc/data-explorer/images/favicon.ico"
 ```
 - edit pm2.sh to set your personnal environnement variable (e.g TRANSFER_SERVER_URL)
-- run `./pm2.sh` *start services, save pm2 dump and delete all services*
+- run `./pm2.sh <config_folder_path>` *start services, save pm2 dump and delete all services*
 - in windows services, start dotstatsuitejs
 - checks:
   - config: http://localhost:5007/healthcheck
-  - share: http://localhost:3006/healthcheck (redis OK)
-  - search: http://localhost:3007/healthcheck (redis OK, solr OK)
-  - explorer: http://localhost:3009
-  - viewer: http://localhost:3005 (no id)
+  - share: http://localhost:3005/healthcheck (redis OK)
+  - search: http://localhost:3004/healthcheck (redis OK, solr OK)
+  - explorer: http://localhost:7001
+  - viewer: http://localhost:7002 (no id)
   - dlm: http://localhost:7000
 
 ---
@@ -223,7 +223,7 @@ link in settings assets should stay like below:
 ### Indexation
 > hint: default api-key value is secret
 
-- get config: `curl -X GET http://localhost:3007/admin/config?api-key=secret&tenant=default`
-- index dataflows: `curl -X POST http://localhost:3007/admin/dataflows?api-key=secret&tenant=default`
-- get report: `curl -X GET http://localhost:3007/admin/report?api-key=secret&tenant=default`
-- delete dataflows and config: `curl -X DELETE http://localhost:3007/admin/config?api-key=secret&tenant=default`
+- get config: `curl -X GET http://localhost:3004/admin/config?api-key=secret&tenant=default`
+- index dataflows: `curl -X POST http://localhost:3004/admin/dataflows?api-key=secret&tenant=default`
+- get report: `curl -X GET http://localhost:3004/admin/report?api-key=secret&tenant=default`
+- delete dataflows and config: `curl -X DELETE http://localhost:3004/admin/config?api-key=secret&tenant=default`

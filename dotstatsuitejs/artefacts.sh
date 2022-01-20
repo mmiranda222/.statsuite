@@ -11,7 +11,7 @@ if [ ! $TOKEN ]; then
 fi
 
 BRANCH=master;
-JOB=(setup build);
+JOB=(setup build build-srv build-dist);
 
 PROJECTS=(10537079 10283564 10532325 12189645 10631000 10822973);
 
@@ -35,10 +35,13 @@ for index in `seq 0 5`; do
   cd $folder
 
   for job in ${JOB[*]}; do
+    url="https://gitlab.com/api/v4/projects/$project/jobs/artifacts/$BRANCH/download?job=$job"
     echo "Downloading $folder $job"
-    echo ""https://gitlab.com/api/v4/projects/$project/jobs/artifacts/$BRANCH/download?job=$job""
-    curl --insecure -L -o $job.zip --header "PRIVATE-TOKEN: $TOKEN" \
-      "https://gitlab.com/api/v4/projects/$project/jobs/artifacts/$BRANCH/download?job=$job"
+    echo "$url"
+    if curl --insecure --fail -L -o $job.zip --header "PRIVATE-TOKEN: $TOKEN" $url; then
+      curl --insecure -L -o $job.zip --header "PRIVATE-TOKEN: $TOKEN" $url
+    fi;
+    
   done
 
   cd ..
