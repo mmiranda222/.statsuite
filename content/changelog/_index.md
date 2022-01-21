@@ -126,6 +126,7 @@ major changes:
 - [dotstatsuite-config#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/34) Allow reading config files from either a **GCP bucket**, a **MinIO bucket** or a **local filesystem** (see more details in [Readme](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/master#config-server) and check the [env. variables](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/merge_requests/35/diffs) changes in our DevOps).
 - Changes related to the **`settings.json`** configuration file: see the [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/46) and related [diff.](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70) applied in our DevOps.
 - Changes related to the **`tenants.json`** file: see the [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/46) and related [diff.](https://gitlab.com/sis-cc/topologies/siscc-config-data/-/merge_requests/70) applied in our DevOps.
+- **share** service deployment related: the `SITE_URL` must be a link that redirects to the data-explorer, as `SITE_URL: "${PROTOCOL}://${HOST}:${DE_PORT}/share"`
 
 minor changes:
 
