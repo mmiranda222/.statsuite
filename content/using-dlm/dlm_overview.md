@@ -138,8 +138,8 @@ The main applical panel displayes the list all structural *SDMX* artefacts avail
 The above mentioned selections and filters are dynamically applied to the table, meaning that when the user changes the selection, then the table is automatically updated. A spinner feature informs the user of the processing.
 
 #### Display Options
-*  Spotlight: the user can reduce the list of artefacts based on the text he enters in the spotlight box. An additional option of the spotlight applies the text filter to one or both of the following: "Label", and "Code".  
-When he enters some text, it searches for all artefacts "Name" or "Code" that contain the entered text.
+*  Spotlight: the user can reduce the list of artefacts based on the text he enters in the spotlight box. An additional option of the spotlight applies the text filter to one or both of the following: "Label" and "Code".  
+When he enters some text, it searches for all artefacts "Name" or "ID" that contain the entered text.
 * Sorting: the user can sort the whole list by "Type", "Label”, "Code", "Version", "Final" or "Owner”. The list is sorted by “Type” and "Name" ascending by default.
 * Pagination: pagination allows for navigating from page to page, and to jump to the next, previous, first or last page. The number of results on each page is configurable during the set up of the application ([documentation](/dotstatsuite-documentation/configurations/dlm-configuration/)).
 
