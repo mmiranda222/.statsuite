@@ -22,6 +22,12 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ---
 
+![Ministry of Labour and Social Welfare of El Salvador (MTPS)](https://siscc.org/wp-content/uploads/2022/01/sv_logo_dark-e1643195759725.png)
+
+**Ministry of Labour and Social Welfare of El Salvador (MTPS)** [SIMEL.Stat](https://datasimel.mtps.gob.sv/)
+
+---
+
 ![Federal Competitiveness and Statistics Centre (FCSC)](/dotstatsuite-documentation/images/logo-fcsc.png)
 
 **Federal Competitiveness and Statistics Centre (FCSC)** [UAE.Stat](https://uaestat.fcsc.gov.ae/en)
