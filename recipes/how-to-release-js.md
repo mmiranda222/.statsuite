@@ -4,7 +4,9 @@ main:
 1. @j3an-baptiste draft a **milestone** at [.stat-suite level](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones): `dotstatsuiteJS@vx.x.x`
 1. issues from ([board](https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript)) (not only release column) are attached to the milestone
 1. given the list of issues, define a semver and rename the milestone
-1. run helper pipeline in [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data) with the env var MILESTONE to get the list of merge requests
+1. run helper in [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data) with the title of a milestone and gitlab token to get the list of merge requests 
+    - yarn helper:mergerequests dotstatsuiteJS@vx.x.x $GITLAB_API_KEY
+    - you can find GITLAB_API_KEY [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data-/settings/ci_cd), section variables
 1. from the list of merge requests, note concerned services/apps
 1. for each merge requests:
     - check kubernetes update to properly update staging (semver major if mandatory update to keep default)
