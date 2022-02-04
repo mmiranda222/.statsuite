@@ -129,7 +129,7 @@
 <tr>
 <tr><td colspan="7"></td></tr>
 <tr>
-<td rowspan="11">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
+<td rowspan="10">[data-explorer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer)</td>
 <td>qa/develop</td>
 <td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/pipeline.svg?style=flat-square)</td>
 <td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/develop/coverage.svg?style=flat-square)</td>
@@ -138,9 +138,9 @@
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="10">staging/master</td>
-<td rowspan="10">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
-<td rowspan="10">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
+<td rowspan="9">staging/master</td>
+<td rowspan="9">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/pipeline.svg?style=flat-square)</td>
+<td rowspan="9">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/badges/master/coverage.svg?style=flat-square)</td>
 <td>https://de-demo.siscc.org</td>
 <td>:globe_with_meridians: [website](https://de-demo.siscc.org) - :ambulance: [health](https://de-demo.siscc.org/api/healthcheck)</td>
 <td>-</td>
@@ -163,11 +163,6 @@
 <tr>
 <td>https://de-demo-abs.siscc.org</td>
 <td>:globe_with_meridians: [website](https://de-demo-abs.siscc.org) - :ambulance: [health](https://de-demo-abs.siscc.org/api/healthcheck)</td>
-<td>-</td>
-</tr>
-<tr>
-<td>https://de-demo-astat.siscc.org</td>
-<td>:globe_with_meridians: [website](https://de-demo-astat.siscc.org) - :ambulance: [health](https://de-demo-astat.siscc.org/api/healthcheck)</td>
 <td>-</td>
 </tr>
 <tr>
