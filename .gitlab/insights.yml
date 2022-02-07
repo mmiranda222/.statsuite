@@ -20,42 +20,15 @@ SolDevCycleChart:
             group_by: week
             period_limit: 24
 
-
-AllClosedIssues:
-    title: "Cumulative closed issues"
+SupportBarchart:
+    title: Weekly opened & closed Supports
     charts:
-        - title: "All closed issues by type"
-          type: bar
+        - title: "Weekly opened and closed Supports"
+          type: stacked-bar
           query:
             issuable_type: issue
-            issuable_state: closed
             collection_labels:
-                - "t::bug"
-                - "t::devOps"
-                - "t::documentation"
-                - "t::enhancement"
-                - "t::feature"
-                - "t::refactoring"
                 - "t::support"
-                - "t::techn. design"
+            group_by: week
+            period_limit: 24
 
-MonthlyOpenedClosedTypes:
-    title: Monthly opened & closed Bugs
-    charts:
-        - title: "Opened bugs per month"
-          type: stacked-bar
-          query:
-            issuable_type: issue
-            collection_labels:
-                - "t::bug"
-            group_by: month
-            period_limit: 24
-        - title: "Closed bugs per month"
-          type: stacked-bar
-          query:
-            issuable_type: issue
-            issuable_state: closed
-            collection_labels:
-                - "t::bug"
-            group_by: month
-            period_limit: 24
