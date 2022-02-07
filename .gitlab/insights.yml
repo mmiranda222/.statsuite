@@ -19,16 +19,3 @@ SolDevCycleChart:
                 - "t::support"
             group_by: week
             period_limit: 24
-
-SupportBarchart:
-    title: Weekly opened & closed Supports
-    charts:
-        - title: "Weekly opened and closed Supports"
-          type: stacked-bar
-          query:
-            issuable_type: issue
-            collection_labels:
-                - "t::support"
-            group_by: week
-            period_limit: 24
-
