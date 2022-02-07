@@ -1,15 +1,25 @@
 SolDevCycleChart:
     title: "Product Management support"
     charts:
-        - title: "Weekly opened and closed Support tickets"
-          type: stacked-bar
+        - title: "Weekly opened Support tickets"
+          type: bar
           query:
             issuable_type: issue
-            issuable_state: all
+            issuable_state: opened
             filter_labels:
                 - "t::support"
             group_by: week
             period_limit: 24
+        - title: "Weekly closed Support tickets"
+          type: bar
+          query:
+            issuable_type: issue
+            issuable_state: closed
+            filter_labels:
+                - "t::support"
+            group_by: week
+            period_limit: 24
+
 
 AllClosedIssues:
     title: "Cumulative closed issues"
