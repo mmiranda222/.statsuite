@@ -37,12 +37,12 @@ Referantial metadata can be uploaded when the related *SDMX* Data Structure Defi
 
 As for the DSD, the concepts used in the MSD to name the metadata attributes are previously defined in a Concept Scheme. The concepts and/or the MSD also define the types of the metadata attributes (html, string, number, coded value, etc.).
 
-[Here attached](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/raw/feature--referential-metadata/content/OECD_SNA_TABLE1_1.0_structures.xml) is an example of a full *SDMX* structure file allowing to upload referential metadata, and containing
+[Here attached](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/content/OECD_SNA_TABLE1_1.0_structures.xml) is an example of a full *SDMX* structure file allowing to upload referential metadata, and containing
 - a dataflow
 - a list of codelists
 - a list of concept schemes
 - a metadata structure definition (MSD)
-- a data strcuture definition (MSD) containing the `METADATA` type annotation
+- a data strcuture definition (MSD) with the `METADATA` annotation
 
 ---
 
@@ -64,6 +64,6 @@ As can be seen in this example, the language codes in localised JSON snippets do
 
 For more detailed information see the functional specification of the [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md) format.
 
-[Here attached](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/raw/feature--referential-metadata/content/OECD_SNA_TABLE1_1.0_-_AUS_metadata.csv?inline=false) is an example of a .csv file containing referential medata.
+[Here attached](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/content/OECD_SNA_TABLE1_1.0_-_AUS_metadata.csv) is an example of a .csv file containing referential medata.
 
 ![dlm upload referential metadata csv file headers](/dotstatsuite-documentation/images/dlm-upload-referential-metadata-csv.png)
