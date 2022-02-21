@@ -476,11 +476,23 @@ You can define more than one type of attribute to be displayed as flags.<br>
 ---
 
 ### Coded and uncoded attributes returned as footnotes
-> Since the [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020), the **`footnotes`** parameter is **removed from the DE configuration**.
+>*Version history:*  
+> Re-introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
+> Deprecated in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)  
+> Introduced in [Release 28.09.2018](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#release-28-09-2018)
 
-If a coded or uncoded attribute is not defined to be returned as **`flags`** in the DE configuration (see [above](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)), then it is displayed as a **`footnote`**.  
-A **footnote** is an asterisk icon shown next to the observation value, or at a higher-level (see business rules [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed in a mouse-over feature.  
-More than one type of attributes can be displayed as footnotes.<br>
+A **footnote** is an star '*' icon shown next to the observation value, or at a higher-level (see business rules [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed on mouse-over in a tooltip bubble.  
+You can define more than one type of attributes to be displayed as footnotes. In the following example, the supported coded or uncoded attributes are set for a single instance of the data explorer (DE).
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+   "sdmx": {
+        "attributes": {
+            "footnotes": ["EXPENDITURE", "ACTIVITY"], 
+        },
+    }
+```
 
 ![Attributes footnotes](/dotstatsuite-documentation/images/faq-footnotes.png)
 
