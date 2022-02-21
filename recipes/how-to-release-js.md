@@ -6,7 +6,7 @@ main:
 1. given the list of issues, define a semver and rename the milestone
 1. run helper in [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data) with the title of a milestone and gitlab token to get the list of merge requests 
     - yarn helper:mergerequests dotstatsuiteJS@vx.x.x $GITLAB_API_KEY
-    - you can find GITLAB_API_KEY [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data-/settings/ci_cd), section variables
+    - you can find GITLAB_API_KEY [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/settings/ci_cd), section variables
 1. from the list of merge requests, note concerned services/apps
 1. for each merge requests:
     - check kubernetes update to properly update staging (semver major if mandatory update to keep default)
