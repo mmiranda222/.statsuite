@@ -1,19 +1,17 @@
 ---
-title: "Upload data"
+title: "Upload data or referential metadata"
 subtitle: 
 comments: false
 weight: 270
 
 ---
 
-Data can be uploaded using the main menu function "upload data".  
+**Data** or **referential metadata** can be uploaded using the main menu function "upload data".  
 
 The upload supports the following **file formats**:  
- - [SDMX-CSV](https://github.com/sdmx-twg/sdmx-csv/blob/master/data-message/docs/sdmx-csv-field-guide.md)
+ - [SDMX-CSV version 1.0](https://github.com/sdmx-twg/sdmx-csv/tree/v1.0/data-message/docs/sdmx-csv-field-guide.md) for data and [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md) for referential metadata
  - [SDMX-ML](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/) (2.1 generic and data-specific formats, 2.0 generic and compact formats)
  - [Excel](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-edd/) together with an "Excel data definition (EDD)" xml file that defined how to read the data from the Excel file  
-
-More detailed information can be found for each of these formats.  
 
 When data are uploaded, then the .Stat Core system automatically (re-)generates **Actual Content Constraints** for all dataflows impacted by the upload.  
 - The IDs of auto-generated Actual Content Constraints are prefixed by "`CR_A_`" or "`CR_B_`", e.g. "`CR_A_DATAFLOWID`" and "`CR_B_DATAFLOWID`".

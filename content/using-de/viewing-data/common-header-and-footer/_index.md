@@ -27,7 +27,8 @@ The visualisation header (common for both table and chart views) consists of:
 
 The title is generated automatically and cannot be changed manually. It contains the name of the dataflow in the currently selected language. If the dataflow name is not available in that language, then the dataflow ID within squared brackets is shown. The dataflow name responds to the [label customisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#labels).
 
-A footnote icon for additional information (attributes) at the end of the title is displayed if a footnote exists at the dataflow level. 
+A **star icon '*'** is displayed at the end of the title if attributes defined to be displayed as note exist at the dataflow level, or combinations of, or with single-fixed dimensions. The icon displays the related attribute values on mouse-over in its tooltip bubble. For more details about notes see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)  
+An **information icon '(i)'** is also displayed at the end of the title if attributes not already shown as flags or notes and/or referential metadata exist at the dataflow level, or combinations of, or with single-fixed dimensions. The icon displays the related attribute and referential metadata values on click in a side panel. For more details see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel/)
 
 **Example:**  
 

@@ -9,6 +9,7 @@ keywords: [
   'Initial layout', '#initial-layout',
   'Layout variations from changing user selections', '#layout-variations-from-changing-user-selections',
   'Display of observations values', '#display-of-observations-values',
+  'Display of additional information', 'display-of-additional-information',
   'Display of hierarchical dimensions', '#display-of-hierarchical-dimensions',
   'Management of empty columns', '#management-of-empty-columns',
   'Management of empty rows', '#management-of-empty-rows',
@@ -28,6 +29,7 @@ keywords: [
 - [Initial layout](#initial-layout)
 - [Layout variations from changing user selections](#layout-variations-from-changing-user-selections)
 - [Display of observations values](#display-of-observations-values)
+- [Display of additional information](#display-of-additional-information)
 - [Display of hierarchical dimensions](#display-of-hierarchical-dimensions)
 - [Management of empty columns](#management-of-empty-columns)
 - [Management of empty rows](#management-of-empty-rows)
@@ -117,6 +119,62 @@ If the user changes the selection(s), then it can impact the data preview table 
 3 512 032.00
 
 Other **non-numeric** and **coded measure values formats** are supported and detailed (with example) [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#data-type-definitions).
+
+---
+
+### Display of additional information
+Data attributes and referential metadata can be displayed for preview tables and charts in different ways: as flags, as notes, or in a side panel. 
+
+**Flags**  
+Directly displays the IDs of related coded attribute values (with maximal 4 characters) next to the observation value. The localised names of the attribute values are displayed on mouse-over in a tooltip bubble.  
+For more information see [coded attributes displayed as flags](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)
+
+**Notes**  
+Displays a star icon '*' at the appropriate places. The related attribute values are displayed on mouse-over in a tooltip bubble.  
+For more information see [attributes displayed as notes](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)
+
+**Side panel**  
+Displays an information icon '(i)' at the appropriate places. The related attribute and referential metadata values are displayed on mouse-over in an information side panel.  
+For more information see [information side panel](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#information-panel).  
+
+The following optional Data Explorer (DE) configuration parameters (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes) how to be configured) can be used to define the way to display attributes within the scope of a Data Explorer (note that the content represents examples):  
+```json
+"attributes": {
+    "flags": ["OBS_STATUS", "CONF_STATUS"],
+    "footnotes": ["NOTE"]
+}
+```
+
+The following optional dataflow (DF) annotations can be used to define the way to display attributes for a specific dataflow (note that the content represents examples):
+```json
+"annotations": [
+    {
+        "title": "OBS_STATUS,CONF_STATUS",
+        "type": "LAYOUT_FLAG"
+    },
+    {
+        "title": "NOTE1,NOTE2",
+        "type": "LAYOUT_NOTE"
+    },
+    {
+        "title": "DECIMALS",
+        "type": "NOT_DISPLAYED"
+    }
+]
+```
+
+#### The following display rules are applied with ascending prevalence for any attribute
+
+(7) The DE configuration `footnotes` defines which attributes are displayed in the cell `note`.  
+(6) The DE configuration `flags` defines which attributes are displayed in the cell `flag`.   
+(5) The DF annotation `LAYOUT_NOTE` fully overwrites the list in DE configuration `footnotes` and instead defines which attributes are displayed in the cell `note`.  
+(4) The DF annotation `LAYOUT_FLAG` fully overwrites the list in DE configuration `flags` and instead defines which attributes are displayed in the cell `flag`.  
+(3) The DF annotations `UNIT_MEASURE_CONCEPTS`, `DRILLDOWN_CONCEPTS` and `DRILLDOWN` define which attributes are displayed differently due to other (already existing, being implemented or planned) features, even if they have been listed in any of the previously mentioned settings.  
+(2) The DF annotation `NOT_DISPLAYED` defines which attributes are **not displayed** at all even if they have been listed in any of the previously mentioned setting.  
+(1) All attributes not defined by the previously listed settings are shown in the `information` side panel with (i) icon. 
+
+**Rule's exception for Flags**  
+If the value ID of an attribute that is defined as flag is longer than 4 characters, then this value will not be displayed as a flag but as a note.
 
 ---
 
