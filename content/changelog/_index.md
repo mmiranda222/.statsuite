@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [February 21,2022](#february-21-2022)
 - [January 13, 2022](#january-13-2022)
 - [December 14, 2021](#december-14-2021)
 - [December 3, 2021](#december-3-2021)
@@ -80,6 +81,34 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### February 21, 2022
+**[Release .Stat Suite JS 12.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/49#tab-issues)**
+> This release includes a new minor version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **config**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.1**.
+
+minor changes:
+
+- [dotstatsuite-data-explorer#132](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/132) Display of **attributes** and **referential metadata** in table views with an **'i' icon** and an **information side panel**. It includes:
+  - The full display of attributes and referential metadata as additional information of table and chart views as flags, footnotes or in the new side panel ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information))
+  - The new Information side panel ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel/))
+  - The re-introduction of the DE configuration for '*' footnotes ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes))
+- [dotstatsuite-data-explorer#667](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/667) The '*' character for the attributes is sometimes displayed on a new line in the table view.
+- [dotstatsuite-data-explorer#653](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/653) The warning icon on the 'share snapshot' feature briefly appears even when not required.
+- [dotstatsuite-data-explorer#656](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/656) *(Refactoring)* Duplicated dependencies with different version (visions and sdmxjs).
+- [dotstatsuite-data-explorer#657](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/657) *(Refactoring)* Move `puppeteer` dependency to `devDependencies`.
+- [dotstatsuite-components#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/12) *(Refactoring)* `glamorous` lib deprecated and migration to `emotion`.
+- [dotstatsuite-config#37](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/37) *(Support)* Missing dependency when installing only production dependencies.
+- [dotstatsuite-config-data#9](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/9) *(DevOps)* Release script.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#664](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/664) Duplicated 'unit of measure' display.
+- [dotstatsuite-sdmxjs#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmxjs/-/issues/8) Silent error `getCodeOrder` (`propEq` cannot read properties of undefined).
+- [dotstatsuite-data-lifecycle-manager#234](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/234) Remove the (unsupported) .Stat DLM spotlight filtering by 'description'.
+- [dotstatsuite-core-sdmxri-nsi-w#220](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/220) Configuration issue in the context of Thai language display.
 
 ---
 
