@@ -34,3 +34,5 @@ Interface labels and coded values are displayed according to the current "Labels
 Each (group of) attribute or referential metadata can be expanded or collapsed individually.
 
 The side panel closes when clicking the overlay, clicking the 'close' icon or pressing the Esc key. This cancels also the highlight state of the '(i)' icon.
+
+![Information side panel](/dotstatsuite-documentation/images/de-side-panel.png)
