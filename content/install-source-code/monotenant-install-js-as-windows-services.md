@@ -207,8 +207,7 @@ link in settings assets should stay like below:
 ```
 "favicon": "/assets/siscc/data-explorer/images/favicon.ico"
 ```
-- edit pm2.sh to set your personnal environnement variable (e.g TRANSFER_SERVER_URL)
-- run `./pm2.sh <config_folder_path>` *start services, save pm2 dump and delete all services*
+- edit pm2.sh to set your personnal environnement variable (e.g TRANSFER_SERVER_URL, CONFIG_FOLDER...)
 - in windows services, start dotstatsuitejs
 - checks:
   - config: http://localhost:5007/healthcheck

@@ -1,16 +1,8 @@
 #!/bin/bash
 
 NODE_ENV=production;
-CONFIG_FOLDER=$1;
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
-
-if [ -z "$CONFIG_FOLDER" ]; then
-  CONFIG_FOLDER="$HOME/dotstatsuitejs/config";
-  printf "${YELLOW}Default config folder used: $CONFIG_FOLDER${NC}\\nTo override, use: sh pm2.sh <config_folder_path>\n";
-else
-  printf "Your config folder: $CONFIG_FOLDER\n";
-fi
+# replace the next path by your config folder path (Bad configured path will cause unreachable config server error)
+CONFIG_FOLDER="$HOME/dotstatsuitejs/config";
 
 cd config
 NODE_ENV=$NODE_ENV DEBUG=config* SERVER_PORT=5007 BUCKET_PROVIDER=fs DATA_DIR=$CONFIG_FOLDER pm2 start --no-autorestart -n config dist/server
@@ -21,7 +13,7 @@ NODE_ENV=$NODE_ENV DEBUG=sfs* SERVER_PORT=3004 CONFIG_URL=http://localhost:5007 
 cd ..
 
 cd share
-NODE_ENV=$NODE_ENV DEBUG=share* SERVER_PORT=3005 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SITE_URL=http://localhost:3009/share REDIS_DB=0 pm2 start --no-autorestart -n share dist/server
+NODE_ENV=$NODE_ENV DEBUG=share* PORT=3005 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SITE_URL=http://localhost:7001/share REDIS_DB=0 pm2 start --no-autorestart -n share dist/server
 cd ..
 
 cd explorer
