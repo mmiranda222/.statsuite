@@ -1,7 +1,8 @@
 {
-  "dev": {
-    "id": "dev",
-    "label": "dev",
+  "oecd": {
+    "id": "oecd",
+    "label": "oecd",
+    "default": true,
     "spaces": {
       "qa:stable": {
         "label": "qa:stable",
@@ -47,9 +48,9 @@
       "dlm": {
         "type": "dlm",
         "label": "dlm",
-        "keycloak": {
-          "realm": "OECD",
-          "clientId": "app"
+        "oidc": {
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app"
         },
         "spaces": [
           {
@@ -81,9 +82,9 @@
       "de": {
         "type": "de",
         "label": "de",
-        "keycloak": {
-          "realm": "OECD",
-          "clientId": "app"
+        "oidc": {
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app"
         },
         "spaces": [
           "qa:stable",
