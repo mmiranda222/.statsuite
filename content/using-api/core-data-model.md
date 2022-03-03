@@ -7,6 +7,7 @@ keywords: [
   'Data structure components', '#data-structure-components',
   'Data type definitions', '#data-type-definitions',
   'Data querying', '#data-querying',
+  'Referential metadata types', '#referential-metadata-types',
   'Constraints', '#constraints',
   'Uniqueness of Observations', '#uniqueness-of-observations',
 ]
@@ -17,6 +18,7 @@ keywords: [
 - [Data structure components](#data-structure-components)
 - [Data type definitions](#data-type-definitions)
 - [Data querying](#data-querying)
+- [Referential metadata types](#referential-metadata-types)
 - [Constraints](#constraints)
 - [Uniqueness of Observations](#uniqueness-of-observations)
 
@@ -151,6 +153,30 @@ The other optional TextFormat attributes and properties that .Stat Suite support
 In SDMX 2.1, users can query for data by distinct values for the Dimensions, incl. MeasureDimension. However, the TimeDimension can only be queried through a time period range.
 
 In SDMX 3.0, it is expected to be able to query for data by distinct values for the Dimensions, Measures and Attributes. Likely, the TimeDimension can still only be queried through a time period range.
+
+---
+
+### Referential metadata types
+> Released in [MMMMMMMMMM X, 2022 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmm-XX-2022)
+
+.Stat Suite supports the use and the interpretation of several referential metadata types (representations). The possible values for the optional TextFormat metadata attribute **"textType"** are:
+
+- `XHTML`: the value is interpreted as HTML and escaped as is;
+- `Numeric`, `Integer` and `Decimals` formats: the value is a Number formatted with the configured localized thousands and decimals separators;
+- `Boolean`: 'true' and 'false' values are replaced by the corresponding `i18n` localised messages ('Yes' and 'No' in English, 'Oui' and 'Non' in French, etc.);
+- `GregorianYearMonth`: the same localized monthly format used for the monthly time period in the DE filters and table views of the visualisation page.
+
+**Example:**  
+```xml
+<structure:MetadataAttribute id="CALL_FOR_DATA" minOccurs="1" maxOccurs="1">
+    <structure:ConceptIdentity>
+        <Ref id="CALL_FOR_DATA" maintainableParentID="CS_MSD_UNICEF_MG" maintainableParentVersion="5.0" agencyID="UNICEF" package="conceptscheme" class="Concept" />
+    </structure:ConceptIdentity>
+    <structure:LocalRepresentation>
+        <structure:TextFormat textType="XHTML" isMultiLingual="true" />
+    </structure:LocalRepresentation>
+</structure:MetadataAttribute>
+```
 
 ---
 

@@ -56,13 +56,14 @@ The format of the .csv file for referential metadata must comply to the SDMX-CSV
 - one column for each dimension of the dataflow: header row containing the dimension ID and each other row containing the dimension value ID to which the attribute values of this row are attached. It is left empty in rows where the attribute doesn't attach to that dimension.
 - one column for each referential metadata: header row containing the attribute ID and each other row containing the corresponding attribute values
 
-All textual values containing commas need to be encapsulated within double-quotes. All double-quotes inside the (metadata) attribute values themselves are to be escaped using doubled double-quotes. In addition, double-quotes inside localised values using JSON syntax are escpaed using a preceeding backslash '\', e.g.:
+All textual values containing commas need to be encapsulated within double-quotes. All double-quotes inside the (metadata) attribute values themselves are to be escaped using doubled double-quotes. In addition, double-quotes inside localised values using JSON syntax are escaped using a preceeding backslash '\', e.g.:
 
 `"en: ""<a href=\""mailto:contact-en@my-org.org\"">contact-en@my-org.org</a>"",fr: ""<a href=\""mailto:contact-fr@my-org.org\"">contact-fr@my-org.org</a>"""`
 
 As can be seen in this example, the language codes in localised JSON snippets do not need to be put into (doubled) double quotes.
 
-For more detailed information see the functional specification of the [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md) format.
+For more detailed information see the functional specification of the [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md) format.  
+For me details about the referential metadata types supported by the data explorer display, see [this topic](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#referential-metadata-types).
 
 [Here attached](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/content/OECD_SNA_TABLE1_1.0_-_AUS_metadata.csv) is an example of a .csv file containing referential medata.
 
