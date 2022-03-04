@@ -5,6 +5,10 @@ comments: false
 weight: 4700
 keywords: [
   'Data structure components', '#data-structure-components',
+  'Dimensions', '#data-structure-components',
+  'Time dimension', '#data-structure-components',
+  'Measures', '#data-structure-components',
+  'Attributes', '#data-structure-components',
   'Data type definitions', '#data-type-definitions',
   'Data querying', '#data-querying',
   'Constraints', '#constraints',
@@ -36,7 +40,15 @@ The SDMX information model defines **5 main types of components** for data struc
 
 1. **Dimensions**: Defined by Concepts. There must be at least one Dimension (incl. Time Dimension). Their allowed values (local Representation) can be coded (from a Codelist) or non-coded (see below). For the moment only coded dimensions are supported, but support for non-coded dimensions is already being worked on.  
 In opposite to Measures and Attributes, _Dimensions (incl. Time Dimension) are used to uniquely identify Observations_.
-2. **Time Dimension**: Defined by Concept. Its allowed values (local Representation) are always non-coded but restricted to specific time period representations (ObservationalTimePeriod), which include also information about start and end time (or start and duration) for each time period.
+2. **Time dimension**: Defined by Concept. Its allowed values (local Representation) are always non-coded but restricted to specific time period representations (ObservationalTimePeriod), which include also information about start and end time (or start and duration) for each time period.  
+   **Note:** In order to optimise the database storage space and performance in .Stat Core, by default only time periods *without a time component* (hours, minutes, seconds, milli-seconds), e.g. day, week, month, quarter, year, etc., are supported. In case a DSD requires the usage of time periods including information about hours, minutes, seconds or milli-seconds, this needs to be communicated through the annotation of type `SUPPORT_DATETIME` in the DSD before any data are uploaded.
+   
+   ```xml
+   <common:Annotation>
+     <common:AnnotationType>SUPPORT_DATETIME</common:AnnotationType>
+   </common:Annotation>
+   ```
+
 3. **Measures**: Defined by Concepts. There must be at least one Measure, the default is called the PrimaryMeasure. The allowed values (local Representation) of a Measure can be coded (from a Codelist) - this is not yet implemented - or uncoded (see below) - only the double number type is currently imlemented. In SDMX 2.1, Measures, when there are multiple, are grouped (and transposed) into a special "MeasureDimension" and their Concepts are taken from a special ConceptScheme. This special SDMX 2.1 "MeasureDimension" construct is not implemented in the .Stat Suite Core because in SDMX 3.0 it will be transformed into a normal Dimension with a role 'Measure'.  
 In distinction to Attributes, _Measures contain the main target pieces of information_. E.g. for a survey for household earning, the main information is the amount of earning and this would be stored in a Measure. Other related information, e.g. about the family composition of the household, would be stored in attributes.
 4. **Attributes**: Defined by Concepts. Their allowed values (local Representation) can be coded (from a Codelist) or uncoded (see below). All these options are supported.
