@@ -45,8 +45,11 @@ In distinction to Attributes, _Measures contain the main target pieces of inform
 Observations can share the same Attribute values. This is the case when the Attributes attachment level is higher than Observation-level. Such higher levels are groups of dimensions or dataset level. In SDMX 2.1, Attributes cannot be attached to specific Measures within one Observation, which means Attributes values cannot provide additional information for specific Measure values. However, in SDMX 3.0 this will become possible and allow to generically host micro data.  
 If Attributes are marked as mandatory, then a value must be provided for the attribute when sending the data, otherwise the corresponding observation(s), which it refers to, is (are) not considered meaningful enough.  
 _Attributes provide additional information about Observations_.
-
-An additional, but separate component is **referential metadata**. They can be considered a specific type of attributes, because their definition is generally less static, and the related values do not need to be exchanged together with the observation and attribute values. Their implementation is foreseen at a later stage.
+5. **Referential metadata attributes**: Defined in separate Metadata Structure Definition and by Concepts. Their allowed values (Representation) can be coded (from a Codelist) or uncoded (see [Referential metadata types](#referential-metadata-types)).  
+   Do not (yet) have a pre-defined attachment level. During imports of their values their can be attached to any level from observation (full key) through any combination of dimension values (partial key) up to dataflow level (empty key).  
+   Cannot (yet) be made mandatory.  
+   Can be considered a specific type of attributes, and as such also _provide additional information about the data_.  
+   Their values are not exchanged together with the observation and attribute values but in separate messages and through separate web service calls.
 
 In SDMX 2.1, examples of single- and multi-measure Observations would be:
 - Dimensions: FREQ=A; REF_AREA=US; INDICATOR=GDP_PER_CAPITA_PPP
@@ -159,7 +162,7 @@ In SDMX 3.0, it is expected to be able to query for data by distinct values for 
 ### Referential metadata types
 > Released in [MMMMMMMMMM X, 2022 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmm-XX-2022)
 
-.Stat Suite supports the use and the interpretation of several referential metadata types (representations). The possible values for the optional TextFormat metadata attribute **"textType"** are:
+.Stat Core supports the use and the interpretation of all types (representations) of referential metadata attributes, but their values are not yet validated against the types during imports, and all values are stored in .Stat Core as simple strings. Currently, only the following types are specifically formatted by the Data Explorer for the online display:
 
 - `XHTML`: the value is interpreted as HTML and escaped as is;
 - `Numeric`, `Integer` and `Decimals` formats: the value is a Number formatted with the configured localized thousands and decimals separators;

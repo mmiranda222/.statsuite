@@ -56,7 +56,7 @@ The format of the .csv file for referential metadata must comply to the SDMX-CSV
 - one column for each dimension of the dataflow: header row containing the dimension ID and each other row containing the dimension value ID to which the attribute values of this row are attached. It is left empty in rows where the attribute doesn't attach to that dimension.
 - one column for each referential metadata: header row containing the attribute ID and each other row containing the corresponding attribute values
 
-All textual values containing commas need to be encapsulated within double-quotes. All double-quotes inside the (metadata) attribute values themselves are to be escaped using doubled double-quotes. In addition, double-quotes inside localised values using JSON syntax are escaped using a preceeding backslash '\', e.g.:
+All textual values containing commas need to be encapsulated within double-quotes. All double-quotes inside these values are to be escaped using doubled double-quotes. In addition, the doubled double-quotes inside localised values using JSON syntax are escaped using a preceeding backslash '\', e.g.:
 
 `"en: ""<a href=\""mailto:contact-en@my-org.org\"">contact-en@my-org.org</a>"",fr: ""<a href=\""mailto:contact-fr@my-org.org\"">contact-fr@my-org.org</a>"""`
 
