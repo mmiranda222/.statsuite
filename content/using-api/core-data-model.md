@@ -162,7 +162,7 @@ In SDMX 3.0, it is expected to be able to query for data by distinct values for 
 ### Referential metadata types
 > Released in [MMMMMMMMMM X, 2022 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmm-XX-2022)
 
-.Stat Core supports the use and the interpretation of all types (representations) of referential metadata attributes, but their values are not yet validated against the types during imports, and all values are stored in .Stat Core as simple strings. Currently, only the following types are specifically formatted by the Data Explorer for the online display:
+.Stat Core supports the use and the interpretation of all types (representations) of referential metadata attributes, including coded, non-coded non-localised or non-coded multi-lingual values, except multi-valued values, but their values are not yet validated against the types during imports, and all values are stored in .Stat Core as simple strings. Currently, only the following types are specifically formatted by the Data Explorer for the online display:
 
 - `XHTML`: the value is interpreted as HTML and escaped as is;
 - `Numeric`, `Integer` and `Decimals` formats: the value is a Number formatted with the configured localized thousands and decimals separators;
