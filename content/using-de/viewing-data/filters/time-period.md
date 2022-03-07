@@ -54,6 +54,14 @@ The *green* number of **selected values/total of values** is counting values for
 
 ![number of values](/dotstatsuite-documentation/images/time-period-3.png)
 
+> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+
+In cases when the localised *SDMX* Concept names for Time Period and Frequency are different than the standard ones, then:
+- If the Time Period filter contains both dimensions Frequency and Time Period, then the filter title uses the localised concept name of the Frequency dimension instead of the current configured/localised "Frequency" label, and the localised concept name of the Time Period dimension instead of the current configured/localised "Time Period" label, and concatenated by the configured/localised " & " combination;
+- If the Time period filter contains only the Time Period dimension, then the title uses the localised concept name of the Time Period dimension instead of the current configured/localised "Time Period" label.
+
+![overriden time period & frenquency names](/dotstatsuite-documentation/images/time-period-4.png)
+
 ---
 
 ### Last N Periods
