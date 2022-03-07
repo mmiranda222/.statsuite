@@ -170,9 +170,9 @@ The following optional dataflow (DF) annotations can be used to define the way t
 ```
 
 #### The following display rules are applied with ascending prevalence for any attribute
-(7) The DE configuration `footnotes` defines which attributes are displayed in the cell `note`.  
+(7) The DE configuration `notes` defines which attributes are displayed in the cell `note`.  
 (6) The DE configuration `flags` defines which attributes are displayed in the cell `flag`.   
-(5) The DF annotation `LAYOUT_NOTE` fully overwrites the list in DE configuration `footnotes` and instead defines which attributes are displayed in the cell `note`.  
+(5) The DF annotation `LAYOUT_NOTE` fully overwrites the list in DE configuration `notes` and instead defines which attributes are displayed in the cell `note`.  
 (4) The DF annotation `LAYOUT_FLAG` fully overwrites the list in DE configuration `flags` and instead defines which attributes are displayed in the cell `flag`.  
 (3) The DF annotations `UNIT_MEASURE_CONCEPTS`, `DRILLDOWN_CONCEPTS` and `DRILLDOWN` define which attributes are displayed differently due to other (already existing, being implemented or planned) features, even if they have been listed in any of the previously mentioned settings.  
 (2) The DF annotation `NOT_DISPLAYED` defines which attributes are **not displayed** at all even if they have been listed in any of the previously mentioned setting.  
