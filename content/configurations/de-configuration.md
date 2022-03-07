@@ -25,7 +25,7 @@ keywords: [
   'Preferred scale attribute', '#preferred-scale-attribute',
   'Decimals rule attribute', '#decimals-rule-attribute',
   'Coded attributes returned as flags', '#coded-attributes-returned-as-flags',
-  'Coded and uncoded attributes returned as footnotes', '#coded-and-uncoded-attributes-returned-as-footnotes',
+  'Coded and uncoded attributes returned as notes', '#coded-and-uncoded-attributes-returned-as-notes',
   'Localised observation values separators for thousands and decimals', '#localised-observation-values-separators-for-thousands-and-decimals',
   'Localised time period values for monthly frequency', '#localised-time-period-values-for-monthly-frequency',
   'Unit of measure support', '#unit-of-measure-support',
@@ -57,7 +57,7 @@ keywords: [
 - [Preferred scale attribute](#preferred-scale-attribute)
 - [Decimals rule attribute](#decimals-rule-attribute)
 - [Coded attributes returned as flags](#coded-attributes-returned-as-flags)
-- [Coded and uncoded attributes returned as footnotes](#coded-and-uncoded-attributes-returned-as-footnotes)
+- [Coded and uncoded attributes returned as notes](#coded-and-uncoded-attributes-returned-as-notes)
 - [Localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
 - [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
 - [Unit of measure support](#unit-of-measure-support)
@@ -506,21 +506,22 @@ You can define more than one type of attribute to be displayed as flags.<br>
 
 ---
 
-### Coded and uncoded attributes returned as footnotes
+### Coded and uncoded attributes returned as notes
 >*Version history:*  
+> *footnotes* is replaced by *notes* in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
 > Re-introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
 > Deprecated in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)  
 > Introduced in [Release 28.09.2018](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#release-28-09-2018)
 
-A **footnote** is an star '*' icon shown next to the observation value, or at a higher-level (see business rules [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed on mouse-over in a tooltip bubble.  
-You can define more than one type of attributes to be displayed as footnotes. In the following example, the supported coded or uncoded attributes are set for a single instance of the data explorer (DE).
+A **note** is a star '*' icon shown next to the observation value, or at a higher-level (see business rules [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed on mouse-over in a tooltip bubble.  
+You can define more than one type of attributes to be displayed as notes. In the following example, the supported coded or uncoded attributes are set for a single instance of the data explorer (DE).
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
         "attributes": {
-            "footnotes": ["EXPENDITURE", "ACTIVITY"], 
+            "notes": ["EXPENDITURE", "ACTIVITY"], 
         },
     }
 ```
