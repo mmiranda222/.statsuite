@@ -34,7 +34,6 @@ This section describes how to generate the SDMX structure and data queries and e
 ---
 
 ### Retrieve the content of the DE filters from the SDMX API
-
 The generic SDMX structure query has the following syntax:  
 
 protocol://ws-entry-point/resource/agencyID/resourceID/version?detail=value&references=value
@@ -79,7 +78,6 @@ where [content-type] should be replaced with the desired content-type (i.e.: gen
 - The most recent version (that the service supports) of the SDMX-ML Generic Metadata format for metadata queries.
  
 #### Example
-
 https://nsi-demo-stable.siscc.org/rest/dataflow/OECD/DF_KEI/1.0?references=all&detail=referencepartial
 
 Note that the option **references=all** assures that all required information is returned (this simplified API calls):
@@ -120,7 +118,6 @@ Notes:
 ---
 
 ### Retrieve the data corresponding to the current DE filters from the SDMX API
-
 The SDMX data query has the following syntax:  
 **protocol://ws-entry-point**/data/**dataflowRef**/**key**/**providerRef**&startPeriod=xxxx&endPeriod=yyyy&updatedAfter=zzzz&firstNObservations=aa&lastNObservations=bb&dimensionAtObservation=AllDimensions&detail=full
 
@@ -158,7 +155,6 @@ The DE requests the SDMX-JSON data format for all data requests (with latest ver
 **application/vnd.sdmx.data+json**
 
 #### Examples
-
 https://sdw-wsrest.ecb.europa.eu/service/data/ECB,EXR,1.0/M.USD.EUR.SP00.A?dimensionAtObservation=AllDimensions&startPeriod=2016-12  
 In this example, the user would have made the following selection:  
 FREQ=M, CURRENCY=USD, CURRENCY_DENOM=EUR, EXR_TYPE=SP00, EXR_SUFFIX=A, TIME selection starting Dec 2016
@@ -207,7 +203,6 @@ For more information, see https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1
 ---
 
 ### How to identify dimensions with specific roles for both xml and json
-
 To identify a dimension, we should search within the following items chronologically:  
 In xml Structure file:
 1. ConceptRole
@@ -219,11 +214,9 @@ In json data file:
 2. DimensionID (if no ConceptRole found)
  
 #### Frequency dimension
-
 For frequency, we should search for one of the following IDs: **FREQ**, **FREQUENCY**
 
 ##### Structure message
-
 **“if there is a FREQUENCY dimension” means:**  
 1. Check if there is a dimension that can be recognized by its role "FREQ":  
   ```json
@@ -268,7 +261,6 @@ Notes:
 Usually the underlying codelist would be “CL_FREQ” but there might be a different one.
  
 ##### Data message
-
 1. Check the SDMX-JSON data message if there is a FREQUENCY dimension (see structure-dimensions-[dataset/series/observation]). It can be recognized by its role "FREQ":  
 ```json
 { "keyPosition": 3, 
@@ -309,7 +301,6 @@ The DE chart/table engine only supports one single frequency, thus the above "va
 If interested, the full SDMX list of admissible values is available here: https://sdmx.org/wp-content/uploads/CL_FREQ_v2.0_update_April_2015.doc
  
 #### Frequency value (time period length)
-
 If no Frequency dimension is found, then search for 'Time Format' attribute. This attribute will implicitly indicate the frequency assigned for the data of the dataset.  
 For frequency value, we should search for the following ID: **TIME_FORMAT**
  
@@ -326,7 +317,6 @@ For frequency value, we should search for the following ID: **TIME_FORMAT**
 | PT1M                   | Minutely                     |
  
 ##### Structure message
-
 https://nsi-demo-stable.siscc.org/rest/datastructure/OECD/DSD_KEI/1.0
 
 Attribute definition:
@@ -369,7 +359,6 @@ Attribute values defined by corresponding codelist:
 ```
 
 ##### Data message
-
 ```json
   "attributes": { 
     "dataSet": [], 
@@ -402,11 +391,9 @@ If you are interested, the full SDMX list of admissible values is available here
 If the SDMX-JSON data message contains neither FREQUENCY dimension nor TIME_FORMAT attribute, then the data selection is considered as invalid (and appropriate error message is returned to the user specifying that the frequency could not be recognized).
  
 #### Reference area dimension
-
 For the reference area dimension, we should search for one of the following IDs: **REF_AREA**, **LOCATION**, **COUNTRY**
 
 ##### Structure xml
- 
 **“if there is a LOCATION dimension” means:**
  
 1. Check if there is a dimension that can be recognized by its role "REF_AREA":  
@@ -467,7 +454,6 @@ In the OECD context, the underlying codelist would be “CL_AREA” but there mi
 *to be completed*
 
 #### Time dimension
-
 For the time dimension, we should search for the ID **TIME_PERIOD**.
 
 Note:  
@@ -475,7 +461,6 @@ Other IDs, such as **TIME** and **YEAR**, are not supported as TimeDimension for
 However, those IDs can be used as non-TimeDimension dimensions with the associated Codelist to be created.
 
 ##### Structure xml
-
 **“if there is a TIME dimension” for selecting “last five years” means:**  
  
 1. Check if there is a TimeDimension:
