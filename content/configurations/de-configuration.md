@@ -11,6 +11,7 @@ keywords: [
   'Search: Homepage facets alignment', '#search-homepage-facets-alignment',
   'Search: Auto-expanded homepage facet', '#search-auto-expanded-homepage-facet',
   'Search: Selectable second-level homepage facet values', '#search-selectable-second-level-homepage-facet-values',
+  'Search: Hide facet values IDs in home and result pages', '#search-hide-facet-values-ids-in-home-and-result-pages',
   'Search: Limit for indexing dimensions per dataflow', '#search-limit-for-indexing-dimensions-per-dataflow',
   'Search: Result page pinned facets', '#search-result-page-pinned-facets',
   'Search: Result page excluded facets', '#search-result-page-excluded-facets',
@@ -41,6 +42,7 @@ keywords: [
 - [Search: Homepage facets alignment](#search-homepage-facets-alignment)
 - [Search: Auto-expanded homepage facet](#search-auto-expanded-homepage-facet)
 - [Search: Selectable second-level homepage facet values](#search-selectable-second-level-homepage-facet-values)
+- [Search: Hide facet values IDs in home and result pages](#search-hide-facet-values-ids-in-home-and-result-pages)
 - [Search: Limit for indexing dimensions per dataflow](#search-limit-for-indexing-dimensions-per-dataflow)
 - [Search: Result page pinned facets](#search-result-page-pinned-facets)
 - [Search: Result page excluded facets](#search-result-page-excluded-facets)
@@ -185,6 +187,33 @@ By default, the second-level homepage facet values are **not clickable** (`"home
 ```
 
 ![Selectable second-level homepage facet values](/dotstatsuite-documentation/images/faq-homepage-select.png)
+
+---
+
+### Search: Hide facet values IDs in home and result pages
+> Released in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+
+Always hide IDs of the facet values for a well-defined list of facets on the homepage, or on the homepage **and** the result page. By default, IDs are always displayed, unless it is specifically defined in this configuration to hide IDs of a localised *SDMX* Categoryscheme or Concept/codelist.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+**Hide IDs of facet values in homepage only**
+
+```json
+    "search": {
+        "hideHomeFacetItemIDs": ["Topic", "Thème"]
+    }
+```
+
+**Hide IDs of facet values in homepage and in search result page**
+
+```json
+    "search": {
+        "hideHomeAndResultFacetItemIDs": ["Topic", "Thème"]
+    }
+```
+
+![Hide facet values IDs in home and result pages](/dotstatsuite-documentation/images/de-hide-facet-ids.png)
 
 ---
 
