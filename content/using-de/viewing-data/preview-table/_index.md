@@ -16,6 +16,7 @@ keywords: [
   'Management of empty row sections', '#management-of-empty-row-sections',
   'Vertical scroll and freezing table header and Rows section rows', '#vertical-scroll-and-freezing-table-header-and-rows-section-rows',
   'Horizontal scroll and freezing row headers', '#horizontal-scroll-and-freezing-row-headers',
+  'Scroll back arrows', '#scroll-back-arrows', 
   'Horizontal merged column header cells', '#horizontal-merged-column-header-cells',
   'Highlighted cells, rows and columns', '#highlighted-cells-rows-and-columns',
   'Extreme cases of layout', '#extreme-cases-of-layout',
@@ -36,6 +37,7 @@ keywords: [
 - [Management of empty row sections](#management-of-empty-row-sections)
 - [Vertical scroll and freezing table header and Rows section rows](#vertical-scroll-and-freezing-table-header-and-rows-section-rows)
 - [Horizontal scroll and freezing row headers](#horizontal-scroll-and-freezing-row-headers)
+- [Scroll back arrows](#scroll-back-arrows)
 - [Horizontal merged column header cells](#horizontal-merged-column-header-cells)
 - [Highlighted cells, rows and columns](#highlighted-cells-rows-and-columns)
 - [Extreme cases of layout](#extreme-cases-of-layout)
@@ -226,14 +228,26 @@ Table header and Row section row freezing is disabled when [Accessibility suppor
 ---
 
 ### Horizontal scroll and freezing row headers
-> Released in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)
+>*Version history:*  
+> Enhanced with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Introduced in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)
 
-The row header(s) are frozen on the left side of the browser window when scrolling horizontally.  
+When scrolling horizontally, the table header (title and subtitle) is frozen on the left side of the browser window, and the toolbar menu is frozen in the middle of the browser window.  
+The row header(s) and the row section header(s) are frozen on the left side of the browser window when scrolling horizontally.  
 It/they move(s) to the left when scrolling horizontally until reaching the right border of the browser window and stick(s) there, unless there is not enough space for the remaining data columns (e.g. mobile mode), in which case it/they keep(s) scrolling.
 
-*Limitation*: only the row headers are sticky, not the row sections headers (to be done in a second implementation).
-
 ![DE table horizontal scrolling](/dotstatsuite-documentation/images/de-table-horizontal-scroll.gif)
+
+---
+
+### Scroll back arrows
+> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+
+A "fast-forward left" button and a "fast-forward top" button appear when the user has started scrolling whther horizontally or vertically. Using one of these buttons, the user can quickly go back to the initial horizontal or vertical scroll position.  
+Once the user is back to the initial horizontal scroll position, then the "fast-forward left" button disappears.  
+Once the user is back to the initial vertical scroll position, then the "fast-forward top" button disappears.
+
+![DE table scroll and arrows](/dotstatsuite-documentation/images/de-table-scroll-arrows.gif)
 
 ---
 
