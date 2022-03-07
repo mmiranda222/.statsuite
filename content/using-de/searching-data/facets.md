@@ -58,7 +58,6 @@ For practical reasons, the search only allows a filter by **ANNUAL** time period
 **Note** that if a dataflow has no time dimension, then it will also not have values for the time period facet.  
 
 #### Indexation content restrictions
-
 A dataflow is indexed **only if** there is data associated to it.  
 The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:
 - a non-empty Actual Content Constraint
@@ -72,13 +71,19 @@ Dimension values of a dataflow are indexed only if there are data available for 
 
 ### How facets are used
 #### Homepage facets
-The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service. By configuration (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#auto-expanded-homepage-facet)), one facet can be expanded by default at page launch.
+> *Version history:*  
+> Improved the design of selectable second-level with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Selectable second-level introduced in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
+
+The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service.  
+By configuration (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#auto-expanded-homepage-facet)), one facet can be expanded by default at page launch.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-2.png)
 
 Each facet, when opened, presents a selectable root-level of facet values together with a non-selectable second-level facet values. The root-level and second-level facet values represent the available values for all dataflows currently being indexed.  
+It is possible to make the individual second-level homepage facet values clickable by configuration (See more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values). In this case, each selectable second-level facet value is presented on a new line as a bullet list.
 
-> **Note** that, since the [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020) release, it is possible to make the individual second-level homepage facet values clickable by configuration. See the documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values).
+![de homepage facet](/dotstatsuite-documentation/images/de-facet-bullet-list.png)
 
 The free text search and the navigation through pre-defined facets are exclusive and result systematically in a new search discarding any previously made search selections.
 
@@ -115,7 +120,6 @@ If some of the root parents have children, then by clicking on the arrow, the ch
 ![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootparents-1.png) ![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootchildren-1.png)  
 
 #### Data availability
-
 In hierarchical search facets, parent values, for which any of the resulting dataflows do not have data, are not selectable and are marked in light grey colour. Still, the user can navigate to the children and back to the parent again.
 
 | Parents without data | Children of parents without data |
