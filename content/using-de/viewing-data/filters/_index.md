@@ -9,6 +9,7 @@ keywords: [
   'Keyboard selection options', '#keyboard-selection-options',
   'Frequency & time period filter', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/',
   'Data availability', '#data-availability',
+  'Display of codes descriptions', '#display-of-codes-descriptions',
   'Hierarchical content', '#hierarchical-content',
   'Local search', '#local-search',
   'Used filters panel', '#used-filters-panel',
@@ -21,6 +22,7 @@ keywords: [
   - [Keyboard selection options](#keyboard-selection-options)
 - [Frequency & time period filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/)
 - [Data availability](#data-availability)
+- [Display of codes descriptions](#display-of-codes-descriptions)
 - [Hierarchical content](#hierarchical-content)
 - [Local search](#local-search)
 - [Used filters panel](#used-filters-panel)
@@ -99,6 +101,15 @@ See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-
 
 ### Data availability
 see https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/
+
+---
+
+### Display of codes descriptions
+> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+
+The localised codes descriptions of a codelist/dimension are displayed in the filters on mouse-over in a tooltip bubble. The dimension items (codes) containing a description are underlined with dots in order to inform the user of the description availability.
+
+![Codes descriptions](/dotstatsuite-documentation/images/de-codelist-description.png)
 
 ---
 
