@@ -37,7 +37,7 @@ On cell mouse-over, a tooltip shows the attribute(s) and its value(s). If severa
 
 ![notes attributes](/dotstatsuite-documentation/images/using-de-footnotes.png)
 
-Displaying attributes as notes, instead of flags for instance, is defined per Data Explorer instance by the **configuration**: see [coded and uncoded attributes returned as notes](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes) and [coded attributes returned as flags](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags).
+Displaying attributes as notes, instead of flags for instance, is defined per Data Explorer instance by the **configuration**: see [coded and uncoded attributes returned as notes](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes) and [coded attributes returned as flags](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags).
 
 ---
 
