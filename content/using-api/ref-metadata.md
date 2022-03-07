@@ -2,7 +2,7 @@
 title: "Referential metadata features"
 subtitle: 
 comments: false
-weight: 4700
+weight: 4900
 keywords: [
   'Referential metadata implementation in the .Stat Suite', '#referential-metadata-implementation-in-the-stat-suite',
   'Referential metadata upload', '#referential-metadata-upload',
@@ -21,7 +21,6 @@ keywords: [
 ---
 
 ### Referential metadata implementation in the .Stat Suite
-
 The following features are supported:
 
 - [hierarchial referential metadata](#hierarchial-referential-metadata) attributes
@@ -57,7 +56,6 @@ Referential metadata can be used in the .Stat Suite in the following way:
 ---
 
 ### Referential metadata upload
-
 Currently, referential metadata can only be uploaded with the .Stat Core transfer service using the SDMX-CSV 2.0 format. For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-refeential-metadata/).
 
 The .Stat Suite Data Liffecycle manager also supports uploading these files.
@@ -65,7 +63,6 @@ The .Stat Suite Data Liffecycle manager also supports uploading these files.
 ---
 
 ### Referential metadata download with the SDMX (restful) web service
-
 Currently, referential metadata can only be extracted with the SDMX service using the SDMX-CSV 2.0 format or the SDMX-JSON 2.0 format.
 
 The correcponding MIME-types are:
@@ -138,7 +135,6 @@ For instance, filtering for `AUS.*.A` would retrieve the attributes attached at 
 ---
 
 ### Hierarchial referential metadata
-
 The referential metadata attribute hierarchy is defined in the Metadata Structure Definition (MSD) through imbricated attributes.
 
 When referencing hierarchical metadata attributes in any data messages (whether SDMX-CSV or SDMX-JSON), the ID needs to contain all parent metadata attribute IDs separated by a dot '.', similarly to Categories in Categorisations or to sub-Agencies, e.g. `PARENT.CHILD1`.

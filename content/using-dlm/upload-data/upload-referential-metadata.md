@@ -47,7 +47,6 @@ As for the DSD, the concepts used in the MSD to name the metadata attributes are
 ---
 
 ### File format
-
 .Stat Suite uses a specific SDMX-CSV data message to upload (and retrieve) referential metadata values, which is separate from the message for data and attributes. The main reason is that the attachment of referential metadata values to specific combinations of dimension is defined in the data message itself and must be preserved. Note that in contrary the attachments for normal attributes are defined in the Data Structure Definition (DSD) and that normal attributes are always presented at observation level in SDMX-CSV data messages for observations.  
 
 Like for SDMX-CSV data messages for observation and attributes values, the message for referential metadata values also allows omitting any column for referential metadata attributes that are not being transmitted. In addition, the usage of a specific SDMX-CSV data message for referential metadata values permits omitting unnecessary dimension columns (those that are not used for any attachment of the provided referential metadata values).
