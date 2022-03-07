@@ -56,7 +56,7 @@ Referential metadata can be used in the .Stat Suite in the following way:
 ---
 
 ### Referential metadata upload
-Currently, referential metadata can only be uploaded with the .Stat Core transfer service using the SDMX-CSV 2.0 format. For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-refeential-metadata/).
+Currently, referential metadata can only be uploaded with the .Stat Core transfer service using the SDMX-CSV 2.0 format. For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-referential-metadata/).
 
 The .Stat Suite Data Liffecycle manager also supports uploading these files.
 

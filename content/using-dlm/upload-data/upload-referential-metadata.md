@@ -13,7 +13,7 @@ keywords: [
 
 #### Table of Content
 - [Prerequisite](#prerequisite)
-- [File format](file-format)
+- [File format](#file-format)
 
 ---
 
