@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 4, 2022](#march-4-2022)
 - [February 21,2022](#february-21-2022)
 - [January 13, 2022](#january-13-2022)
 - [December 14, 2021](#december-14-2021)
@@ -84,6 +85,45 @@ ToC
 
 ---
 
+### March 4, 2022
+**[Release .Stat Suite JS 13.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/50#tab-issues)**
+> This release includes a new **major** version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **config** (no Docker image) services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+major changes:
+
+- [dotstatsuite-config#36](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/36) *(Support)* JS v12 upgrade returns a "Maximum call stack size exceeded" error. The **default tenant** is now mandatory and must be defined in any case in your **`configs/tenants.json`** file:  
+```json
+"myTenant": {
+    "id": "myTenantId",
+    "label": "myTenantLabel",
+    "default": true
+}
+```  
+- [dotstatsuite-data-explorer#679](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/679) Re-enhance the **attribute display definition logic**: The DE configuration to display attributes as a *star* icon is renamed **from 'footnotes' to 'notes'**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes))
+
+minor changes:
+
+- [dotstatsuite-data-explorer#679](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/679) Re-enhance the **attribute display definition logic**: New optional **dataflow annotations** can be used to define the way to display attributes for a specific dataflow ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information)).
+- [dotstatsuite-data-explorer#670](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/670) Use *SDMX* Metadata Structure Definition (MSD) for **referential metadata types** to be interpreted by the DE (XHTML, Boolean, etc). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#referential-metadata-types))
+- [dotstatsuite-data-explorer#10](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/10) Enhancement of the **visualisation page scroll**:
+  - Enhanced horizontal scroll and frozen row headers + toolbar ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#horizontal-scroll-and-freezing-row-headers))
+  - New scroll back arrows ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#scroll-back-arrows))
+- [dotstatsuite-data-explorer#363](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/363) Improve the design of selectable second-level home facet values as bullet lists. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#homepage-facets))
+- [dotstatsuite-data-explorer#610](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/610) Optionally hide IDs of values in DE facets through configuration. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-hide-facet-values-ids-in-home-and-result-pages))
+- [dotstatsuite-data-explorer#605](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/605) Layout issue when selecting multiple highlights or baseline in the DE chart customisation.
+- [dotstatsuite-data-explorer#602](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/602) Enhance various UI aspects of the search result and visualisation pages.
+- [dotstatsuite-data-explorer#539](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/539) Apply the appropriate label of the Time and Freqency dimensions as Filter title *(in cases when the localised *SDMX* Concept names for Time Period and Frequency are different than the standard ones)*. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/#frequency-and-time-period-selectors))
+- [dotstatsuite-data-explorer#465](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/465) Hide chart menu by configuration. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#disabled-chart-views))
+- [dotstatsuite-data-explorer#389](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/389) **Display of localised codes descriptions** in the DE filters. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#display-of-codes-descriptions))
+- [dotstatsuite-data-explorer#628](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/628) Observation status "O" for missing values and "0" in data table look very similar.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#662](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/662) Time filter issue in data visualisation.
+
+---
+
 ### February 21, 2022
 **[Release .Stat Suite JS 12.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/49#tab-issues)**
 > This release includes a new minor version of the **data-explorer**, **sdmx-faceted-search**, **data-viewer**, **config**, and **data-lifecycle-manager** services.  
@@ -94,7 +134,7 @@ minor changes:
 - [dotstatsuite-data-explorer#132](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/132) Display of **attributes** and **referential metadata** in table views with an **'i' icon** and an **information side panel**. It includes:
   - The full display of attributes and referential metadata as additional information of table and chart views as flags, footnotes or in the new side panel ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information))
   - The new Information side panel ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel/))
-  - The re-introduction of the DE configuration for '*' footnotes ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes))
+  - The re-introduction of the DE configuration for '*' footnotes ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes))
 - [dotstatsuite-data-explorer#667](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/667) The '*' character for the attributes is sometimes displayed on a new line in the table view.
 - [dotstatsuite-data-explorer#653](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/653) The warning icon on the 'share snapshot' feature briefly appears even when not required.
 - [dotstatsuite-data-explorer#656](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/656) *(Refactoring)* Duplicated dependencies with different version (visions and sdmxjs).
