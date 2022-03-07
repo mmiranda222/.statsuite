@@ -123,6 +123,10 @@ Other **non-numeric** and **coded measure values formats** are supported and det
 ---
 
 ### Display of additional information
+> *Version history:*  
+> *footnotes* replaced by *notes* in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Enhanced with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
+
 Data attributes and referential metadata can be displayed for preview tables and charts in different ways: as flags, as notes, or in a side panel. 
 
 **Flags**  
@@ -137,11 +141,11 @@ For more information see [attributes displayed as notes](https://sis-cc.gitlab.i
 Displays an information icon '(i)' at the appropriate places. The related attribute and referential metadata values are displayed on mouse-over in an information side panel.  
 For more information see [information side panel](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#information-panel).  
 
-The following optional Data Explorer (DE) configuration parameters (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-footnotes) how to be configured) can be used to define the way to display attributes within the scope of a Data Explorer (note that the content represents examples):  
+The following optional Data Explorer (DE) configuration parameters (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes) how to be configured) can be used to define the way to display attributes within the scope of a Data Explorer (note that the content represents examples):  
 ```json
 "attributes": {
     "flags": ["OBS_STATUS", "CONF_STATUS"],
-    "footnotes": ["NOTE"]
+    "notes": ["NOTE"]
 }
 ```
 
@@ -164,7 +168,6 @@ The following optional dataflow (DF) annotations can be used to define the way t
 ```
 
 #### The following display rules are applied with ascending prevalence for any attribute
-
 (7) The DE configuration `footnotes` defines which attributes are displayed in the cell `note`.  
 (6) The DE configuration `flags` defines which attributes are displayed in the cell `flag`.   
 (5) The DF annotation `LAYOUT_NOTE` fully overwrites the list in DE configuration `footnotes` and instead defines which attributes are displayed in the cell `note`.  
