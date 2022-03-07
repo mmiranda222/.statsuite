@@ -29,6 +29,7 @@ keywords: [
   'Localised time period values for monthly frequency', '#localised-time-period-values-for-monthly-frequency',
   'Unit of measure support', '#unit-of-measure-support',
   'Disabled share option', '#disabled-share-option',
+  'Disabled chart views', '#disabled-chart-views',
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
 ]
 ---
@@ -59,6 +60,7 @@ keywords: [
 - [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
 - [Unit of measure support](#unit-of-measure-support)
 - [Disabled share option](#disabled-share-option)
+- [Disabled chart views](#disabled-chart-views)
 - [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
 
 ---
@@ -617,6 +619,28 @@ This configuration simply works by removing the **share endpoint URL** from the 
   }
 
 ```
+
+---
+
+### Disabled chart views
+>Released in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+
+The **Chart** views in the Data Explorer visualisation pages can be hidden from the end-user, for a given instance of the DE, so there is no option to display data in any of the supported chart representations.  
+*Note* that the chart feature will only be hidden, and previous links that were displaying chart views will still work.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+{
+  "chart": {
+    "isVisible": false,
+  }
+}
+```
+
+By default, the chart tab is available in the visualisation pages (`"isVisible": true`).
+
+![chart and table button](/dotstatsuite-documentation/images/de-hidden-chart-buttons1.png)
 
 ---
 

@@ -44,7 +44,6 @@ keywords: [
 - [Table and chart: footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
 - [Chart: map configuration](#chart-map-configuration)
 - [Chart: override stacked charts palette](#chart-override-stacked-charts-palette)
-
 ---
 
 ### Introduction
@@ -411,7 +410,7 @@ The SVG images must be scaled to fit into a 24 x 24px viewport in order to be fu
 
 ```json
 "sdmx": {
-  ...others keys,
+  ...
   "valueIcons": {
     "topic": {
       "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
@@ -426,7 +425,7 @@ Facets are localised, thus you must add the translated name of facet and duplica
 
 ```json
 "sdmx": {
-  ...others keys,
+  ...
   "valueIcons": {
     "topic": {
       "HOME": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" 
@@ -452,11 +451,11 @@ Define the hyperlink for the API documentation.<br>
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-    "viewer": {
-        "api": {
-            "doc": "https://data.oecd.org/api/sdmx-json-documentation/",
+  "viewer": {
+    "api": {
+        "doc": "https://data.oecd.org/api/sdmx-json-documentation/",
     }
-    }
+  }
 ```
 
 ![API documentation](/dotstatsuite-documentation/images/faq-api-documentation.png)
@@ -469,11 +468,11 @@ Define the hyperlink for the "Contact us" feature.<br>
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-    "viewer": {
-        "api": {
-            "contact": "https://stats.oecd.org/FAQAndContact.aspx",
+  "viewer": {
+    "api": {
+        "contact": "https://stats.oecd.org/FAQAndContact.aspx",
     }
-    }
+  }
 ```
 
 ![Contact us](/dotstatsuite-documentation/images/faq-contact-us.png)
@@ -487,7 +486,7 @@ Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-    "assets": {
+  "assets": {
     ...
     "viewerFooter": {
       "en": "/assets/siscc/data-explorer/images/sis-cc-logo.png",
@@ -512,11 +511,11 @@ Define the hyperlink in the footer of the table and chart views behind the "c" c
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
-    "viewer": {
-        "terms": {
-            "link": "http://www.oecd.org/termsandconditions/",
-    }
-    }
+"viewer": {
+  "terms": {
+      "link": "http://www.oecd.org/termsandconditions/",
+  }
+}
 ```
 
 ![Terms and Conditions](/dotstatsuite-documentation/images/faq-terms-conditions.png)
@@ -615,6 +614,7 @@ By default, the Stacked (bar & row) charts take one color and compute shades to 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
+{
   "chart": {
     "options":{
       "serie": {
@@ -623,6 +623,7 @@ By default, the Stacked (bar & row) charts take one color and compute shades to 
      }
     }
   }
+}
 ```
 
 The preexisting shading computing will still be applied in case of one unique color `"colors": []` provided.  
