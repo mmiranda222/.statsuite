@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 8, 2022](#march-8-2022)
 - [March 4, 2022](#march-4-2022)
 - [February 21,2022](#february-21-2022)
 - [January 13, 2022](#january-13-2022)
@@ -82,6 +83,18 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### March 8, 2022
+**[Release .Stat Suite JS 13.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/50#tab-issues)**
+> This release includes a new patch version of the **data-explorer** and **data-viewer** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#684](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/684) Unit of measure is not displayed when one unit measure is selected.
+- [dotstatsuite-data-explorer#690](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/690) Fix Range Header parsing.
 
 ---
 
