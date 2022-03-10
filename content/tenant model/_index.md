@@ -7,7 +7,16 @@ keywords: [
   'Tenant model definition', '#tenant-model-definition',
   'Example of a tenant', '#example-of-a-tenant',
   'Example of a tenant deployment strategy', '#example-of-a-tenant-deployment-strategy',
+  'Additional specifications', '#additional-specifications',
 ]
+---
+
+> *Version history:*  
+> Introduction of `urlv3` space parameter to enable the referential metadata feature with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
+> **"default": true** is required **(mandatory)** since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> `keycloak` is replaced by **`oidc`** entry with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
+> New tenant model introduced with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+
 ---
 
 #### Table of content
@@ -38,36 +47,30 @@ Allow for multi-tenant deployments with multi search engines
 Example of a `tenant.json` file inside which spaces, data sources, and scopes are defined.  
 The DLM scope contains a list of spaces.  
 The DE scope contains a space and data sources (only IDs): data sources are used for search index, and space is an additional source for enabling visualisation (without index).  
-**Keycloak** is defined at the scope level, allowing thus different `clientId` or `Realm` across your application for a tenant.
+**Authentication** is defined at the scope level, allowing thus different providers' `client_id` or `authority` across your application for a tenant as long as it is OpenID compliant (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance)).
+
+Also, in this example, the 'oecd' tenant is the default one (`"default": true`), even though there is only one tenant defined. 'staging:SIS-CC-stable' space of 'oecd' tenant supports the *SDMX* v2 API for referential metadata display (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/)) `"urlv3": "https://nsi-demo-stable.siscc.org/rest/V2"`.
 
 ```json
 {
-  "default": {
-    "id": "default",
-    "label": "default",
-    "description": "default tenant used for healthcheck"
-  },
   "oecd": {
     "id": "oecd",
     "label": "oecd",
+    "default": true,
     "spaces": {
       "staging:SIS-CC-stable": {
         "label": "staging:SIS-CC-stable",
-        "url": "https://nsi-demo-stable.siscc.org/rest",
         "hasRangeHeader": true,
         "supportsReferencePartial": true,
-        "hasLastNObservations": false
+        "hasLastNObservations": false,
+        "url": "https://nsi-demo-stable.siscc.org/rest",
+        "urlv3": "https://nsi-demo-stable.siscc.org/rest/V2",
+        "searchUrl": "http://nsiws-demo-release/rest"
       },
       "staging:SIS-CC-reset": {
         "label": "staging:SIS-CC-reset",
         "url": "https://nsi-demo-reset.siscc.org/rest",
-        "hasRangeHeader": true,
-        "supportsReferencePartial": true,
-        "hasLastNObservations": true
-      },
-      "ILO-prod": {
-        "label": "ILO-prod",
-        "url": "https://ilo.org/sdmx/rest",
+        "urlv3": "https://nsi-demo-reset.siscc.org/rest/V2",
         "hasRangeHeader": true,
         "supportsReferencePartial": true,
         "hasLastNObservations": true
@@ -124,9 +127,9 @@ The DE scope contains a space and data sources (only IDs): data sources are used
       "dlm": {
         "type": "dlm",
         "label": "dlm",
-        "keycloak": {
-          "realm": "OECD",
-          "clientId": "app"
+        "oidc": {
+          "authority": "OECDhttps://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app"
         },
         "spaces": [
           {
@@ -143,55 +146,6 @@ The DE scope contains a space and data sources (only IDs): data sources are used
             "backgroundColor": "#e2f2fb",
             "label": "staging:SIS-CC-reset",
             "transferUrl": "https://transfer-demo.siscc.org/1.2",
-            "dataExplorerUrl": "https://de-qa.siscc.org"
-          },
-          {
-            "id": "ILO-prod",
-            "isExternal": true,
-            "color": "white",
-            "backgroundColor": "#1e2dbe",
-            "label": "ILO-prod",
-            "dataExplorerUrl": "https://de-qa.siscc.org"
-          },
-          {
-            "id": "UNICEF-prod",
-            "isExternal": true,
-            "color": "white",
-            "backgroundColor": "#1cabe2",
-            "label": "UNICEF-prod",
-            "dataExplorerUrl": "https://de-qa.siscc.org"
-          }
-        ]
-      },
-      "dlm2": {
-        "type": "dlm",
-        "label": "dlm2",
-        "keycloak": {
-          "realm": "OECD",
-          "clientId": "app"
-        },
-        "spaces": [
-          {
-            "id": "staging:SIS-CC-stable",
-            "color": "#0549ab",
-            "backgroundColor": "#b7def6",
-            "label": "staging:SIS-CC-stable",
-            "isExternal": true,
-            "dataExplorerUrl": "https://de-qa.siscc.org"
-          },
-          {
-            "id": "staging:SIS-CC-reset",
-            "color": "#0549ab",
-            "backgroundColor": "#e2f2fb",
-            "label": "staging:SIS-CC-reset",
-            "isExternal": true,
-            "dataExplorerUrl": "https://de-qa.siscc.org"
-          {
-            "id": "ILO-prod",
-            "isExternal": true,
-            "color": "white",
-            "backgroundColor": "#1e2dbe",
-            "label": "ILO-prod",
             "dataExplorerUrl": "https://de-qa.siscc.org"
           },
           {
@@ -207,15 +161,14 @@ The DE scope contains a space and data sources (only IDs): data sources are used
       "de": {
         "type": "de",
         "label": "de",
-        "keycloak": {
-          "realm": "OECD",
-          "clientId": "app"
+        "oidc": {
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app"
         },
         "spaces": [
           "qa:stable",
           "staging:SIS-CC-stable",
           "staging:SIS-CC-reset",
-          "ILO-prod",
           "UNICEF-prod"
         ],
         "datasources": [
