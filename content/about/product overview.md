@@ -266,12 +266,11 @@ Requires features for import, create, edit, transfer & export of data structures
 
 #### .Stat Core
 
-Highly performing and secure [SDMX](http://sdmx.org/) Data Stores based on standard protocols to store and retrieve statistical data, structural and referential metadata, data process information and security settings.
-
-* **Store** structural artefacts (DSDs, codelists, Category Schemes, etc.), statistical data and attributes values, and referential metadata.
-* **Secure** through strong encryption methods, choose a preferred authentication provider, manage user roles and permissions.
-* **Localise** to enable users to browse in their preferred language, for both content and user interface elements supporting Latin and non-Latin characters types (English, French, Arabic, Spanish, etc.).
-* **SDMX service(s)** ([based on NSI Web Service implementation](https://ec.europa.eu/eurostat/web/sdmx-web-services) that is part of Eurostat's SDMX Reference Infrastructure) for structure, data, attributes, and referential metadata.
+Fast and secure [SDMX](http://sdmx.org/) Data Store leveraging Eurostat’s ([NSI Web Service implementation](https://ec.europa.eu/eurostat/web/sdmx-web-services) within its SDMX Reference Infrastructure
+* **Stores and retrieves** statistical data & attribute values, localizable structural & referential metadata, data process information & user roles and permissions
+* Allows customising the authentication method with any **identity provider** based on the [OpenID Connect](https://openid.net/connect/) standard
+* Implements a **secure configuration** approach
+* Allows managing separate physical versions of data as it goes through the statistical production life cycle (raw input data, processed data, data prepared for dissemination/reporting, disseminated/reported data, archived data, ...) by using **multiple instances** of the Data Store facilitated with a specific data transfer service
 
 ---
 
