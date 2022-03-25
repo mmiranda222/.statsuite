@@ -20,7 +20,7 @@ keywords: [
 - [List of SDMX artefact types](#list-of-sdmx-artefact-types)
 - [Upload size limit](#upload-size-limit)
 
-For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model.md).
+For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
 ---
 

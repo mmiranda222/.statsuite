@@ -115,6 +115,7 @@ patch changes:
 > - all components are deployed/updated, and
 > - the DBUP tool has been run to update the databases, and
 > - the maapi.net tool has been run to upgrade the structure (mapping store) databases.  
+> 
 > /!\ Make sure that the value provided for the configuration setting `DataImportTimeOutInMinutes` has a value large enough for the `init/allMappingsets` function to complete. Once this has been ran, the value for `DataImportTimeOutInMinutes` can be restated to the former value.
 
 **Performance evolutions** in this release: Here below is a summary of comparison of the performance between this release and the release [.Stat Suite .NET 6.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/41). All performance tests processes, definitions and types are documented [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/blob/master/PerformanceTests/README.md). Note that performance tests are now done directly in the quality assurance environment and may be slowed down by other activities, or could not yet be produced for all test types, therefore we provide here also the statistics made in a separate isolated environment (marked in brackets).  
@@ -158,7 +159,7 @@ patch changes:
 
 major changes:
 
-- [dotstatsuite-core-transfer#310](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/310) HTTP 502 Bad 'Bad Gateway' error in cleanup/orphans. In cludes a new transfer API version 2 with the following specificity with v1.2 for the `/{version}/cleanup/orphans` method [Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#delete-versioncleanuporphans-full-cleanup-of-the-data-db-objects-when-the-related-dsds-and-artefacts-doesnt-exist-in-the-mapping-store-db) :
+- [dotstatsuite-core-transfer#310](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/310) HTTP 502 Bad 'Bad Gateway' error in cleanup/orphans. In cludes a new transfer API version 2 with the following specificity with v1.2 for the `/{version}/cleanup/orphans` method *([documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#delete-versioncleanuporphans-full-cleanup-of-the-data-db-objects-when-the-related-dsds-and-artefacts-doesnt-exist-in-the-mapping-store-db))* :
   - Version 1.2: synchronous request
   - Version 2: asynchronous request
 

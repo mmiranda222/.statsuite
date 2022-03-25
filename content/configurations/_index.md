@@ -10,7 +10,7 @@ weight: 70
 
 |**TOPOLOGY**|  |  |
 |---|---|---|
-| [TENANT Architecture](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model.md)| | | 
+| [TENANT Architecture](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model)| | | 
 | |Tenants definition|[tenants.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)|
 | |Datasources definition|[tenants.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)|
 | TRANSFER Service| | | 

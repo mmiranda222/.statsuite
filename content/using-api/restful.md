@@ -108,4 +108,4 @@ These examples use an entry point of https://nsi-demo-oecd-staging.siscc.org. Th
 ---
 
 ### Referential metadata queries
-Please see [here](/dotstatsuite-documentation/using-api/ref-metadata.md).
+Please see [here](/dotstatsuite-documentation/using-api/ref-metadata).
