@@ -4,8 +4,6 @@ subtitle:
 comments: false
 weight: 82
 keywords: [
-  'Specific accept header per data space', '#specific-accept-header-per-data-space',
-  'External source with native NSIWS authentication', '#external-source-with-native-nsiws-authentication',
   'Data space names', '#data-space-names',
   'Data space colors', '#data-space-colors',
   'Data space InsertNewItems parameter', '#data-space-insertnewitems-parameter',
@@ -16,64 +14,13 @@ keywords: [
 ---
 
 #### Table of Content
-- [Specific accept header per data space](#specific-accept-header-per-data-space)
-- [External source with native NSIWS authentication](#external-source-with-native-nsiws-authentication)
 - [Data space names](#data-space-names)
 - [Data space colors](#data-space-colors)
 - [Data space InsertNewItems parameter](#data-space-insertnewitems-parameter)
 - [List of SDMX artefact types](#list-of-sdmx-artefact-types)
 - [Upload size limit](#upload-size-limit)
 
----
-
-### Specific accept header per data space
->Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
-
-Define a specific **http accept header** for a given dataspace that will override the default header, allowing a specific accept header value for both structures and data.
-
-* in `dotstatsuite-config/data/<env>/configs/tenants.json`
-
-```json
-{
-  "tenant": {
-    "id": "xxxx",
-    "label": "xxxx",
-    "spaces": {
-      "XXXX-prod": {
-        "label": "XXXX-prod",
-        "url": "https://...",
-        "headers": {
-          "data": {
-            "csv": "application/vnd.sdmx.data+csv",
-            "json": "application/vnd.sdmx.data+json;version=1.0.0",
-            "xml": "application/xml"
-          },
-          "structure": {
-            "json": "application/vnd.sdmx.structure+json;version=1.0.0",
-            "xml": "application/vnd.sdmx.structure+xml;version=2.1"
-          }
-        }
-      },
-      }
-    }
-  }
-```
----
-
-### External source with native NSIWS authentication
->Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
-
-Set a connection from DLM to specific external NSI web services using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA). When the config parameter **`hasExternalAuth`** is set to 'true' for a specific 'space' of an external source using the native NSI authenticaiton mechanism, then accessing it from the DLM will trigger a credential authentication request (see the functional specifications [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication)).
-
-* in `dotstatsuite-config-data/<env>/configs/tenants.json`  
-
-```json
-    "spaces": {
-      "ISTAT-DMM-demo": {
-        "hasExternalAuth": true
-      },
-    }
-```
+For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model.md).
 
 ---
 

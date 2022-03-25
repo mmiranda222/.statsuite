@@ -3,12 +3,15 @@ title: ".Stat RESTful Web Service Cheat Sheet"
 subtitle: 
 comments: false
 weight: 6000
+keywords: [
  'Introduction', '#introduction',
  'Structural metadata queries', '#structural-metadata-queries',
  'Examples of structural metadata queries', '#examples-of-structural-metadata-queries',
  'Data queries', '#data-queries',
  'Examples of data queries', '#examples-of-data-queries',
  'Supported formats', '#supported-formats',
+ 'Referential metadata queries', '#referential-metadata-queries',
+]
 ---
 
 #### Table of Content
@@ -18,6 +21,7 @@ weight: 6000
 - [Data queries](#data-queries)
 - [Examples of data queries](#examples-of-data-queries)
 - [Supported formats](#supported-formats)
+- [Referential metadata queries](#referential-metadata-queries)
 
 ---
 
@@ -100,3 +104,8 @@ These examples use an entry point of https://nsi-demo-oecd-staging.siscc.org. Th
 “Parameter” in the tables below is used with the Accept HTTP header (see the Useful HTTP headers above)**  
 
 ![API Restful](/dotstatsuite-documentation/images/api-resftul7.png)
+
+---
+
+### Referential metadata queries
+Please see [here](/dotstatsuite-documentation/using-api/ref-metadata.md).

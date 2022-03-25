@@ -28,7 +28,7 @@ This section describes the features of the .Stat Suite transfer API for the mana
 
 ### Process description
 
-Each time the user performs an action over data (observation and attribute values) in .Stat DLM, or using the API, an acknowledgment message states that the request is being performed and registered with an ID of the request. Once the data request and associated action is complete, a meaningful message with appropriate details is sent in an email to the user's email address that is also used for its credentials. The content of the email is described below respecting the structure of the email content, its subject, and a summary of the action followed by the log details. 
+Each time the user performs an action over data (observation and attribute values) or referential metadata in .Stat DLM, or using the API, an acknowledgment message states that the request is being performed and registered with an ID of the request. Once the data request and associated action is complete, a meaningful message with appropriate details is sent in an email to the user's email address that is also used for its credentials. The content of the email is described below respecting the structure of the email content, its subject, and a summary of the action followed by the log details. 
 
 ---
 
@@ -46,13 +46,13 @@ The email content is split into two parts: a summary of the request status, and 
 The summary of the message shows information about the action:
 * **Request ID:** The ID of the data request
 * **Data source:** Relates to the data source information. It can be a file name or a rest query (when related to a datasource) 
-  * **CSV file**   a SDMX-CSV data file
+  * **CSV file**   a SDMX-CSV data or referential metadata file
   * **XML file**   a SDMX-ML data file
   * **EDD files**  an EDD XML file with its related Data Excel file
-  * **Zip file**   a zip file of data XML or CSV file
-  * **Rest query** a rest query to get the data from a specific datasource
-* **Destination data space:** Refers to the dataspace location where data is being uploaded, copied, deleted
-* **Dataflow:** The triple information (AgencyID:ArtefactID(version)) of the SDMX dataflow artefact impacted by the data request
+  * **Zip file**   a zip file of data XML file or of data or referential metadata CSV file
+  * **Rest query** a rest query to get the data or referential metadata from a specific datasource
+* **Destination data space:** Refers to the dataspace location where data or referential metadata is being uploaded, copied, deleted
+* **Dataflow:** The triple information (AgencyID:ArtefactID(version)) of the SDMX dataflow artefact impacted by the data or referential metadata request
 * **User:** Email address of the end-user
 * **Completion status:** The final status of the request
 
