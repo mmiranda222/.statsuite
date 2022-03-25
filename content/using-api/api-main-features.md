@@ -6,7 +6,7 @@ weight: 4500
 keywords: [
   'Adding or replacing structures', '#adding-or-replacing-structures',
   'Support of high-frequency time periods using SDMX annotation', '#support-of-high-frequency-time-periods-using-sdmx-annotation',
-  'Adding data', '#adding-data',
+  'Adding data or referential metadata', '#adding-data-or-referential-metadata',
   'Data validation process', '#data-validation-process',
   'Deleting structures', '#deleting-structures',
   'Known issues around replaced structures and subsequent data imports', '#known-issues-around-replaced-structures-and-subsequent-data-imports',
@@ -18,7 +18,7 @@ keywords: [
 #### Table of Content
 - [Adding or replacing structures](#adding-or-replacing-structures)
 - [Support of high-frequency time periods using SDMX annotation](#support-of-high-frequency-time-periods-using-sdmx-annotation)
-- [Adding data](#adding-data)
+- [Adding data or referential metadata](#adding-data-or-referential-metadata)
 - [Data validation process](#data-validation-process)
 - [Deleting structures](#deleting-structures)
 - [Known issues around replaced structures and subsequent data imports](#known-issues-around-replaced-structures-and-subsequent-data-imports)
@@ -66,11 +66,12 @@ If the user imports data with minutely time periods into a DSD not yet ready for
 
 ---
 
-### Adding data
+### Adding data or referential metadata
 
-Data can be added to a data space using the Transfer web service using one of these methods:
-- Import (`/import/sdmxFile`, `/import/excel`): Upload data from an SDMX file, Excel file (together with the related table structure "EDD" file) or an external SDMX web service
-- Transfer (`/transfer/dataflow`): Copy data from another internal data space (using a more performing DB to DB transmission)
+Attribute, observation and referential metadata values can be added to a data space using the Transfer web service using one of these methods:
+- Import (`/import/sdmxFile`, `/import/excel`): Upload data (attribute and observation values) by submitting an SDMX-ML 2.0, SDMX-ML 2.1, SDMX-CSV 1.0 or Excel file (Excel file together with the related table structure "EDD" file) or by a file path or URL reference to an SDMX-ML 2.0, SDMX-ML 2.1 or SDMX-CSV 1.0 file (e.g. from an external SDMX web service), or   
+  upload of referential metadata values by submitting an SDMX-CSV 2.0 file or by a file path or URL reference to an SDMX-CSV 2.0 file (e.g. from an external SDMX web service)  
+- Transfer (`/transfer/dataflow`): Copy data (attribute and observation values) and/or referential metadata values from another internal data space (using a more performing DB to DB transmission)
 
 Data can be embargoed using the Point-In-Time parameters of these both methods. For more details see the readme or the Transfer web service swagger file.
 

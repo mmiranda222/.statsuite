@@ -2,9 +2,11 @@
 title: "Tenant model"
 subtitle: 
 comments: false
-weight: 65
+weight: 71
 keywords: [
   'Tenant model definition', '#tenant-model-definition',
+  'Specific accept header per data space', '#specific-accept-header-per-data-space',
+  'External source with native NSIWS authentication', '#external-source-with-native-nsiws-authentication',
   'Example of a tenant', '#example-of-a-tenant',
   'Example of a tenant deployment strategy', '#example-of-a-tenant-deployment-strategy',
   'Additional specifications', '#additional-specifications',
@@ -13,7 +15,7 @@ keywords: [
 
 > *Version history:*  
 > **"default": true** is required **(mandatory)** since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Introduction of `urlv3` space parameter to enable the referential metadata feature with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
+> Introduction of additional `urlv3` space parameter to enable the referential metadata feature with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
 > `keycloak` is replaced by **`oidc`** entry with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
 > New tenant model introduced with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
 
@@ -21,6 +23,8 @@ keywords: [
 
 #### Table of content
 - [Tenant model definition](#tenant-model-definition)
+- [Specific accept header per data space](#specific-accept-header-per-data-space)
+- [External source with native NSIWS authentication](#external-source-with-native-nsiws-authentication)
 - [Example of a tenant](#example-of-a-tenant)
 - [Example of a tenant deployment strategy](#example-of-a-tenant-deployment-strategy)
 - [Additional specifications](#additional-specifications)
@@ -31,6 +35,8 @@ keywords: [
 
 *Recorded presentation at the SIS-CC ATF meeting on Tue 29-Jun-2021: [online video](https://oecdtv.webtv-solution.com/embed/8262/en/video)*
 
+---
+
 ### Tenant model definition
 Allow for multi-tenant deployments with multi search engines
 
@@ -39,17 +45,75 @@ Allow for multi-tenant deployments with multi search engines
 **Data source** is a reference to a data space and a list of data queries used by the *sfs* search service to get a list of dataflows to index. More precisely, data queries are a list of SDMX CategoryScheme(s) to which dataflows are categorised.  
 **Scopes** for DLM and DE are used to define custom configurations for applications:
 - the DE scope defines data sources (because the search indexes from a data source), and data spaces (e.g. when in some cases the DE can have direct links to a space without search index);
-- the DLM scope contains spaces. In addition, each space for the DLM also contains the URL of the transfer service, aligning thus the architecture with the back-end services, where a transfer URL is bound to a data space, and also supporting cases when a space can be un-related to any transfer service.
+- the DLM scope contains spaces. In addition, each space for the DLM also contains the URL of the transfer service to be used for data and referential metadata imports into that space, aligning thus with the back-end service architecture, unless imports into a specific space are not to be supported by the DLM.
 
 ![New Tenant Model diagram](/dotstatsuite-documentation/images/new-tenant-model.png)
 
-#### Example of a tenant
+---
+
+### Specific accept header per data space
+>Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+
+Define a specific **http accept header** for a given dataspace that will override the default header, allowing a specific accept header value for both structures and data.
+
+* in `dotstatsuite-config/data/<env>/configs/tenants.json`
+
+```json
+{
+  "tenant": {
+    "id": "xxxx",
+    "label": "xxxx",
+    "spaces": {
+      "XXXX-prod": {
+        "label": "XXXX-prod",
+        "url": "https://service-root/rest/",
+        "urlv3": "https://service-root/rest/V2",
+        "headers": {
+          "data": {
+            "csv": "application/vnd.sdmx.data+csv;version=2.0",
+            "json": "application/vnd.sdmx.data+json;version=2.0",
+            "xml": "application/vnd.sdmx.structurespecificdata+xml;version=2.1"
+          },
+          "structure": {
+            "json": "application/vnd.sdmx.structure+json;version=1.0.0",
+            "xml": "application/vnd.sdmx.structure+xml;version=2.1"
+          }
+        }
+      },
+      }
+    }
+  }
+```
+
+- `url`: The SDMX web service URL supporting the SDMX 2.1 REST syntax.
+- `urlv3`: The SDMX web service URL supporting the SDMX 3.0 REST syntax. This additional configuration was added in [release .Stat Suite JS 12.1.0 (February 21, 2022)](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022) to enable the referential metadata extraction, which requires an SDMX 3.0 REST-compatible web service. 
+- `headers`: Object holding the mime-types to be used per format `csv`, `json` and `xml`. To support referential metadata, the `csv` and `json` header settings must use the SDMX-CSV 2.0 and SDMX-JSON 2.0 mime types, otherwise the SDMX-CSV 1.0, SDMX-JSON 1.0 and SDMX-ML 2.1 mime types can be used.
+
+---
+
+### External source with native NSIWS authentication
+>Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
+
+Set a connection from DLM to specific external NSI web services using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA). When the config parameter **`hasExternalAuth`** is set to 'true' for a specific 'space' of an external source using the native NSI authenticaiton mechanism, then accessing it from the DLM will trigger a credential authentication request (see the functional specifications [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication)).
+
+* in `dotstatsuite-config-data/<env>/configs/tenants.json`  
+
+```json
+    "spaces": {
+      "ISTAT-DMM-demo": {
+        "hasExternalAuth": true
+      },
+    }
+```
+
+---
+
+### Example of a tenant
 Example of a `tenant.json` file inside which spaces, data sources, and scopes are defined.  
 The DLM scope contains a list of spaces.  
 The DE scope contains a space and data sources (only IDs): data sources are used for search index, and space is an additional source for enabling visualisation (without index).  
-**Authentication** is defined at the scope level, allowing thus different providers' `client_id` or `authority` across your application for a tenant as long as it is OpenID compliant (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance)).
-
-Also, in this example, the 'oecd' tenant is the default one (`"default": true`), even though there is only one tenant defined. 'staging:SIS-CC-stable' space of 'oecd' tenant supports the *SDMX* v2 API for referential metadata display (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/)) `"urlv3": "https://nsi-demo-stable.siscc.org/rest/V2"`.
+**Authentication** is defined at the scope level, allowing thus different providers’ `clientId` or `authority` across your application for a tenant as long as it is OpenID compliant (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance)).  
+Also, in this example, the ‘oecd’ tenant is the default one ("default": true), even though there is only one tenant defined.
 
 ```json
 {
@@ -65,7 +129,13 @@ Also, in this example, the 'oecd' tenant is the default one (`"default": true`),
         "hasLastNObservations": false,
         "url": "https://nsi-demo-stable.siscc.org/rest",
         "urlv3": "https://nsi-demo-stable.siscc.org/rest/V2",
-        "searchUrl": "http://nsiws-demo-release/rest"
+        "searchUrl": "http://nsiws-demo-release/rest",
+        "headers": {
+          "data": {
+            "csv": "application/vnd.sdmx.data+csv;version=2.0",
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
       },
       "staging:SIS-CC-reset": {
         "label": "staging:SIS-CC-reset",
@@ -73,7 +143,13 @@ Also, in this example, the 'oecd' tenant is the default one (`"default": true`),
         "urlv3": "https://nsi-demo-reset.siscc.org/rest/V2",
         "hasRangeHeader": true,
         "supportsReferencePartial": true,
-        "hasLastNObservations": true
+        "hasLastNObservations": true,
+        "headers": {
+          "data": {
+            "csv": "application/vnd.sdmx.data+csv;version=2.0",
+            "json": "application/vnd.sdmx.data+json;version=2.0"
+          }
+        }
       },
       "UNICEF-prod": {
         "label": "UNICEF-prod",
@@ -181,7 +257,9 @@ Also, in this example, the 'oecd' tenant is the default one (`"default": true`),
 }
 ```
 
-#### Example of a tenant deployment strategy
+---
+
+### Example of a tenant deployment strategy
 `routes.json` file example of a deployment strategy using a proxy: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/blob/master/qa/proxy/routes.json
 
 ```json

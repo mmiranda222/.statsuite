@@ -5,16 +5,22 @@ comments: false
 weight: 4900
 keywords: [
   'Referential metadata implementation in the .Stat Suite', '#referential-metadata-implementation-in-the-stat-suite',
-  'Referential metadata upload', '#referential-metadata-upload',
+  'Referential metadata upload and copy', '#referential-metadata-upload-and-copy',
   'Referential metadata download with the SDMX (restful) web service', '#referential-metadata-download-with-the-sdmx-restful-web-service',
   'Hierarchial referential metadata', '#hierarchial-referential-metadata',
 ]
 
 ---
 
+>*Version history:*  
+> Supporting referential metadata value retrieval with SDMX-JSON 2.0 and transfer with [release .Stat Suite .NET 8.0.0 at March 23, 2022](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-23-2022)  
+> Supporting referential metadata value upload and retrieval with SDMX-CSV 2.0 with [release .Stat Suite .NET 7.2.0 at December 3, 2021](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-3-2021)
+
+---
+
 #### Table of Content
 - [Referential metadata implementation in the .Stat Suite](#referential-metadata-implementation-in-the-stat-suite)
-- [Referential metadata upload](#referential-metadata-upload)
+- [Referential metadata upload and copy](#referential-metadata-upload-and-copy)
 - [Referential metadata download with the SDMX (restful) web service](#referential-metadata-download-with-the-sdmx-restful-web-service)
 - [Hierarchial referential metadata](#hierarchial-referential-metadata)
 
@@ -30,7 +36,8 @@ The following features are supported:
 
 The following features are currently not supported and might be implemented at a later stage:
 - multiple values for referential metadata attributes
-- download formats other than SDMX-CSV for referential metadata values (Excel, xml or json) 
+- upload formats other than SDMX-CSV 2.0 for referential metadata values 
+- download formats other than SDMX-CSV 2.0 or SDMX-JSON 2.0 for referential metadata values 
 
 While .Stat Suite uses the logical approach of the SDMX v3.0 Information Model for attaching referential metadata to data through an extension of the components defined in the Data Structure Definition (DSD) by referential metadata attributes defined in a Metadata Structure Definition (MSD), currently it continues to use the structures defined with the SDMX v2.1 Information Model. Therefore, instead of the in-built link between DSD and MSD in SDMX 3.0, .Stat Suite uses a specific DSD annotation.
 
@@ -55,15 +62,23 @@ Referential metadata can be used in the .Stat Suite in the following way:
 
 ---
 
-### Referential metadata upload
-Currently, referential metadata can only be uploaded with the .Stat Core transfer service using the SDMX-CSV 2.0 format. For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-referential-metadata/).
+### Referential metadata upload and copy
+Currently, referential metadata values can be uploaded only with the .Stat Core transfer service using the SDMX-CSV 2.0 format. 
 
-The .Stat Suite Data Liffecycle manager also supports uploading these files.
+Note that attribute and observation values cannot be uploaded together with referential metadata at the same time (with the same file) yet. They need to be uploaded separately. However, no specific parameter is required to indicate the type of content (either attribute and observation values or referential metadata values) to be uploaded, because the Transfer service automatically recognises the type of content. Also, attribute and observation values still need to be uploaded using the Excel, SDMX-CSV 1.0, SDMX-ML 2.0 or SDMX-ML 2.1 formats.
+
+For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-referential-metadata/). 
+
+The .Stat Core transfer service also supports the transfer (copy) of referential metadata values between dataspaces, by using the API function `/transfer/dataflow`.  
+The **`transferContent`** parameter of the `/transfer/dataflow` function allows:
+- transferring both data and referential metadata (0) *- default option -*,
+- transferring data only (1), or
+- transferring referential metadata only (2).
 
 ---
 
 ### Referential metadata download with the SDMX (restful) web service
-Currently, referential metadata can only be extracted with the SDMX service using the SDMX-CSV 2.0 format or the SDMX-JSON 2.0 format.
+Currently, referential metadata can be extracted with the SDMX service using only the SDMX-CSV 2.0 format or the SDMX-JSON 2.0 format.
 
 The correcponding MIME-types are:
 - Accept=application/vnd.sdmx.data+csv;version=2.0

@@ -8,6 +8,8 @@ weight: 120
 
 <!-- 
 ToC
+- [March 24, 2022](#march-24-2022)
+- [March 23, 2022](#march-23-2022)
 - [March 8, 2022](#march-8-2022)
 - [March 4, 2022](#march-4-2022)
 - [February 21,2022](#february-21-2022)
@@ -83,6 +85,115 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### March 24, 2022
+**[Release .Stat Suite .NET 8.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/51#tab-issues)**
+> This release includes a patch version of the **core-transfer** and **core-data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#321](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/321) data transactions fail for dataflows supporting ref.metadata.
+
+---
+
+### March 23, 2022
+**[Release .Stat Suite .NET 8.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/51#tab-issues)**
+> This release includes a new **major** version of the **sdmxri-nsi-ws**, **core-transfer**, **core-auth-management**, and **core-data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+> **Disclaimer:**  
+> Starting with NSIWS v8.9.1 (MSDB v6.19), some of the dataset properties related to a dataflow are stored in a new table called `DATASET_PROPERTY`. This new dataset property table is populated with all the necessary data by the .Stat Suite transfer service methods:
+> - at data/referential metadata import for the targeted dataflow
+> - at execution of `init/dataflow` method for a given dataflow
+> - at execution of `init/allMappingsets` method for all dataflows
+>
+> **When upgrading to MSDB v6.19**, the content of the formely used `DATASET.OREDER_BY_CLAUSE` column is migrated into the new `DATASET_PROPERTY` table for each dataset present in the structure database. In order to **enable usage of improvements** related to firtNObservations and lastNObservations queries on existing dataflows in .Stat Suite, a number of other dataset properties must be added to the existing dataflows. This can be achieved **by executing the .Stat Suite transfer service method `init/allMappingsets`** ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db)).  
+> This method must be called manually and as the last very last step of the deployment process of the new version, after
+> - all components are deployed/updated, and
+> - the DBUP tool has been run to update the databases, and
+> - the maapi.net tool has been run to upgrade the structure (mapping store) databases.  
+> /!\ Make sure that the value provided for the configuration setting `DataImportTimeOutInMinutes` has a value large enough for the `init/allMappingsets` function to complete. Once this has been ran, the value for `DataImportTimeOutInMinutes` can be restated to the former value.
+
+**Performance evolutions** in this release: Here below is a summary of comparison of the performance between this release and the release [.Stat Suite .NET 6.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/41). All performance tests processes, definitions and types are documented [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/blob/master/PerformanceTests/README.md). Note that performance tests are now done directly in the quality assurance environment and may be slowed down by other activities, or could not yet be produced for all test types, therefore we provide here also the statistics made in a separate isolated environment (marked in brackets).  
+
+  Smoke-test data imports  *[71.42%  ✓ 5   ✗ 2 --> 71.42%  ✓ 5   ✗ 2](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/1351014121)*
+  ```
+  data_import_time................: avg=13.52s --> 12.68s
+  ✓ { datasetSize:extraSmall }....: avg=2.72s --> 2.19s
+  ✓ { datasetSize:small }.........: avg=29.71s --> 28.43s
+  ```
+  Smoke-test data extractions for *[100.00% ✓ 159 ✗ 0 --> 100.00% ✓ 160 ✗ 0](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/1339964060)* (*99.41% ✓ 342 ✗ 2 --> 100.00% ✓ 344 ✗ 0*)
+  ```
+  http_req_duration...............: 406.62ms (avg=311.59ms) --> 451.33ms (avg=304.54ms)
+  ✓ { datasetSize:extraSmall }....: 358.35ms (avg=222.77ms) --> 381.5ms (avg=260.97ms)
+  ✓ { datasetSize:small }.........: 421.96ms (avg=238.10ms) --> 472.27ms (avg=244.05ms)
+  ```
+  Load-test data extractions (*93.58% ✓ 9971  ✗ 684 --> 96.97% ✓ 11398 ✗ 356*)
+  ```
+  http_req_duration...............: (avg=2.46s) --> (avg=2.12s)
+  ✓ { datasetSize:extraSmall }....: (avg=2.21s) --> (avg=2.40s)
+  ✓ { datasetSize:small }.........: (avg=2.19s) --> (avg=1.93s)
+  ```
+  Stress-test data extractions  (*95.67% ✓ 8516  ✗ 385 --> 85.74% ✓ 10428 ✗ 1734*)
+  ```
+  http_req_duration................: (avg=4.15s) --> (avg=2.78s)
+  ✓ { datasetSize:extraSmall }.....: (avg=3.51s) --> (avg=2.67s)
+  ✓ { datasetSize:small }..........: (avg=3.91s) --> (avg=2.47s)
+  ✓ { datasetSize:small_paginated }: (avg=3.47s) --> (avg=1.63s)
+  ```
+  Spike-test data extractions (*72.12% ✓ 2921  ✗ 1129 --> 70.74% ✓ 3516  ✗ 1454*)
+  ```
+  http_req_duration................: (avg=6.39s) --> (avg=5.19s)
+  ✓ { datasetSize:extraSmall }.....: (avg=6.59s) --> (avg=5.41s)
+  ✓ { datasetSize:small }..........: (avg=6.06s) --> (avg=5.06s)
+  ✓ { datasetSize:small_paginated }: (avg=6.13s) --> (avg=4.27s)
+  ```
+  Soak-test data extractions for *[99.06% ✓ 17503 ✗ 165 --> 98.37% ✓ 14434 ✗ 238](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/1396744986)*
+  ```
+  http_req_duration..........: avg=4.65s --> avg=5.81s
+  ```
+
+major changes:
+
+- [dotstatsuite-core-transfer#310](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/310) HTTP 502 Bad 'Bad Gateway' error in cleanup/orphans. In cludes a new transfer API version 2 with the following specificity with v1.2 for the `/{version}/cleanup/orphans` method [Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#delete-versioncleanuporphans-full-cleanup-of-the-data-db-objects-when-the-related-dsds-and-artefacts-doesnt-exist-in-the-mapping-store-db) :
+  - Version 1.2: synchronous request
+  - Version 2: asynchronous request
+
+minor changes:
+
+- [dotstatsuite-core-transfer#252](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/252) Define the storage of referential metadata attribute values. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/))
+- [dotstatsuite-core-data-access#80](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/80) **Referential metadata attributes storage** implementation.
+- [dotstatsuite-core-sdmxri-nsi-ws#150](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/150) **SDMX-CSV 2.0.0 data and referential metadata download**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#referential-metadata-download-with-the-sdmx-restful-web-service))
+- [dotstatsuite-core-transfer#233](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/233) **SDMX-JSON 2.0.0 data and referential metadata download**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#referential-metadata-download-with-the-sdmx-restful-web-service))
+- [dotstatsuite-core-transfer#287](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/287) **Transfer referential metadata** across dataspaces. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#referential-metadata-upload-and-copy))
+- [dotstatsuite-core-sdmxri-nsi-ws#192](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/192) NSI data retriever for referential metadata support.
+- [dotstatsuite-core-data-access#81](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/81) Referential metadata mappingsets in data access management.
+- [dotstatsuite-core-transfer#282](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/282) Referential metadata attributes mapping sets management.
+- [dotstatsuite-core-transfer#293](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/293) Add a proper error description when uploading metadata file to a structure without annotation link to MSD.
+- [dotstatsuite-core-transfer#296](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/296) Correct the transfer log messages for referential metadata transactions.
+- [dotstatsuite-core-transfer#176](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/176) Log entries should include the source of the data.
+- [dotstatsuite-core-sdmxri-nsi-ws#212](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/212) SDMX-JSON V2 NSI accept header support.
+- [dotstatsuite-core-sdmxri-nsi-ws#232](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/232) NSI Dissemination db health check.
+- [dotstatsuite-core-sdmxri-nsi-ws#130](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/130) Enhance performances when retrieving the first observation per seriesKey in a large dataflow.
+- [dotstatsuite-core-sdmxri-nsi-ws#234](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/234) *(DevOps)* Deploy NSI version 8.9.2.
+- [dotstatsuite-core-sdmxri-nsi-ws#224](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/224) *(DevOps)* Deploy NSI version 8.9.1.
+- [dotstatsuite-core-sdmxri-nsi-ws#211](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/211) *(DevOps)* Deploy NSI version 8.9.0.
+- [dotstatsuite-core-transfer#295](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/295) *(Refactoring)* Remove the `ORDER BY` attribute for metadata Mappingsets.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#316](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/316) Error when uploading a large set of data from a provided URL.
+- [dotstatsuite-core-sdmxri-nsi-ws#222](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/222) Hierarchy in hierarchical codelist (HCL) misses the ID and links (in SDMX-JSON queries).
+- [dotstatsuite-core-sdmxri-nsi-ws#215](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/215) Failing JSON v1.0 unit tests in SdmxSource.
+- [dotstatsuite-data-explorer#646](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/646) NSI request data error (dictionary).
+- [dotstatsuite-core-sdmxri-nsi-ws#183](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/183) Wrong data are returned when querying for several frequencies.
+- [dotstatsuite-data-explorer#603](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/603) Thai (th) language is not display as attribute.
+- [dotstatsuite-core-sdmxri-nsi-ws#167](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/167) The `LastNObservations` parameter returns the first 'n' observations.
+- [dotstatsuite-core-transfer#200](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/200) Unclear error message in case of data upload with invalid time period.
+- [dotstatsuite-core-transfer#196](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/196) Bug in `/status/requests` filtering.
 
 ---
 
@@ -602,6 +713,40 @@ patch changes:
 **[Release .Stat Suite .NET 6.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/41)**
 > This release includes a new version of the **sdmxri-nsi-ws** service.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.2.0**.
+
+**Performance evolutions** in this release: Here below is a summary of comparison of the performance of release [.Stat Suite .NET 4.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/31) (before using the NSI default plugin) with release [.Stat Suite .NET 6.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/34) (after using the NSI default plugin) and with this new release. All performance tests processes, definitions and types are [documented here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/blob/master/PerformanceTests/README.md)).  
+  Smoke-test data imports  
+  ```
+  data_import_time................: avg=16.85s --> avg=19.42s --> avg=10.14s
+  ✓ { datasetSize:extraSmall }....: avg=2.36s --> avg=2.6s --> avg=6.13s (med=1.77s)
+  ✓ { datasetSize:small }.........: avg=31.34s --> avg=36.24 --> avg=18.17s
+  ```
+  Smoke-test data extractions 
+  ```
+  http_req_duration...............: avg=227.65ms --> avg=182.51ms --> avg=158.72ms
+  ```
+  Load-test data extractions
+  ```
+  http_req_duration...............: avg=1.33s --> avg=8.05s --> avg=1.07s 
+  ✓ { datasetSize:extraSmall }....: avg=1.6s --> avg=7.07s --> avg=1.08s 
+  ✓ { datasetSize:small }.........: avg=1.39s --> avg=8.85s --> avg=1.16s
+  ```
+  Stress-test data extractions  
+  ```
+  http_req_duration................: avg=1.89s --> avg=2.43s --> avg=1.79s
+  ✓ { datasetSize:extraSmall }.....: avg=2.27s --> avg=2.3s --> avg=1.9s
+  ✓ { datasetSize:small }..........: avg=1.99s --> avg=2.63s --> avg=1.92s
+  ```
+  Spike-test data extractions
+  ```
+  http_req_duration................: avg=3.8s --> avg=3.68s --> avg=3.76s
+  ✗ { datasetSize:extraSmall }.....: avg=4.25s --> avg=4.11s --> avg=4.22s  
+  ✗ { datasetSize:small }..........: avg=3.88s --> avg=3.76s --> avg=4.01s
+  ```
+  Soak-test data extractions 
+  ```
+  http_req_duration..........: avg=670.42ms --> avg=1.32s --> avg=1.34s
+  ```
 
 minor changes:
 
