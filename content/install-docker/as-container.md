@@ -214,18 +214,19 @@ This web service is used for statistical data structures for their upload and do
 
 - **demo**: https://nsi-demo-oecd-staging.siscc.org/
 - **docker of original Eurostat SDMX-RI NSI web service**: https://cloud.docker.com/u/siscc/repository/docker/siscc/sdmxri-nsi
-- **repository of original Eurostat SDMX-RI NSI web service**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
+- **original repository of Eurostat SDMX-RI NSI web service**: https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net
+- **mirrored repository of Eurostat SDMX-RI NSI web service**: https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/tree/master/
 
 ##### Configuration
-Configuration is loaded from **config** directory located in the [root of application](https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/src/NSIWebServiceCore/config).  
+Configuration is loaded from **config** directory located in the [root of application](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/tree/master/src/NSIWebServiceCore/config).  
 All files with *.json extension are considered as configuration files. The name of the file is not important (except app.config & log4net.config), and it's not important if the configuration values are loaded from 1 single file or multiple files.  
 
-* example configuration: https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/tree/master/src/NSIWebServiceCore/config
+* example configuration (default config files: https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/tree/master/src/NSIWebServiceCore/config)
 
-    * [app.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/app.config)
-    > nsi web service main configuration, more info [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/CONFIGURATION.md?at=refs%2Fheads%2Fdevelop)   
-    * [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/log4net.config)
-    > log configuration
+    * containerised [app.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/app.config) 
+    > default [app.config](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/src/NSIWebServiceCore/config/app.config), also see the [nsi web service main configuration description](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md)   
+    * containerised [log4net.config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-core-rp/tree/master/qa/nsi-config/log4net.config)
+    > default [log4net.config](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/src/NSIWebServiceCore/config/log4net.config)
         
 * sample usage of docker (provided log4net.config instructs to write to a file in /app/logs directory):
 
