@@ -59,10 +59,10 @@ Make sure that the windows machine which will be used in this installation proce
     - SQL Server Agent running  
     - User and password with **sysadmin** role  
 
-- **Microsoft .NET**    
-    - Microsoft .NET Core SDK 3.1.\* (x64 version) [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-    - Microsoft .NET Core 3.1.\* - Windows Server Hosting Bundle [download](https://dotnet.microsoft.com/download/dotnet-core/3.1)  (IIS must be restarted after installation)
-    - (Optional) Visual studio 2019 is to compile solutions with .net core 3.1
+- **Microsoft .NET**      
+	- Microsoft .NET Core SDK 6.0.\* (x64 version) [download](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+	- Microsoft .NET Core 6.0.\* - Windows Server Hosting Bundle [download](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)  (IIS must be restarted after installation)
+	- (Optional) Visual studio 2022 is to compile solutions with .net core 6.0
 
 - **Git for windows** (x64 version) [download](https://git-scm.com/download/win).  
 
