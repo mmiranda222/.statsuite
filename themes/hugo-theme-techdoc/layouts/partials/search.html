@@ -8,7 +8,7 @@
   <div id="menu-searchbox" class="dropdown-container">
     <div class='dropdown-content'>
       <div class="close-menu">
-        <button onclick="toggleMenu()" class="button-close-menu">
+        <button onclick="closeMenu()" class="button-close-menu">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -25,9 +25,13 @@
 </div>
 
 <script>
-const menuBox = document.getElementById('menu-searchbox');    
+const menuBox = document.getElementById('menu-searchbox');
 
-const toggleMenu = () => {  
+const closeMenu = () => {
+  menuBox.style.display = "none";
+}
+
+const toggleMenu = () => {
   if(menuBox.style.display == "block") { // if is menuBox displayed, hide it
     menuBox.style.display = "none";
   }
@@ -39,17 +43,38 @@ const toggleMenu = () => {
 $(document).keyup((e) => {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
     menuBox.style.display = "none";
- }
+  }
 });
+
+const algoliaClient = algoliasearch(
+  '{{ .Site.Params.algolia_appId }}',
+  '{{ .Site.Params.algolia_apiKey }}'
+);
+
+const searchClient = {
+  ...algoliaClient,
+  search(requests) {
+    if (requests.every(({ params }) => !params.query)) {
+      return Promise.resolve({
+        results: requests.map(() => ({
+          hits: [],
+          nbHits: 0,
+          nbPages: 0,
+          processingTimeMS: 0,
+        })),
+      });
+    }
+    return algoliaClient.search(requests);
+  },
+};
 
 var search = instantsearch({
   indexName: '{{ .Site.Params.algolia_indexName }}',
-  searchClient: algoliasearch(
-    '{{ .Site.Params.algolia_appId }}',
-    '{{ .Site.Params.algolia_apiKey }}'
-  ),
   routing: true,
+  searchClient,
+  stalledSearchDelay: 1000,
 });
+
 
 const renderHits = (renderOptions, isFirstRender) => {
   const { hits } = renderOptions;
@@ -92,12 +117,17 @@ const renderHits = (renderOptions, isFirstRender) => {
 };
 
 const customHits = instantsearch.connectors.connectHits( renderHits );
-
+let timerId
 search.addWidgets([
   instantsearch.widgets.searchBox({
     container: '#searchbox',
     placeholder: 'Search by keywords',
     showReset: false,
+    showLoadingIndicator: false,
+    queryHook(query, refine) {
+      clearTimeout(timerId)
+      timerId = setTimeout(() => refine(query), 400)
+    },
   }),
   
   instantsearch.widgets.stats({
