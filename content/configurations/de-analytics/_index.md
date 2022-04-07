@@ -11,8 +11,8 @@ keywords: [
 
 includes:
 
-* [Google Analytics](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-analytics/)
-* [Google Tag Manager](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-tag-manager/)
+* [Google Analytics](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/google-analytics/)
+* [Google Tag Manager](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/google-tag-manager/)
 
 ---
 
