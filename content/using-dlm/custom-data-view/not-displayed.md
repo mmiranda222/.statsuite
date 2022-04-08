@@ -35,10 +35,10 @@ You can decide to hide some specific information of a dataflow in its visual rep
 To do so, you can define the SDMX annotation of type `NOT_DISPLAYED` to be used for hiding a dimension, dimension values (from a Codelist), an attribute or attribute values (from a Codelist) in certain circumstances that are described in the following scenarios.
 
 #### Scenario 1: Hide dimensions
-When a dataflow dimension has an annotation `NOT_DISPLAYED`, then this dimension is hidden from the table's/chart's sub-title (when only one single value is selected or returned), AND this dimension is also hidden from the filters of the Data Explorer visualisation page.
+When a dataflow dimension has an annotation `NOT_DISPLAYED`, then this dimension is hidden from the table's/chart's sub-title (when only one single value is selected or returned). This dimension is also hidden from the filters of the Data Explorer visualisation page AND from the information side panel.
 
 #### Scenario 2: Hide dimension values
-When a dimension value has an annotation `NOT_DISPLAYED`, then this value is hidden from the table's/chart's sub-title (when only this value is selected or returned).
+When a dimension value has an annotation `NOT_DISPLAYED`, then this value is hidden from the table's/chart's sub-title (when only this value is selected or returned) AND from the information side panel.
 
 Note that it is still shown in the filter of the Data Explorer visualisation page.
 
