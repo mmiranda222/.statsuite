@@ -7,7 +7,7 @@ main:
 1. run helper in [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data) with the title of a milestone and gitlab token to get the list of merge requests 
     - `yarn helper:mergerequests dotstatsuiteJS@vx.x.x $GITLAB_API_KEY`
     - you can find GITLAB_API_KEY [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/settings/ci_cd), section variables
-1. from the list of merge requests, note concerned services/apps
+1. remove merge requests from dependencies and from the list of remaining merge requests, note concerned services/apps
 1. for each merge requests:
     - check kubernetes update to properly update staging (semver major if mandatory update to keep default)
     - check non-backward updates in specific data (siscc-config-data) to eventually update staging (semver major if any)
