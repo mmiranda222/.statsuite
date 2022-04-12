@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 11, 2022](#april-11-2022)
 - [March 24, 2022](#march-24-2022)
 - [March 23, 2022](#march-23-2022)
 - [March 8, 2022](#march-8-2022)
@@ -85,6 +86,53 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### April 11, 2022
+**[Release .Stat Suite JS 14.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/52#tab-issues)**
+> This release includes a new **major** version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, **sdmx-faceted-search**, and **proxy** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+major changes:
+
+- [dotstatsuite-sdmx-faceted-search#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/99) HTTP request rate limitation & [dotstatsuite-sdmx-faceted-search#100](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/100) Optimise search requests for DE home page. These features introduce **MongoDb** for **sfs as replacement of Redis**, and for the **proxy service**. See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/merge_requests/42) an example of deployment topology with MongoDb.
+
+
+minor changes:
+
+- [dotstatsuite-data-explorer#114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/114) Add a third visualisation **"Overview" tab** in addition to table and chart. ([Documentation about configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#visualisation-default-landing-tab) & [Documentation about functional specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/overview/))
+- [dotstatsuite-sdmx-faceted-search#29](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/29) User's **sorting options** for search results. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#result-ordering))
+- [dotstatsuite-data-explorer#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/46) **Search result boost** by `SEARCH_WEIGHT` annotation of dataflows. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#result-boosting))
+- [dotstatsuite-data-explorer#633](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/633) `REPYEARSTART` attribute for **non-calendar year reporting**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/non-calendar-year-report/))
+- [dotstatsuite-data-explorer#634](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/634) Hide the `REPORTING_YEAR_START_DAY`/`REPYEARSTART` attributes in DE display. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/non-calendar-year-report/))
+- [dotstatsuite-data-explorer#635](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/635) Auto-generate notes for non-calendar year time periods. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/non-calendar-year-report/))
+- [dotstatsuite-data-explorer#680](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/680) Use MetadataStructureDefinition for **referential metadata hierarchy**. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel/))
+- [dotstatsuite-data-explorer#682](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/682) Display a 'not available' message for a locale that has no referential metadata translation.
+- [dotstatsuite-data-explorer#691](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/691) Hide dimensions annoted with `NOT_DISPLAYED` in the information side panel. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/not-displayed/))
+- [dotstatsuite-data-explorer#648](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/648) Allow increasing displayed data points for specific dataflows through an *SDMX* annotation. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/increased-table-size/))
+- [dotstatsuite-data-explorer#688](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/688) **HTML sanitization** for all displayed XHTML data contents. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#display-of-html-content))
+- [dotstatsuite-data-explorer#689](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/689) Always display string values in table cells with HTML formatting.
+- [dotstatsuite-data-lifecycle-manager#89](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/89) DLM includes **referential metadata transfer options**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data/#content-type))
+- [dotstatsuite-data-lifecycle-manager#253](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/253) DLM transfer of artefacts always shows the transfered artefacts in the list.
+- [dotstatsuite-data-lifecycle-manager#220](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/220) Keep DLM spotlight after filtering.
+- [dotstatsuite-data-viewer#28](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/28) Tables rendered in iframe.
+- [dotstatsuite-sdmx-faceted-search#91](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/91) Datasources override. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search#js-api))
+- [dotstatsuite-data-explorer#551](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/551) Allow the DE to work without the `meta.contentLanguages` property.
+- [dotstatsuite-core-sdmxri-nsi-ws#153](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/153) Enable HTTP compression in embarked HTTP servers (through configuration) in docker images of JavaScript components.
+- [dotstatsuite-data-explorer#692](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/692) End-to-end tests update with 'ref. metadata' and 'range header' tests.
+- [dotstatsuite-sdmx-faceted-search#93](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/93) *(Refactoring)* `hset` error in updateOrders.
+- [dotstatsuite-config-data#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/11) *(DevOps)* Improve merge request script.
+- [dotstatsuite-sdmx-faceted-search#108](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/108) *(Refactoring)* Remove sdmxjs from sfs.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#710](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/710) Attributes attached to one dimension incorrectly displayed in the "Information" side panel.
+- [dotstatsuite-data-explorer#707](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/707) DE shows "Whoops, something went wrong on our end." when trying to visualise metadata caused by the presence of a dataset-level attribute.
+- [dotstatsuite-data-explorer#705](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/705) Continue to download data in SDMX-CSV 1.0 format.
+- [dotstatsuite-data-explorer#694](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/694) Fix log errors.
+- [dotstatsuite-data-lifecycle-manager#252](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/252) Fix the "Owner" filter.
+- [dotstatsuite-config-data#8](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/8) Auto-generated i18n changelog failed.
 
 ---
 
