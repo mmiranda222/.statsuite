@@ -7,8 +7,10 @@ keywords: [
   'Introduction', '#introduction',
   'Result content', '#result-content',
   'Optional download feature', #optional-download-feature',
-  'Pagination', '#pagination',
-  'search result URL', '#search-result-url',
+  'Result ordering', '#result-ordering',
+  'Result boosting', '#result-boosting',
+  'Result pagination', '#result-pagination',
+  'Result page URL', '#result-page-url',
   'Navigation towards the DE visualisation page', '#navigation-towards-the-de-visualisation-page',
 ]
 ---
@@ -17,8 +19,10 @@ keywords: [
 - [Introduction](#introduction)
 - [Result content](#result-content)
     - [Optional download feature](#optional-download-feature)
-- [Pagination](#pagination)
-- [search result URL](#search-result-url)
+- [Result ordering](#result-ordering)
+- [Result boosting](#result-boosting)
+- [Result pagination](#result-pagination)
+- [Result page URL](#result-page-url)
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
 
 ---
@@ -70,7 +74,46 @@ When this option is enabled (see the [configuration documentation](https://sis-c
 
 ---
 
-### Pagination
+### Result ordering
+> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+
+By default, the search result dataflows are sorted in this order:
+ 1. Descending relevance (where the free-text was found, dataflow boost)
+ 2. Ascending alphabetical (localised dataflow name)
+ 3. Descending "Last updated" date
+
+In order to easier find specific dataflows, the user can change the sort order by selecting one of the predefined criteria using the dropdown menu:  
+
+![de search result order](/dotstatsuite-documentation/images/de-search-order-menu.png)
+
+---
+
+### Result boosting
+> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+
+The .Stat faceted search allows using the dataflow annotation of type `SEARCH_WEIGHT` to boost dataflows in the search result order when ordered by "Relevance".  
+
+The `SEARCH_WEIGHT` annotation needs to be of type "SEARCH_WEIGHT". The weight value is an integer or number and should be set:
+- in the localised Annotation Text, in case the boost is language-dependent, otherwise
+- in the non-localised Annotation Title
+
+```xml
+<common:Annotations>
+  <common:Annotation>
+    <common:AnnotationTitle>2</common:AnnotationTitle>
+    <common:AnnotationType>SEARCH_WEIGHT</common:AnnotationType>
+    <common:AnnotationText xml:lang="en">3</common:AnnotationText>
+    <common:AnnotationText xml:lang="es">4</common:AnnotationText>
+    <common:AnnotationText xml:lang="fr">5</common:AnnotationText>
+  </common:Annotation>
+</common:Annotations>
+```
+
+The localised boost value, if available, or alternatively the non-localised boost value is used to **multiply** the dataflow score calculated by SOLR and thus influences accordingly the ordering by relevance. The bigger the calculated score value, the higher is the listing of the dataflow in the search results.
+
+---
+
+### Result pagination
 Search results are paginated, and the number of results per page is configurable (see [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-result-page-number-of-results-per-page)).  
 By using the feature at the bottom right side of the search results page, the user can move to the next, first or last page by using the corresponding **arrows** `|<` `<` `>` `>|`. The user can also enter a page number in the appropriate box.
 
@@ -78,7 +121,7 @@ By using the feature at the bottom right side of the search results page, the us
 
 ---
 
-### search result URL
+### Result page URL
 The search result page(s) can also be accessed through a direct link, because some of the **user's choices and options are part of the URL**, which can thus be shared or bookmarked.  
 The configurations of the search results included in the URL are listed and explained in the following table:
 
