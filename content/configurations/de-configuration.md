@@ -32,6 +32,7 @@ keywords: [
   'Disabled share option', '#disabled-share-option',
   'Disabled chart views', '#disabled-chart-views',
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
+  'Display of HTML content', '#display-of-html-content'
 ]
 ---
 
@@ -64,6 +65,7 @@ keywords: [
 - [Disabled share option](#disabled-share-option)
 - [Disabled chart views](#disabled-chart-views)
 - [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
+- [Display of HTML content](#display-of-html-content)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -693,3 +695,72 @@ When the configuration parameter `search.downloadableDataflowResults` is set to 
 ```
 
 By default, the configuration is disabled **`search.downloadableDataflowResults:false`**.
+
+### Display of HTML content
+> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+
+Data of `String` type containing HTML content, descriptions as well as referential metadata of `XHTML` type are displayed by the Data Explorer according to the HTML formatting instructions. However, for security and compatibility reasons, all HTML code is sanitized before it is displayed. The following section explains how this HTML sanitization can be configured.
+
+By default, the HTML sanitization uses the following configuration (as pre-defined by the [**sanitize-html** library](https://github.com/apostrophecms/sanitize-html#readme) being used under the hoods): 
+
+```json
+{
+  "htmlSanitization": {
+    "allowedTags": [
+      "address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4",
+      "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div",
+      "dl", "dt", "figcaption", "figure", "hr", "li", "main", "ol", "p", "pre",
+      "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn",
+      "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp",
+      "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption",
+      "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr"
+    ],
+    "disallowedTagsMode": "discard",
+    "allowedAttributes": {
+      "a": [ "href", "name", "target" ],
+      "img": [ "src", "srcset", "alt", "title", "width", "height", "loading" ]
+    },
+    "selfClosing": [ "img", "br", "hr", "area", "base", "basefont", "input", "link", "meta" ],
+    "allowedSchemes": [ "http", "https", "ftp", "mailto", "tel" ],
+    "allowedSchemesByTag": {},
+    "allowedSchemesAppliedToAttributes": [ "href", "src", "cite" ],
+    "allowProtocolRelative": true,
+    "enforceHtmlBoundary": false
+  }
+}
+```
+
+The list of allowed/disallowed html features is configurable in the Data Explorer's `settings.json` config per DE scope using these `htmlSanitization` sub-keys: `allowedTags`, `disallowedTagsMode`, `allowedAttributes`, `selfClosing`, `allowedSchemes`, `allowedSchemesByTag`, `allowedSchemesAppliedToAttributes`, `allowProtocolRelative`, `enforceHtmlBoundary`. You can override those default settings by specifying only those keys that you want to modify. 
+
+For instance, to allow the tag "img", you must change the `allowedTags` key. To do so, copy the default allowed tags and add "img" to the list. In the below example, only, the `allowedTags` and `allowedAttributes` keys differ from the default settings, the others remain as in the default configuration.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+{
+  "htmlSanitization": {
+    "allowedTags": [
+      "address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4",
+      "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div",
+      "dl", "dt", "figcaption", "figure", "font", "hr", "li", "main", "ol", "p", "pre",
+      "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn",
+      "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp",
+      "small", "span", "strike", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption",
+      "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "img"
+    ],
+    "allowedAttributes": {
+      "a": [ "href", "name", "target" ],
+      "abbr": [ "title"],
+      "bdo": ["dir"],
+      "blockquote": ["cite"],
+      "data": ["value"],
+      "img": ["src","srcset","title","width","height","loading"],
+      "q": ["cite"],
+      "table": ["border", "cellspacing", "cellpadding"],
+      "*": ["align", "alt", "center", "bgcolor", "color", "style"]
+    }
+  }  
+}
+```
+
+For more information please consult https://github.com/apostrophecms/sanitize-html#readme.
