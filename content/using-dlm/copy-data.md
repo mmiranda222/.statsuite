@@ -16,6 +16,7 @@ keywords: [
 #### Table of Content
 - [Transfer data option](#transfer-data-option)
 - [Partial data transfer](#partial-data-transfer)
+- [Content type](#content-type)
 - [Data validations](#data-validations)
 - [Point in Time release](#point-in-time-release)
 - [Notifications](#notifications)
@@ -46,6 +47,18 @@ At first usage or whenever the user completely empties the field, a default exam
 When several dataflows are selected from the list as inputs for transfer, then the partial data query option is not available.  
 
 ![copy data](/dotstatsuite-documentation/images/dlm-copy-data-4.png)  
+
+---
+
+### Content type
+> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+
+When requesting to initiate a transfer between data spaces, it is possible to either transfer data only, referential metadata only or both. Therefore, one of the following options can be selected:  
+- Both data and referential metadata (default)
+- Data only
+- Referential metadata only
+
+![dlm copy data validation ](/dotstatsuite-documentation/images/dlm-copydata-content-type1.png)
 
 ---
 
