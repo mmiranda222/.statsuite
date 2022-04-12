@@ -9,13 +9,13 @@ keywords: [
 ]
 ---
 
-#### Table of Content
+##### Table of Content
 - [Localised order in the items of all ItemSchemes](#localised-order-in-the-items-of-all-itemschemes)
 - [Localized order in data message for DE filters, table and chart views](#localized-order-in-data-message-for-de-filters-table-and-chart-views)
 
 ---
 
-### Localised order in the items of all ItemSchemes
+#### Localised order in the items of all ItemSchemes
 **Implicit** means the order of items (e.g. codes) as returned within the array of codes. There are thus always naturally given in a structure definition.  
 **Explicit** order is the order provided through annotations and is optional. Explicit order prevails implicit order.  
 
@@ -61,7 +61,7 @@ After ordering:
 
 ---
 
-### Localized order in data message for DE filters, table and chart views
+#### Localized order in data message for DE filters, table and chart views
 Explicit order of items in an ItemScheme as described above are **applied to the DE visualisation page**, once the explicit order of codes is returned in the SDMX-JSON data message, and according to the current locale. This means that items of a dimension with a defined order, will be displayed according to that order in the **filter selections**, and in the **rows and columns of the table view**.  
 In some cases, the order is also applied to the **chart views** for:
 - Chart series dimension in vertical and horizontal symbol charts;

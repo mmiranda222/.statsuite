@@ -6,13 +6,13 @@ weight: 355
 
 ---
 
->Released in [December 02, 2019 Release .Stat Suite JS milestone 7](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-02-2019)
+> Released in [December 02, 2019 Release .Stat Suite JS milestone 7](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-02-2019)
 
 Additional downloads of external resources can be added to a dataflow and be made available in the "Download" option of the Data Explorer visualisation page.
 
 To do so, you can use the SDMX `EXT_RESOURCE` annotation to define one or several materials (any type of file format) that are stored externally (outside .Stat Suite storage).
 
-### Advanced options of the features
+#### Advanced options of the features
 * Any type of format (stored externally) can be triggered for download.
 * The feature is localised, meaning that for one single definition of an `EXT_RESOURCE` annotation, you can define a different download source according to the chosen language. 
 * The feature being localised also means that the localised annotation text is applied according to the current locale of the Data Explorer.
@@ -20,7 +20,7 @@ To do so, you can use the SDMX `EXT_RESOURCE` annotation to define one or severa
 
 ---
 
-### Syntax
+#### Syntax
 Use the following syntax when defining the annotation in the dataflow or dataset definition for additional download options for external resources:  
 
 ```
@@ -42,7 +42,7 @@ Use the following syntax when defining the annotation in the dataflow or dataset
 
 ---
 
-### Example
+#### Example
 In the below screenshot, the dataflow structure definition contains 3 annotations of `EXT_RESOURCE` typefor localised (in English and French) externally stored files.
 
 Each hyperlink is enriched with a link to an image for its display as an icon of each link in the Data Explorer final representation.

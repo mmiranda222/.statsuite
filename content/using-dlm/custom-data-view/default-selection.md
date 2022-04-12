@@ -10,7 +10,7 @@ You can define a default selection of filter(s) on a dataflow.
 
 To do so, you can define the SDMX annotation of type `DEFAULT` to be used to automatically pre-select dimension values in the filters of the Data Explorer visualisation page. It also includes time-period values (start and end periods).
 
-### Syntax
+#### Syntax
 
 Use the following syntax when defining the annotation in the item definition of an ItemScheme (e.g. a codelist):
 ```
@@ -33,11 +33,11 @@ Use the following syntax when defining the annotation in the Dataflow or DSD def
         }]
 ```
 
-### Exceptions
+#### Exceptions
 * `DEFAULT` annotation attached to dataflow definition fully supersedes those attached to DSDs, which fully supersedes again those individual codes in codelists. Therefore, `DEFAULT` annotation attached to individual codes in codelists are only to be used when there is no `DEFAULT` annotation attached to the dataflow nor to the DSD, and those of DSD are only to be used when there is no `DEFAULT` annotation attached to the dataflow.
 * The `DEFAULT` annotations are superseded by selections on the same datalfow dimension(s) coming from the Data Explorer search result filters, or the homepage free text search hits.
 
-### Example
+#### Example
 You can find [here](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/content/OECD-AIR_EMISSIONS_DF-2.0.xml) a SDMX structure file of a Dataflow.  
 
 In this attached example, several codes of codelists are defined in the dataflow definition with the DEFAULT annotation.  
