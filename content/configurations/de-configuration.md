@@ -17,6 +17,7 @@ keywords: [
   'Search: Result page excluded facets', '#search-result-page-excluded-facets',
   'Search: Exclude specific CategorySchemes from the search index', '#search-exclude-categoryschemes',
   'Search: Result page: number of results per page', '#search-result-page-number-of-results-per-page',
+  'Visualisation: default landing tab', '#visualisation-default-landing-tab',
   'Default time period boundaries and default time period selection', '#default-time-period-boundaries-and-default-time-period-selection',
   'Support of Last-N-Observations feature', '#support-of-last-n-observations-feature',
   'Support of Partial-References feature', '#support-of-partial-references-feature',
@@ -49,6 +50,7 @@ keywords: [
 - [Search: Result page excluded facets](#search-result-page-excluded-facets)
 - [Search: Exclude specific CategorySchemes from the search index](#search-exclude-categoryschemes)
 - [Search: Number of results per result page](#search-number-of-results-per-result-page)
+- [Visualisation: default landing tab](#visualisation-default-landing-tab)
 - [Default time period boundaries and default time period selection](#default-time-period-boundaries-and-default-time-period-selection)
 - [Support of Last-N-Observations feature](#support-of-last-n-observations-feature)
 - [Support of Partial-References feature](#support-of-partial-references-feature)
@@ -315,6 +317,32 @@ Define the number of results displayed per page in the search result pages.
     }
 ```
 
+---
+
+### Visualisation: default landing tab
+> Introduced in [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+
+Define, per DE scope, the landing tab of the visualisation page to be shown by default, unless a different [`vw` parameter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters) is used in a direct visualisation URL. Any of the currently existing tabs, whether for overview, data table, micro data table or graphical representations, can be set, e.g.:
+- overview (default)
+- table
+- microdata
+- barchart
+- rowchart
+- scatterchart
+- horizontalsymbolchart
+- verticalsymbolchart
+- timelinechart
+- stackedbarchart
+- stackedrowchart
+- choroplethchart
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+    "app": {
+        defaultView: "overview"
+    }
+```
 ---
 
 ### Default time period boundaries and default time period selection
