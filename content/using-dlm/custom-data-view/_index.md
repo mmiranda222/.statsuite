@@ -17,7 +17,7 @@ keywords: [
 Further in these sub-sections are explained how one can customise a data view with the use of standardised SDMX Annotations and/or the business rules that illsutrate many statistical disseminations' use cases.
 
 * [Default layout](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-layout/)
-* [Increased table size](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-layout/increased-table-size)
+* [Increased table size](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/increased-table-size)
 * [Default filter selections](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-selection/)
 * [Hide information of a data view](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/not-displayed/)
 * [Implicit and explicit orders](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/implicit-explicit-order/)

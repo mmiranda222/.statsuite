@@ -7,7 +7,7 @@ weight: 337
 
 > Released in [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
 
-Per dataflow, you can decide to increase the maximum preview table size above the DE default maximum limits for the number of observations retrieved from the SDMX web service (see config specs [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#maximum-number-of-observations-in-tables-and-charts)) and for the number of table cells (see config specs [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#maximum-number-of-cells-in-table).  
+Per dataflow, you can decide to increase the maximum preview table size above the DE default maximum limits for the number of observations retrieved from the SDMX web service (see config specs [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#maximum-number-of-observations-in-tables-and-charts)) and for the number of table cells (see config specs [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#maximum-number-of-cells-in-table)).  
 
 #### Syntax and specifications
 To overwrite the default DE limits for the number of observations and for the number of table cells add an SDMX `MAX_TABLE_DATA` annotation in the dataflow definition with the following syntax:
