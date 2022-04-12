@@ -6,7 +6,8 @@ weight: 2800
 
 ---
 
-
+> *Version history:*  
+> Referential metadata hierarchy display with [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)  
 > Introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
 
 The values of attributes not already shown in flags or notes and referential metadata are displayed in table views with an information icon '(i)' that opens on click the **information side panel**.
@@ -30,9 +31,18 @@ The header of the side panel contains:
 Attributes or referential metadata are titled by their attachment:
 - dataflow: dataflow title
 - partial coordinate: similar to fixed dimensions in table sub-title  
+
 Interface labels and coded values are displayed according to the current "Labels" option: 'Name', 'Identifier' or 'Both'.  
 Each (group of) attribute or referential metadata can be expanded or collapsed individually.
 
 The side panel closes when clicking the overlay, clicking the 'close' icon or pressing the Esc key. This cancels also the highlight state of the '(i)' icon.
 
 ![Information side panel](/dotstatsuite-documentation/images/de-side-panel.png)
+
+Attributes are grouped under the parent "Data Characteristics", which can be configured and localised.
+
+Referential metadata can be represented with a hierarchy if such is defined in the corresponding *SDMX* Metadata Structure Definition (MSD). Note that currently only one child level is supported, and that the parent metadata of child metadata cannot have data themselves, the parents being "presentational-only" elements. For details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#hierarchial-referential-metadata).
+
+The hierarchy is expressed in the information side panel using a tree structure and all tree branches are expanded by default.
+
+![Information side panel](/dotstatsuite-documentation/images/de-side-panel2.png)
