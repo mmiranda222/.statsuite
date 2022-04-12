@@ -24,7 +24,7 @@ keywords: [
 ]
 ---
 
-### Table of Content
+#### Table of Content
 - [Role of preview-tables](#role-of-preview-tables)
 - [Preview-table components](#preview-table-components)
 - [Initial layout](#initial-layout)

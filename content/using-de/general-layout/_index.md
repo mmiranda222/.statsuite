@@ -150,7 +150,7 @@ The Data Explorer pages let the user drive the page content through URL paramete
 | lb=nm\|id\|bt | display=label\|code\|both | string | display mode of sdmx (label, code, both) | lb=code
 | to[]=true\|false | time[]=true\|false | object | order of time dimension(s) | to[TIME_PERIOD]=true
 | mp[id\|lv] | map[mapId\|levelId]| string | map information:ID of the map and ID of the map level | mp[id]=world_countries&mp[lv]=countries
-| vw=tb\|br\|rw\|sp\|hs\|vs\|tl\|sb\|cp | viewer=table\|BarChart\|RowChart\|ScatterChart\|<br>HorizontalSymbolChart\|VerticalSymbolChart\|<br>TimelineChart\|StackedBarChart\|<br>ChoroplethChart  | string | type of viewer component used | vw=tb |
+| vw=ov\|tb\|md\|br\|rw\|sp\|hs\|vs\|tl\|sb\|cp | viewer=Overview\|Table\|MicroData\|BarChart\|RowChart\|ScatterChart\|<br>HorizontalSymbolChart\|VerticalSymbolChart\|<br>TimelineChart\|StackedBarChart\|<br>ChoroplethChart  | string | type of viewer component used | vw=tb |
 | lo | lastNObservations | integer | last N observations per time series | lo=1 |
 
 > **Note** that, since the [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the keys in the above table have been shortened in order to reduce the browser url size and avoid reaching browser limitations as much as possible. Previous bookmarked urls with long keys will still work because the application converts them to their shorter match.  

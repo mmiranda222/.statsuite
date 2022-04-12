@@ -18,17 +18,21 @@ keywords: [
 
 --- 
 
-When the user clicks on the dataflow name (link) in the search results, the what-is-called Data Explorer **visualisation page** is displayed. Currently, it initially shows a data preview table. By using the toolbar, the user can switch to show a data chart instead, and vice-versa.
+When the user clicks on the dataflow name (link) in the search results or is navigating through a direct URL, the what-is-called Data Explorer **visualisation page** is displayed.
 
 ### Content overview
 The visualisation page is composed of:  
 * the common Data Explorer application [**Header**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#header) and [**Footer**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#footer)
-* a **Back to the search results** breadcrumb link on the top left side
-* a [**Filters**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/) area on the left side that allows changing the data selection
-* a [**Toolbar**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/) on the top right side that allows switching the view type, customising the view and executing actions
-* a **Data View** area on the central right side for [**preview-table**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/) and [**chart**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/) representations
+* a **Back to the search results** breadcrumb link on the top left (rtl: right) side
+* a [**Filters**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/) area on the left (rtl: right) side that allows changing the data selection
+* a [**Toolbar**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/) on the top right (rtl: left) side that allows switching the view type, customising the view and executing actions
+* a **Main View** area on the central right (rtl: left) side for the different view types, such as an [**overview**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/overview.md) of the information of the data, a data [**preview-table**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/), a [micro data table](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/) or any of the available [**chart**](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/) representations, which can be switched through a tab menu in the toolbar
 
 The linked sections describe in more detail the behaviors and functionalities of these components.
+
+By default, the landing tab of the **visualisation page** is the overview, unless:  
+- a different default behaviour has been defined in the DE configuration, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#visualisation-default-landing-tab)
+- or a different [`vw` parameter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters) is used in a direct visualisation URL.
 
 **Note** that the `Back to the search results` option is only available when the user is coming from a previous search result (see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/) of the documentation), and clicking on it brings the user back to any previous state of the search results. `Back to the search results` is not visible when opening a data preview from a shared URL, because in this case there will be no historical search results to go back to.  
 
