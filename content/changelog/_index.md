@@ -96,7 +96,7 @@ ToC
 
 major changes:
 
-- [dotstatsuite-sdmx-faceted-search#100](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/100) Optimise search requests for DE home page. This feature and other search enhancements introduce **MongoDb** for **sfs as replacement of Redis**, and for the **proxy service**. See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/merge_requests/42) an example of deployment topology with MongoDb.
+- [dotstatsuite-sdmx-faceted-search#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/99) HTTP request rate limitation & [dotstatsuite-sdmx-faceted-search#100](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/100) Optimise search requests for DE home page. These features introduce **MongoDb** for **sfs as replacement of Redis**, and for the **proxy service**. See [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/merge_requests/42) an example of deployment topology with MongoDb.
 
 
 minor changes:
