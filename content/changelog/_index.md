@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 14, 2022](#april-14-2022)
 - [April 11, 2022](#april-11-2022)
 - [March 24, 2022](#march-24-2022)
 - [March 23, 2022](#march-23-2022)
@@ -86,6 +87,17 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### April 14, 2022
+**[Release .Stat Suite JS 14.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/52#tab-issues)**
+> This release includes a patch version of the **data-explorer** and **data-viewer** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#716](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/716) Data explorer crashes when null annotation value is attached to dimensionGroup.
 
 ---
 
