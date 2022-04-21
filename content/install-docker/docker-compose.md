@@ -38,6 +38,8 @@ Using simply the Docker-Compose `start` and `stop` instructions as detailed **[h
 
 This demo instance can be used for developments, test, pilots or demos. Please see the next chapter for information on how to customise the Docker-Compose setup for typical use cases. 
 
+**Important note**: In order to make uploaded structures and data publically (anonymously) available, which is a pre-requisite for the search indexation and the direct display in the Data Explorer, the [AuthorisationManagement web service (swagger interface)](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/) is to be used to define appropriate public access rights to those structures and data.  
+
 ---
 
 ### Hints for optional Docker-Compose setup customisations and usage
