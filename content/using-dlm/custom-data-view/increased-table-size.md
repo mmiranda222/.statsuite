@@ -13,8 +13,8 @@ Per dataflow, you can decide to increase the maximum preview table size above th
 To overwrite the default DE limits for the number of observations and for the number of table cells add an SDMX `MAX_TABLE_DATA` annotation in the dataflow definition with the following syntax:
 ```
   "annotations": [{
-    "type": "MAX_TABLE_DATA",
     "title": "15000"
+    "type": "MAX_TABLE_DATA",
  }],
 ```
 
