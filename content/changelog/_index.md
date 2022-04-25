@@ -93,7 +93,7 @@ ToC
 
 ### April 25, 2022
 **[Release .Stat Suite JS 14.0.2](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/52#tab-issues)**
-> This release includes a patch version of the **data-explorer**.  
+> This release includes a patch version of the **data-explorer** and **data-viewer** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
 
 patch changes:
