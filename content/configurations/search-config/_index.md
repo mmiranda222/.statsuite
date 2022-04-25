@@ -57,7 +57,7 @@ In order to boost the search result for dataflowId in the data-explorer, you nee
 {
   "fields": {
     "dataflowId": {
-      "weigth": 100
+      "weight": 100
     }
   }
 }
