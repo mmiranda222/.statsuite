@@ -49,7 +49,8 @@ Although the requirements could vary depending on the size of your data and the 
 - **nodejs 14.x** and **npm 6.14.x** installed
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
 - **solr 7.x** to **solr 8.7** (since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
-- **redis** downloaded and running on port 6379 (default)
+- **redis 5.x** downloaded and running on port 6379 (default)
+- **mongo 5.x** downloaded and running on port 27017 (default)
 
 *notes:*  
 - solr core name can be freely picked, default configuration targets sdmx-facet-search

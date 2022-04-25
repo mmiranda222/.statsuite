@@ -40,6 +40,7 @@ keywords: [
 - [git](https://gitforwindows.org/) installed ; only to use git bash instead of cmd.exe for process variables
 - [solr 7.x](https://lucene.apache.org/solr/downloads.html) to solr 8.7 (since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - [redis](https://redis.io/download) downloaded and running on port 6379 (default)
+- [mongo](https://www.mongodb.com/try/download/community) downloaded and running on port 27017 (default)
 - [keycloak](https://www.keycloak.org/downloads.html) v7.x (minimum) - v12.0.4 (latest tested and recommended) downloaded and running on port 8080 (default)
 
 *notes:*
@@ -147,7 +148,7 @@ keywords: [
 3. start the service:
 
   - (temporary) edit the 1st line of dist/params/production.js as follow: `const server = { host: '0.0.0.0', port: 3007 };`
-  - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 REDIS_HOST=localhost SOLR_HOST=localhost npm run dist:run`
+  - (in git bash) run `PORT=3007 CONFIG_URL=http://localhost:5007 MONGODB_URL=mongodb://localhost:27017 MONGODB_DATABASE=sfs API_KEY="secret" SOLR_HOST=localhost npm run dist:run`
   - check if everything is fine: http://localhost:3007/healthcheck
   - check if the config (mostly to check datasources) is fine: http://localhost:3007/api/config
   - create a collection [How to create a collection](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#how-to-create-a-collection)
@@ -161,7 +162,7 @@ keywords: [
 
 *notes:*
 
-- process variables are SOLR_HOST, SOLR_PORT, REDIS_HOST, REDIS_PORT, CONFIG_URL and PORT
+- process variables are SOLR_HOST, SOLR_PORT, MONGODB_URL, MONGODB_DATABASE, CONFIG_URL, API_KEY and PORT
 - PORT is not available yet, which explain why dist/params/production.js should be updated
 - if the config is not fine, update the datasources.json and/or settings.json file(s) in the config service, restart the config service then restart the search service
 - the search service is not coupled with its clients, the search endpoint is configurable from settings.json of the data-explorer app in the config service

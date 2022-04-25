@@ -140,7 +140,7 @@ Example:
 
 ![GET search sfs config](/dotstatsuite-documentation/images/de-index-get-config.png)
 
-This request returns the `sfs` dynamic configuration with full details on configUrl, data source(s), RedisServer, fields and indexed dataflows.
+This request returns the `sfs` dynamic configuration with full details on configUrl, data source(s), fields and indexed dataflows.
 
 #### DELETE search sfs config
 Example:  

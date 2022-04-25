@@ -69,7 +69,7 @@ id5[search]
 id6[share]
 id7[config]
 id8[solr]
-id9(redis)
+id9(mongo)
 id10(redis)
 id11((x))
 id13[sdmx/nsi]

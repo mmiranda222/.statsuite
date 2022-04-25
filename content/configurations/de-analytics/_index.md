@@ -2,7 +2,7 @@
 title: .Stat DE analytics
 subtitle: 
 comments: false
-weight: 76
+weight: 75
 keywords: [
   'Google Analytics', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-analytics/',
   'Google Tag Manager', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/analytics/google-tag-manager/',

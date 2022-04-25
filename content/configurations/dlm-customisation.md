@@ -2,7 +2,7 @@
 title: ".Stat DLM customisation"
 subtitle: 
 comments: false
-weight: 84
+weight: 80
 keywords: [
   'Intro', '#intro',
   'Warning', '#warning',
