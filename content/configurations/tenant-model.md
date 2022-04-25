@@ -87,7 +87,18 @@ Define a specific **http accept header** for a given dataspace that will overrid
 
 - `url`: The SDMX web service URL supporting the SDMX 2.1 REST syntax.
 - `urlv3`: The SDMX web service URL supporting the SDMX 3.0 REST syntax. This additional configuration was added in [release .Stat Suite JS 12.1.0 (February 21, 2022)](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022) to enable the referential metadata extraction, which requires an SDMX 3.0 REST-compatible web service. 
-- `headers`: Object holding the mime-types to be used per format `csv`, `json` and `xml`. To support referential metadata, the `csv` and `json` header settings must use the SDMX-CSV 2.0 and SDMX-JSON 2.0 mime types, otherwise the SDMX-CSV 1.0, SDMX-JSON 1.0 and SDMX-ML 2.1 mime types can be used.
+- `headers`: Object holding the mime-types to be used per format `csv`, `json` and `xml`. To support referential metadata, the `json` header settings must use the SDMX-JSON 2.0 mime type, otherwise the SDMX-CSV 1.0, SDMX-JSON 1.0 and SDMX-ML 2.1 mime types can be used.
+- `headersv3`: Same as `headers`, only instead of the mime-types for the SDMX 2.1 REST requests, will allow to customize the mime-types for the metadata requests made to the SDMX 3.0 REST url defined in `urlv3`. The default values used by the application are the following:
+```json
+{
+  "headersv3": {
+    "metadata": {
+      "csv": "application/vnd.sdmx.data+csv;version=2.0",
+      "json": "application/vnd.sdmx.data+json;version=2.0"
+    }
+  }
+}
+```
 
 ---
 
