@@ -2,7 +2,7 @@
 title: "Authentication"
 subtitle: 
 comments: false
-weight: 86
+weight: 82
 keywords: [
 'Generic OpenID Compliance', '#generic-openid-compliance',
 'Optional authentication of DE', '#optional-authentication-of-de',

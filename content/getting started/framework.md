@@ -125,6 +125,7 @@ The following technologies are used for the development of the **.Stat Data Expl
 <td align="center"><a href="https://www.docker.com">docker</a></td>
 <td align="center"><a href="http://lucene.apache.org/solr">solr</a></td>
 <td align="center"><a href="https://redis.io">redis</a></td>
+<td align="center"><a href="https://www.mongodb.com/">mongo</a></td>
 <td align="center"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">es6</a></td>
 <td align="center"><a href="https://nodejs.org">nodejs</a></td>
 <td align="center"><a href="https://www.npmjs.com">npmjs</a></td">
@@ -139,6 +140,7 @@ The following technologies are used for the development of the **.Stat Data Expl
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" style="height: 40px;" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Surface1.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://cdn-images-1.medium.com/max/1200/1*ngGAAMf8Sw4jCJ_nP2Qt5A.png" style="height: 40px;" /></td>
+<td align="center"><img src="https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress" style="height: 40px;" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" style="height: 40px;" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1280px-Npm-logo.svg.png" style="height: 40px;" /></td>
@@ -317,7 +319,7 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 graph LR
   id0[ExpressJS + evtX]
   id2[SolR]
-  id4(redis)
+  id4(mongo)
   id5[config]
   id7((user))
   id9((admin))
@@ -449,7 +451,7 @@ id5[search]
 id6[share]
 id7[config]
 id8[solr]
-id9(redis)
+id9(mongo)
 id10(redis)
 id11((x))
 id13[sdmx/nsi]

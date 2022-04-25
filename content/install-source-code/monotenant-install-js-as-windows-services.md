@@ -13,6 +13,7 @@ keywords: [
   'solr', '#solr',
   'Create a solr collection', '#create-a-solr-collection',
   'redis', '#redis',
+  'mongo', '#mongo',
   'keycloak', '#keycloak',
   'dotstatsuitejs', '#dotstatsuitejs',
   'artefacts', '#artefacts',
@@ -30,6 +31,7 @@ keywords: [
 - [solr](#solr)
 - [Create a solr collection](#create-a-solr-collection)
 - [redis](#redis)
+- [mongo](#mongo)
 - [keycloak](#keycloak)
 - [dotstatsuitejs](#dotstatsuitejs)
 - [artefacts](#artefacts)
@@ -102,6 +104,12 @@ keywords: [
 
 ### Create a solr collection
   - create a collection [How to create a collection](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#how-to-create-a-collection)
+---
+
+### Mongo
+  - download mongo: https://www.mongodb.com/try/download/community
+  - default port 27017
+  - installation step to be completed... (you can complete it by creating a MR on https://gitlab.com/sis-cc/dotstatsuite-documentation)
 ---
 
 ### Redis
@@ -212,7 +220,7 @@ link in settings assets should stay like below:
 - checks:
   - config: http://localhost:5007/healthcheck
   - share: http://localhost:3005/healthcheck (redis OK)
-  - search: http://localhost:3004/healthcheck (redis OK, solr OK)
+  - search: http://localhost:3004/healthcheck (mongo OK, solr OK)
   - explorer: http://localhost:7001
   - viewer: http://localhost:7002 (no id)
   - dlm: http://localhost:7000

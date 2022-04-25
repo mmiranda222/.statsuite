@@ -2,7 +2,7 @@
 title: ".Stat DE customisation"
 subtitle: 
 comments: false
-weight: 74
+weight: 73
 keywords: [
   'Introduction', '#introduction',
   'Warning', '#warning',

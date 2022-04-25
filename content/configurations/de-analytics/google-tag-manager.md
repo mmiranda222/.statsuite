@@ -2,7 +2,7 @@
 title: "Google Tag Manager"
 subtitle: 
 comments: false
-weight: 80
+weight: 77
 keywords: [
 'How to configure Google Tag Manager', '#how-to-configure-google-tag-manager',
 'Pre-requisite', '#pre-requisite',

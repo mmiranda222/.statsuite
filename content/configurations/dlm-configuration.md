@@ -2,7 +2,7 @@
 title: ".Stat DLM configuration"
 subtitle: 
 comments: false
-weight: 82
+weight: 79
 keywords: [
   'Data space names', '#data-space-names',
   'Data space colors', '#data-space-colors',

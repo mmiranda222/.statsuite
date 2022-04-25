@@ -2,7 +2,7 @@
 title: "Google Analytics"
 subtitle: 
 comments: false
-weight: 78
+weight: 76
 keywords: [
   'Tracking ID', '#tracking-id',
   'Google Analytics default events', '#google-analytics-default-events',
