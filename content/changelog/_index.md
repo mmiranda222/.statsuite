@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 28, 2022](#april-28-2022)
 - [April 25, 2022](#april-25-2022)
 - [April 14, 2022](#april-14-2022)
 - [April 11, 2022](#april-11-2022)
@@ -88,6 +89,77 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### April 28, 2022
+**[Release .Stat Suite .NET 8.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/53#tab-issues)**
+> This release includes a minor version of the **dlm-excel-addin**, **core-transfer** and **core-data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+**Performance evolutions** in this release: Here below is a summary of comparison of the performance between this release and the release [.Stat Suite .NET 8.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/51). All performance tests processes, definitions and types are documented [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/blob/master/PerformanceTests/README.md). Note that performance tests are now done directly in the quality assurance environment and may be slowed down by other activities, or could not yet be produced for all test types, therefore we provide here also the statistics made in a separate isolated environment (marked in brackets).  
+
+  Smoke-test data imports  *[71.42%  ✓ 5   ✗ 2 --> 100.00% ✓ 13  ✗ 0](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/2371139053)*
+  ```
+  data_import_time................: avg=12.68s --> 24.21s (Note: the increase is due to the extension of tests to more and larger examples)
+  ✓ { datasetSize:extraSmall }....: avg=2.19s --> 2.37s
+  ✓ { datasetSize:small }.........: avg=28.43s --> 25.48s
+  ✓ { datasetSize:large }.........: ---------- avg=38.14s
+  ```
+  Smoke-test data extractions for *[100.00% ✓ 160 ✗ 0 --> 100.00% ✓ 344 ✗ 0](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/2371139054)* (*100.00% ✓ 344 ✗ 0 --> 100.00% ✓ 344 ✗ 0*)
+  ```
+  http_req_duration...............: avg=451.33ms (304.54ms) --> 590.36ms (269.97ms) (Note: the increase is due to the extension of tests to more and larger examples)
+  ✓ { datasetSize:extraSmall }....: avg=381.5ms (260.97ms) --> 502.6ms (219.58ms)
+  ✓ { datasetSize:small }.........: avg=472.27ms (244.05ms) --> 467.37ms (209.68ms)
+  ```
+  Load-test data extractions (*96.97% ✓ 11398 ✗ 356 --> 92.81% ✓ 9303  ✗ 720*)
+  ```
+  http_req_duration...............: (avg=2.12s) --> (avg=2.67s)
+  ✓ { datasetSize:extraSmall }....: (avg=2.40s) --> (avg=2.71s)
+  ✓ { datasetSize:small }.........: (avg=1.93s) --> (avg=2.41s)
+  ```
+  Stress-test data extractions  (*85.74% ✓ 10428 ✗ 1734 --> 97.91% ✓ 9464  ✗ 202*)
+  ```
+  http_req_duration................: (avg=2.78s) --> (avg=3.74s)
+  ✓ { datasetSize:extraSmall }.....: (avg=2.67s) --> (avg=3.65s)
+  ✓ { datasetSize:small }..........: (avg=2.47s) --> (avg=3.5s)
+  ✓ { datasetSize:small_paginated }: (avg=1.63s) --> (avg=2.74s)
+  ```
+  Spike-test data extractions (*70.74% ✓ 3516  ✗ 1454 --> 68.14% ✓ 3480  ✗ 1627*)
+  ```
+  http_req_duration................: (avg=5.19s) --> (avg=4.79s)
+  ✓ { datasetSize:extraSmall }.....: (avg=5.41s) --> (avg=5.54s)
+  ✓ { datasetSize:small }..........: (avg=5.06s) --> (avg=4.52s)
+  ✓ { datasetSize:small_paginated }: (avg=4.27s) --> (avg=3.82s)
+  ```
+  Soak-test data extractions for *[98.37% ✓ 14434 ✗ 238 --> 95.79% ✓ 3715 ✗ 163](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/2367757772)*
+  ```
+  http_req_duration..........: avg=avg=5.81s --> avg=24.8s (Note: the increase is due to the change in test cases)
+  ```
+
+minor changes:
+
+- [dotstatsuite-excel-addin#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/24) **Edit referential metadata** in the DLM Excel-addin. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/))
+- [dotstatsuite-excel-addin#51](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/51) DLM Excel-addin **data & referential metadata editor enhancements**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/))
+- [dotstatsuite-excel-addin#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/17) Add higher frequencies to the DLM Excel-addin frequency selector.
+- [dotstatsuite-excel-addin#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/46) 'Save to Database' button unavailable in newly added rows at the end of the extracted table.
+- [dotstatsuite-excel-addin#52](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/52) Correctly manage multiple dataflows with same ID in DLM Excel-addin.
+- [dotstatsuite-excel-addin#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/35) Display only members with data in the dimension filter selector of the DLM Excel-addin.
+- [dotstatsuite-excel-addin#42](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/42) Upgrade to .Net 4.6.1 and the latest Eurostat Sdmxsource.
+- [dotstatsuite-core-transfer#114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/114) **Support NaN as observation values** in SDMX-ML data messages.  ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#adding-data-or-referential-metadata))
+- [dotstatsuite-data-lifecycle-manager#147](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/147) NSI to initialise Data DB objects when a dataflow was created. *Note* that this implementation only completes a first step for technical creation of the new servicebus/messaging service, but it is not yet deployed as part of the .Stat Suite, and it does not yet cover the feature itself for `init/dataflow` automation.
+- [dotstatsuite-token-console#1](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-token-console/-/issues/1) Create a console tool that will enable obtaining a token from Identity service (e.g. keycloak). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-token-console))
+- [dotstatsuite-core-transfer#304](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/304) Manage unhandled exceptions of import/transfer.
+- [dotstatsuite-core-transfer#278](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/278) The Transfer-service should mark all aborted transactions as closed & (timely) send email notifications.
+- [dotstatsuite-core-transfer#319](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/319) Move auth. to the background queue for imports from URL.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#300](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/300) Repair concurrent file uploads.
+- [dotstatsuite-core-sdmxri-nsi-ws#182](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/182) No data found after successful data upload when the ID of one dimension is a suffix in the ID of another earlier positioned dimension.
+- [dotstatsuite-core-transfer#320](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/320) Completion status missing in email for the `/2/cleanup/orphans` method.
+- [dotstatsuite-core-transfer#340](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/340) Transfer Swagger issue when the service is hosted under a virtual directory.
+- [dotstatsuite-excel-addin#43](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/43) "(500) Internal Server Error" when querying a duplicated dataflow in .the DLM Excel-addin.
 
 ---
 
@@ -201,7 +273,7 @@ patch changes:
   ✓ { datasetSize:extraSmall }....: avg=2.72s --> 2.19s
   ✓ { datasetSize:small }.........: avg=29.71s --> 28.43s
   ```
-  Smoke-test data extractions for *[100.00% ✓ 159 ✗ 0 --> 100.00% ✓ 160 ✗ 0](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/1339964060)* (*99.41% ✓ 342 ✗ 2 --> 100.00% ✓ 344 ✗ 0*)
+  Smoke-test data extractions for *[100.00% ✓ 159 ✗ 0 --> 100.00% ✓ 160 ✗ 0](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/2226066955)* (*99.41% ✓ 342 ✗ 2 --> 100.00% ✓ 344 ✗ 0*)
   ```
   http_req_duration...............: 406.62ms (avg=311.59ms) --> 451.33ms (avg=304.54ms)
   ✓ { datasetSize:extraSmall }....: 358.35ms (avg=222.77ms) --> 381.5ms (avg=260.97ms)
