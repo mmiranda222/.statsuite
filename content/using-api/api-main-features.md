@@ -5,11 +5,11 @@ comments: false
 weight: 4500
 keywords: [
   'Adding or replacing structures', '#adding-or-replacing-structures',
-  'Support of high-frequency time periods using SDMX annotation', '#support-of-high-frequency-time-periods-using-sdmx-annotation',
-  'Adding data or referential metadata', '#adding-data-or-referential-metadata',
-  'Data validation process', '#data-validation-process',
   'Deleting structures', '#deleting-structures',
-  'Known issues around replaced structures and subsequent data imports', '#known-issues-around-replaced-structures-and-subsequent-data-imports',
+  'Support of high-frequency time periods using SDMX annotation', '#support-of-high-frequency-time-periods-using-sdmx-annotation',
+  'Loading data or referential metadata', '#loading-data-or-referential-metadata',
+  'Data and referential metadata upload queuing mechanism', '#data-and-referential-metadata-upload-queuing-mechanism',
+  'Data validation process', '#data-validation-process',
   'Management of embargoed data', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management',
 ]
 
@@ -17,11 +17,11 @@ keywords: [
 
 #### Table of Content
 - [Adding or replacing structures](#adding-or-replacing-structures)
-- [Support of high-frequency time periods using SDMX annotation](#support-of-high-frequency-time-periods-using-sdmx-annotation)
-- [Adding data or referential metadata](#adding-data-or-referential-metadata)
-- [Data validation process](#data-validation-process)
 - [Deleting structures](#deleting-structures)
-- [Known issues around replaced structures and subsequent data imports](#known-issues-around-replaced-structures-and-subsequent-data-imports)
+- [Support of high-frequency time periods using SDMX annotation](#support-of-high-frequency-time-periods-using-sdmx-annotation)
+- [Loading data or referential metadata](#loading-data-or-referential-metadata)
+- [Data and referential metadata upload queuing mechanism](#data-and-referential-metadata-upload-queuing-mechanism)
+- [Data validation process](#data-validation-process)
 - [Management of embargoed data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management)
 
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
@@ -29,14 +29,13 @@ This section describes the main features of the .Stat Suite data APIs for people
 ---
 
 ### Adding or replacing structures
-
-The simplest method to add or replace structural resources (maintainable SDMX artefacts) is to POST them (one by one or many at the same time) as a valid SDMX-ML snippet in the request body to the SDMX web service (`structure` path), e.g.
+The method to add or replace structural resources (maintainable SDMX artefacts) is to POST them (one by one or many at the same time) as a valid SDMX-ML snippet in the request body to the SDMX web service (`structure` path), e.g.
 
 ```
 POST https://nsi-demo-stable.siscc.org/rest/structure
 ```
 
-**Important:** Artifacts have to be added all at the same time or one by one, in the appropriate order according to their dependency tree. E.g. in order to add a Dataflow, first or at least at the same time the referenced Codelists, ConceptSchemes and DSD must be added.   
+**Important:** Artefacts have to be added all at the same time or one by one, in the appropriate order according to their dependency tree. E.g. in order to add a Dataflow, first or at least at the same time the referenced Codelists, ConceptSchemes and DSD must be added.   
 Final artefacts can only be replaced, if the main content is not changed, e.g. only localised names, descriptions and annotations are changed. More important changes, e.g. adding or removing Codes from a Codelist are not permitted.  
 Non-final artefacts can only be replaced, if they are not referenced by other artefacts.
 
@@ -47,6 +46,49 @@ If it is required to allow inserting new Codes in final or referenced non-final 
 ```
 
 Note: Using this "InsertNewItems" parameter has not yet been fully tested.
+
+---
+
+### Deleting structures
+Structural resources (maintainable SDMX artefacts) can only be deleted **one by one** using the HTTP `DELETE` verb with the full artefact's REST path including all identification information according to the [SDMX Restful API standard](https://github.com/sdmx-twg/sdmx-rest/blob/master/doc/maintenance.md#delete), e.g.
+
+```
+DELETE https://nsi-demo-stable.siscc.org/rest//structure/codelist/SDMX/CL_FREQ/1.0
+```
+
+**Important:**  
+Artefacts can only be deleted if they are currently not beeing referenced by any other structural artefact. Therefore always start by deleting all referencing artefacts before deleting the artefact itself, e.g. in order to delete a Dataflow, first delete any possible Content Constraint that references this Dataflow. Before deleting a Codelist, any Data Structure Definitions referencing it must also be deleted. Proceed recursively in the appropriate order according to the dependency tree.
+
+Deleting a Dataflow will currently not automatically delete the related "MappingSet" information used to bind the underlying uploaded data to the structures. Therefore, before deleting a Dataflow, the related "MappingSet" information needs to be deleted, which is to be done using the Transfer web service method `/cleanup/mappingsets`:
+
+```
+DELETE /cleanup/mappingsets
+{
+   "dataspace": "design",
+   "dataflow": "OECD:DF_MEI(1.0)"
+}
+```
+
+Deleting a Data Structure Definition (DSD) will currently not automatically delete the related data in the Data database, which will cause troubles if you recreate the DSD with different Codelists and try to upload data against the DSD. Therefore, after deleting a DSD, the related data needs to be deleted separately, which is to be done using the Transfer web service method `/cleanup/dsd`:  
+
+```
+DELETE /cleanup/dsd
+{
+   "dataspace": "design",
+   "dsd": "OECD:MEI(1.0)"
+}
+```
+
+Alternatively, the Transfer web service `/cleanup/orphans` method can be used on the whole data space to delete all current orphan database tables, e.g.:
+
+```
+DELETE /cleanup/orphans
+{
+   "dataspace": "design"
+}
+```
+
+Only afterwards, modified DSDs can be used again to upload data.
 
 ---
 
@@ -66,21 +108,34 @@ If the user imports data with minutely time periods into a DSD not yet ready for
 
 ---
 
-### Adding data or referential metadata
-
-Attribute, observation and referential metadata values can be added to a data space using the Transfer web service using one of these methods:
+### Loading data or referential metadata
+Attribute, observation and referential metadata values can be loaded to a data space using the Transfer web service using one of these methods:
 - Import (`/import/sdmxFile`, `/import/excel`): Upload data (attribute and observation values) by submitting an SDMX-ML 2.0, SDMX-ML 2.1, SDMX-CSV 1.0 or Excel file (Excel file together with the related table structure "EDD" file) or by a file path or URL reference to an SDMX-ML 2.0, SDMX-ML 2.1 or SDMX-CSV 1.0 file (e.g. from an external SDMX web service), or   
-  upload of referential metadata values by submitting an SDMX-CSV 2.0 file or by a file path or URL reference to an SDMX-CSV 2.0 file (e.g. from an external SDMX web service)  
+- Upload of referential metadata values by submitting an SDMX-CSV 2.0 file or by a file path or URL reference to an SDMX-CSV 2.0 file (e.g. from an external SDMX web service)  
 - Transfer (`/transfer/dataflow`): Copy data (attribute and observation values) and/or referential metadata values from another internal data space (using a more performing DB to DB transmission)
 
 Data can be embargoed using the Point-In-Time parameters of these both methods. For more details see the readme or the Transfer web service swagger file.
 
-**Important:** 
+**Important:**  
 Data uploaded into the fact table of a specific DSD (version) through another dataflow can only be extracted for a dataflow if the DB has previously been initialised for that dataflow. In order to initialize the database objects for a specific dataflow, use the Transfer web service `/init/dataflow` method, e.g.:
 
 ```
-curl -X POST "https://transfer-demo.siscc.org/1.2/init/dataflow" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "dataspace=MyDataspace" -F "dataflow=AGENCYID:DFID(1.0.0)"
+POST /init/dataflow
+{
+   "dataspace": "design",
+   "dataflow": "OECD:DF_MEI(1.0)"
+}
 ```
+
+#### Data and referential metadata upload queuing mechanism
+The transfer web service instance uses a simple queuing mechanism that allows for a limited parallelism of upload transactions as long as the uploads concern different Data Structure Definitions (DSDs). 
+
+All upload requests are added to the queue from which up to a configurable maximum number (see `MaxConcurrentTransactions` parameter [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration), default: 10) of requests are executed in parallel.  
+However, only one upload per DSD is allowed at any time. Therefore, uploads concerning a DSD for which an import is currently already going on is canceled and marked as completed unsuccessfully.
+
+**Important:**  
+The import queue is currently managed in-memory and **not persisted**. All ongoing or queued requests are lost and need to be resubmitted in case the Transfer service stops.  
+Each transfer web service instance (in a web farm) manages its own in-memory queue, and is agnostic of the state of the queue of other instances targeting the same dataspace.  
 
 ---
 
@@ -203,36 +258,3 @@ In details, the API methods of the core-transfer service used for the data valid
      - Error msg: {3} is mandatory dataset attribute but has no value provided yet.
   - Duplicated dataset attribute
      - Error msg: Values provided multiple times for attribute {3}.
-
----
-
-### Deleting structures
-
-Individual structural resources can be deleted using the specific resource URL (including the artefact's agency, ID and version) and the HTTP verb `DELETE`, e.g.:
-
-```
-curl -X DELETE https://nsi-demo-stable.siscc.org/rest/codelist/OECD/COUNTRY/1.0.0
-```
-
-**Important:** Artifacts have to be deleted one by one, and in the appropriate order according to their dependency tree. E.g. in order to delete a Dataflow, first any possible Content Constraint that references this Dataflow must be deleted. Before deleting a Codelist, any Data Structure Definitions referencing it must also be deleted.
-
----
-
-### Known issues around replaced structures and subsequent data imports
-
-If you have used the API to load data against a DSD, then deleted it and its associated codelists, and recreated them with different items, attempts to load data against the DSD will fail (with complaints about detecting changes in the codelist).
-
-In order to solve this problem, once the DSD and related (non-referenced) codelists have been deleted, the related database objects for the storage of observations are to be cleaned up by calling the Transfer service `/cleanup/dsd` method with the appropriate parameters, e.g.:
-
-```
-curl -X DELETE "https://transfer-demo.siscc.org/1.2/cleanup/dsd" -H "accept: application/json" -H "Content-Type: multipart/form-data" -d {"dataspace":"MyDataspace","dsd":"AGENCYID:DSDID(1.0.0)"}
-```
-
-Alternatively, the Transfer service `/cleanup/orphans` method can be used to delete all current orphan database tables, e.g.:
-
-```
-curl -X DELETE "https://transfer-demo.siscc.org/1.2/cleanup/orphans" -H "accept: application/json" -H "Content-Type: multipart/form-data" -d {"dataspace":"MyDataSpace"}
-```
-
-Only afterwards, modified structures and the related data can be uploaded again.
-

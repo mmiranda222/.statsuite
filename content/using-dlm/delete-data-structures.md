@@ -25,10 +25,7 @@ keywords: [
 
 ### Introduction
 In the DLM, data structures can be deleted separately, several similar structure objects at a time, or several of different types according to their dependency(ies).  
-**Note**  that data structures can also be deleted directly through the *SDMX* (NSI) web service API, using the DELETE HTTPS verb with the appropriate resource URL. Example of deleting a Codelist:  
-```bash
-curl -X DELETE https://nsi-stable-siscc.redpelicans.com/rest/codelist/OECD/COUNTRY/1.0.0
-```
+**Note**  that data structures can also be deleted directly through the *SDMX* (NSI) web service API, for more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features.md#deleting-structures).
 
 ---
 
