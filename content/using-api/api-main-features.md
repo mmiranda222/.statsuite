@@ -73,6 +73,8 @@ Attribute, observation and referential metadata values can be added to a data sp
   upload of referential metadata values by submitting an SDMX-CSV 2.0 file or by a file path or URL reference to an SDMX-CSV 2.0 file (e.g. from an external SDMX web service)  
 - Transfer (`/transfer/dataflow`): Copy data (attribute and observation values) and/or referential metadata values from another internal data space (using a more performing DB to DB transmission)
 
+*(Since [April 27, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-27-2022)*) Data imports from files of SDMX-ML 2.0, SDMX-ML 2.1 and SDMX-CSV 1.0 format support the usage of **`NaN` ("not a number") as missing** values for numerical data types. Those numbers are set to `Null` in the .Stat Core data database. They are only exported again as `NaN` if the corresponding SDMX NSI web service configuration is set.
+
 Data can be embargoed using the Point-In-Time parameters of these both methods. For more details see the readme or the Transfer web service swagger file.
 
 **Important:** 
