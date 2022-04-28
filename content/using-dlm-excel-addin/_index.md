@@ -6,14 +6,7 @@ weight: 800
 keywords: [
   'Introduction', '#introduction',
   'DLM Excel-Addin in the Excel ribbon', '#dlm-excel-addin-in-the-excel-ribbon',
-  'Get data: select the source', '#get-data-select-the-source',
-  'Authentication', '#authentication',
-  'Get data step 1: select data', '#get-data-step-1-select-data',
-  'Get data step 2: specify output', '#get-data-step-2-specify-output',
-  'Get data: result table', '#get-data-result-table',
-  'Get data: change selection', '#get-data-change-selection',
-  'Save to database', '#save-to-database',
-  'Refresh', '#refresh',
+  'Authentication', '#authentication'
 ]
 ---
 
@@ -21,193 +14,75 @@ keywords: [
 - [Introduction](#introduction)
 - [DLM Excel-Addin in the Excel ribbon](#dlm-excel-addin-in-the-excel-ribbon)
 - [Authentication](#authentication)
-- [Get data: select the source](#get-data-select-the-source)
-- [Get data step 1: select data](#get-data-step-1-select-data)
-- [Get data step 2: specify output](#get-data-step-2-specify-output)
-- [Get data: result table](#get-data-result-table)
-- [Get data: change selection](#get-data-change-selection)
-- [Save to database](#save-to-database)
-- [Refresh](#refresh)
+
+---
 
 ### Introduction
 
-**.Stat DLM Excel-Addin** is a powerful Excel facilitator of data editing and sharing. It gives access in Excel to in-progress or published data, from internal or external SDMX data sources.
+**.Stat DLM Excel-Addin** is an Excel facilitator for data and referential metadata retrieval and editing. Directly within Excel it gives access to in-progress or published data, from internal or external SDMX data sources, as well as from legacy .Stat V7 systems.  
 
-The DLM Excel-Addin is delivered as a **ClickOnce** application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).   
+The DLM Excel-Addin is packaged as a **ClickOnce** application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).  
 The installation files are accessible from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin) along with more information about deployment, set up and configuration.  
-A best practice is to store the files on a shared network folder, update the configuration (e.g. to reference specific SDMX data sources or update the application title), to re-sign the installation package with your organisation's own certificate, and allow users running locally the installation. Whenever the installation package on the shared folder is updated (and re-signed), the ClickOnce technology will automatically upgrade all local user installations when they open Excel the next time.  
+
+A best practice is to store the installation files on a shared network folder, to update the configuration to reference required SDMX data sources and to change the application title, to re-sign the installation package with an organisation's own certificate, and to allow all users running the installation locally. Whenever the installation package on the shared folder is updated (and re-signed), the ClickOnce technology will automatically upgrade all local users' installations the next time that they open Excel.
 
 **Demo version**  
-A ready-made (.zip) **demo version** can also be downloaded from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/blob/master/install/Stat-DLM.zip). This installation package has already be *signed with a self-signed certificate*, and can immediately be used for an isolated, local installation.  
-**! This version is ONLY for demo purposes, to be executed only in a non-trusted environment such as a personal computer or outside your organisation/company's network.**  
-Also included in the zipped package is a short text procedure for easing the installation.
+A ready-made (.zip) demo version can also be downloaded from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/blob/master/install/Stat-DLM.zip). This installation package has already been *signed with a self-signed certificate*, and can immediately be used for an isolated, local installation.  
+**! This version is ONLY for demo purposes, to be executed only in a non-trusted environment such as a personal computer or outside an organisation/company's network.**  
+Also included in the zipped package is a short manual to ease the installation.
 
 **Main features**  
-The DLM Excel-Addin allows:
-- authenticating for access-restricted internal .Stat Suite data sources
-- browsing through categorised dataflows in SDMX-enabled internal and external data sources
-- downloading data from these sources into various flavours of Excel tables  
-- refreshing the content of these Excel tables through re-downloading the data that might have been updated in these sources  
-- editing/adding and uploading data to internal data sources (provided the user has sufficient permissions)
+The DLM Excel-addin allows:
+- [Authenticating](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/#authentication) to access-restricted internal .Stat Suite data spaces
+- [Browsing](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#select-data) through a list of dataflows in SDMX-enabled internal and external data spaces (and of datasets in legacy .Stat V7 systems)
+- [Retrieving](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#table-contents) data or referential metadata from these spaces into various flavours of Excel tables
+- [Refreshing](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#refresh) the content of the retrieved Excel tables through re-downloading the data that might have been updated in these spaces
+- [Updating/adding](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/) data or referential metadata to internal data sources (provided the user has sufficient permissions)
+- [Editing multi-lingual String and HTML values](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#edit-string-and-xhtml-values) (currently only for referential metadata) including a (WYSIWYG) rich-text editor for HTML values
+- [Saving](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#save-data-to-data-space) updated and/or new data or referential metadata values back to internal data sources
 
 ---
 
 ### DLM Excel-Addin in the Excel ribbon
-Once installed, the .Stat DLM Excel-Addin will appear in your Excel ribbon. Click on it to access the menu.
+Once installed, the .Stat DLM Excel-Addin menu will appear in the user's Excel ribbon.
 
-![DLM Excel-Addin ribbon](/dotstatsuite-documentation/images/dlm-excel-addin-01.png)
+![DLM Excel-Addin ribbon](/dotstatsuite-documentation/images/dlm-excel-addin-ribbon.png)
+
+By default, the menu contains two features:
+- ["Get data": "New table"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data): to retrieve data from a data space into a new Excel table 
+- The version menu, indicating the semantic version number of the DLM Excel-addin currently in use, together with a question mark icon linking to the functional specifications of the DLM Excel-addin.
+
+Whenever the user is currently authenticated for one or several of the related data spaces, the menu add this feature:
+- ["Log out"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/#authentication) (if authenticated): to log out for a user account
+
+In addition, whenever the Excel cursor is located on a cell within a data or referential metadata table linked to a .Stat data space, the ribbon menu displays the following options:
+- ["Get data": "Change Selection"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#change-selection): to change the selection of the current table
+- ["Refresh": "Current Sheet"/"All Sheets"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#refresh): to refresh the table data
+- The source information of the table data:
+  - "Dataset Code": ID of the given dataflow as `AgencyId:Dataflow Id(Version)`, 
+  - "Source": the data space name,
+  - "Last extraction date": Date and time of last data retrieval
+  This information automatically updates accordingly whenever the user moves the cursor to a different data or referential metadata table.
+
+![DLM Excel-Addin header info](/dotstatsuite-documentation/images/dlm-excel-addin-header-info.png)
+
+In case, the user has appropriate data edit permissions, the menu also shows the features:
+- ["Save to Database": "Selected Data"/"Entire Table"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#save-to-data-source): to save selected data or table to the data space
+- ["Referential metadata": "Edit"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#editing-string-and-html-values) (if the cursor is on a relevant value cell): to ease editing multi-lingual values (including HTML)
+
 
 ---
 
 ### Authentication
-When extracting data for a new table, changing a selection, refreshing a table or saving data related to an internal data source, and if you haven't authenticated for that data source within the current Excel session yet, then you will be redirected to your default web browser in order to provide your login credentials to the (optional) configured third-party identity provider within your organisation.  
-> Note that this is only necessary for internal data sources and/or organisations having an authentication service put in place. For more information, see [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/).
 
-![DLM Excel-Addin login step 2](/dotstatsuite-documentation/images/dlm-excel-addin-login-01.png)
+When extracting data for a new table, changing a selection, refreshing a table or saving data related to an internal data space, and if the user hasn't authenticated for that data space within the current Excel session yet, then the user will be redirected to user's default web browser in order to login through the configured identity provider.  
 
-![DLM Excel-Addin login step 2](/dotstatsuite-documentation/images/dlm-excel-addin-login-02.png)
+![DLM Excel-Addin authentication](/dotstatsuite-documentation/images/dlm-excel-addin-auth1.png)
 
-Once successfully authenticated, the Excel-Addin will automatically proceed executing the currently requested action on the data source as well as  regularly and automatically update the access token in order to always have a currently valid token until the Excel workbook for which the identity was required is closed.
+> Note that this is only required for internal data spaces that are secured through authentication. For more information, see [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/).
 
-When returning from the web authentication to Excel, the Excel-addin ribbon will display a "Log out" button with a dropdown menu showing:
-* your email address
-* the list of data sources (data spaces) for which you have default or advanced permissions.
+Once successfully authenticated, the user can return from the web authentication to Excel. The Excel-Addin will automatically proceed executing the currently requested action on the data space. It will also regularly and automatically update the underlying authentication access token in order to always keep it valid. The access token is used for all subsequent data retrievals as well as for all data submissions for the relevant data sources until the underlying Excel workbook is closed.  
 
-![DLM Excel-Addin login step 3](/dotstatsuite-documentation/images/dlm-excel-addin-login-03.png)
+Whenever the user is authenticated with at least one user identity, the Excel-addin ribbon will display a "Log out" button with a dropdown menu showing the list of user's email addresses corresponding to the different user identities for which the user has authenticated. Clicking on an email address will automatically trigger the log out for the corresponding user identity. When being logged out for all user identities, then the "Log out' button is hidden again.  
 
-Whenever you are authenticated, the access token is used for all data retrievals as well as for all data saving for the relevant data sources.
-
----
-
-### Get data: select the source
-To start using DLM Excel-Addin, you first need to select the source of data:
-
-![DLM Excel-Addin select source](/dotstatsuite-documentation/images/dlm-excel-addin-02.png)
-
----
-
-### Get data step 1: select data
-Once the source has been selected, you will be able to:
-- Show all dataflows for the selected source **(1)**
-- Show only your favorites dataflows **(2)**
-- Search for a specific dataflows you are looking for **(3)**
-- Refresh the list of dataflows by cleaning up the cache **(4)**
-- Add a listed dataflow as a favorite **(5)**
-- Edit your favorites **(6)**
-- Filter on data by editing your filter selection **(7)**
-- Check and/or modify the current filters of your selection **(8)**
-- Paste a selection (SDMX Rest query) **(9)**
-
-![DLM Excel-Addin step 1](/dotstatsuite-documentation/images/dlm-excel-addin-03.png)
-
-**Cache clean-up**    
-The DLM Excel-Addin has an in-built cache with 2 functions:
-- Caching structures for the duration of 3 days,
-- Caching data for the duration of the current Excel session (only for the case that the user changes the table layout but not the data selection).
-
-In order to allow you getting fresher structures than those in the current cache, clicking the **cache clean-up** refresh button **empties the cache for all structures**.
-
-**Edit favorites**  
-Editing favorites allows you adding or removing dataflows from your favorites, clearing all previously selected dataflows as favorites, and saving back the selections. You can show all dataflows from the current data source, or only favorites.
-
-![DLM Excel-Addin edit favorites](/dotstatsuite-documentation/images/dlm-excel-addin-04.png)
-
-**Edit filters**  
-Editing filters, after having selected a dataflow from the list, allows you:
-- Modifying the default "all" selection for a given dimension filter by selecting elements one by one,
-- Selecting all elements or none for a given dimension filter,
-- Searching for a specific element (spotlight feature) in a dimension filter,
-- Showing only selected elements per dimension filter,
-- Applying your final selection(s), or cancel all (No filter, re-applying the "all" default setup).
-
-![DLM Excel-Addin edit filters](/dotstatsuite-documentation/images/dlm-excel-addin-05.png)
-
-The edit filters window offers advanced options for specific dimensions such as **TIME_PERIOD**, which allows selecting frequency or editing start/end periods:
-
-![DLM Excel-Addin edit filters time period](/dotstatsuite-documentation/images/dlm-excel-addin-06.png)
-
-**Check/modify your filters selection**  
-Once you applied your filter selection(s), it is possible to view and directly modify it/them by editing the "Current filters" fields (add/remove):
-
-![DLM Excel-Addin modify selections](/dotstatsuite-documentation/images/dlm-excel-addin-07.png)
-
-**Paste a selection**  
-Your selection is returned as an SDMX Rest query, but you can also edit this query in this field and apply the wished modifications. The filter selections will then be updated accordingly in the above data filters:
-
-![DLM Excel-Addin paste selection](/dotstatsuite-documentation/images/dlm-excel-addin-08.png)
-
----
-
-### Get data step 2: specify output
-After completing step 1, you can click on "Next step". Step 2 offers the following options before lauching the data extraction:
-- Choose where the output table should start (Excel sheet and cell) **(1)** 
-- Specify the output table type **(2)**
-- Define the available options for returning the data **(3)**
-- Show the query syntax in the supported formats **(4)**
-- Go back to Step 1 **(5)**
-- Generate the Excel table with Step 1 and Step 2 choices **(6)**
-
-![DLM Excel-Addin step 2](/dotstatsuite-documentation/images/dlm-excel-addin-09.png)
-
-**Table type**  
-DLM Excel-Addin is made for retrieving data as Excel tables with a simple layout. The current version supports **flat**, **time series down**, and **time series across** layouts.
-
-![DLM Excel-Addin table type](/dotstatsuite-documentation/images/dlm-excel-addin-10.png)
-
-**Return data options**  
-You can generate the Excel table with the localised names for dimensions and dimension members, with or without excluding the underlying IDs. Localised names can be picked in the language made available in the sourced data.  
-You also have the option to extract the observation values along with the attribute values. Currently, this option must be activated if you would like to use the addin later to save corresponding observation values back into the (internal) data source.
-
-![DLM Excel-Addin return data options](/dotstatsuite-documentation/images/dlm-excel-addin-11.png)
-
-**Query syntax**  
-DLm Excel-Addin can generate your selection in various supported formats:
-- SDMX Rest query
-- STATA
-- Eviews
-- SAS
-- SQL
-- R
-
-![DLM Excel-Addin query syntax](/dotstatsuite-documentation/images/dlm-excel-addin-12.png)
-
-Clicking on **"Get data"** from Step 2 generates the flat or time-series oriented Excel table filled with all data, meaning all observation and attribute values (if you chose the option in step 2) for the given selection.  
-**Note** that for attribute values defined at higher level than the observation value, those high-level attribute values are retrieved and replicated for each time-series in the 2 time-series formats, and for each observation in the flat format.
-
----
-
-### Get data: result table
-
-![DLM Excel-Addin get data result table](/dotstatsuite-documentation/images/dlm-excel-addin-13.png)
-
----
-
-### Get data: change selection  
-Clicking on "Change selection" will bring you back to Step 1 where you can modify your previous choices.  
-Applying new options all the way through "Step 2" and "Get data" will generate a new Excel table with the new choices, and thus replacing the previous ones.
-
-![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-14.png)
-
----
-
-### Save to database
-Depending on your access permissions on the source data, **edited data can be saved back** to the (internal) source database. When data are extracted from an external datasource, the "Save to Database" buttons are not shown.  
-You can select a range of edited data and request for saving back only the current selection by clicking on **"Selected data"**, or request for saving all changes made on the current table by clicking on **"Entire table"**.
-
-![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-15.png)
-
-The new data are then submitted and a pop-up notification message confirms the number of saved observation(s).  
-An email is sent to the end-user once this data request is completed. See [Email notifications for data management](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/message-through-mail/) for more details.
-
-**Note:**  
-To allow the DLM Excel-Addin reading your data in the cells and saving this data with the appropriate decimal settings, it is necessary to use the native Excel options for system separators:
-
-![DLM Excel-Addin system separator options](/dotstatsuite-documentation/images/dlm-excel-addin-system-separator-options.png)  
-
----
-
-### Refresh
-Two **data refresh** options allow you fully refreshing the data table(s) with updated data from the underlying data source(s). You can request to refresh the data tables in your **"current sheet"**, or all data tables in **"all sheets"**.
-
-![DLM Excel-Addin get data overview](/dotstatsuite-documentation/images/dlm-excel-addin-17.png)
-
+![DLM Excel-Addin authentication](/dotstatsuite-documentation/images/dlm-excel-addin-auth2.png)
