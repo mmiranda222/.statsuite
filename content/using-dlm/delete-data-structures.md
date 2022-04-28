@@ -25,7 +25,7 @@ keywords: [
 
 ### Introduction
 In the DLM, data structures can be deleted separately, several similar structure objects at a time, or several of different types according to their dependency(ies).  
-**Note**  that data structures can also be deleted directly through the *SDMX* (NSI) web service API, for more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features.md#deleting-structures).
+**Note**  that data structures can also be deleted directly through the *SDMX* (NSI) web service API, for more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#deleting-structures).
 
 ---
 
