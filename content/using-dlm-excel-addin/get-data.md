@@ -70,7 +70,7 @@ Selecting a dataflow automatically displays the list of corresponding dimensions
 
 ![DLM Excel-Addin edit filters](/dotstatsuite-documentation/images/dlm-excel-addin-edit-filters.png)
 
-*Note* that, since [April 27, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-27-2022), only dimension values with available data are displayed in the edit filters panel. It means that, if e.g. a dataflow has only annual data but it is using a dimension with more frequency values (e.g. Monthly, or Daily), then only Annual frequency will appear in the Frequency selector.
+*Note* that, since [April 28, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-28-2022), only dimension values with available data are displayed in the edit filters panel. It means that, if e.g. a dataflow has only annual data but it is using a dimension with more frequency values (e.g. Monthly, or Daily), then only Annual frequency will appear in the Frequency selector.
 
 Once the user has applied a filter selection(s), it is possible to view and directly modify it/them by editing the "Current filters" fields (add/remove).  
 The dataflow selection, including filtered dimensions, is also displayed at the bottom of the wizard using [SDMX Rest syntax](https://github.com/sdmx-twg/sdmx-rest/blob/v1.5.0/v2_1/ws/rest/docs/4_4_data_queries.md), and the user can edit this query directly in the field and apply the desired modifications. The filter selections will then be updated accordingly in the above data filters.
