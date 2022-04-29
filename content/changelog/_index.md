@@ -146,7 +146,7 @@ minor changes:
 - [dotstatsuite-excel-addin#52](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/52) Correctly manage multiple dataflows with same ID in DLM Excel-addin.
 - [dotstatsuite-excel-addin#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/35) Display only members with data in the dimension filter selector of the DLM Excel-addin.
 - [dotstatsuite-excel-addin#42](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/42) Upgrade to .Net 4.6.1 and the latest Eurostat Sdmxsource.
-- [dotstatsuite-core-transfer#114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/114) **Support NaN as observation values** in SDMX-ML data messages.  ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#adding-data-or-referential-metadata))
+- [dotstatsuite-core-transfer#114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/114) **Support NaN as observation values** in SDMX-ML data messages.  ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#loading-data-or-referential-metadata))
 - [dotstatsuite-data-lifecycle-manager#147](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/147) NSI to initialise Data DB objects when a dataflow was created. *Note* that this implementation only completes a first step for technical creation of the new servicebus/messaging service, but it is not yet deployed as part of the .Stat Suite, and it does not yet cover the feature itself for `init/dataflow` automation.
 - [dotstatsuite-token-console#1](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-token-console/-/issues/1) Create a console tool that will enable obtaining a token from Identity service (e.g. keycloak). ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-token-console))
 - [dotstatsuite-core-transfer#304](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/304) Manage unhandled exceptions of import/transfer.
@@ -155,7 +155,7 @@ minor changes:
 
 patch changes:
 
-- [dotstatsuite-core-transfer#300](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/300) Repair concurrent file uploads.
+- [dotstatsuite-core-transfer#300](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/300) Repair concurrent file uploads. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#data-and-referential-metadata-upload-queuing-mechanism))
 - [dotstatsuite-core-sdmxri-nsi-ws#182](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/182) No data found after successful data upload when the ID of one dimension is a suffix in the ID of another earlier positioned dimension.
 - [dotstatsuite-core-transfer#320](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/320) Completion status missing in email for the `/2/cleanup/orphans` method.
 - [dotstatsuite-core-transfer#340](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/340) Transfer Swagger issue when the service is hosted under a virtual directory.
