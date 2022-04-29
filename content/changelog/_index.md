@@ -132,9 +132,9 @@ ToC
   ✓ { datasetSize:small }..........: (avg=5.06s) --> (avg=4.52s)
   ✓ { datasetSize:small_paginated }: (avg=4.27s) --> (avg=3.82s)
   ```
-  Soak-test data extractions for *[98.37% ✓ 14434 ✗ 238 --> 95.79% ✓ 3715 ✗ 163](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/jobs/2367757772)*
+  Soak-test data extractions for (*100.00% ✓ 42590 ✗ 0 --> 100.00% ✓ 46873 ✗ 0*)
   ```
-  http_req_duration..........: avg=avg=5.81s --> avg=24.8s (Note: the increase is due to the change in test cases)
+  http_req_duration..........: avg=1.34s --> avg=1.13s
   ```
 
 minor changes:
