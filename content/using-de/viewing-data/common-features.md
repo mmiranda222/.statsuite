@@ -4,9 +4,9 @@ subtitle:
 comments: false
 weight: 2100
 keywords: [
-  'How special dimensions are identified','#how-special-dimensions-are-identified'
-  'Identification of the time dimension','#identification-of-the-time-dimension'
-  'Identification of the data's frequency','#identification-of-the-data-s-frequency'
+  'How special dimensions are identified','#how-special-dimensions-are-identified',
+  'Identification of the time dimension','#identification-of-the-time-dimension',
+  'Identification of the data's frequency','#identification-of-the-data-s-frequency',
   'Identification of the geo/reference area dimension','#identification-of-the-geo-reference-area-dimension'
 ]
 ---
