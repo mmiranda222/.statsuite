@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 10, 2022](#may-10-2022)
 - [April 28, 2022](#april-28-2022)
 - [April 25, 2022](#april-25-2022)
 - [April 14, 2022](#april-14-2022)
@@ -89,6 +90,18 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### May 10, 2022
+
+**[Release .Stat Suite .NET 8.1.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/53#tab-issues)**
+> This release includes a patch version of the **core-transfer** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#342](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/342) Queued transactions blocking all other transactions.
 
 ---
 
