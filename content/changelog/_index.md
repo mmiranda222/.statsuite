@@ -8,7 +8,7 @@ weight: 120
 
 <!-- 
 ToC
-- [May 10, 2022](#may-10-2022)
+- [May 11, 2022](#may-11-2022)
 - [April 28, 2022](#april-28-2022)
 - [April 25, 2022](#april-25-2022)
 - [April 14, 2022](#april-14-2022)
@@ -93,15 +93,17 @@ ToC
 
 ---
 
-### May 10, 2022
+### May 11, 2022
 
 **[Release .Stat Suite .NET 8.1.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/53#tab-issues)**
-> This release includes a patch version of the **core-transfer** service.  
+> This release includes a patch version of the **core-transfer** and **dlm-excel-addin** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
 
 patch changes:
 
 - [dotstatsuite-core-transfer#342](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/342) Queued transactions blocking all other transactions.
+- [dotstatsuite-excel-addin#63](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/63) Issue with daily date format when saving data.
+- [dotstatsuite-excel-addin#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/64) Problem saving double value with the excell-addin and handling regional decimal separator settings.
 
 ---
 
