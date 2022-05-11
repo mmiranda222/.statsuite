@@ -29,26 +29,26 @@
 1. issues from ([board](https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript)) (not only release column) are attached to the milestone
 1. rename the milestone with a name: `dotstatsuiteJS@<name>`
 1. run helper in [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data) to get all related merge requests:
-  - `yarn helper:mergerequests dotstatsuiteJS@<name> $GITLAB_API_KEY`
-  - find GITLAB_API_KEY [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/settings/ci_cd), section variables
+    - `yarn helper:mergerequests dotstatsuiteJS@<name> $GITLAB_API_KEY`
+    - find GITLAB_API_KEY [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/settings/ci_cd), section variables
 1. remove merge requests from dependencies and deduce from the list of remaining merge requests the concerned services/apps
 1. for each kube:
-  1. _transpose_ QA changes to Staging
-  1. update the **operational changelog** with kube diffs
+    - _transpose_ QA changes to Staging
+    - update the **operational changelog** with kube diffs
 1. for each service/app:
-  1. define a semver based on related merge requests diffs
-  1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
-  1. bump version in package.json
-  1. create a release branch based on this commit following the name convention: `release-v<semver>`
-  1. create a merge request from the release branch into master (default based on branch name is fine), bind it the the milestone, **no squash but rm branch afterwards**
-  1. check diff and wait for pipeline to pass and merge it to master
-  1. if needed (last minute fixes), merge back to develop
-  1. create a **tag** `v<semver>` on master with a **release** (put the name of the gitlab release in optional release description)
-    - a pipeline will create a docker image with the following tags: `10.0.1` & `master` & `<commithash>`
-  1. create a **tag** `<name>` on master using the gitlab release name
-    - create tags in dockerhub on all images
-  1. paste the tag link in the milestone description (releases row) and attached it to the milestone
-  1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
+    1. define a semver based on related merge requests diffs
+    1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
+    1. bump version in package.json
+    1. create a release branch based on this commit following the name convention: `release-v<semver>`
+    1. create a merge request from the release branch into master (default based on branch name is fine), bind it the the milestone, **no squash but rm branch afterwards**
+    1. check diff and wait for pipeline to pass and merge it to master
+    1. if needed (last minute fixes), merge back to develop
+    1. create a **tag** `v<semver>` on master with a **release** (put the name of the gitlab release in optional release description)
+        - a pipeline will create a docker image with the following tags: `10.0.1` & `master` & `<commithash>`
+    1. create a **tag** `<name>` on master using the gitlab release name
+        - create tags in dockerhub on all images
+    1. paste the tag link in the milestone description (releases row) and attached it to the milestone
+    1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
 
 #### optionals
 1. restart search service to load updated config (clean and re-index if major change related to search or if space/datasources have been updated)
