@@ -35,6 +35,7 @@
 1. for each kube:
     - _transpose_ QA changes to Staging
     - update the **operational changelog** with kube diffs
+    - update the kubernetes column of the summary
 1. for each service/app:
     1. define a semver based on related merge requests diffs
     1. check develop branch history to pick the latest acceptable commit for a release (pipeline passed required)
