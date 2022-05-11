@@ -31,7 +31,7 @@ keywords: [
 ### Generic OpenID Compliance
 > Fully empowered since [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021) 
 
-.Stat Suite is based on OpenID-Connect authentication. Any OpenID-Connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purposes as well as an identity provider proxy for GitHub/GitLab.
+.Stat Suite is based on OpenID-Connect authentication. Any OpenID-Connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purpose as well as an identity provider proxy for GitHub/GitLab.
 
 in `tenants.json` :
 
