@@ -96,7 +96,7 @@ ToC
 
 ### May 12, 2022
 **[Release .Stat Suite JS "photon"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/54#tab-issues)**
-> This release includes a new version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **config** services.  
+> This release includes a new version of the **data-explorer**, **data-viewer**, and **data-lifecycle-manager** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
 
 **Disclaimer: .Stat Suite adopts version names**  
