@@ -23,6 +23,8 @@ keywords: [
 - [Footer](#footer)
 - [URL parameters](#url-parameters)
 
+---
+
 ### User Interface Design Specifications
 
 The UI design of the .Stat Data Explorer (DE) is following the specifications described in the [UI documentation](https://sis-cc.gitlab.io/.stat-suite/design/demo/ui-documentation/index.html).  
@@ -85,19 +87,22 @@ When accessibility support is enabled, using the `Tab` key of the keyboard allow
 ### Login
 
 Registration is orchestrated at the organisation level, for one or several instances of the Data Explorer, and common with the Data Lifecycle Manager (DLM) registration mechanism (if the DLM is part of the same installation). For further information, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/) and the [DLM login mechanism](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/).  
-.Stat Suite applications are using **[Keycloak](https://www.keycloak.org/)** as the authentication service.  
+.Stat Suite applications can use **[Keycloak](https://www.keycloak.org/)** as the authentication service or any other OpenID-Connect compliant identity provider or proxy.
 
 ![DE Log in](/dotstatsuite-documentation/images/de-login-1.png)
 
-When cliking on the `Log in` icon of the DE, the user is redirected to the authentication page in order to provide his username and password.  
+When clicking on the `Log in` icon of the DE, it opens an authentication popup webpage in order, if appropriate, to choose the identiy provider and, if required, to enter the username and password.  
 
 ![DE Register](/dotstatsuite-documentation/images/de-login-2.png)
 
-Once logged in, the DE header displays the user's name, next to the user icon. When clicking on the name, a dropdown feature displays the user email address, and the option to log out.  
+Once logged in, clicking on the user icon displays a dropdown feature with the user's name, email address, and the option to log out.  
 
 ![DE Log out](/dotstatsuite-documentation/images/de-login-3.png)
 
-Cliking on `Log out` will automatically unregister the user and refresh the DE homepage.
+**Note** that the authentication in the DE supports the auto-login within the same web session, meaning that if an authenticated user opens a second tab of the DE in the same web session, then the authentication will be automatically spread across.
+
+Clicking on `Log out` will automatically unregister the user and refresh the DE homepage.  
+In case when there are several authenticated tabs of the DE in the same session, when the user logs out from one, then he will be logged out from all the DE tabs when refreshing the contents.
 
 ---
 

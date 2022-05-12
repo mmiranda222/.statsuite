@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 12, 2022](#may-12-2022)
 - [May 11, 2022](#may-11-2022)
 - [April 28, 2022](#april-28-2022)
 - [April 25, 2022](#april-25-2022)
@@ -93,8 +94,34 @@ ToC
 
 ---
 
-### May 11, 2022
+### May 12, 2022
+**[Release .Stat Suite JS "photon"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/54#tab-issues)**
+> This release includes a new version of the **data-explorer**, **data-viewer**, **data-lifecycle-manager**, and **config** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
 
+**Disclaimer: .Stat Suite adopts version names**  
+From now on, each .Stat Suite release will be given a unique **name**, e.g. 'photon'.  
+Semantic versioning is kept at the component/service level (see milestone for details).  
+See the details of our updated release process [here](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/recipes/how-to-release-js.md)
+
+minor changes:
+
+- [dotstatsuite-data-explorer#623](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/623) **OpenID Connect** (oidc) autologin and DE/DLM adaptation.
+- [dotstatsuite-data-explorer#658](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/658) **OpenID Connect** (oidc) popup flow follow-up.
+- [dotstatsuite-data-lifecycle-manager#238](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/238) Authentication with Azure AD use id_token, including **DLM to use any OpenID Connect (oidc) compliant auth. provider**.
+- [dotstatsuite-data-lifecycle-manager#266](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/266) Increase space between elements in the "transfer data and referential metadata" popup.
+- [dotstatsuite-docker-compose#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/35) *(Refactoring)* Removal of `DEFAULT_TENANT_DLM` and `DEFAULT_TENANT_DE` env. variables.
+
+patch changes:
+
+- [dotstatsuite-data-lifecycle-manager#264](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/264) Export data from a multiple dataflows' selection isn't working.
+- [dotstatsuite-data-explorer#732](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/732) Missing address email in the share feature input when authenticated.
+- [dotstatsuite-data-explorer#730](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/730) DE table wrongly displays 2 frequencies when there is no `CubeRegion`.
+- [dotstatsuite-data-explorer#727](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/727) Strange table (large truncated table).
+
+---
+
+### May 11, 2022
 **[Release .Stat Suite .NET 8.1.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/53#tab-issues)**
 > This release includes a patch version of the **core-transfer** and **dlm-excel-addin** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.

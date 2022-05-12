@@ -17,10 +17,14 @@ keywords: [
 
 ---
 
-*Note:* User identities, third-party identity providers and account registrations are managed autonomously by the organisations. For information about the authentication setup, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/). .Stat Suite applications are using **[Keycloak](https://www.keycloak.org/)** as the default authentication service. Keycloak can be configured to act as a simple proxy to third-party identity providers such as ADFS.
+*Note:* User identities, third-party identity providers and account registrations are managed autonomously by the organisation. For information about the authentication setup, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/). .Stat Suite applications are using **[Keycloak](https://www.keycloak.org/)** as the default authentication service, or any other OpenID-Connect compliant identity provider or proxy. Keycloak can be configured to act as a simple proxy to third-party identity providers such as ADFS.
 
 ### Log in
-The DLM requires and automatically invites users to log in because the DLM is **not accessible in anonymous mode**. Thus, when launching the DLM in a web browser, the user is automatically redirected to the authentication page in order to choose the identiy provider and to enter the username and password.
+The DLM requires users to log in because the DLM is **not accessible in anonymous mode**. Thus, when launching the DLM in a web browser, it displays an empty homepage with a button to authenticate:
+
+![DLM Login landing page](/dotstatsuite-documentation/images/dlm-login-landing-page.png)
+
+When clicking on "Log in", it opens an authentication popup webpage in order to choose the identity provider and to enter the username and password.
 
 ![DLM Login](/dotstatsuite-documentation/images/de-login-2.png)
 
@@ -28,12 +32,16 @@ Once logged in, the DLM header displays the user's name, next to the user icon. 
 
 ![DLM Logout](/dotstatsuite-documentation/images/dlm-log-in.png)
 
+The authentication in the DLM supports the auto-login within the same web session, meaning that if an authenticated user opens a second tab of the DLM in the same web session, then the authentication will be automatically spread across.
+
 ---
 
 ### Log out
 >Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
-When clicking on "Log out", the user is logged out from .Stat DLM and redirected again to the authentication page. The logout feature allows thus changing the user credentials in case a user has different accounts with different roles.
+When clicking on "Log out", the user is logged out from .Stat DLM and redirected again to the authentication page (empty DLM homepage). The logout feature allows thus changing the user credentials in case a user has different accounts with different roles.
+
+In case when there are several authenticated tabs of the DLM in the same session, when the user logs out from one, then he will be automatically (with a little delay, or when refreshing the tab) logged out from all the DLM tabs.
 
 ---
 
