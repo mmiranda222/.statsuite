@@ -242,14 +242,13 @@ A Redis database is used to store shared objects (tables or charts). Share serve
 * POST bodies are limited in size to `maxChartSize`
 
 ##### demo
-1. go to http://webapp.staging.oecd.redpelicans.com/?tenant=oecd
+1. go to any visualisation page (table view or chart view) of https://de-demo.siscc.org/ 
 1. click on share button
-1. fill the form (email, recaptcha)
-1. click on publish button
-1. click on done button
+1. fill the form (email adress)
+1. click on publish 'Request URL and embed code'
 1. check email
 1. follow the confirmation link
-1. check the shared chart
+1. check the shared view
 
 ##### flow
 
@@ -287,7 +286,7 @@ id2 -->|7. redirect user|id4
 This web app is a companion GUI for (external) users to display user-defined, shared data tables and charts e.g. in embedded views or through shared links.
 
 ##### demo (light)
-1. Go to http://dv-demo.siscc.org/?chartId=3 (tenant: oecd, env: staging)
+1. Go to https://dv-demo.siscc.org/ (to get a dedicated viewer representation, follow the Share demo)
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer
@@ -307,14 +306,13 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 - free-text search hit: highlight the first occurance of all search terms 
 - handles hierarchical facet content (from SDMX codelists)
 - multi-language enabled
-- [single term search](http://de-staging-oecd.redpelicans.com/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status): `Unemployment rate by sex and disability status` 2 results
-- [phrase term search](http://de-staging-oecd.redpelicans.com/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status?locale=en&term=%22Unemployment%20rate%20by%20sex%20and%20disability%20status%22): `"Unemployment rate by sex and disability status"` 1 result
-- [tagged search](http://de-staging-oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series): `name:seasonally adjusted series`
-- [multiple tagged search with phrase](http://de-staging-oecd.redpelicans.com/?locale=en&term=name%3Aseasonally%20adjusted%20series%20description%3A%22employment-to-population%22): `name:seasonally adjusted series description:"employment-to-population"`
-- [negate search](http://de-staging-oecd.redpelicans.com/?locale=en&term=-seasonally): `-seasonally` 209/217 results ([witness](http://de-staging-oecd.redpelicans.com/?locale=en&term=seasonally): `seasonally` 8/217 results)
+- [single term search](https://de-demo.siscc.org/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status): `Unemployment rate by sex and disability status` 1 result
+- [phrase term search](https://de-demo.siscc.org/?locale=en&term=Unemployment%20rate%20by%20sex%20and%20disability%20status?locale=en&term=%22Unemployment%20rate%20by%20sex%20and%20disability%20status%22): `"Unemployment rate by sex and disability status"` 1 result
+- [tagged search](https://de-demo.siscc.org/?locale=en&term=name%3Aenterprises): `name:enterprises`
+- [multiple tagged search with phrase](https://de-demo.siscc.org/?locale=en&term=name%3Aenterprises%20description%3A%22tourism%22): `name:enterprises description:"tourism"`
+- [negate search](https://de-demo.siscc.org/?locale=en&term=-seasonally): `-seasonally` 25/33 results ([witness](https://de-demo.siscc.org/?locale=en&term=seasonally): `seasonally` 8/33 results)
 
 ##### architecture
-
 {{< mermaid align="left" >}}
 graph LR
   id0[ExpressJS + evtX]
@@ -349,15 +347,14 @@ graph LR
 
 #### Proxy Service
 ##### short description
-
-The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`), and sets tenant headers depending on host to instruct target application. `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
+The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.siscc.org`), and sets tenant headers depending on host to instruct target application. `<tenant>.siscc.org` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
-- handles route request depending on urls (`https://<app>.<env>.<tenant>.redpelicans.com`)
+- handles route request depending on urls (`https://<app>.<env>.<tenant>.siscc.org`)
 - set tenant headers depending on host to instruct target application
-- `<tenant>.redpelicans.com` could be replaced by a dedicated DNS entry, ie `https://<app>.<env>.oecd.org`
+- `<tenant>.siscc.org` could be replaced by a dedicated DNS entry, ie `https://<app>.<env>.oecd.org`
 
 #### Config Service
 
@@ -435,7 +432,7 @@ Is a library of components for the parsing of SDMX-JSON messages. [*more discrip
 
 |tenant|specs|url|
 |---|---|---|
-|oecd|own sdmx oecd staging endpoint, OECD-staging|http://de-staging-oecd.redpelicans.com/|
+|oecd|own sdmx oecd staging endpoint, OECD-staging|https://de-demo.siscc.org/|
 
 
 ##### technical overview
@@ -485,19 +482,19 @@ end
 
 
 ##### demo: add/update a tenant
-1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
+1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/develop/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
-1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
-1. check the tenant at http://de-staging-tenant=<tenant>.redpelicans.com/
+1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/develop/assets/
+1. check the tenant at http://de-staging-tenant=<tenant>.siscc.org/
 1. update something in the configuration and check the update
 
 ##### demo: add/update an app for the tenant (siscc workshop hands-on)
 1. fork from wepapp
 1. inject pre-coded app (to create)
 1. declare it somewhere
-1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
+1. check the app at `http://<app>.staging.<tenant>.siscc.org`
 1. update the app
-1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
+1. check the app at `http://<app>.staging.<tenant>.siscc.org`
 
 ---
 
@@ -509,7 +506,7 @@ end
 This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
 
 ##### demo (light)
-1. go to http://dlm-qa.siscc.org/
+1. go to https://dlm-qa.siscc.org/
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager
@@ -562,7 +559,7 @@ id6 --> id8
 This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores.
 
 ##### demo (light)
-1. go to http://transfer-qa.siscc.org/swagger (tenant: oecd, env: qa)
+1. go to https://transfer-qa.siscc.org/swagger (tenant: oecd, env: qa)
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer
@@ -619,18 +616,14 @@ This library is used for shared code in the .Stat Core components. These inlude 
 ---
 
 ### DevOps implementation
-
 See: [.Stat DevOps implementation](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/devops/) 
 
 ---
 
 ### Component list and dependency matrix
-
 [FlowMatrixInfo__1_.xlsx](/uploads/27643af0f690545d46d897fe1935d8a1/FlowMatrixInfo__1_.xlsx)
 
 ---
 
 ### Contributing to an open source repository
-
 https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/
-
