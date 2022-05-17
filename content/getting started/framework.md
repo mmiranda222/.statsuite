@@ -347,7 +347,6 @@ graph LR
 
 #### Proxy Service
 ##### short description
-
 The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.siscc.org`), and sets tenant headers depending on host to instruct target application. `<tenant>.siscc.org` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
 
 ##### technical aspects
@@ -617,18 +616,14 @@ This library is used for shared code in the .Stat Core components. These inlude 
 ---
 
 ### DevOps implementation
-
 See: [.Stat DevOps implementation](https://sis-cc.gitlab.io/dotstatsuite-documentation/getting-started/devops/) 
 
 ---
 
 ### Component list and dependency matrix
-
 [FlowMatrixInfo__1_.xlsx](/uploads/27643af0f690545d46d897fe1935d8a1/FlowMatrixInfo__1_.xlsx)
 
 ---
 
 ### Contributing to an open source repository
-
 https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/
-
