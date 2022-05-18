@@ -43,11 +43,12 @@
     1. create a release branch based on this commit following the name convention: `release-v<semver>`
     1. create a merge request from the release branch into master (default based on branch name is fine), bind it the the milestone, **no squash but rm branch afterwards**
     1. check diff and wait for pipeline to pass and merge it to master
+        - a pipeline will create a docker image with the following tags: `master` & `<commithash>`
     1. if needed (last minute fixes), merge back to develop
     1. create a **tag** `v<semver>` on master with a **release** (put the name of the gitlab release in optional release description)
-        - a pipeline will create a docker image with the following tags: `10.0.1` & `master` & `<commithash>`
+        - a pipeline will create a docker image with the following tag: `10.0.1`
     1. create a **tag** `<name>` on master using the gitlab release name
-        - create tags in dockerhub on all images
+        - a pipeline will create a docker image with the following tag: `<name>`
     1. paste the tag link in the milestone description (releases row) and attached it to the milestone
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
 
