@@ -6,7 +6,6 @@ weight: 82
 keywords: [
 'Generic OpenID Compliance', '#generic-openid-compliance',
 'Optional authentication of DE', '#optional-authentication-of-de',
-'How to allow the DE to be accessible only by authenticated users', '#how-to-allow-the-de-to-be-accessible-only-by-authenticated-users',
 'OpenID connect Middleware for NSIWS', '#openid-connect-middleware-for-nsiws',
 'Intro', '#intro',
 'Setup', '#setup',
@@ -19,7 +18,6 @@ keywords: [
 #### Table of Content
 - [Generic OpenID Compliance](#generic-openid-compliance)
 - [Optional authentication of DE](#optional-authentication-of-de)
-- [How to allow the DE to be accessible only by authenticated users](#how-to-allow-the-de-to-be-accessible-only-by-authenticated-users)
 - [OpenID connect Middleware for NSIWS](#openid-connect-middleware-for-nsiws)
   - [Intro](#intro)
   - [Setup](#setup)
@@ -28,12 +26,28 @@ keywords: [
 
 ---
 
-### Generic OpenID Compliance
-> Fully empowered since [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021) 
+> *Version history:*  
+> OpenID compliance fully empowered since [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
+> Allow to force DE authentication since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
+> Empower both anonymous and authenticated modes with [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020)  
+> Make DE authentication optional with [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
 
+### Generic OpenID Compliance
 .Stat Suite is based on OpenID-Connect authentication. Any OpenID-Connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purpose as well as an identity provider proxy for GitHub/GitLab.
 
-in `tenants.json` :
+example for a DLM scope in `tenants.json` :
+
+```json
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm",
+        "oidc": {
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app"
+        }
+```
+
+example for DE scope in `tenants.json` :
 
 ```json
       "de": {
@@ -46,7 +60,6 @@ in `tenants.json` :
         }
 ```
 
-
 **Notes:**
 - The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing).
 - The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token).
@@ -55,39 +68,29 @@ in `tenants.json` :
 ---
 
 ### Optional authentication of DE
-> Since the [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020), The Data Explorer now works in both anonymous and authenticated modes.
+The Data Explorer can be configured to **whether support authentication or be fully public (anonymous mode)**. Authentication requires a Provider and an URL (of the authentication server).  
+Today, the only tested and included provider to .Stat Suite is [Keycloak](https://www.keycloak.org/), but others can be added (OpenId compliant ones, and others can be tested too).
 
-> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020).  
-**WARNING:** this release will not break you DE instance but it will make it public, if not the case before, thus action is required (add `AUTH_PROVIDER` to keycloak while restarting) to avoid this.
+The authentication provider configuration is handled per tenant in `tenants.json` files in `config-data/configs` where each application, defined as `scopes`, can have a dedicated auth. configuration.
 
-The Data Explorer is public by default, but it can be configured to support authentication. Authentication requires a provider and an url (of the authentication server).  
-Today, the only tested and included provider to .Stat Suite is [Keycloak](https://www.keycloak.org/), but others can be added (OpenId compliant ones, and others can be tested).  
-Using authentication is critical and is thus configured at server level through 2 env. variables: `AUTH_PROVIDER` and `AUTH_SERVER_URL`. The authentication provider configuration per tenant is in `tenants.json` files in `config-data/configs` where each application, defined as `scopes`, could have a dedicated configuration (ie realm & clientId for Keycloak).
- 
-When provided, the `env.` variable **`AUTH_PROVIDER`** in your deployment process can be set to 'keycloak' and returns the expected log in mechanism and feature.  
-If **`AUTH_PROVIDER`** is not provided, DE is considered as 'public', and no request from the DE is made to any authentication provider. In addition, the 'Log in' feature in the DE header is not displayed.  
-By default, `AUTH_PROVIDER` is not provided.
-
----
-
-### How to allow the DE to be accessible only by authenticated users
-> Released in [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
-
-It is possible to allow an instance of the Data Explorer to be accessible **only** by authenticated users.  
-Considering an instance of the DE with a valid Authentication Provider as described above. In your `tenants.json`, if the `"keycloak"` (as an example of a valid auth. provider) entry has the parameter **`"required": true`**, then the DE is in a **strickly authentication mode**, meaning that any URL of this DE instance, when queried, will redirect first to the login page of the auth. provider for authentication (if not already authenticated).
-
-Example:
+**example:**  
+in `tenants.json`:
 
 ```json
-"keycloak": {
-  "realm": "demo",
-  "clientId": "stat-suite",
-  "required": true
-},
+      "de": {
+        "type": "de",
+        "label": "de",
+        "oidc": {
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app",
+          "required": false
+        }
 ```
 
-If `"required": false`, then the DE is accessible in the mode (public or public+authenticated) corresponding to your auth. provider configuration.  
-If `"required": true` and the auth. provider is not valid, then the DE will return a meaningful error message.
+**Rules:**
+- no `oidc` entry means **public (anonymous) DE**
+- `oidc` entry & `required` to 'false' means that the DE has **both anonymous and authenticated** access (potentially public and private data)
+- `oidc` entry & `required` to 'true' means that you are **required to login before using the DE** (as in DLM)
 
 **Note** that, even if the DE is only accessible by authenticated users, the shared views generated from it will still be publicly accessible. It is thus possible to disable the share option: see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#disabled-share-option).
 
