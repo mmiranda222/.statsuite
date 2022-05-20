@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 19, 2022](#may-19-2022)
 - [May 12, 2022](#may-12-2022)
 - [May 11, 2022](#may-11-2022)
 - [April 28, 2022](#april-28-2022)
@@ -91,6 +92,18 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### May 19, 2022
+**[Release .Stat Suite .NET 8.1.2](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/53#tab-issues)**
+> This release includes a patch version of the **core-transfer** and **xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#350](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/350) Incomplete cleanup of MappingSets or other things (memory cache issue).
+- [dotstatsuite-data-lifecycle-manager#269](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/269) Incorrect error message for AllowedCC violation.
 
 ---
 
