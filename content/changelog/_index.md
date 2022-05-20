@@ -97,7 +97,7 @@ ToC
 
 ### May 19, 2022
 **[Release .Stat Suite .NET 8.1.2](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/53#tab-issues)**
-> This release includes a patch version of the **core-transfer** and **xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx** services.  
+> This release includes a patch version of the **core-transfer** service.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
 
 patch changes:
