@@ -48,6 +48,7 @@
     1. create a **tag** `v<semver>` on master with a **release** (put the name of the gitlab release in optional release description)
         - a pipeline will create a docker image with the following tag: `10.0.1`
     1. create a **tag** `<name>` on master using the gitlab release name
+        - remove tags from docker images in docker hub to avoid duplicate with previous named tags
         - a pipeline will create a docker image with the following tag: `<name>`
     1. paste the tag link in the milestone description (releases row) and attached it to the milestone
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
