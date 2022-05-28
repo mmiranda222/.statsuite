@@ -40,6 +40,12 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ---
 
+![Thai National Statistics Office](/dotstatsuite-documentation/images/tnso-logo-th.png)
+
+**Thai National Statistics Office (TNSO)** [Statistics Sharing Hub](https://stathub.nso.go.th/)
+
+---
+
 ![Pacific Community](/dotstatsuite-documentation/images/logo-pc.png)
 
 **Pacific Community** [Pacific Data Hub](https://stats.pacificdata.org/#/)
