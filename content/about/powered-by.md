@@ -36,7 +36,7 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ![National Institute of Statistics and Economic Studies of the Grand Duchy of Luxembourg (STATEC)](/dotstatsuite-documentation/images/logo-statec.png)
 
-**STATEC** [Data Explorer](https://lustat.statec.lu/)
+**Luxembourg Statistics Portal powered by STATEC** [Data Explorer](https://lustat.statec.lu/)
 
 ---
 
