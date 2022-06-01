@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<Excel-Data-Description>
+  <Coord-Mapping Name='IPC_INS'
+          Dataflow='CPI_DF_T'
+          Agency='TN1'
+          Version='1.0'
+          ExcludeNulls='false'
+          IsActive='true'>
+    <Worksheets>
+      <Worksheet Name='indice_test' />
+    </Worksheets>
+    <Top-Left Coord='B13' />
+	<Bottom-Right Coord='I46' />
+    <Dimension Code="FREQ" Value='A' IsExpression='false'/>
+    <Dimension Code='REF_AREA' Value='TN' IsExpression='false'/>
+	<Dimension Code='PROD_TYPE' Coord='Cell(Row, 1)' />
+	<Dimension Code='IND_TYPE' Value='IPC' IsExpression='false'/>
+    <Dimension Code='BASE_PER' Value='2010'/>
+	 <Dimension Code='TIME_PERIOD' Coord='Cell(10, Column)' />
+
+  </Coord-Mapping>
+</Excel-Data-Description>
