@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://oecd.org/DotStatV8/EDD.xsd" xmlns="http://oecd.org/DotStatV8/EDD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="MatchType">
+    <xs:attribute name="Name" type="xs:string" use="optional" />
+    <xs:attribute name="Condition" type="xs:string" use="optional" />
+    <xs:attribute default="false" name="IsRegex" type="xs:boolean" use="optional" />
+    <xs:attribute default="false" name="IsExpression" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="CellRefenceType">
+    <xs:attribute name="Coord" type="xs:string" use="required" />
+    <xs:attribute default="false" name="IsExpression" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="DimensionType" mixed="true" >
+    <xs:complexContent>
+      <xs:extension base="CellValueType">
+        <xs:attribute name="Code" type="xs:string" use="required" />
+        <xs:attribute name="Value1" type="xs:string" use="optional" />
+        <xs:attribute name="Value2" type="xs:string" use="optional" />
+        <xs:attribute name="Value3" type="xs:string" use="optional" />
+        <xs:attribute name="Value4" type="xs:string" use="optional" />
+        <xs:attribute name="Value5" type="xs:string" use="optional" />
+        <xs:attribute name="Value6" type="xs:string" use="optional" />
+        <xs:attribute name="Value7" type="xs:string" use="optional" />
+        <xs:attribute name="Value8" type="xs:string" use="optional" />
+        <xs:attribute name="Value9" type="xs:string" use="optional" />
+        <xs:attribute name="Coord1" type="xs:string" use="optional" />
+        <xs:attribute name="Coord2" type="xs:string" use="optional" />
+        <xs:attribute name="Coord3" type="xs:string" use="optional" />
+        <xs:attribute name="Coord4" type="xs:string" use="optional" />
+        <xs:attribute name="Coord5" type="xs:string" use="optional" />
+        <xs:attribute name="Coord6" type="xs:string" use="optional" />
+        <xs:attribute name="Coord7" type="xs:string" use="optional" />
+        <xs:attribute name="Coord8" type="xs:string" use="optional" />
+        <xs:attribute name="Coord9" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="CellValueType">
+    <xs:attribute name="Value" type="xs:string" use="optional" />
+    <xs:attribute name="Coord" type="xs:string" use="optional" />
+    <xs:attribute default="true" name="IsExpression" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="AxisReferenceType">
+    <xs:attribute name="Index" type="xs:string" use="required" />
+    <xs:attribute default="false" name="IsExpression" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="CellConditonType">
+    <xs:attribute name="Coord" type="xs:string" use="optional" />
+    <xs:attribute name="Condition" type="xs:string" use="optional" />
+    <xs:attribute default="false" name="IsExpression" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:element name="Excel-Data-Description">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element maxOccurs="1" minOccurs="1" name="Coord-Mapping">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- Excel worksheets defenition from where data is extracted -->
+              <xs:element name="Worksheets" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Worksheet" type="MatchType" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <!-- Top left coordinate expression of data table -->
+              <xs:element name="Top-Left" type="CellRefenceType" minOccurs="1" maxOccurs="1"/>
+              <!-- Bottom right coordinate expression of data table -->
+              <xs:element name="Bottom-Right" type="CellRefenceType" minOccurs="1" maxOccurs="1"/>
+              <!-- Definition of dimensions -->
+              <xs:element name="Dimension" type="DimensionType" minOccurs="0" maxOccurs="unbounded"   />
+              <!-- Definition of observation level attributes -->
+              <xs:element name="ObsAttribute" type="DimensionType" minOccurs="0" maxOccurs="unbounded"   />
+              <!-- Definition of excel exclusions (Cells that won't produce coordinates with value) -->
+              <xs:element name="Exclude" minOccurs="0" maxOccurs="1" >
+                <xs:complexType>
+                  <xs:sequence maxOccurs="unbounded">
+                    <xs:element name="Row" type="AxisReferenceType"  minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element name="Column" type="AxisReferenceType" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element name="Cell" type="CellConditonType" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <!-- Optional defenition of the value column (if not defined taken from Top-Left/Top-Right column definition -->
+              <xs:element name="Data-Value" type="CellValueType" minOccurs="0"/>
+            </xs:sequence>
+            <!-- Name of mapping -->
+            <xs:attribute name="Name" type="xs:ID" use="required" />
+            <!-- Sdmx Dataflow Id -->
+            <xs:attribute name="Dataflow" type="xs:string" use="required" />
+            <!-- Sdmx Dataflow Agency -->
+            <xs:attribute name="Agency" type="xs:string" use="required" />
+            <!-- Sdmx Dataflow Version -->
+            <xs:attribute name="Version" type="xs:string" use="required" />
+            <!-- Should empty values be excluded from the final result -->
+            <xs:attribute default="false" name="ExcludeNulls" type="xs:boolean" use="optional" />
+            <!-- Is mapping active -->
+            <xs:attribute default="true" name="IsActive" type="xs:boolean" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
