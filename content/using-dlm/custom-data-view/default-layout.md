@@ -48,8 +48,8 @@ Use the following syntax when defining the annotations in the Dataflow or DSD de
 
 #### Exceptions
 
-* It is possible to use only one or two of the LAYOUT annotations, not all three of them, e.g. one dimension is defined on rows with `LAYOUT_ROW`,one dimension is defined on columns with `LAYOUT_COLUMN`, but no dimension is defined on `LAYOUT_ROW_SECTION`.  
-* several dimensions can be defined on the same axis, like in the syntax example above. The order of display in the table will reflect the order defind in the syntax.
+* It is possible to use only one or two of the LAYOUT annotations, not all three of them, e.g. one dimension is defined on rows with `LAYOUT_ROW`, one dimension is defined on columns with `LAYOUT_COLUMN`, but no dimension is defined on `LAYOUT_ROW_SECTION`.  
+* several dimensions can be defined on the same axis, like in the syntax example above. The order of display in the table will reflect the order defined in the syntax.
 
 #### Example
 You can find [here](https://gitlab.com/sis-cc/dotstatsuite-documentation/blob/master/content/OECD-AIR_EMISSIONS_DF-1.0.xml) a SDMX structure file of a Dataflow.
