@@ -110,11 +110,15 @@ Set a connection from DLM to specific external NSI web services using the native
 * in `dotstatsuite-config-data/<env>/configs/tenants.json`  
 
 ```json
-    "spaces": {
+{
+  "tenant": {
+      "spaces": {
       "ISTAT-DMM-demo": {
         "hasExternalAuth": true
-      },
+      }
     }
+  }
+}
 ```
 
 ---
