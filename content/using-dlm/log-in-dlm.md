@@ -58,4 +58,4 @@ The authentication with credentials is a non-mandatory option, because anonymous
 Once the 'Login' button is clicked, whether with credentials or anonymous, the system checks if the access request is successful or not. If successful, then the dialog box closes and the list of available artefacts is displayed (given that the user has selected / selects an artefact type).  
 In case of unsuccessful access request, the dialog box reappears and states "Unauthorized: please enter a valid username and password".
 
-**NOTE** that this mechanism requires to be configured in the `tenants.json` file (at the 'space' level) during the installation (see details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#external-source-with-native-nsiws-authentication)).
+**NOTE** that this mechanism requires to be configured in the `tenants.json` file (at the 'space' level) during the installation (see details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model/#external-source-with-native-nsiws-authentication)).
