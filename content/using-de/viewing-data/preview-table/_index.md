@@ -141,7 +141,7 @@ For more information see [attributes displayed as notes](https://sis-cc.gitlab.i
 
 **Side panel**  
 Displays an information icon '(i)' at the appropriate places. The related attribute and referential metadata values are displayed on mouse-over in an information side panel.  
-For more information see [information side panel](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#information-panel).  
+For more information see [information side panel](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel).  
 
 The following optional Data Explorer (DE) configuration parameters (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes) how to be configured) can be used to define the way to display attributes within the scope of a Data Explorer (note that the content represents examples):  
 ```json
