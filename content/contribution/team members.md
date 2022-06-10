@@ -9,7 +9,6 @@ weight: 110
 - Aleksei Arhipov [@Aleksei-oecd](https://gitlab.com/aleksei-oecd)
 - Balazs Szilagyi [@balazs82](https://gitlab.com/balazs82)
 - Dimitri Roncoli [@RedPDRoncoli](https://gitlab.com/RedPDRoncoli)
-- Marco Oksman [@moksman](https://gitlab.com/moksman)
 - Mike Velluet [@mike.velluet](https://gitlab.com/mike.velluet)
 - Nicolas Briemant [@nicolas-briemant](https://gitlab.com/nicolas-briemant)
 - Pedro Carranza [@pedroacarranza](https://gitlab.com/pedroacarranza)
