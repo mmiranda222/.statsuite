@@ -81,6 +81,8 @@ Based on the original placement of all dimensions that are finally combined into
 - Column: if at least some of those dimensions are placed in Columns and none in Rows or Row Sections
 - Cell: if at least some of those dimensions are placed in Rows or Row Sections and some others are placed in Columns
 
+When a related non-mandatory UoM attribute is attached at observation level (and thus to all dimensions) but the data message contains only one single attribute value, then a display is still not generally possible in the sub-header. This is because the nature of the attribute type implies that there isn't any guarantee that all observations are actually using the provided attribute value, as some observations might not have that attribute value defined. Our high performance objectif for the table generation doesn't allow for looping over all observations to verify that no observation misses that attribute value.
+
 ---
 
 ### Examples
@@ -142,8 +144,9 @@ The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_C
 
 See also: http://de-demo.siscc.org/vis?dataquery=Q.Y.AU.W0........XDC..N.&period=%2C2017-Q1&frequency=Q&locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=NAMAIN_ALL&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=on&layout[rows]=STO%2CACTIVITY%2CPRICES&layout[header]=TABLE_IDENTIFIER&layout[sections]=REF_SECTOR%2CINSTR_ASSET%2CEXPENDITURE%2CACCOUNTING_ENTRY&term=uom&start=0  
   
-Note: The dimension Measure had a single selection and is placed in the header. The dimensions Country and UnitMeasure were placed on rows by the user and the dimension Adjustment was placed on columns by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the UoM label.  
-Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
+**Notes**:  
+- The dimension Measure had a single selection and is placed in the header. The dimensions Country and UnitMeasure were placed on rows by the user and the dimension Adjustment was placed on columns by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the UoM label.  
+- "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
 
 ---
 
