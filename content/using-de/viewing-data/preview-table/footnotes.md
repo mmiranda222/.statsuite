@@ -13,7 +13,7 @@ keywords: [
   'Case 3: the attribute value is the same for one dimension in the rows of the table', '#case-3-the-attribute-value-is-the-same-for-one-dimension-in-the-rows-of-the-table',
   'Case 4a: the attribute value is the same for all cells in any column of the table', '#case-4a-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table',
   'Case 4b: the attribute value is the same for all cells in any column of the table', '#case-4b-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table',
-  'Case 5: the attribute value is different between the cells in the table', '#case-5-the-attribute-value-is-different-between-the-cells-in-the-table',
+  'Case 5: the attribute values are or may be different between the cells in the table', '#case-5-the-attribute-values-are-or-may-be-different-between-the-cells-in-the-table',
 ]
 ---
 
@@ -27,7 +27,7 @@ keywords: [
   - [Case 3: the attribute value is the same for one dimension in the rows of the table](#case-3-the-attribute-value-is-the-same-for-one-dimension-in-the-rows-of-the-table)
   - [Case 4a: the attribute value is the same for all cells in any column of the table](#case-4a-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
   - [Case 4b: the attribute value is the same for all cells in any column of the table](#case-4b-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
-  - [Case 5: the attribute value is different between the cells in the table](#case-5-the-attribute-value-is-different-between-the-cells-in-the-table)
+  - [Case 5: the attribute values are or may be different between the cells in the table](#case-5-the-attribute-values-are-or-may-be-different-between-the-cells-in-the-table)
 
 ---
 
@@ -113,7 +113,7 @@ These different levels of display are represented in the following cases.
 
 ![Case 3](/dotstatsuite-documentation/images/using-de-footnotes-case3-with-1or2+dim-relationship.PNG)
 
-#### Case 5: the attribute value is or may be different between the cells in the table
+#### Case 5: the attribute values are or may be different between the cells in the table
 **When** cases 1 to 4 do not apply,  
 **Then** the `*` icon is shown in the **cell** corresponding to the specific attribute value (thus, cells without an attribute value do not show the `*` icon).
 
