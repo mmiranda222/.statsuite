@@ -136,11 +136,11 @@ Directly displays the IDs of related coded attribute values (with maximal 4 char
 For more information see [coded attributes displayed as flags](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)
 
 **Notes**  
-Displays a star icon '*' at the appropriate places. The related attribute values are displayed on mouse-over in a tooltip bubble.  
-For more information (including on **at which level the star icon '*' is displayed**) see [attributes displayed as notes](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)
+Displays a star icon `*` at the appropriate places. The related attribute values are displayed on mouse-over in a tooltip bubble.  
+For more information (including on **at which level the star icon `*` is displayed**) see [attributes displayed as notes](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)
 
 **Side panel**  
-Displays an information icon '(i)' at the appropriate places. The related attribute and referential metadata values are displayed on mouse-over in an information side panel.  
+Displays an information icon `(i)` at the appropriate places. The related attribute and referential metadata values are displayed on mouse-over in an information side panel.  
 For more information see [information side panel](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel).  
 
 The following optional Data Explorer (DE) configuration parameters (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes) how to be configured) can be used to define the way to display attributes within the scope of a Data Explorer (note that the content represents examples):  
@@ -176,13 +176,10 @@ The following optional dataflow (DF) annotations can be used to define the way t
 (4) The DF annotation `LAYOUT_FLAG` fully overwrites the list in DE configuration `flags` and instead defines which attributes are displayed as `flag`.  
 (3) The DF annotations `UNIT_MEASURE_CONCEPTS`, `DRILLDOWN_CONCEPTS` and `DRILLDOWN` define which attributes are displayed differently due to other (already existing, being implemented or planned) features, even if they have been listed in any of the previously mentioned settings.  
 (2) The DF annotation `NOT_DISPLAYED` defines which attributes are **not displayed** at all even if they have been listed in any of the previously mentioned setting.  
-(1) All attributes not defined by the previously listed settings are indicated by an information icon '(i)' and shown in the `information` side panel. 
+(1) All attributes not defined by the previously listed settings are indicated by an information icon `(i)` and shown in the `information` side panel. 
 
 **Rule's exception for Flags**  
 If the value ID of an attribute that is defined as flag is longer than 4 characters, then this value will not be displayed as a flag but as a note.
-
-#### The following display rules are applied with ascending prevalence for any attribute
-
 
 ---
 

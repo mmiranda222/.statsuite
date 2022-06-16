@@ -184,17 +184,17 @@ Example for an attribute value returned at dataset level (there can of course on
 
 ```json
 "attributes": {
-"dataset": [ <-- physical attachment within data message which can be at a different (lower) level than defined in the Data Structure
-{
-"id": "PUBL_PUBLIC",
-"name": "Source publication (public)",
-"values": [
-{
- "id": "302",
- "name": "IBN 302"
-}
-]
-}
-]
+  "dataset": [ <-- physical attachment within data message which can be at a different (lower) level than defined in the Data Structure
+    {
+      "id": "PUBL_PUBLIC",
+      "name": "Source publication (public)",
+      "values": [
+        {
+          "id": "302",
+          "name": "IBN 302"
+        }
+      ]
+    }
+  ]
 }
 ```
