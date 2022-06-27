@@ -59,7 +59,7 @@ In addition, whenever the Excel cursor is located on a cell within a data or ref
 - ["Get data": "Change Selection"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#change-selection): to change the selection of the current table
 - ["Refresh": "Current Sheet"/"All Sheets"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#refresh): to refresh the table data
 - The source information of the table data:
-  - "Dataset Code": ID of the given dataflow as `AgencyId:Dataflow Id(Version)`, 
+  - "Dataset Code": the data identification, for SDMX-based data in the form `Agency:Id(Version)`, 
   - "Source": the data space name,
   - "Last extraction date": Date and time of last data retrieval
   This information automatically updates accordingly whenever the user moves the cursor to a different data or referential metadata table.
