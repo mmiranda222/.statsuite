@@ -45,6 +45,8 @@ The following example contains the list of steps required to deploy a **specific
 ---
 
 ### Pre-requisites
+> Microsoft .NET Core 6.0.\* required for source code installation since [June 28, 2022 Release](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-28-2022) 
+
 Make sure that the windows machine which will be used in this installation process, has all the following components already installed, and that you have all the required information.
 
 - **IIS Web server**  
