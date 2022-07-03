@@ -34,6 +34,12 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ---
 
+![International Labor Organization (ILO)](/dotstatsuite-documentation/images/logo-ilo.png)
+
+**International Labor Organization (ILO)** [ILO Data Explorer](https://data.ilo.org/)
+
+---
+
 ![National Institute of Statistics and Economic Studies of the Grand Duchy of Luxembourg (STATEC)](/dotstatsuite-documentation/images/logo-statec.png)
 
 **Luxembourg Statistics Portal powered by STATEC** [Data Explorer](https://lustat.statec.lu/)
