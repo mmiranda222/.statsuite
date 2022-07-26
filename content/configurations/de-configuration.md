@@ -291,20 +291,20 @@ Facets are **localised**, thus you must add the translated name of the excluded 
 > Available since [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020).  
 
 Exclude some specific CategorySchemes from the search index (**by ID**). Browsing and free-text search will not return related dataflows when related Categories are used as search/browsing criteria.  
-**Note:** Always all dataflows categorised in Categories of the CategoryScheme(s) defined for indexing of the data source will be indexed, see documentation: [What is indexed?](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed). If those dataflows are also categorised in other CategorySchemes not useful for the Data Explorer than those CategorySchemes can be completely excluded from the search index and thus be hidden in the Data Explorer.  
+**Note:** Dataflows categorised in Categories of the CategoryScheme(s) defined for indexing of the data source will be indexed, see documentation: [What is indexed?](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed). If those dataflows are also categorised in other CategorySchemes not useful for the Data Explorer than those CategorySchemes can be completely excluded from the search index and thus be hidden in the Data Explorer through this environment variable.  
 
-* in source code of dotstatsuite-sdmx-faceted-search `src/server/params/default.js`
+Technical usage:
+* defined through an environment variable at sfs server instance level: `EXCLUDED_CATEGORYSCHEME_FACETS`
+* expected value is an array of ids: `['OECDCS1', 'TOPICS']`
 
-```json
-    module.exports = {
-        ...
-        excludedCategorySchemeFacets: ["categoryschemeID"],
-        ...
-    };
-```  
+*Note:* This configuration is tenant-independent and thus applied to all tenants of an instance.
 
-**Note:** This configuration is tenant-independent and thus applied to all tenants of an instance. It is currently configured within the source code. Implementers who wish to modify this setting, need to maintain their own source code branch or inject this setting before building the application.    
-
+Sample:
+- dataflow 1 is categorised in CS1 and CS2 and dataflow 2 is categorised in CS2
+- only CS1 is defined in the data source (in tenants.json)
+- dataflow 1 is indexed but dataflow 2 is not
+- dataflow 1 can be found through CS1 and CS2 (CS2 is a facet)
+- if `EXCLUDED_CATEGORYSCHEME_FACETS` is `['CS2']` then no result will be return upon CS2 search (and facet CS2 won't exist)
 
 ---
 
