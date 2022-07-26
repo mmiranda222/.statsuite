@@ -228,7 +228,7 @@ Also, in this example, the ‘oecd’ tenant is the default one ("default": true
             "color": "#0549ab",
             "backgroundColor": "#b7def6",
             "label": "staging:SIS-CC-stable",
-            "transferUrl": "https://transfer-demo.siscc.org/1.2",
+            "transferUrl": "https://transfer-demo.siscc.org/2",
             "dataExplorerUrl": "https://de-qa.siscc.org"
           },
           {
@@ -236,7 +236,7 @@ Also, in this example, the ‘oecd’ tenant is the default one ("default": true
             "color": "#0549ab",
             "backgroundColor": "#e2f2fb",
             "label": "staging:SIS-CC-reset",
-            "transferUrl": "https://transfer-demo.siscc.org/1.2",
+            "transferUrl": "https://transfer-demo.siscc.org/2",
             "dataExplorerUrl": "https://de-qa.siscc.org"
           },
           {
