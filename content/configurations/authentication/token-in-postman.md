@@ -22,7 +22,8 @@ Click on the **Get New Access Token** button that will open a dialog box for con
 * **Client ID** => Id of a client in your Keycloak setup
 * **Scope** => which resource you want to provide (email openid profile)
 
-**Authorize using browser** should also be ticked if required to open keycloak authentication from a web page.
+**Authorize using browser** should be unchecked, use a url that is authorised by keyclaok (e.g your data-explorer url).
+If you tick the box, you have to authorise the url defined by postman in your keycloak.
 
 ![Postman get new token fields](/dotstatsuite-documentation/images/postman-step1.png)
 
