@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--NSI Web Service v7.13.0.0-->
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+    <message:Header>
+        <message:ID>IDREF187</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2020-08-05T09:05:13.4638139+00:00</message:Prepared>
+        <message:Sender id="Unknown"/>
+        <message:Receiver id="Unknown"/>
+    </message:Header>
+    <message:Structures>
+        <structure:HierarchicalCodelists>
+            <structure:HierarchicalCodelist id="HCL_TEST" agencyID="TEST" version="1.0" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00" isFinal="false">
+                <common:Name xml:lang="en">Reference area hierarchical Codelist</common:Name>
+                <structure:IncludedCodelist alias="AREA">
+                    <Ref id="CL_AREA" version="1.0" agencyID="TEST" package="codelist" class="Codelist"/>
+                </structure:IncludedCodelist>
+                <structure:Hierarchy id="CONT_EN" leveled="false">
+                    <common:Name xml:lang="en">Hierarchy by continents - World first</common:Name>
+                    <common:Description xml:lang="en">Hierarchy by continents - World first</common:Description>
+                    <structure:HierarchicalCode id="W" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="W"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="A" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="E" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="E"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="F" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="F"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="O" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="O"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="S" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="S"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="W_X" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="W_X"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="A" validFrom="2021-01-01T00:00:00" validTo="2021-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="A"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="A2" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A2"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A3">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A3"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A4">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A4"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A5">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A5"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A7">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A7"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A8">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A8"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A8_M">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A8_M"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A9">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A9"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A_X">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A_X"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A_O">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A_O"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="A2" validFrom="2021-01-01T00:00:00" validTo="2021-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="A2"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="BMU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="BMU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CAN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CAN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GRL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GRL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SPM">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SPM"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="USA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="USA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="OECD" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="OECD"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="AUS">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="AUS"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="AUT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="AUT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="BEL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="BEL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CAN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CAN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CHL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CHL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="COL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="COL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CRI">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CRI"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CZE">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CZE"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="DNK">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="DNK"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="EST">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="EST"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FIN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FIN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FRA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FRA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="DEU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="DEU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GRC">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GRC"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="HUN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="HUN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ISL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ISL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="IRL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="IRL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ISR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ISR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ITA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ITA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="JPN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="JPN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="KOR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="KOR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LVA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LVA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LTU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LTU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LUX">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LUX"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="MEX">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="MEX"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NLD">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NLD"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NZL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NZL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NOR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NOR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="POL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="POL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="PRT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="PRT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVK">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVK"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ESP">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ESP"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SWE">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SWE"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CHE">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CHE"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="TUR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="TUR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GBR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GBR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="USA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="USA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="EA00" validFrom="2021-01-01T00:00:00" validTo="2021-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="EA00"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="BEL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="BEL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="DEU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="DEU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="IRL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="IRL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ESP">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ESP"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FRA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FRA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ITA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ITA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LUX">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LUX"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NLD">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NLD"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="AUT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="AUT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="PRT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="PRT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FIN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FIN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GRC">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GRC"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CYP">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CYP"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="MLT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="MLT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVK">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVK"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="EST">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="EST"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LVA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LVA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LTU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LTU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                </structure:Hierarchy>
+                <structure:Hierarchy id="CONT_FR" leveled="false">
+                    <common:Name xml:lang="fr">Hierarchie par continent - OECD d'abord</common:Name>
+                    <common:Description xml:lang="fr">Hierarchie par continent - OECD d'abord</common:Description>
+                    <structure:HierarchicalCode id="OECD" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="OECD"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="AUS">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="AUS"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="AUT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="AUT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="BEL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="BEL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CAN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CAN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CHL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CHL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="COL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="COL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CRI">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CRI"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CZE">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CZE"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="DNK">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="DNK"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="EST">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="EST"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FIN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FIN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FRA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FRA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="DEU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="DEU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GRC">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GRC"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="HUN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="HUN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ISL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ISL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="IRL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="IRL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ISR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ISR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ITA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ITA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="JPN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="JPN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="KOR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="KOR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LVA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LVA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LTU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LTU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LUX">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LUX"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="MEX">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="MEX"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NLD">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NLD"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NZL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NZL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NOR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NOR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="POL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="POL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="PRT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="PRT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVK">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVK"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ESP">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ESP"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SWE">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SWE"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CHE">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CHE"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="TUR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="TUR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GBR">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GBR"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="USA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="USA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="A" validFrom="2021-01-01T00:00:00" validTo="2021-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="A"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="A2" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A2"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A3">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A3"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A4">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A4"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A5">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A5"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A7">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A7"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A8">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A8"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A8_M">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A8_M"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A9">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A9"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A_X">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A_X"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="A_O">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A_O"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="A2" validFrom="2021-01-01T00:00:00" validTo="2021-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="A2"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="BMU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="BMU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CAN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CAN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GRL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GRL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SPM">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SPM"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="USA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="USA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="EA00" validFrom="2021-01-01T00:00:00" validTo="2021-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="EA00"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="BEL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="BEL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="DEU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="DEU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="IRL">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="IRL"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ESP">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ESP"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FRA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FRA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="ITA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="ITA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LUX">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LUX"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="NLD">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="NLD"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="AUT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="AUT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="PRT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="PRT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="FIN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="FIN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="GRC">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="GRC"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVN">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVN"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="CYP">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="CYP"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="MLT">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="MLT"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="SVK">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="SVK"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="EST">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="EST"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LVA">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LVA"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="LTU">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="LTU"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                    <structure:HierarchicalCode id="W" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                        <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                        <structure:CodeID>
+                            <Ref id="W"/>
+                        </structure:CodeID>
+                        <structure:HierarchicalCode id="A" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="A"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="E" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="E"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="F" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="F"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="O" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="O"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="S" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="S"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                        <structure:HierarchicalCode id="W_X" validFrom="2022-01-01T00:00:00" validTo="2030-12-31T00:00:00">
+                            <structure:CodelistAliasRef>AREA</structure:CodelistAliasRef>
+                            <structure:CodeID>
+                                <Ref id="W_X"/>
+                            </structure:CodeID>
+                        </structure:HierarchicalCode>
+                    </structure:HierarchicalCode>
+                </structure:Hierarchy>
+            </structure:HierarchicalCodelist>
+        </structure:HierarchicalCodelists>
+    </message:Structures>
+</message:Structure>
