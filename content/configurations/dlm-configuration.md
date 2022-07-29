@@ -105,7 +105,8 @@ Define the types of SDMX structural artefacts selectable in the DLM 'Filter by t
 ---
 
 ### Upload size limit
-Define the file size limitation when uploading data or strutures files using the DLM user interface.  
+
+Define the file size limitation when uploading data or strutures files **applied by the DLM user interface** as follow:    
 Provided in number of bites, the upload file size limit is usually set to 30MB by default (like in the example below).  
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
@@ -114,4 +115,8 @@ Provided in number of bites, the upload file size limit is usually set to 30MB b
 "uploadSizeLimit": 30000000
 ```
 
-**Note** that this configuration parameter only concerns the JavaScript front-end part of the DLM application, and another limitation parameter is set for the .Stat CORE services for the submitted files. More information to be found [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#maximum-size-of-the-submited-sdmx-messages).
+This configuration parameter only concerns the JavaScript front-end part of the DLM application. 
+
+Specific configurations are also necessary also for the underlying .Stat CORE services (transfer and NSI). The hosting web server(s) (e.g. IIS, Kestrel, ..) need(s) to be configured to accept http requests with bodies of the required size. All web servers have their own defaults, e.g. the .Net Core builtin web server, called Kestrel, has a default maximum request body size of 30,000,000 bytes, which is approximately 28.6 MB.
+
+More information on how to make this configuration in Kestrel (on the example of the NSI web service) can be found [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#maximum-size-of-the-submited-sdmx-messages). For other web server technologies, please consult their specific documentation.

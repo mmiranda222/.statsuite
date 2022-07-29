@@ -1,48 +1,59 @@
 ---
-title: "Upload data structures"
+title: "Upload structures from an SDMX file (xml)"
 subtitle: 
 comments: false
 weight: 240
 keywords: [
-  'Upload data structure file', '#upload-data-structure-file',
+  'Upload structure file', '#upload-structure-file',
   'Notifications', '#notifications',
-  'Size limit notification', '#size-limit-notification',
+  'Maximum upload file size', '#maximum-upload-file-size',
   'Successful, warning, multi-status, and error', '#successful-warning-multi-status-and-error',
 ]
 ---
 
 #### Table of Content
-- [Upload data structure file](#upload-data-structure-file)
+- [Upload structure file](#upload-structure-file)
 - [Notifications](#notifications)
-  - [Size limit notification](#size-limit-notification)
+  - [Maximum upload file size](#maximum-upload-file-size)
   - [Successful, warning, multi-status, and error](#successful-warning-multi-status-and-error)
 
 ---
 
-Data structures can be uploaded using the main menu feature “Upload structures” available in the top banner of the DLM application.  
+### Upload structure file
+
+Structures can be uploaded using the main menu feature “Upload structures” available in the top banner of the DLM application.  
 
 ![dlm-upload-structure-1-banner](/dotstatsuite-documentation/images/dlm-upload-structure-1-banner.png)
 
-The "Upload structures" feature supports the SDMX-ML 2.1 format with a limit size of 30MB. The SDMX-ML file can contain one or several data structure artefact(s).
-
-### Upload data structure file
+The SDMX-ML file can contain one or several data structure artefact(s).
 
 The required actions are to drop the data structure file in the dashed area, and select one or several destination dataspace(s). The user can also use the "+ Add files" option to insert the XML file (this option will open the file explorer).
+
+To upload a structure file:
+* Choose the structure file to be uploaded using the `(+) Add file...` button that displays a file open dialog box or by dragging & dropping the strucure file in the dashed area. (1)
+* Then select one or several target data space(s).
+* Click on the "Upload" button to launch the data file upload (2)
 
 ![dlm-upload-structure-2-AddFiles](/dotstatsuite-documentation/images/dlm-upload-structure-2-AddFiles.png)
 
 ![dlm-upload-structure-2-BeforeUpload](/dotstatsuite-documentation/images/dlm-upload-structure-2-BeforeUpload.png) 
 
-After selecting the file and dataspace(s), clicking on the "Upload" button launches the data structure file upload and a contextual notification will appear at the bottom of the screen.
+(1) All SDMX-ML structure formats are supported. The size of the uploaded file is limited (30MB by default). For more information, see [Maximum upload file size](#maximum-upload-file-size).    
+
+(2) The structure upload responds with a message that appears at the bottom of the screen and indicates the outcome of the upload.
 
 ---
 
 ### Notifications
 
-#### Size limit notification
-When dragging or adding in the dashed area a file with a size **higher than 30MB**, a notification appears next to the filename:
+#### Maximum upload file size
+If the upload file size is **bigger than 30MB** (default configuration), then a notification appears next to the filename:
 
 ![dlm-upload-structure-3-Notifications](/dotstatsuite-documentation/images/dlm-upload-structure-3-TooBigFileSizeErrorMsg.png)
+
+It is possible to compress the structure file using the 'zip' format, and upload the compressed file. In this case the size limitation acts on the zipped file.
+
+The file size limit is configurable by an administrator. Please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#upload-size-limit) for more information.
 
 #### Successful, warning, multi-status, and error
 Each time the user performs an upload (or transfer) action on structural objects in .Stat DLM, a comprehensive message with appropriate details is returned. All returned messages are defined as one of the following contextual notification:

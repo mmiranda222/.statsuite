@@ -6,7 +6,9 @@ weight: 270
 
 ---
 
-**Data** or **referential metadata** can be uploaded using the main menu function "upload data".  
+**Data** or **referential metadata** can be uploaded by using the main menu feature "Upload data & referential metadata" available from the top banner of the DLM.
+
+![dlm-upload-data-banner](/dotstatsuite-documentation/images/dlm-upload-data-sdmx-banner.png)
 
 The upload supports the following **file formats**:  
 - [SDMX data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/) for observation and attribute values only
