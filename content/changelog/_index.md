@@ -91,6 +91,8 @@ ToC
 - [Release 10.07.2018](#release-10072018)
  -->
 
+![Subscribe](/dotstatsuite-documentation/images/subscribe-logo.png) **<a href="http://eepurl.com/h6T5Z9" target="_blank">Subscribe!</a>**
+
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
