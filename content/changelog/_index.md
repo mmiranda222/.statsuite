@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [August 2, 2022](#august-2-2022)
 - [July 4, 2022](#july-4-2022)
 - [May 19, 2022](#may-19-2022)
 - [May 12, 2022](#may-12-2022)
@@ -93,6 +94,35 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### August 2, 2022
+**[Patch release .Stat Suite .NET "almond"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/55#tab-issues)**
+> This release includes a **patch** version of the **core-transfer** and **sdmxri-nsi-ws** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+> **Disclaimer:**  
+> When upgrading to this patch version, we strongly recommend to **execute the transfer service method `init/allMappingsets`** ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))).  
+> This method must be called manually and as the very last step of the deployment process of the new version, after
+> - all components are deployed/updated, and
+> - the DBUP tool has been run to update the databases, and
+> - the maapi.net tool has been run to upgrade the structure (mapping store) databases.  
+
+patch changes:
+
+- [dotstatsuite-config#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/41) **Disable** automatic creation of categories from categorisations. [Documentation](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#create-automatic-category-from-categorisation)
+- [dotstatsuite-core-data-access#90](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/90) DbUp throws "Grantor does not have GRANT permission." error.
+- [dotstatsuite-core-transfer#407](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/407) Sometimes email notifications are not received in DevSecOps *(part2)*.
+- [dotstatsuite-core-transfer#406](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/406) `init/dataflow` method under certain conditions results in an error.
+- [dotstatsuite-core-transfer#403](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/403) `/init/dataflow` method doesn't re-create Actual Content Constraint anymore.
+- [dotstatsuite-core-transfer#400](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/400) Repair permission test in CleanUpOrphanedCodelists.
+- [dotstatsuite-core-transfer#386](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/386) Error when uploading data : "Invalid attempt to read from column ordinal '4'. With CommandBehavior.SequentialAccess, you may only read from column ordinal '5' or greater."
+- [dotstatsuite-core-transfer#383](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/383) "An item with the same key has been already added" error when cleaning up mapping set of a dataflow from the DLM.
+- [dotstatsuite-core-transfer#382](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/382) "A non-backward-compatible change has been detected" error after deleting and re-creating DSD.
+- [dotstatsuite-core-transfer#379](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/379) Sometimes email notifications are not received.
+- [dotstatsuite-core-transfer#378](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/378) Correct/complement log entry for dsd-cleanup.
+- [dotstatsuite-core-config#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/issues/6) Enhance 'DuplicatedRowsInStagingTable' error message.
 
 ---
 
