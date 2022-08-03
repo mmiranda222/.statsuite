@@ -103,7 +103,7 @@ ToC
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
 
 > **Disclaimer:**  
-> When upgrading to this patch version, we strongly recommend to **execute the transfer service method `init/allMappingsets`** ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db))).  
+> When upgrading to this patch version, we strongly recommend to **execute the transfer service method `init/allMappingsets`** ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-versioninitallmappingsets-this-function-creates-mappingsets-of-all-dataflows-found-in-the-mappingstore-db)).  
 > This method must be called manually and as the very last step of the deployment process of the new version, after
 > - all components are deployed/updated, and
 > - the DBUP tool has been run to update the databases, and
@@ -111,7 +111,7 @@ ToC
 
 patch changes:
 
-- [dotstatsuite-config#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/41) **Disable** automatic creation of categories from categorisations. [Documentation](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#create-automatic-category-from-categorisation)
+- [dotstatsuite-config#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/41) **Disable** automatic creation of categories from categorisations. ([Documentation](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#create-automatic-category-from-categorisation))
 - [dotstatsuite-core-data-access#90](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/90) DbUp throws "Grantor does not have GRANT permission." error.
 - [dotstatsuite-core-transfer#407](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/407) Sometimes email notifications are not received in DevSecOps *(part2)*.
 - [dotstatsuite-core-transfer#406](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/406) `init/dataflow` method under certain conditions results in an error.
