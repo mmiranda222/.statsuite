@@ -122,6 +122,7 @@ patch changes:
 - [dotstatsuite-core-transfer#382](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/382) "A non-backward-compatible change has been detected" error after deleting and re-creating DSD.
 - [dotstatsuite-core-transfer#379](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/379) Sometimes email notifications are not received.
 - [dotstatsuite-core-transfer#378](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/378) Correct/complement log entry for dsd-cleanup.
+- [dotstatsuite-core-transfer#374)(https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/374) `/init/dataflow` method de-initialises some dataflows.
 - [dotstatsuite-core-config#6](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/-/issues/6) Enhance 'DuplicatedRowsInStagingTable' error message.
 
 ---
