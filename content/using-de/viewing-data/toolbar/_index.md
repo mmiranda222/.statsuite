@@ -108,7 +108,49 @@ The full (unfiltered) data contained in the online request behind a table (or ch
 This format does not contains header or footer, and the downloaded full data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
 
 #### Additional downloads of external resources
-Additional downloads of external resources can be added to a dataflow and be made available in the Download option. See the [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/) related to this option.
+> Released in [December 02, 2019 Release .Stat Suite JS milestone 7](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-02-2019)
+
+Additional links to external resources can be defind per dataflow, which then become available in the "Download" feature of the Data Explorer visualisation page.
+
+To do so, use localised SDMX `EXT_RESOURCE` annotations at the dataflow level to define one or several links to files (of any type) that are stored externally (outside .Stat Suite storage).
+
+Being a localised annotation, it is possible to define a different resource per language. The Data Explorer proposes the download of the resources defined for the current locale of the Data Explorer. The annotation texts contain up to 3 strings, separated by a pipe ("|") character:  
+- the to be displayed label of the link
+- the valid, publicly accessible link to the external resource
+- a valid, publicly accessible link to a to be displayed icon image (optional)
+
+**Syntax**  
+
+```
+"annotations": [{
+		"type": "EXT_RESOURCE",
+		"text": "All data in Excel|http://www.ilo.org/ilostat-files/Documents/Excel/MBI_535_EN.xlsx|https://www.ilo.org/ilostat/dotstatsuite-documentation/images/downloadexcel-24.png",
+		"texts": {
+			"en": "All data in Excel|http://www.ilo.org/ilostat-files/Documents/Excel/MBI_535_EN.xlsx|https://www.ilo.org/ilostat/dotstatsuite-documentation/images/downloadexcel-24.png",
+			"fr": "Toutes les données en Excel|http://www.ilo.org/ilostat-files/Documents/Excel/MBI_535_FR.xlsx|https://www.ilo.org/ilostat/dotstatsuite-documentation/images/downloadexcel-24.png"
+		}
+	},{
+		"type": "EXT_RESOURCE",
+		"text": "Explanatory information in pdf|http://www.ilo.org/ilostat-files/Documents/Metadata/Ref_MD_EN.pdf",
+		"texts": {
+			"en": "Explanatory information in pdf|http://www.ilo.org/ilostat-files/Documents/Metadata/Ref_MD_EN.pdf",
+			"fr": "Informations explicatives en pdf|http://www.ilo.org/ilostat-files/Documents/Metadata/Ref_MD_FR.pdf"
+    }
+	}]
+```
+
+See the [DLM documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/) how to interactively define new external resources.
+
+**Example**
+
+In this example, the dataflow artefact contains 3 localised (English and French) `EXT_RESOURCE` annotations for 3 external resources, together with their labels and links to icons to be displayed.
+
+![Example of EXT_RESOURCE structure annotation](/dotstatsuite-documentation/images/EXTERNAL-RESOURCES-01.png)
+
+This will result in proposing the 3 external resources as additional dataflow download options in the DE visualisation page:
+
+![Example of EXT_RESOURCE annotation download](/dotstatsuite-documentation/images/EXTERNAL-RESOURCES-02.png)
+
 
 #### Chart as picture (PNG)
 > Released in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020)  
