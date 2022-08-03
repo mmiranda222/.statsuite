@@ -44,7 +44,7 @@ The data table view is the default view when the user arrives from a search resu
 
 Chart types depend on the configuration of the DE instance, or on the type of data (e.g. viewing data in a timeline chart is feasible only with the appropriate time dimension). For more information about charts and chart types, go to [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/).
 
-![Toolbar](/dotstatsuite-documentation/images/de-toolbar-chart.png)
+![Toolbar](/dotstatsuite-documentation/images/de-toolbar-chart.jpg)
 
 ---
 
@@ -150,7 +150,6 @@ In this example, the dataflow artefact contains 3 localised (English and French)
 This will result in proposing the 3 external resources as additional dataflow download options in the DE visualisation page:
 
 ![Example of EXT_RESOURCE annotation download](/dotstatsuite-documentation/images/EXTERNAL-RESOURCES-02.png)
-
 
 #### Chart as picture (PNG)
 > Released in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020)  
