@@ -20,7 +20,6 @@ keywords: [
 ---
 
 ### Upload data file
-
 The "Upload data & referential metadata" feature supports uploading data files in **[SDMX-ML](https://github.com/sdmx-twg/sdmx-ml)** and **[SDMX-CSV](https://github.com/sdmx-twg/sdmx-csv/blob/master/data-message/docs/sdmx-csv-field-guide.md)** file formats.  
 
 As **pre-requisites**, uploading data must be performed **only after** having uploaded the targeted dataflow, and your data file content must include (according to the SDMX standard of the format used) the full identification of the dataflow (agency, id, version) for which data are uploaded. Therefore it is not necessary to indicate the target dataflow. Only the target data space needs to be selected.
