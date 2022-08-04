@@ -7,7 +7,11 @@ keywords: [
   'Data space names', '#data-space-names',
   'Data space colors', '#data-space-colors',
   'Data space InsertNewItems parameter', '#data-space-insertnewitems-parameter',
-  'List of SDMX artefact types', 'list-of-sdmx-artefact-types',
+  'Use data space as internal space or external space', '#use-data-space-as-internal-space-or-external-space',
+  'Auto-authenticate to external source', '#auto-authenticate-to-external-source',
+  'Use native NSI WS authentication for external source', '#use-native-nsi-ws-authentication-for-external-source',
+  'Define data preview per space', '#define-data-preview-per-space',
+  'List of SDMX artefact types', '#list-of-sdmx-artefact-types',
   'Upload size limit', '#upload-size-limit'
 ]
 
@@ -17,6 +21,10 @@ keywords: [
 - [Data space names](#data-space-names)
 - [Data space colors](#data-space-colors)
 - [Data space InsertNewItems parameter](#data-space-insertnewitems-parameter)
+- [Use data space as internal space or external space](#use-data-space-as-internal-space-or-external-space)
+- [Auto-authenticate to external source](#auto-authenticate-to-external-source)
+- [Use native NSI WS authentication for external source](#use-native-nsi-ws-authentication-for-external-source)
+- [Define data preview per space](#define-data-preview-per-space)
 - [List of SDMX artefact types](#list-of-sdmx-artefact-types)
 - [Upload size limit](#upload-size-limit)
 
@@ -75,6 +83,97 @@ When the parameter is set to:
       value: "true"
 ```
 Then it is possible for instance to add a new code in a codelist without modifying its Agency/ID/Version.
+
+---
+
+### Use data space as internal space or external space
+>Changed in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
+
+Internal spaces in the DLM are those that allow for data imports or copies from other spaces. For this, a related transfer service is required and the  **`transferUrl`** parameter instructs the DLM to automatically show that data space as internal, automatically authenticate against that space with the common auth token and use the given transfer service instance for data imports. Otherwise, the data space is shown as external.
+
+The **`transferUrl`** parameter is to be set in the `dotstatsuite-config-data/<env>/configs/tenants.json` file under a DLM `scope` for a given `space` to the rest root URL of the related transfer service.
+
+```json
+    "scopes": {
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm",
+        "oidc": {
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "client_id": "app"
+        },
+        "spaces": [
+          {
+            "id": "staging:SIS-CC-stable",
+            "color": "#0549ab",
+            "backgroundColor": "#b7def6",
+            "label": "staging:SIS-CC-stable",
+            "transferUrl": "https://transfer-demo.siscc.org/2",
+            "dataExplorerUrl": "https://de-qa.siscc.org"
+          },
+```
+
+---
+
+### Auto-authenticate to external source
+>Released in [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
+
+In case a .Stat CORE data space is external because its definition doesn't define a transfer service to be used for imports, but it uses the same identity provider that is defined for the internal spaces, then the **`authenticateToRemoteURL`** parameter instructs the DLM to automatically authenticate against that source with the common auth token as well as to allow the transfer web service defined for an internal space (when called through one of the `/import/sdmxFile` or `/validate/sdmxFile` methods) to authenticate against that data source with that same auth token.
+
+The **`authenticateToRemoteURL`** parameter is to be set to `true` in the `dotstatsuite-config-data/<env>/configs/tenants.json` file under a DLM `scope` for a given `space`.
+
+```json
+    "scopes": {
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm"
+        },
+        "spaces": [
+          {
+            "id": "staging:SIS-CC-reset",
+            "color": "#0549ab",
+            "backgroundColor": "#e2f2fb",
+            "label": "staging:SIS-CC-reset",
+            "dataExplorerUrl": "https://de-qa.siscc.org",
+            "authenticateToRemoteURL": true
+          }
+      }
+```
+
+---
+
+### Use native NSI WS authentication for external source
+>Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
+
+In case an external data source is accessible through an SDMX web service based on Eurostat's SDMX-RI "NSI" component (so called NSI web service), with the **`hasExternalAuth`** parameter the DLM can be instructed to authenticate against that web service using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA).
+
+The user will have to enter the required credentials through a specific dialog box, as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication).
+
+For more information on how to set the **`hasExternalAuth`** parameter, please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model/#use-native-nsi-ws-authentication-for-external-source)
+
+---
+
+### Define data preview per space
+With the **`dataExplorerUrl`** parameter the DLM is instructed to allow previewing structures and data with the Data Explorer for an internal or external DLM data space.
+
+The **`dataExplorerUrl`** parameter is to be set in the `dotstatsuite-config-data/<env>/configs/tenants.json` file under a DLM `scope` for a given `space` to the URL of the Data Explorer to be used.
+
+```json
+    "scopes": {
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm"
+        },
+        "spaces": [
+          {
+            "id": "staging:SIS-CC-reset",
+            "color": "#0549ab",
+            "backgroundColor": "#e2f2fb",
+            "label": "staging:SIS-CC-reset",
+            "dataExplorerUrl": "https://de-qa.siscc.org"
+          }
+      }
+```
 
 ---
 
