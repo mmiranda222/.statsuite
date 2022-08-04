@@ -7,6 +7,7 @@ weight: 110
 
 #### .Stat Suite developers
 - Aleksei Arhipov [@Aleksei-oecd](https://gitlab.com/aleksei-oecd)
+- Amal Lahmar [@amallahmar](https://gitlab.com/amallahmar)
 - Balazs Szilagyi [@balazs82](https://gitlab.com/balazs82)
 - Dimitri Roncoli [@RedPDRoncoli](https://gitlab.com/RedPDRoncoli)
 - Mike Velluet [@mike.velluet](https://gitlab.com/mike.velluet)

@@ -111,7 +111,7 @@ major changes:
 
 - **Solr version upgrade** (see [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/56#mandatory-operational-changelog))
 - env. variable **`SDMX_RESOURCE_NAME` removed** (see [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/56#mandatory-operational-changelog))
-- [dotstatsuite-data-explorer#563](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/563) Loading of custom fonts. **Fonts in DE are not hardcoded anymore**, you need to explicitely define the fonts in the `settings.json` with the new **’linkTags’** parameter. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#theme-settings-custom-fonts)).  
+- [dotstatsuite-data-explorer#563](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/563) Loading of custom fonts. **Fonts in DE are not hardcoded anymore**, you need to explicitly define the fonts in the `settings.json` with the new **’linkTags’** parameter. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#theme-settings-custom-fonts)).  
 *Example from the DE sis-cc demo site:*  
 ```json
 "app": {
