@@ -5,7 +5,7 @@ comments: false
 weight: 2200
 keywords: [
   'Introduction and prerequisite', '#introduction-and-prerequisite',
-  'Advanced hierarchies in filter and table display', '#advanced-hierarchies-in-filter-and-table-display',
+  'Advanced hierarchies in filters and table display', '#advanced-hierarchies-in-the-filters-and-table-display',
 ]
 ---
 
@@ -13,7 +13,7 @@ keywords: [
 
 #### Table of Content
 - [Introduction and prerequisite](#introduction-and-prerequisite)
-- [Advanced hierarchies in filter and table display](#advanced-hierarchies-in-filter-and-table-display)
+- [Advanced hierarchies in the filters and table display](#advanced-hierarchies-in-the-filters-and-table-display)
 
 ---
 
@@ -36,7 +36,7 @@ The (comma-separated) link(s) between the dimension and the hierarchy in the hie
 
 ---
 
-### Advanced hierarchies in filter display
+### Advanced hierarchies in the filters and table display
 In the Data Explorer context, these advanced hierarchies will overwrite the hierarchy and order of codes as defined in the original codelists in a specific context (dsd/dataflow+dimension+language). For example, for a specific dimension the original hierarchy defined in the "REF_AREA" codelist can be replaced by hierarchies better representing OECD/non-OECD countries, countries by continents, overseas territories displayed under their parent country, or in a flat list in an alphabetical order, etc.
 
 Since these hierarchies allow for more complex parent-client relationships than the original codelists do, especially one child can have several parents (e.g France is part of World, of OECD countries, of EU countries and of EA countries, etc.), the filters and table views account for this. A code attached to several parents will be shown as child of each of the parents, except in table views when a parent might not be available in the data message.
