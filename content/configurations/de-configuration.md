@@ -21,8 +21,8 @@ keywords: [
   'Default time period boundaries and default time period selection', '#default-time-period-boundaries-and-default-time-period-selection',
   'Support of Last-N-Observations feature', '#support-of-last-n-observations-feature',
   'Support of Partial-References feature', '#support-of-partial-references-feature',
-  'Maximum number of observations in tables and charts', '#maximum-number-of-observations-in-tables-and-charts',
-  'Maximum number of cells in table', '#maximum-number-of-cells-in-table',
+  'Maximum number of observations in tables and charts (deprecated)', '#maximum-number-of-observations-in-tables-and-charts-deprecated',
+  'Maximum number of observations in tables and charts and of cells in tables', '#maximum-number-of-observations-in-tables-and-charts-and-of-cells-in-tables',
   'Preferred scale attribute', '#preferred-scale-attribute',
   'Decimals rule attribute', '#decimals-rule-attribute',
   'Coded attributes returned as flags', '#coded-attributes-returned-as-flags',
@@ -55,8 +55,8 @@ keywords: [
 - [Default time period boundaries and default time period selection](#default-time-period-boundaries-and-default-time-period-selection)
 - [Support of Last-N-Observations feature](#support-of-last-n-observations-feature)
 - [Support of Partial-References feature](#support-of-partial-references-feature)
-- [Maximum number of observations in tables and charts](#maximum-number-of-observations-in-tables-and-charts)
-- [Maximum number of cells in table](#maximum-number-of-cells-in-table)
+- [Maximum number of observations in tables and charts (deprecated)](#maximum-number-of-observations-in-tables-and-charts-deprecated)
+- [Maximum number of observations in tables and charts and of cells in tables](#maximum-number-of-observations-in-tables-and-charts-and-of-cells-in-tables)
 - [Preferred scale attribute](#preferred-scale-attribute)
 - [Decimals rule attribute](#decimals-rule-attribute)
 - [Coded attributes returned as flags](#coded-attributes-returned-as-flags)
@@ -432,7 +432,9 @@ If the data space parameter `supportsReferencePartial` is set to `true`, it mean
 
 ---
 
-### Maximum number of observations in tables and charts
+### Maximum number of observations in tables and charts (deprecated)
+> The `range` parameter is **unused** since [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022). **Instead, the [`cellsLimit` parameter](#maximum-number-of-observations-in-tables-and-charts-and-of-cells-in-tables) is used to auto-generate the range header, e.g. [0, 2999] if the web service supports this header.**
+
 0-based range of observations returned by the SDMX web service for the display in the tables and charts.  
 The purpose of this configuration is to protect from too large selections and consequent unavoidable freezing of the .Stat Data Explorer application in the client's web browser.  
 If set to [0, 0], then only the first observation is returned. If set to [0, 2499], then the first 2500 observations are returned.  
@@ -449,10 +451,9 @@ This configuration also impacts the EXCEL download but does not impact the CSV d
 
 ---
 
-### Maximum number of cells in table
-Integer to limit the number of cells being displayed in the data table.  
-Even though the number of observations returned by the *SDMX* web service is already limited, in an unfortunate extreme layout all observations could be placed on the table's diagonal, and the final table cell number would be the square of the number of observations.  
-E.g. if the number of observations was limited to 2500, then the resulting maximum table size would be 6 250 000, which is far too much for the web browsers to digest. The purpose of this configuration is thus to protect from too large tables and consequent unavoidable freezing of the .Stat Data Explorer application in the client's web browser.  
+### Maximum number of observations in tables and charts and of cells in tables
+Integer to limit the number of observations returned by the SDMX web service for tables and charts as well as the number of cells being displayed in the data table.  
+The number of table cells required is always above the number of observations returned by the SDMX web service because additional cells are required for dimension names, dimension value names, metadata availability and sometimes also for empty cells that correspond to dimension combinations for which no data exists. In order to avoid building too large tables that could freeze the browser screen, the limit for the number of observations returned by the SDMX web service also applies to the number of cells being displayed.
 Standard browser performance tests revealed that number of table cells above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
 This configuration also impacts the EXCEL download but does not impact the CSV download options.  
 
@@ -460,9 +461,13 @@ This configuration also impacts the EXCEL download but does not impact the CSV d
 
 ```json
   "table": {
-        "cellsLimit": 6000
+        "cellsLimit": 3000
   }
 ```
+
+In order to limit the number of observations returned by the SDMX web service, the `cellsLimit` parameter is used by the DE to auto-generate the 0-based range header, e.g. [0, 2999], if the web service supports this header. If it doesn't then the number of observations is obtained from the response data message content.  
+
+Note that the Data Explorer displays a special warning message whenever the limit is exceeded. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data).
 
 ---
 
