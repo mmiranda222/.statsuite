@@ -17,7 +17,8 @@ keywords: [
   'List of artefacts', '#list-of-artefacts',
   'Display Options', '#display-options',
   'Content of the list', '#content-of-the-list',
-  'Export', '#export',
+  'Export structures', '#export-structures',
+  'Export data and referential metadata', '#export-data-and-referential-metadata',
 ]
 ---
 
@@ -35,7 +36,8 @@ keywords: [
 - [List of artefacts](#list-of-artefacts)
   - [Display Options](#display-options)
   - [Content of the list](#content-of-the-list)
-- [Export](#export)
+- [Export structures](#export-structures)
+- [Export data and referential metadata](#export-data-and-referential-metadata)
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-1.png)
 
@@ -173,17 +175,40 @@ In this case, the DLM will display the **number of series** instead of observati
 
 ---
 
-### Export
-Each result from the list can be exported/downloaded using the corresponding hamburger menu feature.
-
-**Export data structure artefact**  
+### Export structures
+Each data structure artefact from the list can be exported/downloaded using the corresponding hamburger menu feature.  
 A data structure artefact can be downloaded in .xml format:
 * without referenced structures, or
 * with all referenced structures *(e.g. a DSD with all its referenced codelists, content constraint, dataflow, category scheme, etc)*.
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-11.png)
 
-**Export data**  
-Data associated to a dataflow can be downloaded, from the list of dataflows, in .xml or in .csv format.
+---
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-12.png)
+### Export data and referential metadata
+> Ref. metadata export introcued with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)
+
+Data and/or referential metadata associated to a dataflow can be downloaded, from the list of dataflows.
+
+The **'Export data & referential metadata'** option in the context menu of the dataflow, as well as in the multiple selections menu above the dataflow list, allows to download available contents in various flavours:
+
+![dlm export data](/dotstatsuite-documentation/images/dlm-export-options1.png)
+
+User can:
+- Download both data and referential metadata in distinguished .csv files
+- Download data only in .csv file
+- Download data only in .xml file
+- Download referential metadata only in .csv file
+
+![dlm export data](/dotstatsuite-documentation/images/dlm-export-options2.png)
+
+User can also choose to export a subset of the data and/or referential metadata by entering the corresponding SDMX query syntax under the **'Partial data query'** tick box option.
+
+![dlm export data](/dotstatsuite-documentation/images/dlm-export-options3.png)
+
+**Note:** For referential metadata partial queries, the webservice currently supports only a single value per dimension. Therefore, whenever the user wants to export referential metadata and enters a partial query, the content of the query is checked and if the user has entered more than one item per dimension (e.g. the query filter contains a + sign, e.g. AU+DE....A), then the DLM will display an error message.
+
+Once the user clicks on **'export'**, the popup window closes and the requested file(s) is/are generated. If, for one of the options made by the user, there is no data or referential metadata found, then the DLM displays an orange warning arrow icon with a message on mouse over *'no data found'* or *'no referential metadata found'*
+
+![dlm export data](/dotstatsuite-documentation/images/dlm-export-options4.png)
+
