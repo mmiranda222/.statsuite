@@ -218,7 +218,7 @@ Whenever a complete row section is empty, it is automatically excluded from the 
 
 ### Horizontal scroll
 >*Version history:*  
-> Optimized in order to simplify the general page behavior with [August 3, 2022 Release .Stat Suite JS 'quark'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)
+> Optimized in order to simplify the general page behavior with [August 3, 2022 Release .Stat Suite JS 'quark'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
 > Enhanced with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
 > Introduced in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)
 
