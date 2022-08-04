@@ -11,6 +11,7 @@ keywords: [
   'Display of observations values', '#display-of-observations-values',
   'Display of additional information', 'display-of-additional-information',
   'Display of hierarchical dimensions', '#display-of-hierarchical-dimensions',
+  'Display of advanced hierarchies', '#display-of-advanced-hierarchies',
   'Management of empty columns', '#management-of-empty-columns',
   'Management of empty rows', '#management-of-empty-rows',
   'Management of empty row sections', '#management-of-empty-row-sections',
@@ -32,6 +33,7 @@ keywords: [
 - [Display of observations values](#display-of-observations-values)
 - [Display of additional information](#display-of-additional-information)
 - [Display of hierarchical dimensions](#display-of-hierarchical-dimensions)
+- [Display of advanced hierarchies](#display-of-advanced-hierarchies)
 - [Management of empty columns](#management-of-empty-columns)
 - [Management of empty rows](#management-of-empty-rows)
 - [Management of empty row sections](#management-of-empty-row-sections)
@@ -195,6 +197,11 @@ In case of long titles (two lines or more), then all lines are indented (all lin
 In cases when a child with an observation value is displayed in the table without its contextual parent, meaning e.g. when the parent has no data for the same selection, then the parent name (if the data message is not constrainted to exclude this parent) is displayed as prefix of the child followed by `">" 'greater than'`, e.g. **·  Seeland > Kallnach**
 
 ![Table with hierarchical dimensions](/dotstatsuite-documentation/images/DE_table_hierarchy.png)
+
+---
+
+### Display of advanced hierarchies
+See https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies/
 
 ---
 

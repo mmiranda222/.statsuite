@@ -141,6 +141,13 @@ The main advantage of the Annotation is its flexibility as all properties can be
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
 </tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 201px;">HIER_CONTEXT</td>
+<td style="height: 23px; width: 1471.44px;">Indication to use (a) specific hierarchy/ies (from Hierarchical Codelists (HCL)) for the display of (a) specific dimension(s) in the context of a dataflow or DSD<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies">full specs</a></td>
+<td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
+<td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
+<td style="height: 23px; width: 106px;">&nbsp;&lt;component id&gt;:&lt;HCL agency&gt;:&lt;HCL id&gt;(&lt;HCL version&gt;).&lt;hierarchy id&gt;,&lt;component id&gt;:&lt;HCL agency&gt;:&lt;HCL id&gt;(&lt;HCL version&gt;).&lt;hierarchy id&gt;,...</td>
+</tr>
 </tbody>
 </table>
 
