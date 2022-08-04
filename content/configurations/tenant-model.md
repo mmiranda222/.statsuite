@@ -6,7 +6,7 @@ weight: 71
 keywords: [
   'Tenant model definition', '#tenant-model-definition',
   'Specific accept header per data space', '#specific-accept-header-per-data-space',
-  'External source with native NSIWS authentication', '#external-source-with-native-nsiws-authentication',
+  'Use native NSI WS authentication for external source', '#use-native-nsi-ws-authentication-for-external-source',
   'Example of a tenant', '#example-of-a-tenant',
   'Example of a tenant deployment strategy', '#example-of-a-tenant-deployment-strategy',
   'Additional specifications', '#additional-specifications',
@@ -24,7 +24,7 @@ keywords: [
 #### Table of content
 - [Tenant model definition](#tenant-model-definition)
 - [Specific accept header per data space](#specific-accept-header-per-data-space)
-- [External source with native NSIWS authentication](#external-source-with-native-nsiws-authentication)
+- [Use native NSI WS authentication for external source](#use-native-nsi-ws-authentication-for-external-source)
 - [Example of a tenant](#example-of-a-tenant)
 - [Example of a tenant deployment strategy](#example-of-a-tenant-deployment-strategy)
 - [Additional specifications](#additional-specifications)
@@ -102,12 +102,14 @@ Define a specific **http accept header** for a given dataspace that will overrid
 
 ---
 
-### External source with native NSIWS authentication
+### Use native NSI WS authentication for external source
 >Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
 
-Set a connection from DLM to specific external NSI web services using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA). When the config parameter **`hasExternalAuth`** is set to 'true' for a specific 'space' of an external source using the native NSI authenticaiton mechanism, then accessing it from the DLM will trigger a credential authentication request (see the functional specifications [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication)).
+In case an external data source is accessible through an SDMX web service based on Eurostat's SDMX-RI "NSI" component (so called NSI web service), with the **`hasExternalAuth`** parameter the DLM and the DE can be instructed to authenticate against that web service using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA).
 
-* in `dotstatsuite-config-data/<env>/configs/tenants.json`  
+The user will have to enter the required credentials through a specific dialog box, as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication).
+
+The **`hasExternalAuth`** parameter is to be set to `true` in the `dotstatsuite-config-data/<env>/configs/tenants.json` file for a given tenant `space`.
 
 ```json
 {
@@ -219,7 +221,7 @@ Also, in this example, the ‘oecd’ tenant is the default one ("default": true
         "type": "dlm",
         "label": "dlm",
         "oidc": {
-          "authority": "OECDhttps://keycloak.siscc.org/auth/realms/OECD",
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
           "client_id": "app"
         },
         "spaces": [
@@ -236,7 +238,7 @@ Also, in this example, the ‘oecd’ tenant is the default one ("default": true
             "color": "#0549ab",
             "backgroundColor": "#e2f2fb",
             "label": "staging:SIS-CC-reset",
-            "transferUrl": "https://transfer-demo.siscc.org/2",
+            "authenticateToRemoteURL": true,
             "dataExplorerUrl": "https://de-qa.siscc.org"
           },
           {
