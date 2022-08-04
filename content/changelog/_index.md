@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [August 3, 2022](#august-3-2022)
 - [August 2, 2022](#august-2-2022)
 - [July 4, 2022](#july-4-2022)
 - [May 19, 2022](#may-19-2022)
@@ -96,6 +97,71 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+
+---
+
+### August 3, 2022
+
+**[Release .Stat Suite JS "quark"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/56#tab-issues)**
+> This **major** release includes a new version of all JS services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+major changes:
+
+- **Solr version upgrade** (see [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/56#mandatory-operational-changelog))
+- env. variable **`SDMX_RESOURCE_NAME` removed** (see [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/56#mandatory-operational-changelog))
+- [dotstatsuite-data-explorer#563](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/563) Loading of custom fonts. **Fonts in DE are not hardcoded anymore**, you need to explicitely define the fonts in the `settings.json` with the new **’linkTags’** parameter. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#theme-settings-custom-fonts)).  
+*Example from the DE sis-cc demo site:*  
+```json
+"app": {
+    "linkTags": [
+      "https://fonts.googleapis.com/css?family=Roboto+Slab:400",
+      "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700"
+    ]
+  }
+```
+
+minor changes:
+
+- [dotstatsuite-data-explorer#149](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/149) Full support of **hierarchical codelists**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies/))
+- [dotstatsuite-data-explorer#735](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/735) Make the data warning message more obvious. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/)) 
+- [dotstatsuite-data-explorer#636](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/636) Improve the data view warning message. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/))
+- [dotstatsuite-data-explorer#706](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/706) **Bypass search result page** if selected home facet value only contains 1 dataflow. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#homepage-facets))
+- [dotstatsuite-data-explorer#460](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/460) Complement search result details by adding dimension list. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#result-content))
+- [dotstatsuite-data-explorer#751](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/751) Visualisation page and table layout enhancements when scrolling. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#horizontal-scroll))
+- [dotstatsuite-data-lifecycle-manager#188](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/188) **(Re-)index manually a dataflow in Search Index from within DLM**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/publish-data/#re-index-a-data-view-dataflow))
+- [dotstatsuite-data-lifecycle-manager#241](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/241) Simplify data upload by removing the file format button. ([Update documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/))
+- [dotstatsuite-data-lifecycle-manager#260](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/260) **Export referential metadata** from the DLM. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#export-data-and-referential-metadata))
+- [dotstatsuite-data-lifecycle-manager#254](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/254) Add a feature to **attach an MSD to a DSD**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/link-dsd-msd/))
+- [dotstatsuite-data-lifecycle-manager#257](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/257) DLM dump feature to include referential metadata. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dump-mode/))
+- [dotstatsuite-data-lifecycle-manager#263](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/263) Transfer of referential metadata from external spaces.
+- [dotstatsuite-data-lifecycle-manager#275](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/275) Add space configuration for new transfer parameter `authenticateToRemoteURL`. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#auto-authenticate-to-external-source))
+- [dotstatsuite-sdmx-faceted-search#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/96) Allow the DLM to connect to sfs for log information retrievals (Part 1/2).
+- [dotstatsuite-data-lifecycle-manager#292](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/292) Execute the `/init/dataflow` method when adding MSD link to DSD. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/link-dsd-msd/))
+- [dotstatsuite-data-explorer#771](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/771) Change "Unit of measure" label in DE tables to "Combined unit of measure".
+- [dotstatsuite-share#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/45) Allow adding `HFROM` tag in header of requests to SMTP server for share emails.
+- [dotstatsuite-d3-charts#12](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/12) Make visible the most right tick label in scatterplots.
+- [dotstatsuite-data-explorer#717](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/717) Dataflow with TIME_PERIOD time dimension and a YEAR dimension cannot be visualised.
+- [dotstatsuite-data-explorer#712](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/712) Always left align *(rtl: right)* string values in table cells.
+- [dotstatsuite-config#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/38) Adding an **azureProvider** as an option for Azure blob storage of config files.
+- [dotstatsuite-sdmx-faceted-search#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/64) Remove the `excludedCategorySchemeFacets` parameter from sfs.
+- [dotstatsuite-data-lifecycle-manager#290](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/290) *(Refactoring)* Replace deprecated lodash dependency with ramda.
+- [dotstatsuite-data-explorer#755](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/755) *(Refactoring)* Generate the DE table only when requested.
+- [dotstatsuite-sdmx-faceted-search#107](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/107) *(Refactoring)* Request failed with status code 404 (sfs.json).
+
+patch changes:
+
+- [dotstatsuite-data-explorer#781](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/781) When using 'EST' timezone on the client, the table displays an incorrect month for `TIME_PERIOD`.
+- [dotstatsuite-d3-chart#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/11) Missing chart labels.
+- [dotstatsuite-data-explorer#761](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/761) Flags should not be forced to be uppercase.
+- [dotstatsuite-data-explorer#759](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/759) Dataset level attributes not displayed in the Overview page.
+- [dotstatsuite-data-lifecycle-manager#276](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/276) Space configuration "hasExternalAuth" not working correctly.
+- [dotstatsuite-data-explorer#742](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/742) Unit multiplier not displayed in the table cells.
+- [dotstatsuite-data-explorer#741](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/741) Fix application crash when Codelist values do not have ids.
+- [dotstatsuite-data-explorer#733](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/733) Unit multiplier incorrect displayed.
+- [dotstatsuite-data-explorer#672](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/672) All annotation settings get lost when "Clear(ing) all filters".
+- [dotstatsuite-data-explore#738](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/738) & [dotstatsuite-data-explorer#744](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/744) "Whoops, something went wrong on our side" errors.
 
 ---
 
