@@ -14,8 +14,8 @@ keywords: [
   'Management of empty columns', '#management-of-empty-columns',
   'Management of empty rows', '#management-of-empty-rows',
   'Management of empty row sections', '#management-of-empty-row-sections',
-  'Vertical scroll and freezing table header and Rows section rows', '#vertical-scroll-and-freezing-table-header-and-rows-section-rows',
-  'Horizontal scroll and freezing row headers', '#horizontal-scroll-and-freezing-row-headers',
+  'Horizontal scroll', '#horizontal-scroll',
+  'Vertical scroll', '#vertical-scroll',
   'Scroll back arrows', '#scroll-back-arrows', 
   'Horizontal merged column header cells', '#horizontal-merged-column-header-cells',
   'Highlighted cells, rows and columns', '#highlighted-cells-rows-and-columns',
@@ -35,8 +35,8 @@ keywords: [
 - [Management of empty columns](#management-of-empty-columns)
 - [Management of empty rows](#management-of-empty-rows)
 - [Management of empty row sections](#management-of-empty-row-sections)
-- [Vertical scroll and freezing table header and Rows section rows](#vertical-scroll-and-freezing-table-header-and-rows-section-rows)
-- [Horizontal scroll and freezing row headers](#horizontal-scroll-and-freezing-row-headers)
+- [Horizontal scroll](#horizontal-scroll)
+- [Vertical scroll](#vertical-scroll)
 - [Scroll back arrows](#scroll-back-arrows)
 - [Horizontal merged column header cells](#horizontal-merged-column-header-cells)
 - [Highlighted cells, rows and columns](#highlighted-cells-rows-and-columns)
@@ -216,27 +216,28 @@ Whenever a complete row section is empty, it is automatically excluded from the 
 
 ---
 
-### Vertical scroll and freezing table header and Rows section rows
-If the table cannot vertically fit on the available screen then the screen should allow vertical scrolling (but infinite dynamic scroll is not impemented).  
-While vertically scrolling, the table grid header rows do not scroll but are frozen.
-Also the Row sections rows stay sticky on the top of the table while scrolling and as long the corresponding child rows are shown on the screen.
-
-Table header and Row section row freezing is disabled when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
-
-![DE table vertical scrolling](/dotstatsuite-documentation/images/de-table-vertical-scroll.gif)
-
----
-
-### Horizontal scroll and freezing row headers
+### Horizontal scroll
 >*Version history:*  
+> Optimized in order to simplify the general page behavior with [August 3, 2022 Release .Stat Suite JS 'quark'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)
 > Enhanced with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
 > Introduced in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)
 
-When scrolling horizontally, the table header (title and subtitle) is frozen on the left side of the browser window, and the toolbar menu is frozen in the middle of the browser window.  
-The row header(s) and the row section header(s) are frozen on the left side of the browser window when scrolling horizontally.  
-It/they move(s) to the left when scrolling horizontally until reaching the right border of the browser window and stick(s) there, unless there is not enough space for the remaining data columns (e.g. mobile mode), in which case it/they keep(s) scrolling.
+If the table cannot horizontally fit on the available screen, then the screen allows horizontal scrolling.  
+When scrolling horizontally, only the filter area and the table move. The page header, page footer and the toolbar menu positions are frozen. The table header (title and subtitle), row header column(s) and the row section header(s) move only until reaching the edge of the browser window (they are defined as "css-sticky"), unless there is not enough space for the remaining data columns, in which case it/they keep(s) individually scrolling as much as possible. The table footer position is frozen.
+
+Freezing table parts is not available when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
 
 ![DE table horizontal scrolling](/dotstatsuite-documentation/images/de-table-horizontal-scroll.gif)
+
+---
+
+### Vertical scroll
+If the table cannot vertically fit on the available screen, then the screen allows vertical scrolling (but infinite dynamic scroll is not implemented).  
+When scrolling vertically, the whole page content scrolls but the column header row(s) and the row section header(s) move only until reaching the edge of the browser window (as they are defined as "css-sticky") and the row section header row(s) stop(s) scrolling before covering the column header row(s).
+
+Freezing table parts is not available when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+
+![DE table vertical scrolling](/dotstatsuite-documentation/images/de-table-vertical-scroll.gif)
 
 ---
 
