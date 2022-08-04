@@ -62,6 +62,8 @@ In cases when the localised *SDMX* Concept names for Time Period and Frequency a
 
 ![overriden time period & frenquency names](/dotstatsuite-documentation/images/time-period-4.png)
 
+See the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/common-features/#how-special-dimensions-are-identified) on how time and frequency dimensions are identified.
+
 ---
 
 ### Last N Periods
