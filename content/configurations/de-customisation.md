@@ -11,6 +11,7 @@ keywords: [
   'Theme settings: how to override mixins', '#theme-settings-how-to-override-mixins',
   'Theme settings: palette', '#theme-settings-palette',
   'Theme settings: first loader', '#theme-settings-first-loader',
+  'Theme settings: custom fonts', '#theme-settings-custom-fonts',
   'Site logo', '#site-logo',
   'Homepage background image', '#homepage-background-image',
   'Localised common site logos', '#localised-common-site-logos',
@@ -33,6 +34,7 @@ keywords: [
 - [Theme settings: how to override mixins](#theme-settings-how-to-override-mixins)
 - [Theme settings: palette](#theme-settings-palette)
 - [Theme settings: first loader](#theme-settings-first-loader)
+- [Theme settings: custom fonts](#theme-settings-custom-fonts)
 - [Site logo](#site-logo)
 - [Homepage background image](#homepage-background-image)
 - [Localised common site logos](#localised-common-site-logos)
@@ -271,6 +273,52 @@ To override the first loader (spinner) color, when the application is not yet lo
   stroke: #ff00ff;
 }
 ```
+
+---
+
+### Theme settings: custom fonts
+> Since [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022), DE fonts are not hardcoded anymore.
+
+**Disclaimer:** DE fonts are not harcoded, you need to use the settings **'linkTags'** to load explicitely the fonts. By default, the fonts of the browser will be used.
+
+Additionally, there are currently two ways of loading fonts.
+
+1) The first approach is to provide **stylesheet links** in the `settings.json` file with defined "font-face" inside.
+
+e.g. in settings.json  
+```json
+{
+  "app": {
+    "linkTags": [
+      "https://fonts.googleapis.com/css?family=Roboto+Slab:400",
+      "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700"
+    ]
+  }
+}
+```
+
+2) The second approach is to directly use the `styles.css` file and **define your own "font-face"**.  
+Using the proprety "src", your can set a local path or an URL.
+
+e.g. in styles.css  
+```css
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/siscc/data-explorer/fonts/Roboto_Slab/RobotoSlab-400.woff2) format('woff2');
+  src: url(https://fonts.gstatic.com/s/robotoslab/v23/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmb2Rj.woff2) format('woff2');
+}
+```
+
+You can also import a .css file inside the `styles.css`, although we do not recommend it, because imported .css files defer the loading of the included resource until the file is fetched.
+
+We recommend using a dynamic provider like 'Google WebFonts' for the following reasons: 
+  - better performance (speed)
+  - It avoids the "flash of unstyled content" problem
+  - All browsers are supported
+  - Different languages are supported regarding the client's computer characters (Latin, Vietnamese... )
+  - The API provides a transparent update.
 
 ---
 
