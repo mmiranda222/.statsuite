@@ -72,20 +72,23 @@ Dimension values of a dataflow are indexed only if there are data available for 
 ### How facets are used
 #### Homepage facets
 > *Version history:*  
+> Bypass search result page exception with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
 > Improved the design of selectable second-level with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
 > Selectable second-level introduced in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
 
-The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service.  
-By configuration (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-auto-expanded-homepage-facet)), one facet can be expanded by default at page launch.
+The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service. By configuration (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-auto-expanded-homepage-facet)), one facet can be automatically expanded by default at page launch.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-2.png)
 
 Each facet, when opened, presents a selectable root-level of facet values together with a non-selectable second-level facet values. The root-level and second-level facet values represent the available values for all dataflows currently being indexed.  
-It is possible to make the individual second-level homepage facet values clickable by configuration (See more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values). In this case, each selectable second-level facet value is presented on a new line as a bullet list.
+It is possible to make the individual second-level homepage facet values clickable by configuration (See more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values)). In this case, each selectable second-level facet value is presented on a new line as a bullet list.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-bullet-list.png)
 
 The free text search and the navigation through pre-defined facets are exclusive and result systematically in a new search discarding any previously made search selections.
+
+**Exception**  
+If a facet value contains **only one single indexed dataflow**, then selecting that facet value will bypass the search result and directly display the data viualisation page. 
 
 #### Facets on the search result page
 The facets shown in the search result page are fully dependent on the current search context.  
