@@ -47,6 +47,7 @@ The following information is displayed for each search result:
 1. Default display of **basic information** (collapsed mode)  
 * The localised dataflow name (or its ID if no localised dataflow name) which is also a link to open the table data preview; this link is a query taking the search terms into account.  
 * The localised dataflow description if exists; it can be shortened if too long.
+* The localied list of dataflow dimensions (in the order of definition) that have more than one dimension value with real data (according to actual data availability) separated by comma,
 * The dataflow dimensions name when search terms are found as hits  
 
 2. Display of **extended information** (expanded mode)  
