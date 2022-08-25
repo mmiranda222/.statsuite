@@ -328,3 +328,18 @@ schedule-mssql-staging-0|mssql|staging|Every day between 3:00 AM and 4:00 AM|14 
 schedule-redis-qa-0|redis|qa|Every day between 3:00 AM and 4:00 AM|14 days|
 schedule-redis-staging-0|redis|staging|Every day between 3:00 AM and 4:00 AM|14 days|
 schedule-postgresql-0|postgresql|qa (also used for staging)|Every day between 3:00 AM and 4:00 AM|14 days|
+
+## GCP logs
+
+|namespace|service (container name)|logname|
+|---|---|---|
+|qa|nsi-reset|QA_NSI_RESET|
+|qa|dbup-reset-structure|-|
+|qa|nsi-stable|QA_NSI_STABLE|
+|qa|dbup-stable-structure|-|
+|qa|transfer|QA_TRANSFER|
+|qa|dbup-stable-data|QA_DBUP_DATA_STABLE|
+|qa|dbup-reset-data|QA_DBUP_DATA_RESET|
+|qa|dotstatsuite-devops-db-config|-|
+|qa|authz|QA_AUTHZ|
+|qa|dbup-common|QA_DBUP_COMMON|
