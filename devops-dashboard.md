@@ -1,6 +1,6 @@
 # devops dashboard
 
-> quick access: [IPs](#ips) | [services](#services) | [cross-services](#cross-services) | [internal-services](#internal-services) | [special-services](#special-services) | [packages](#packages) | [snapshots](#snapshots)
+> quick access: [IPs](#ips) | [services](#services) | [cross-services](#cross-services) | [internal-services](#internal-services) | [special-services](#special-services) | [packages](#packages) | [snapshots](#snapshots) | [GCP logs](#gcp-logs)
 
 ## IPs
 
