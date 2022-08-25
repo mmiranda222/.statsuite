@@ -334,12 +334,12 @@ schedule-postgresql-0|postgresql|qa (also used for staging)|Every day between 3:
 |namespace|service (container name)|logname|
 |---|---|---|
 |qa|nsi-reset|QA_NSI_RESET|
-|qa|dbup-reset-structure|-|
+|qa|nsi/dbup-reset-structure|QA_DBUP_STRUCTURE_STABLE|
 |qa|nsi-stable|QA_NSI_STABLE|
-|qa|dbup-stable-structure|-|
+|qa|nsi/dbup-stable-structure|QA_DBUP_STRUCTURE_RESET|
 |qa|transfer|QA_TRANSFER|
-|qa|dbup-stable-data|QA_DBUP_DATA_STABLE|
-|qa|dbup-reset-data|QA_DBUP_DATA_RESET|
-|qa|dotstatsuite-devops-db-config|-|
+|qa|transfer/dbup-stable-data|QA_DBUP_DATA_STABLE|
+|qa|transfer/dbup-reset-data|QA_DBUP_DATA_RESET|
+|qa|transfer/dotstatsuite-devops-db-config|-|
 |qa|authz|QA_AUTHZ|
-|qa|dbup-common|QA_DBUP_COMMON|
+|qa|authz/dbup-common|QA_DBUP_COMMON|
