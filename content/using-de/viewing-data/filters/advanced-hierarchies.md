@@ -47,7 +47,7 @@ In the 'Used filters' area, a selected child with multiple parents will appear o
 
 ![DE advanced hierarchies](/dotstatsuite-documentation/images/de-advanced-hierarchies1.png)
 
-In the **table view**, the observations attached to a multi-parent code are **re-displayed** (duplicated) for each present parent.
+In the **table view**, the observations attached to a multi-parent code are **re-displayed** (duplicated) for each parent that is selected and for which there is data at least for one observation that has any dimension combination with this parent.
 
 ![DE advanced hierarchies](/dotstatsuite-documentation/images/de-advanced-hierarchies2.png)
 
