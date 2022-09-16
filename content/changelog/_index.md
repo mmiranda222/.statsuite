@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [September 15, 2022](#september-15-2022)
 - [August 16, 2022](#august-16-2022)
 - [August 3, 2022](#august-3-2022)
 - [August 2, 2022](#august-2-2022)
@@ -101,6 +102,46 @@ ToC
 
 ---
 
+### September 15, 2022
+**[Release .Stat Suite JS "radio"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/58#tab-issues)**
+> This release includes a new version of the **data-explorer**, **data-viewer**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
+
+minor changes:
+
+- [dotstatsuite-data-lifecycle-manager#295](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/295) Add **'Activate' to dataflow menu in DLM** for re-initialisation (`/init/all` transfer method). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/activate-dataflow/))
+- [dotstatsuite-data-lifecycle-manager#268](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/268) Make all artefacts clickable and highlight current selected artefact in DLM popup views. ([Documentation in 'Delete' view](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures/#delete-an-artefact-and-its-related-structure-artefacts) & [documentation in 'Related artefacts' view](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/list-related-data-structures/))
+- [dotstatsuite-data-lifecycle-manager#284](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/284) Delete related structures: mark all higher-level tree items of a non-deletable item also as non-deletable.
+- [dotstatsuite-data-lifecycle-manager#267](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/267) **De-/Select all** features for artefacts in the main DLM page. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#display-options))
+- [dotstatsuite-data-lifecycle-manager#256](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/256) Easily see existing **dataflow/DSD/MSD relationships**.
+- [dotstatsuite-data-explorer#736](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/736) **Download the overview page** information in a separate sheet of the Excel file. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#table-in-excel))
+- [dotstatsuite-data-explorer#506](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/506) **Configurable links** in Data Explorer footer/header. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/))
+- [dotstatsuite-data-explorer#760](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/760) Hide `NOT_DISPLAYED` or `_Z`/`_T` single-fixed dimension values on the overview page. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/overview/#overview-content))
+- [dotstatsuite-data-explorer#752](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/752) Change the disposition of the (i), flags and notes in the table row sections.
+- [dotstatsuite-data-explorer#774](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/774) Add a tooltip for buttons in the toolbar when the labels are hidden.
+- [dotstatsuite-data-explorer#784](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/784) Prefix tooltip of disabled filter items with "No data with current filters for: ".
+- [dotstatsuite-data-explorer#786](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/786) Add a localised tooltip "Back to ..." to the Explorer logo.
+- [dotstatsuite-data-explorer#788](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/788) Better user message when no data for filtered data.
+- [dotstatsuite-visions#30](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/30) Enhance loading with color.
+- [dotstatsuite-data-explorer#666](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/666) *(Refactoring)* Various web service requests made twice.
+- [dotstatsuite-data-explorer#793](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/793) *(Refactoring)* Remove pesky scrollbar on the loading page.
+- [dotstatsuite-data-explorer#826](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/826) *(Refactoring)* Table proptype unexpected.
+- [dotstatsuite-data-explorer#854](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/854) *(DevOps)* Fix e2e tests.
+
+patch changes: 
+
+- [dotstatsuite-data-explorer#801](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/801) All settings in the chart 'Customisation' information panel are out of order.
+- [dotstatsuite-data-explorer#802](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/802) We've lost the chart hint "light" icon.
+- [dotstatsuite-data-explorer#803](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/803) Scroll bar blocked when trying to move down a filter list.
+- [dotstatsuite-data-explorer#804](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/804) Broken 'full screen' layout.
+- [dotstatsuite-data-explorer#816](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/816) The 'Customise' menu stays open on overview tab.
+- [dotstatsuite-data-explorer#831](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/831) Weird behaviour of the multiselection with the mouse.
+- [dotstatsuite-data-explorer#810](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/810) Unit of measure concepts are not displayed together.
+- [dotstatsuite-data-explorer#842](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/842) Viz page's filters disappear when reducing the selection.
+- [dotstatsuite-data-explorer#849](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/849) DE view crashes when `LAYOUT_NOTE` annotation doesn't have any title.
+
+---
+
 ### August 16, 2022
 **[Patch release .Stat Suite JS "quark"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/56#tab-issues)**
 > This release includes a **patch** version of the **data-explorer** service.  
@@ -113,7 +154,6 @@ patch change:
 ---
 
 ### August 3, 2022
-
 **[Release .Stat Suite JS "quark"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/56#tab-issues)**
 > This **major** release includes a new version of all JS services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.9.2**.
