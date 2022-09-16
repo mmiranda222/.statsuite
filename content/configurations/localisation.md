@@ -37,16 +37,13 @@ keywords: [
 ---
 
 ### Scope, technical architecture, main change processes
-
 #### Scope
-
 The JavaScript-based .Stat Suite web applications **Data Explorer**, **Data Lifecycle Manager** and **Data Viewer** are multilingual and support the localisation of their static UI elements. A '**locale**' (in computer software) is a set of parameters that defines the user's language, region and any special variant preferences that the user wants to see in their user interface. Often a locale is defined by a language and a region. In the .Stat Suite we use the https://tools.ietf.org/html/bcp47 standard with a primary sub-code that identifies the language (e.g. "en" according to  ISO 639-1 alpha-2), and an optional sub-code in capital letters that specifies the national variety (e.g., "GB" or "US" according to ISO 3166-1 alpha-2), both being linked with a hyphen (e.g. "en-GB").  
 By extrapolation, the internationalization - abbreviated **i18n** - of our JavaScript applications also covers localisation, number, currency, etc... formatting.
 
 The following describes how locales are set and maintained in these .Stat Suite web applications.
 
 #### Technical architecture  
-
 1) Each locale has one **default**, application-independent and tenantless language version of all static UI element labels/texts. 
    They are stored in the corresponding `<locale>.json` file in the `./i18n/` folder of the [config data](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data).  
    The file contains the complete list of keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Browse by"`).  
@@ -64,7 +61,6 @@ The following describes how locales are set and maintained in these .Stat Suite 
 *Note:* in the following, the term 'translation' is frequently being used instead of 'localised version of a static UI element label/text' or shorter 'localised value'. The term 'i18n' stands for 'internationalization' (where 18 stands for the number of letters between the first i and the last n in the word). 
 
 #### Management of the complete list of keys for default translations
-
 The list of *keys* of default translations is managed by the **developers**. If functional requirements and related developments have an impact on translation keys, then one script needs to be run in the host app and one script in the config service before pushing changes from host app and config service into git. The script automatically extracts the necessary keys from the source code and updates the default localisation files. 
 
 *how-to-extract:*  
@@ -90,7 +86,6 @@ The list of *keys* of default translations is managed by the **developers**. If 
 * (8) overrides are not covered by the automatic update, *(could be an evolution)*
 
 #### Management of translations
-
 The default translations - the underlying localised labels/texts, but not their keys - are managed by the **product managers**. In addition, they also keep up-to-date the alternative translations for the applications running in the SIS-CC quality assurance (QA) and functional staging (demo) environments.
 
 *How to manage default:* 
@@ -102,17 +97,14 @@ The default translations - the underlying localised labels/texts, but not their 
 1. go to `./configs/<tenant>/<app>/i18n/<locale>.json` to **overwrite** translations values of `<locale>` for a specific `<app>` of a specific `<tenant>`.
 
 #### Dev flow
-
 ![Dev flow](/dotstatsuite-documentation/images/i18n-dev-flow.png)
 
 #### DevOps flow
-
 ![DevOps flow](/dotstatsuite-documentation/images/i18n-devops-flow.png)
 
 ---
 
 ### Translation gathering process
-
 We try to support as many locales as possible for the .Stat Suite applications, but to do so we also need the contribution of the users and stakeholders to the translations.  
 International **English** and international **French** are the out-of-the-box locales provided by the product managers. All releases will thus always contain the complete and up-to-date international English and international French locale versions. Indeed, contributions for enhancing these two locales are also very welcome!  
 For the other currently included locales, we can only rely on the users and stakeholders to contribute with translations.
@@ -130,7 +122,6 @@ The process to contribute with translations is as follow:
 ---
 
 ### Overwriting default translations
-
 For a specific application tenant, default translations can be dynamically overwritten by defining alternative translation values.  
 **Implementers** should follow these steps to define these alternative translations:
 1. go to your application tenant's `configs/<tenant>/<app>/` folder. Create here a new `i18n` folder if it doesn't already exist;
@@ -142,7 +133,7 @@ The alternative translations always overwrite the corresponding default translat
 ---
 
 ### Rich-text translations
-
+> Enhanced with supporting the `<a>` tag for hyperlinks in [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)   
 > Introduced in [October 7, 2020 Release .Stat Suite JS 5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020)
 
 All translations can be formatted using whitelisted **rich text elements**.  This allows using basic formatting syntax in the `<locale>.json` translation files.
@@ -154,6 +145,7 @@ The currently defined format whitelist is:
 - line break: `{br}`
 - italic text: `<i></i>`
 - bold text: `<b></b>`
+- hyperlink opening in a new web browser tab: `<a></a>`
 
 *How to:*  
 ```
@@ -162,6 +154,7 @@ The currently defined format whitelist is:
 "my.italic.translation": "this is <i>italic</i>",
 "my.bold.translation": "this is <b>bold</b>",
 "my.nested.translation": "this is <i>n<b>e</b>sted</i>",
+"my.hyperlink.translation": "this is <a>https://www.hyperlink.org</a>"
 ```
 
 **Current known limitation:** Text formatting of a button label may not always work as expected: When a button label is composed of several words and tags such as `<i> </i>` are used, then the spaces between words are trimmed. Text formatting of a static text field (e.g. the DE footer disclaimer) doesn't have this limitation.
@@ -169,13 +162,11 @@ The currently defined format whitelist is:
 ---
 
 ### Supported locales
-
 .Stat Suite supports a large number of locales. Check our [config-data repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/i18n) to see if your locale is supported. Each translation file corresponds to one locale, which identifier is constructed according to the https://tools.ietf.org/html/bcp47 standard with a primary sub-code that identifies the language (e.g., "en" according to  ISO 639-1 alpha-2), and an optional sub-code in capital letters that specifies the national variety (e.g., "GB" or "US" according to ISO 3166-1 alpha-2), both being linked with a hyphen (e.g. "en-GB").
 
 ---
 
 ### Adding a new locale
-
 Adding a locale to the .Stat Suite that is not yet supported requires slightly updating the codebase. It is therefore necessary to create a ticket in [GitLab](https://gitlab.com/groups/sis-cc/-/issues) for such a request by following the [contribution process](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/). Within your ticket you will need to provide:
 * The name and id ([IETF language tag](https://tools.ietf.org/html/bcp47)) of the newly requested locale,
 * A translation file with all the translation keys and their localised values. Always complete and up-to-date references for this work are the English and the French translations that can be retrieved from the **`master`** branch in https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/master/data/dev/i18n;
@@ -186,7 +177,6 @@ Once a new locale is defined (and publicly released), it needs to be added to th
 ---
 
 ### Defining a sub-set of locales to be used in an application tenant
-
 Locales to be used in a .Stat Suite application tenant are configured in the `./data/[dev|prod]/configs/<tenant>/<app>/settings.json` config file.  
 
 The following rules are to be considered when setting up locales for an application tenant:
