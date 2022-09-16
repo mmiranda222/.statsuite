@@ -7,7 +7,7 @@ weight: 255
 ---
 
 > *Version history:*  
-> Enhanced with clickable artefacts in [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)
+> Enhanced with clickable artefacts in [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)  
 > Released in [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021)
 
 To visualise and discover the dependencies between data structure artefacts, e.g. which Dataflows reference a particular Data Structure Definition, or which Codelists are being used by that Data Structure Definition, the contextual 'List related structures' menu can be used:
