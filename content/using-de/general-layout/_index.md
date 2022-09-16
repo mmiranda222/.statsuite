@@ -26,7 +26,6 @@ keywords: [
 ---
 
 ### User Interface Design Specifications
-
 The UI design of the .Stat Data Explorer (DE) is following the specifications described in the [UI documentation](https://sis-cc.gitlab.io/.stat-suite/design/demo/ui-documentation/index.html).  
 [Mockups](https://sis-cc.gitlab.io/.stat-suite/design/demo/de-material/index.html) are also available to illustrate the expected user experience. The UI design respects the general Data Explorer [design principles](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/design-principles/) agreed within SIS-CC.
 
@@ -38,7 +37,6 @@ Also, theming the Data Explorer is largely flexible (see the related documentati
 ---
 
 ### Header
-
 The Data Explorer header is common to all pages of the application, and consists of:
 * a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo
 * a switch to enable [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support)
@@ -47,10 +45,15 @@ The Data Explorer header is common to all pages of the application, and consists
 
 ![DE Header](/dotstatsuite-documentation/images/de-header.png)
 
+Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the DE header contains a **localised text field** supporting for instance single or multi-hyperlinks. By default, this localised field is empty, but you can provide, by overwritting the tranlsation of a DE instance (see [how to](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)), any simple or rich text element as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#rich-text-translations).
+
+Example of a DE header with multiple hyperlinks opening in new web browser tabs on click:
+
+![DE Header](/dotstatsuite-documentation/images/de-header2.png)
+
 ---
 
 ### Web Content Accessibility Support
-
 > Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
 
 The Data Explorer endorses [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) 2.1 to Level AA, in order to make its content **accessible to people with disabilities**.  
@@ -85,7 +88,6 @@ When accessibility support is enabled, using the `Tab` key of the keyboard allow
 ---
 
 ### Login
-
 Registration is orchestrated at the organisation level, for one or several instances of the Data Explorer, and common with the Data Lifecycle Manager (DLM) registration mechanism (if the DLM is part of the same installation). For further information, check the [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/) and the [DLM login mechanism](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/).  
 .Stat Suite applications can use **[Keycloak](https://www.keycloak.org/)** as the authentication service or any other OpenID-Connect compliant identity provider or proxy.
 
@@ -107,7 +109,6 @@ In case when there are several authenticated tabs of the DE in the same session,
 ---
 
 ### Language
-
 The Data Explorer is multilangual and supports the localisation of the static elements of the user interface, as well as the localised indexed data ([documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/)).  
 There must be at least one language defined per DE instance. If an instance supports more than one language, then a dropdown feature displays the list of available languages.
 
@@ -124,17 +125,17 @@ The behavior of switching language will change depending on the page where langu
 ---
 
 ### Footer
-
 The Data Explorer footer is common to all pages of the application, and consists of:
 * a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo;
 * two (left and right) placeholders for predefined, configurable localised text and hyperlink.
 
 ![DE Footer](/dotstatsuite-documentation/images/de-footer.png)
 
+**Note:** Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the localised text fields in the DE footer can support single or multi-hyperlinks with rich text elements as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#rich-text-translations).
+
 ---
 
 ### URL parameters
-
 The Data Explorer pages let the user drive the page content through URL parameters. This allows bookmarking and URL sharing of DE pages. 
 
 | key | legacy key (for backward-compatibility) | type | definition | exemple |
