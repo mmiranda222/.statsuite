@@ -89,7 +89,7 @@ The download options form the dropdown button are described below.
 
 #### Table in Excel  
 Only the filtered data contained in the online table (or chart) view is downloaded in **.xlsx** file format.  
-All online table's layout, styles, cell and text formatting are maintained in the downloaded Excel file.  
+All online table's layout, styles, cell and text formatting are maintained in the downloaded Excel file and presented in its first and default sheet.  
 The online **table limitation** (maximum number of observations to be returned by the *SDMX* web service) is maintained in the downloaded file (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/)). Since [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021), this limitation is mentionned in the Excel file that includes a localised (red) warning message displayed in the first empty cell below the dataflow title or subtitle:  
 > *"The data extraction used a data selection that is above the limits for the table display (maximum n data points or n table cells) resulting in an incomplete table. Using the web link below the table, all originally selected data points can still be downloaded in tabular text (CSV)."*  
 
@@ -98,6 +98,37 @@ The online **table header**'s title and sub-title are replicated in separate lin
 **RTL** (Right-to-Left) mode is supported, allowing to programmatically switching the layout of a downloaded Excel data table between left-to-right and right-to-left. Depending on the version viewed online (e.g. in Arabic language) and the user's localised preferences in Excel, the downloaded Excel table will automatically be displayed in RTL mode.
 
 ![Download](/dotstatsuite-documentation/images/de-download2.png)
+
+> Introduced with [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)
+
+The information displayed on the Overview tab in the Data Explorer visualisation page, except the footer with "terms and conditions" and the source link to avoid unnecessary duplication, is downloaded into a third Excel sheet named `Overview`. The overview information will be displayed word-wrapped in the 810px-wide column B, starting in the first row with the dataflow name. The same font (calibri 11) and top-left alignment is applied on all text.  
+Here is a sheet with the possible information we could find on a dataflow overview.  
+  
+| Column B |  
+|----------|  
+| **Dataflow name** - _bold_ |
+| |
+| list of names of single-fixed dimensions separated by a dot - _wrapped - height 53px_ |
+| list of other dimension names separated by a dot - _wrapped - height 53px_ |
+| list of dataflow-level attribute names with the associated value separated by a dot - _wrapped - height 53px_ |
+| |
+| list of related categories separated by a dot - _wrapped - height 53px_ |
+| |
+| list of data source information separated by a line-break |
+| total number of available data points |
+| last update date |
+| |
+| related files title |
+| list of links of related files separated by a line-break |
+  
+Only lines (and separation lines) with available information are included.
+
+Here are two examples with different overview contents:
+ 
+![Download](/dotstatsuite-documentation/images/de-download-overviewsheet1.png)
+
+![Download](/dotstatsuite-documentation/images/de-download-overviewsheet2.png)
+  
 
 #### Filter data in tabular text (CSV)
 Only the filtered data contained in the online table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  

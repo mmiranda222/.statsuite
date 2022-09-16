@@ -50,3 +50,5 @@ When displaying the overview tab:
 - Making a change in a filter does not have any effect on the Overview tab or its content;
 - The 'Labels' option is appropriately applied to the information in the overview, depending on the type of information to return: names, identifiers, or both;
 - 'Customise' and 'Share' options are hidden.
+
+Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the overview page content is downloaded with the table view in the [Excel downlaod file](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#table-in-excel).
