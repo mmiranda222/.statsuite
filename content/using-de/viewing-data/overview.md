@@ -10,6 +10,8 @@ keywords: [
 ]
 ---
 
+> *Version history:*  
+> Overview page is included in the Excel download and enhanced with an exception on displayed content with [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)  
 > Introduced in [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
 
 #### Table of content
@@ -42,6 +44,8 @@ The overview provides the following localised pieces of information related to a
 - The **total number of available data points** (obtained from the Actual or Available content constraints)
 - The **last updated** date (obtained from the Actual content constraint validity dates)
 - the **related files** with a list of hyperlinks to (optional) external resources (as listed in the dataflow's EXTERNAL_RESOURCE annotations) and similar to the 'download' option.
+
+**Exception:** single fixed dimension values that are listed in the `NOT_DISPLAYED` *SDMX* annotation or that are always hidden values (_T, _Z) (see the related [specifiications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/not-displayed/)) are **not** displayed in the overview page.
 
 ---
 
