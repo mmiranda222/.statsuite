@@ -67,11 +67,14 @@ If the deletion fails (e.g. dependency conflict), the appropriate error message 
 ### Delete an artefact and its related structure artefacts
 > Release in [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)
 
-From the DLM list of artefacts, you can select from the left menu, the option to delete a structure artefact **and/or related structures**.
+From the DLM list of artefacts, you can select from the left menu the option to delete a structure artefact **and/or related structures**.
 
 ![DLM delete](/dotstatsuite-documentation/images/dlm-delete4.png)
 
 Once you click, it displays a popup window with all listed artefacts using a tree control and selectable items. It details the artefact type, name, ID, version, "finality" and agency.  
+
+Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the current selected artefact is displayed in bold, and when clicking on any artefact from the list, it opens a new tab/window displaying the content of the artefact.
+
 1) The original item is pre-selected as well as all below items.  
 2) Non-delete-able artefacts are marked as such with a red forbidden icon. A tooltip explains the reason and solution: "Cannot be deleted since referenced by: XXXX, XXXX. First delete those structures and then try again.". When there are more than 3 "outside" references, then the number of references is mentioned.
 
