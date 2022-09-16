@@ -39,12 +39,11 @@ keywords: [
 - [Export structures](#export-structures)
 - [Export data and referential metadata](#export-data-and-referential-metadata)
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-1.png)
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-1a.png)
 
 ---
 
 ### Common navigation header
-
 The header of the .Stat DLM application is set to be common to all pages. It is composed of:
 * A logo of the organisation;
 * A list of menu buttons for accessing specific features in separate pages.  
@@ -68,11 +67,9 @@ There is a list of menu buttons to access pages with specific features or to con
 ---
 
 ### Selectors & Filters
-
 All selectors and filters (except for version) can be collapsed or expanded. 
 
 #### Required selections
-
 A selection within "**Filter by space**" (internal sources) or "**Filter by external source**" (see below: [Spaces and external sources](#spaces-and-external-sources)) and within "**Filter by type**" (see: [Types](#types)) is required in order to display the selected artefacts.
 
 In the case that the above minimal selections aren't made, the following messages are displayed to the user, depending on which selection is missing:
@@ -140,12 +137,35 @@ The main applical panel displayes the list all structural *SDMX* artefacts avail
 The above mentioned selections and filters are dynamically applied to the table, meaning that when the user changes the selection, then the table is automatically updated. A spinner feature informs the user of the processing.
 
 #### Display Options
-*  Spotlight: the user can reduce the list of artefacts based on the text he enters in the spotlight box. An additional option of the spotlight applies the text filter to one or both of the following: "Label" and "Code". The spotlight text is consistent even when changing the filter(s).  
-When he enters some text, it searches for all artefacts "Name" or "ID" that contain the entered text.
-* Sorting: the user can sort the whole list by "Type", "Label”, "Code", "Version", "Final" or "Owner”. The list is sorted by “Type” and "Name" ascending by default.
-* Pagination: pagination allows for navigating from page to page, and to jump to the next, previous, first or last page. The number of results on each page is configurable during the set up of the application ([documentation](/dotstatsuite-documentation/configurations/dlm-configuration/)).
+*  Spotlight: the user can reduce the list of artefacts by entering keywords in the spotlight box. An additional option of the spotlight applies the text filter to one or both of the following: "Label" and "Code". The spotlight text is consistent even when changing the filter(s). The spotlight feature searches in the name and ID of all listed artefacts.
+* Sorting: the user can sort the whole list by "Type", "Label”, "Code", "Version", "Final" or "Owner”. The list is sorted, ascending by default, by “Type” and "Name".
+* Pagination: This feature allows navigating from page to page, and to jump to the next, previous, first or last page. The number of artefacts listed per page is configurable (see [documentation](/dotstatsuite-documentation/configurations/dlm-configuration/)).
+* *Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)* (De)Select all: This feature shown below the pagination allows bulk-(de-)selecting the listed artefacts in the current page or on the all pages.  
+  ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-8a.png)  
+  
+  Depending on the current selection, one of the four clickable buttons is shown:  
+  1) If no artefact is selected, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-allUnticked.png)  
+     Clicking on this button opens a dropdown menu proposing to:
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAll.png) Select all artefacts   
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAllOnThisPage.png) Select all artefacts on this page  
+  2) Else if all artefacts (on all pages) are selected, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAll.png)  
+     Clicking on this button opens a dropdown menu proposing to:
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-allUnticked.png) Deselect all artefacts  
+  3) Else if some artefacts are not selected but all artefacts on the current page are selected, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAllOnThisPage.png)  
+     Clicking on this button opens a dropdown menu proposing to:
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAll.png) Select all artefacts   
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-allUnticked.png) Deselect all artefacts  
+  4) Else, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectPartial.png)  
+     Clicking on this button opens a dropdown menu proposing to:
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAll.png) Select all artefacts   
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAllOnThisPage.png) Select all artefacts on this page  
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-allUnticked.png) Deselect all artefacts  
+  
+  Whenever at least one artefact is selected, an additional hamburger menu is displayed, which proposes a list of actions on the selected artafacts:  
+  ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-8b.png)  
+  The hambuger menu proposes to launch an action on the selected artefact/s, such as _Transfer the artefact/s structure from one space to another_.  
+  ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectHamburgerMenu.png)  
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-8.png)
 
 #### Content of the list
 For each artefact, the following details are shown:
@@ -157,7 +177,7 @@ For each artefact, the following details are shown:
 * Artefact owner (maintenance agency of the artefact)
 * Action: Hamburger menu button that offers a context-aware list of specific actions to perform over the artefact (see related documentation for each action: [Transfer artefact](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data-structures), [Transfer data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data), [Delete structure](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures), Export structure and Export data)  
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-10.png)
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-10a.png)
 
 For Dataflows **only**, The user can view the following additional information:
 * **Preview:** the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
@@ -166,12 +186,12 @@ For Dataflows **only**, The user can view the following additional information:
 * **Space** name
 * **ID flavours** with 2 alternative dataflow identification flavours: `AGENCY_ID:DATAFLOW_ID(VERSION)` and `AGENCY_ID/DATAFLOW_ID/VERSION`
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9.png)
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9a.png)
 
 **Note** that *(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* for some external data sources (e.g. using MT Fusion Registry), the *SDMX* annotation of type `sdmx_metrics` has no id `obs_count`, but the id **`series_count`** instead.  
 In this case, the DLM will display the **number of series** instead of observation values.
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-21.png)
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-21a.png)
 
 ---
 
@@ -181,7 +201,7 @@ A data structure artefact can be downloaded in .xml format:
 * without referenced structures, or
 * with all referenced structures *(e.g. a DSD with all its referenced codelists, content constraint, dataflow, category scheme, etc)*.
 
-![dlm overview](/dotstatsuite-documentation/images/dlm-overview-11.png)
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-11a.png)
 
 ---
 
