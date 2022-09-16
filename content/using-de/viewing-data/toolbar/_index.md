@@ -111,11 +111,6 @@ Only lines (and separation lines) with available information are included. Note 
 
 ![Download](/dotstatsuite-documentation/images/de-download-overview2.png)
 
-![Download](/dotstatsuite-documentation/images/de-download-overviewsheet1.png)
-
-![Download](/dotstatsuite-documentation/images/de-download-overviewsheet2.png)
-  
-
 #### Filter data in tabular text (CSV)
 Only the filtered data contained in the online table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
 This format does not contains header or footer, and the downloaded data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
