@@ -99,32 +99,18 @@ The online **table header**'s title and sub-title are replicated in separate lin
 
 ![Download](/dotstatsuite-documentation/images/de-download2.png)
 
+**Overview page content**  
 > Introduced with [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)
 
-The information displayed on the Overview tab in the Data Explorer visualisation page, except the footer with "terms and conditions" and the source link to avoid unnecessary duplication, is downloaded into a third Excel sheet named `Overview`. The overview information will be displayed word-wrapped in the 810px-wide column B, starting in the first row with the dataflow name. The same font (calibri 11) and top-left alignment is applied on all text.  
-Here is a sheet with the possible information we could find on a dataflow overview.  
-  
-| Column B |  
-|----------|  
-| **Dataflow name** - _bold_ |
-| |
-| list of names of single-fixed dimensions separated by a dot - _wrapped - height 53px_ |
-| list of other dimension names separated by a dot - _wrapped - height 53px_ |
-| list of dataflow-level attribute names with the associated value separated by a dot - _wrapped - height 53px_ |
-| |
-| list of related categories separated by a dot - _wrapped - height 53px_ |
-| |
-| list of data source information separated by a line-break |
-| total number of available data points |
-| last update date |
-| |
-| related files title |
-| list of links of related files separated by a line-break |
-  
-Only lines (and separation lines) with available information are included.
+The information displayed on the **Overview tab** of the Data Explorer (except for the footer's "terms and conditions" and the source link) is downloaded into a third Excel sheet named `Overview`. The overview information is displayed word-wrapped in the 810px-wide column B, starting in the first row with the dataflow name. The same font (calibri 11) and top-left alignment is applied on all text.  
+Here is a sheet with the possible information and layout that can be found on a dataflow overview:
 
-Here are two examples with different overview contents:
- 
+![Download](/dotstatsuite-documentation/images/de-download-overview1.png)
+
+Only lines (and separation lines) with available information are included. Note also that enriched text elements are not supported.
+
+![Download](/dotstatsuite-documentation/images/de-download-overview2.png)
+
 ![Download](/dotstatsuite-documentation/images/de-download-overviewsheet1.png)
 
 ![Download](/dotstatsuite-documentation/images/de-download-overviewsheet2.png)
