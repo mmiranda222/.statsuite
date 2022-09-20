@@ -12,8 +12,8 @@ keywords: [
 
 #### Table of Content
 - [Folder architecture](#folder-architecture)
-- [sfs.json and search result boost](#sfs-json-and-search-result-boost)
-- [settings.json](#settings.json)
+- [sfs.json and search result boost](#sfsjson-and-search-result-boost)
+- [sfs settings.json](#sfs-settingsjson)
 
 ---
 
@@ -67,10 +67,10 @@ The weight property will increase the score returned by the search service. As a
 
 ---
 
-### settings.json
-The sfs>settings.json file is defined at the tenant level and allows to override the search service calls to the NSI in order to bypass a request limiter.
+### sfs settings.json
+The **sfs/settings.json** file is defined at the tenant level and allows to override the search service calls to the NSI in order to bypass a request limiter.
 
-Override the (data) spaces from the tenants.json 
+**Override** the (data) spaces from the tenants.json... 
 
 *tenants.json*
 ```json
@@ -78,16 +78,14 @@ Override the (data) spaces from the tenants.json
   "spaces": {
     "demo-design": {
       "label": "demo-design",
-      "hasRangeHeader": true,
-      "supportsReferencePartial": true,
-      "hasLastNObservations": true,
+      ...
       "url": "http://localhost:80/rest"
     }
   }
 }
 ```
 
-... with the url from that space only for the search service used.  
+... with the url from that space only for the search service used:  
 
 *settings.json*
 ```json
@@ -99,3 +97,5 @@ Override the (data) spaces from the tenants.json
   }
 }
 ```
+
+**Note** that this config. file only works as an override configuration. If left empty, then the original configuration from the 'tenants.json' is are applied.
