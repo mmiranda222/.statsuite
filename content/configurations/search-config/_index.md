@@ -13,7 +13,7 @@ keywords: [
 #### Table of Content
 - [Folder architecture](#folder-architecture)
 - [sfs.json and search result boost](#sfs-json-and-search-result-boost)
-- [sfs/settings.json](#sfs-settings.json)
+- [sfs settings.json](#sfs-settings.json)
 
 ---
 
@@ -67,7 +67,7 @@ The weight property will increase the score returned by the search service. As a
 
 ---
 
-### sfs/settings.json
+### sfs settings.json
 The **sfs/settings.json** file is defined at the tenant level and allows to override the search service calls to the NSI in order to bypass a request limiter.
 
 **Override** the (data) spaces from the tenants.json... 
