@@ -12,8 +12,8 @@ keywords: [
 
 #### Table of Content
 - [Folder architecture](#folder-architecture)
-- [sfs.json and search result boost](#sfs-json-and-search-result-boost)
-- [sfs settings.json](#sfs-settings.json)
+- [sfs.json and search result boost](#sfsjson-and-search-result-boost)
+- [sfs settings.json](#sfs-settingsjson)
 
 ---
 
