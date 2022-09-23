@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [September 22, 2022](#september-22-2022)
 - [September 15, 2022](#september-15-2022)
 - [August 16, 2022](#august-16-2022)
 - [August 3, 2022](#august-3-2022)
@@ -99,6 +100,57 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### September XX, 2022
+**[Release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
+> This release includes a **major** version of the **core-transfer**, **sdmxri-nsi-ws**, **auth-management**, and **data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.1**.
+
+> **Disclaimer:**  
+> This release delivers an intermediate implementation of data delete features. Deleting referential metadata as well as transfering and retrieving deleted data (using the SDMX rest `updatedAfter` parameter) are not yet included. Please note that due to a regression in the retrieval of referential metadata in certain situations, we do not recommend using this release to update instances that already use referential metadata features.  
+
+major changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#251](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/251) Deploy NSI version 8.11.0 & version 8.12.0. NSIWS now requires **.net-core6.0.**
+- [dotstatsuite-core-sdmxri-nsi-ws#281](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/281) Deploy NSI version 8.12.1. The NSI-WS by default will now use the Operating System **default locale/Culture**. In the past, it defaulted to English (en). As a result, SDMX-JSON requests may need `Accept-Language` HTTP Header to return localised text like annotation text in the preferred language(s). The default culture can also be set using [the NSI CONFIGURATION](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#default-culture-info).
+
+significant and minor changes:
+
+- [dotstatsuite-core-transfer#127](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/127) **Data delete** operation. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data/))
+- [dotstatsuite-core-transfer#397](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/397) New **MERGE** action for data imports. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/#advanced-actions-for-data-import))
+- [dotstatsuite-core-sdmxri-nsi-ws#285](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/285) Higher-level attributes should be exported when there are no observations (CSV only).
+- [dotstatsuite-core-sdmxri-nsi-ws#271](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/271) Configure new format URL option to generate a (csv) file. ([Documentation](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#format-configuration))
+- [dotstatsuite-core-sdmxri-nsi-ws#242](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/242) Actual content constraints' `validFrom` and `validTo` properties to be exposed in UTC format.
+- [dotstatsuite-core-transfer#402](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/402) Identify if a .CSV V2.0 file contains data or referential metadata.
+- [dotstatsuite-core-sdmxri-nsi-ws#278](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/278) Extend SDMX-CSV v2.0 readers to support deletion action features.
+- [dotstatsuite-core-sdmxri-nsi-ws#274](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/274) Add Merge Action to SDMX source, add CurrentAction to dataReaderEngine.
+- [dotstatsuite-core-sdmxri-nsi-ws#196](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/196) Enable HTTP compression for NSI-WS requests.
+- [dotstatsuite-core-sdmxri-nsi-ws#229](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/229) The NSI-WS should stop executing aborted/abandoned requests.
+- [dotstatsuite-core-sdmxri-nsi-ws#214](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/214) Timeout issue when deleting or updating a Hierarchical codelist.
+- [dotstatsuite-core-sdmxri-nsi-ws#86](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/86) Better error management when creating StructureSet with ConceptSchemeMap.
+- [dotstatsuite-quality-assurance#20](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/20) *(DevOps)* Add ABS performance test cases. (Thanks [@Tim](https://gitlab.com/chowti) for the contribution!)
+- [dotstatsuite-core-sdmxri-nsi-ws#243](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/243) *(Refactoring)* Upgrade Eurostat components to .net core 6.0.
+
+patch changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#237](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/237) Wrong behaviour of `isMultiLingual` property. **IMPORTANT NOTE:** Metadata Data Structures (MSDs) that previously could not return the correct `isMultiLingual` property of a TextFormat representation should be recreated. You can change this property only and upload your modified MSD without deleting it first, because it is not considered as a major change onr require a change of the MSD version.
+- [dotstatsuite-core-sdmxri-nsi-ws#263](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/263) Error "Not Created: Codelist OECD:CL_UNIT_MEASURE (v1.0), Incorrect syntax near ')'."
+- [dotstatsuite-core-sdmxri-nsi-ws#262](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/262) Issue in time span filter.
+- [dotstatsuite-core-sdmxri-nsi-ws#252](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/252) Swagger issue when the service is hosted under a virtual directory.
+- [dotstatsuite-core-sdmxri-nsi-ws#245](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/245) Error "Enlisting in Ambient transactions is not supported." when deleting dataflows in the DLM.
+- [dotstatsuite-core-sdmxri-nsi-ws#241](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/241) Incorrect SDMX-JSON localised names (e.g. when language is unmatched or value is empty). **Note** that this fix introduces a change of business behavior in the Data Explorer ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#language))
+- [dotstatsuite-core-sdmxri-nsi-ws#239](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/239) DryIoc Exception in maapi.net tool v8.9.2.
+- [dotstatsuite-data-lifecycle-manager#235](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/235) Dimension position: Error when uploading non-sequential positions.
+- [dotstatsuite-core-transfer#301](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/301) Transfer logs for multiple errors.
+- [dotstatsuite-core-data-access#88](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/88) "Error executing generated SQL and populating SDMX model" when visualizing data for content constraint on attribute against a referential metadata query.
+- [dotstatsuite-core-transfer#410](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/410) Inappropriate 'FATAL' error when running the `InitAllMappingSets` method on an empty data space.
+- [dotstatsuite-core-transfer#409](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/409) Incorrect log message in case of timeout.
+- [dotstatsuite-core-transfer#349](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/349) Data download error: "Operations that change non-concurrent collections must have exclusive access".
+- [dotstatsuite-core-sdmxri-nsi-ws#133](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/133) Incorrect number of observations returned in the content-range header when the `LastNObservations` parameter is applied.
+- [dotstatsuite-core-sdmxri-nsi-ws#128](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/128) Categorisations are not always deleted on first attempt.
+
 
 ---
 

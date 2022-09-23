@@ -109,13 +109,15 @@ In case when there are several authenticated tabs of the DE in the same session,
 ---
 
 ### Language
+> Enhanced behavior when no language is matching the selected locale since  [September 22, 2022 Release .Stat Suite .NET blueberry](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-22-2022)
+
 The Data Explorer is multilangual and supports the localisation of the static elements of the user interface, as well as the localised indexed data ([documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/)).  
 There must be at least one language defined per DE instance. If an instance supports more than one language, then a dropdown feature displays the list of available languages.
 
 ![DE language](/dotstatsuite-documentation/images/de-language.png)
 
 Switching from one language to another will display the corresponding translated labels for the static UI elements, as well as for the contents (e.g. filter contents, table and chart view headers and labels, etc.).   
-If, for a given language, the localised contents are not available (e.g. the data provider did not add the necessary translated elements), then they are replaced by their corresponding IDs.  
+If, for a given language, the localised contents are not available (e.g. the data provider did not add the necessary translated elements), then they are replaced by the default language being the first language provided in the request (provided as the first language defined by the data owner).  
 
 The behavior of switching language will change depending on the page where language is switched:
 * Switching language from the homepage keeps the user on the homepage;
