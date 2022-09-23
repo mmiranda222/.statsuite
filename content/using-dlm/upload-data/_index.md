@@ -59,7 +59,7 @@ The following actions are supported by the .Stat Suite when uploading data using
 
 *Note* that, if this column is absent, then the action "Information" is assumed.
 
-### Rules of the Merge action
+#### Rules of the Merge action
 **M: Merge** actions are assumed to take place at the lowest level of detail provided in the message, however:
 - Dimensions can be **omitted** only when uploading higher-level attribute values that are not attached at these dimensions. Note that the attachment level of attributes is always predefined.
 - Apart from dimensions, whenever only specific values for measures or attributes are provided, then only these values are updated/inserted. Any not specified (omitted) value is not changed.
