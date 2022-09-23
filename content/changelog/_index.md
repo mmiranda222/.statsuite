@@ -109,7 +109,7 @@ ToC
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.1**.
 
 > **Disclaimer:**  
-> This release delivers an intermediate implementation of data delete features. Deleting referential metadata as well as transfering and retrieving deleted data (using the SDMX rest `updatedAfter` parameter) are not yet included. Please note that due to a regression in the retrieval of referential metadata in certain situations, we do not recommend using this release to update instances that already use referential metadata features.  
+> This release delivers an intermediate implementation of data delete features. Deleting referential metadata as well as transferring and retrieving deleted data (using the SDMX rest `updatedAfter` parameter) are not yet included. Please note that due to a regression in the retrieval of referential metadata in certain situations, we do not recommend using this release to update instances that already use referential metadata features.  
 
 major changes:
 
