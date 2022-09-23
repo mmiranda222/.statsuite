@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [September 23, 2022](#september-23-2022)
 - [September 22, 2022](#september-22-2022)
 - [September 15, 2022](#september-15-2022)
 - [August 16, 2022](#august-16-2022)
@@ -100,6 +101,20 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### September 23, 2022
+**[Patch release .Stat Suite JS "radio"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/58#tab-issues)**
+> This release includes a **patch** version of the **data-explorer** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.1**.
+
+patch changes:
+
+- [data-explorer#857](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/857) DE temporarily shows 'There is no data for the current selection. Please change the selection' message before the data appears.
+- [data-explorer#856](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/856) 'Whoops' page when time period is removed from a default query.
+- [data-explorer#844](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/844) 'Frequency=Annual' is displayed in the 'Used filters' area even if the `NOT_DISPLAYED` annotation is used.
+- [data-explorer#843](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/843) 'UNIT_MULT=0' is not excluded from the combined Unit of Measure display when using the `NOT_DISPLAYED` annotation.
 
 ---
 
