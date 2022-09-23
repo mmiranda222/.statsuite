@@ -103,7 +103,7 @@ ToC
 
 ---
 
-### September XX, 2022
+### September 22, 2022
 **[Release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
 > This release includes a **major** version of the **core-transfer**, **sdmxri-nsi-ws**, **auth-management**, and **data-access** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.1**.
