@@ -99,57 +99,57 @@ The table below illustrates what are the possible basic delete actions for obser
 
 
 **Scenario 1: delete whole content of the dataflow**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.xml?inline=false)
 
 **Scenario 2: delete all observations of the dataflow and the observation-level attributes**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_2__delete_all_observations_of_the_dataflow_and_the_observation-level_attributes.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_2__delete_all_observations_of_the_dataflow_and_the_observation-level_attributes.csv)  
+csv file [OECD-DF_TEST_DELETE-1.0-case_2__delete_all_observations_of_the_dataflow_and_the_observation-level_attributes.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_2__delete_all_observations_of_the_dataflow_and_the_observation-level_attributes.csv?inline=false)  
 xml file **NOT POSSIBLE** because XML requires at least one dimension value
 
 **Scenario 3: delete all observation values of the dataflow**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_3__delete_all_observation_values_of_the_dataflow.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_3__delete_all_observation_values_of_the_dataflow.csv)  
+csv file [OECD-DF_TEST_DELETE-1.0-case_3__delete_all_observation_values_of_the_dataflow.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_3__delete_all_observation_values_of_the_dataflow.csv?inline=false)  
 xml file **NOT POSSIBLE** because XML requires at least one dimension value
 
 **Scenario 4: delete all attributes of the dataflow**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_4__delete_all_attributes_of_the_dataflow.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_4__delete_all_attributes_of_the_dataflow.csv)  
+csv file [OECD-DF_TEST_DELETE-1.0-case_4__delete_all_attributes_of_the_dataflow.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_4__delete_all_attributes_of_the_dataflow.csv?inline=false)  
 xml file **NOT POSSIBLE** because XML requires at least one dimension value
 
 **Scenario 5: delete attributes attached at dataflow level**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.xml?inline=false)
 
 **Scenario 6: delete everything related to DIM_2=B**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.csv) or [OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.xml) or [OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.csv?inline=false) or [OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_B_way1.xml?inline=false) or [OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.xml?inline=false)
 
 **Scenario 7: delete everything attached to DIM_2=B**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.xml?inline=false)
 
 **Scenario 8: delete all observations (and its observation-level attributes) related to DIM_2=B**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.xml?inline=false)
 
 **Scenario 9: delete all time series attributes**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_9__delete_all_time_series_attributes.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_9__delete_all_time_series_attributes.csv)  
+csv file [OECD-DF_TEST_DELETE-1.0-case_9__delete_all_time_series_attributes.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_9__delete_all_time_series_attributes.csv?inline=false)  
 xml file **NOT POSSIBLE** because XML requires at least one dimension value
 
 **Scenario 10: delete whole time series DIM_1=A,DIM_2=B**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM_2_B.xml?inline=false)
 
 **Scenario 11: delete the attributes attached to time series DIM_1=A,DIM_2=B**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.xml?inline=false)
 
 **Scenario 12: delete observation values & observation-level attributes for time series DIM_1=A,DIM_2=B**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml?inline=false)
 
 **Scenario 13: delete observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml?inline=false)
 
 **Scenario 14: delete observation value attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021**  
-csv file [OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv)  
-xml file [OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml)
+csv file [OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv?inline=false)  
+xml file [OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml?inline=false)
