@@ -2,7 +2,7 @@
 title: "Upload referential metadata from a csv file"
 subtitle: 
 comments: false
-weight: 292
+weight: 340
 keywords: [
  'Prerequisite', '#prerequisite',
  'File format', '#file-format',
@@ -51,7 +51,7 @@ As for the DSD, the concepts used in the MSD to name the metadata attributes are
 
 Like for SDMX-CSV data messages for observation and attributes values, the message for referential metadata values also allows omitting any column for referential metadata attributes that are not being transmitted. In addition, the usage of a specific SDMX-CSV data message for referential metadata values permits omitting unnecessary dimension columns (those that are not used for any attachment of the provided referential metadata values).
 
-Referential metadata can be uploaded by using the main menu feature "Upload data" available from the top banner of the DLM, and similar to [upload data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/).
+Referential metadata can be uploaded by using the main menu feature "Upload data" available from the top banner of the DLM, and similar to [upload data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-sdmx-file/).
 
 The format of the .csv file for referential metadata must comply to the SDMX-CSV 2.0 format, which is as follow:
 - the first column: header row containing 'STRUCTURE' and each other row containing 'dataflow'

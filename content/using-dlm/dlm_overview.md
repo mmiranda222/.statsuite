@@ -175,12 +175,12 @@ For each artefact, the following details are shown:
 * Artefact version (e.g. 1.0, 0.2, 1.0.3)
 * Final: A Yes/No value, with a *tick* icon if Yes
 * Artefact owner (maintenance agency of the artefact)
-* Action: Hamburger menu button that offers a context-aware list of specific actions to perform over the artefact (see related documentation for each action: [Transfer artefact](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data-structures), [Transfer data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data), [Delete structure](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data-structures), Export structure and Export data)  
+* Action: Hamburger menu button that offers a context-aware list of specific actions to perform over the artefact (see related documentation for each action: [Transfer artefact](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-structures/copy-data-structures), [Transfer data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/copy-data), [Delete structure](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-structures/delete-data-structures), Export structure and Export data)  
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-10a.png)
 
 For Dataflows **only**, The user can view the following additional information:
-* **Preview:** the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/preview-data/) of the documentation)
+* **Preview:** the eye icon opens the data table preview of a dataflow in a new tab of the application, by using the Data Explorer data view (see more in [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/preview-data/) of the documentation)
 * **Number** of observation values.
 * **Categories** with information about thematic categorisation. Note that a Dataflow can be categorised into one or more Categories
 * **Space** name

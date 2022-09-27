@@ -67,7 +67,7 @@ Currently, referential metadata values can be uploaded only with the .Stat Core 
 
 Note that attribute and observation values cannot be uploaded together with referential metadata at the same time (with the same file) yet. They need to be uploaded separately. However, no specific parameter is required to indicate the type of content (either attribute and observation values or referential metadata values) to be uploaded, because the Transfer service automatically recognises the type of content. Also, attribute and observation values still need to be uploaded using the Excel, SDMX-CSV 1.0, SDMX-ML 2.0 or SDMX-ML 2.1 formats.
 
-For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-referential-metadata/). 
+For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/). 
 
 The .Stat Core transfer service also supports the transfer (copy) of referential metadata values between dataspaces, by using the API function `/transfer/dataflow`.  
 The **`transferContent`** parameter of the `/transfer/dataflow` function allows:

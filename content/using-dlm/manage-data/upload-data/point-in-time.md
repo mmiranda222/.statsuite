@@ -2,7 +2,7 @@
 title: "Point in Time release options"
 subtitle: 
 comments: false
-weight: 300
+weight: 360
 
 ---
 
@@ -25,6 +25,6 @@ Also note that, if there is an existing Embargo of data for a dataflow/DSD, then
 
 The optional feature "Allow for later emergency restoration of the current live data" allows to keep a restoration copy of the data. Read more about [how to restore Live data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management/#rollback-and-restoration).
 
-Once the user has completed the data upload options and clicked on "Upload", the upload process will follow the regular process as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/#).
+Once the user has completed the data upload options and clicked on "Upload", the upload process will follow the regular process as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-sdmx-file/#).
 
 The release of the PIT version of data happens then at the exact date-time as specified in the relase date-time.

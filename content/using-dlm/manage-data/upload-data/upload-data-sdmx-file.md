@@ -2,7 +2,7 @@
 title: "Upload data from an SDMX file (xml/csv)"
 subtitle: 
 comments: false
-weight: 280
+weight: 320
 keywords: [
  'Upload data file', '#upload-data-file',
  'Notifications', '#notifications',

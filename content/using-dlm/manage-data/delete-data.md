@@ -2,7 +2,7 @@
 title: "Delete data"
 subtitle: 
 comments: false
-weight: 310
+weight: 400
 keywords: [
  'Introduction', '#introduction',
  'Null values by empty import', '#null-values-by-empty-import',
@@ -20,16 +20,16 @@ keywords: [
 ---
 
 ### Introduction
-Data, meaning **observations values** and **attribute values**, can be deleted by using the feature [“Upload data & referential metadata”](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/) available from the top banner of the DLM.
+Data, meaning **observations values** and **attribute values**, can be deleted by using the feature [“Upload data & referential metadata”](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/) available from the top banner of the DLM.
 
 Data deletion is supported with the following formats:
 - for limited delete operation
   - [SDMX-CSV version 1.0](https://github.com/sdmx-twg/sdmx-csv/tree/v1.0/data-message/docs/sdmx-csv-field-guide.md)
-  - [SDMX-ML](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/) (2.1 generic and data-specific formats, 2.0 generic and compact formats)
-  - [Excel data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-edd/)
+  - [SDMX-ML](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-sdmx-file/) (2.1 generic and data-specific formats, 2.0 generic and compact formats)
+  - [Excel data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-edd/)
 - for advanced delete operations
   - [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md)
-  - [SDMX-ML](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/) (2.1 generic and data-specific formats, 2.0 generic and compact formats)
+  - [SDMX-ML](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-sdmx-file/) (2.1 generic and data-specific formats, 2.0 generic and compact formats)
 
 **Current limitation**:   
 It is not possible yet to "transfer" (copy) the deletion of data from one data space to another.

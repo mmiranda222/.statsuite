@@ -2,7 +2,7 @@
 title: "Implicit and explicit orders"
 subtitle: 
 comments: false
-weight: 350
+weight: 500
 keywords: [
   'Localised order in the items of all ItemSchemes', '#localised-order-in-the-items-of-all-itemschemes',
   'Localized order in data message for DE filters, table and chart views', '#localized-order-in-data-message-for-de-filters-table-and-chart-views',
