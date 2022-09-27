@@ -3,7 +3,7 @@
 title: "Copy data"
 subtitle: 
 comments: false
-weight: 400
+weight: 530
 keywords: [
   'Transfer data option', '#transfer-data-option',
   'Partial data transfer', '#partial-data-transfer',
