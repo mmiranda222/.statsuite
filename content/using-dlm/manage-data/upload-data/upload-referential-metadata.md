@@ -2,7 +2,7 @@
 title: "Upload referential metadata from a csv file"
 subtitle: 
 comments: false
-weight: 292
+weight: 340
 keywords: [
  'Prerequisite', '#prerequisite',
  'File format', '#file-format',

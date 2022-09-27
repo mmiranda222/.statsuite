@@ -2,7 +2,7 @@
 title: "Upload data or referential metadata"
 subtitle: 
 comments: false
-weight: 270
+weight: 310
 keywords: [
  'Introduction', '#introduction',
  'Advanced actions for data import', '#advanced-actions-for-data-import',

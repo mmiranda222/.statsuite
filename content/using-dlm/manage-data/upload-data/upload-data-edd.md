@@ -2,7 +2,7 @@
 title: "Upload data from Excel files"
 subtitle: 
 comments: false
-weight: 290
+weight: 330
 keywords: [
   'Data file format and size', '#data-file-format-and-size',
   'Upload data file', '#upload-data-file',
