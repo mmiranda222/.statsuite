@@ -8,7 +8,7 @@ weight: 269
 
 > Released with [August 3, 2022 .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)
 
-Referential metadata attributes can be defined for a data structure by linking the Data Structure Definition (DSD) to one Metadata Structure Definition (MSD) on behalf of an *SDMX* annotation of type `METADATA` (see [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-referential-metadata/)), which subsequently enables uploading referential metadata values to an .Stat Core data space.
+Referential metadata attributes can be defined for a data structure by linking the Data Structure Definition (DSD) to one Metadata Structure Definition (MSD) on behalf of an *SDMX* annotation of type `METADATA` (see [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/)), which subsequently enables uploading referential metadata values to an .Stat Core data space.
 
 To define such a link, users can click on "Add ref. metadata link" in the contextual menu of the DSD. This option is only available for DSDs belonging to an internal data space, and only for DSDs without an already existing MSD link.
 

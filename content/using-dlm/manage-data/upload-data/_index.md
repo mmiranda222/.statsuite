@@ -32,12 +32,12 @@ keywords: [
 ![dlm-upload-data-banner](/dotstatsuite-documentation/images/dlm-upload-data-sdmx-banner.png)
 
 The upload supports the following **file formats**:  
-- [SDMX data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/) for observation and attribute values only
+- [SDMX data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-sdmx-file/) for observation and attribute values only
    - [SDMX-CSV version 1.0](https://github.com/sdmx-twg/sdmx-csv/tree/v1.0/data-message/docs/sdmx-csv-field-guide.md)
    - [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md)
-   - [SDMX-ML](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-sdmx-file/) (2.1 generic and data-specific formats, 2.0 generic and compact formats)
-- [Excel data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-data-edd/) together with an "Excel data definition (EDD)" xml file that defines how to read the data from the Excel file  
- - [SDMX metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-referential-metadata/) for referential metadata attribute values only
+   - [SDMX-ML](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-sdmx-file/) (2.1 generic and data-specific formats, 2.0 generic and compact formats)
+- [Excel data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-data-edd/) together with an "Excel data definition (EDD)" xml file that defines how to read the data from the Excel file  
+ - [SDMX metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/) for referential metadata attribute values only
    - [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md)
 
 **Disclaimer:** SDMX-ML file format for Merge and Combined actions is not yet available. 
@@ -54,7 +54,7 @@ The following actions are supported by the .Stat Suite when uploading data using
 
 - **"I": Information** - Data is for information purposes. If such data messages are loaded into a data space, the action "M" (Merge) is assumed.
 - **"M": Merge** *(legacy "A": Append)* -  Data is for an incremental update of existing observations or partial-key attributes or for the provision of new data formerly absent. This means that only the information provided explicitly in the message should be altered. Any measure or attribute value that is to be added or changed must be provided. However, the absence of an observation value or a data attribute at any level does not imply deletion; instead it is simply implied that the value is to remain unchanged. Therefore, it is valid and acceptable to send a data message with an action of Merge which (in addition to identifying structure columns) contains only identifying dimensions with some attribute values. In this case, whatever the attachment level of the attributes is, the values for the attributes will be updated. Note that it is not permissible to update measure or attribute values using incomplete identification information, e.g. without the structure ID or without the necessary dimensions (full key for measures, full key/partial key/none for attributes).
-- **"D": Delete** - Data is to be deleted. See https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/delete-data/
+- **"D": Delete** - Data is to be deleted. See https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/delete-data/
 
 *Note* that, if this column is absent, then the action "Information" is assumed.
 

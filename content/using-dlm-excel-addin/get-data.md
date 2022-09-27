@@ -91,7 +91,7 @@ The user can choose one of the following content type (combinations):
 
 ![DLM Excel-Addin specify output](/dotstatsuite-documentation/images/dlm-excel-addin-specify-output.png)
 
-If there are no referential metadata defined for a selected dataflow (in case that the DSD doesn't have the `METADATA` annotation type), and/or if the configuration of the data source is not set with the paramater `isMetadata="true"` (see the installation documentation [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin#genericrestconnection)), then the option to return referential metadata is disabled, and a question mark icon with displays a bubble message on mouse over "See here for information on how to define referential metadata" with a link to the [related doumentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/upload-referential-metadata/#prerequisite).
+If there are no referential metadata defined for a selected dataflow (in case that the DSD doesn't have the `METADATA` annotation type), and/or if the configuration of the data source is not set with the paramater `isMetadata="true"` (see the installation documentation [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin#genericrestconnection)), then the option to return referential metadata is disabled, and a question mark icon with displays a bubble message on mouse over "See here for information on how to define referential metadata" with a link to the [related doumentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/#prerequisite).
 
 ![DLM Excel-Addin ref metadata hyperlink](/dotstatsuite-documentation/images/dlm-excel-addin-link-ref-metadata.png)
 

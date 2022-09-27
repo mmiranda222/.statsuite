@@ -43,7 +43,7 @@ The PIT only applies to the data values and associated attribute values, it does
 #### Basic characteristics
 *  The Point in Time feature is not based on SDMX features.
 *  The PIT is done at DSD level, meaning that all dataflows that are part of a DSD will contain a PIT version, when it is created (even if their data might not be changed).
-*  The Data Lifecycle Manager (DLM) also supports the PIT features. See the [upload data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/upload-data/point-in-time/) and [copy data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/copy-data/#point-in-time-release) features.
+*  The Data Lifecycle Manager (DLM) also supports the PIT features. See the [upload data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/point-in-time/) and [copy data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/copy-data/#point-in-time-release) features.
 *  There can be DSDs with:
    - only live data, no PIT version
    - both live data and PIT version
