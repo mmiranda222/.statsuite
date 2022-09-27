@@ -2,7 +2,7 @@
 title: "Delete data"
 subtitle: 
 comments: false
-weight: 310
+weight: 400
 keywords: [
  'Introduction', '#introduction',
  'Null values by empty import', '#null-values-by-empty-import',

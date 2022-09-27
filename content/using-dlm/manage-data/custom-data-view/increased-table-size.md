@@ -2,7 +2,7 @@
 title: "Increased table size"
 subtitle: 
 comments: false
-weight: 337
+weight: 470
 ---
 
 > Released in [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)

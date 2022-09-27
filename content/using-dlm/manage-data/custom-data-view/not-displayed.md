@@ -2,7 +2,7 @@
 title: "Hide information of a data view"
 subtitle: 
 comments: false
-weight: 345
+weight: 490
 keywords: [
   'Hide information of a data view', '#hide-information-of-a-data-view',
   'Scenario 1: Hide dimensions', '#scenario-1-hide-dimensions',

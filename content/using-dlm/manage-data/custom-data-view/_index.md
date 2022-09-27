@@ -2,7 +2,7 @@
 title: "Customise data views"
 subtitle: 
 comments: false
-weight: 330
+weight: 450
 keywords: [
   'Default layout', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-layout/',
   'Increased table size', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-layout/increased-table-size',
