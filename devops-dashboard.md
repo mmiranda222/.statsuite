@@ -331,15 +331,33 @@ schedule-postgresql-0|postgresql|qa (also used for staging)|Every day between 3:
 
 ## GCP logs
 
+https://console.cloud.google.com/logs > siscc project
+
 |namespace|service (container name)|logname|
 |---|---|---|
 |qa|nsi-reset|QA_NSI_RESET|
-|qa|nsi/dbup-reset-structure|QA_DBUP_STRUCTURE_STABLE|
+|qa|nsi/dbup-reset-structure|QA_DBUP_RESET_STRUCTURE|
 |qa|nsi-stable|QA_NSI_STABLE|
-|qa|nsi/dbup-stable-structure|QA_DBUP_STRUCTURE_RESET|
+|qa|nsi/dbup-stable-structure|QA_DBUP_STABLE_STRUCTURE|
 |qa|transfer|QA_TRANSFER|
-|qa|transfer/dbup-stable-data|QA_DBUP_DATA_STABLE|
-|qa|transfer/dbup-reset-data|QA_DBUP_DATA_RESET|
+|qa|transfer/dbup-stable-data|QA_DBUP_STABLE_DATA|
+|qa|transfer/dbup-reset-data|QA_DBUP_RESET_DATA|
 |qa|transfer/dotstatsuite-devops-db-config|-|
 |qa|authz|QA_AUTHZ|
 |qa|authz/dbup-common|QA_DBUP_COMMON|
+|staging|nsi-reset-siscc|STAGING_NSI_RESET_SISCC|
+|staging|nsi/dbup-reset-structure|STAGING_DBUP_RESET_STRUCTURE_SISCC|
+|staging|nsi-stable-siscc|STAGING_NSI_STABLE_SISCC|
+|staging|nsi/dbup-stable-structure|STAGING_DBUP_STABLE_STRUCTURE_SISCC|
+|staging|nsi-staging-oecd|STAGING_NSI_STAGING_OECD|
+|staging|nsi/dbup-staging-structure|STAGING_DBUP_STAGING_STRUCTURE_OECD|
+|staging|nsi-design-oecd|STAGING_NSI_DESIGN_OECD|
+|staging|nsi/dbup-design-structure|STAGING_DBUP_DESIGN_STRUCTURE_OECD|
+|staging|transfer|STAGING_TRANSFER|
+|staging|transfer/dbup-nsi-design-oecd-data|STAGING_DBUP_DESIGN_DATA_OECD|
+|staging|transfer/dbup-nsi-staging-oecd-data|STAGING_DBUP_STAGING_DATA_OECD|
+|staging|transfer/dbup-nsi-stable-siscc-data|STAGING_DBUP_STABLE_DATA_SISCC|
+|staging|transfer/dbup-nsi-reset-siscc-data|STAGING_DBUP_RESET_DATA_SISCC|
+|staging|transfer/dotstatsuite-devops-db-config|-|
+|staging|authz|STAGING_AUTHZ|
+|staging|authz/dbup-common|STAGING_DBUP_COMMON|
