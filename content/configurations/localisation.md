@@ -169,8 +169,8 @@ The currently defined format whitelist is:
 ### Adding a new locale
 Adding a locale to the .Stat Suite that is not yet supported requires slightly updating the codebase. It is therefore necessary to create a ticket in [GitLab](https://gitlab.com/groups/sis-cc/-/issues) for such a request by following the [contribution process](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/). Within your ticket you will need to provide:
 * The name and id ([IETF language tag](https://tools.ietf.org/html/bcp47)) of the newly requested locale,
-* A translation file with all the translation keys and their localised values. Always complete and up-to-date references for this work are the English and the French translations that can be retrieved from the **`master`** branch in https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/tree/master/data/dev/i18n;
-* As a technical contributor, you can also refer to the [developer how to](#Management of the complete list of keys for default translations) for additionally submitting a merge request to the codebase for the new language by linking it to the related ticket.
+* A translation file with all the translation keys and their localised values. Always complete and up-to-date references for this work are the English and the French translations that can be retrieved from the **`master`** branch in https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/i18n;
+* As a technical contributor, you can also refer to the [developer how to](#management-of-the-complete-list-of-keys-for-default-translations) for additionally submitting a merge request to the codebase for the new language by linking it to the related ticket.
 
 Once a new locale is defined (and publicly released), it needs to be added to the configuration of each application tenant that wants to use it (see [Defining a sub-set of locales to be used in an application tenant](#defining-a-sub-set-of-locales-to-be-used-in-an-application-tenant)).
 
