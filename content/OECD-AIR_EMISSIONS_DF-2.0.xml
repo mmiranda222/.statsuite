@@ -16,7 +16,7 @@
             <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
             <common:AnnotationText xml:lang="en">true</common:AnnotationText>
           </common:Annotation>
-          </common:Annotation>
+          <common:Annotation>
             <common:AnnotationType>DEFAULT</common:AnnotationType>
             <common:AnnotationTitle>COU=CAN,POL=SOX+NOX</common:AnnotationTitle>
           </common:Annotation>
