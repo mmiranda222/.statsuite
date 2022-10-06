@@ -60,8 +60,8 @@ Use the following syntax in a dataflow or dataset definition to hide dimensions 
 
 ```
         "annotations": [{
-                 "type": "NOT_DISPLAYED",
                  "title": "DIM3,DIM6,ATTR5,ATTR6"   <-- These are the related dimension and attribute IDs
+                 "type": "NOT_DISPLAYED",
          }]
 ```
 
@@ -77,8 +77,8 @@ Use the following syntax in a dataflow, a DSD or a dataset definition to hide di
 
 ```
         "annotations": [{
-                 "type": "NOT_DISPLAYED",
                  "title": "DIM1=CODE1+CODE2,DIM3=CODE4,ATTR7=CODE5+CODE6"   <-- These are the related IDs of dimensions and their values, and attributes and their values
+                 "type": "NOT_DISPLAYED",
          }]
 ```
 
