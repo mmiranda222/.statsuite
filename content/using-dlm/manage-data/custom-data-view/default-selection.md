@@ -23,13 +23,13 @@ Use the following syntax when defining the annotation in the item definition of 
 Use the following syntax when defining the annotation in the Dataflow or DSD definition:  
 ```
         "annotations": [{
-                 "type": "DEFAULT"
                  "title": "DIM3=CODE1+CODE2,DIM6=CODE,DIM7,TIME_PERIOD_START=2013-01,TIME_PERIOD_END=2018-12"   <-- These are the related dimension IDs and code IDs; if a dimension has no code IDs then it means that default settings done at lower levels (codelist for DSDs or dataflows, DSD for dataflows) are discarded and no selection is made for this dimension
+                 "type": "DEFAULT"
         }]
 
         "annotations": [{
-                 "type": "DEFAULT"
                  "title": "DIM3=CODE1+CODE2,DIM6=CODE,TIME_PERIOD_START=2013-01"  <-- open-ended time period span
+                 "type": "DEFAULT"
         }]
 ```
 

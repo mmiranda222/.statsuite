@@ -25,11 +25,11 @@ The syntax for the explicit localised "ORDER" annotation for items in Codelists 
 
 ```
         "annotations": [{
+                 "type": "ORDER"
                  "text": {
                           "en": "5",
                           "fr": "7"
-                 },
-                 "type": "ORDER"
+                 }
          }]
 ```
 

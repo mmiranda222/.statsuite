@@ -33,16 +33,16 @@ Use the following syntax when defining the annotations in the Dataflow or DSD de
 
 ```
         "annotations": [{
-                 "type": "LAYOUT_ROW",
                  "title": "DIM6"   <-- These are the related dimension IDs (the order is significant)
+                 "type": "LAYOUT_ROW",
          }]
         "annotations": [{
-                 "type": "LAYOUT_COLUMN",
                  "title": "DIM2,DIM1"   <-- These are the related dimension IDs (the order is significant)
+                 "type": "LAYOUT_COLUMN",
          }]
         "annotations": [{
-                 "type": "LAYOUT_ROW_SECTION",
                  "title": "DIM4,DIM5,DIM3"   <-- These are the related dimension IDs (the order is significant)
+                 "type": "LAYOUT_ROW_SECTION",
          }]
 ```
 
