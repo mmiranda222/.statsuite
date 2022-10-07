@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 07, 2022](#october-07-2022)
 - [September 28, 2022](#september-28-2022)
 - [September 23, 2022](#september-23-2022)
 - [September 22, 2022](#september-22-2022)
@@ -102,6 +103,26 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### October 07, 2022
+
+**[Patch release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
+> This release includes a **patch** version of the **core-transfer**, **sdmxri-nsi-ws**, and **data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.2**.
+
+patch changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#289](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/289) *(DevOps)* Deploy NSI patch version 8.12.2.
+- [dotstatsuite-core-sdmxri-nsi-ws#286](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/286) Disappearing referential metadata availability and content (in specific situations).
+- [dotstatsuite-core-sdmxri-nsi-ws#269](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/269) Deleting structures and related artefacts fails on first attempt in the DLM.
+- [dotstatsuite-core-sdmxri-nsi-ws#268](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/268) Header and sub-folder issues in zipped responses.
+- [dotstatsuite-core-sdmxri-nsi-ws#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/164) Leftover mappingset Db related records after dataflow deletion (including *"Enlisting in Ambient transactions is not supported"* error type).
+- [dotstatsuite-core-transfer#439](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/439) Remove temp `log4net` internal debug.
+- [dotstatsuite-core-transfer#437](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/437) Error message when using huge data files.
+- [dotstatsuite-core-transfer#435](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/435) Adding/updating only dataflow-level attribute values isn't working.
+- [dotstatsuite-core-transfer#429](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/429) When dimension order in DSD is different bewteen source and target, then data is not transferred even though the transfer service says it was "successful". **Disclaimer:** If it appears that you had a difference of dimension order in a DSD and that you have tried a data transfer from one source to another, then we recommend to first clean up the target DSD (using the `cleanup/dsd` transfer method) and redo the data transfer.
 
 ---
 
