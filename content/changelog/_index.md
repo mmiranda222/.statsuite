@@ -8,7 +8,7 @@ weight: 120
 
 <!-- 
 ToC
-- [October 07, 2022](#october-07-2022)
+- [October 7, 2022](#october-07-2022)
 - [September 28, 2022](#september-28-2022)
 - [September 23, 2022](#september-23-2022)
 - [September 22, 2022](#september-22-2022)
@@ -106,7 +106,7 @@ ToC
 
 ---
 
-### October 07, 2022
+### October 7, 2022
 
 **[Patch release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
 > This release includes a **patch** version of the **core-transfer**, **sdmxri-nsi-ws**, and **data-access** services.  
