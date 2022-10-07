@@ -115,7 +115,7 @@ ToC
 patch changes:
 
 - [dotstatsuite-core-sdmxri-nsi-ws#289](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/289) *(DevOps)* Deploy NSI patch version 8.12.2.
-- [dotstatsuite-core-sdmxri-nsi-ws#286](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/286) Disappearing referential metadata availability and content (in specific situations).
+- [dotstatsuite-core-sdmxri-nsi-ws#286](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/286) Disappearing referential metadata availability and content (in specific situations). **Disclaimer:** if the issue appears again on not-updated data views, it should be fixed by manually 1) run the `cleanup/mappingsets` transfer method, then 2) run the `init/dataflow` transfer method.
 - [dotstatsuite-core-sdmxri-nsi-ws#269](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/269) Deleting structures and related artefacts fails on first attempt in the DLM.
 - [dotstatsuite-core-sdmxri-nsi-ws#268](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/268) Header and sub-folder issues in zipped responses.
 - [dotstatsuite-core-sdmxri-nsi-ws#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/164) Leftover mappingset Db related records after dataflow deletion (including *"Enlisting in Ambient transactions is not supported"* error type).
