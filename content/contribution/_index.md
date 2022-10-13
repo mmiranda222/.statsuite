@@ -11,8 +11,6 @@ keywords: [
 ]
 ---
 
-includes:
-
 * [Report an issue](/dotstatsuite-documentation/contribution/report-an-issue)
 * [Issue process & Definitions of Done](/dotstatsuite-documentation/contribution/issue-process)
 * [Development guidelines](/dotstatsuite-documentation/contribution/development-guidelines)
