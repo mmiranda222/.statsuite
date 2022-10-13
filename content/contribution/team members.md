@@ -10,7 +10,6 @@ weight: 110
 - Amal Lahmar [@amallahmar](https://gitlab.com/amallahmar)
 - Balazs Szilagyi [@balazs82](https://gitlab.com/balazs82)
 - Dimitri Roncoli [@RedPDRoncoli](https://gitlab.com/RedPDRoncoli)
-- Mike Velluet [@mike.velluet](https://gitlab.com/mike.velluet)
 - Nicolas Briemant [@nicolas-briemant](https://gitlab.com/nicolas-briemant)
 - Pedro Carranza [@pedroacarranza](https://gitlab.com/pedroacarranza)
 - Zsolt Lenart [@ZsoltLenart](https://gitlab.com/ZsoltLenart)
