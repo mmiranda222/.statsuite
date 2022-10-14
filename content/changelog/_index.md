@@ -115,7 +115,7 @@ ToC
 
 patch change:
 
-- [dotstatsuite-core-transfer#440](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/440) Error when uplaoding data with the advanced data validation option.
+- [dotstatsuite-core-transfer#440](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/440) Error when uploading data with the advanced data validation option.
 
 ---
 
