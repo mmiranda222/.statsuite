@@ -205,6 +205,10 @@ This upgrade of pricing tier is done only at the first run of DbUp tool, at late
 
 After successful initialization of the databases the pricing tiers may be changed according to the needs, keeping in mind that the minimum required tier is *Standard S3* for .Stat *data* databases.
 
+#### Important note for Azure SQL
+Please ensure the **server role** _loginmanager_ is attached to user running DbUp. This role provides enough permission level to query _sys.sys_login_ table. For more information, please refer to [official documentation](https://learn.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sql-logins-transact-sql?view=sql-server-ver16).
+
+
 #### Initialize the DotStatSuiteCore_Common database  
 
 ![.Stat Core topology Common](/dotstatsuite-documentation/images/stat-core-topology-common.PNG)  
