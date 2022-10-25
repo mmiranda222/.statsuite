@@ -2,7 +2,7 @@
 title: ".Stat DevOps implementation"
 subtitle: 
 comments: false
-weight: 33
+weight: 30
 keywords: [
   'open-source development business requirements', '#open-source-development-business-requirements',
   'quality assurance QA environment', '#quality-assurance-qa-environment',

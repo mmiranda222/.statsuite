@@ -38,16 +38,24 @@ keywords: [
 ---
 
 ### Tenant model definition
-Allow for multi-tenant deployments with multi search engines
+Allow for multi-tenant deployments of the .Stat Suite JS components
 
-**Tenant** is the root definition of an organisation configuration, to which you can attach **scope(s)**, **data space(s)**, and **data source(s)**.  
-**Data space** is a SDMX endpoint with an URL and optional headers or options' overrides (e.g. `hasLastNObservations`).  
-**Data source** is a reference to a data space and a list of data queries used by the *sfs* search service to get a list of dataflows to index. More precisely, data queries are a list of SDMX CategoryScheme(s) to which dataflows are categorised.  
-**Scopes** for DLM and DE are used to define custom configurations for applications:
-- the DE scope defines data sources (because the search indexes from a data source), and data spaces (e.g. when in some cases the DE can have direct links to a space without search index);
-- the DLM scope contains spaces. In addition, each space for the DLM also contains the URL of the transfer service to be used for data and referential metadata imports into that space, aligning thus with the back-end service architecture, unless imports into a specific space are not to be supported by the DLM.
+**Tenant** (now also called **organisation**) is the root definition of an organisation's configuration, for which `data space(s)` and application `scope(s)` can be defined.  
+**Data space** is an SDMX endpoint with a URL and optional configuration parameters, such as supported headers and functions (e.g. `hasLastNObservations`).  
+Application **scopes** are custom configurations for the DLM and DE applications:
+- the `DE scope` defines which `data spaces` can be accessed and how they are to be indexed (or not) --> See `data sources` below.
+- the `DLM scope` defines which `data spaces` are listed and how they are to be accessed (or not, e.g. what is the URL of the transfer service to be used for data and referential metadata imports into that space).
+**Data source** is a virtual container defining a set of unique SDMX dataflows returned by the execution of `data queries` from one `data space`. `Data queries` are a list of SDMX CategoryScheme(s) with Categories into which dataflows to be indexed by the *sfs* search service are categorised.  
 
 ![New Tenant Model diagram](/dotstatsuite-documentation/images/new-tenant-model.png)
+
+**Data spaces example diagram for an installation at the OECD:** 
+
+![data space diagram](/dotstatsuite-documentation/images/data-space-diagram.png)
+
+**Data sources example diagram for an installation at the OECD and an external data source using an ILO SDMX API:** 
+
+![data source diagram](/dotstatsuite-documentation/images/data-source-diagram.png)
 
 ---
 
