@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [MMMMMMMM XX, 2022](#mmmmmmmm-xx-2022)
 - [October 25, 2022](#october-25-2022)
 - [October 14, 2022](#october-14-2022)
 - [October 13, 2022](#october-13-2022)
@@ -106,6 +107,25 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### MMMMMMMMMM XX, 2022
+**[.Stat SUite DLM Excel-addin versionXXXXXX](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/60#tab-issues)**
+> This release includes a new version of the **dlm-excel-addin** application.
+
+minor changes:
+
+- [dotstatsuite-excel-addin#66](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/66) Allow saving data also when only observation values were retrieved (without attribute values).
+- [dotstatsuite-excel-addin#87](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/87) Propose the min. & max. time-period boundaries in the filter editor. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#select-data))
+- [dotstatsuite-excel-addin#79](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/79) Enhance the information message when saving data/referential metadata (and include the request ID).
+- [dotstatsuite-excel-addin#73](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/73) Make the 'save' button for the referential metadata editor more explicit.
+- [dotstatsuite-excel-addin#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/96) Update the link to 'Referential metadata' documentation.
+
+patch changes:
+
+- [dotstatsuite-excel-addin#89](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/89) Incorrect hierarchical referential metadata upload.
+- [dotstatsuite-excel-addin#88](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/88) Excel crashes with open connected .Stat Suite table(s) after a while.
 
 ---
 
