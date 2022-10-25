@@ -2,7 +2,7 @@
 title: "Production setup recommendations"
 subtitle: 
 comments: false
-weight: 39
+weight: 38
 keywords: [
   'Target environments', '#target-environments',
   'Topology', '#topology',

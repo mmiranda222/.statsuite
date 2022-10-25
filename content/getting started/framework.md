@@ -2,7 +2,7 @@
 title: ".Stat Suite Open Source Framework"
 subtitle: 
 comments: false
-weight: 32
+weight: 25
 keywords: [
   'Introduction', '#introduction',
   'Technical stack', '#technical-stack',

@@ -2,7 +2,7 @@
 title: "Infrastructure requirements"
 subtitle: 
 comments: false
-weight: 38
+weight: 35
 keywords: [
   '.stat core data store', '#stat-core-data-store',
   '.stat data explorer', '#stat-data-explorer',

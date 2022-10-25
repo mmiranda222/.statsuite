@@ -2,7 +2,7 @@
 title: "Semantic versioning of CORE services"
 subtitle: 
 comments: false
-weight: 36
+weight: 33
 keywords: [
   'semantic version', '#semantic-version',
   'nuget generation', '#nuget-generation',
