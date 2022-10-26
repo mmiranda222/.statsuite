@@ -15,6 +15,10 @@ keywords: [
 ]
 ---
 
+> *Version history:*  
+> Time period boundaries in the filter selector since [October 26, 2022 Release .Stat Suite DLM Excel-addin v3.2.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-26-2022)  
+> Data availability on dimension values since [April 28, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-28-2022)
+
 #### Table of Content
 - [Selection wizard](#selection-wizard)
   - [Select data](#select-data)
@@ -70,7 +74,8 @@ Selecting a dataflow automatically displays the list of corresponding dimensions
 
 ![DLM Excel-Addin edit filters](/dotstatsuite-documentation/images/dlm-excel-addin-edit-filters.png)
 
-*Note* that, since [April 28, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-28-2022), only dimension values with available data are displayed in the edit filters panel. It means that, if e.g. a dataflow has only annual data but it is using a dimension with more frequency values (e.g. Monthly, or Daily), then only Annual frequency will appear in the Frequency selector.
+**Only dimension values with available data** are displayed in the edit filters panel. It means that, if e.g. a dataflow has only annual data but it is using a codelist with more frequency values (e.g. Monthly, or Daily), then only Annual frequency will appear in the Frequency selector.  
+Similarly, when the dataflow has a **time** dimension, the default start and end periods reflect the current data availability by applying the related values in the *SDMX* actual content constraint as default time period boundaries (e.g. start:2017 end:2022). If the dataflow has no actual content constraint, then the time period start and end values are empty by default.
 
 Once the user has applied a filter selection(s), it is possible to view and directly modify it/them by editing the "Current filters" fields (add/remove).  
 The dataflow selection, including filtered dimensions, is also displayed at the bottom of the wizard using [SDMX Rest syntax](https://github.com/sdmx-twg/sdmx-rest/blob/v1.5.0/v2_1/ws/rest/docs/4_4_data_queries.md), and the user can edit this query directly in the field and apply the desired modifications. The filter selections will then be updated accordingly in the above data filters.
@@ -91,7 +96,7 @@ The user can choose one of the following content type (combinations):
 
 ![DLM Excel-Addin specify output](/dotstatsuite-documentation/images/dlm-excel-addin-specify-output.png)
 
-If there are no referential metadata defined for a selected dataflow (in case that the DSD doesn't have the `METADATA` annotation type), and/or if the configuration of the data source is not set with the paramater `isMetadata="true"` (see the installation documentation [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin#genericrestconnection)), then the option to return referential metadata is disabled, and a question mark icon with displays a bubble message on mouse over "See here for information on how to define referential metadata" with a link to the [related doumentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/#prerequisite).
+If there are no referential metadata defined for a selected dataflow (in case that the DSD doesn't have the `METADATA` annotation type), and/or if the configuration of the data source is not set with the paramater `isMetadata="true"` (see the installation documentation [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin#genericrestconnection)), then the option to return referential metadata is disabled. Instead, this option has a question mark icon added, which shows the tooltip message on mouse-over: "See here for information on how to define referential metadata" with a link to the [related documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/#prerequisite).
 
 ![DLM Excel-Addin ref metadata hyperlink](/dotstatsuite-documentation/images/dlm-excel-addin-link-ref-metadata.png)
 

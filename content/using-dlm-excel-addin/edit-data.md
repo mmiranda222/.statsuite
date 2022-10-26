@@ -11,6 +11,9 @@ keywords: [
 
 ---
 
+> *Version history:*  
+> Allow saving data also when only observation values are retrieved (without attributes) since [October 26, 2022 Release .Stat Suite DLM Excel-addin v3.2.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-26-2022)  
+
 #### Table of content
 - [Add new rows](#add-new-rows)
 - [Edit STRING and XHTML values](#edit-string-and-xhtml-values)
@@ -44,9 +47,11 @@ The screenshot below shows an example of text editor for XHTML values:
 
 ![DLM Excel-Addin rich-text editor](/dotstatsuite-documentation/images/dlm-excel-addin-edit-html-values.png)
 
-If the user has started to change values using the metadata editor, then navigating from one cell to another will trigger the display of a popup window asking: "Would you like to save your changes?". Clicking on "Yes" or "No" will respectively save the modifications or not and display the content of the new selected cell in the metadata editor. 
+If the user has started to change values using the metadata editor, then navigating from one cell to another will trigger the display of a popup window asking: "Would you like to save your changes?". Clicking on "Yes" or "No" will respectively update or not the modifications in the cell or not and display the content of the new selected cell in the metadata editor. 
 
-![DLM Excel-Addin save message](/dotstatsuite-documentation/images/dlm-excel-addin-save-message.png)
+![DLM Excel-Addin save message](/dotstatsuite-documentation/images/dlm-excel-addin-save-message.png)  
+The changes of XHTML or String values done through the Metadata editor panel can be updated with the `Update table cell` green button available on the bottom part of the panel.  
+
 
 ---
 
