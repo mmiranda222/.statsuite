@@ -8,7 +8,7 @@ weight: 120
 
 <!-- 
 ToC
-- [MMMMMMMM XX, 2022](#mmmmmmmm-xx-2022)
+- [October 26, 2022](#october-26-2022)
 - [October 25, 2022](#october-25-2022)
 - [October 14, 2022](#october-14-2022)
 - [October 13, 2022](#october-13-2022)
@@ -110,8 +110,8 @@ ToC
 
 ---
 
-### MMMMMMMMMM XX, 2022
-**[.Stat SUite DLM Excel-addin versionXXXXXX](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/60#tab-issues)**
+### October 26, 2022
+**[.Stat SUite DLM Excel-addin v3.2.3](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/60#tab-issues)**
 > This release includes a new version of the **dlm-excel-addin** application.
 
 minor changes:
@@ -121,6 +121,7 @@ minor changes:
 - [dotstatsuite-excel-addin#79](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/79) Enhance the information message when saving data/referential metadata (and include the request ID).
 - [dotstatsuite-excel-addin#73](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/73) Make the 'save' button for the referential metadata editor more explicit.
 - [dotstatsuite-excel-addin#96](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/96) Update the link to 'Referential metadata' documentation.
+- [dotstatsuite-excel-addin#86](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/86) *(Support)* With nsiws v8.12.1, when data is requested for structure specific data message (Accept header application/vnd.sdmx.structurespecificdata+xml), then it returns a message with SDMX 3.0 format.
 
 patch changes:
 
