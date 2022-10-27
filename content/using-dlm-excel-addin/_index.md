@@ -19,6 +19,9 @@ keywords: [
 
 ### Introduction
 
+![Watch this video](/dotstatsuite-documentation/images/movie-logo.png)**<a href="https://www.youtube.com/watch?v=vbDJiXTQiIs" target="_blank">Watch this video</a>** on how to get started with .Stat DLM Excel-addin.
+
+
 **.Stat DLM Excel-Addin** is an Excel facilitator for data and referential metadata retrieval and editing. Directly within Excel it gives access to in-progress or published data, from internal or external SDMX data sources, as well as from legacy .Stat V7 systems.  
 
 The DLM Excel-Addin is packaged as a **ClickOnce** application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).  
