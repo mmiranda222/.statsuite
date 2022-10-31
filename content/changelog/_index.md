@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 31, 2022](#october-31-2022)
 - [October 26, 2022](#october-26-2022)
 - [October 25, 2022](#october-25-2022)
 - [October 14, 2022](#october-14-2022)
@@ -107,6 +108,19 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### October 31, 2022
+**[Patch release .Stat Suite JS "radio"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/58#tab-issues)**
+> This release includes a **patch** version of the **data-explorer** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.1**.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#894](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/894) The microdata table shows aggregates instead of microdata (and misses the row-section dimension value). 
+- [dotstatsuite-data-explorer#896](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/896) Facet values regression when the facet value count equals the number of results found.
+- [dotstatsuite-docker-compose#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/64) *(DevOps)* Upgrade DOcker demo with 'radio' release.
 
 ---
 
