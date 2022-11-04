@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [November 4, 2022](#november-4-2022)
 - [October 31, 2022](#october-31-2022)
 - [October 26, 2022](#october-26-2022)
 - [October 25, 2022](#october-25-2022)
@@ -108,6 +109,19 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+### November 4, 2022
+**[Patch release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
+> This release includes a **patch** version of the **core-transfer** and **data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.2**.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#444](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/444) Timeout issue for data upload of 70 million observations.
+- [dotstatsuite-core-transfer#448](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/448) Conversion failed error when uploading data with non-numeric measures.
+- [dotstatsuite-core-transfer#449](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/449) Transfer file cleanup isn't working anymore.
+- [dotstatsuite-core-transfer#453](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/453) Issue (re-)initialising a dataflow.
 
 ---
 
