@@ -134,12 +134,12 @@ patch changes:
 
 - [dotstatsuite-data-explorer#894](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/894) The microdata table shows aggregates instead of microdata (and misses the row-section dimension value). 
 - [dotstatsuite-data-explorer#896](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/896) Facet values regression when the facet value count equals the number of results found.
-- [dotstatsuite-docker-compose#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/64) *(DevOps)* Upgrade DOcker demo with 'radio' release.
+- [dotstatsuite-docker-compose#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/64) *(DevOps)* Upgrade Docker demo with 'radio' release.
 
 ---
 
 ### October 26, 2022
-**[.Stat SUite DLM Excel-addin v3.2.3](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/60#tab-issues)**
+**[.Stat Suite DLM Excel-addin v3.2.3](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/60#tab-issues)**
 > This release includes a new version of the **dlm-excel-addin** application.
 
 minor changes:
