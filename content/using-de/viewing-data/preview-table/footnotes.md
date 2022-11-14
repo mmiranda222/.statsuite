@@ -6,26 +6,22 @@ weight: 2900
 keywords: [
   'Definition', '#definition',
   'Level of display', '#level-of-display',
-  'Case 1a: the attribute value is the same for all cells in the table', '#case-1a-the-attribute-value-is-the-same-for-all-cells-in-the-table',
-  'Case 1b: the attribute value has only one dimension relationship', '#case-1b-the-attribute-value-has-only-one-dimension-relationship',
-  'Case 2: the attribute value is the same for all cells in any row section of the table', '#case-2-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table',
-  'Case 3: the attribute value is the same for one dimension in the rows of the table', '#case-3-the-attribute-value-is-the-same-for-one-dimension-in-the-rows-of-the-table',
-  'Case 4a: the attribute value is the same for all cells in any column of the table', '#case-4a-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table',
-  'Case 4b: the attribute value is the same for all cells in any column of the table', '#case-4b-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table',
-  'Case 5: the attribute values are or may be different between the cells in the table', '#case-5-the-attribute-values-are-or-may-be-different-between-the-cells-in-the-table',
+  'Case 1: the attribute value is known to be the same for all cells in the table', '#case-1-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-the-table',
+  'Case 2: the attribute value is known to be the same for all cells in a row section of the table', '#case-2-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-section-of-the-table',
+  'Case 3: the attribute value is known to be the same for all cells in a row of the table', '#case-3-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-of-the-table',
+  'Case 4: the attribute value is known to be the same for all cells in a column of the table', '#case-4-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-column-of-the-table',
+  'Case 5: the attribute values may otherwise vary between the cells in the table', '#case-5-the-attribute-values-may-otherwise-vary-between-the-cells-in-the-table',
 ]
 ---
 
 #### Table of Content
 - [Definition](#definition)
 - [Level of display](#level-of-display)
-  - [Case 1a: the attribute value is the same for all cells in the table](#case-1a-the-attribute-value-is-the-same-for-all-cells-in-the-table)
-  - [Case 1b: the attribute value has only one dimension relationship](#case-1b-the-attribute-value-has-only-one-dimension-relationship)
-  - [Case 2: the attribute value is the same for all cells in any row section of the table](#case-2-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table)
-  - [Case 3: the attribute value is the same for one dimension in the rows of the table](#case-3-the-attribute-value-is-the-same-for-one-dimension-in-the-rows-of-the-table)
-  - [Case 4a: the attribute value is the same for all cells in any column of the table](#case-4a-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
-  - [Case 4b: the attribute value is the same for all cells in any column of the table](#case-4b-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
-  - [Case 5: the attribute values are or may be different between the cells in the table](#case-5-the-attribute-values-are-or-may-be-different-between-the-cells-in-the-table)
+  - [Case 1: the attribute value is known to be the same for all cells in the table](#case-1-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-the-table)
+  - [Case 2: the attribute value is known to be the same for all cells in a row section of the table](#case-2-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-section-of-the-table)
+  - [Case 3: the attribute value is known to be the same for all cells in a row of the table](#case-3-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-of-the-table)
+  - [Case 4: the attribute value is known to be the same for all cells in a column of the table](#case-4-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-column-of-the-table)
+  - [Case 5: the attribute values may otherwise vary between the cells in the table](#case-5-the-attribute-values-may-otherwise-vary-between-the-cells-in-the-table)
 
 ---
 
@@ -48,64 +44,45 @@ Notes for attributes can be attached/displayed at the following levels in the ta
 
 These different levels of display are represented in the following cases.
 
-#### Case 1a: the attribute value is the same for all cells in the table
-**When**:
-* an attribute is attached to the *SDMX dataset* level (and defined as *none* by the data owner, meaning that the value of the attribute will not vary with any other structure component of the data view), OR
-* all dimensions of the data view have unique values (and are thus displayed in the subtitle),  
+#### Case 1: The attribute value is known to be the same for all cells in the table
 
+**When**:
+* The attribute is attached to the *SDMX dataset* level (and defined as *none* by the data owner, meaning that the value of the attribute will not vary with any other structure component of the data view), OR
+* The attribute is attached only to one or more single-valued dimensions (and thus those dimensions are listed in the data view subtitle)  
 **Then** the `*` icon is shown behind the data view **title**.  
 
 ![Case 1a](/dotstatsuite-documentation/images/using-de-footnotes-scenario1-with-no-relationship.PNG)
 
-#### Case 1b: the attribute value has only one dimension relationship
-**NOTE**  
->Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)  
+#### Case 2: The attribute value is known to be the same for all cells in a row section of the table
 
-**When** an attribute is attached to only one single dimension, and that dimension has only one single value (and thus that dimension is in the data view subtitle),  
-**Then** the `*` icon is shown behind the dimension name shown in the **subtitle**.
-
-![Case 1b](/dotstatsuite-documentation/images/using-de-footnotes-one-dim-relationship.png)
-
-#### Case 2: the attribute value is the same for all cells in any row section of the table
 **When**:
-* case 1 does not apply, AND
-* one or more than one target dimension is displayed in a row section, and all remaining target dimensions (if any) have only one value (and thus are in the table sub-title),  
-
-**Then** the `*` icon is shown on the left of the corresponding **row section** cell.  
+* Case 1 does not apply, AND
+* In addition to zero or more single-valued dimensions, the attribute is attached only to one or more dimensions displayed in a row section  
+**Then** the `*` icon is shown next to the text of the corresponding **row section** header.  
 
 ![Case 5](/dotstatsuite-documentation/images/using-de-footnotes-case5-with-2+dim-relationship.PNG)
 
-#### Case 3: the attribute value is the same for one dimension in the rows of the table
+#### Case 3: The attribute value is known to be the same for all cells in a row of the table
 **When**:
-* cases 1 to 2 do not apply, AND
-* more than one target dimension is displayed in the row axis, and all remaining dimensions (if any) are either on the row section axis or have only one value (and thus are in the table sub-title),  
-
-**Then** the `*` icon is dislayed in row header cells behind the dimension value(s) (thus, cells in row without an attribute value do not show the `*` icon).  
+* Cases 1 to 2 do not apply, AND
+* In addition to zero or more single-valued dimensions and zero or more dimensions displayed in a row section, the attribute is attached only to one or more dimensions displayed in the row axis
+**Then** the `*` icon is shown next to the row header in the adjacent cell of the extra (greyed) column.  
 
 ![Case 8](/dotstatsuite-documentation/images/using-de-footnotes-case8-with-2+dim-relationship.PNG)
 
-#### Case 4a: the attribute value is the same for all cells in any column of the table
+#### Case 4: The attribute value is known to be the same for all cells in a column of the table
 **When**:
-* cases 1 to 3 do not apply, AND
-* only one target dimension is displayed in the columns, and all remaining target dimensions (if any) have only one value (and thus are in the table sub-title),  
-
-**Then** the `*` icon is displayed  behind the target label in a columns header.  
+* Cases 1 to 3 do not apply, AND
+* In addition to zero or more single-valued dimensions, the attribute is attached only to one or more dimensions displayed in the column axis
+**Then** the `*` icon is shown next to the column header in the adjacent cell of the extra (greyed) row.
 
 ![Case 4](/dotstatsuite-documentation/images/using-de-footnotes-case4-with-2+dim-relationship.PNG)
 
-#### Case 4b: the attribute value is the same for all cells in any column of the table
-**When**:
-* cases 1 to 3 do not apply, AND
-* more than one target dimension is displayed in the columns, and all remaining target dimensions (if any) have only one value (and thus are in the table sub-title),  
+#### Case 5: The attribute values may otherwise vary between the cells in the table
 
-**Then** the `*` icon is displayed in a **specific column** (grey part) in the column corresponding to the attribute value(s) (thus, columns without an attribute value do not show the `*` icon).  
-
-![Case 3](/dotstatsuite-documentation/images/using-de-footnotes-case3-with-1or2+dim-relationship.PNG)
-
-#### Case 5: the attribute values are or may be different between the cells in the table
-**When** cases 1 to 4 do not apply,  
-**Then** the `*` icon is shown in the **cell** corresponding to the specific attribute value (thus, cells without an attribute value do not show the `*` icon).
+**When** Cases 1 to 4 do not apply,  
+**Then** the `*` icon is shown in the data cell corresponding to the specific attribute value attachment.
 
 ![]()
 
-**Note**: When a non-mandatory attribute is attached at observation level (and thus to all dimensions) and the data message contains only one single attribute value,then a display is still not generally possible in the sub-header. This is because the nature of the attribute type implies that there isn't any guarantee that all observations are actually using the provided attribute value, as some observations might not have that attribute value defined. Our high performance objectif for the table generation doesn't allow for looping over all observations to verify that no observation misses that attribute value.
+**Note**: When a non-mandatory attribute is attached at observation level (and thus to all dimensions) and the data message contains only one single attribute value, then a display is still not possible in the sub-header. This is because the nature of the attribute type implies that there isn't any guarantee that all observations are actually using the provided attribute value, as some observations might not have that attribute value defined. Our high performance objectif for the table generation doesn't allow for looping over all observations to verify that no observation misses that attribute value.
