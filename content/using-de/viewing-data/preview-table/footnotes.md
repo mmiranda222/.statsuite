@@ -8,8 +8,7 @@ keywords: [
   'Level of display', '#level-of-display',
   'Case 1a: the attribute value is the same for all cells in the table', '#case-1a-the-attribute-value-is-the-same-for-all-cells-in-the-table',
   'Case 1b: the attribute value has only one dimension relationship', '#case-1b-the-attribute-value-has-only-one-dimension-relationship',
-  'Case 2a: the attribute value is the same for all cells in any row section of the table', '#case-2a-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table',
-  'Case 2b: the attribute value is the same for all cells in any row section of the table', '#case-2b-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table',
+  'Case 2: the attribute value is the same for all cells in any row section of the table', '#case-2-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table',
   'Case 3: the attribute value is the same for one dimension in the rows of the table', '#case-3-the-attribute-value-is-the-same-for-one-dimension-in-the-rows-of-the-table',
   'Case 4a: the attribute value is the same for all cells in any column of the table', '#case-4a-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table',
   'Case 4b: the attribute value is the same for all cells in any column of the table', '#case-4b-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table',
@@ -22,8 +21,7 @@ keywords: [
 - [Level of display](#level-of-display)
   - [Case 1a: the attribute value is the same for all cells in the table](#case-1a-the-attribute-value-is-the-same-for-all-cells-in-the-table)
   - [Case 1b: the attribute value has only one dimension relationship](#case-1b-the-attribute-value-has-only-one-dimension-relationship)
-  - [Case 2a: the attribute value is the same for all cells in any row section of the table](#case-2a-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table)
-  - [Case 2b: the attribute value is the same for all cells in any row section of the table](#case-2b-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table)
+  - [Case 2: the attribute value is the same for all cells in any row section of the table](#case-2-the-attribute-value-is-the-same-for-all-cells-in-any-row-section-of-the-table)
   - [Case 3: the attribute value is the same for one dimension in the rows of the table](#case-3-the-attribute-value-is-the-same-for-one-dimension-in-the-rows-of-the-table)
   - [Case 4a: the attribute value is the same for all cells in any column of the table](#case-4a-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
   - [Case 4b: the attribute value is the same for all cells in any column of the table](#case-4b-the-attribute-value-is-the-same-for-all-cells-in-any-column-of-the-table)
@@ -68,23 +66,14 @@ These different levels of display are represented in the following cases.
 
 ![Case 1b](/dotstatsuite-documentation/images/using-de-footnotes-one-dim-relationship.png)
 
-#### Case 2a: the attribute value is the same for all cells in any row section of the table
+#### Case 2: the attribute value is the same for all cells in any row section of the table
 **When**:
 * case 1 does not apply, AND
-* only one target dimension is displayed in a row section, and all remaining target dimensions (if any) have only one value (and thus are in the table sub-title),  
+* one or more than one target dimension is displayed in a row section, and all remaining target dimensions (if any) have only one value (and thus are in the table sub-title),  
 
-**Then** the `*` icon is displayed behind the dimension value of the corresponding **row section**.  
+**Then** the `*` icon is shown on the left of the corresponding **row section** cell.  
 
 ![Case 5](/dotstatsuite-documentation/images/using-de-footnotes-case5-with-2+dim-relationship.PNG)
-
-#### Case 2b: the attribute value is the same for all cells in any row section of the table
-**When**:
-* case 1 does not apply, AND
-* more than one target dimension is displayed in a row section, and all remaining target dimensions (if any) have only one value (and thus are in the table sub-title),  
-
-**Then** the `*` icon is shown on the right of the corresponding **row section** cell.  
-
-![Case 6](/dotstatsuite-documentation/images/using-de-footnotes-case6-with-2+dim-relationship.PNG)
 
 #### Case 3: the attribute value is the same for one dimension in the rows of the table
 **When**:
