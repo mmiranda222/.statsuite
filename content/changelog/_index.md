@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [November 11, 2022](#november-11-2022)
 - [November 4, 2022](#november-4-2022)
 - [October 31, 2022](#october-31-2022)
 - [October 26, 2022](#october-26-2022)
@@ -109,6 +110,17 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+### November 11, 2022
+**[Patch release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
+> This release includes a **patch** version of the **core-transfer** and **data-access** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.2**.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#450](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/450) Error while retrieving Mappings from the `Mapping Store` when both DSD and referenced MSD have attribute and metadata attribute with the same ID. **Disclaimer:** the fix includes only to return a more meaningful error mesage to the user during data import or dataflow initialization, but it does not fix existing structures with error as mentioned above. If you encounter this issue, you need to re-create your SDMX structures and change one of the MSD or DSD attribute IDs.
+- [dotstatsuite-core-transfer#459](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/459) TimeOut "Content Constraint XXX, Timeout expired."
 
 ---
 ### November 4, 2022
