@@ -6,7 +6,7 @@ weight: 2900
 keywords: [
   'Definition', '#definition',
   'Level of display', '#level-of-display',
-  'Case 1: the attribute value is known to be the same for all cells in the table', '#case-1-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-the-table',
+  'Case 1: the attribute value is known to be the same for all cells in the data view', '#case-1-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-the-data-view',
   'Case 2: the attribute value is known to be the same for all cells in a row section of the table', '#case-2-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-section-of-the-table',
   'Case 3: the attribute value is known to be the same for all cells in a row of the table', '#case-3-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-of-the-table',
   'Case 4: the attribute value is known to be the same for all cells in a column of the table', '#case-4-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-column-of-the-table',
@@ -17,7 +17,7 @@ keywords: [
 #### Table of Content
 - [Definition](#definition)
 - [Level of display](#level-of-display)
-  - [Case 1: the attribute value is known to be the same for all cells in the table](#case-1-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-the-table)
+  - [Case 1: the attribute value is known to be the same for all cells in the data view](#case-1-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-the-data-view)
   - [Case 2: the attribute value is known to be the same for all cells in a row section of the table](#case-2-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-section-of-the-table)
   - [Case 3: the attribute value is known to be the same for all cells in a row of the table](#case-3-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-row-of-the-table)
   - [Case 4: the attribute value is known to be the same for all cells in a column of the table](#case-4-the-attribute-value-is-known-to-be-the-same-for-all-cells-in-a-column-of-the-table)
@@ -26,25 +26,23 @@ keywords: [
 ---
 
 ### Definition
-Notes are **coded or uncoded attributes** for which a star icon is displayed within brackets `*` directly left-aligned in the table cells, or next to the data view title.  
-On cell mouse-over, a tooltip shows the attribute(s) and its value(s). If several notes are to be displayed for the same coordinates of a given view, then there will be only one star icon. Several attributes in the same note are separated by a new line in the tooltip. 
+A **note** is one possible display approach for **coded or uncoded attributes**, where an underlined star icon is displayed `*` at the appropriate places. On mouse-over, a tooltip shows the corresponding attribute(s) and its/their value(s). Attributes referring to the same level in the data view are grouped under one single star icon. Several attributes in the same note are separated by a new line in the tooltip. 
 
 ![notes attributes](/dotstatsuite-documentation/images/using-de-footnotes.png)
 
-Displaying attributes as notes, instead of flags for instance, is defined per Data Explorer instance by the **configuration**: see [coded and uncoded attributes returned as notes](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes) and [coded attributes returned as flags](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags).
+See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information) for information about when attributes are displayed through **notes**.
 
 ---
 
 ### Level of display
-Notes for attributes can be attached/displayed at the following levels in the table view (from *highest* level to *lowest*):
-* data view (title)
-* grouping of members of any dimensions
-* time series
-* observation
+Notes for attributes can be attached/displayed at the following levels in the data view (from *highest* level to *lowest*):
+* data view (title or sub-title)
+* partial groups of members of any dimensions, one specific case being the time series
+* full groups of members of dimensions (observation)
 
-These different levels of display are represented in the following cases.
+Attributes are displayed at the most appropriate place in the table according to their attachment definition and the current data view layout. The following cases define the possible different places:
 
-#### Case 1: The attribute value is known to be the same for all cells in the table
+#### Case 1: The attribute value is known to be the same for all cells in the data view
 
 **When**:
 * The attribute is attached to the *SDMX dataset* level (and defined as *none* by the data owner, meaning that the value of the attribute will not vary with any other structure component of the data view), OR
@@ -53,6 +51,14 @@ These different levels of display are represented in the following cases.
 
 ![Case 1a](/dotstatsuite-documentation/images/using-de-footnotes-scenario1-with-no-relationship.PNG)
 
+**However, if under these conditions**:
+* only one single-fixed dimension is concerned
+**Then** the `*` icon is shown instead next to the text of the corresponding single-fixed dimension in the data view **subtitle**.  
+
+![Case 1b](/dotstatsuite-documentation/images/using-de-footnotes-one-dim-relationship.png)
+
+Note that this is the only case that allows being used in both tables and charts. All other cases are only available for tables.
+
 #### Case 2: The attribute value is known to be the same for all cells in a row section of the table
 
 **When**:
@@ -60,28 +66,46 @@ These different levels of display are represented in the following cases.
 * In addition to zero or more single-valued dimensions, the attribute is attached only to one or more dimensions displayed in a row section  
 **Then** the `*` icon is shown next to the text of the corresponding **row section** header.  
 
-![Case 2](/dotstatsuite-documentation/images/using-de-footnotes-case5-with-2+dim-relationship.PNG)
+![Case 2a](/dotstatsuite-documentation/images/using-de-footnotes-case5-with-2+dim-relationship.PNG)
+
+**However, if under these conditions**:
+* only one dimension in the row section is concerned
+**Then** the `*` icon is shown instead next to the text of the corresponding **row section dimension**.  
+
+![Case 2b](/dotstatsuite-documentation/images/using-de-footnotes-case2-with-1-dim-relationship.PNG)
 
 #### Case 3: The attribute value is known to be the same for all cells in a row of the table
 **When**:
 * Cases 1 to 2 do not apply, AND
 * In addition to zero or more single-valued dimensions and zero or more dimensions displayed in a row section, the attribute is attached only to one or more dimensions displayed in the row axis
-**Then** the `*` icon is shown next to the row header in the adjacent cell of the extra (greyed) column.  
+**Then** the `*` icon is shown next to the row header in the **adjacent cell of the extra (greyed) column**.  
+ 
+![Case 3a](/dotstatsuite-documentation/images/using-de-footnotes-case8-with-2+dim-relationship.PNG)
 
-![Case 8](/dotstatsuite-documentation/images/using-de-footnotes-case8-with-2+dim-relationship.PNG)
+**However, if under these conditions**:
+* only one dimension in the row axis is concerned
+**Then** the `*` icon is shown instead next to the text of the corresponding **row header cell**.  
+
+![Case 3b](/dotstatsuite-documentation/images/using-de-footnotes-case3-with-1or2+dim-relationship.PNG)
 
 #### Case 4: The attribute value is known to be the same for all cells in a column of the table
 **When**:
 * Cases 1 to 3 do not apply, AND
 * In addition to zero or more single-valued dimensions, the attribute is attached only to one or more dimensions displayed in the column axis
-**Then** the `*` icon is shown next to the column header in the adjacent cell of the extra (greyed) row.
+**Then** the `*` icon is shown next to the column header in the **adjacent cell of the extra (greyed) row**.
 
-![Case 4](/dotstatsuite-documentation/images/using-de-footnotes-case4-with-2+dim-relationship.PNG)
+![Case 4a](/dotstatsuite-documentation/images/using-de-footnotes-case4-with-2+dim-relationship.PNG)
+
+**However, if under these conditions**:
+* only one dimension in the column axis is concerned
+**Then** the `*` icon is shown instead next to the text of the corresponding **column header cell**.  
+
+![Case 4b](/dotstatsuite-documentation/images/using-de-footnotes-case7.1.1-with-2+dim-relationship.PNG)
 
 #### Case 5: The attribute values may otherwise vary between the cells in the table
 
 **When** Cases 1 to 4 do not apply,  
-**Then** the `*` icon is shown in the data cell corresponding to the specific attribute value attachment.
+**Then** the `*` icon is shown in the **data cell** corresponding to the specific attribute value attachment.
 
 ![Case 5](/dotstatsuite-documentation/images/using-de-footnotes.png)
 

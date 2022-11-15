@@ -9,7 +9,7 @@ keywords: [
   'Initial layout', '#initial-layout',
   'Layout variations from changing user selections', '#layout-variations-from-changing-user-selections',
   'Display of observations values', '#display-of-observations-values',
-  'Display of additional information', 'display-of-additional-information',
+  'Display of additional information', '#display-of-additional-information',
   'Display of hierarchical dimensions', '#display-of-hierarchical-dimensions',
   'Display of advanced hierarchies', '#display-of-advanced-hierarchies',
   'Management of empty columns', '#management-of-empty-columns',
@@ -131,29 +131,31 @@ Other **non-numeric** and **coded measure values formats** are supported and det
 > *footnotes* replaced by *notes* in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
 > Enhanced with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
 
-Data attributes and referential metadata can be displayed for preview tables and charts in different ways: as flags, as notes, or in a side panel. 
+Data attributes and referential metadata can be displayed for preview tables and charts in different ways: through flags, notes, or icons with a link to information displayed in a side panel. 
 
 **Flags**  
 Directly displays the IDs of related coded attribute values (with maximal 4 characters) next to the observation value. The localised names of the attribute values are displayed on mouse-over in a tooltip bubble.  
-For more information see [coded attributes displayed as flags](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)
+Attributes are displayed through flags only if the code ID of the attribute value is not longer than 4 characters and only when requested by configuration:
+- per dataflow in its annotation, see [LAYOUT_FLAG entry here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations), otherwise
+- per Data Explorer scope in its settings, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)
 
 **Notes**  
-Displays a star icon `*` at the appropriate places. The related attribute values are displayed on mouse-over in a tooltip bubble.  
-For more information (including on **at which level the star icon `*` is displayed**) see [attributes displayed as notes](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)
+Displays a star icon `*` at the appropriate places as documented [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/). The related attribute values are displayed on mouse-over in a tooltip bubble.  
+Attributes are displayed through notes only if they should have been displayed through flags but could not because the code ID of the attribute value is longer than 4 characters or when requested by configuration:
+- per dataflow in its annotation, see [LAYOUT_NOTE entry here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations), otherwise
+- per Data Explorer scope in its settings, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes)
 
-**Side panel**  
-Displays an information icon `(i)` at the appropriate places. The related attribute and referential metadata values are displayed on mouse-over in an information side panel.  
-For more information see [information side panel](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel).  
+**Information icon and side panel**  
+Displays an information icon `(i)` at the appropriate places and the related attribute and referential metadata values are displayed on mouse-over in an information side panel as documented [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel).  
+All attributes and referential metadata are displayed with an information icon `(i)` unless:
+- they are already displayed through flags (see above),
+- they are already displayed through notes (see above) or
+- they are defined to not to be displayed through the related dataflow annotation, see [NOT_DISPLAYED entry here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations).  
 
-The following optional Data Explorer (DE) configuration parameters (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes) how to be configured) can be used to define the way to display attributes within the scope of a Data Explorer (note that the content represents examples):  
-```json
-"attributes": {
-    "flags": ["OBS_STATUS", "CONF_STATUS"],
-    "notes": ["NOTE"]
-}
-```
 
-The following optional dataflow (DF) annotations can be used to define the way to display attributes for a specific dataflow (note that the content represents examples):
+*Configuration examples:* 
+
+Configuration in dataflow annotations:
 ```json
 "annotations": [
     {
@@ -169,6 +171,16 @@ The following optional dataflow (DF) annotations can be used to define the way t
         "type": "NOT_DISPLAYED"
     }
 ]
+```
+
+Configuration in Data Explorer configuration settings:  
+```json
+"sdmx": {
+    "attributes": {
+      "flags": ["OBS_STATUS", "CONF_STATUS"],
+      "notes": ["NOTE"]
+    },
+}
 ```
 
 #### The following display rules are applied with ascending prevalence for any attribute
