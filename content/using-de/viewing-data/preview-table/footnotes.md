@@ -47,12 +47,14 @@ Attributes are displayed at the most appropriate place in the table according to
 **When**:
 * The attribute is attached to the *SDMX dataset* level (and defined as *none* by the data owner, meaning that the value of the attribute will not vary with any other structure component of the data view), OR
 * The attribute is attached only to one or more single-valued dimensions (and thus those dimensions are listed in the data view subtitle)  
+
 **Then** the `*` icon is shown behind the data view **title**.  
 
 ![Case 1a](/dotstatsuite-documentation/images/using-de-footnotes-scenario1-with-no-relationship.PNG)
 
 **However, if under these conditions**:
-* only one single-fixed dimension is concerned
+* only one single-fixed dimension is concerned  
+
 **Then** the `*` icon is shown instead next to the text of the corresponding single-fixed dimension in the data view **subtitle**.  
 
 ![Case 1b](/dotstatsuite-documentation/images/using-de-footnotes-one-dim-relationship.png)
@@ -64,12 +66,14 @@ Note that this is the only case that allows being used in both tables and charts
 **When**:
 * Case 1 does not apply, AND
 * In addition to zero or more single-valued dimensions, the attribute is attached only to one or more dimensions displayed in a row section  
+
 **Then** the `*` icon is shown next to the text of the corresponding **row section** header.  
 
 ![Case 2a](/dotstatsuite-documentation/images/using-de-footnotes-case5-with-2+dim-relationship.PNG)
 
 **However, if under these conditions**:
-* only one dimension in the row section is concerned
+* only one dimension in the row section is concerned  
+
 **Then** the `*` icon is shown instead next to the text of the corresponding **row section dimension**.  
 
 ![Case 2b](/dotstatsuite-documentation/images/using-de-footnotes-case2-with-1-dim-relationship.PNG)
@@ -77,13 +81,15 @@ Note that this is the only case that allows being used in both tables and charts
 #### Case 3: The attribute value is known to be the same for all cells in a row of the table
 **When**:
 * Cases 1 to 2 do not apply, AND
-* In addition to zero or more single-valued dimensions and zero or more dimensions displayed in a row section, the attribute is attached only to one or more dimensions displayed in the row axis
+* In addition to zero or more single-valued dimensions and zero or more dimensions displayed in a row section, the attribute is attached only to one or more dimensions displayed in the row axis  
+
 **Then** the `*` icon is shown next to the row header in the **adjacent cell of the extra (greyed) column**.  
  
 ![Case 3a](/dotstatsuite-documentation/images/using-de-footnotes-case8-with-2+dim-relationship.PNG)
 
 **However, if under these conditions**:
-* only one dimension in the row axis is concerned
+* only one dimension in the row axis is concerned  
+
 **Then** the `*` icon is shown instead next to the text of the corresponding **row header cell**.  
 
 ![Case 3b](/dotstatsuite-documentation/images/using-de-footnotes-case3-with-1or2+dim-relationship.PNG)
@@ -91,13 +97,15 @@ Note that this is the only case that allows being used in both tables and charts
 #### Case 4: The attribute value is known to be the same for all cells in a column of the table
 **When**:
 * Cases 1 to 3 do not apply, AND
-* In addition to zero or more single-valued dimensions, the attribute is attached only to one or more dimensions displayed in the column axis
+* In addition to zero or more single-valued dimensions, the attribute is attached only to one or more dimensions displayed in the column axis  
+
 **Then** the `*` icon is shown next to the column header in the **adjacent cell of the extra (greyed) row**.
 
 ![Case 4a](/dotstatsuite-documentation/images/using-de-footnotes-case4-with-2+dim-relationship.PNG)
 
 **However, if under these conditions**:
-* only one dimension in the column axis is concerned
+* only one dimension in the column axis is concerned  
+
 **Then** the `*` icon is shown instead next to the text of the corresponding **column header cell**.  
 
 ![Case 4b](/dotstatsuite-documentation/images/using-de-footnotes-case7.1.1-with-2+dim-relationship.PNG)
