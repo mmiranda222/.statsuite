@@ -115,6 +115,6 @@ Note that this is the only case that allows being used in both tables and charts
 **When** Cases 1 to 4 do not apply,  
 **Then** the `*` icon is shown in the **data cell** corresponding to the specific attribute value attachment.
 
-![Case 5](/dotstatsuite-documentation/images/using-de-footnotes.png)
+![Case 5](/dotstatsuite-documentation/images/using-de-footnotes-case5.PNG)
 
 **Note**: When a non-mandatory attribute is attached at observation level (and thus to all dimensions) and the data message contains only one single attribute value, then a display is still not possible in the sub-header. This is because the nature of the attribute type implies that there isn't any guarantee that all observations are actually using the provided attribute value, as some observations might not have that attribute value defined. Our high performance objectif for the table generation doesn't allow for looping over all observations to verify that no observation misses that attribute value.
