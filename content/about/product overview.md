@@ -10,6 +10,7 @@ keywords: [
   '.Stat Data Lifecycle Manager (DLM)', '#stat-data-lifecycle-manager-dlm',
   '.Stat Core', '#stat-core',
   'flight planner', '#flight-planner',
+  'Iterations board', '#iterations-board',
 ]
 ---
 
@@ -20,6 +21,7 @@ keywords: [
   - [.Stat Data Lifecycle Manager (DLM)](#stat-data-lifecycle-manager-dlm)
   - [.Stat Core](#stat-core)
 - [flight planner](#flight-planner)
+- [Iterations board](#iterations-board)
 
 ---
 
@@ -287,7 +289,8 @@ Our **scheduled backlog** represents our short-term delivery strategy for the up
 
 The full list of recorded feature requests and feature enhancements can be found in the prioritized **[wish list](https://gitlab.com/groups/sis-cc/-/issues?label_name%5B%5D=wish+list&scope=all&sort=weight_desc&state=opened&utf8=%E2%9C%93)**.
 
-#### Iteration board
-*Note* that this view of the progress of delivery of iteraitons is a snapshot at a specific point in time, whichc is uptaed every 2 months or more frequently if possible.
+#### Iterations board
 
-![Iterations](/dotstatsuite-documentation/images/iterations.png)
+**Disclaimer:** this view of the progress of delivery of the iterations is a snapshot at a specific point in time, which is updated every 2 months or more frequently if relevant.
+
+![Iterations](/dotstatsuite-documentation/images/iterations-progress.png)
