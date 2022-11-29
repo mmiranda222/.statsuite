@@ -53,7 +53,7 @@
 <tr>
 <td>[GitLab backup](#gitLab-backup)</td>
 <td>[Time tracking](#time-tracking)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
-<td>[Permissions rules](#permisisons-rules)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
+<td>[Permissions rules](#permissions-rules)<br> ![Level3](https://img.shields.io/badge/M-3-brightgreen)</td>
 <td>[E2E tests](#end-to-end-tests)<br> ![Level1](https://img.shields.io/badge/M-1-orange)</td>
 <td>[Container scan](#container-scan)<br> ![Level0](https://img.shields.io/badge/M-0-lightgrey)</td>
 <td>-</td>
@@ -66,7 +66,7 @@
 # :repeat: Manage & Protect
 ### Groups & Subgroups
 Projects are managed by groups and sub-groups under the root GitLab SIS-CC group: https://gitlab.com/sis-cc.  
-Each sub-group is independent from the others in terms of projects, meaning no limitation of numbers, and members, meaning that new members can be added to specific sub-groups.  
+Each sub-group is independent from the others in terms of projects (meaning no limitation of numbers) and members (meaning new members can be added to specific sub-groups).  
 
 ### Open-source compliance
 The GitLab SIS-CC group, its sub-groups and underlying projects are open-source compliant and meet the following requirements:
@@ -77,10 +77,16 @@ The GitLab SIS-CC group, its sub-groups and underlying projects are open-source 
 Read also our [Code of Conduct](https://sis-cc.gitlab.io/dotstatsuite-documentation/about/code-of-conduct/).
 
 ### Metrics: issues, cycle-time, bottlenecks, Build vs. Run
-Metrics reported on a weekly basis: number of issues per production cycle step (whish list, Scheduled backlog, Kanban, delivered), work-in-progress tickets by type of activity, ratio of closed tickets by activity, average cycle time, highlights.  
+Metrics reported on a weekly basis: 
+- number of issues per production cycle step (whish list > Scheduled backlog > Kanban > delivered)
+- work-in-progress tickets by type of activity
+- ratio of closed tickets by activity
+- average cycle time
+- highlights
+
 *(accessible to members only)* [Weekly reports](https://community.oecd.org/community/siscc-governance/content?filterID=contentstatus%5Bpublished%5D~category%5Bstat-suite-weekly-reports%5D)
 
-:eyes: Better prepare and automate the .Stat Suite weekly reports, using GitLab API + Power BI
+:eyes: Better automate the .Stat Suite weekly reports, using GitLab API + Power BI
 
 ### 2FA
 Two-factor Authentication (2FA) provides an additional level of security to users’ GitLab account withint our team members: https://gitlab.com/groups/sis-cc/-/group_members
@@ -105,17 +111,17 @@ https://sis-cc.gitlab.io/dotstatsuite-documentation/about/product-overview/#flig
 The Scheduled backlog represents the short-term delivery strategy. Each iteration of the Scheduled backlog is an attempt to produce a .NET or JavaScript release. The tickets in each iteration can be subject to change of order or delayed. An iteration or tickets of an iteration will go to implementation when there are available resources to work on.  
 https://gitlab.com/groups/sis-cc/-/boards/2352801
 
-:eyes: *Next step in maturity plan:* Integrate the slideshow presented at SIS-CC MLG meetings to the [overview page](https://sis-cc.gitlab.io/dotstatsuite-documentation/about/product-overview/#flight-planner) along with the flight planner, and update it online every two months or more frequently.
-
 ### Kanban boards
 The Kanban boards represent the work in progress of the production cycle. Each step (review, implement, peer-review, qa, release) has a [Definition of Done](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/issue-process/) according to the Production Cycle.  
-https://gitlab.com/groups/sis-cc/-/boards/834539
+Product Management board: https://gitlab.com/groups/sis-cc/-/boards/1200459?label_name[]=product-management  
+.NET/SQL board: https://gitlab.com/groups/sis-cc/-/boards/1200473?label_name[]=.NET%2FSQL  
+JavaScript board: https://gitlab.com/groups/sis-cc/-/boards/1200479?label_name[]=JavaScript
 
 ### Time tracking
-Report time spent in tickets to better understand share between Build efforts versus Maintenance efforts. The report on time spent is to be done in all tickets ([Time tracking](https://gitlab.com/help/user/project/time_tracking.md)), from its creation to its closure, but for a minimum of significant time (e.g. more than 10 or 15 minutes).  
+Report time spent in tickets to better understand share between Build efforts versus Maintenance efforts. The report on time spent is done in all tickets ([Time tracking](https://gitlab.com/help/user/project/time_tracking.md)), from its creation to its closure, but for a minimum of significant time (e.g. more than 10 or 15 minutes).  
 The objective is to improve reporting on time-intensive tickets to the SIS-CCommunity and use this information to improve ticket content and prioritisation (Scheduled backlog & Iterations planning).
 
-:eyes: PM team to ensure the full application of this rule, and start drafting new indicators for reporting/metrics periodic reports.
+:eyes: PM team ensures the full application of this rule, and currently drafting new indicators for reporting/metrics periodic reports.
 
 # :repeat: Create
 ### Git flow
@@ -125,11 +131,12 @@ https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/development-gui
 ### Code onwer
 
 ### Code review & Approvers
+All changes to the code are done via merge requests and need to be approved by a member of the core technical team. A member cannot approve its own code. For specific components of the .Stat Suite solution, only lead developers are authorized to approve code changes. See more in the below section #permissions-rules.
 
 ### Live preview
 quick pushes, local demos
 
-### Permisisons rules
+### Permissions rules
 **Protected branches** 
 - develop
 - master & main (**`main`** for newly created project in order to align new *Git* convention)
@@ -142,14 +149,14 @@ quick pushes, local demos
   - allowed to merge = Maintainers
   - allowed to push = Maintainers
 
-Exceptions: JavaScript services are following the same rules, with the exception that the JS Lead developer manages roles and permissions with overriden roles for Senior developers. 
+Exceptions: JavaScript services are following the same rules, with the exception that the JS Lead developer manages roles and permissions with overridden roles for Senior developers.
 
 # :repeat: Check
 ### CI
-https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
+see https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
 
 ### Code coverage
-https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
+see https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md
 
 :eyes: nsiws code coverage to update (or to remove if not possible to track), and fix *unkown* broken coverage.
 
@@ -157,14 +164,11 @@ https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashbo
 usability tests, localisation, browsers' compatibility, wcag, SDMX standard
 
 ### Performance tests
-https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/blob/master/PerformanceTests/README.md
-
-:eyes: Plug and run performance tests on **QA** CI pipelines
+see https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/blob/master/PerformanceTests/README.md
 
 ### End-to-end-tests
-End to end tests (E2E tests) for testing the applications workflows from beginning to end, by replicating real user scenarios so that the system can be validated for integration and data integrity.
-
-:eyes: PM team starts drafting end-to-end test scenarios to be integrated once RedPelicans delivers the E2E automated integration (by end of 2021 summer): https://gitlab.com/sis-cc/dotstatsuite-documentation/-/quality/test_cases
+End to end tests (E2E tests) for testing the applications workflows from beginning to end, by replicating real user scenarios so that the system can be validated for integration and data integrity.  
+End-to-end test scenarios are drafted as [test cases](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/quality/test_cases) and developed in a JS framework for integration to the CI pipelines: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/3394647875. End-to-end tests are triggered on demand. 
 
 # :repeat: Package
 ### Checklist on doc and install guides updates
@@ -179,19 +183,19 @@ GitLab's milestones are used to scope a .Stat Suite release. Following the proce
 - the list of links to each service's tag, release, commit and docker image
 - any additional dependency (e.g. ESTAT nsiws compatibility)
 
-Link to all .Stat Suite milestones: https://gitlab.com/dashboard/milestones
+Link to all .Stat Suite milestones: https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones
 
 ### Docker Trusted Publisher
 https://docs.docker.com/docker-hub/publish/
 
-:eyes: *JB* currently exchanging with the Business Development Docker team.
+:eyes: not expected yet.
 
 ### Container scan
 Objective is to identify potential vulnerabilities in the .Stat Suite Docker images.
 
 :eyes: Two options to assess:
 - Use GitLab to audit our Docker-based apps by including an extra job in the pipelines https://docs.gitlab.com/ee/user/application_security/container_scanning/
-- Enable fr each Docker repository the "Vulnerability scanning" in Docker Hub to automatically scan pushed images https://hub.docker.com/orgs/siscc/repositories
+- Enable for each Docker repository the "Vulnerability scanning" in Docker Hub to automatically scan pushed images https://hub.docker.com/orgs/siscc/repositories
 
 # :repeat: Secure
 ### SAST (Static Application Security Testing)
@@ -199,12 +203,14 @@ We are currently doing white-box Static Application Security Testing (SAST) usin
 Each Checkmarx vulnerability report is reviewed, and each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
 List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security
 
-:eyes: review the dev Team process and level of acceptance upon the Gitlab’s built-in plugin scan results.
+:eyes: review the dev Team process and level of acceptance upon the Gitlab’s built-in plugin scan results. The process is also applied to a new platform adopted by the team named Veracode.
 
 ### DAST (Dynamic Application Security Testing)
 DAST, also known as black box testing, is a part of the current .Stat Suite devops build process. Each time someone does a Git push to the develop branch for a specific repository, the targeted repository triggers the [Gitlab quality-assurance pipeline](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance) which contains a job for running a [Netsparker](netsparker.com) DAST scan.  
 The outcome of the DAST scan is pushed to a dedicated Slack channel (quality-assurance) for the .Stat Dev team to review, and each vulnerability is reported into a *Confidential* ticket and prioritised according to its level of criticality.  
 List of confidential security issues *(for team members only)*: https://gitlab.com/groups/sis-cc/-/issues?scope=all&state=opened&label_name[]=security
+
+:eyes: The process is also applied to a new platform adopted by the team named Veracode.
 
 ### Third-Party components vulnerability
 Third-party components used in the .Stat Suite can be potentially security vulnerable, and they are thus tracked by version in order to address and take action upon security disruption in the .Stat Suite.  
@@ -215,7 +221,7 @@ Third-party components used in the .Stat Suite can be potentially security vulne
 
 Third-party components vulnerability dashboard *(for team members only)*: https://gitlab.com/sis-cc/dotstatsuite-documentation/-/snippets/2148995
 
-:eyes: the current/latest versions for .NET components must be updated by Dev team is order to complete the process.
+We are also implementing third-party component scanning with **Gitlab’s built-in plugin**.
 
 ### Code quality
 
@@ -241,9 +247,11 @@ All released issues must be listed and ordered by semantic change impact:
 The total number of releases is automatically reported in GitLab [here](https://gitlab.com/groups/sis-cc/.stat-suite/-/analytics/ci_cd) but also on a weekly basis.  
 *(accessible to members only)* [Weekly reports](https://community.oecd.org/community/siscc-governance/content?filterID=contentstatus%5Bpublished%5D~category%5Bstat-suite-weekly-reports%5D)
 
-:eyes: Better prepare and automate the .Stat Suite weekly reports, using GitLab API + Power BI
+:eyes: Better automate the .Stat Suite weekly reports, using GitLab API + Power BI
 
 ### Recorded demos
+
+:eyes: to planify, in addition to the current features demos on https://www.youtube.com/channel/UCZGlYlrmeb1MbLONpxObGUQ
 
 # :repeat: Monitor
 ### Incident management
@@ -255,7 +263,7 @@ Support, Bugs, reactivity & priority
 The number of new bugs is reported on a weekly basis.  
 *(accessible to members only)* [Weekly reports](https://community.oecd.org/community/siscc-governance/content?filterID=contentstatus%5Bpublished%5D~category%5Bstat-suite-weekly-reports%5D)
 
-:eyes: Better prepare and automate the .Stat Suite weekly reports, using GitLab API + Power BI
+:eyes: Better automate the .Stat Suite weekly reports, using GitLab API + Power BI
 
 ### Metrics: performance results
 *tbc*  
