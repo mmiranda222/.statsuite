@@ -53,6 +53,7 @@
         - a pipeline will create a docker image with the following tag: `<name>`
     1. paste the tag link in the milestone description (releases row) and attached it to the milestone
     1. check in Docker the full chain: image with expected commit, image with same digest for tag, release and master
+    1. run `node ./scripts/i18n-changelog.js spin radio` in the repo config-data to have the i18n changelog
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
 
 #### optionals
