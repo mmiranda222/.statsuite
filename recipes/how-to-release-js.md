@@ -44,12 +44,15 @@
     1. check diff and wait for pipeline to pass and merge it to master
         - a pipeline will create a docker image with the following tags: `master` & `<commithash>`
     1. if needed (last minute fixes), merge back to develop
-    1. create a **tag** `v<semver>` on master with a **release** (put the name of the gitlab release in optional release description)
+    1. create a **tag** `v<semver>` on master
         - a pipeline will create a docker image with the following tag: `10.0.1`
+    1. create a release by editing the tag and put an icon in the description
+    1. wait the end of the pipeline to have a ref image in docker for named tag
     1. create a **tag** `<name>` on master using the gitlab release name
         - remove tags from docker images in docker hub to avoid duplicate with previous named tags
         - a pipeline will create a docker image with the following tag: `<name>`
     1. paste the tag link in the milestone description (releases row) and attached it to the milestone
+    1. check in Docker the full chain: image with expected commit, image with same digest for tag, release and master
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
 
 #### optionals
