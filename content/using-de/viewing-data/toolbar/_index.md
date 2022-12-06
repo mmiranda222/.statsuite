@@ -14,6 +14,7 @@ keywords: [
   'Unfiltered data in tabular text (CSV)', '#unfiltered-data-in-tabular-text-csv',
   'Additional downloads of external resources', '#additional-downloads-of-external-resources',
   'Chart as picture (PNG)', '#chart-as-picture-png',
+  'Notification of download', '#notification-of-download',
   'Full screen', '#full-screen',
   'Developer API', '#developer-api',
 ]
@@ -31,6 +32,7 @@ keywords: [
   - [Unfiltered data in tabular text (CSV)](#unfiltered-data-in-tabular-text-csv)
   - [Additional downloads of external resources](#additional-downloads-of-external-resources)
   - [Chart as picture (PNG)](#chart-as-picture-png)
+  - [Notification of download](#notification-of-download)
 - [Full screen](#full-screen)
 - [Developer API](#developer-api)
 
@@ -172,6 +174,27 @@ All graphical reprensentations of a data view (chart types) are available for **
 
 The option is only available when viewing data in a chart representation. The application downloads the screenshot of the current chart together with its header and footer in a .png format. It is using the current chart size, highlights and baseline as provided or set by the user in the chart customisation.  
 The default chart's filename is consistent with the downloaded Excel's filename, being the `AgencyID.DataflowID_Version` combined with the filter selection(s) and the .png extension.
+
+#### Notification of download
+> Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+For downloads of filtered and unfiltered data in tabular text (CSV) files using the underlying SDMX web service, the DE now uses the browser inbuilt web resource download feature, which allows the user seeing the download start and progress in the browser's standard way. Since there may be a little delay between the service call and the start of the service response (download start) depending on the request size and the server performance, the DE displays a notification message: *"Download launched. Your download will start shortly. In the meantime, you can continue browsing."* Clicking on the right aligned cross closes the notification.  
+
+![Download notification](/dotstatsuite-documentation/images/de-download-notification.png)
+
+This feature requires the configuration of the `format=csvfile` [URL option in the underlying NSI SDMX web service](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#format-configuration), so that GET requests can contain all necessary pieces of information in the URL. 
+
+```xml
+<FormatMapping>
+    <Mappings>
+      <Mapping Format="csvfile" AcceptHeader="application/vnd.sdmx.data+csv;file=true"/>
+    </Mappings>
+  </FormatMapping>
+```
+
+This feature is not used in the following 2 situations:
+- for very large filter selections, when the DE needs to use POST requests instead of GET requests (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration#support-of-long-urls) for more information)
+- for authenticated users, when the DE needs to set the HTTP authorisation header.
 
 ---
 
