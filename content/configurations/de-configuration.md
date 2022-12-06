@@ -33,7 +33,8 @@ keywords: [
   'Disabled share option', '#disabled-share-option',
   'Disabled chart views', '#disabled-chart-views',
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
-  'Display of HTML content', '#display-of-html-content'
+  'Display of HTML content', '#display-of-html-content',
+  'Support of long URLs', '#support-of-long-urls'
 ]
 ---
 
@@ -68,6 +69,7 @@ keywords: [
 - [Disabled chart views](#disabled-chart-views)
 - [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
 - [Display of HTML content](#display-of-html-content)
+- [Support of long URLs](#support-of-long-urls)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -797,3 +799,31 @@ For instance, to allow the tag "img", you must change the `allowedTags` key. To 
 ```
 
 For more information please consult https://github.com/apostrophecms/sanitize-html#readme.
+
+---
+
+### Support of long URLs
+> Released with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+When using the SDMX-RI NSI SDMX web service for a given data space, define the support of (NSI-specific non-SDMX-standard) `POST` requests when large filter selections lead to too long data query URLs that are not supported by the SDMX-standard `GET` requests.  
+
+* in `dotstatsuite-config-data/<env>/configs/tenants.json`  under the "tenant" > "spaces" definition
+
+```json
+    "spaces": {
+      "staging:SIS-CC-stable": {
+        "supportsPostLongRequests": true,
+        }
+```
+
+When the parameter **"`supportsPostLongRequests`" is set to `true`**, then if the URL of a SDMX data request is too long (exceeding what the `GET` request allows in the web browser or server), an automatic `POST` request is made in order to retrieve the data in the DE visualisation pages.
+
+Because the DE visualisation page URL contains the filter selection, also the DE page URL gets too long in this case and cannot be bookmarked or reused. Thus, a warning message is displayed to the user: "*The current data filter requires a too long page URL making this data view impossible to bookmark or re-use. A reduced filter selection is necessary to use these features.*"
+
+![config too long URLs](/dotstatsuite-documentation/images/de-long-urls-1.png)
+
+Furthermore, the *SDMX* API data query generated in the "Developer API" DE feature is not displayed when the fallback `POST` method is used, and instead a warning message is displayed to the user: "*The current data filter generates a too long GET data URL impossible to use in standard SDMX API requests. Reduce the filter selection to generate a valid SDMX data query.*"
+
+![config too long URLs](/dotstatsuite-documentation/images/de-long-urls-2.png)
+
+If the parameter **"`supportsPostLongRequests`" is set to `false`**, then if the URL of a data request is too long, the `GET` data request will fail and an error message is shown to the user: "*Whoops, your current selection is too large to be processed. Please reduce the selection. You can also download all (unfiltered) data and make the needed selection in the downloaded data.*"
