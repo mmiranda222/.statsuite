@@ -60,7 +60,7 @@ When clicking on the row of a permission, it is highlighted in orange and a wind
 - **Standard roles**
 - **Granular permissions**
 
-See more about standard roles and granular permissions in the #add-new-permission section.
+See more about standard roles and granular permissions in the [Add new permission](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions/manage-permissions/#add-a-new-permission) section.
 
 Clicking on "Cancel" at the footer of the window closes it.
 
@@ -68,7 +68,7 @@ Clicking on "Cancel" at the footer of the window closes it.
 
 ---
 
-### Add new permission
+### Add a new permission
 The button "Add new permission" on the top right corner of the permission page allows creating a new permission. Clicking on it will open the "Add new permission" window, similarly to the "View permission" window with empty fields.  
 The window shows the following editable fields:
 - **User:** text field for user email address or group name
