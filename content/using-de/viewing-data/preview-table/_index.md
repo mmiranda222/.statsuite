@@ -81,7 +81,7 @@ There is no vertical cell merging when vertically neighboured row header cells h
 
 The dimensions on the **Row section axis** are shown completely flattened, which means each child value within the concatenated row section dimensions is shown without the hierarchy of its parents. "FULL_NAME" annotations might later be an alternative to provide necessary hierarchical information.  
 Because Row section rows do not include the dimensions in the Row axis and thus the resulting coordinates/combinations are always incomplete, there are no data value cells in these rows. These Row section rows thus span horizontally over the complete table width.  
-The Row Section content is constructed the same way as the table subtitle with the concatenated dimension and dimension value names, and with dimensions separated by " ● ".
+The Row Section content is constructed with each dimension on a distinct line.
 
 The distribution of the different data dimensions over the pivot table axes is called **layout**. See below how the initial layout is determined. 
 
@@ -252,7 +252,7 @@ When scrolling horizontally, only the filter area and the table move. The page h
 
 Freezing table parts is not available when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
 
-![DE table horizontal scrolling](/dotstatsuite-documentation/images/de-table-horizontal-scroll.gif)
+![DE table horizontal scrolling](/dotstatsuite-documentation/images/de-table-horizontal-scroll.GIF)
 
 ---
 
@@ -262,7 +262,7 @@ When scrolling vertically, the whole page content scrolls but the column header 
 
 Freezing table parts is not available when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
 
-![DE table vertical scrolling](/dotstatsuite-documentation/images/de-table-vertical-scroll.gif)
+![DE table vertical scrolling](/dotstatsuite-documentation/images/de-table-vertical-scroll.GIF)
 
 ---
 
@@ -273,7 +273,7 @@ A "fast-forward left" button and a "fast-forward top" button appear when the use
 Once the user is back to the initial horizontal scroll position, then the "fast-forward left" button disappears.  
 Once the user is back to the initial vertical scroll position, then the "fast-forward top" button disappears.
 
-![DE table scroll and arrows](/dotstatsuite-documentation/images/de-table-scroll-arrows.gif)
+![DE table scroll and arrows](/dotstatsuite-documentation/images/de-table-scroll-arrows.png)
 
 ---
 
@@ -284,7 +284,7 @@ When 2 or more dimensions are positioned on the Column axis, and if 2 or more ho
 Merging is not applied to cells that have different cells in rows above them, thus never to cells in the last (lowest) column header row.  
 The merged column header labels are centered by default, but whenever the table width is larger than the width of the table display space, then it sufficiently moves within the cell to the left or right in order to stay visible even **when scrolling horizontally**.
 
-![DE table merged header cells](/dotstatsuite-documentation/images/de-table-merged-cells.png)
+![DE table merged header cells](/dotstatsuite-documentation/images/de-table-merged-cells.PNG)
 
 **Note** that this feature doesn't apply to the [html WCAG table](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support).
 
