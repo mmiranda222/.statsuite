@@ -67,14 +67,14 @@ The logbook can be filtered by:
 
 | Filter description | Example | 
 | --------- | ---------------- |
-| **space:** multi-selection; if nothing selected, then the log list is empty. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-space.png) |
-| **log id:** number edit field; empty by default. Clicking on 'Apply' will filter the log list. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-id.png) |
-| **action:** multi-selection with `data change` for all actions (with a structure ID) related to data or referential metadata transactions, and `maintenance` for all other transfer actions. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-action.png) |
-| **structure id:** multi-selection with a spotlight search listing the *SDMX* structure identifications `AGENCYID:ARTEFACTID(VERSION)`; it is (re-)generated from the current (filtered) logs for each selection. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-structure.png) |
-| **submission time:** date-time range between a configurable start date `dd-MM-yyyy HH:mm:ss` and end date which is always set to the current date-time of the user's session. By default, the date-time range is set to the last 24 hours. Clicking on 'Apply' will filter the log list. See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#logbook-submission-time-boundaries) how to change the default time boundaries. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-time.png) |
-| **user:** multi-selection with a spotlight search listing the users' email address dynamically generated from the log list; unfiltered by default. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-user.png) |
-| **status:** single-selection list of the logs status `Queued`, `In progress`, `Completed`, `Timed out`, or `Canceled`; unfiltered by default. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-status.png) |
-| **outcome:** single-selection list of the logs outcome `Success`, `Warning`, `Error`, or `None`. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logboook-filter-outcome.png) |
+| **space:** multi-selection; if nothing selected, then the log list is empty. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-space.png) |
+| **log id:** number edit field; empty by default. Clicking on 'Apply' will filter the log list. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-id.png) |
+| **action:** multi-selection with `data change` for all actions (with a structure ID) related to data or referential metadata transactions, and `maintenance` for all other transfer actions. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-action.png) |
+| **structure id:** multi-selection with a spotlight search listing the *SDMX* structure identifications `AGENCYID:ARTEFACTID(VERSION)`; it is (re-)generated from the current (filtered) logs for each selection. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-structure.png) |
+| **submission time:** date-time range between a configurable start date `dd-MM-yyyy HH:mm:ss` and end date which is always set to the current date-time of the user's session. By default, the date-time range is set to the last 24 hours. Clicking on 'Apply' will filter the log list. See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#logbook-submission-time-boundaries) how to change the default time boundaries. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-time.png) |
+| **user:** multi-selection with a spotlight search listing the users' email address dynamically generated from the log list; unfiltered by default. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-user.png) |
+| **status:** single-selection list of the logs status `Queued`, `In progress`, `Completed`, `Timed out`, or `Canceled`; unfiltered by default. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-status.png) |
+| **outcome:** single-selection list of the logs outcome `Success`, `Warning`, `Error`, or `None`. | ![DLM logbook filters](/dotstatsuite-documentation/images/dlm-logbook-filter-outcome.png) |
 
 Each filter has a 'Clear all' rubber button, except for the 'Filter by action'.
 
