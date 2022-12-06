@@ -55,6 +55,8 @@ Once clicked on "Request URL and embed code", the user gets the following messag
 **Note** that, since [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022), when the user is authenticated and requests to share a snapshot of data that are not publicly available (e.g. a private dataflow triggered from the DLM preview), then a localised warning message indicates that those data will be publicly accessible even though potentially not yet officially and publicly released.
 
 ![DE Share warning snapshot](/dotstatsuite-documentation/images/de-share-snapshot-warning.png)
+ 
+Clicking on the top-right cross icon will close the panel without any action.
 
 #### Email confirmation
 Once the request of share object was accepted by the data explorer, the following email request is sent in order to confirm the email address:
