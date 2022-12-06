@@ -11,16 +11,25 @@ keywords: [
   'Indexing externally defined dataflows', '#indexing-externally-defined-dataflows',
   'When and how to index', '#when-and-how-to-index',
   'API format', '#api-format',
-  'GET search sfs config.', '#get-search-sfs-config',
-  'DELETE search sfs config', '#delete-search-sfs-config',
-  'GET search sfs report', '#get-search-sfs-report',
   'Index all dataflows', '#index-all-dataflows',
   'Index or update one individual dataflow', '#index-or-update-one-individual-dataflow',
   'Delete all dataflows', '#delete-all-dataflows',
   'Delete one individual dataflow', '#delete-one-individual-dataflow',
+  'Admin queries', '#admin-queries',
+  'GET search sfs logs', '#get-search-sfs-logs',
+  'GET search sfs config', '#get-search-sfs-config',
+  'DELETE search sfs config', '#delete-search-sfs-config'
 ]
 
 ---
+
+> *Version history:*  
+> 'GET sfs report' query is replaced by 'Get sfs logs' query with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
+> Index an individual dataflow since [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)  
+> Introduction of the **Collection** concept with Solr with [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)  
+> Indexation of externally defined dataflows since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)  
+> Rules of indexations enhanced with [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
+> Delete an individual dataflow since [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
 
 #### Table of Content
 - [Before indexing data](#before-indexing-data)
@@ -30,25 +39,22 @@ keywords: [
   - [Indexing externally defined dataflows](#indexing-externally-defined-dataflows)
 - [When and how to index](#when-and-how-to-index)
   - [API format](#api-format)
-  - [GET search sfs config.](#get-search-sfs-config)
-  - [DELETE search sfs config](#delete-search-sfs-config)
-  - [GET search sfs report](#get-search-sfs-report)
   - [Index all dataflows](#index-all-dataflows)
   - [Index or update one individual dataflow](#index-or-update-one-individual-dataflow)
   - [Delete all dataflows](#delete-all-dataflows)
   - [Delete one individual dataflow](#delete-one-individual-dataflow)
+- [Admin queries](#admin-queries)
+  - [GET search sfs logs](#get-search-sfs-logs)
+  - [GET search sfs config](#get-search-sfs-config)
+  - [DELETE search sfs config](#delete-search-sfs-config)
 
 ---
 
 ### Before indexing data
-
-Since the [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021), we introduced the **collection** concept with Solr. 
-
 Before indexing your data for the first time, if you are using Docker or on-premise installation strategy, then **you must create a collection for each tenant**.  
 Those collections allow to separate data between tenants.
 
 #### How to create a collection
-
 Creating a collection is easy, you just need to copy the url below and replace the name with your tenant.  
 For example, this url allows to create a collection that will be used by the **oecd** tenant.
 
@@ -57,6 +63,8 @@ http://localhost:8983/solr/admin/collections?action=CREATE&name=oecd&numShards=1
 ```
 
 Create as many collections as you have tenants. If you are in a mono-tenant installation, then create only one collection and name it **"default"**.
+
+---
 
 ### What is indexed
 The languages used for the search features are configurable per Data Explorer instance (part of the installation process), and there must be at least one language defined. If the below localised elements for a defined language are not available, then they are replaced by their corresponding IDs.  
@@ -83,8 +91,6 @@ In SDMX, dataflows are **uniquely** identified by data source, Agency, ID and Ve
 If the same dataflow (same ID, whatever Agency or Version) is retrieved from different data sources, then they are indexed separately and appear in the search results as different dataflows, and the are **distinguished by the data source** which is visible when the dataflow information is expanded.
 
 #### Conditions and exceptions
-> Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
-
 * A dataflow is indexed **only if** there is data associated to it.  
   The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:  
   - a *non-empty* Actual Content Constraint
@@ -92,8 +98,6 @@ If the same dataflow (same ID, whatever Agency or Version) is retrieved from dif
 * A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
 
 #### Indexing externally defined dataflows
-> Released in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
-
 It is possible to index externally defined dataflows for browse and search capabilities in .Stat DE, in the case when the dataflow is stored only as stubs (without content, e.g. without the link to its DSD), meaning that the full definition and content of the corresponding dataflow is stored externally.  
 Therefore, the locally stored dataflow stub includes the references (`URL link`) to the original external full dataflow definition, with the following artefact properties: `isExternalReference=true`, and link `{external structure link}`.  
 Note also that the locally stored dataflow stub must be categorised in the CategoryScheme that will be used by the index process.
@@ -134,29 +138,9 @@ All requests need a header made of:
 
 **Note** that, if you are using a `defaulttenant` collection, then all calls without a tenant will use the value of `DEFAULT_TENANT` as a tenant, and thus the request header `&tenant=test` becomes optional.
 
-#### GET search sfs config.
-Example:  
-`GET` `https://sfs-qa.siscc.org/admin/config?api-key=xxx&tenant=test`
-
-![GET search sfs config](/dotstatsuite-documentation/images/de-index-get-config.png)
-
-This request returns the `sfs` dynamic configuration with full details on configUrl, data source(s), fields and indexed dataflows.
-
-#### DELETE search sfs config
-Example:  
-`DELETE` `https://sfs-qa.siscc.org/admin/config?api-key=xxx&tenant=test`
-
-#### GET search sfs report
-Example:  
-`GET` `https://sfs-qa.siscc.org/admin/report?api-key=xxx&tenant=test`
-
-![GET search sfs report](/dotstatsuite-documentation/images/de-index-get-report.png)
-
-This request returns the `sfs` in memory loading statuses.
-
 #### Index all dataflows
 Example:  
-`POST` `https://sfs-qa.siscc.org/admin/dataflows?api-key=xxx&tenant=test`
+`POST` `https://sfs-qa.siscc.org/admin/dataflows?api-key=xxx&tenant=xxx`
 
 ![Index all dataflows](/dotstatsuite-documentation/images/de-index-post-all.png)
 
@@ -168,32 +152,59 @@ This request indexes **all dataflows** from **all configured sdmx endpoints**. I
 Note that this *POST* method **does not** clean up the index, meaning that non-categorized or deleted dataflows in the data source that were previsouly indexed, will not be removed from the index. To do so, you first need to run the `DELETE /admin/dataflows` method to clean up the index, and then run the `POST /admin/dataflows` method to index. 
 
 #### Index or update one individual dataflow
->Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
-
 Example:  
-`POST` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&spaceId=staging:SIS-CC-reset&id=AIR_EMISSIONS_DF&agencyId=OECD&version=1.0`
+`POST` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=xxx&spaceId=staging:SIS-CC-reset&id=AIR_EMISSIONS_DF&agencyId=OECD&version=1.0`
 
 This request results in **indexing** one individual dataflow from the index and search.  
 The request will result in **updating** one individual dataflow **if** this dataflow was already indexed by Solr.
 
-**Note** that, with this "upsert" request, the previous single `PATCH` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0` query for updating an individual dataflow already indexed is no longer supported.
+**Note** that, with this "upsert" request, the previous single `PATCH` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=xxx&datasourceId=staging:SIS-CC-stable&dataflowId=DF_SDG_ALL_SDG_A871_SEX_AGE_RT&agencyId=ILO&version=1.0` query for updating an individual dataflow already indexed is no longer supported.
 
 ![GET search sfs config](/dotstatsuite-documentation/images/de-index-individual-dataflow.png)
 
 #### Delete all dataflows
 Example:  
-`DELETE` `https://sfs-qa.siscc.org/admin/dataflows?api-key=xxx&tenant=test`
+`DELETE` `https://sfs-qa.siscc.org/admin/dataflows?api-key=xxx&tenant=xxx`
 
 ![Delete all dataflows](/dotstatsuite-documentation/images/de-index-delete-all.png)
 
 This request results in deleting all dataflows from the index and search of Solr for all configured sdmxDataSources.
 
 #### Delete one individual dataflow
->Released in [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
-
 Example:  
-`DELETE` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=test&spaceId=staging:SIS-CC-reset&id=AIR_EMISSIONS_DF&agencyId=OECD&version=1.0`
+`DELETE` `https://sfs-qa.siscc.org/admin/dataflow?api-key=xxx&tenant=xxx&spaceId=staging:SIS-CC-reset&id=AIR_EMISSIONS_DF&agencyId=OECD&version=1.0`
 
 ![Delete one specific dataflow](/dotstatsuite-documentation/images/de-index-delete-dataflow.png)
 
 This request results in deleting one specific dataflow from the index and search. It is thus no longer avaibale in .Stat DE for search and visualisation.
+
+---
+
+### Admin queries
+#### GET search sfs logs
+Example:  
+`GET` `https://sfs-qa.siscc.org/admin/logs?api-key=xxx`
+
+![GET all search sfs logs](/dotstatsuite-documentation/images/de-index-get-logs-all.png)
+
+By default, this request returns all the search index management logs for all datasources and dataspaces. A number of filter parameters allow restricting the returned logs. See the full [API documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search#logs) for details about those query parameters.
+
+`GET` `https://sfs-qa.siscc.org/admin/logs?api-key=xxx&id=1652792463242`
+
+![GET search sfs logs by log id](/dotstatsuite-documentation/images/de-index-get-logs-id.png)
+
+This request returns the log for a specific search index management action defined by its ID.
+
+#### GET search sfs config
+Example:  
+`GET` `https://sfs-qa.siscc.org/admin/config?api-key=xxx&tenant=xxx`
+
+![GET search sfs config](/dotstatsuite-documentation/images/de-index-get-config.png)
+
+This request returns the `sfs` dynamic configuration with full details on configUrl, data source(s), fields and indexed dataflows.
+
+#### DELETE search sfs config
+Example:  
+`DELETE` `https://sfs-qa.siscc.org/admin/config?api-key=xxx&tenant=xxx`
+
+
