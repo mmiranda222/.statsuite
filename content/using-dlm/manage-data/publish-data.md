@@ -90,20 +90,22 @@ The SDMX Categorisation is created on the following naming convention:
 ---
 
 ### (Re-)index a data view (dataflow)
+> *Version history:*  
+> Extend indexation to external dataspaces with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Released in [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)
 
 Users can index or re-index a data view (*SDMX* dataflow) by using the option **(Re-)index dataflow** from the contextual hamburger menu from the dataflow list:
 
 ![index a dataflow](/dotstatsuite-documentation/images/DLM-index1.png)
 
-Indexing or re-indexing a dataflow is necessary to **enable the search and browse capabilities** of a specific data view (dataflow) in the .Stat Data Explorer.  
+Indexing or re-indexing a dataflow is necessary for **the searchability and browsability** of a specific data view (dataflow) in the .Stat Data Explorer.  
 Several **prerequisites** are necessary for a successful indexing:
-- The dataflow is in a dataspace defined as a **source to be indexed** (see [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-data-sources-to-be-indexed));
-- The dataflow has **data associated to it** (see [upload data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/) and [detailed specs](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#conditions-and-exceptions) of data availability);
+- The dataflow is in an internal or external dataspace defined as a **source to be indexed** (see [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-data-sources-to-be-indexed));
 - The dataflow is **categorised** under an *SDMX* CategoryScheme (see how to [categorise a data view](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/publish-data/#categorise-a-data-view)) that is defined for indexation (see [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-data-sources-to-be-indexed));
-- The DLM **user has the permission** at minimum to update that dataflow (structure) in the targeted dataspace (see the list of [basic permissions](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/#basic-permissions)).
+- The dataflow has **data associated to it** (see [upload data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/) and [detailed specs](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#conditions-and-exceptions) of data availability);
+- If the underlying structures and data are **publically accessible** (see the list of [basic permissions](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/#basic-permissions)).
 
-Clicking on '(Re-)index dataflow' for a specific dataflow triggers the request sent to the search service and displays a loading spinner: 
+The '(Re-)index dataflow' menu item is shown only for dataflows that are in a dataspace to be indexed. Clicking on '(Re-)index dataflow' for a specific dataflow triggers the request sent to the search service and displays a loading spinner: 
 
 ![index a dataflow](/dotstatsuite-documentation/images/DLM-index2.png)
 
