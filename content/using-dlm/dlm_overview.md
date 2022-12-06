@@ -148,14 +148,14 @@ The above mentioned selections and filters are dynamically applied to the table,
   ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-8a.png)  
   
   Depending on the current selection, one of the four clickable buttons is shown:  
-  1) If no artefact is selected, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-allUnticked.png) or ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-singleUnticked.png) if only one single page of results
+  1) If no artefact is selected, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-allUnticked.png) or ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-sinlgeUnticked.png) if only one single page of results
      Clicking on this button opens a dropdown menu proposing to:
      - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAll.png) Select all artefacts   
      - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAllOnThisPage.png) Select all artefacts on this page  
   2) Else if all artefacts on all pages are selected, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAll.png) or ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAllOnThisPage.png) if only one single page of results  
      Clicking on this button opens a dropdown menu proposing to:
      - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-allUnticked.png) Deselect all artefacts for several pages of result, or
-     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-singleUnticked.png) Deselect all artefacts for one single page of results
+     - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-sinlgeUnticked.png) Deselect all artefacts for one single page of results
   3) Else if some artefacts are not selected but all artefacts on the current page are selected, then the clickable button is ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAllOnThisPage.png)  
      Clicking on this button opens a dropdown menu proposing to:
      - ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-icon-selectAll.png) Select all artefacts   
