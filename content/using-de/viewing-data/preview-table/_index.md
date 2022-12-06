@@ -199,16 +199,22 @@ If the value ID of an attribute that is defined as flag is longer than 4 charact
 
 ### Display of hierarchical dimensions
 >*Version history:*  
+> Indentation on column headers since [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Extended to all dimensions + dots with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
 > Introduced in [October 8, 2019 Release .Stat Suite JS 2.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-8-2019) 
 
-All **dimensions with hierarchies** on the Row axis are **indented** (`"·" 'middle dot' " " 'figure space'` per level of indentation) according to the level of hierarchy.
-
-In case of long titles (two lines or more), then all lines are indented (all lines would start at the same place as the first one).
-
-In cases when a child with an observation value is displayed in the table without its contextual parent, meaning e.g. when the parent has no data for the same selection, then the parent name (if the data message is not constrainted to exclude this parent) is displayed as prefix of the child followed by `">" 'greater than'`, e.g. **·  Seeland > Kallnach**
+**On the row axis:**
+- All **dimensions with hierarchies** on the row axis are **indented** (one middle dot `"·"` and figure space `" "` per level of indentation) according to the level of hierarchy.
+- In case of long titles (two lines or more), then all lines are indented (all lines would start at the same place as the first one).
+- In cases when a child with an observation value is displayed in the table without its contextual parent, meaning e.g. when the parent has no data for the same selection, then the parent name (if the data message is not constrainted to exclude this parent) is displayed as prefix of the child followed by `">" 'greater than'`, e.g. **·  Seeland > Kallnach**
 
 ![Table with hierarchical dimensions](/dotstatsuite-documentation/images/DE_table_hierarchy.png)
+  
+**On the column axis:**
+- All column header cells are top-aligned including the dimension label cell
+- All **dimensions with hierarchies** on the column axis are **vertically indented** (middle dot `"·"` with a line break per per level of indentation)
+
+![Table with hierarchical dimensions](/dotstatsuite-documentation/images/DE_table_hierarchy_column.PNG)
 
 ---
 
