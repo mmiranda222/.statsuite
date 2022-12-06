@@ -2,7 +2,7 @@
 title: "DLM homepage overview"
 subtitle: 
 comments: false
-weight: 230
+weight: 220
 keywords: [
   'Common navigation header', '#common-navigation-header',
   'Logo', '#logo',
@@ -63,7 +63,9 @@ There is a placeholder on the left side for the logo of the organisation *(confi
 There is a list of menu buttons to access pages with specific features or to configure the application:
 * [Upload structures](/dotstatsuite-documentation/using-dlm/upload-structure/): page to upload ready-made SDMX structure files
 * [Upload data](/dotstatsuite-documentation/using-dlm/upload-data/): page to upload ready-made Excel+XML or SDMX data files
-* Dump: page to execute a dump download of the content of a data space
+* [Manage permissions](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/manage-permissions/): page to manage users' permissions
+* [Logbook](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/logbook/): page to consult logs related to data and referential metadata activities
+* [Dump](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dump-mode/): page to execute a dump download of the content of a data space
 * Home: page for browsing the content of data spaces and structure-specific actions 
 * Authentication status: Shows information on currently logged user (first name and last name) and feature to logout, permitting a new login (see [documentation](/dotstatsuite-documentation/using-dlm/log-in-dlm/)).
 * Localisation: Feature to select and show current application language. The list of available languages is defined during the installation of the application *(configurable!)*.

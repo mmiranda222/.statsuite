@@ -5,6 +5,7 @@ comments: false
 weight: 210
 keywords: [
   'Log in', '#log-in',
+  'My permissions', 'my-permissions',
   'Log out', '#log-out',
   'Connect to external sources using the native NSI authentication', '#connect-to-external-sources-using-the-native-nsi-authentication',
 ]
@@ -12,6 +13,7 @@ keywords: [
 
 #### Table of Content
 - [Log in](#log-in)
+- [My permissions](my-permissions)
 - [Log out](#log-out)
 - [Connect to external sources using the native NSI authentication](#connect-to-external-sources-using-the-native-nsi-authentication)
 
@@ -33,6 +35,17 @@ Once logged in, the DLM header displays the user's name, next to the user icon. 
 ![DLM Logout](/dotstatsuite-documentation/images/dlm-log-in.png)
 
 The authentication in the DLM supports the auto-login within the same web session, meaning that if an authenticated user opens a second tab of the DLM in the same web session, then the authentication will be automatically spread across.
+
+---
+
+### My permissions
+> Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+The user's own permission page is accessible by clicking on the 'My permissions' button: see [this page section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/manage-permissions/#my-permissions).
+
+![DLM Logout](/dotstatsuite-documentation/images/dlm-my-permissions.png)
+
+It remains highlighted until the user switches to a different view.
 
 ---
 
