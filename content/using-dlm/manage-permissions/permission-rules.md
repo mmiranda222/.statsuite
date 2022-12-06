@@ -1,8 +1,10 @@
 ---
 title: "Manage user access"
+title: "Permission business rules"
 subtitle: 
 comments: false
 weight: 220
+weight: 230
 keywords: [
   'Introduction', '#introduction',
   'List of available permissions', '#list-of-available-permissions',
@@ -24,10 +26,10 @@ keywords: [
 ---
 
 ### Introduction
-
 Currently, the Data Lifecycle Manager does not include yet user-interface features to manage user access rights to the content of the .Stat Suite data spaces. Therefore, user permissions still need to be entered, updated or deleted using the AuthorisationManagement web service. The following pieces of information give more information on the usage and parameters of this API.
 
 Please see here a Demo version of the AuthorisationManagement web service: http://authz-demo.siscc.org/swagger/index.html
+User permissions managed in the user interface of the DLM are using the [Authorisation Management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management) web service. The following pieces of information provide more details on the permission definitions, and the usage of the API. You can also see a Demo version of the Authorisation Management web service: http://authz-demo.siscc.org/swagger/index.html
 
 Access permissions can be defined individually for the following contexts:
  - per user (e-mail, e.g. user@domain.org), group of users (Project_Team) or any user (*)
@@ -39,13 +41,14 @@ Access permissions can be defined individually for the following contexts:
  - permission type (e.g. 3)
 
  For the list of available **Permission types** and **SDMX artefact types**, pleasse see below.
+For the list of available **Permission types** and **SDMX artefact types**, please see below.
 
  In order to be able to use the AuthorisationManagement web service, the user needs to be authenticated and to provide a valid access token.
+In order to be able to use the AuthorisationManagement web service, the user needs to be authenticated and to provide a valid access token.
 
 ---
 
 ### List of available permissions
-
 #### Basic permissions
 The basic permissions listed below are permissions associated to a single and specific action.  
 
@@ -149,7 +152,6 @@ Below is a table of the most used combinations, but others are acceptable.
 ---
 
 ### Visibility of permission rules
-
 Using the AuthorizationRules method of the AuthorisationManagement web service:
 - A non-admin user (or member of a non-admin group) can only see all those permissions that grant this user with a permission.
 - An admin user (or member of an admin group) - with admin permission `id:4095` - can see all permissions defined on those spaces on which that user has admin rights.
@@ -212,5 +214,3 @@ Considering the following fictive authorization rules (one per line), the *visib
 | *                  | 0       | *         | 1          | y            | y            | y             | y             | y              | y              | y           | y           | y            | y            | y             | y             | y                         | y          |
 | *                  | 0       | reset     | 3          | y            | y            | y             | y             | y              | y              | y           | y           | y            | y            | y             | y             | y                         | y          |
 | *                  | 0       | stable    | 15         | y            | y            | y             | y             | y              | y              | y           | y           | y            | y            | y             | y             | y                         | y          |
-
-

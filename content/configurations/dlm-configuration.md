@@ -14,6 +14,7 @@ keywords: [
   'List of SDMX artefact types', '#list-of-sdmx-artefact-types',
   'Upload size limit', '#upload-size-limit',
   'Logbook submission time boundaries', '#logbook-submission-time-boundaries',
+  'List of the standard roles for user permissisons', '#list-of-the-standard-roles-for-user-permissisons',
 ]
 
 ---
@@ -29,6 +30,7 @@ keywords: [
 - [List of SDMX artefact types](#list-of-sdmx-artefact-types)
 - [Upload size limit](#upload-size-limit)
 - [Logbook submission time boundaries](#logbook-submission-time-boundaries)
+- [List of the standard roles for user permissisons](#list-of-the-standard-roles-for-user-permissisons)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -244,3 +246,56 @@ Define the boundaries of the **submission time logbook filter**. Rules are:
     }
   }
 ```
+
+---
+
+### List of the standard roles for user permissisons
+> Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+Define, per organisation, the **Standard roles** set for the 'DLM --> Manage permissions --> Add/View/Edit' form, based on any combination of the granular permissons as defined in the Authorizations Management Service.  
+By default, the below set of combinations is pre-defined as standard roles.
+
+References:
+- [Authorization APi's permissions rules](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/pemrission-rules)
+- [Functional specifications of the Basic permissions](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/manage-permissions)
+
+![DLM config basic permissions](/dotstatsuite-documentation/images/dlm-config-basic-permissions.png)
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+
+```json
+  "sdmx": {
+    "permissionGroups": [
+      {
+        "id": 3,
+        "permissions": [1, 2]
+      },
+      {
+        "id": 145,
+        "permissions": [1, 16, 128]
+      },
+      {
+        "id": 657,
+        "permissions": [1, 16, 128, 512]
+      },
+      {
+        "id": 3363,
+        "permissions": [1, 2, 32, 256, 1024, 2048]
+      },
+      {
+        "id": 2051,
+        "permissions": [1, 2, 2048]
+      },
+      {
+        "id": 4095,
+        "permissions": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
+      }
+    ]
+  }
+```
+
+The `"permissionGroup"` lists the standard roles using per role a unique `"id"`, which represents the sum of the IDs of the underlying granular permissons as defined in the Authorization Management service, as well as the list of those IDs.
+
+Each role ID requires also the definition of a localised label in the `i18n` translation files, according to the common "[Overwritting default translations](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)" process.
+
+The above listed standard roles and their localised labels are defined by default, but they can be changed or overwritten.
