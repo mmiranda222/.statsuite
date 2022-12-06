@@ -2,7 +2,7 @@
 title: "Publish data"
 subtitle: 
 comments: false
-weight: 540
+weight: 700
 keywords: [
  'Categorise a data view (dataflow)', '#categorise-a-data-view-dataflow',
  'General behavior', '#general-behavior',
