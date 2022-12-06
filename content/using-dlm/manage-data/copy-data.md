@@ -64,7 +64,7 @@ When requesting to initiate a transfer between data spaces, it is possible to ei
 ---
 
 ### Data validations
-> *Version history:**  
+> *Version history:*  
 > Data validations option always visible and default selection made configurable since [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Released with [October 5, 2021 .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
 
