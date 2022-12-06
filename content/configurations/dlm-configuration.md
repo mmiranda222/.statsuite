@@ -16,6 +16,7 @@ keywords: [
   'Upload size limit', '#upload-size-limit',
   'Logbook submission time boundaries', '#logbook-submission-time-boundaries',
   'List of the standard roles for user permissisons', '#list-of-the-standard-roles-for-user-permissisons',
+  'Override the default authorization service URL', '#override-the-default-authorization-service-url',
 ]
 
 ---
@@ -33,6 +34,7 @@ keywords: [
 - [Upload size limit](#upload-size-limit)
 - [Logbook submission time boundaries](#logbook-submission-time-boundaries)
 - [List of the standard roles for user permissisons](#list-of-the-standard-roles-for-user-permissisons)
+- [Override the default authorization service URL](#override-the-default-authorization-service-url)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -322,3 +324,23 @@ The `"permissionGroup"` lists the standard roles using per role a unique `"id"`,
 Each role ID requires also the definition of a localised label in the `i18n` translation files, according to the common "[Overwritting default translations](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)" process.
 
 The above listed standard roles and their localised labels are defined by default, but they can be changed or overwritten.
+
+---
+
+### Override the default authorization service URL
+>Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+Define an Authorization service URL at the DLM scope level that will override the one defined as an env. variable during the deployment. This override is made especially to allow for a specific Authorization service URL per DLM scope when a DLM instance has several scopes.
+
+* in `dotstatsuite-config-data/<env>/configs/tenants.json` file under a DLM `scope`
+
+```json
+  "dlm2": {
+    "type": "dlm",
+    "label": "dlm2",
+    "oidc": {
+      "authority": "https://...",
+      "client_id": "app"
+    },
+    "authzServerUrl": "https://authz-env.org/1.1",
+```
