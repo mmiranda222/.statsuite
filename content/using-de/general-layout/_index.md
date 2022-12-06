@@ -132,7 +132,7 @@ When the user clicks on "Send", an email is generated and automatically sent by 
 ![DE Contact us popup and notification](/dotstatsuite-documentation/images/de-contact-us-popup-and-notification.png)
 
 The email sent contains:
-- **email subject**: the question type selected (`Content question`, `Technical problem` or `Feedback`), the word **" about "** and the DE instance name.
+- **email subject**: the question type selected (`Content question`, `Technical problem` or `Feedback`), the word *" about "* and the DE instance name.
 - **email body**: all the information filled in the screen (except for reCAPTCHA) and the current URL used in the DE, meaning the URL of the page from where the user has opened the user feedback form.
 
 ![DE Contact us mail](/dotstatsuite-documentation/images/de-contact-us-mail.png)

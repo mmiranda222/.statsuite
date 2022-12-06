@@ -835,11 +835,11 @@ If the parameter **"`supportsPostLongRequests`" is set to `false`**, then if the
 ### "Contact us" form: reCAPTCHA and email settings 
 > Released with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
 
-It is possible to enable/disable the "**Contact us**" form and the included **reCAPTCHA** feature.
+It is possible to enable/disable the "**Contact us**" form and the included **reCAPTCHA** feature (see [functional specs](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#contact-us-form)).
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
-```json
+```js
 {
   app: {
     contact: {
