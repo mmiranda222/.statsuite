@@ -6,16 +6,18 @@ weight: 350
 
 ---
 
+> *Version history:**  
+> Data validations option always visible and default selection made configurable since [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Released with [October 5, 2021 .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
 
-When uploading data using the "Upload data" features in the DLM, advanced upload options allow the user to choose the validation process type. The user has three options:  
+When uploading data using the "Upload data & referential metadata" features in the DLM, advanced upload options allow the user choosing the validation process type. The user has three options:  
 a) **Favour speed with basic validations**: basic validations are performed upon data upload for *SDMX* compliance, allowed/complete dimensions values, or representation requirements. It provides simplified error explanations.
 
 b) **Apply advanced validations**: advanced validations are performed upon data upload for duplicated coordinates, consistent non-observational values, or mandatory attribute values. It provides detailed error explanations.
 
 c) **Only run advanced validations without changing data**: this option will only perform an "analysis" of the data compliancy without updating the target dataspace, and a report by email will be sent with the results.
 
-By default, the basic validations option is selected.
+The default selection, whether basic or advanced validations option, is configurable by DLM instance: see how to [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#default-data-validations-option).
 
 ![dlm upload data validation](/dotstatsuite-documentation/images/dlm-upload-data-validation1.png)
 

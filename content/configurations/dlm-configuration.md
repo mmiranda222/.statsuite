@@ -12,6 +12,7 @@ keywords: [
   'Use native NSI WS authentication for external source', '#use-native-nsi-ws-authentication-for-external-source',
   'Define data preview per space', '#define-data-preview-per-space',
   'List of SDMX artefact types', '#list-of-sdmx-artefact-types',
+  'Default data validations option', '#default-data-validations-option',
   'Upload size limit', '#upload-size-limit',
   'Logbook submission time boundaries', '#logbook-submission-time-boundaries',
   'List of the standard roles for user permissisons', '#list-of-the-standard-roles-for-user-permissisons',
@@ -28,6 +29,7 @@ keywords: [
 - [Use native NSI WS authentication for external source](#use-native-nsi-ws-authentication-for-external-source)
 - [Define data preview per space](#define-data-preview-per-space)
 - [List of SDMX artefact types](#list-of-sdmx-artefact-types)
+- [Default data validations option](#default-data-validations-option)
 - [Upload size limit](#upload-size-limit)
 - [Logbook submission time boundaries](#logbook-submission-time-boundaries)
 - [List of the standard roles for user permissisons](#list-of-the-standard-roles-for-user-permissisons)
@@ -207,6 +209,25 @@ Define the types of SDMX structural artefacts selectable in the DLM 'Filter by t
 
 ---
 
+### Default data validations option
+> Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+Define, in the 'Data upload' and 'Data transfer' menus, what is the **data validations type option** selected by default:
+- **"basic"** for Favour speed with basic validations
+- **"advanced"** for Apply advanced validations
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+
+```json
+  "app": {
+    "defaultOptionDataValidation": "advanced"
+  }
+```
+
+See more about the functional specifications of this feature [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/data-validation/).
+
+---
+
 ### Upload size limit
 Define the file size limitation when uploading data or strutures files **applied by the DLM user interface** as follow:    
 Provided in number of bites, the upload file size limit is usually set to 30MB by default (like in the example below).  
@@ -214,7 +235,9 @@ Provided in number of bites, the upload file size limit is usually set to 30MB b
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
 
 ```json
-"uploadSizeLimit": 30000000
+  "sdmx": {
+    "uploadSizeLimit": 30000000
+  }
 ```
 
 This configuration parameter only concerns the JavaScript front-end part of the DLM application. 
