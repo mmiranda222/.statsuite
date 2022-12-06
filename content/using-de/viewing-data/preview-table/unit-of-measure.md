@@ -97,7 +97,7 @@ Therefor:
 - The **derived attachment level of the full UoM** would be: Measure, Country, Transformation, UnitMeasure, PriceBase and Adjustment 
 
 #### Case 1: Table Header
-The UoM label (which includes the labels for all dimensions in UNIT_MEASURE_CONCEPTS) is shown in the **second "Unit of measure" table subtitle**. The dimensions defined in UNIT_MEASURE_CONCEPTS are **not** displayed separately in the first table subtitle.
+The UoM label (which includes the labels for all dimensions in UNIT_MEASURE_CONCEPTS) is shown in the **second "Combined unit of measure" table subtitle**. The dimensions defined in UNIT_MEASURE_CONCEPTS are **not** displayed separately in the first table subtitle.
 
 ![Example case 1](/dotstatsuite-documentation/images/DE_UoM_Case1TableHeader.PNG)
 
@@ -107,9 +107,9 @@ Note: The dimensions UnitMeasure, PriceBase, Adjustment, Transformation had sing
 Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
 
 #### Case 2: Row section
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Row axis) are displayed in an additional **"Unit of measure" row section line**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row section axis are **not** displayed separately.
+The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Row axis) are displayed in an additional **"Combined unit of measure" row section line**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row section axis are **not** displayed separately.
   
-  ![Example case 2](/dotstatsuite-documentation/images/DE_UoM_Case2RowSection.PNG)
+  ![Example case 2](/dotstatsuite-documentation/images/DE_UoM_Case2-row-section.png)
 
 
 See also: http://de-demo.siscc.org/vis?locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=NAMAIN_T0102_A&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=on&term=uom&start=0&period=2015%2C2020&frequency=A&dataquery=A...W0.S1......_Z....&layout[sections]=REF_AREA%2CINSTR_ASSET%2CPRICES&layout[rows]=STO&layout[header]=TIME_PERIOD  
@@ -118,9 +118,9 @@ Note: The dimension Measure had a single selection and is placed in the header. 
 Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
 
 #### Case 3: Row axis
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Column axis) are displayed in an additional **"Unit of measure" column**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row axis are **not** displayed separately.
+The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Column axis) are displayed in an additional **"Combined unit of measure" column**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row axis are **not** displayed separately.
 
-![Example case 3](/dotstatsuite-documentation/images/DE_UoM_Case3RowAxis.PNG)
+![Example case 3](/dotstatsuite-documentation/images/DE_UoM_Case3-row-axis.png)
 
 See also: http://de-demo.siscc.org/vis?dataquery=AU%2BBE.A.GDP..V.SA%2BNSA.NT&period=2000%2C2002&frequency=A&locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=DF_UOM&dataflow[agencyId]=OECD&dataflow[version]=3.0&dataAvailability=on&filter=ADJUSTMENT
 
@@ -128,9 +128,9 @@ Note: The dimension Measure has only one value and is placed in the header. The 
 Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
 
 #### Case 4: Column axis
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed in the Row section axis) are displayed in an additional **"Unit of measure" row**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally on the Column axis are **not** displayed separately.
+The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed in the Row section axis) are displayed in an additional **"Combined unit of measure" row**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally on the Column axis are **not** displayed separately.
 
-![Example case 4](/dotstatsuite-documentation/images/DE_UoM_Case4ColumnAxis.PNG)
+![Example case 4](/dotstatsuite-documentation/images/DE_UoM_Case4-column-axis.png)
 
 See also: http://de-qa.siscc.org/vis?locale=en&dataflow[datasourceId]=qa%3Astable&dataflow[dataflowId]=NAMAIN_T0102_A&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=true&period=2015%2C2020&frequency=A&dataquery=A..............&layout[rows]=STO%2CACTIVITY%2CACCOUNTING_ENTRY&layout[header]=TIME_PERIOD%2CPRICES&layout[sections]=REF_AREA  
   
@@ -138,9 +138,9 @@ Note: The dimensions Country, Measure, UnitMeasure and PriceBase were placed on 
 Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
 
 #### Case 5: Cell level
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS) are displayed as a **"Unit of measure" footnote at cell level**.
+The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS) are displayed as a **"Combined unit of measure" footnote at cell level**.
 
-![Example case 5](/dotstatsuite-documentation/images/DE_UoM_Case5CellLevel.PNG)
+![Example case 5](/dotstatsuite-documentation/images/DE_UoM_Case5-cell-level.png)
 
 See also: http://de-demo.siscc.org/vis?dataquery=Q.Y.AU.W0........XDC..N.&period=%2C2017-Q1&frequency=Q&locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=NAMAIN_ALL&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=on&layout[rows]=STO%2CACTIVITY%2CPRICES&layout[header]=TABLE_IDENTIFIER&layout[sections]=REF_SECTOR%2CINSTR_ASSET%2CEXPENDITURE%2CACCOUNTING_ENTRY&term=uom&start=0  
   

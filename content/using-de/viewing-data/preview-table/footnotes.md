@@ -69,14 +69,14 @@ Note that this is the only case that allows being used in both tables and charts
 
 **Then** the `*` icon is shown next to the text of the corresponding **row section** header.  
 
-![Case 2a](/dotstatsuite-documentation/images/using-de-footnotes-case-2a.png)
+![Case 2a](/dotstatsuite-documentation/images/using-de-footnotes-case-2a.PNG)
 
 **However, if under these conditions**:
 * only one dimension in the row section is concerned  
 
 **Then** the `*` icon is shown instead next to the text of the corresponding **row section dimension**.  
 
-![Case 2b](/dotstatsuite-documentation/images/using-de-footnotes-case-2b.png)
+![Case 2b](/dotstatsuite-documentation/images/using-de-footnotes-case-2b.PNG)
 
 #### Case 3: The attribute value is known to be the same for all cells in a row of the table
 **When**:
