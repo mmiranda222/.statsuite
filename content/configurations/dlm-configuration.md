@@ -12,7 +12,8 @@ keywords: [
   'Use native NSI WS authentication for external source', '#use-native-nsi-ws-authentication-for-external-source',
   'Define data preview per space', '#define-data-preview-per-space',
   'List of SDMX artefact types', '#list-of-sdmx-artefact-types',
-  'Upload size limit', '#upload-size-limit'
+  'Upload size limit', '#upload-size-limit',
+  'Logbook submission time boundaries', '#logbook-submission-time-boundaries',
 ]
 
 ---
@@ -27,6 +28,7 @@ keywords: [
 - [Define data preview per space](#define-data-preview-per-space)
 - [List of SDMX artefact types](#list-of-sdmx-artefact-types)
 - [Upload size limit](#upload-size-limit)
+- [Logbook submission time boundaries](#logbook-submission-time-boundaries)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -204,7 +206,6 @@ Define the types of SDMX structural artefacts selectable in the DLM 'Filter by t
 ---
 
 ### Upload size limit
-
 Define the file size limitation when uploading data or strutures files **applied by the DLM user interface** as follow:    
 Provided in number of bites, the upload file size limit is usually set to 30MB by default (like in the example below).  
 
@@ -219,3 +220,25 @@ This configuration parameter only concerns the JavaScript front-end part of the 
 Specific configurations are also necessary also for the underlying .Stat CORE services (transfer and NSI). The hosting web server(s) (e.g. IIS, Kestrel, ..) need(s) to be configured to accept http requests with bodies of the required size. All web servers have their own defaults, e.g. the .Net Core builtin web server, called Kestrel, has a default maximum request body size of 30,000,000 bytes, which is approximately 28.6 MB.
 
 More information on how to make this configuration in Kestrel (on the example of the NSI web service) can be found [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#maximum-size-of-the-submited-sdmx-messages). For other web server technologies, please consult their specific documentation.
+
+### Logbook submission time boundaries
+> Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+Define the boundaries of the **submission time logbook filter**. Rules are:
+- configuration applies to the tenant;
+- valid values for start and end param. are "now" or any [ISO date string](https://en.wikipedia.org/wiki/ISO_8601);
+- by default it is set to `"start": "2019-01-01"` and `"end": "now"`;
+- if settings are not set, or invalid, then default boundaries are [30 days - now].
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+
+```json
+ "logs": {
+    "transfer": {
+      "timeExtents": {
+        "start": "2019-01-01",
+        "end": "now"
+      }
+    }
+  }
+```
