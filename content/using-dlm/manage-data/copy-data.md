@@ -64,6 +64,8 @@ When requesting to initiate a transfer between data spaces, it is possible to ei
 ---
 
 ### Data validations
+> *Version history:**  
+> Data validations option always visible and default selection made configurable since [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Released with [October 5, 2021 .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
 
 Advanced options allow the user to choose the validation process type for data copy. The user is given with three options:  
@@ -73,7 +75,7 @@ b) **Apply advanced validations**: advanced validations are performed upon data 
 
 c) **Only run advanced validations without changing data**: this option will only perform an "analysis" of the data compliancy without updating the target, and a report by email will be sent with the result.
 
-By default, the basic validations option is selected.
+The default selection, whether basic or advanced validations option, is configurable by DLM instance: see how to [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#default-data-validations-option).
 
 ![dlm copy data validation ](/dotstatsuite-documentation/images/dlm-copydata-validation1.png)
 
