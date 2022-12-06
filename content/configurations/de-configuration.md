@@ -34,7 +34,8 @@ keywords: [
   'Disabled chart views', '#disabled-chart-views',
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
   'Display of HTML content', '#display-of-html-content',
-  'Support of long URLs', '#support-of-long-urls'
+  'Support of long URLs', '#support-of-long-urls',
+  '"Contact us" form: reCAPTCHA and email settings', '#contact-us-form-recaptcha-and-email-settings'
 ]
 ---
 
@@ -70,6 +71,7 @@ keywords: [
 - [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
 - [Display of HTML content](#display-of-html-content)
 - [Support of long URLs](#support-of-long-urls)
+- ["Contact us" form: reCAPTCHA and email settings](#contact-us-form-recaptcha-and-email-settings)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -827,3 +829,56 @@ Furthermore, the *SDMX* API data query generated in the "Developer API" DE featu
 ![config too long URLs](/dotstatsuite-documentation/images/de-long-urls-2.png)
 
 If the parameter **"`supportsPostLongRequests`" is set to `false`**, then if the URL of a data request is too long, the `GET` data request will fail and an error message is shown to the user: "*Whoops, your current selection is too large to be processed. Please reduce the selection. You can also download all (unfiltered) data and make the needed selection in the downloaded data.*"
+
+---
+
+### "Contact us" form: reCAPTCHA and email settings 
+> Released with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+It is possible to enable/disable the "**Contact us**" form and the included **reCAPTCHA** feature.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+{
+  app: {
+    contact: {
+      form: false,
+      captcha: false
+    }
+  }  
+}
+```
+
+By default, both features are set to **true** and thus **enabled**.
+
+To be able to use the Google **reCAPTCHA** feature in the "Contact us" form, the following configuration steps are required:
+- Go to the [reCAPTCHA web page](https://www.google.com/recaptcha/about/)
+- Click on the Admin Console button in the menu
+
+![reCAPTCHA Admin console button](/dotstatsuite-documentation/images/de-configuration-recaptcha-menu.png)
+
+- Enter a label for your ReCAPTCHA and select `reCAPTCHA version 2` as reCAPTCHA type
+
+![reCAPTCHA Admin console](/dotstatsuite-documentation/images/de-configuration-recaptcha-admin-console.png)
+
+- Add the your domain(s) in the "Domains" section, e.g. de-website.com
+- Accept the reCAPTCHA Terms of Services and click on "Submit". This will generate a `site key`and a `secret key`.
+
+![reCAPTCHA generated keys](/dotstatsuite-documentation/images/de-configuration-recaptcha-generated-keys.png)  
+
+- Define the following DE environment variables with your generated key values:
+  - `CAPTCHA_SECRET_KEY` (**private**, used by the server to verify the user captcha data)
+  - `CAPTCHA_SITE_KEY` (public, used in the client e.g. data explorer)
+
+See [here](https://help.salesforce.com/s/articleView?id=sf.workdotcom_quemgmt_set_up_captcha_googlekeys.htm&type=5) for further details.
+
+The reCAPTCHA feature will be displayed in the "Contact us" form only if it is configured as decribed above.  
+
+To be able to receive the emails generated through the "Contact us" form, the SMTP server and the destination email address need to be configured by defining the following environment variables:
+- `MAIL_FROM`
+- `MAIL_TO`
+- `HFROM` (optional)
+- For SMTP please see the similar [SMTP settings of the share service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#smtp)
+
+For more information see the [data-explorer readme](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer#how-to-use-the-contact-form).

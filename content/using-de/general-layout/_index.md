@@ -8,6 +8,7 @@ keywords: [
   'Header', '#header',
   'Web Content Accessibility Support', '#web-content-accessibility-support',
   'Login', '#login',
+  '"Contact us" form', '#contact-us-form',
   'Language', '#language',
   'Footer', '#footer',
   'URL parameters', '#url-parameters',
@@ -19,6 +20,7 @@ keywords: [
 - [Header](#header)
 - [Web Content Accessibility Support](#web-content-accessibility-support)
 - [Login](#login)
+- ["Contact us" form](#contact-us-form)
 - [Language](#language)
 - [Footer](#footer)
 - [URL parameters](#url-parameters)
@@ -41,6 +43,7 @@ The Data Explorer header is common to all pages of the application, and consists
 * a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo
 * a switch to enable [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support)
 * a link to [Login](#login) to the application
+* a link to [Contact us](#contact-us)
 * a [Language](#language) switch option
 
 ![DE Header](/dotstatsuite-documentation/images/de-header.png)
@@ -105,6 +108,37 @@ Once logged in, clicking on the user icon displays a dropdown feature with the u
 
 Clicking on `Log out` will automatically unregister the user and refresh the DE homepage.  
 In case when there are several authenticated tabs of the DE in the same session, when the user logs out from one, then he will be logged out from all the DE tabs when refreshing the contents.
+
+---
+
+### "Contact us" form
+> Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+In order to contact the organisation responsible for the DE instance, the user can use the "Contact us" form icon ![DE Contact us icon](/dotstatsuite-documentation/images/de-contact-us-icon.png) in the application header and accessible from all DE pages. After clicking on it, a form will is displayed in a popup window allowing the user to:  
+1. make a choice for 1 of the 3 question types with the following dynamically displayed explanatory texts:
+  - **Content question**: "I cannot find the data I’m looking for, the data I found doesn’t correspond to what I expected, or I have another question concerning the data."
+  - **Technical problem**: "I have a technical problem to access, select, configure, view, share or download data, or with any other feature of this web site."
+  - **Feedback**: "I wish to give some feedback on this site to help to improve it or to thank the teams behind it."
+
+2. complete the additional information:
+  - *personal information* (title, full name, organisation, email where at least the email is required); The 'email' and 'full name' entries are prefilled in case the user is authenticated.
+  - *detailed question/information* (required).
+  - *whether user can be contacted* to help improving the web site (with a tick box).
+
+The form proposes a *link to organisation's privacy policy* and an **(on/off) configurable) easy-to-use captcha** (required, see below).  
+
+When the user clicks on "Send", an email is generated and automatically sent by a pre-configured SMTP server to a pre-configured email address (see below). The user is then informed by a notification popup that the mail has been sent.
+
+![DE Contact us popup and notification](/dotstatsuite-documentation/images/de-contact-us-popup-and-notification.png)
+
+The email sent contains:
+- **email subject**: the question type selected (`Content question`, `Technical problem` or `Feedback`), the word **" about "** and the DE instance name.
+- **email body**: all the information filled in the screen (except for reCAPTCHA) and the current URL used in the DE, meaning the URL of the page from where the user has opened the user feedback form.
+
+![DE Contact us mail](/dotstatsuite-documentation/images/de-contact-us-mail.png)
+
+See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#contact-us-form-recaptcha-and-email-settings) on how to configure the "Contact us" form, the reCAPTCHA feature and the email settings for the destination email.  
+Note that the "Contact us" form and/or the reCAPTCHA feature are not displayed if not configured appropriately. They can also be switched off through configuration.
 
 ---
 
