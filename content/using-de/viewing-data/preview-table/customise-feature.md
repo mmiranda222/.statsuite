@@ -17,6 +17,9 @@ keywords: [
 
 > This section describes how to customise the **table preview layout**. For the customisation of the chart views, please see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/customise-feature/) of the documentation.
 
+> *Version history:*  
+> Added a cross icon to close the panel with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
+
 ---
 
 ### General behavior
@@ -38,7 +41,8 @@ The **Table preview** area automatically shows what the user modifies, allowing 
 
 **Cancel/Apply**  
 The modifications made in the "Customise" option are applied only when the user clicks on **Apply Layout**. When doing so, the "Customise" toolbar option is collapsed and the table preview layout is updated with the new modifications.  
-Clicking on **Cancel changes** will set all dimensions back to the previous state, meaning as it was set when the user originally clicked on "Customise".
+Clicking on **Cancel changes** will set all dimensions back to the previous state, meaning as it was set when the user originally clicked on "Customise".  
+Also, clicking on the top-right cross icon will close the the panel without applying any change.
 
 ---
 

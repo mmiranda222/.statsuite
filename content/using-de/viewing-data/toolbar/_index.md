@@ -196,3 +196,4 @@ There is an option to **copy** each query in the user's clipboard.
 
 ![Developer API](/dotstatsuite-documentation/images/de-api.png)
 
+ Clicking on the top-right cross icon will close the panel without any action.
