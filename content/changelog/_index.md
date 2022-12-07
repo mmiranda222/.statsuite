@@ -8,6 +8,8 @@ weight: 120
 
 <!-- 
 ToC
+- [December 7, 2022](#december-7-2022)
+- [December 5, 2022](#december-5-2022)
 - [November 11, 2022](#november-11-2022)
 - [November 4, 2022](#november-4-2022)
 - [October 31, 2022](#october-31-2022)
@@ -112,6 +114,77 @@ ToC
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
 
 ---
+
+### December 7, 2022
+**[Release .Stat Suite .NET "cinnamon"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/63#tab-issues)**
+> This release includes a new version of the **sdmxri-nsi-ws** service.  
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#313](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/313) *(DevOps)* Deploy NSI version 8.13.0.
+- [dotstatsuite-core-sdmxri-nsi-ws#293](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/293) Add alternative usage of 'X-Range' header for range requests.
+- [dotstatsuite-core-transfer#426](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/426) Update authentication to support ADFS as compliant provider.
+
+patch change:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#282](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/282) `detail=allcompletestubs` parameter does not return all related artefact's annotations.
+
+---
+
+### December 5, 2022
+**[Release .Stat Suite JS "spin"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/61#tab-issues)**
+> This release includes a new version of the **data-explorer**, **data-viewer**, **sdmx-faceted-search**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.2**.
+
+**IMPORTANT DISCLAIMER:** due to the enhancements made on the sdmx-faceted-search service, it is **mandatory to re-index all dataflows** after having upgraded your .Stat Suite installation: see the [API method](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#index-all-dataflows).
+
+significant and minor changes:
+
+- [dotstatsuite-data-lifecycle-manager#224](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/224) DLM user interface for **managing user permissions**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions/manage-permissions/))
+- [dotstatsuite-data-lifecycle-manager#57](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/57) DLM user interface **logbook for monitoring data & referential metadata logs** (from the transfer service). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/logs/))
+- [dotstatsuite-data-lifecycle-manager#270](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/270) For data/referential metadata uploads, make the validation option always visible and its default state configurable. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#default-data-validations-option))
+- [dotstatsuite-data-lifecycle-manager#304](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/304) DLM "(de-)select" feature enhancement for a unique single results page. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#display-options))
+- [dotstatsuite-data-lifecycle-manager#328](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/328) Add a new DLM "scope" configuration for overridde of `Authz` URL. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#override-the-default-authorization-service-url))
+- [dotstatsuite-data-lifecycle-manager#325](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/325) Allow manually (re-)indexing dataflows from within DLM **only** for appropriate dataspaces and extended to external dataspaces. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/publish-data/#re-index-a-data-view-dataflow))
+- [dotstatsuite-sdmx-faceted-search#97](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/97) Extend the `sfs` **search logs** report. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#admin-queries))
+- [dotstatsuite-data-explorer#654](dotstatsuite-data-explorer) DE user **"Contact us" form**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#contact-us-form))
+- [dotstatsuite-data-explorer#748](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/748) **Wrap row section headers** and change the dimension separators in the DE table views. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#preview-table-components))
+- [dotstatsuite-data-explorer#858](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/848) Automatic **alignment of hierachical codes on columns** in the DE table. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-hierarchical-dimensions))
+- [dotstatsuite-data-explorer#548](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/548) Allow **big selections in DE** (leading to long URLs) by using `POST` instead of `GET` request methods (configurable). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#support-of-long-urls))
+- [dotstatsuite-data-explorer#695](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/695) Use browser download "display" once the download has started. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#notification-of-download))
+- [dotstatsuite-data-explorer#545](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/545) Allow DE using SDMX-RI authentication to connect to an external NSI web service.
+- [dotstatsuite-data-explorer#864](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/864) Better DE user message when there is absolutely no data in a dataflow.
+- [dotstatsuite-data-explorer#858](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/858) *(WCAG)* Using the asc/desc button for time period in the DE "Customise" panel incorrectly changes its style and becomes hardly readable.
+- [dotstatsuite-data-explorer#789](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/789) Auto-close menu panels when switching between Overview, Table and Chart (+ add a cross icon to close panels).
+- [dotstatsuite-data-explorer#798](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/798) DE default labels improvement.
+- [dotstatsuite-config-data#24](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/24) Make the changelog `i18n` work on Windows.
+- [dotstatsuite-data-explorer#908](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/908) *(Refactoring)* re(fresh|load) while doing long things.
+- [dotstatsuite-sdmx-faceted-search#116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/116) *(Refactoring)* Protocol hardcoded in SOLR connection URL.
+- [dotstatsuite-kube-rp#5](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/issues/5) *(Refactoring)* Boilerplate update.
+- [dotstatsuite-data-lifecycle-manager#327](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/327) *(Refactoring)* Invalid return from DLM BE while indexing.
+- [dotstatsuite-data-lifecycle-manager#289](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/289) *(Refactoring)* Responsive layout for page with side.
+- [dotstatsuite-data-lifecycle-manager#288](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/288) *(Refactoring)* Responsive menu.
+- [dotstatsuite-data-lifecycle-manager #287](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/287) *(Refactoring)* Remove pesky scrollbar.
+
+patch changes:
+
+- [dotstatsuite-sdmx-faceted-search#121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/121) Empty search results facets when parents of hierarchical dimensions are hidden.
+- [dotstatsuite-data-explorer#889](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/889) Usage of the `layout_flag` annotation causing a duplication in DE views.
+- [dotstatsuite-data-explorer#886](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/886) `REPYEARSTART` attribute incorrectly applied in the DE table.
+- [dotstatsuite-data-explorer#882](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/882) `NOT_DISPLAYED` annotation not working in the DE sub-header for specific dimensions (UoM).
+- [dotstatsuite-data-explorer#880](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/880) Logging out and in again on DE visualisation page results in a non-terminating spinner.
+- [dotstatsuite-data-explorer#878](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/878) "Whoops" DE blue error page.
+- [dotstatsuite-data-explorer#863](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/863) `DefaultView` setting is not respected when search returns only one dataflow.
+- [dotstatsuite-data-explorer#852](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/852) Wrong bypass of search results when filtering on the DE search page.
+- [dotstatsuite-data-explorer#799](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/799) Responsiveness issue in DE charts customisation.
+- [dotstatsuite-data-explorer#681](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/681) DE free-text search on dataflow ID should not be case sensitive.
+- [dotstatsuite-data-lifecycle-manager#323](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/323) DLM doesn't take into account external space config. settings when requesting an Agency Scheme to display the filter by owner.
+- [dotstatsuite-data-lifecycle-manager#321](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/321) When adding a MSD link to a DSD, the related dataflows are not re-initialised.
+- [dotstatsuite-data-lifecycle-manager#310](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/310) Deletion fails for multiple selections while DLM displays a successful message.
+- [dotstatsuite-data-lifecycle-manager#309](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/309) Transfer data fails for multiple selections.
+
+---
+
 ### November 11, 2022
 **[Patch release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
 > This release includes a **patch** version of the **core-transfer** and **data-access** services.  
@@ -123,6 +196,7 @@ patch changes:
 - [dotstatsuite-core-transfer#459](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/459) TimeOut "Content Constraint XXX, Timeout expired."
 
 ---
+
 ### November 4, 2022
 **[Patch release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
 > This release includes a **patch** version of the **core-transfer** and **data-access** services.  
@@ -206,7 +280,6 @@ patch change:
 ---
 
 ### October 7, 2022
-
 **[Patch release .Stat Suite .NET "blueberry"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57#tab-issues)**
 > This release includes a **patch** version of the **core-transfer**, **sdmxri-nsi-ws**, and **data-access** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.12.2**.
