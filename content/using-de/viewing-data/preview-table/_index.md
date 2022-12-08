@@ -112,7 +112,7 @@ What happens when the user starts customising the layout is described [here](htt
 * [Default filter selections](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/)
 * [Hide information of a data view](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/)
 * [Implicit and explicit orders](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/implicit-explicit-order/)
-* [Additional downloads of external resources](https://sis-cc.gitlab.io/dotstatsuite-documentationusing-de/viewing-data/preview-table/custom-data-view/external-resources/)
+* [Additional downloads of external resources](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/external-resources/)
 
 ---
 
