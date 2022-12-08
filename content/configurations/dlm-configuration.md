@@ -321,9 +321,7 @@ References:
 
 The `"permissionGroup"` lists the standard roles using per role a unique `"id"`, which represents the sum of the IDs of the underlying granular permissons as defined in the Authorization Management service, as well as the list of those IDs.
 
-Each role ID requires also the definition of a localised label in the `i18n` translation files, according to the common "[Overwritting default translations](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)" process.
-
-The above listed standard roles and their localised labels are defined by default, but they can be changed or overwritten.
+Each role ID also requires the definition of a localised label in an "override" `i18n` folder under `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/` with each language's translation file. For example, here are the English labels to add corresponding to the above set of roles: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/develop/configs/default/data-lifecycle-manager/i18n/en.json.
 
 ---
 
