@@ -7,6 +7,7 @@ keywords: [
   'Role of preview-tables', '#role-of-preview-tables',
   'Preview-table components', '#preview-table-components',
   'Initial layout', '#initial-layout',
+  'Custom (default) table settings', '#custom-default-table-settings',
   'Layout variations from changing user selections', '#layout-variations-from-changing-user-selections',
   'Display of observations values', '#display-of-observations-values',
   'Display of additional information', '#display-of-additional-information',
@@ -29,6 +30,7 @@ keywords: [
 - [Role of preview-tables](#role-of-preview-tables)
 - [Preview-table components](#preview-table-components)
 - [Initial layout](#initial-layout)
+- [Custom (default) table settings](#custom-default-table-settings)
 - [Layout variations from changing user selections](#layout-variations-from-changing-user-selections)
 - [Display of observations values](#display-of-observations-values)
 - [Display of additional information](#display-of-additional-information)
@@ -91,7 +93,7 @@ The distribution of the different data dimensions over the pivot table axes is c
 When the preview-table is first displayed, the initial layout is determined in the following ordered way:
 
 1) Independently from default layouts defined in the annotations, all dimensions with exactly one item (selected or returned) are excluded from the table axis and displayed instead in the first table *subtitle*. Only those single-fixed dimensions normally displayed in the subtitle can be hidden through the "NOT_DISPLAYED" annotation.
-2) The default table layout defined by annotations ("LAYOUT_ROW" or "LAYOUT_COLUMN" or "LAYOUT_ROW_SECTION") is applied to the remaining dimensions.  
+2) The default table layout options defined by annotations (for more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/)) are then applied to the remaining dimensions.  
   *Not implemented (yet): If the configurable maximum number of dimensions to be shown in Columns is exceeded, then the last over-counting dimensions (but not the Time_Period dimension) are moved to the Row Section axis. If the configurable maximum number of dimensions to be shown in Rows is exceeded, then the last over-counting dimensions (but not the Ref_Area dimension) are moved to the Row Section axis.*
 3) If there is no Column dimension yet, then the Time_Period dimension, if it has no layout annotation, otherwise the first dimension without a layout annotation, except the Ref_Area dimension, is moved to the Column axis.
 4) If there is no Row dimension yet, then the Ref_Area dimension dimension, if it has no layout annotation, otherwise the first dimension without a layout annotation, except the Time_Period, is moved to the Rows axis.
@@ -100,6 +102,17 @@ When the preview-table is first displayed, the initial layout is determined in t
 The dimensions configured to be part of the "Unit of measure" concepts are, when possible, merged together with the attributes configured to be part of the "Unit of measure" concepts and displayed as a separate "virtual" dimension on an automaically defined axis. For more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/).
 
 What happens when the user starts customising the layout is described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/).
+
+---
+
+### Custom (default) table settings
+
+* [Default layout](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/default-layout/)
+* [Increased table size](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/increased-table-size)
+* [Default filter selections](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/default-selection/)
+* [Hide information of a data view](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/not-displayed/)
+* [Implicit and explicit orders](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/implicit-explicit-order/)
+* [Additional downloads of external resources](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/external-resources/)
 
 ---
 
