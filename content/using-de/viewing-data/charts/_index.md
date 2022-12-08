@@ -26,28 +26,28 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 
 ---
 
-### Bar chart
+### Column
 **Example**  
 
 ![bar chart](/dotstatsuite-documentation/images/chart-bar.png)
 
 ---
 
-### Row chart
+### Row
 **Example**  
 
 ![row chart](/dotstatsuite-documentation/images/chart-row.png)
 
 ---
 
-### Stacked bar chart
+### Stacked column
 **Example**  
 
 ![stacked bar chart](/dotstatsuite-documentation/images/chart-stacked.png)
 
 ---
 
-### Stacked row chart
+### Stacked row
 > Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021) 
 
 **Example**  
@@ -56,35 +56,35 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 
 ---
 
-### Scatter plot chart
+### Scatter plot
 **Example**  
 
 ![scatter plot chart](/dotstatsuite-documentation/images/chart-scatter.png)
 
 ---
 
-### Horizontal symbol chart
+### Horizontal symbol
 **Example**  
 
 ![horizontal symbol chart](/dotstatsuite-documentation/images/chart-horizontal-symbol.png)
 
 ---
 
-### Vertical symbol chart
+### Vertical symbol
 **Example**  
 
 ![vertical symbol chart](/dotstatsuite-documentation/images/chart-vertical-symbol.png)
 
 ---
 
-### Timeline chart
+### Timeline
 **Example**  
 
 ![timeline chart](/dotstatsuite-documentation/images/chart-timeline.png)
 
 ---
 
-### Choropleth map
+### Colour map
 **Example**  
 
 ![choropleth map](/dotstatsuite-documentation/images/chart-choropleth.png)
