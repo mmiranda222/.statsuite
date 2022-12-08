@@ -197,14 +197,22 @@ In SDMX 3.0, it is expected to be able to query for data by distinct values for 
 
 ### Constraints
 
-Per Data Structure Definition, Dataflow or Provision Agreement (the latter not being implemented), further constraints for allowed or forbidden values of Dimensions, or of their combinations, and of Attributes, can be defined. In SDMX 3.0, also values of Measures can be constrained (which is thus not yet implemented).
+Per Data Structure Definition, Dataflow or Provision Agreement (\*), further constraints for allowed or forbidden (\*) values of Dimensions, or of their combinations, and of Attributes, can be defined. In SDMX 3.0, also values of Measures can be constrained (\*).
 
 Constraints can be defined through 2 means: 
 
-1. A CubeRegion: For each constrained Dimension or Attribute, a set of allowed or forbidden values is listed separately. For a constrained Time Dimension, the allowed or forbidden time range is specified.
-2. A DataKeySet: Constraints are defined through distinct full or partial data keys, e.g. specific Observations, specific Time Series, or specific Dimension value combinations are allowed or forbidden.
+1. Up to one included and one excluded (\*) **CubeRegion**: For each constrained Dimension or Attribute, a set of allowed or forbidden (\*) values is listed separately through the **KeyValue** and **Attribute** elements. For a constrained Time Dimension, the allowed or forbidden (\*) time range is specified.
+2. Any number of **DataKeySets** (\*) whether included or excluded: Constraints are defined through distinct full or partial data keys, e.g. specific Observations, specific Time Series, or specific Dimension value combinations are allowed or forbidden.
 
-Constraints are resolved/respected when importing or exporting Observations (with their Dimension values, Measure values and Attribute values), depending on to which level they relate (Data Structure Definition, Dataflow (or later Provision Agreement)).
+Constraints are resolved/respected when importing or exporting Observations (with their Dimension values, Attribute values and Measure values (\*)), depending on to which level they relate (Data Structure Definition, Dataflow or Provision Agreement (\*)).
+
+(\*) the latter not being implemented
+
+The allowed content constraints are being applied to control which values can be imported and exported.
+
+This is done practically in the following source code:  
+- Transfer service (DataAccess): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/blob/develop/DotStat.MappingStore/SdmxParser.cs#L181
+- NSI service (SdmxSource): https://citnet.tech.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/sdmxsource.net/browse/SdmxObjects/Model/Data/Query/DataQueryImpl.cs#745
 
 ---
 
