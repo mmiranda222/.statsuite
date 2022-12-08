@@ -12,7 +12,7 @@ keywords: [
   'Data type definitions', '#data-type-definitions',
   'Data querying', '#data-querying',
   'Referential metadata types', '#referential-metadata-types',
-  'Constraints', '#constraints',
+  'Allowed Content Constraints', '#allowed-content-constraints',
   'Uniqueness of Observations', '#uniqueness-of-observations',
 ]
 
@@ -23,7 +23,7 @@ keywords: [
 - [Data type definitions](#data-type-definitions)
 - [Data querying](#data-querying)
 - [Referential metadata types](#referential-metadata-types)
-- [Constraints](#constraints)
+- [Allowed Content Constraints](#allowed-content-constraints)
 - [Uniqueness of Observations](#uniqueness-of-observations)
 
 This section details the characteristics of the statistical data model described by SDMX and implemented to large parts in the .Stat Suite Core database storage. This storage is composed of 4 parts:
@@ -195,20 +195,18 @@ In SDMX 3.0, it is expected to be able to query for data by distinct values for 
 
 ---
 
-### Constraints
+### Allowed Content Constraints
 
-Per Data Structure Definition, Dataflow or Provision Agreement (\*), further constraints for allowed or forbidden (\*) values of Dimensions, or of their combinations, and of Attributes, can be defined. In SDMX 3.0, also values of Measures can be constrained (\*).
+**Allowed Content Constraints** can be used to constrain the data admissible per *Data Structure Definition*, *Dataflow* or *Provision Agreement* (\*) with help of a list of allowed or forbidden (\*) values for *Dimensions* and/or for *Attributes*. In SDMX 3.0, also values of *Measures* can be constrained (\*).
 
 Constraints can be defined through 2 means: 
 
-1. Up to one included and one excluded (\*) **CubeRegion**: For each constrained Dimension or Attribute, a set of allowed or forbidden (\*) values is listed separately through the **KeyValue** and **Attribute** elements. For a constrained Time Dimension, the allowed or forbidden (\*) time range is specified.
-2. Any number of **DataKeySets** (\*) whether included or excluded: Constraints are defined through distinct full or partial data keys, e.g. specific Observations, specific Time Series, or specific Dimension value combinations are allowed or forbidden.
+1. Up to one included and one excluded (\*) **CubeRegion**: For each constrained *Dimension* or *Attribute*, a set of allowed or forbidden (\*) values is listed separately through the **KeyValue** and **Attribute** elements. For a constrained *Time Dimension*, the allowed or forbidden (\*) time range is specified.
+2. Any number of **DataKeySets** (\*) whether included or excluded: Constraints are defined through distinct full or partial data keys, e.g. specific *Observations*, specific *Time Series*, or specific *Dimension* value combinations are allowed or forbidden.
 
-Constraints are resolved/respected when importing or exporting Observations (with their Dimension values, Attribute values and Measure values (\*)), depending on to which level they relate (Data Structure Definition, Dataflow or Provision Agreement (\*)).
+The *Allowed Content Constraints* are being applied to control which values can be imported and exported depending on to which level they relate (Data Structure Definition, Dataflow or Provision Agreement (\*)).
 
 (\*) the latter not being implemented
-
-The allowed content constraints are being applied to control which values can be imported and exported.
 
 This is done practically in the following source code:  
 - Transfer service (DataAccess): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/blob/develop/DotStat.MappingStore/SdmxParser.cs#L181
