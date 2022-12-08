@@ -26,29 +26,26 @@ keywords: [
 > This section describes how to customise the **chart layout** by using the **"Customise"** option from the toolbar. For the customisation of the table previews, please see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/) of the documentation.
 
 ### Chart series
-
 The corresponding selectors allow changing: 
-- The dimension and their values displayed on the x and y axes for `scatter plot chart`;
-- The dimension used for symbols for `horizontal symbol chart` and `vertical symbol chart`;
-- The dimension displayed on the x axis and whether observations are to be displayed as percentage or not for `stacked bar chart` and `stacked row chart`.
+- The dimension and their values displayed on the x and y axes for `scatter plot` chart;
+- The dimension used for symbols for `horizontal symbol` and `vertical symbol` charts;
+- The dimension displayed on the x axis and whether observations are to be displayed as percentage or not for `stacked column` and `stacked row` charts.
 
 ---
 
 ### Chart size
-
 The corresponding selectors allow changing:  
 - The chart hight in pixels, including chart header and chart footer. The default chart height is predefined and configurable (application default: 400 pixels);
 - the chart width in pixels. The default chart width is 100% horizontal screen space currently available.
 
 ---
 
-### Highlight and Baseline
-
+### Highlights and Baseline
 By default, all data elements (bars, columns, lines, dots, etc.) in the charts are displayed in a uniform, pre-defined, configurable colour (default: grey). In order to make certain elements visually standing out, the user can select one or several elements in two multi-selection drop-down lists: 
 - Highlights: ordered list of elements to be coloured in a pre-defined, configurable sequence of colours;
 - Baseline: maximum one item to be coloured in a separate pre-defined, configurable colour (default: #0B1E2D (almost black)).
 
-Note: For the following types, Timeline, Horizontal Symbool and Vertical Symbol, there is a size threshold for which, if the chart contains hilghlights or baseline, only these will be displayed.  
+Note: For the following types Timeline, Horizontal Symbool and Vertical Symbol, there is a size threshold for which, if the chart contains hilghlights or baseline, only these will be displayed.  
 By default, these thresholds are height of 300px for the vertical axe of a Timeline or Horizontal Symbol, and width of 300px for the horizontal axe of a Vertical Symbol.  
 You can customize these limits with the following options.
 
