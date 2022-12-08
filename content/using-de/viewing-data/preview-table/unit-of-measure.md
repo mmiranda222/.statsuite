@@ -1,6 +1,6 @@
 ---
-title: "Special display for 'Unit of measure' in preview table"
-subtitle: "Whenever possible, display of all concepts related to the 'Unit of measure' as if they were one single component"
+title: "Special display of a 'Combined unit of measure' in preview table"
+subtitle: "Whenever possible, display of all concepts related to the 'Combined unit of measure' as if they were one single component"
 comments: false
 weight: 2950
 keywords: [
@@ -8,6 +8,7 @@ keywords: [
   'Reminders', '#reminders',
   'Underlying data model', '#underlying-data-model',
   'Display rules', '#display-rules',
+  'Hiding of specific values in the combined unit of measure', '#hiding-of-specific-values-in-the-combined-unit-of-measure',
   'Examples', '#examples',
   'Case 1: Table Header', '#case-1-table-header',
   'Case 2: Rows section', '#case-2-rows-section',
@@ -24,6 +25,7 @@ keywords: [
 - [Reminders](#reminders)
 - [Underlying data model](#underlying-data-model)
 - [Display rules](#display-rules)
+- [Hiding of specific values in the combined unit of measure](#hiding-of-specific-values-in-the-combined-unit-of-measure)
 - [Examples](#examples)
   - [Case 1: Table Header](#case-1-table-header)
   - [Case 2: Rows section](#case-2-rows-section)
@@ -36,7 +38,7 @@ keywords: [
 ---
 
 ### Introduction
-In order to ease understanding the basic context of the data shown in the data table (according to standard statistical modelling), the predefined standard statistical concepts defining a full 'Unit of measure' (UoM) are displayed in an as compact as possible and well visible way, even if those concepts represent different dimensions or attributes. This means that those concepts are displayed in the data table, whenever possible, as if they were one single component.
+In order to ease understanding the basic context of the data shown in the data table (according to standard statistical modelling), the predefined standard statistical concepts defining a complete 'Unit of measure' (UoM) are displayed in an as compact as possible and well visible way, even if those concepts represent different dimensions or attributes. This means that those concepts are displayed in the data table, whenever possible, as if they were one single "Combined unit of measure" component.
 
 ---
 
@@ -48,7 +50,8 @@ Also like for dimensions, an attribute links to the Concept that defines its loc
 
 ### Underlying data model
 Some attributes and some dimensions play a specific role (e.g. Unit of measure, Unit multiplier, Base period) and will be interpreted, displayed differently or used to adapt the display.  
-A pre-defined (optional, see the related [documentation for configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#unit-of-measure-support)) dataflow-level annotation **UNIT_MEASURE_CONCEPTS** lists the dimensions and/or attributes (by ID) that will define how the full UoM (virtual) component is built and how its labels are auto-generated. By default, in case this annotation is not given, the full UoM will be composed of the following concepts: "UNIT_MEASURE,UNIT_MULT,BASE_PER" provided that these concepts are used as dimensions or attributes in the DSD of the displayed data. If the annotation is present but empty, then there is no special display of the (virtual) UoM component.  
+
+An optional pre-defined and renameable dataflow-level annotation **`UNIT_MEASURE_CONCEPTS`** (see the [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#combined-unit-of-measure)) lists the dimensions and/or attributes (by ID) that will define how the (virtual) combined UoM component is built and how its labels are auto-generated. 
 
 ```xml
 <common:Annotation>  
@@ -57,23 +60,27 @@ A pre-defined (optional, see the related [documentation for configuration](https
 </common:Annotation>  
 ```
 
-The order of concepts in the **UNIT_MEASURE_CONCEPTS** annotation is significant and determines the order in which the different dimension and attribute item labels are concatenated into the UoM labels.
+By default, in case this dataflow annotation is not set, the combined UoM will be composed of a list of dimensions and/or attributes as pre-defined and configurable in the **`defaultCodes`** (see [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#combined-unit-of-measure)), which by default are UNIT_MEASURE, UNIT_MULT and BASE_PER, provided that these are appropriate components in the DSD of the displayed data.  
 
-Because attributes can be attached at different levels, e.g. dataset, partial or full combinations of dimensions, the (virtual) UoM component depends not only on the dimensions directly defined in the annotation **UNIT_MEASURE_CONCEPTS** but also on the dimensions to which the composing attributes are attached. 
+In the following for simplification and independently from the really configured type or presence of the annotation, we will continue using the term "UNIT_MEASURE_CONCEPTS" for the list of combined components.  
+
+The order of concepts in UNIT_MEASURE_CONCEPTS is significant and determines the order in which the different dimension and attribute item labels are concatenated into the combined UoM labels.
+
+Because attributes can be attached at different levels, e.g. dataset, partial or full combinations of dimensions, the combined UoM component depends not only on the dimensions directly defined in UNIT_MEASURE_CONCEPTS but also on the dimensions to which the composing attributes are attached. 
 
 ---
 
 ### Display rules
-The (virtual) UoM component will be displayed at the "highest possible level" in the table according to the dispositions of all dimensions implied in the UoM definition (either directly as dimension or through the attachment of attributes to dimensions), the order of the levels from highest to lowest being defined as:  
+The combined UoM component will be displayed at the "highest possible level" in the table according to the dispositions of all dimensions implied in the UoM definition (either directly as dimension or through the attachment of attributes to dimensions), the order of the levels from highest to lowest being defined as:  
 
 1) Table header (displayed in table sub-title)  
 2) Row Section  
 3) Row or Column  
 4) Cell = Row/Row Section and Column  
 
-Exception: Any dimension that would normally be part of the (virtual) UoM component due to its direct definition in the annotation **UNIT_MEASURE_CONCEPTS**, but that has been placed through the table customisation feature (by default or by the user) into a specific axis (Row Section, Row or Column), which is different from that calculated for the (virtual) UoM component, will be excluded from the (virtual) UoM component and be displayed separately/normally. This functional choice has been made to not disturb users who see and place dimensions in the table customisation panel in specific axes. 
+Exception: Any dimension that would normally be part of the combined UoM component due to its direct definition in UNIT_MEASURE_CONCEPTS, but that has been placed through the table customisation feature (by default or by the user) into a specific axis (Row Section, Row or Column), which is different from that calculated for the combined UoM component, will be excluded from the combined UoM component and be displayed separately/normally. This functional choice has been made to not disturb users who see and place dimensions in the table customisation panel in specific axes. 
 
-Based on the original placement of all dimensions that are finally combined into the (virtual) UoM component, the "highest possible level", at which the (virtual) UoM component will be displayed, is the:
+Based on the original placement of all dimensions that are finally combined into the combined UoM component, the "highest possible level", at which the combined UoM component will be displayed, is the:
 
 - Table header: if all of those dimensions are placed in the Table header because the dimensions have single selections or the underlying attributes are attached at dataset level)
 - Row Section: if at least some of those dimensions are placed in Row Sections and none in Rows or Columns
@@ -83,6 +90,22 @@ Based on the original placement of all dimensions that are finally combined into
 
 When a related non-mandatory UoM attribute is attached at observation level (and thus to all dimensions) but the data message contains only one single attribute value, then a display is still not generally possible in the sub-header. This is because the nature of the attribute type implies that there isn't any guarantee that all observations are actually using the provided attribute value, as some observations might not have that attribute value defined. Our high performance objectif for the table generation doesn't allow for looping over all observations to verify that no observation misses that attribute value.
 
+In order to display the (virtual) combined UoM component appropriately in the data view, it is given a pre-defined configurable **`id`** (see [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#combined-unit-of-measure)), as well as an overwritable localised name **`units.of.measure`** (default: "Combined unit of measure") in the Data Explorer default i18n files, just like for any non-virtual SDMX object.
+
+If the annotation is present but empty, then there is no special display of the combined unit of measure.
+
+---
+
+### Hiding of specific values in the combined unit of measure
+
+If the `NOT_DISPLAYED` annotation (for a code in a codelist, for a dataflow or for a DSD) indicates an item of a dimension or an attribute listed in the UNIT_MEASURE_CONCEPTS to be hidden, then this item is excluded from the combined UoM label. 
+
+Furthermore, all items (for of any dimension or attribute listed in the UNIT_MEASURE_CONCEPTS) defined in **`rejectedValueIds`**, are automatically excluded from the combined UoM label. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#combined-unit-of-measure).
+
+Example: In all following example cases, this feature allows excluding the "Not applicable" item label (having ID "_Z") of the BaseYear attribute from the combined UoM label.
+
+Note: This feature makes fully empty labels possible in case all items to be concatenated are marked as "NOT_DISPLAYED". When this happens at the dataset or observation level then the related footnote is omitted, otherwise the related cell is left empty.
+
 ---
 
 ### Examples
@@ -90,63 +113,57 @@ See a stylised DSD (inspired by National Accounts) with the following concepts a
 
 ![Data model example](/dotstatsuite-documentation/images/DE_UoM_data_model_example.png)
 
-The concepts of the dimensions and attributes highlighted above in red are listed in the **UNIT_MEASURE_CONCEPTS** annotation. The underlying dimension attachment of the UnitMultiplier and BaseYear attributes are supposed to be *Measure* and *Country*.   
+The concepts of the dimensions and attributes highlighted above in red are listed in UNIT_MEASURE_CONCEPTS. The underlying dimension attachment of the UnitMultiplier and BaseYear attributes are supposed to be *Measure* and *Country*.   
 Therefor:  
 - UNIT_MEASURE_CONCEPTS should thus be composed of the IDs of: Transformation, UnitMultiplier, UnitMeasure, PriceBase, BaseYear and Adjustment  
-- A typical full UoM label could read in the above defined order: "Non-transformed, Thousands, Australian Dollar, Current Price, Not-applicable, Non-seasonally adjusted".  
-- The **derived attachment level of the full UoM** would be: Measure, Country, Transformation, UnitMeasure, PriceBase and Adjustment 
+- A typical combined UoM label could read in the above defined order: "Non-transformed, Thousands, Australian Dollar, Current Price, Not-applicable, Non-seasonally adjusted".  
+- The **derived attachment level of the combined UoM** would be: Measure, Country, Transformation, UnitMeasure, PriceBase and Adjustment 
 
 #### Case 1: Table Header
-The UoM label (which includes the labels for all dimensions in UNIT_MEASURE_CONCEPTS) is shown in the **second "Combined unit of measure" table subtitle**. The dimensions defined in UNIT_MEASURE_CONCEPTS are **not** displayed separately in the first table subtitle.
+The combined UoM label (which includes the labels for all dimensions in UNIT_MEASURE_CONCEPTS) is shown in the **second "Combined unit of measure" table subtitle**. The dimensions defined in UNIT_MEASURE_CONCEPTS are **not** displayed separately in the first table subtitle.
 
 ![Example case 1](/dotstatsuite-documentation/images/DE_UoM_Case1TableHeader.PNG)
 
 See also: http://de-demo.siscc.org/vis?locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=NAMAIN_T0102_A&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=on&term=uom&start=0&period=2015%2C2020&frequency=A&dataquery=A........._T...V..&layout[rows]=STO&layout[header]=TIME_PERIOD&layout[sections]=REF_AREA
 
-Note: The dimensions UnitMeasure, PriceBase, Adjustment, Transformation had single values, were all to be placed in the table header, and have thus been merged into the UoM label.  
-Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
+Note: The dimensions UnitMeasure, PriceBase, Adjustment, Transformation had single values, were all to be placed in the table header, and have thus been merged into the combined UoM label.  
 
 #### Case 2: Row section
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Row axis) are displayed in an additional **"Combined unit of measure" row section line**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row section axis are **not** displayed separately.
+The combined UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Row axis) are displayed in an additional **"Combined unit of measure" row section line**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row section axis are **not** displayed separately.
   
   ![Example case 2](/dotstatsuite-documentation/images/DE_UoM_Case2-row-section.png)
 
 
 See also: http://de-demo.siscc.org/vis?locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=NAMAIN_T0102_A&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=on&term=uom&start=0&period=2015%2C2020&frequency=A&dataquery=A...W0.S1......_Z....&layout[sections]=REF_AREA%2CINSTR_ASSET%2CPRICES&layout[rows]=STO&layout[header]=TIME_PERIOD  
 
-Note: The dimension Measure had a single selection and is placed in the header. The dimensions Country, UnitMeasure and Adjustment were placed on row sections by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the UoM label.  
-Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
+Note: The dimension Measure had a single selection and is placed in the header. The dimensions Country, UnitMeasure and Adjustment were placed on row sections by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the combined UoM label.  
 
 #### Case 3: Row axis
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Column axis) are displayed in an additional **"Combined unit of measure" column**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row axis are **not** displayed separately.
+The combined UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed on the Column axis) are displayed in an additional **"Combined unit of measure" column**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally in the Row axis are **not** displayed separately.
 
 ![Example case 3](/dotstatsuite-documentation/images/DE_UoM_Case3-row-axis.png)
 
 See also: http://de-demo.siscc.org/vis?dataquery=AU%2BBE.A.GDP..V.SA%2BNSA.NT&period=2000%2C2002&frequency=A&locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=DF_UOM&dataflow[agencyId]=OECD&dataflow[version]=3.0&dataAvailability=on&filter=ADJUSTMENT
 
-Note: The dimension Measure has only one value and is placed in the header. The dimensions Country and UnitMeasure were placed on rows by the user. The dimension Adjustment was placed on row sections by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the UoM label at the lowest level (row).  
-Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
+Note: The dimension Measure has only one value and is placed in the header. The dimensions Country and UnitMeasure were placed on rows by the user. The dimension Adjustment was placed on row sections by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the combined UoM label at the lowest level (row).  
 
 #### Case 4: Column axis
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed in the Row section axis) are displayed in an additional **"Combined unit of measure" row**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally on the Column axis are **not** displayed separately.
+The combined UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS **not** placed in the Row section axis) are displayed in an additional **"Combined unit of measure" row**. The dimensions defined in UNIT_MEASURE_CONCEPTS displayed normally on the Column axis are **not** displayed separately.
 
 ![Example case 4](/dotstatsuite-documentation/images/DE_UoM_Case4-column-axis.png)
 
 See also: http://de-qa.siscc.org/vis?locale=en&dataflow[datasourceId]=qa%3Astable&dataflow[dataflowId]=NAMAIN_T0102_A&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=true&period=2015%2C2020&frequency=A&dataquery=A..............&layout[rows]=STO%2CACTIVITY%2CACCOUNTING_ENTRY&layout[header]=TIME_PERIOD%2CPRICES&layout[sections]=REF_AREA  
   
-Note: The dimensions Country, Measure, UnitMeasure and PriceBase were placed on columns by the user. The dimensions Adjustment and Transformation had single values, were normally to be placed in the table header, but have been merged into the UoM label.  
-Note: "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
+Note: The dimensions Country, Measure, UnitMeasure and PriceBase were placed on columns by the user. The dimensions Adjustment and Transformation had single values, were normally to be placed in the table header, but have been merged into the combined UoM label.  
 
 #### Case 5: Cell level
-The UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS) are displayed as a **"Combined unit of measure" footnote at cell level**.
+The combined UoM labels (which do not include the labels for dimensions in UNIT_MEASURE_CONCEPTS) are displayed as a **"Combined unit of measure" footnote at cell level**.
 
 ![Example case 5](/dotstatsuite-documentation/images/DE_UoM_Case5-cell-level.png)
 
 See also: http://de-demo.siscc.org/vis?dataquery=Q.Y.AU.W0........XDC..N.&period=%2C2017-Q1&frequency=Q&locale=en&dataflow[datasourceId]=staging%3ASIS-CC-stable&dataflow[dataflowId]=NAMAIN_ALL&dataflow[agencyId]=OECD.SDD&dataflow[version]=3.0&dataAvailability=on&layout[rows]=STO%2CACTIVITY%2CPRICES&layout[header]=TABLE_IDENTIFIER&layout[sections]=REF_SECTOR%2CINSTR_ASSET%2CEXPENDITURE%2CACCOUNTING_ENTRY&term=uom&start=0  
   
-**Notes**:  
-- The dimension Measure had a single selection and is placed in the header. The dimensions Country and UnitMeasure were placed on rows by the user and the dimension Adjustment was placed on columns by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the UoM label.  
-- "Not-applicable" item labels (having ID "_Z") are excluded from the UoM label, here BaseYear.
+Note: The dimension Measure had a single selection and is placed in the header. The dimensions Country and UnitMeasure were placed on rows by the user and the dimension Adjustment was placed on columns by the user. The dimensions PriceBase and Transformation had single values, were normally to be placed in the table header, but have been merged into the combined UoM label.  
 
 ---
 

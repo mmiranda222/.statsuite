@@ -10,6 +10,6 @@ weight: 300
 * [Delete data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/delete-data/)
 * [Activate a dataflow](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/activate-dataflow/)
 * [Preview data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/preview-data/)
-* [Customise data views](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/)
+* [Customise default data views](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/)
 * [Copy data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/copy-data/)
 * [Publish data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/publish-data/)

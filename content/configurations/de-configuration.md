@@ -29,7 +29,7 @@ keywords: [
   'Coded and uncoded attributes returned as notes', '#coded-and-uncoded-attributes-returned-as-notes',
   'Localised observation values separators for thousands and decimals', '#localised-observation-values-separators-for-thousands-and-decimals',
   'Localised time period values for monthly frequency', '#localised-time-period-values-for-monthly-frequency',
-  'Unit of measure support', '#unit-of-measure-support',
+  'Combined unit of measure', '#combined-unit-of-measure',
   'Disabled share option', '#disabled-share-option',
   'Disabled chart views', '#disabled-chart-views',
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
@@ -65,7 +65,7 @@ keywords: [
 - [Coded and uncoded attributes returned as notes](#coded-and-uncoded-attributes-returned-as-notes)
 - [Localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
 - [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
-- [Unit of measure support](#unit-of-measure-support)
+- [Combined unit of measure](#combined-unit-of-measure)
 - [Disabled share option](#disabled-share-option)
 - [Disabled chart views](#disabled-chart-views)
 - [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
@@ -647,15 +647,14 @@ By default, if no configuration for a given localised format is added, then the 
 
 ---
 
-### Unit of measure support
-Define the rules of the (optional) dataflow-level *SDMX* annotation **UNIT_MEASURE_CONCEPTS**: see the [documentation here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/) about the Special display for 'Unit of measure' in preview table.  
-The pre-defined `UNIT_MEASURE_CONCEPTS` annotation lists the dimensions and/or attributes (by ID) to be used for display in data table views.  
-In case this annotation is not given, then the following concepts are used: “UNIT_MEASURE,UNIT_MULT,BASE_PER” (provided that these concepts are used as dimensions or attributes in the DSD of the displayed data).  
-If the annotation is present but empty, then there is no special display of the Units of measure.
+### Combined unit of measure
+Define the rules for the (optional) special display of a (virtual) "combined unit of measure" (UoM) assembling different well-defined dimensions and/or attributes as one single preview table component. For more information see the [documentation here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/).
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
+{
+  "sdmx": {
     "units": {
       "id": "UNIT",
       "annotationsDefinitionCodes": {
@@ -663,14 +662,16 @@ If the annotation is present but empty, then there is no special display of the 
       },
       "defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"],
       "rejectedValueIds": ["_L", "_T", "_Z"]
-    },
+    }
+  }
+}
 ```
 
 In the above template:
-* `"id": "UNIT"` is used when the user switches the display of the Data Explorer visualisation page's label to Name, Identifier or Both;
-* `"concepts": ["UNIT_MEASURE_CONCEPTS"]` is an array of the possible IDs of the *SDMX* annotation;
-* `"defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"]` is the list of attributes/dimensions to retrieve if no annotation is found;
-* `"rejectedValueIds": ["_L", "_T", "_Z"]` is the list of values to not display if they belong to dimensions or attributes defined in the Unit of Measure.
+* `"id": "UNIT"` is the *identifier* to be used for the virtual UoM component. It is displayed when the user switches the Data Explorer visualisation page's label setting to "Identifier" or "Both". Note that the *localised name* of the virtual UoM component is defined and overwritable in the Data Explorer i8n files (key: `units.of.measure`).
+* `"annotationsDefinitionCodes"/"concepts": ["UNIT_MEASURE_CONCEPTS"]` is the *type of the SDMX dataflow annotation* used to define the dimensions and/or attributes to be included in the virtual UoM component;
+* `"defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"]` is the *list of default dimensions and/or attributes* to be included in the virtual UoM component in case the dataflow annotation is not set;
+* `"rejectedValueIds": ["_L", "_T", "_Z"]` is the list of dimension and/or attribute values to not display as part of the virtual UoM component value label.
 
 ---
 
