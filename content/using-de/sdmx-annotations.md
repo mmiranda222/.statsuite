@@ -24,56 +24,56 @@ The main advantage of the Annotation is its flexibility as all properties can be
 </tr>
 <tr style="height: 23.5px;">
 <td style="height: 23.5px; width: 201px;">LAYOUT_ROW</td>
-<td style="height: 23.5px; width: 1471.44px;">Dimensions to be presented in rows of a DE table (concepts on y-axis)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/default-layout/">full specs</a></td>
+<td style="height: 23.5px; width: 1471.44px;">Dimensions to be presented in rows of a DE table (concepts on y-axis)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
 <td style="height: 23.5px; width: 397.562px;">-&nbsp;Dataflow, DSD<br />-&nbsp;Dimension</td>
 <td style="height: 23.5px; width: 10px;">&nbsp;</td>
 <td style="height: 23.5px; width: 106px;">- Attached to Dataflow or DSD: &lt;dimension Id&gt;,&lt;dimension Id &gt;,&hellip;<br />- Attached to Dimension: &lt;blank&gt;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">LAYOUT_COLUMN</td>
-<td style="height: 23px; width: 1471.44px;">Dimensions to be presented in columns of a DE table (concepts on x-axis)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/default-layout/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Dimensions to be presented in columns of a DE table (concepts on x-axis)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Dataflow, DSD<br />-&nbsp;Dimension</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Dataflow or DSD: &lt;dimension Id&gt;,&lt;dimension Id &gt;,&hellip;<br />-&nbsp;Attached to Dimension: &lt;blank&gt;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">LAYOUT_ROW_SECTION</td>
-<td style="height: 23px; width: 1471.44px;">Dimensions to be presented at the row section level of a DE table<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/default-layout/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Dimensions to be presented at the row section level of a DE table<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Dataflow, DSD<br />-&nbsp;Dimension</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Dataflow or DSD: &lt;dimension Id&gt;,&lt;dimension Id &gt;,&hellip;<br />-&nbsp;Attached to Dimension: &lt;blank&gt;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">MAX_TABLE_DATA</td>
-<td style="height: 23px; width: 1471.44px;">Increase the maximum preview table size above the DE default maximum limits for the number of observations retrieved from the SDMX web service and for the number of table cells<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/increased-table-size/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Increase the maximum preview table size above the DE default maximum limits for the number of observations retrieved from the SDMX web service and for the number of table cells<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/increased-table-size/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;integer&gt;<br /><em>example:</em><br />15000</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">DEFAULT</td>
-<td style="height: 23px; width: 1471.44px;">Indication that an Item in an Item Scheme is to be selected by default in the DE visualisation filter, or is pre-selected when queried<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/default-selection/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that an Item in an Item Scheme is to be selected by default in the DE visualisation filter, or is pre-selected when queried<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Item in an Item Scheme (e.g. code in a codelist)<br />-&nbsp;Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Item in Item scheme: &lt;blank&gt;<br />-&nbsp;Attached to Dataflow or DSD: &lt;concept&gt;=&lt;code&gt;+&lt;code&gt;+&hellip;,&lt;concept&gt;=&lt;code&gt;+&lt;code&gt;+&hellip;<br /><em>example:</em><br />FREQ=A+Q,TIME_PERIOD_START=20-13-01,TIME_PERIOD_END=2018-12</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">NOT_DISPLAYED</td>
-<td style="height: 23px; width: 1471.44px;">Indication that a component and/or its value (dimension, dimension value, attribute, attribute value) is hidden in a presentation<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/not-displayed/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that a component and/or its value (dimension, dimension value, attribute, attribute value) is hidden in a presentation<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Item in an Item Scheme (e.g. code in a codelist)<br />-&nbsp;Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Item in Item scheme: &lt;blank&gt;<br />-&nbsp;Attached to Dataflow or DSD: &lt;concept Id&gt;,&lt;concept Id&gt;... <em>or</em> &lt;concept&gt;=&lt;code&gt;+&lt;code&gt;+&hellip;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">ORDER</td>
-<td style="height: 23px; width: 1471.44px;">Explicit indication of localised order of items in items schemes<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/implicit-explicit-order">generic full specs</a><br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facet-items-ordered-by-explicit-order-annotation">DE search facets specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Explicit indication of localised order of items in items schemes<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/implicit-explicit-order">generic full specs</a><br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facet-items-ordered-by-explicit-order-annotation">DE search facets specs</a></td>
 <td style="height: 23px; width: 397.562px;">Item in an Item Scheme (e.g. code in a codelist)</td>
 <td style="height: 23px; width: 10px;">&lt;language&gt;:&lt;integer&gt;,...<br /><em>example:</em><br />"en": "5","fr": "7"</td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">EXT_RESOURCE</td>
-<td style="height: 23px; width: 1471.44px;">Indication of a localised link to an external resource associated to the annotated Dataflow<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/external-resources/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication of a localised link to an external resource associated to the annotated Dataflow<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/external-resources/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;">&lt;language&gt;:&lt;HTML containing URL to the resource&gt;,&hellip;<br /><em>example:</em><br />"en":"&lt;a href='http://www.ilo.org/_EN.xlsx'&gt;Explanatory information&lt;/a&gt;","fr":"&lt;a href='http://www.ilo.org/_FR.xlsx'&gt;Informations explicatives&lt;/a&gt;"</td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>

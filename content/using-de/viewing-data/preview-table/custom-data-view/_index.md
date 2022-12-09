@@ -1,5 +1,5 @@
 ---
-title: "Customise data views"
+title: "Define default data views"
 subtitle: 
 comments: false
 weight: 450
