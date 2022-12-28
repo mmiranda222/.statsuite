@@ -20,7 +20,6 @@ weight: 110
 #### .Stat Suite product owners
 - Jean-Baptiste Nonin [@j3an-baptiste](https://gitlab.com/j3an-baptiste)
 - Jens Dossé [@dosse](https://gitlab.com/dosse)
-- Lolita Boumelit [@boumelit](https://gitlab.com/boumelit)
 - Sandrine Phelipot-Souflis [@SSandrine](https://gitlab.com/SSandrine)
 
 #### .Stat Suite graphical designer
