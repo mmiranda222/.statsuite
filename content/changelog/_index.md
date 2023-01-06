@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 5, 2023](#january-5-2023)
 - [December 7, 2022](#december-7-2022)
 - [December 5, 2022](#december-5-2022)
 - [November 11, 2022](#november-11-2022)
@@ -112,6 +113,18 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### January 5, 2023
+**[Patch release .Stat Suite .NET "cinnamon"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/63#tab-issues)**
+> This release includes a **patch** version of the **core-transfer** and **auth-management** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.13.0**.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#463](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/463) Issue when uploading large data files from a file path.
+- [dotstatsuite-core-transfer#474](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/474) *(Refactoring)* Update authentication to support ADFS.
 
 ---
 
