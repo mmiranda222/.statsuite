@@ -151,6 +151,8 @@ patch change:
 
 **IMPORTANT DISCLAIMER:** due to the enhancements made on the sdmx-faceted-search service, it is **mandatory to re-index all dataflows** after having upgraded your .Stat Suite installation: see the [API method](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#index-all-dataflows).
 
+**Known limitation:** A regression was identified with this 'spin' version of the Data Explorer. Monthly data are inconsistently displayed in table/chart views where the start and end time periods are shifted (e.g. December 2021 is displayed instead of January 2022 as per the user selection). This will be fixed once we release [dotstatsuite-data-explorer#929](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/929).
+
 significant and minor changes:
 
 - [dotstatsuite-data-lifecycle-manager#224](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/224) DLM user interface for **managing user permissions**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions/manage-permissions/))
