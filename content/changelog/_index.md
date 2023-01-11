@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 11, 2023](#january-11-2023)
 - [January 5, 2023](#january-5-2023)
 - [December 7, 2022](#december-7-2022)
 - [December 5, 2022](#december-5-2022)
@@ -113,6 +114,36 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### January 11, 2023
+**[Release .Stat Suite JS "tachyon"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/64#tab-issues)**
+> This release includes a new version of the **data-explorer**, **data-viewer**, and **data-lifecycle-manager** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.13.0**.
+
+minor changes:
+
+- [dotstatsuite-data-explorer#925](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/925) Increase the 'Information side panel' width.
+- [dotstatsuite-data-explorer#865](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/865) Text wrapping in the DE "Information side panel".
+- [dotstatsuite-data-explorer#902](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/902) Hide `_T` and `_Z` values from the "Information side panel" and the "notes". ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/#automatic-hide-of-specific-values))
+- [dotstatsuite-data-explorer#892](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/892) Don't wrap time periods in data table views.
+- [dotstatsuite-data-explorer#790](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/790) Add a breadcrumb information tooltip in the "Used filters" area for child items that have several parents. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies/#advanced-hierarchies-in-the-filters-and-table-display))
+- [dotstatsuite-data-explorer#876](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/876) Non-ending spinner for a dataflow with empty SDMX-JSON observation object.
+- [dotstatsuite-data-explorer#926](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/926) ADFS extension.
+- [dotstatsuite-data-lifecycle-manager#322](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/322) “Filter by owner” displays the root-level Agency when searching for a child-level Agency.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#929](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/929) Shifted time periods for monthly data.
+- [dotstatsuite-data-explorer#928](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/928) Combined Unit of Measure showing a blank column in the table view.
+- [dotstatsuite-data-explorer#924](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/924) We lost the feature to view data from external dataflows.
+- [dotstatsuite-data-explorer#923](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/923) The user feedback form's notification is not displayed in the visualisation page.
+- [dotstatsuite-data-explorer#912](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/912) Code descriptions in tooltips are being displayed in the filter area even after moving with the mouse to a different place.
+- [dotstatsuite-data-explorer#900](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/900) Inconsistent referential metadata "i" display.
+- [dotstatsuite-data-explorer#770](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/770) DECIMALS attribute is not applied when attached at dataset level.
+- [dotstatsuite-data-lifecycle-manager#336](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/336) Displaying existing dataflow/DSD/MSD relationships doesn't work for dataflows.
+- [dotstatsuite-data-lifecycle-manager#315](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/315) Issue when trying to delete a MSD with referencing artefacts and when no DSD is linked to it.
 
 ---
 
