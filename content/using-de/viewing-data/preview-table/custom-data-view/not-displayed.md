@@ -101,7 +101,8 @@ By default, the following special values (codes of a Codelist) are hidden in the
 * _T (Total)
 * _Z (Not applicable)
 
-The case occurs when the code is the only available value, or when it is the only selection made in the given dimension.
+The case occurs when the code is the only available value, or when it is the only selection made in the given dimension.  
+When the coded value of attribute or referential metadata attribute is a special value (_L, _T, _Z), it is also hidden in the notes or in the "information side panel". The (i) or * icons are not displayed at all when there are only related attribute/referential metadata values with coded "_T" and/or "_Z" values.
 
 #### Example
 In the following illustrations:
