@@ -43,9 +43,9 @@ Since these hierarchies allow for more complex parent-client relationships than 
 
 In the DE filters, when a code is a child of more than one parent, then it is displayed multiple times in the hierarchy. Selecting any child once in the filter will also select it everywhere in the hierarchy.  
 Also, a child with multiple parents in the same filter will only be counted as one in the filter count green icon.  
-In the 'Used filters' area, a selected child with multiple parents will appear only once.
+In the 'Used filters' area, a selected child with multiple parents will appear only once. Its label is prefixed by `...>` and a tooltip shows the "breadcrumbs" for each of the parents with one breadcrumb per line. 
 
-![DE advanced hierarchies](/dotstatsuite-documentation/images/de-advanced-hierarchies1.png)
+![DE advanced hierarchies](/dotstatsuite-documentation/images/de-advanced-hierarchies1.png) ![DE advanced hierarchies](/dotstatsuite-documentation/images/de-advanced-hierarchies-breadcrumbs_tooltip-used_filters.png)
 
 In the **table view**, the observations attached to a multi-parent code are **re-displayed** (duplicated) for each parent that is selected and for which there is data at least for one observation that has any dimension combination with this parent.
 
