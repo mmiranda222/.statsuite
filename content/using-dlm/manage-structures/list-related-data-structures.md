@@ -22,7 +22,7 @@ Recursively starting from the selected artefact, the DLM finds and **lists in a 
 ### Display of dependency tree
 The DLM displays in a popup all the listed artefacts using a tree control with vertical scroll, showing the artefact type, name, ID, version, "finality" and agency (using the standard DLM styles):
 
-![DLM list related structures](/dotstatsuite-documentation/images/dlm-list-related-structures-tree-example.png)  
+![DLM list related structures](/dotstatsuite-documentation/images/dlm-list-related-data-structure-tree.png)  
 
 The current selected artefact is displayed in bold, and when clicking on any artefact, it opens a new tab/window displaying the content of the artefact, the same way it is currently done for the artefacts' list on the homepage overview.
 
