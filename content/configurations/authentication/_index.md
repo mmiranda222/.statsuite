@@ -27,6 +27,7 @@ keywords: [
 ---
 
 > *Version history:*  
+> New `authority_aliases` property in the `tenants.json` under oidc entry for any app since [January 11, 2023 Release .Stat Suite JS tachyon](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-11-2023)  
 > OpenID compliance fully empowered since [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
 > Allow to force DE authentication since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
 > Empower both anonymous and authenticated modes with [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020)  
@@ -43,6 +44,7 @@ example for a DLM scope in `tenants.json` :
         "label": "dlm",
         "oidc": {
           "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "authority_aliases": [],
           "client_id": "app"
         }
 ```
@@ -55,6 +57,7 @@ example for DE scope in `tenants.json` :
         "label": "de",
         "oidc": {
           "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "authority_aliases": [],
           "client_id": "app",
           "required": false
         }
@@ -64,6 +67,7 @@ example for DE scope in `tenants.json` :
 - The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing).
 - The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token).
 - The original SDMX web service (NSI) openid-connect auth configuration manual can be found [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/openid-middleware.md). For convenience, the content has been replicated in this section.
+- `authority_aliases` as optional to configure frame CSP when there is more than the authority endpoint (ADFS for instance)
 
 ---
 
