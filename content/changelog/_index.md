@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 17, 2023](#january-17-2023)
 - [January 11, 2023](#january-11-2023)
 - [January 5, 2023](#january-5-2023)
 - [December 7, 2022](#december-7-2022)
@@ -114,6 +115,17 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### January 17, 2023
+**[Patch release .Stat Suite JS "tachyon"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/64#tab-issues)**
+> This release includes a **patch** version of the **data-explorer** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.13.0**.
+
+patch change:
+
+- [dotstatsuite-data-explorer#938](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/938) Back button (of the web-browser) causes a "Whoops, something went wrong on our end" error.
 
 ---
 
