@@ -6,9 +6,10 @@ weight: 1900
 keywords: [
   'Introduction', '#introduction',
   'Result content', '#result-content',
-  'Optional download feature', #optional-download-feature',
+  'Optional download feature', '#optional-download-feature',
   'Result ordering', '#result-ordering',
   'Result boosting', '#result-boosting',
+  'Weight value and Solr search engine score', '#Weight-value-and-Solr-search-engine-score',
   'Result pagination', '#result-pagination',
   'Result page URL', '#result-page-url',
   'Navigation towards the DE visualisation page', '#navigation-towards-the-de-visualisation-page',
@@ -21,6 +22,7 @@ keywords: [
     - [Optional download feature](#optional-download-feature)
 - [Result ordering](#result-ordering)
 - [Result boosting](#result-boosting)
+    - [Weight value and Solr search engine score](#Weight-value-and-Solr-search-engine-score)
 - [Result pagination](#result-pagination)
 - [Result page URL](#result-page-url)
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
@@ -110,8 +112,14 @@ The `SEARCH_WEIGHT` annotation needs to be of type "SEARCH_WEIGHT". The weight v
 </common:Annotations>
 ```
 
-The localised boost value, if available, or alternatively the non-localised boost value is used to **multiply** the dataflow score calculated by SOLR and thus influences accordingly the ordering by relevance. The bigger the calculated score value, the higher is the listing of the dataflow in the search results.
-
+The localised boost value, if available, or alternatively the non-localised boost value is used to **multiply** the dataflow score calculated by Solr and thus influences accordingly the ordering by relevance. The bigger the calculated score value, the higher is the listing of the dataflow in the search results.  
+  
+#### Weight value and Solr search engine score
+The Solr search engine determines the score per dataflow automatically depending on the count and location of search hits in the different dataflow properties (searched fields), before it multiplies that score with the dataflow's **`SEARCH_WEIGHT`** annotation value, if present. The `SEARCH_WEIGHT` boost value should be smaller than 1 to decrease the score and higher than 1 to increase the score. The value has no limits other than the ones defined by the internal number type.  
+The "developer tools" of the web browser (accessibly through the F12 key) allow seeing the current final Solr score per dataflow for a specific query in the response message of the search requests (look out for queries to https://example.org/api/search?tenant=xxxxx). This analysis can be used to determine the optimal `SEARCH_WEIGHT` boost values.  
+  
+ ![de search result Solr score](/dotstatsuite-documentation/images/de-serach-result-boosting-solrscore.png)  
+   
 ---
 
 ### Result pagination
