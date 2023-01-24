@@ -110,8 +110,8 @@ keywords: [
 
 *notes:*
 
-- a: [see configs samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/master/data/prod/configs)
-- b: [see assets samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/master/data/prod/assets)
+- a: [see configs samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/configs)
+- b: [see assets samples here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/assets)
 - in settings, assets should have the right path, if you change the name folder by default make sure to change path assets url
 
 ```json
@@ -202,8 +202,11 @@ keywords: [
 
 1. download artifact archives and package.json files from gitlab:
 
-  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/artifacts/master/download?job=setup)
-  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/artifacts/master/download?job=build)
+  - go to [tags](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/tags) and select the one you want to use
+  - download the artifacts from the tag (ie for tachyon):
+    - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/artifacts/tachyon/download?job=setup)
+    - [build-srv](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/artifacts/tachyon/download?job=build-srv)
+    - [build-dist](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/jobs/artifacts/tachyon/download?job=build-dist)
   - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/raw/master/package.json?inline=false)
 
 2. extract archives and organize folders/files as follow:
@@ -212,8 +215,8 @@ keywords: [
 ├── dotstatsuite
 │   ├── data-explorer
 │   │   ├── node_modules                       # from setup artifact
-│   │   ├── dist                               # from build artifact (server files)
-│   │   ├── build                              # from build artifact (client bundle)
+│   │   ├── dist                               # from build-dist artifact (server files)
+│   │   ├── build                              # from build-srv artifact (client bundle)
 │   │   │   ├── assets                         # assets from config
 │   │   ├── package.json
 ```
@@ -231,8 +234,11 @@ keywords: [
 
 1. download artifact archives and package.json files from gitlab:
 
-  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/jobs/artifacts/master/download?job=setup)
-  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/jobs/artifacts/master/download?job=build)
+  - go to [tags](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/tags) and select the one you want to use
+  - download the artifacts from the tag (ie for tachyon):
+    - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/jobs/artifacts/tachyon/download?job=setup)
+    - [build-srv](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/jobs/artifacts/tachyon/download?job=build-srv)
+    - [build-dist](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/jobs/artifacts/tachyon/download?job=build-dist)
   - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/raw/master/package.json?inline=false)
 
 2. extract archives and organize folders/files as follow:
@@ -241,8 +247,8 @@ keywords: [
 ├── dotstatsuite
 │   ├── data-viewer
 │   │   ├── node_modules                       # from setup artifact
-│   │   ├── dist                               # from build artifact (server files)
-│   │   ├── build                              # from build artifact (client bundle)
+│   │   ├── dist                               # from build-dist artifact (server files)
+│   │   ├── build                              # from build-srv artifact (client bundle)
 │   │   │   ├── assets                         # assets from config
 │   │   ├── package.json
 ```
@@ -259,9 +265,12 @@ keywords: [
 
 1. download artifact archives and package.json files from gitlab:
 
-  - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/develop/download?job=setup)
-  - [build](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/develop/download?job=build)
-  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/raw/develop/package.json?inline=false)
+  - go to [tags](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/tags) and select the one you want to use
+  - download the artifacts from the tag (ie for tachyon):
+    - [setup](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/tachyon/download?job=setup)
+    - [build-srv](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/tachyon/download?job=build-srv)
+    - [build-dist](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/jobs/artifacts/tachyon/download?job=build-dist)
+  - [package.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/raw/master/package.json?inline=false)
 
 2. extract archives and organize folders/files as follow:
 ```
@@ -269,8 +278,8 @@ keywords: [
 ├── dotstatsuite
 │   ├── data-lifecycle-manager
 │   │   ├── node_modules                       # from setup artifact
-│   │   ├── dist                               # from build artifact (server files)
-│   │   ├── build                              # from build artifact (client bundle)
+│   │   ├── dist                               # from build-dist artifact (server files)
+│   │   ├── build                              # from build-srv artifact (client bundle)
 │   │   │   ├── assets                         # assets from config
 │   │   ├── package.json
 ```
