@@ -20,6 +20,8 @@ The supported **filter selection parameters** are:
 - lastNObservations (e.g. `&lo=1`)
 - locale (e.g. `&lc=en`)
 
+See the full list of **available URL parameters** for customization: https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters
+
 **Limitations:**  
 This feature **only applies to shared views from the "Latest available data for the period defined" share option**, not the "Snapshot of data for the period defined".  
 This feature **only concerns the filter selections**, and not the layout of the representations. In other terms, the shared view URL only allows injecting a different filter selection. As today in the DE visualisation page, the data visualisation layout will automatically adapt to the modified data query according to the business rules for layouts. The result layout of the shared view is thus not static and may thus vary depending on the filter selection.
