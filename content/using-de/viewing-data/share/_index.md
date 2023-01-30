@@ -33,6 +33,8 @@ keywords: [
 > Added the email option to list and delete with [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)  
 > Introduced in [June 4, 2019 Release](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-4-2019) 
 
+![Watch this video](/dotstatsuite-documentation/images/movie-logo.png)**<a href="https://youtu.be/KIckUFL5ins" target="_blank">Watch this video</a>** on how to manage shared data views of the Data Explorer.
+
 ### Visualisation share request
 The **Share** option allows sharing the data view in table or chart mode.
 
