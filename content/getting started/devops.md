@@ -19,6 +19,9 @@ keywords: [
   'dashboard', '#dashboard',
 ]
 ---
+<!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
+* https://academy.siscc.org/courses/introduction-to-the-stat-suite-open-source-framework/
+Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 #### Table of Content
 - [open-source development business requirements](#open-source-development-business-requirements)

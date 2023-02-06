@@ -5,6 +5,9 @@ comments: false
 weight: 70
 
 ---
+<!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
+* https://academy.siscc.org/configuring-and-customising/
+Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 ### Overview of the different configuration files
 

@@ -4,6 +4,9 @@ subtitle:
 comments: false
 weight: 103
 ---
+<!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
+* https://academy.siscc.org/contribute/
+Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 ### New issue
 If you want to report an issue for any of the .Stat Suite applications or services, then you need to **open a new issue** in [Gitlab sis-cc/.stat-suite/issues](https://gitlab.com/groups/sis-cc/.stat-suite/-/issues).  
