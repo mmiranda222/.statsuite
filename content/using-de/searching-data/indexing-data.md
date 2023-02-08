@@ -64,6 +64,8 @@ http://localhost:8983/solr/admin/collections?action=CREATE&name=oecd&numShards=1
 
 Create as many collections as you have tenants. If you are in a mono-tenant installation, then create only one collection and name it **"default"**.
 
+**Important note:** Always remember that your Collection name must match your tenant name.
+
 ---
 
 ### What is indexed
