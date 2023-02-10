@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [February 9, 2023](#february-9-2023)
 - [January 17, 2023](#january-17-2023)
 - [January 11, 2023](#january-11-2023)
 - [January 5, 2023](#january-5-2023)
@@ -115,6 +116,21 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### February 9, 2023
+**[.Stat Suite DLM Excel-addin v3.2.5](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/65#tab-issues)**
+> This release includes a new version of the **dlm-excel-addin** application.
+
+minor changes:
+
+- [dotstatsuite-excel-addin#102](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/102) Switch webview component to webview2 to support Windows Server platforms as well.
+- [dotstatsuite-excel-addin#111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/111) Eurostat's external sources not available.
+
+patch change:
+
+- [dotstatsuite-excel-addin#95](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/95) WebView control member error message.
 
 ---
 
