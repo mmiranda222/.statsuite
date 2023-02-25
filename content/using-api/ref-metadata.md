@@ -93,7 +93,7 @@ The SDMX (restful) web service provides a new API version that starts implementi
 
 https://server-root/v2/data/dataflow/[Agency]]/[dataflow-id]]/[version]]/[filter]]?[url-parameters]]
 
-2 new query parameters are introduced (that take precedence over the `detail` parameter):  
+2 new query parameters are introduced that take precedence over the `detail` parameter:  
 
 1) The `attributes` parameter allows selecting which attributes (including reference metadata) you want to retrieve, if any.
    - Values could be: all | none | **dsd** | msd | dataset | series | obs | [component id]
@@ -131,7 +131,7 @@ Example:
 
 https://server-root/v2/data/dataflow/OECD/SNA_TABLE1/1.0/AUS.*.*?attributes=msd&measures=none
 
-By default, the .Stat Suite SDMX web service retrieves referential metadata attached at *higher and lower* levels than that of the query filter.  
+By default, the .Stat Suite SDMX web service retrieves related referential metadata attached at ***higher and lower levels*** than that of the query filter.  
 For instance, filtering for `AUS.*.A` would retrieve the attributes attached at the following levels:  
 - AUS..A
 - AUS..
@@ -140,12 +140,16 @@ For instance, filtering for `AUS.*.A` would retrieve the attributes attached at 
 - AUS.GDP.A
 - AUS.PPP.A
 
-It is possible to limit the response to higher levels only by using the (non SDMX standard) HTTP request header `X-Level=upperOnly`.   
+Using the Eurostat NSI SDMX web service, it is possible to limit the response to ***higher levels only*** by using the non-SDMX-standard HTTP request header `X-Level=upperOnly`.   
 For instance, filtering for `AUS.*.A` would retrieve the attributes attached at the following levels only:  
 - AUS..A
 - AUS..
 - ..A
 - ...
+
+This web service implementation also supports the HTTP header option `X-Level=currentOnly` to return only the ***exact level*** corresponding to the filter selection.
+For instance, filtering for `AUS.*.A` would retrieve the attributes attached at the following level only:  
+- AUS..A
 
 ---
 
