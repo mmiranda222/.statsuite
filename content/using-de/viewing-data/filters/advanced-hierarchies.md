@@ -22,7 +22,7 @@ The use of *SDMX* 2.1 **Hierarchical Codelists** (HCL) allows changing the displ
 
 The application of advanced hierarchies is defined through a DSD and/or dataflow *SDMX* annotation of type **HIER_CONTEXT** (see [reference](https://sdmx.org/wp-content/uploads/Guidelines-on-the-use-of-SDMX-Annotations.pdf *- this is a work-around for the not yet available SDMX 3.0 HierarchyAssociation artefact*). In case both annotations are present, then the dataflow annotation takes precedence over the DSD annotation.  
 The (comma-separated) link(s) between the dimension and the hierarchy in the hierarchical codelist artefact is provided in the Annotation Title for non-localised hierarchies, and in the Annotation Text for localised hierarchies in the following form:  
-<component id>:<HCL agency>:<HCL id>(<HCL version>).<hierarchy id>,<component id>:<HCL agency>:<HCL id>(<HCL version>).<hierarchy id>,...
+`<component id>:<HCL agency>:<HCL id>(<HCL version>).<hierarchy id>,<component id>:<HCL agency>:<HCL id>(<HCL version>).<hierarchy id>,...`
 
 **Example:**  
 `REF_AREA:OECD:HCL_TEST(1.0).CONT_EN` will provide the alternative hierarchy defined in artefact with URN `urn:sdmx:org.sdmx.infomodel.codelist.Hierarchy=REF_AREA:OECD:HCL_TEST(1.0).CONT_EN` for the REF_AREA dimension for the given dataflow or for all dataflows of the given DSD.
