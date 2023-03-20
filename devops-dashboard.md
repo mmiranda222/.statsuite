@@ -315,7 +315,7 @@ ECO oecd internal network nsiws:
 |-|-|-|-|-|-|
 |[core-data-access](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access)|![nuget package](https://img.shields.io/nuget/v/DotStat.DataAccess.NuGet.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/badges/develop/coverage.svg?style=flat-square)|-|-|
 |[core-common](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common)|![nuget package](https://img.shields.io/nuget/v/DotStat.Common.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/badges/develop/coverage.svg?style=flat-square)|-|-|
-|[core-config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config)|-|-|Validation of localization values to be validated in core-common|
+|[core-config](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config)|![nuget package](https://img.shields.io/nuget/v/DotStat.Config.svg?style=flat-square)|![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/badges/master/pipeline.svg?style=flat-square)|![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-config/badges/develop/coverage.svg?style=flat-square)|-|Validation of localization values to be validated in core-common|
 
 ## snapshots
 
