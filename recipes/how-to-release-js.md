@@ -38,7 +38,7 @@
     - update the kubernetes column of the summary
 1. for each service/app:
     1. compare develop (or the latest acceptable commit for a release if QA is ahead) and master to define a semver (ie for [DE](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/compare/master...develop?from_project_id=10532325))
-    1. bump version in package.json
+    1. bump version in package.json in develop
     1. create a release branch based on this commit following the name convention: `release-v<semver>`
     1. create a merge request from the release branch into master (default based on branch name is fine), bind it the the milestone, **no squash but rm branch afterwards**
     1. check diff and wait for pipeline to pass and merge it to master
@@ -49,9 +49,7 @@
     1. create a release by editing the tag and put an icon in the description
     1. wait the end of the pipeline to have a ref image in docker for named tag
     1. create a **tag** `<name>` on master using the gitlab release name
-        - remove tags from docker images in docker hub to avoid duplicate with previous named tags
         - a pipeline will create a docker image with the following tag: `<name>`
-    1. paste the tag link in the milestone description (releases row) and attached it to the milestone
     1. check in Docker the full chain: image with expected commit, image with same digest for tag, release and master
     1. run `node ./scripts/i18n-changelog.js spin radio` in the repo config-data to have the i18n changelog
     1. when deployement done (check pipeline), check the commit healthcheck of the service/app in staging ([dashboard for healtcheck list](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/devops-dashboard.md))
