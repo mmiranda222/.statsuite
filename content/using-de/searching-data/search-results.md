@@ -47,26 +47,21 @@ Each search result is divided into three parts:
 
 The following information is displayed for each search result:  
 1. Default display of **basic information** (collapsed mode)  
-* The localised dataflow name (or its ID if no localised dataflow name) which is also a link to open the table data preview; this link is a query taking the search terms into account.  
-* The localised dataflow description if exists; it can be shortened if too long.
-* The localied list of dataflow dimensions (in the order of definition) that have more than one dimension value with real data (according to actual data availability) separated by comma,
-* The dataflow dimensions name when search terms are found as hits  
+   * The localised dataflow name (or its ID if no localised dataflow name exists) linking to the table data preview. The link takes the current search terms into account.  
+   * The localised dataflow description if exists. It is shortened to 3 lines if too long.
+   * The localied comma-separated list of dataflow dimension names (in the order of their definition in the DSD) that have more than one dimension value with real data (according to actual data availability).
+   * The localised name of values of dataflow dimensions (togther with the localised dimension name), which have search hits. One line per dimension.
+   * An `Expand` icon to display extended information (see below).   
+   * A `Download` icon to download the entire dataflow content in SDMX-CSV format. *(For details see the sub-section below.)*  
 
-2. Display of **extended information** (expanded mode)  
-In order to display additional information of a search result, the user can click on the `expand` option arrow on the right side of the search result area.  
-The default information is still visible with the entire description (if it was shortened in the default display) and is followed by:
-* The dataflow source (datasource ID)
-* For each of the facets configured for the homepage, the related localised facet value(s) and their parent hierarchy, e.g. `Topic: Health > Health Status`, `Source: ILO`
-* The date/time of the last update of the dataflow
-* The dataflow’s Agency, ID and version
+  - When a free text search is performed, then all the search term(s) is/are highlighted in each of the above pieces of information. See documentation on [How free text search hits are displayed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/free-text-search/).  
+  ![de search result content highlight](/dotstatsuite-documentation/images/de-result-highlight-1.png)
 
-3. **Options**
-* Expand/Collapse option for displaying additional information of a search result
-* Download *(see the sub-section below)*
-
-When a free text search is performed, then the search term(s) is/are highlighted in each of the above information. If the term(s) was/were found in a concept name/ID or dimension codes, then this information is also added to the dataflow information. See documentation on [How free text search hits are displayed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/free-text-search/).  
-  
-![de search result content highlight](/dotstatsuite-documentation/images/de-result-highlight-1.png)
+2. Display of additional **extended information** (expanded mode)  
+   * The entire description becomes visible if it was shortened in the default display.
+   * The comma-separated values for all home page facets for this dataflow prefixed with '`... > `' when a value has a parent hierarchy, and with the facet names, e.g., '`Topic: ... > Health Status, ... > Production, Environment`', unless the facet is already listed as a dimension with a free-text search hit under the **basic information**. One line per facet. All values not fitting on one line are replaced by 3 dots `...`. When there is a hierarchy, then the whole parent hierarchy is made available in a black tooltip on mouseover (similar to "Applied filters").
+   * The date/time of the last update of the dataflow
+   * The `Collapse` icon (instead of the `Expand` icon) in order to return to the default display (see above).   
 
 #### Optional download feature
 When this option is enabled (see the [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page)), then two options of download are made available in the search result objects:

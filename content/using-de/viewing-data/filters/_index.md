@@ -5,27 +5,29 @@ comments: false
 weight: 2100
 keywords: [
   'Filter area', '#filter-area',
-  'Multi selection filters', '#multi-selection-filters',
+  'Multi-selection filters', '#multi-selection-filters',
+  'Hierarchical content', '#hierarchical-content',
+  'Display of code descriptions', '#display-of-code-descriptions',
+  'Advanced selection popup', '#advanced-selection-popup',
+  'Data availability', '#data-availability',
+  'Local search', '#local-search',
   'Keyboard selection options', '#keyboard-selection-options',
   'Frequency & time period filter', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/',
-  'Data availability', '#data-availability',
-  'Display of codes descriptions', '#display-of-codes-descriptions',
-  'Hierarchical content', '#hierarchical-content',
-  'Local search', '#local-search',
   'Used filters panel', '#used-filters-panel',
 ]
 ---
 
 #### Table of Content
 - [Filter area](#filter-area)
-- [Multi selection filters](#multi-selection-filters)
+- [Multi-selection filters](#multi-selection-filters)
+  - [Hierarchical content](#hierarchical-content)
+  - [Display of code descriptions](#display-of-code-descriptions)
+  - [Advanced selection popup](#advanced-selection-popup)
+  - [Data availability](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)
+  - [Local search](#local-search)
   - [Keyboard selection options](#keyboard-selection-options)
 - [Frequency & time period filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/)
-- [Data availability](#data-availability)
-- [Display of codes descriptions](#display-of-codes-descriptions)
-- [Hierarchical content](#hierarchical-content)
-- [Local search](#local-search)
-- [Used filters panel](#used-filters-panel)
+- [Applied filters panel](#applied-filters-panel)
 
 **General note**: All content related to the filter area is localised. For more information, go to the [general documentation about Languages](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#language).
 
@@ -35,22 +37,29 @@ keywords: [
 
 The left-hand side (right-hand in rtl mode) of the visualisation page shows a set of dimension filters that allow **dynamically filtering the dimension values** to be displayed in the preview table or chart, to be extracted through the download feature 'Filtered data in tabular text (CSV)' or to be applied in the auto-generated data query in 'Developer API' menu.
 
-The current filter selections are displayed as a summary in the ['Used filters' panel](#used-filters-panel), which is always the top-first panel in the filter area.  
-Other filter panels are created for each of the dimensions of the currently displayed dataflow based on data availability (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)), except if the dimension contains only one possible item, in which case the corresponding filter is hidden, and except for 'Frequency' and 'Time Period' dimensions, which are combined in a common 'Frequency & Time Period' filter (see the related [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/)).
+Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), the current filters selection is summarised in the ['Applied filters' area](#applied-filters-panel), and displayed on the right-hand side (right-left in rtl mode) of the visualisation page.  
 
-The order of the filter panels respects the order of the dimensions as defined in the underlying data structure definition (DSD), except the ['Frequency & Time Period' filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) panel, which is displayed second after the ['Used filters' panel](#used-filters-panel). 
+A filter is created for each of the dimensions of the currently displayed dataflow based on data availability (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)), except if the dimension contains only one possible item or if it is configured to be hidden. In addition, the dimensions 'Frequency' and 'Time Period', when available, are automatically combined into a common 'Frequency & Time Period' filter (see the related [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/)).
 
-Next to each filter name is an **indication number** of currently selected items against the number of available items (`selected/available`).
+The order of the filters respects the order of the dimensions as defined in the underlying data structure definition (DSD), except the ['Frequency & Time Period' filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) panel, which is displayed second after the ['Applied filters' panel](#applied-filters-panel). 
+
+The **number of currently selected items** against the **number of available items** (`selected/available`) is displayed next to each filter name.
 
 ![Multi selection filters](/dotstatsuite-documentation/images/de-filters12.png)
 
 If the user has made selection(s) in the previous search result page, if a default selection is applied from an *SDMX* annotation (see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-selection/)), or if the URL contains dimension selections, then these selections are automatically pre-applied in the filters.
 
-Any filter selection change will automatically trigger the update of the data view (table/chart/API query), and these changes will also be reflected in the ['Used filters' panel](#used-filters-panel).  
-
 Whenever there is no filter item selection, then it is indicated in the filter title by **"all"**, e.g. `"all/39"`. When all filter items are selected, the number of selected items is displayed instead `"39/39"`.  
 Because making **no selections and complete selections return the same data**, the usage of "all" should help to clarify this effect, while there remains a visual distinction for the fact that a saved selection is static while the items concerned by no selection may evolve over time. Indeed, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve.  
 Therefore, while a full selection would always correspond to 39 items, for no filter selection the number of actually considered dimension items might increase, e.g. 40, 41 etc.
+
+---
+
+### Multi-selection filters
+
+All filters are standardised multi-selection filters, except the ['Frequency & Time Period' filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/). It means that the user can select multiple items per filter.  
+
+![Multi selection filters](/dotstatsuite-documentation/images/de-filters1.png)
 
 *(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* Each item of a filter is displayed with a **checkbox** on the left side in the filter list:
 - when the item is not selected, the checkbox is empty;
@@ -59,23 +68,71 @@ Therefore, while a full selection would always correspond to 39 items, for no fi
 
 ![de filter checkbox](/dotstatsuite-documentation/images/de-filters-checkbox.png)
 
----
+Since [April 20, 2023 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), the *bulk selection* option has been replaced by the **advanced selection popup** feature. 
 
-### Multi-selection filters
+When a filter contains 8 items or more, then:
+- a vertical scrollbar is added to the filter
+- a [local search](#local-search) (spotlight feature) box is displayed,
+- an **advanced selection** button is displayed next to the local search box, which gives access to an [advanced selection popup](#advanced-selection-popup).
 
-All filters are standardised multi-selection filters, except the ['Frequency & Time Period' filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/), and the ['Used filters' panel](#used-filters-panel). It means that the user can select multiple items per filter.  
+Any filter selection change will automatically trigger the update of the data view (table/chart/API query), and these changes will also be reflected in the ['Applied filters' panel](#applied-filters-panel).  
 
-![Multi selection filters](/dotstatsuite-documentation/images/de-filters1.png)
+#### Hierarchical content
+In case of a hierarchy in the items, they are shown as 'a tree', which means that the filter will display all the items with indentations according to the item level in the tree. A blue arrow next to an item indicates that this item is a parent of child item(s). Clicking this blue arrow switches its up/down direction and the related child items will respectively be hidden or become visible. By default, the tree is fully expanded so that all the items of all tree levels are visible (through scrolling if needed).
 
-When a filter contains 8 items or more, it triggers a **bulk selection** option displayed on the right of the spotlight, allowing to select all the items of the current list at once, or any level of the list if it is hierarchical.  
-If the filter list is **hierarchical**, then the bulk selection menu becomes contextual and displays options to select any "entire hierarchy level" according to the number of levels in the hierarchy (e.g. entire hierarchy level 1, level 2, etc.).
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchical-arrow-behaviour)
+
+If for a parent (at any level) there are no data available (according to the Actual ContentConstraint related to the Dataflow), then the parent item is not selectable (and marked in light grey). Still, the user can navigate to the children. 
+
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-without-data.png) 
+
+For more information on how advanced hierarchies can be applied, please see [Advanced hierarchies](/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies).
+
+#### Display of code descriptions
+> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+
+The localised descriptions of codes defined in a codelist of a dimension are displayed on mouse-over on the related filter items using a tooltip. These items are underlined with dots in order to inform the user of the availability of the description.
+
+![Code descriptions](/dotstatsuite-documentation/images/de-codelist-description.png)
+
+#### Advanced selection popup
+Clicking the **advanced filter selection** button triggers the display of an **advanced selection popup**. It provides more advanced selection options especially for a longer or hierarchical list and refreshes the data view only once the new selection is validated by the user.
+
+The popup always provides a [local search](#local-search) (spotlight feature) box.
+
+Clicking the `Selection mode` button located next to the local search box opens a drawer with tiles for the different modes of selection:
+- Single item
+- Item and all items directly below
+- Whole branch
+- All items at the same level
+- All items  
+
+Once the user clicked one of the tiles, the drawer closes again upwards. All following filter selections apply the chosen selection mode.
 
 ![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-multiselection-bulkselectionmenu-1.png)  
+
+Additional features in the popup propose to `Expand all` items or to `Collapse all` items keeping only the root item(s) when the items are hierarchical.   
+
+To apply the selection in the *Filters* area and refresh the data view, it is necessary to click on the `Apply` button, which closes the advanced selection popup.  
+
+#### Data availability
+In filters with hierarchical dimensions, parent values, for which no data exist, are still shown but marked specifically. For more information, see [Data availability](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/).
+
+#### Local search 
+The local search (spotlight feature) helps to find specific items.
+
+Typing some characters in the local search box dynamically reduces the displayed items to the ones containing the given set of characters. If the local search term has no hit in any item then the list is empty. 
+
+![Local search example](/dotstatsuite-documentation/images/de-filters3.png)
+
+Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), whenever the content of the local search box is changed, the items in hierarchical lists are fully expanded. When a local search terms has a hit in a child item, then all its above parent items will automatically be displayed, even if the search term was not found in these parent items. 
+
+![Local search example with hierarchy](/dotstatsuite-documentation/images/de-filters4.png)
 
 #### Keyboard selection options
 > Released in ([January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021))  
 
-The keyboard's **Ctrl** and **Shift** keys, as well as **holding mouse click**, can be used to ease multiple selections.  
+The keyboard's **Ctrl** and **Shift** keys, as well as **holding mouse click**, can be used in the filters and in the advanced selection popup to ease multiple selections.  
 
 - **Using the Shift key**:  
 If you first press `Shift` and select an item of a list, then selecting another item while still holding `Shift` will result in selecting all intermediate items (between those 2 selections) of the list. The same principle will apply in de-selection mode. 
@@ -84,7 +141,6 @@ As long as the `ctrl` key is held, the data table is not updated.
 If you first press `Ctrl` and select an item of a list, then selecting another item while still holding `Ctrl` will result in selecting this second item too. You can keep on selecting new items as long as `Ctrl` is held.  
 As long as the `ctrl` key is held, the data table is not updated.  
   *Remark*: The combination of `ctrl` and `shift` keys is not possible.   
-  
 - **Holding mouse click**:  
 If you click on one item and hold the mouse button without releasing it, then moving the mouse cursor down/up to another item of the same list will select both items and all intermediate ones.  
 As long as the mouse button is held, the data table is not updated.
@@ -99,70 +155,24 @@ See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-
 
 ---
 
-### Data availability
-see https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/
+### Applied filters panel
 
----
-
-### Display of codes descriptions
-> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
-
-The localised codes descriptions of a codelist/dimension are displayed in the filters on mouse-over in a tooltip bubble. The dimension items (codes) containing a description are underlined with dots in order to inform the user of the description availability.
-
-![Codes descriptions](/dotstatsuite-documentation/images/de-codelist-description.png)
-
----
-
-### Hierarchical content
-
-In case of a hierarchy in the dimension items, they are shown as 'scope list', which means that the filter will display at first only the root parents' list. A blue arrow next to an item indicates that this item is a parent of sub-item(s).
-
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootparents-1.png)
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-1.png)   
-  
-By clicking on the arrow, which doesn't require the parent to be selected first, the child items of that parent item will be displayed instead. Above the children list, the parent appears (with a blue background if previously selected, or without background if not selected) in a distinct zone separated by a thick light grey line, named 'children breadcrumb'.
-
-The same behaviour is applied if some of the child items have themselves child items.  The 'children breadcrumb' is progressively extended with each new parent (which is clickable and has the tooltip "Back to this level") while descending in the hierarchy. This allows the user going back to a previous parent at any level.     
-
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootchildren-1.png)
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-children-1.png)   
-
-If for a parent (at any level) there are no data available (according to the Actual ContentConstraint related to the Dataflow), then the parent item is not selectable (and marked in light grey). Still, the user can navigate to the children and back to the parent again. 
-
-| Parents without data | Children of parents without data |
-|----------------------|----------------------------------|
-|![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-without-data-1.png) |![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-childrenofroot-without-data-1.png) |  
-  
-Selected root items are displayed ordinarily in the ['Used filters' panel](#used-filters-panel). Selected children items are displayed prefixed with `...>` in the ['Used filters' panel](#used-filters-panel) and the details of the parent hierarchy are shown in a tooltip.
-
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-used-filters-1.png)     
-
----
-
-### Local search 
-
-The local search (spotlight filter) box appears only when the list of items exceeds a configurable number (e.g. more than 7 that represents the limit, in default layout, before a scrollbar option is introduced in the filter area). The local search dynamically reduces the returned number items when the user types some text in it.  
-
-![Local search example](/dotstatsuite-documentation/images/de-filters3.png)
-
-For hierarchical contents, if used from the root level, then it dynamically searches on all filter content at once, and displays the list of results in one single and flat list, regardless the position of the results in the hierarchy, with the information of the root(s) in light grey:
-
-![Local search example with hierarchy](/dotstatsuite-documentation/images/de-filters4.png)
-
-But for hierarchical contents, if used from a sub-level, then it will ONLY act on the currently visible level.
-
----
-
-### Used filters panel
-
-The 'Used filters' panel displays all currently selected items per dimension.  
+Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), the 'Used filters' panel has been renamed to 'Applied filters' and moved above the data table.   
+   
+The 'Applied filters' panel displays all currently selected items per dimension of the data table. 
 
 This panel provides an overview of the current selection and an easy mean to unselect individual dimension items or whole dimension selections:
 * one single item by clicking on the `x` next to the item label, or
 * all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
 * all selections by clicking on `Clear all filters`.  
-  
-To ease the readibility of the used filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number being the number of selected items for the specific facet.
 
-![Used filters](/dotstatsuite-documentation/images/de-filters5.png)  
-![Used filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
+Selected root items are displayed ordinarily. Selected child items are displayed prefixed with `...>` and the details of the full parent hierarchy are shown in a tooltip.
+
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-used-filters-1.png)    
+
+To ease the readibility of the applied filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number being the number of selected items for the specific facet.
+
+![Applied filters](/dotstatsuite-documentation/images/de-filters5.png)  
+![Applied filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
+
+When viewing the microdata table, the 'Applied filters' panel is not displayed.

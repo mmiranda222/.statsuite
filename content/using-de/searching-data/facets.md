@@ -6,15 +6,15 @@ weight: 1800
 keywords: [
   'What information is presented as facets', '#what-information-is-presented-as-facets',
   'Indexation content restrictions', '#indexation-content-restrictions',
-  'How facets are used', '#how-facets-are-used',
-  'Homepage facets', '#homepage-facets',
+  'Home page facets', '#home-page-facets',
   'Facets on the search result page', '#facets-on-the-search-result-page',
-  'Facet types', '#facet-types',
+  'Facet type', '#facet-type',
   'Facet information', '#facet-information',
-  'Hierarchical contents', '#hierarchical-contents',
+  'Hierarchical content', '#hierarchical-content',
   'Data availability', '#data-availability',
+  'Local search', '#local-search', 
   'Facet items ordered by explicit ORDER annotation', '#facet-items-ordered-by-explicit-order-annotation',
-  'Used filters', '#used-filters',
+  'Applied filters', '#applied-filters',
   'Pinned facets', '#pinned-facets',
 ]
 ---
@@ -22,21 +22,27 @@ keywords: [
 #### Table of Content
 - [What information is presented as facets](#what-information-is-presented-as-facets)
   - [Indexation content restrictions](#indexation-content-restrictions)
-- [How facets are used](#how-facets-are-used)
-  - [Homepage facets](#homepage-facets)
-  - [Facets on the search result page](#facets-on-the-search-result-page)
-  - [Facet types](#facet-types)
+- [Home page facets](#home-page-facets)
+- [Facets on the search result page](#facets-on-the-search-result-page)
+  - [Facet type](#facet-type)
   - [Facet information](#facet-information)
-  - [Hierarchical contents](#hierarchical-contents)
+  - [Hierarchical content](#hierarchical-content)
   - [Data availability](#data-availability)
+  - [Local search](#local-search)
 - [Facet items ordered by explicit ORDER annotation](#facet-items-ordered-by-explicit-order-annotation)
-- [Used filters](#used-filters)
+- [Applied filters](#applied-filters)
 - [Pinned facets](#pinned-facets)
+
+> *Version history:*  
+> Simplify datasource facet rules to make it "almost" as a normal facet with [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
+> Bypass search result page exception with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
+> Improved the design of selectable second-level with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Selectable second-level introduced in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
 
 ---
 
 ### What information is presented as facets
-**Data source**: If configured so (relates to *installation/configuration*), one facet is returned for the **data source** (SDMX endpoint used to retrieve dataflow information).  
+**Data source**: If configured so (see [*installation/configuration*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#)), one facet is auto-generated for the **data source** (from SDMX endpoints used to retrieve dataflow information).  
 
 **One facet per localised CategoryScheme**: The localised CategoryScheme(s) in which the dataflow is categorised.  
 **Note** that each dataflow can be attached to one or more than one category.  
@@ -47,12 +53,12 @@ The CategoryScheme can have a simple hierarchy (each child element can have no o
 **One facet per concept that is used to define dataflow dimensions**: Concepts are distinguished only by their localised concept names (per language), not by their IDs.  
 **Note** that all Concepts having the same localised name (independently from their ID) are grouped into one single facet.  
 
-**Special concept facet for Frequency**.  
+**Special facet for the Frequency concept**.  
 A dataflow can contain data for one or more frequencies that are normally defined through a frequency dimension. The specificity is that some dataflows with data of only one frequency might not have a frequency dimension, but it is also possible to find those dataflows through the frequency facet.  
 In order to determine the frequency of data in such dataflows and add a relevant facet value for these, the search service do an additional unfiltered data query for one observation value.  
 **Note** that if a dataflow has no time dimension, then it will also not have a value for the frequency facet.  
 
-**Special concept facet for Time period**  
+**Special facet for the Time period concept (not yet implemented)**  
 Dataflows do not have a codelist for the time period dimension (time dimension). Therefore, only the actual content constraint can be used to determine the available time periods and thus the values of the time period facet.  
 For practical reasons, the search only allows a filter by **ANNUAL** time periods. All non-annual time periods are converted to annual time period facet values. The time period facet is built as a range facet, because the facet filtering is done through a start year and an end year.  
 **Note** that if a dataflow has no time dimension, then it will also not have values for the time period facet.  
@@ -69,13 +75,7 @@ Dimension values of a dataflow are indexed only if there are data available for 
 
 ---
 
-### How facets are used
-#### Homepage facets
-> *Version history:*  
-> Bypass search result page exception with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
-> Improved the design of selectable second-level with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Selectable second-level introduced in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
-
+### Home page facets
 The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service. By configuration (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-auto-expanded-homepage-facet)), one facet can be automatically expanded by default at page launch.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-2.png)
@@ -90,17 +90,30 @@ The free text search and the navigation through pre-defined facets are exclusive
 **Exception**  
 If a facet value contains **only one single indexed dataflow**, then selecting that facet value will bypass the search result and directly display the data viualisation page. 
 
-#### Facets on the search result page
-The facets shown in the search result page are fully dependent on the current search context.  
-Common facet dimensions can be automatically removed (hidden) from the search result page when specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).  
-When browsing and filtering the search result content, only one facet can be expanded at a time. This also includes the 'Used filters' panel who is behaving as a facet. When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.
+---
+
+### Facets on the search result page
+The facets shown in the search result page are fully dependent on the current search context. Only those facets are included, for which the dataflows listed as search results have values.  
+
+When browsing and filtering the search result content, only one facet can be expanded at a time. This also includes the 'Applied filters' panel which is behaving as a facet.
 
 ![de facet result](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage.png)
 
+When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.  
+
+**Completely hiding specific facets**
+Facets can be removed (hidden) from the search result page when specifically defined so in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).  
+
 **Impactless facets** (i.e. all of the facet values have a number of the related search results equal to the number of currently already available search results) are automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.
 
-#### Facet types
-All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values).  
+**Hide overcounting facets**  
+Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
+To not overwhelm the facet list, by default only a limited number of search facets (defined in the [DE configuration under the key `defaultFacetsNumber`](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-hide-lower-search-result-facets)) are displayed while the other facets are hidden under a **`More Filters`** accordion expandable on demand. The accordion title is complemented by the number of hidden facets within brackets. If a search returns less facets than the defined limit, then the accordion is not displayed.
+
+![de facet - more filters](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters.png) ![de facet - more filters](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters-expanded.png)
+
+#### Facet type
+All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values). However, only one new facet value can be selected at any time, as this automatically triggers the refreshing of the search results, facets and the ['Applied filters' panel](#applied-filters). This is necessary to assure that the user doesn't combine selections of facet values for which no search result exists.   
 *(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* Each item of a facet is displayed with a **checkbox** on the left side in the facet list:
 - when the item is not selected, the checkbox is empty;
 - when the item is not selected and the mouse hovers it, the checkbox stays empty and the background is blue;
@@ -108,26 +121,40 @@ All facets are **multi-selection** facets (an existing facet value selection doe
 
 ![de facet checkbox](/dotstatsuite-documentation/images/de-facets-checkbox.png)
 
+When a facet contains 8 items or more, then:
+- a vertical scrollbar is added to the filter
+- a [local search](#local-search) (spotlight feature) box is displayed
+
 #### Facet information
 The facet title contains the number of facet values available, and the number of currently selected facets (numbers surrounded by a frame). Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, the number of selected values is displayed instead, e.g. `"38/38"`.   
-When there is no facet value selection, the items are not listed in the "used filters" area because no filtering is requested by the end-user.  
+When there is no facet value selection, the items are not listed in the "applied filters" area because no filtering is requested by the end-user.  
 
 The facet values themselves show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
 
 ![de facet information](/dotstatsuite-documentation/images/de-searchingdata-facets-facetinformation.png)
 
-#### Hierarchical contents
-In case of a hierarchy in the dimension items, the facet displays the root parents’ list at first. A blue arrow next to an item and right-aligned indicates when this item is a parent of sub-item(s).  
-If some of the root parents have children, then by clicking on the arrow, the children of this root parent will be displayed instead. The same behaviour is applied if some of the children also have a sub-children list.
+#### Hierarchical content
+New behaviour since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023).
 
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootparents-1.png) ![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-rootchildren-1.png)  
+In case of a hierarchy in the items, they are shown as 'a tree', which means that the filter will display all the items with indentations according to the item level in the tree. A blue arrow next to an item indicates that this item is a parent of child item(s). Clicking this blue arrow switches its up/down direction and the related child items will respectively be hidden or become visible. By default, the tree is fully expanded so that all the items of all tree levels are visible (through scrolling if needed). 
+
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchical-arrow-behaviour)
 
 #### Data availability
-In hierarchical search facets, parent values, for which any of the resulting dataflows do not have data, are not selectable and are marked in light grey colour. Still, the user can navigate to the children and back to the parent again.
+In hierarchical search facets, parent values, for which any of the resulting dataflows do not have data, are not selectable and are marked in light grey colour. This doesn't impact the navigation and selection features of their child items.
 
-| Parents without data | Children of parents without data |
-|----------------------|----------------------------------|
-|![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-root-without-data-1.png) |![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-childrenofroot-without-data-1.png) | 
+![Greyed parent item without data](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent.png) 
+
+#### Local search 
+The local search (spotlight feature) helps to find specific items.
+
+Typing some characters in the local search box dynamically reduces the displayed items to the ones containing the given set of characters. If the local search term has no hit in any item then the list is empty. 
+
+![Local search example](/dotstatsuite-documentation/images/de-filters3.png)
+
+Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), whenever the content of the local search box is changed, the items in hierarchical lists are fully expanded. When a local search terms has a hit in a child item, then all its above parent items will automatically be displayed, even if the search term was not found in these parent items. 
+
+![Local search example with hierarchy](/dotstatsuite-documentation/images/de-filters4.png)
 
 ---
 
@@ -197,25 +224,27 @@ In case an explicit "ORDER" annotation is not provided for an item, then this it
 
 ---
 
-### Used filters
-The "Used filters" area in search resuslts displays all current selected items, per facet.  
+### Applied filters
+The "Applied filters" panel in search results displays all current selected items, per facet.  
 The top right *green* numbering feature counts the total number of selected items for all facets.  
-Used filters are ranked and displayed by facet type.  
+Applied filters are ranked and displayed by facet.  
 Users can unselected:
 * one single item by clicking on the `x` next to the item label, or
 * all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
 * all selections by clicking on `Clear all filters`. When all filters are unselected, then the user is brought back to the home page.
 
-To ease the readibility of the used filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number, the number of selected items of this facet.  
+To ease the readibility of the applied filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number, the number of selected items of this facet.  
 
-![Used filters](/dotstatsuite-documentation/images/de-filters5.png)
-![Used filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
+![Applied filters](/dotstatsuite-documentation/images/de-filters5.png)
+![Applied filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
 
 
 ---
 
 ### Pinned facets
-Facets displayed with a [**.**] after their localised name are called **pinned facets** and are configured (the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-results-page-pinned-facets) is set per DE instance) to always be displayed, when available, at the first top position(s) in the list.  
-In addition, a help [**?**] tooltip is shown right next to the Filters header title, which displays the following information (localised): *"Filters marked with **.** are, when available, always listed first."*
+Facets displayed with a dot [**.**] after their localised name are called **pinned facets**. Those facets are displayed, when available, always at the first top position(s) in the facet list.  
+In addition, a help [**?**] tooltip is shown right next to the Filters header title, which displays the following information (localised): "*Filters marked with **.** are, when available, always listed first.*"
 
 ![Pinned facets](/dotstatsuite-documentation/images/de-pinned-facets.png)
+
+The list of **pinned facets** is to be configured per DE tenant. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-results-page-pinned-facets).
