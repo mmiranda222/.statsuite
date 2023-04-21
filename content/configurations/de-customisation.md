@@ -19,6 +19,7 @@ keywords: [
   'Add icons to specific facet values', '#add-icons-to-specific-facet-values',
   'Api documentation hyperlink', '#api-documentation-hyperlink',
   'Contact us hyperlink', '#contact-us-hyperlink',
+  'Contact us and Share email: Header logo of the organisation', '#contact-us-and-share-email-header-logo-of-the-organisation',
   'Table and chart: footer logo', '#table-and-chart-footer-logo',
   'Table and chart: footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
   'Chart: map configuration', '#chart-map-configuration',
@@ -45,6 +46,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Add icons to specific facet values](#add-icons-to-specific-facet-values)
 - [Api documentation hyperlink](#api-documentation-hyperlink)
 - [Contact us hyperlink](#contact-us-hyperlink)
+- [Contact us and Share email: Header logo of the organisation](#contact-us-and-share-email-header-logo-of-the-organisation)
 - [Table and chart: footer logo](#table-and-chart-footer-logo)
 - [Table and chart: footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
 - [Chart: map configuration](#chart-map-configuration)
@@ -528,6 +530,20 @@ Define the hyperlink for the "Contact us" feature.<br>
 
 ![Contact us](/dotstatsuite-documentation/images/faq-contact-us.png)
 
+---
+
+### Contact us and Share email: Header logo of the organisation   
+[April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)
+Define the logo of the organisation in the header banner of the mail sent from the `Share` or the `Contact us` features. The source can be a binary image or a link.   
+   
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+  "assets": {
+    ...
+    "mailHeader": "/assets/siscc/data-explorer/images/siscc-email-logo.png",
+  },
+```
 ---
 
 ### Table and chart: footer logo
