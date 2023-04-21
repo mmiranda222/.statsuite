@@ -57,8 +57,6 @@ Application **scopes** are custom configurations for the DLM and DE applications
 ---
 
 ### Specific accept header per data space
->Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
-
 Define a specific **http accept header** for a given dataspace that will override the default header, allowing a specific accept header value for both structures and data.
 
 * in `dotstatsuite-config/data/<env>/configs/tenants.json`
@@ -91,7 +89,7 @@ Define a specific **http accept header** for a given dataspace that will overrid
 ```
 
 - `url`: The SDMX web service URL supporting the SDMX 2.1 REST syntax.
-- `urlv3`: The SDMX web service URL supporting the SDMX 3.0 REST syntax. This additional configuration was added in [release .Stat Suite JS 12.1.0 (February 21, 2022)](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022) to enable the referential metadata extraction, which requires an SDMX 3.0 REST-compatible web service. 
+- `urlv3`: The SDMX web service URL supporting the SDMX 3.0 REST syntax. This additional configuration was added to enable the referential metadata extraction, which requires an SDMX 3.0 REST-compatible web service. 
 - `headers`: Object holding the mime-types to be used per format `csv`, `json` and `xml`. To support referential metadata, the `json` header settings must use the SDMX-JSON 2.0 mime type, otherwise the SDMX-CSV 1.0, SDMX-JSON 1.0 and SDMX-ML 2.1 mime types can be used.
 - `headersv3`: Same as `headers`, only instead of the mime-types for the SDMX 2.1 REST requests, will allow to customize the mime-types for the metadata requests made to the SDMX 3.0 REST url defined in `urlv3`. The default values used by the application are the following:
 ```json
@@ -126,8 +124,6 @@ Define a specific **http accept header** for a given dataspace that will overrid
 ---
 
 ### Use native NSI WS authentication for external source
->Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
-
 In case an external data source is accessible through an SDMX web service based on Eurostat's SDMX-RI "NSI" component (so called NSI web service), with the **`hasExternalAuth`** parameter the DLM and the DE can be instructed to authenticate against that web service using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA).
 
 The user will have to enter the required credentials through a specific dialog box, as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication).
