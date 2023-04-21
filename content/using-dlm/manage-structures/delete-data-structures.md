@@ -19,7 +19,7 @@ keywords: [
 - [Delete an artefact and its related structure artefacts](#delete-an-artefact-and-its-related-structure-artefacts)
 - [Delete several similar artefacts](#delete-several-similar-artefacts)
 
-> Version history:  
+> *Version history:*  
 > Option to select/deselect all artefacts introduced with [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
 > Display selected artefact in bold since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)  
 > Check for user permissions to delete since [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)  

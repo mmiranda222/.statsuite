@@ -13,15 +13,6 @@ keywords: [
 ]
 ---
 
-> *Version history:*  
-> `hasRangeHeader` added in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
-> **"default": true** is required **(mandatory)** since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Introduction of additional `urlv3` space parameter to enable the referential metadata feature with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
-> `keycloak` is replaced by **`oidc`** entry with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
-> New tenant model introduced with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
-
----
-
 #### Table of content
 - [Tenant model definition](#tenant-model-definition)
 - [Specific accept header per data space](#specific-accept-header-per-data-space)
@@ -30,7 +21,12 @@ keywords: [
 - [Example of a tenant deployment strategy](#example-of-a-tenant-deployment-strategy)
 - [Additional specifications](#additional-specifications)
 
---- 
+> *Version history:*  
+> `hasRangeHeader` added in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
+> **"default": true** is required **(mandatory)** since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Introduction of additional `urlv3` space parameter to enable the referential metadata feature with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
+> `keycloak` is replaced by **`oidc`** entry with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
+> New tenant model introduced with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
 
 > Disclaimer: The *New!* tenant model described below is aligned with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021) and above versions of the .Stat Suite.
 
@@ -109,7 +105,6 @@ Define a specific **http accept header** for a given dataspace that will overrid
 }
 ```
 
-*Added in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)*  
 - `hasRangeHeader`: If set to `true`, uses the new `x-range` HTTP request header (default) or the previous `range` HTTP request header when requesting a limited amount of observations in SDMX data queries.
 - `hasCustomRangeHeader`: Default: `true`. Only used in combination with `"hasRangeHeader": true`. To be set to `false` when the `x-range` HTTP request header is not understood by the SDMX web service. In this case, the previous `range` HTTP request header is used, when requesting a limited amount of observations in SDMX data queries. The `range` HTTP request header is incompatible with HTTP compression and with some cloud hosting technologies.   
 ```json
