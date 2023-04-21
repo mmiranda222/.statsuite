@@ -7,6 +7,7 @@ weight: 2800
 ---
 
 > *Version history:*  
+> 'i' icon is centered in the row sections since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
 > Referential metadata hierarchy display with [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)  
 > Introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
 
@@ -20,6 +21,10 @@ The information icon '(i)' indicates the availability of (non-flag and non-note)
   - if referantial metadata pertains to all observations in the column, the '(i)' is shown in the corresponding cell of the extra (information) row.
   - if referantial metadata pertains to all observations in the table, the '(i)' icon is shown behind the dataflow title.
   - if referantial metadata pertains to the observation in a cell (some coordinate dimensions are in columns and others are in rows), the '(i)' is shown in the data cell.
+
+**Exception:** when the '(i)' is displayed in the row section, then it is always displayed in the middle of the row section without being stick to or overlapping the text of this area, and regardless the number of rows to be displayed:
+
+![Information side panel](/dotstatsuite-documentation/images/de-side-panel-row-section.png)
 
 Clicking on an '(i)' icon of the table view opens the information side panel with the attribute or referential metadata values. The panel is displayed on the right side (left side for rtl mode) of the web page as an overlay of the current view, and thus not impacting the layout of the current view. A clicked '(i)' icon becomes highlighted, and the entire web page content is frozen except the information side panel content.
 
