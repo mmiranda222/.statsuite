@@ -1,112 +1,60 @@
 ---
-title: "SolR optimisation"
+title: "Future or programmatically configurable advanced search features"
 subtitle: 
 comments: false
 weight: 89
 keywords: [
-  'IR Ranking Functions Introduction - Default Scoring', '#ir-ranking-functions-introduction---default-scoring',
-  'Customise Scoring Function', '#customise-scoring-function',
-  'Basic Boosting (Already in place)', '#basic-boosting-already-in-place',
-  'Advanced Boosting', '#advanced-boosting',
-  'Constant Score Queries', '#constant-score-queries',
-  'Partial Search', '#partial-search',
+  'Scoring method', '#scoring-method',
+  'Eventual boosting enhancements', '#eventual-boosting-enhancements',
+  'Solr filters', '#solr-filters',
   'Stemming', '#stemming',
   'Lemmatisation', '#lemmatisation',
-  'Synonyms Search', '#synonyms-search',
-  'Synonyms Provision', '#synonyms-provision',
-  'Solr Schema Configuration', '#solr-schema-configuration',
-  'Query Time - phrase query disable', '#query-time-phrase-query-disable',
-  'Autocompletion Service (potential future development)', '#autocompletion-service-potential-future-development',
-  'Autocompletion Suggestions Provision', '#autocompletion-suggestions-provision',
-  'Solrconfig.xml Configuration', '#solrconfig-xml-configuration',
-  '.Stat Search-API Extension', '#stat-search-api-extension',
+  'Synonyms', '#synonyms',
+  'Autocompletion (potential future .Stat development)', '#autocompletion-potential-future-stat-development',
   'Highlighting', '#highlighting',
   'Federated Search', '#federated-search',
   'Faceting, Tag and Exclusion', '#faceting-tag-and-exclusion',
 ]
 ---
-<!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
-* https://academy.siscc.org/configuring-and-customising/
-Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 #### Table of Content
-- [IR Ranking Functions Introduction - Default Scoring](#ir-ranking-functions-introduction---default-scoring)
-- [Customise Scoring Function](#customise-scoring-function)
-  - [Basic Boosting (Already in place)](#basic-boosting-already-in-place)
-  - [Advanced Boosting](#advanced-boosting)
-  - [Constant Score Queries](#constant-score-queries)
-- [Partial Search](#partial-search)
+- [Scoring method](#scoring-method)
+  - [Eventual boosting enhancements](#eventual-boosting-enhancements)
+- [Solr filters](#solr-filters)
   - [Stemming](#stemming)
   - [Lemmatisation](#lemmatisation)
-- [Synonyms Search](#synonyms-search)
-  - [Synonyms Provision](#synonyms-provision)
-  - [Solr Schema Configuration](#solr-schema-configuration)
-  - [Query Time - phrase query disable](#query-time-phrase-query-disable)
-- [Autocompletion Service (potential future development)](#autocompletion-service-potential-future-development)
-  - [Autocompletion Suggestions Provision](#autocompletion-suggestions-provision)
-  - [Solrconfig.xml Configuration](#solrconfig-xml-configuration)
-  - [.Stat Search-API Extension](#stat-search-api-extension)
+  - [Synonyms](#synonyms)
+- [Autocompletion (potential future .Stat development)](#autocompletion-potential-future-stat-development)
 - [Highlighting](#highlighting)
 - [Federated Search](#federated-search)
 - [Faceting, Tag and Exclusion](#faceting-tag-and-exclusion)
 
-This page describes the SOLR search engine optimisation possibilities to fine-tune the **free-text search** behaviour.
 
 ---
 
-### IR Ranking Functions Introduction - Default Scoring
+### Scoring method
 Search relevance and search results scoring is a complex matter.  
-Modern IR systems relies on various factors to score a document when matching a user query:
+Modern information retrieval (IR) systems rely on various factors to score a document when matching a user query:
 - term frequency of the term matched in the search result field
 - document frequency of the term matched in the corpus field
 - search result field length
 - corpus avg field length
 - boosts
 
-Starting from Solr 6, Lucene implements by default the [BM25 similarity](https://en.wikipedia.org/wiki/Okapi_BM25), a scoring function that make use of the features forementioned.  
-
-When a search result matches the query, each term occurrence is scored and then combined to build the score of the search result.  
-
-The score will then affect the ranking of the results (higher the score, higher the rank).
-
-Even if Apache Lucene/Solr implements what is called an “probabilistic information retrieval ranking model” the score produced for the search results are not probabilities in the strict sense of the mathematical definition, so don't expect scores to be 0<x>1.  
+Starting from Solr 6, Lucene implements by default the [probabilistic IR model Okapi BM25](https://en.wikipedia.org/wiki/Okapi_BM25), a scoring function that make use of the features forementioned.  
 
 For more information on Lucene/Solr scoring:  
 https://opensourceconnections.com/blog/2015/10/16/bm25-the-next-generation-of-lucene-relevation/  
 https://lucene.apache.org/core/8_2_0/core/org/apache/lucene/search/package-summary.html#scoringBasics
 
+Specific document fields (in our case dataflow properties) can be boosted in the scoring algorithm. For more information, see: [Relevance of free-text search results: How to tweak the weights of specific dataflow properties](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/search-config/#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties)
+
+Specific documents (in our case dataflows) can be boosted in the scoring algorithm. For more information, see: [Relevance of free-text search results: How to boost specific dataflows](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#result-boosting)
+
 ---
 
-### Customise Scoring Function
-There is a whole world of ways to customise the Solr scoring function.  
-Books have been written on this topic, so describing all the ways to tune relevance in Solr is out of scope here.  
-We’ll describe what is currently available in your search solution, and some possible improvement there.  
-
-#### Basic Boosting (Already in place)
-It is currently possible to give an additional boost to specific fields, explicitly:  
-
-```
-name: { // field name, we must get the same in POST /admin/dataflows body
-      type: ATTR_TYPE, // ????
-      ext: TEXTFIELD_EXT, // solr dynamic field extension
-      …
-      weight: 2, // field will be boosted by 2
-    },
-```
-
-This is translated into the following Solr syntax:  
-field:(query)^weight.
-
-This syntax build a Lucene Boost Query (https://lucene.apache.org/core/8_2_0/core/org/apache/lucene/search/BoostQuery.html).  
-This means that the score clause calculated for that part of your query, will be multiplied by the boost(2 in this scenario).  
-This gives you the chance of assigning manually an additional weight to certain fields.  
-
-**N.B.** this weight is manual, so when assigning the weight it must be extremely clear how internal score works.  
-Assigning the weight is also a difficult and iterative task, that is the reason why Information Retrieval moved to automatically generated weights and ranking models (AKA Learning To Rank):  
-https://sease.io/2016/07/apache-solr-learning-to-rank-part-1-data-collection.html
-
-#### Advanced Boosting
-Apart from the boost queries currently in use, moving to edismax query parsing gives additional possibility in terms of:
+#### Eventual boosting enhancements
+Apart from the boost queries currently in use, moving to edismax query parsing would give additional possibilities in terms of:
 
 1) **boosting fields** (so the weight passed as a parameter will end up as a qf Solr parameter)  
    e.g.  
@@ -159,229 +107,168 @@ Apart from the boost queries currently in use, moving to edismax query parsing g
    **N.B.** there many other advanced functions to use in boosting, first of all you can decide if additive or multiplicative:  
    https://lucene.apache.org/solr/guide/6_6/function-queries.html  
 
-#### Constant Score Queries
-If case of interest in constant score queries i.e. you get a constant score for a clause matching, independently of the document/corpus terms distributions.  
-This is possible in Solr through the Constant Score query concept, the score of each clause is explicitly passed with the syntax:  
-^=  
-e.g.  
-(id:(query) OR name:(query))^=16 OR  
-(categoryId:(query) OR categoryName:(query))^=8 OR  
-(description:(query))^=4 OR  
-(dimensionId:(query) OR dimensionName:(query))^=2 OR  
-(dimensionValue:(query))^=1  
-
-This means that a document matching all the clauses will have a simple score of 1+2+4+8+16.  
-The simple formula translates in:  
-1*(match)+2*(match)+4*(match)+8*(match)+16*(match)  
-
-To offer this functionality in the current platform it is necessary to:
-
-1. **Configuration** - Add a configuration capability in the schema , this will grant the users the capability specify the constant score for fields match:  
-
-```json
-name: {
-      type: ATTR_TYPE,
-      ext: TEXTFIELD_EXT,
-      …
-      constantWeight: 2, // score calculated for this clause if a match happens for this field, is constantly 2
-    },
-```
-
-2.	**Query Building** - src/server/search/index.js:19, the config parameter is passed to the query building component and  a constant score query is built here  
-
-**N.B.** it is unlikely that constant scoring solves complex relevance problems, but having the possibility of using it, can give great flexibility to the adopters of the framework  
-
 ---
 
-### Partial Search
-Currently each search term is hard-coded prefixed and suffixed by a *  
-e.g.  
-\<field1\>:\*one\*  
-
-This wildcard search is extremely expensive and not very common in the free text Lucene search world and represents a temporary solution for stemming, lemmatisation, etc.
-
-Following are listed alternativatives better performing alternatives. 
+### Solr filters
 
 #### Stemming
-Stemming is a functionality used in search to improve the recall of your system.  
-It means you want to cover MORE search results given a query.  
-It relies on a text analysis technique that brings the terms to their stem:  
-e.g.  
-jumping -> jump  
-dinosaurs -> dinosaur  
-dragons -> dragon  
+Added in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023).  
 
-In this way your search for “dragon” or “dragons” will return the same results.  
-This is recommended when in your use case you don’t really care about this variation in the term and for you, they have the same semantic.  
-In Solr it is vastly implemented through language specific text analysis, even in the default Solr schema you will find language specific text analysis with stemming configured:  
+The wildcard matching was removed and replaced by stemmers that SOLR uses by default for all fields of type `text_{lang}`.
 
-**English**  
+The default .Stat SOLR schema is generated by the installation script ([src/server/manageSchema](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md#script)). It defines the fields using the SOLR API. 
 
-```xml
-    <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
-      <analyzer type="index">
-        <tokenizer class="solr.StandardTokenizerFactory"/>
-       …
-        …
-  <!-- Optionally you may want to use this less aggressive stemmer instead of PorterStemFilterFactory:
-        <filter class="solr.EnglishMinimalStemFilterFactory"/>
-  -->
-        <filter class="solr.PorterStemFilterFactory"/>
-      </analyzer>
-      <analyzer type=“query”>…
-      </analyzer>
-    </fieldType>
-```
-
-**Italian**
-
-```xml
-    <fieldType name="text_it" class="solr.TextField" positionIncrementGap="100">
-      <analyzer> 
-        <tokenizer class="solr.StandardTokenizerFactory"/>
-        …
-        <filter class="solr.ItalianLightStemFilterFactory"/>
-        <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="Italian"/> -->
-      </analyzer>
-    </fieldType>
-```
-
-This field types are already defined in the schema used by .Stat.  
-
-e.g.  
-\<dynamicField name="*_txt_it" type="text_it"  indexed="true"  stored=“true”/\>  
-
-Currently only  
-**\<dynamicField name="*_t" type="text_general" indexed="true" stored="true"/\>**  
-Is used, with a generic text analysis per language.  
-
-This means it’s possible to use them with a change in the .stat configurations:  
-
-where we have:  
-   schema: [  
-  {  
-    name: 'name',   
-    field: lang => `name_${lang}_txt`,  
-  },  
-
-Should become:  
-schema: [  
-  {  
-    name: 'name',  
-    field: lang => `name_txt_${lang}`,  
-  },  
-
-So it is necessary to make sure that .stat suite is able to support that Solr field extension (**\*\_txt\_\<language\>**)  
- (currently it only supports the :  
-export const **TEXTFIELD_EXT** = 't';  
-export const ***STRING_EXT*** = 's';  
-export const ***STRING_LIST_EXT*** = ‘ss';  
+In order to customise stemming filters, modify the installation script accordingly. Remember that stemmers need to be defined per language. For more information, consult the SOLR documentation.
 
 #### Lemmatisation
-Lemmatisation is another technique similar to Stemming, to improve the recall of your system.   
-It means you want to cover MORE search results given a query.  
-It relies on a text analysis technique that brings the terms to their stem:  
-e.g.  
-better -> good  
-meeting -> meet  
-dragons -> dragon  
+Lemmatisation is another technique similar to Stemming. But unlike stemming, lemmatisation attempts to select the correct lemma depending on the context.
 
-In this way your search for “dragon” or “dragons” will return the same results.  
-This is recommended when in your use case you don’t really care about this variation in the term and for you, they have the same semantic.  
-Unlike stemming, lemmatisation attempts to select the correct lemma depending on the context.  
-You find more details here:  
-https://en.wikipedia.org/wiki/Lemmatisation  
-https://lucene.apache.org/solr/guide/7_3/language-analysis.html#opennlp-lemmatizer-filter  
-Some lemmatiser are already included in the per language txt field type provided by Solr in the default schemas.  
-More advanced lemmatisation can be found in Solr 7.x.  
-The exact same suggestion for the stemmers applies here.  
+Some lemmatiser are already included in the `text_{lang}` field type provided by Solr.
+
+In order to customise lemmatisation filters, modify the installation script ([src/server/manageSchema](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md#script)), which calls the SOLR API, accordingly. Remember that lemmatisation need to be defined per language. For more information, consult the SOLR documentation.
+
+#### Synonyms
+Added in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023). 
+
+Synonyms can now be provided in .Stat through configuration files. For more information, see [Manage synonyms](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/search-config/#manage-synonyms). Synonyms are applied on the search query terms, e.g. a `the mages of the United Kingdom` query would be expanded to: `the (mages OR sorcerer OR sorceress) of the (United Kingdon OR Great Britain OR England)`. Synonyms are automatically ASCII-folded by the script (see below).
+
+If you want to develop your own custom approach for pushing synonyms to SOLR, e.g., directly from a database, then modify the installation script ([src/server/manageSchema](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md#script)), which calls the SOLR API, accordingly. Remember that synonyms need to be defined per language.  
+The SOLR synonym filters used by default in SFS are:
+- Arabic: solr.ArabicStemFilterFactory
+- German: solr.GermanLightStemFilterFactory
+- English: solr.PorterStemFilterFactory
+- Spanish: solr.LightStemFilterFactory
+- French: solr.FrenchLightStemFilterFactory
+- Italian: solr.ItalianLightStemFilterFactory
+- Kmer: -
+- Dutch: solr.SnowballPorterFilterFactory
+- Thai: -
+
+For more information, consult the SOLR documentation, e.g., https://solr.apache.org/guide/8_7/managed-resources.html#managing-synonyms. Note also that different scoring approaches can be applied to the synonym terms depending on their occurence. 
+
+#### Other filters
+The SOLR filters used in SFS by default are the following:
+```xml
+  <fieldType name="sfs_text_ar" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="ar"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.ArabicNormalizationFilterFactory"/>
+      <filter class="solr.ArabicStemFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_de" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="de"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.GermanNormalizationFilterFactory"/>
+      <filter class="solr.GermanLightStemFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_en" class="solr.TextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.EnglishPossessiveFilterFactory"/>
+      <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+      <filter class="solr.PorterStemFilterFactory"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="en"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.EnglishPossessiveFilterFactory"/>
+      <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+      <filter class="solr.PorterStemFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_es" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="es"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.SpanishLightStemFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_fr" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="fr"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.ElisionFilterFactory" articles="lang/contractions_fr.txt" ignoreCase="true"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.FrenchLightStemFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_it" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="it"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.ElisionFilterFactory" articles="lang/contractions_it.txt" ignoreCase="true"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.ItalianLightStemFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_km" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+    <analyzer type="index">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="km"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_nl" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="nl"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.StemmerOverrideFilterFactory" dictionary="lang/stemdict_nl.txt" ignoreCase="false"/>
+      <filter class="solr.SnowballPorterFilterFactory" language="Dutch"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="sfs_text_th" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.ThaiTokenizerFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+      <filter class="solr.ManagedSynonymGraphFilterFactory" managed="th"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+  </fieldType>
+```
+Note: If the analyzer has no type, then it is applied to both index & query. The analyzer is not related to what is stored in the collection but how this collection is indexed, as indexes are stored aside from the collection. Therefore, applying ascii folding while indexing doesn't prevent us from having results with accents.  
+
+If you want to define your own custom settings for SOLR analyzers and filters, then modify the installation script ([src/server/manageSchema](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md#script)), which calls the SOLR API, accordingly.
+For more information, consult the SOLR documentation, e.g., https://solr.apache.org/guide/7_2/analyzers.html.
 
 ---
 
-### Synonyms Search
-Synonyms search is a complex matter and it is a functionality offered by Solr out of the box, with full support in Solr versions >=6.6.  
-Just bear in mind that some particular class of synonyms may require particular care i.e. multi-term synonyms (https://lucidworks.com/post/multi-word-synonyms-solr-adds-query-time-support/).  
-The approach to implement synonyms search (e.g. in the .Stat Suite Data Explorer search) is as follow:  
+### Autocompletion (potential future .Stat development)
+Solr itself supports suggestions coming from both the index (to be sure that the suggestions will get results or an external file: https://lucene.apache.org/solr/guide/6_6/suggester.html#dictionary-implementations  
 
-#### Synonyms Provision
-Where should Solr fetch the synonyms from? Currently Solr provide 2 flexible approaches:  
-
-1) **synonyms.txt**, the synonyms are detailed in a txt file, one synonym per line as (1) a comma-separated list of words or as (2) two comma-separated lists of words with the symbol "=>" between them, and provided to Solr. They can be entered manually or a middleware application may extract them from a database and then populate the file  
-https://solr.apache.org/guide/8_7/filter-descriptions.html#synonym-graph-filter  
-
-2) **Managed Resources**,  synonyms can be provided to Solr to handy REST endpoints, this gives the possibility of developing your own custom approach in the way you push the synonyms to Solr, it may be a UI, an application that extract them from a DB of whatever necessary  
-https://solr.apache.org/guide/8_7/managed-resources.html#managing-synonyms  
-The second approach is normally suggested when complex synonyms provision system are considered.
-
-#### Solr Schema Configuration
-Once we have defined the various groups of synonyms ( they may be depending on the language or field types), the Solr schema will be modified accordingly, specifying the Synonym graph filter to be part to analysis chain:  
-e.g.  
-
-```xml
-    <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
-      <analyzer type="index">
-        <tokenizer class="solr.StandardTokenizerFactory"/>
-        <filter class="solr.SynonymGraphFilterFactory" synonyms="mysynonyms.txt"/>
-        <filter class="solr.FlattenGraphFilterFactory"/> <!-- required on index analyzers after graph filters -->
-      </analyzer>
-      <analyzer type="query">
-        <tokenizer class="solr.StandardTokenizerFactory"/>
-        <filter class="solr.SynonymGraphFilterFactory" synonyms="mysynonyms.txt" ignoreCase="true" expand="true"/>
-        …
-        …    
-      </analyzer>
-    </fieldType>
-```
-
-**N.B.** depending on the synonyms provision choice you made, you may want in the analysis chain to appear the mysynonyms.txt file or the solr.ManagedSynonymFilterFactory  
-A query time semantic expansion of your query means that the original terms of your query are expanded with synonyms.  
-e.g.  
-Assuming the set of synonyms:    
-mage, sorcerer, sorceress  
-United Kingdom, Great Britain, England  
-
-\<the mages of the United Kingdom\> query  
-Will be expanded in:  
-the (mages OR sorcerer OR sorceress) of the (United Kingdon OR Great Britain OR England)  
-
-Effectively bringing an expansion to the semantic of the query.  
-
-Semantic Expansion Query Time - Synonyms Query Style
-- **as_same_term**: Default. Treats all terms as if they're exactly equivalent.  -->  The IDF component will be identical among all results, the TF will drive the score, so (field length + terms matches)    
-- **pick_best**: The rarest synonym will be considered more important.  -->  Only the rarest synonym match drives the score  
-- **as_distinct_terms**: All synonyms matches will contribute, with their IDF and TF  -->  All synonyms matches participate to the score  
-
-```xml
-    <fieldType name="text_general" scoreOverlaps="pick_best" class="solr.TextField" positionIncrementGap="100" multiValued="true">  
-```
-    
-https://issues.apache.org/jira/browse/SOLR-11662  
-Note:  
-IDF stands for Inverse Document Frequency.  
-TF stands for Term Frequency.  
-
-For more information about how scoring works in Lucene/Solr, page 10-11 has all the details.  
-
-#### Query Time - phrase query disable
-Out of the box Solr is going to expand synonyms in phrase queries as well.  
-This doesn’t seem an acceptable behaviour for a requirements that synonyms expansion should not happen for phrase queries.
-This implies:  
-
-1) definition of two fields from the original one: one with synonyms and one without  
-2) implement the logic that will trigger the query building to one field or the other in src/server/dataflow.js:6  
-
-In this way for phrase queries you hit the field with no synonyms expansion.   
-
----
-
-### Autocompletion Service (potential future development)
-The autocomplete solutions can be heavily customised. However, the following design will be for a basic autocompletion service, but much can be done in addition to that:
-
-#### Autocompletion Suggestions Provision
-Solr out of the box supports suggestions coming from both the index (so you are sure the suggestions will get results when clicking them) or an external file: https://lucene.apache.org/solr/guide/6_6/suggester.html#dictionary-implementations  
-
-#### Solrconfig.xml Configuration
-When you have decided where the suggestions are coming from it is necessary to define the proper Solr configuration in the solrconfig.xml, starting from defining the suggester component:
+When this feature is implemented in .Stat (SFS and DE), and it is decided where the suggestions are coming from, it is necessary to define the proper SOLR configuration in the solrconfig.xml, starting from defining the suggester component:
 
 ```xml
 <searchComponent name="suggest" class="solr.SuggestComponent">
@@ -404,8 +291,8 @@ The lookup algorithm is extremely important, it defines how you build suggestion
 https://sease.io/2015/07/solr-you-complete-me.html  
 https://sease.io/2018/06/apache-lucene-blendedinfixsuggester-how-it-works-bugs-and-improvements.html  
 
-**Recommendation**: you should decide your lookup algorithm depending on your requirements, as a rule of thumb, you should opt for the **AnalyzingInfixLookupFactory** in case of entire field content suggestion or **FreeTextLookupFactory** of terms suggestion.  
-Once you have defined all the parameters you need (https://lucene.apache.org/solr/guide/6_6/suggester.html#suggester-search-component-parameters), a request handler must be defined: this will be the REST endpoint exposed by Solr:  
+**Recommendation**: Decide the lookup algorithm depending on requirements. As a rule of thumb, opt for the **AnalyzingInfixLookupFactory** in case of entire field content suggestion or **FreeTextLookupFactory** of terms suggestion.  
+When all the required parameters are defined (https://lucene.apache.org/solr/guide/6_6/suggester.html#suggester-search-component-parameters), a request handler using the SOLR API is to be implemented:  
 
 ```xml
 <requestHandler name="/suggest" class="solr.SearchHandler" startup="lazy">  
@@ -418,55 +305,21 @@ Once you have defined all the parameters you need (https://lucene.apache.org/sol
   </arr>  
 </requestHandler>  
 ```
-
 https://lucene.apache.org/solr/guide/8_1/suggester.html#adding-the-suggest-request-handler  
-
-#### .Stat Search-API Extension
-Once the Solr side is operational it is required to implement the client side.   
-This will require:  
-1) modelling of the autocomplete response from a .Stat perspective  
-2) add the call to the configured Solr request handler in src/server/solr/index.js:87 
-3) parse the Solr response and build the .Stat response  
 
 ---
 
 ### Highlighting
-Currently highlighting is included in the .stat solution and specifically it uses the default method:  
+Currently highlighting is included in the .Stat Suite. It uses the default SOLR method.
+For more information see: https://lucene.apache.org/solr/guide/6_6/highlighting.html#Highlighting-TheOriginalHighlighter  
 
-hl.method: The highlighting implementation to use. Acceptable values are: unified, original, fastVector, and postings. See the Choosing a Highlighter section below for more details on the differences between the available highlighters.  
+To customsie the snippet size, adapt the following values in the `solrconfig.xml` file or just set as request parameters:
 
-On a set of fields configured:  
+- hl.snippets (default:1): Specifies maximum number of highlighted snippets to generate per field. It is possible for any number of snippets from zero to this value to be generated.
+- hl.fragsize	(default:100): Specifies the approximate size, in characters, of fragments to consider for highlighting. 0 indicates that no fragmenting should be considered and the whole field value should be used.  
 
-```
-{
-  ...
-  fields: {
-    id: { …
-    },
-    name: {     type: ATTR_TYPE,
-      …
-      highlight: true, // will be highlighted
-      …
-    },
-}
-```
-
-You find here details about this implementation:  
-https://lucene.apache.org/solr/guide/6_6/highlighting.html#Highlighting-TheOriginalHighlighter  
-
-And specifically to change the snippet size (solrconfig.xml):
-
-hl.snippets (default:1): Specifies maximum number of highlighted snippets to generate per field. It is possible for any number of snippets from zero to this value to be generated.
-
-hl.fragsize	(default:100): Specifies the approximate size, in characters, of fragments to consider for highlighting. 0 indicates that no fragmenting should be considered and the whole field value should be used.  
-
-These params can be just sent as request parameters or specified in the solrconfig.xml  
-
+**Example**  
 ```xml
-  <!-- Highlighting Component
-
-       http://wiki.apache.org/solr/HighlightingParameters
-  -->
   <searchComponent class="solr.HighlightComponent" name="highlight">
     <highlighting>
       <!-- Configure the standard fragmenter -->
@@ -479,6 +332,7 @@ These params can be just sent as request parameters or specified in the solrconf
         </lst>
       </fragmenter>
 ```
+Also see http://wiki.apache.org/solr/HighlightingParameters.
 
 ---
 
@@ -497,6 +351,6 @@ https://sease.io/2017/11/distributed-search-tips-for-apache-solr.html
 ---
 
 ### Faceting, Tag and Exclusion
-While the tag and exclusion approach for multi selected facets was previously implemented, it was replaced by a drill-down facet approach. More information:  
+While the tag and exclusion approach for multi-selected facets was previously implemented, it was replaced by a drill-down facet approach. More information:  
 
 https://lucene.apache.org/solr/guide/7_5/faceting.html#tagging-and-excluding-filters
