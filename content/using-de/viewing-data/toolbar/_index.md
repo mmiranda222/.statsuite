@@ -6,7 +6,7 @@ weight: 3500
 keywords: [
   'View type', '#view-type',
   'Labels', '#labels',
-  'Customise', '#customise',
+  'Layout / Customise', '#layout-customise',
   'Share', '#share',
   'Download', '#download',
   'Table in Excel', '#table-in-excel',
@@ -24,7 +24,7 @@ keywords: [
 #### Table of Content
 - [View type](#view-type)
 - [Labels](#labels)
-- [Customise](#customise)
+- [Layout / Customise](#layout-customise)
 - [Share](#share)
 - [Download](#download)
   - [Table in Excel](#table-in-excel)
@@ -66,10 +66,10 @@ Since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotst
 
 ---
 
-### Customise
-The **Customise** option is contextual depending on the type of data view representation.  
-For the data **table preview**, check the documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/).  
-For the data **chart views**, check the docmentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/).
+### Layout / Customise
+The **Layout/Customise** option is contextual depending on the type of data view representation.  
+For the data **table preview** "Layout" option, check the documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/).  
+For the data **chart views** "Customise" option, check the docmentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/).
 
 ---
 
