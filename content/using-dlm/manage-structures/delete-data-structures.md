@@ -96,8 +96,8 @@ A orange warning icon informs the user of prerequisites awaited for deleting som
 
 Clicking 'Delete' will automatically initiate the deletion of all the selected structure artefacts and in the order that respects the top/down dependencies.  
 The outcome of each deletion is:  
-    - success: green-coloured bin icon.
-    - failure: red-coloured icon with the tooltip displaying the corresponding error message.
+  - success: green-coloured bin icon.
+  - failure: red-coloured icon with the tooltip displaying the corresponding error message.
 
 The 'Cancel' button interrupts the deletion process, then changes its text to 'Close' and re-activates the 'Delete selected structures' button.  
 Once the deletion actions are completed, the 'Delete selected structures' button becomes hidden and the 'Cancel' button changes the text back to 'Close'.  
