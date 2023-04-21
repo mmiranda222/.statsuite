@@ -17,8 +17,8 @@ keywords: [
 Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 #### Table of Content
-- [Data sources to be indexed](#search-data-sources-to-be-indexed)
-- [Limit for indexing dimensions per dataflow](#search-limit-for-indexing-dimensions-per-dataflow)
+- [Data sources to be indexed](#data-sources-to-be-indexed)
+- [Limit for indexing dimensions per dataflow](#limit-for-indexing-dimensions-per-dataflow)
 - [Exclude specific CategorySchemes from the search index](#exclude-categoryschemes-from-the-search-index)
 - [Relevance of free-text search results: How to tweak the weights of specific dataflow properties](#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties)
 - [Manage synonyms](#manage-synonyms)
