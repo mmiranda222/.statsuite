@@ -17,10 +17,19 @@ keywords: [
   'List of artefacts', '#list-of-artefacts',
   'Display Options', '#display-options',
   'Content of the list', '#content-of-the-list',
+  'Notifications', '#notifications',
   'Export structures', '#export-structures',
   'Export data and referential metadata', '#export-data-and-referential-metadata',
 ]
 ---
+
+> *Version history:*  
+> Menu buttons are reordered and notifications are displayed in dialog box since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
+> "(De)select all" option for the artefact list display since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)  
+> Referential metadata export introcued with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
+> Display of the **number of series** instead of observation values for some external sources since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
+> The filter option **My artefact** was deprecated and removed as part of the [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
+
 
 #### Table of Content
 - [Common navigation header](#common-navigation-header)
@@ -36,6 +45,7 @@ keywords: [
 - [List of artefacts](#list-of-artefacts)
   - [Display Options](#display-options)
   - [Content of the list](#content-of-the-list)
+- [Notifications](#notifications)
 - [Export structures](#export-structures)
 - [Export data and referential metadata](#export-data-and-referential-metadata)
 
@@ -125,7 +135,6 @@ Note:
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-5.png)
 
-The filter option **My artefact** was deprecated and has been removed as this was unused *([November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020))*.
 
 #### Version
 The filter "**Filter by version**" allows users selecting:  
@@ -146,7 +155,7 @@ The above mentioned selections and filters are dynamically applied to the table,
 *  Spotlight: the user can reduce the list of artefacts by entering keywords in the spotlight box. An additional option of the spotlight applies the text filter to one or both of the following: "Label" and "Code". The spotlight text is consistent even when changing the filter(s). The spotlight feature searches in the name and ID of all listed artefacts.
 * Sorting: the user can sort the whole list by "Type", "Label”, "Code", "Version", "Final" or "Owner”. The list is sorted, ascending by default, by “Type” and "Name".
 * Pagination: This feature allows navigating from page to page, and to jump to the next, previous, first or last page. The number of artefacts listed per page is configurable (see [documentation](/dotstatsuite-documentation/configurations/dlm-configuration/)).
-* *Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)* (De)Select all: This feature shown below the pagination allows bulk-(de-)selecting the listed artefacts in the current page or on the all pages.  
+* (De)Select all: This feature shown below the pagination allows bulk-(de-)selecting the listed artefacts in the current page or on the all pages.  
   ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-8a.png)  
   
   Depending on the current selection, one of the four clickable buttons is shown:  
@@ -195,10 +204,21 @@ For Dataflows **only**, The user can view the following additional information:
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-9a.png)
 
-**Note** that *(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* for some external data sources (e.g. using MT Fusion Registry), the *SDMX* annotation of type `sdmx_metrics` has no id `obs_count`, but the id **`series_count`** instead.  
+**Note** that for some external data sources (e.g. using MT Fusion Registry), the *SDMX* annotation of type `sdmx_metrics` has no id `obs_count`, but the id **`series_count`** instead.  
 In this case, the DLM will display the **number of series** instead of observation values.
 
 ![dlm overview](/dotstatsuite-documentation/images/dlm-overview-21a.png)
+
+---
+
+### Notifications
+Actions initiated from the DLM overview can trigger notifications of outcome status to the end-user. These actions can be originated from data transfer, structure transfer or deletion, data/ref/ metadata/structure download, index dataflow, etc. (non-exhaustive list).  
+These notifications are displayed as colored icons: "green" for success, "orange" for warning or multi-status, "red" for failure or error, or "blue" for newly created.  
+Clicking on an icon opens a dialog box with details of the action outcome:
+
+![dlm overview](/dotstatsuite-documentation/images/dlm-overview-notification.png)
+
+Clicking on the top-right cross or outside the dialog box closes it.
 
 ---
 
@@ -213,8 +233,6 @@ A data structure artefact can be downloaded in .xml format:
 ---
 
 ### Export data and referential metadata
-> Ref. metadata export introcued with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)
-
 Data and/or referential metadata associated to a dataflow can be downloaded, from the list of dataflows.
 
 The **'Export data & referential metadata'** option in the context menu of the dataflow, as well as in the multiple selections menu above the dataflow list, allows to download available contents in various flavours:
