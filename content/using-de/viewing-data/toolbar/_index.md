@@ -85,10 +85,22 @@ The download feature is contextual, therefore the **Label** option will act acco
 * If the table/chart option is "Name" or "Both" (Name + Identifier), then the downloaded file contains identifiers and names.  
 The **locale** used for names is the currently used language in the application.  
 
-The download options form the dropdown button are described below.  
+The download options from the dropdown button are described below.  
 
-![Download](/dotstatsuite-documentation/images/de-download1.png)
+![Download](/dotstatsuite-documentation/images/de-download1.png)  
 
+Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), the rules for naming downloaded Excel and CSV files has changed to be more generic:
+
+* for filtered Excel and CSV files:  
+  [agency ID],[dataflow ID],[version],filtered,[YYYY-MM-DD HH-MM-SS].csv|xlsx
+* for unfiltered CSV file:  
+  [agency ID],[dataflow ID],[version],complete,[YYYY-MM-DD HH-MM-SS].csv  
+  
+Example: For the dataflow OECD:SNA_TABLE1(1.0), according to the selected option, the file names will be
+* for **Table in Excel**: OECD,SNA_TABLE1,1.0,**filtered**,2023-02-21 17-22-55.**xlsx** 
+* for **Filter data in tabular text (CSV)**: OECD,SNA_TABLE1,1.0,**filtered**,2023-02-21 17-22-55.**csv**
+* for **Unfilter data in tabular text (CSV)**: OECD,SNA_TABLE1,1.0,**complete**,2023-02-21 17-22-55.**csv**
+   
 #### Table in Excel  
 Only the filtered data contained in the online table (or chart) view is downloaded in **.xlsx** file format.  
 All online table's layout, styles, cell and text formatting are maintained in the downloaded Excel file and presented in its first and default sheet.  
