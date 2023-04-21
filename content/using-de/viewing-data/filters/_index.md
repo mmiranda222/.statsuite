@@ -12,7 +12,7 @@ keywords: [
   'Data availability', '#data-availability',
   'Local search', '#local-search',
   'Keyboard selection options', '#keyboard-selection-options',
-  'Frequency & time period filter', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/',
+  'Frequency & time period filter', '#frequency-&-time-period-filter',
   'Used filters panel', '#used-filters-panel',
 ]
 ---
@@ -23,10 +23,10 @@ keywords: [
   - [Hierarchical content](#hierarchical-content)
   - [Display of code descriptions](#display-of-code-descriptions)
   - [Advanced selection popup](#advanced-selection-popup)
-  - [Data availability](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)
+  - [Data availability](#data-availability)
   - [Local search](#local-search)
   - [Keyboard selection options](#keyboard-selection-options)
-- [Frequency & time period filter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/)
+- [Frequency & time period filter](#frequency-&-time-period-filter)
 - [Applied filters panel](#applied-filters-panel)
 
 **General note**: All content related to the filter area is localised. For more information, go to the [general documentation about Languages](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#language).
@@ -68,7 +68,7 @@ All filters are standardised multi-selection filters, except the ['Frequency & T
 
 ![de filter checkbox](/dotstatsuite-documentation/images/de-filters-checkbox.png)
 
-Since [April 20, 2023 Release .Stat Suite JS X.X.X](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), the *bulk selection* option has been replaced by the **advanced selection popup** feature. 
+Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), the *bulk selection* option has been replaced by the **advanced selection popup** feature. 
 
 When a filter contains 8 items or more, then:
 - a vertical scrollbar is added to the filter
@@ -80,7 +80,7 @@ Any filter selection change will automatically trigger the update of the data vi
 #### Hierarchical content
 In case of a hierarchy in the items, they are shown as 'a tree', which means that the filter will display all the items with indentations according to the item level in the tree. A blue arrow next to an item indicates that this item is a parent of child item(s). Clicking this blue arrow switches its up/down direction and the related child items will respectively be hidden or become visible. By default, the tree is fully expanded so that all the items of all tree levels are visible (through scrolling if needed).
 
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchical-arrow-behaviour)
+![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchical-arrow-behaviour.png)
 
 If for a parent (at any level) there are no data available (according to the Actual ContentConstraint related to the Dataflow), then the parent item is not selectable (and marked in light grey). Still, the user can navigate to the children. 
 
