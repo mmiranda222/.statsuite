@@ -6,19 +6,18 @@ weight: 72
 keywords: [
   'Intro', '#intro',
   'Warning', '#warning',
-  'Search: Data sources to be indexed', '#search-data-sources-to-be-indexed',
   'Search: Homepage facets', '#search-homepage-facets',
   'Search: Homepage facets alignment', '#search-homepage-facets-alignment',
   'Search: Auto-expanded homepage facet', '#search-auto-expanded-homepage-facet',
   'Search: Selectable second-level homepage facet values', '#search-selectable-second-level-homepage-facet-values',
-  'Search: Hide facet values IDs in home and result pages', '#search-hide-facet-values-ids-in-home-and-result-pages',
-  'Search: Limit for indexing dimensions per dataflow', '#search-limit-for-indexing-dimensions-per-dataflow',
+  'Search: Hide facet values IDs in home and result pages', '#search-hide-facet-values-ids-in-home-and-result-pages',  
+  'Search: Hide overcounting facets', '#search-hide-overcounting-facets',
   'Search: Result page pinned facets', '#search-result-page-pinned-facets',
   'Search: Result page excluded facets', '#search-result-page-excluded-facets',
-  'Search: Exclude specific CategorySchemes from the search index', '#search-exclude-categoryschemes',
   'Search: Result page: number of results per page', '#search-result-page-number-of-results-per-page',
   'Visualisation: default landing tab', '#visualisation-default-landing-tab',
   'Default time period boundaries and default time period selection', '#default-time-period-boundaries-and-default-time-period-selection',
+  'Time period sort order override', '#time-period-sort-order-override',
   'Support of Last-N-Observations feature', '#support-of-last-n-observations-feature',
   'Support of Partial-References feature', '#support-of-partial-references-feature',
   'Maximum number of observations in tables and charts (deprecated)', '#maximum-number-of-observations-in-tables-and-charts-deprecated',
@@ -35,7 +34,10 @@ keywords: [
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
   'Display of HTML content', '#display-of-html-content',
   'Support of long URLs', '#support-of-long-urls',
-  '"Contact us" form: reCAPTCHA and email settings', '#contact-us-form-recaptcha-and-email-settings'
+  '"Contact us" form: reCAPTCHA and email settings', '#contact-us-form-recaptcha-and-email-settings',
+  'Policies for external search engine crawlers', '#policies-for-external-search-engine-crawlers',
+  'robots tags', '#robots-tags',
+  'robots.txt file', '#robots-txt-file'
 ]
 ---
 <!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
@@ -45,19 +47,18 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 #### Table of Content
 - [Intro](#intro)
 - [Warning](#warning)
-- [Search: Data sources to be indexed](#search-data-sources-to-be-indexed)
 - [Search: Homepage facets](#search-homepage-facets)
 - [Search: Homepage facets alignment](#search-homepage-facets-alignment)
 - [Search: Auto-expanded homepage facet](#search-auto-expanded-homepage-facet)
 - [Search: Selectable second-level homepage facet values](#search-selectable-second-level-homepage-facet-values)
 - [Search: Hide facet values IDs in home and result pages](#search-hide-facet-values-ids-in-home-and-result-pages)
-- [Search: Limit for indexing dimensions per dataflow](#search-limit-for-indexing-dimensions-per-dataflow)
+- [Search: Hide overcounting facets](#search-hide-overcounting-facets)
 - [Search: Result page pinned facets](#search-result-page-pinned-facets)
 - [Search: Result page excluded facets](#search-result-page-excluded-facets)
-- [Search: Exclude specific CategorySchemes from the search index](#search-exclude-categoryschemes)
 - [Search: Number of results per result page](#search-number-of-results-per-result-page)
 - [Visualisation: default landing tab](#visualisation-default-landing-tab)
 - [Default time period boundaries and default time period selection](#default-time-period-boundaries-and-default-time-period-selection)
+- [Time period sort order override](#time-period-sort-order-override)
 - [Support of Last-N-Observations feature](#support-of-last-n-observations-feature)
 - [Support of Partial-References feature](#support-of-partial-references-feature)
 - [Maximum number of observations in tables and charts (deprecated)](#maximum-number-of-observations-in-tables-and-charts-deprecated)
@@ -75,6 +76,9 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Display of HTML content](#display-of-html-content)
 - [Support of long URLs](#support-of-long-urls)
 - ["Contact us" form: reCAPTCHA and email settings](#contact-us-form-recaptcha-and-email-settings)
+- [Policies for external search engine crawlers](#policies-for-external-search-engine-crawlers)
+  - [robots tags](#robots-tags)
+  - [robots.txt file](#robots-txt-file)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -91,29 +95,6 @@ Some of the desired configurations or settings (e.g. how to add a new sdmx publi
 ### Warning
 When editing the configuration .json file(s) of the .Stat Suite applications, the **default encoding** on your server/system could potentially be **different than UTF-8**, e.g. **UTF-8-BOM**.  
 `BOM` being an issue to handle in web client rendering, whenever editing your config. files, make sure that this is always managed in the right **UTF-8 encoding format**, in order to avoid introducing extra invisible BOM characters to your file.
-
----
-
-### Search: Data sources to be indexed
-Define, for an internal or external data space, the content to be indexed and retrievable by the search engine. A data source is determined by one or more CategorySchemes of an internal or external data space.   
-When for a data space the parameter `"indexed"` is set to `true`, and at east one CategoryScheme triptych (version, id, agency) is provided in the `"queries"` parameter, then all dataflows categorised in the provided CategoryScheme(s) will be indexed. More functional specifcations to be found [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/).
-
-* in `dotstatsuite-config-data/<env>/configs/tenants.json`
-
-```json
-"datasources": {
-      "ds:staging:SIS-CC-stable": {
-        "dataSpaceId": "staging:SIS-CC-stable",
-        "indexed": true,
-        "dataqueries": [
-          {
-            "version": "1.0",
-            "categorySchemeId": "OECDCS1",
-            "agencyId": "OECD"
-          }
-        ]
-      },
-```
 
 ---
 
@@ -232,17 +213,22 @@ Always hide IDs of the facet values for a well-defined list of facets on the hom
 
 ---
 
-### Search: Limit for indexing dimensions per dataflow
-> Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
+### Search: Hide overcounting facets
+> Released in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
 
-A parameter of the `SFS` configuration at server level (docker-compose, kubernetes strategy) named `DIMENSION_VALUES_LIMIT` excludes those dimensions of a dataflow from the indexing that have more values than this limit.  
-It is set by default to `1000`.  
-It protects the search engine from too big codelists and prevents performance impacts.  
-Dimensions are checked for this limit **after** the `Actual Content Constraint` has been applied.  
-Because dimensions exceeding this limit are not indexed, the user will not find the underlying dataflow through the freetext search or facet navigation on these dimension values. However, the dimension remains available in the filters of the visualisation page.  
-Because this limit is applied per dataflow per dimension:  
-- there might be other dataflows using the same concept name and respecting this limit, and therefore the search facets could still display the same values;  
-- the number of search facet values displayed might still be greater than this limit (because they would be composed of the **union** of all indexed dimension values for all dataflows).
+Define a limited number of facets in the search result pages, after which all other facets are hidden under an expandable accordion dropdown menu called **"More filters"**.  
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+    "search": {
+        "defaultFacetsNumber": 6
+    }
+```
+
+![de facets - more filters collapsed](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters.png) ![de facets - more filters expanded](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters-expanded.png)
+
+For more information see: [Facets on the search result page](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facets-on-the-search-result-page).
 
 ---
 
@@ -291,27 +277,6 @@ Facets are **localised**, thus you must add the translated name of the excluded 
         "excludedFacetIds": ["survey","sondage"]
     }
 ```   
-
----
-
-### Search: Exclude categoryschemes
-> Available since [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020).  
-
-Exclude some specific CategorySchemes from the search index (**by ID**). Browsing and free-text search will not return related dataflows when related Categories are used as search/browsing criteria.  
-**Note:** Dataflows categorised in Categories of the CategoryScheme(s) defined for indexing of the data source will be indexed, see documentation: [What is indexed?](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed). If those dataflows are also categorised in other CategorySchemes not useful for the Data Explorer than those CategorySchemes can be completely excluded from the search index and thus be hidden in the Data Explorer through this environment variable.  
-
-Technical usage:
-* defined through an environment variable at sfs server instance level: `EXCLUDED_CATEGORYSCHEME_FACETS`
-* expected value is an array of ids: `['OECDCS1', 'TOPICS']`
-
-*Note:* This configuration is tenant-independent and thus applied to all tenants of an instance.
-
-Sample:
-- dataflow 1 is categorised in CS1 and CS2 and dataflow 2 is categorised in CS2
-- only CS1 is defined in the data source (in tenants.json)
-- dataflow 1 is indexed but dataflow 2 is not
-- dataflow 1 can be found through CS1 and CS2 (CS2 is a facet)
-- if `EXCLUDED_CATEGORYSCHEME_FACETS` is `['CS2']` then no result will be return upon CS2 search (and facet CS2 won't exist)
 
 ---
 
@@ -397,6 +362,24 @@ Any value of the time period boundaries and the default time period selection ca
         "default": [2016, ""]
     }
 ```
+
+---
+
+### Time period sort order override
+>Introduced in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)
+
+Allow to **override the default Time Period dimension sort order** from the initial ascending order to **descending order**.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+    "period": {
+        "defaultSort": "desc"
+    }
+```
+
+If `"defaultSort"` is set to `"desc"`, then all data table and chart views with a Time Period dimension will display all time period values in the descending sort order (from newest to oldest).  
+If `"defaultSort"` is empty or not in the configuration file, then the default rule of ascending order applies.
 
 ---
 
@@ -886,3 +869,37 @@ To be able to receive the emails generated through the "Contact us" form, the SM
 - For SMTP please see the similar [SMTP settings of the share service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#smtp)
 
 For more information see the [data-explorer readme](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer#how-to-use-the-contact-form).
+
+---
+
+### Policies for external search engine crawlers
+There are two methods for configuring crawling policies for external search engines. These apply mainly to the Data Explorer and the Data Viewer, because the Data Lifecycle Manager has no public access as it requires authentication.
+
+#### robots tags
+For each application, both HTML header `<meta name="robots" />` and HTTP header `x-robots-tag` contents can be configured through an **environment variable `ROBOTS_POLICY`**. For both Data Explorer and Data Viewer, the default value is set to `all`. (Note that the value for Data Lifecycle Manager is `none`.)
+
+Main functions for the search engine crawlers:
+- `<meta name =”robots” content=”follow”>` : a command for the search engine crawler to follow the links in that webpage
+- `<meta name =”robots” content=”index”>` : a command for the search engine crawler to index that webpage
+- `<meta name =”robots” content=”nofollow”>` : a command for the search engine crawler NOT to follow the links in that webpage
+- `<meta name =”robots” content=”noindex”>` : a command for the search engine crawler NOT to index that webpage
+- `<meta name =”robots” content=”none”>` : corresponds to the combination of ”noindex,nofollow”
+- `<meta name =”robots” content=”all”>` : corresponds to the combination of ”index,follow”
+
+#### robots.txt file
+For each application, a default `robots.txt` is served with the default content:
+
+```txt
+User-agent: *
+Disallow: /
+```
+
+In order to configure your own robots.txt, you can, following your deployment strategy:
+- For a source code installation, edit the file `src/server/robots.txt` before build
+- For a docker installation, mount a volume:
+
+```
+docker run --mount type=bind,source=path/custom_robots.txt,target=/server/robots.txt -d data-explorer
+```
+
+- redirect the route url `domain/robots.txt` to your own file
