@@ -534,6 +534,7 @@ Define the hyperlink for the "Contact us" feature.<br>
 
 ### Contact us and Share email: Header logo of the organisation   
 > [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
+
 Define the logo of the organisation in the header banner of the mail sent from the `Share` or the `Contact us` features. The source can be a binary image or a link.   
    
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
