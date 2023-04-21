@@ -148,6 +148,13 @@ The main advantage of the Annotation is its flexibility as all properties can be
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">&nbsp;&lt;component id&gt;:&lt;HCL agency&gt;:&lt;HCL id&gt;(&lt;HCL version&gt;).&lt;hierarchy id&gt;,&lt;component id&gt;:&lt;HCL agency&gt;:&lt;HCL id&gt;(&lt;HCL version&gt;).&lt;hierarchy id&gt;,...</td>
 </tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 201px;">LAYOUT_TIME_PERIOD_DESC</td>
+<td style="height: 23px; width: 1471.44px;">Indication that the display of the TIME_PERIOD dimension for a dataflow, or all dataflows of the same DSD, is displayed the descending sort order.<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/reversed-time-period/">full specs</a></td>
+<td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
+<td style="height: 23px; width: 10px;">&nbsp;<em></em></td>
+<td style="height: 23px; width: 106px;">example: <br> <common:AnnotationType>LAYOUT_TIME_PERIOD_DESC</common:AnnotationType></td>
+</tr>
 </tbody>
 </table>
 
