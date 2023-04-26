@@ -26,7 +26,7 @@ keywords: [
 ---
 
 ### Introduction
-This cheat sheet is a quick reference description of the syntax and parameters for the .Stat RESTful API. It is adapted from the cheat sheet for the full [SDMX RESTful API](https://github.com/sdmx-twg/sdmx-rest/blob/master/doc/rest_cheat_sheet.pdf) with examples added for the .Stat context and the unsupported elements removed.  
+This cheat sheet is a quick reference description of the syntax and parameters for the .Stat RESTful API. It is adapted from the cheat sheet for the full [SDMX RESTful API 1.5](https://github.com/sdmx-twg/sdmx-rest/blob/v1.5.0/v2_1/ws/rest/docs/rest_cheat_sheet.pdf) with examples added for the .Stat context and the unsupported elements removed.  
 You can also download this document as a [.docx](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/9256239f1128a36174c7214c2aa316a22ffdf9e1/content/dotStat_REST_Cheat_Sheet.docx) file.
 
 **Legend:**  
@@ -39,9 +39,9 @@ You can also download this document as a [.docx](https://gitlab.com/sis-cc/dotst
 ![API Restful](/dotstatsuite-documentation/images/api-resftul2.png)
 
 Each .Stat space has a different web service entry point which should- replace **`http[s]://.Stat space WS/resource`** in the above syntax.  
-More options are available in the [full SDMX REST API standard](https://github.com/sdmx-twg/sdmx-rest/blob/master/v2_1/ws/rest/docs/rest_cheat_sheet.pdf?raw=true) but are not present or have not been fully tested in the .Stat web service, and do not appear here.  
+More options are available in the [full SDMX REST API 1.5 standard](https://github.com/sdmx-twg/sdmx-rest/tree/v1.5.0/v2_1/ws/rest/docs) but are not present or have not been fully tested in the .Stat web service, and do not appear here.  
 
-![API Restful](/dotstatsuite-documentation/images/api-resftul3.png)
+![API Restful 1.5](/dotstatsuite-documentation/images/api-resftul3.png)
 
 ---
 
