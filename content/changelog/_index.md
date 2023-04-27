@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 20, 2023](#april-20-2023)
 - [February 9, 2023](#february-9-2023)
 - [January 17, 2023](#january-17-2023)
 - [January 11, 2023](#january-11-2023)
@@ -116,6 +117,61 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### April 20, 2023
+**[Release .Stat Suite JS "unicorn"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/66#tab-issues)**
+> This **major** release includes a new version of all the javascript services, except for keycloak.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.15.1**.
+
+major change:
+
+- As part of the newly introduced features related to synonyms (and stopwords), **a script must be run from the sdmx-faceted-search 'sfs'** before starting the service. As of now, **each change to Solr schema requires a restart of sfs as well as a full re-index** in order to avoid side-effects. **Note** that stopwords are currently disabled because the related behaviour is not yet fully satisfactory.  
+For more details, check the [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/66#mandatory-operational-changelog).
+
+significant and minor changes:
+
+- [dotstatsuite-sdmx-faceted-search#57](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/57) **Search relevance** rules. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/search-config/#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties))
+- [dotstatsuite-sdmx-faceted-search#113](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/113) Search improvement with non English letters with the use of **stemming**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/search-config/solr-optimisation/#stemming))
+- [dotstatsuite-sdmx-faceted-search#90](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/90) Replace the free-text partial term matching by **stemming**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/search-config/solr-optimisation/#stemming))
+- [dotstatsuite-sdmx-faceted-search#105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/105) Setup of **Solr synonyms**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/search-config/#manage-synonyms))
+- [dotstatsuite-data-explorer#637](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/637) Complement search result details and improvements.
+- [dotstatsuite-data-explorer#918](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/918) Make datasourceID ("Source") a normal configurable search facet. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/))
+- [dotstatsuite-data-explorer#919](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/919) **Hide lower search result facets** when there are too many. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-hide-overcounting-facets))
+- [dotstatsuite-data-explorer#907](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/907) Change the **display of the "Applied filters"** in the visualisation page. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#applied-filters-panel))
+- [dotstatsuite-data-explorer#581](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/581) **Improve hierarchical filters**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#multi-selection-filters))
+- [dotstatsuite-data-explorer#535](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/535) Allow (de-)selecting a full tree sub-branch in filters introduced by a **new advanced selection dialog box**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#advanced-selection-popup))
+- [dotstatsuite-data-explorer#910](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/910) Automatically expand facets, filters and advanced filters when making a spotlight search.
+- [dotstatsuite-data-explorer#847](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/847) Re-arrange the list of categories in the Overview page.
+- [dotstatsuite-data-explorer#935](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/935) Enhance the display of the (i) icon in the table row sections. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel/))
+- [dotstatsuite-data-explorer#609](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/609) Allow setting a **default time period dimension sort order**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/reversed-time-period/))
+- [dotstatsuite-data-explorer#869](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/869) Enhance the naming convention rules for downloaded data table Excel files. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#download))
+- [dotstatsuite-data-explorer#920](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/920) Enhance the display of the user "Feedback Form" content in the feedback mail.
+- [dotstatsuite-data-explorer#915](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/915) Make organisation logos in the "Share" and "Feedback Form" emails configurable. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#contact-us-and-share-email-header-logo-of-the-organisation))
+- [dotstatsuite-data-explorer#757](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/757) Layout improvements of the microdata table viewer.
+- [dotstatsuite-data-explorer#531](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/531) Replace "Customise" by "Layout" for the action menu of the table. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/#))
+- [dotstatsuite-data-explorer#914](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/914) Text overlapping in the chart "Customise" feature *(responsiveness improvement)*.
+- [dotstatsuite-data-explorer#846](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/846) Request HTTP compression also in DE SDMX requests that don't do it yet (through using the `"X-Range"` header).  ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model/#specific-accept-header-per-data-space))
+- [dotstatsuite-data-lifecycle-manager#346](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/346) Change order of menu icons in the DLM header.
+- [dotstatsuite-data-lifecycle-manager#333](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/333) Remove the "Activate dataflow" option from the multi-selection action menu.
+- [dotstatsuite-data-lifecycle-manager#330](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/330) Better user message when there is no referential metadata to transfer from an external dataspace.
+- [dotstatsuite-data-lifecycle-manager#283](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/283) **Replace notification tooltip by fixed popup** in DLM (in order to allow for large contents display). ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#notifications))
+- [dotstatsuite-data-lifecycle-manager#262](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/262) Feature to **select/deselect all artefacts** in the DLM "Delete related artefacts" popup window. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-structures/delete-data-structures/#delete-an-artefact-and-its-related-structure-artefacts))
+- [dotstatsuite-visions#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/35) *(Refactoring)* Fix `nwb` build with MUI.
+- [dotstatsuite-sdmx-faceted-search#135](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/135) *(DevOps)* Update solr version API calls.
+- [dotstatsuite-data-explorer#949](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/949) *(DevOps)* Backport check from JS 'tachyon' patches.
+- [dotstatsuite-quality-assurance#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/39) *(DevOps)* Review unit test step for JS.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#969](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/969) Icons in table views are in some cases unclickable on mouse hover.
+- [dotstatsuite-data-explorer#960](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/960) Issue of filter display when there is no Time Period.
+- [dotstatsuite-data-explorer#951](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/951) Microdata preview is not respecting filtered dimension items.
+- [dotstatsuite-data-explorer#916](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/916) Select "Entire hierarchy level n" on a visualisation filter is not available when the root level has no data.
+- [dotstatsuite-data-lifecycle-manager#350](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/350) White empty screen when unselecting start/end time in the DLM-logbook.
+- [dotstatsuite-data-lifecycle-manager#349](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/349) Wrong transfer validation type is performed in the DLM despite user's choice.
+- [dotstatsuite-sdmx-faceted-search#139](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/139) Indexation (almost always) failing.
 
 ---
 
