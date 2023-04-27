@@ -416,7 +416,7 @@ For the reference area dimension, we should search for one of the following IDs:
 Note, that a dimension can have none or multiple ConceptRoles defined.  
 For more info, see: https://sdmx.org/wp-content/uploads/SDMX_2-1-1-SECTION_6_TechnicalNotes-march-2013.pdf (Chapter 7 Concept Roles)  
 For cross-domain Concepts (and their Roles) defined at SDMX level, see: https://sdmx.org/wp-content/uploads/01_sdmx_cog_annex_1_cdc_2009.pdf  
-The id of the cross-domain Frequency concept is “**REF_AREA**”.
+The id of the cross-domain 'Reference area' concept is “**REF_AREA**”.
  
 2. If no such dimension exists, check if there is a dimension that can be recognized by its underlying concept "REF_AREA" or “LOCATION”:  
 ```xml
