@@ -12,10 +12,11 @@ keywords: [
   'Theme settings: palette', '#theme-settings-palette',
   'Theme settings: first loader', '#theme-settings-first-loader',
   'Theme settings: custom fonts', '#theme-settings-custom-fonts',
-  'Site logo', '#site-logo',
+  'Favicon', '#favicon',
   'Homepage background image', '#homepage-background-image',
+  'Page header, footer and splash', '#page-header-footer-and-splash',
   'Localised common site logos', '#localised-common-site-logos',
-  'Add hyperlink on header logo', '#add-hyperlink-on-header-logo',
+  'Add hyperlink on header and footer logos', '#add-hyperlink-on-header-and-footer-logos',
   'Add icons to specific facet values', '#add-icons-to-specific-facet-values',
   'Api documentation hyperlink', '#api-documentation-hyperlink',
   'Contact us hyperlink', '#contact-us-hyperlink',
@@ -39,10 +40,11 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Theme settings: palette](#theme-settings-palette)
 - [Theme settings: first loader](#theme-settings-first-loader)
 - [Theme settings: custom fonts](#theme-settings-custom-fonts)
-- [Site logo](#site-logo)
+- [Favicon](#favicon)
 - [Homepage background image](#homepage-background-image)
-- [Localised common site logos](#localised-common-site-logos)
-- [Add hyperlink on header logo](#add-hyperlink-on-header-logo)
+- [Page header, footer and splash](#page-header-footer-and-splash)
+  - [Localised common site logos](#localised-common-site-logos)
+  - [Add hyperlink on header and footer logos](#add-hyperlink-on-header-and-footer-logos)
 - [Add icons to specific facet values](#add-icons-to-specific-facet-values)
 - [Api documentation hyperlink](#api-documentation-hyperlink)
 - [Contact us hyperlink](#contact-us-hyperlink)
@@ -327,10 +329,8 @@ We recommend using a dynamic provider like 'Google WebFonts' for the following r
 
 ---
 
-### Site logo
-> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name of the application (*`"title": "OECD Data Explorer"`*) is moved to its natural behavior in the [localisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
-
-Define your website name and logo.<br>
+### Favicon
+Define your website's favicon (short for favorite icon), also known as a shortcut icon, website icon, tab icon, URL icon, or bookmark icon.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
@@ -340,7 +340,7 @@ Define your website name and logo.<br>
     }
 ```
 
-![Site title and logo](/dotstatsuite-documentation/images/faq-site-title-logo.png)
+![Favicon](/dotstatsuite-documentation/images/faq-site-title-logo.png)
 
 ---
 
@@ -381,7 +381,44 @@ ID_AUTH_PAGE = 'id_auth_page';
 
 ---
 
-### Localised common site logos
+### Page header, footer and splash
+
+Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the DE header contains a **localised text field** `de.header.message` that supports rich text elements (line break, italic text, bold text, hyperlinks opening in a new web browser tab) as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#rich-text-translations). By default, this localised field is empty, but it can be overwriten per DE tenant (see [how to](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)).
+
+Example configuration of a customised DE header with additional hyperlinks:
+
+config file: `configs/<tenant>/<app>/i18n/<locale>.json`
+```json
+  "de.header.message": "<a>Privacy policy|https://www.myorg.org/privacy/</a> | <a>Terms and conditions|https://www.myorg.org/termsandconditions/</a> | <a>Contact us|https://myorg.org/contact/</<a>"
+```
+
+![DE Header](/dotstatsuite-documentation/images/de-header2.png)
+
+Similarly, the **localised text fields** in the DE footer (`de.footer.description` and `de.footer.disclaimer`) can be customised with the above listed rich text elements. 
+
+Example configuration of a customised DE footer with an additional hyperlink:
+
+config file: `configs/<tenant>/<app>/i18n/<locale>.json`
+```json
+  "de.footer.author": ".Stat Suite",
+  "de.footer.description": "{icon} Powered by the {link}",
+  "de.footer.disclaimer": "This is my own instance. | For test purposes only. {br} <a>Contact us|https://myorg.org/contact/</<a>",
+```
+
+Note that:  
+- `{icon}` in `de.footer.description` is a hardcoded placeholder for the image defined in the DE configuration (`"assets":{"footer":...}`), see [here](#localised-common-site-logos).
+- `{link}` in `de.footer.description` is a hardcoded placeholder for a hyperlink with a title defined in `de.footer.author` and a URL defined in the DE configuration (`"app":{"footer":{"link": ...}}`), see [here](#add-hyperlink-on-header-and-footer-logos)
+
+
+
+
+
+
+For a live example, see [here](https://stats.pacificdata.org/?locale=en).
+
+---
+
+#### Localised common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
 Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021), assets are localised, meaning that, if switching the locale of the DE, it will change the logo source depending on the corresponding language. This can be applied to all assets. If a localised asset is defined but a locale does not match any source image, then it will display a broken link. 
 
@@ -418,13 +455,13 @@ Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/d
 
 ---
 
-### Add hyperlink on header logo
+#### Add hyperlink on header and footer logos
 > *Version history:*  
 > Moved the definition of the hypelrink from `assets` to `app` in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)  
 > Hyperlink is made localised with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
 > Intorduced in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020) (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
 
-To add an hyperlink/URL behind the logo of the common site header (top-left part). This feature is useful when the Data Explorer is part of a web portal allowing thus users to browse from one application to another within the same portal. It is also localised, meaning that a different hyperlink/URL can be defined for each supported locale.
+Hyperlinks/URLs can be added to the logos of the common site header and footer. This feature might be useful when the Data Explorer is part of a web portal, within which users browse from one application to another. The URL is also localisable.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
@@ -444,6 +481,16 @@ Localised example:
     "headerLink": {
       "fr": "http://siscc.fr",
       "en": "http://siscc.org"
+    }
+  }
+}
+```
+
+```json
+{
+  "app": {
+    "footer": {
+      "link": "https://siscc.org/"
     }
   }
 }

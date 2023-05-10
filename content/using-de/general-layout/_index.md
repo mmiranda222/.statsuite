@@ -40,19 +40,14 @@ Also, theming the Data Explorer is largely flexible (see the related documentati
 
 ### Header
 The Data Explorer header is common to all pages of the application, and consists of:
-* a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo
+* a predefined, [configurable logo](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#localised-common-site-logos)
+* a **localised text field**, which by default is empty and hidden and which can be [customised](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#page-header-footer-and-splash)
 * a switch to enable [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support)
 * a link to [Login](#login) to the application
 * a link to [Contact us](#contact-us)
 * a [Language](#language) switch option
 
 ![DE Header](/dotstatsuite-documentation/images/de-header.png)
-
-Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the DE header contains a **localised text field** supporting for instance single or multi-hyperlinks. By default, this localised field is empty, but you can provide, by overwritting the tranlsation of a DE instance (see [how to](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)), any simple or rich text element as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#rich-text-translations).
-
-Example of a DE header with multiple hyperlinks opening in new web browser tabs on click:
-
-![DE Header](/dotstatsuite-documentation/images/de-header2.png)
 
 ---
 
@@ -161,13 +156,9 @@ The behavior of switching language will change depending on the page where langu
 ---
 
 ### Footer
-The Data Explorer footer is common to all pages of the application, and consists of:
-* a predefined, [configurable](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#site-title-and-logo) logo;
-* two (left and right) placeholders for predefined, configurable localised text and hyperlink.
+The Data Explorer footer is common to all pages of the application, and consists of two (left and right-aligned) predefined **localised text fields** allowing for a logo, rich text and hyperlinks. They can be customised as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#page-header-footer-and-splash)
 
 ![DE Footer](/dotstatsuite-documentation/images/de-footer.png)
-
-**Note:** Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the localised text fields in the DE footer can support single or multi-hyperlinks with rich text elements as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#rich-text-translations).
 
 ---
 
