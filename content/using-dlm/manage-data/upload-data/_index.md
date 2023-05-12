@@ -9,6 +9,8 @@ keywords: [
  'Supported upload actions', '#supported-upload-actions',
  'Rules of the Merge action', '#rules-of-the-merge-action',
  'Mixed actions', '#mixed-actions',
+ 'Supported data types', '#supported-data-types',
+ 'Textual attribute values length', '#textual-attribute-values-length',
  'Auto-generation of Actual Content Constraints', '#auto-generation-of-actual-content-constraints',
 ]
 ---
@@ -22,6 +24,8 @@ keywords: [
   - [Supported upload actions](#supported-upload-actions)
   - [Rules of the Merge action](#rules-of-the-merge-action)
   - [Mixed actions](#mixed-actions)
+- [Supported data types](#supported-data-types)
+  - [Textual attribute values length](#textual-attribute-values-length)
 - [Auto-generation of Actual Content Constraints](#auto-generation-of-actual-content-constraints)
 
 ---
@@ -87,6 +91,16 @@ STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR
 dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,,,,
 dataflow,OECD:DF_TEST_DELETE(1.0),M,A,A,2021,2345,B,AA,A,DF
 ```
+
+---
+
+### Supported data types
+
+[To be complemented.]
+
+#### Textual attribute values length
+
+See [Textual attribute values length](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm\manage-structures\upload-structure\text-attribute-length)
 
 ---
 
