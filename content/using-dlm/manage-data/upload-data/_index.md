@@ -100,7 +100,7 @@ dataflow,OECD:DF_TEST_DELETE(1.0),M,A,A,2021,2345,B,AA,A,DF
 
 #### Textual attribute values length
 
-See [Textual attribute values length](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm\manage-structures\upload-structure\text-attribute-length)
+See [Textual attribute values length](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-structures/upload-structure/text-attribute-length)
 
 ---
 
