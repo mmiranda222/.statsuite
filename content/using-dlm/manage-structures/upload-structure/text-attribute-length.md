@@ -8,7 +8,7 @@ weight: 245
 
 >Released in [January 28, 2020 Release .Stat Suite .NET v2.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-28-2020)
 
-To allow uploading attribute values with **longer textual attribute values** specify the required maximum length in the SDMX annotation of type **`MAXTEXTATTRIBUTELENGTH`** in the Dataflow Structure Definition (DSD). By default, the maximum length (in characters) for textual attribute values is set to the number defined in the **MaxTextAttributeLength** configuration parameter of the Transfer service, which is **150** in the out-of-the-box installation. The generic MaxTextAttributeLength configuration parameter and the DSD-specific **`MAXTEXTATTRIBUTELENGTH`** annotation accept values up to **4000**.  
+To allow uploading attribute values with **longer textual attribute values** specify the required maximum length in the SDMX annotation of type **`MAXTEXTATTRIBUTELENGTH`** in the Dataflow Structure Definition (DSD). By default, the maximum length (in characters) for textual attribute values is set to the number defined in the **MaxTextAttributeLength** configuration parameter of the Transfer service, which is **150** in the out-of-the-box installation. The generic MaxTextAttributeLength configuration parameter and the DSD-specific **`MAXTEXTATTRIBUTELENGTH`** annotation accept any numbers equal or greater than zero. There is no maximum value for this setting. A value of zero `0` or any value higher than **4000** means that the textual attribute values are practically unlimited (up to 536,870,912 characters).
 
 NOTE: Once a limit has been extended, it cannot be decreased again.
 
