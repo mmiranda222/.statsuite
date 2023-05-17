@@ -46,6 +46,12 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ---
 
+![National Statistics Office of Malta](/dotstatsuite-documentation/images/logo-malta.png)
+
+**Gateway to Malta's official statistics** [Statistical Database](https://statdb.nso.gov.mt/)
+
+---
+
 ![Thai National Statistics Office](/dotstatsuite-documentation/images/tnso-logo-th.png)
 
 **Thai National Statistics Office (TNSO)** [Statistics Sharing Hub](https://stathub.nso.go.th/)
