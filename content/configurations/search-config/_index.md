@@ -99,8 +99,8 @@ The search result score (relevance) can be influenced through changing the weigh
 - Localised name of the dataflow (`name`, default weight factor: 12)
 - Localised names of dimensions (concepts) used in the dataflow (`dimensions`, default weight factor: 8)
 - Localised description of the dataflow (`description`, default weight factor: 4)
-- Agency of the dataflow (`agencyId`, default weight: 0.2)
-- Version of the dataflow (`version`, default weight: 0.1)
+- Agency of the dataflow (`agencyId`, default weight factor: 0.2)
+- Version of the dataflow (`version`, default weight factor: 0.1)
 
 A weight value should be smaller than 1 to decrease the score and higher than 1 to increase the score.
 
