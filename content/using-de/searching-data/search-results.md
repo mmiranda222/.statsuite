@@ -30,7 +30,7 @@ keywords: [
 ---
 
 ### Introduction
-When users perform a free text search or browse by a facet from the .Stat DE homepage, then a page with the results of the search is presented. The search result page displays a list of all the corresponding hits from the search, along with the associated facets depending on the current search context (see documentation on [Facets](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/)). 
+When users perform a free text search or browse by a facet from the .Stat DE homepage, then a page with the results of the search is presented. The search result page displays a list of all the corresponding hits from the search, along with the associated facets depending on the current search context (see documentation on [Facets](/dotstatsuite-documentation/using-de/searching-data/facets/)). 
 
 ---
 
@@ -54,7 +54,7 @@ The following information is displayed for each search result:
    * An `Expand` icon to display extended information (see below).   
    * A `Download` icon to download the entire dataflow content in SDMX-CSV format. *(For details see the sub-section below.)*  
 
-  - When a free text search is performed, then all the search term(s) is/are highlighted in each of the above pieces of information. See documentation on [How free text search hits are displayed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/free-text-search/).  
+  - When a free text search is performed, then all the search term(s) is/are highlighted in each of the above pieces of information. See documentation on [How free text search hits are displayed](/dotstatsuite-documentation/using-de/searching-data/free-text-search/).  
   ![de search result content highlight](/dotstatsuite-documentation/images/de-result-highlight-1.png)
 
 2. Display of additional **extended information** (expanded mode)  
@@ -64,16 +64,16 @@ The following information is displayed for each search result:
    * The `Collapse` icon (instead of the `Expand` icon) in order to return to the default display (see above).   
 
 #### Optional download feature
-When this option is enabled (see the [configuration documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page)), then two options of download are made available in the search result objects:
+When this option is enabled (see the [configuration documentation](/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page)), then two options of download are made available in the search result objects:
 * Download of the complete unfiltered dataflow data in tabular text (**SDMX-CSV** format) using the current language;
-* (since [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)) Download any additional files that are attached to the dataflow through the **SDMX `EXT_RESOURCE` annotation** (see the related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/external-resources/)).
+* (since [March 10, 2021 Release .Stat Suite JS 7.1.0](/dotstatsuite-documentation/changelog/#march-10-2021)) Download any additional files that are attached to the dataflow through the **SDMX `EXT_RESOURCE` annotation** (see the related [specifications](/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/external-resources/)).
 
 ![de search result content highlight](/dotstatsuite-documentation/images/de-search-result-download.png)
 
 ---
 
 ### Result ordering
-> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+> Released with [April 11, 2022 .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)
 
 By default, the search result dataflows are sorted in this order:
  1. Descending relevance (where the free-text was found, dataflow boost)
@@ -87,7 +87,9 @@ In order to easier find specific dataflows, the user can change the sort order b
 ---
 
 ### Result boosting
-> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+> Released with [April 11, 2022 .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)
+
+The default relevance score used to order the search results depends on where the search term was found, which can be customised as documented [here](/dotstatsuite-documentation/configurations/search-config/#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties).
 
 The .Stat faceted search allows using the dataflow annotation of type `SEARCH_WEIGHT` to boost dataflows in the search result order when ordered by "Relevance".  
 
@@ -118,7 +120,7 @@ The "developer tools" of the web browser (accessibly through the F12 key) allow 
 ---
 
 ### Result pagination
-Search results are paginated, and the number of results per page is configurable (see [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-result-page-number-of-results-per-page)).  
+Search results are paginated, and the number of results per page is configurable (see [Documentation](/dotstatsuite-documentation/configurations/de-configuration/#search-result-page-number-of-results-per-page)).  
 By using the feature at the bottom right side of the search results page, the user can move to the next, first or last page by using the corresponding **arrows** `|<` `<` `>` `>|`. The user can also enter a page number in the appropriate box.
 
 ![de search result content](/dotstatsuite-documentation/images/de-result-2.png)
@@ -139,15 +141,15 @@ The configurations of the search results included in the URL are listed and expl
 | hasAccessibility | boolean | a11y mode of the app | ac=false
 | hasDataAvailability | boolean | sdmx data availability mode | hasDataAvailability=false
 
-**Note** that the full set of configurations of the URL is listed in the [Viewing data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/) topic.
+**Note** that the full set of configurations of the URL is listed in the [Viewing data](/dotstatsuite-documentation/using-de/viewing-data/) topic.
 
 ---
 
 ### Navigation towards the DE visualisation page
-When the user clicks on a search result name from the search result page, then she/he is forwarded to the DE [data visualisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/) page that corresponds to the selected result.  
+When the user clicks on a search result name from the search result page, then she/he is forwarded to the DE [data visualisation](/dotstatsuite-documentation/using-de/viewing-data/) page that corresponds to the selected result.  
 The **filter selections are also kept** to the visualisation page that uses it to make the automated filter selections. For example, if the user has selected a reference area in the reference area facet of the search result page, then this selection is maintained in the reference area filter in the data visualisation page.  
 
-*(since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021))* If the **free-text search is used** and a "perfect match" (excluding non-alphanumeric characters) search hit is found within a dimension value, and if such dimension has no facet selection, then instead of DEFAULT selections, automatically  the (perfect match) value(s) is selected in the filter of the data visualisation page for that dimension. 
+*(since [May 19, 2021 Release .Stat Suite JS 8.0.0](/dotstatsuite-documentation/changelog/#may-19-2021))* If the **free-text search is used** and a "perfect match" (excluding non-alphanumeric characters) search hit is found within a dimension value, and if such dimension has no facet selection, then instead of DEFAULT selections, automatically  the (perfect match) value(s) is selected in the filter of the data visualisation page for that dimension. 
 
 Example with searching terms "GDP current prices France":
  
