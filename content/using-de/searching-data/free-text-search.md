@@ -31,10 +31,14 @@ keywords: [
 ### Where search is performed
 The free text search of the Data Explorer looks for a specific language in the following pieces of information:
 * ID and localised name of the dataflow
-* ID and localised name of the categories (and their parent categories) in which the dataflow is categorised
+* IDs and localised names of the dimensions (concepts)
 * Localised description of the dataflow
-* IDs and localised names of the concepts used as dimensions, as well as the dimension IDs
+* ID and localised name of the categories (and their parent categories) in which the dataflow is categorised
 * IDs and localised names of the codes used as dimension values
+* Agency ID of the dataflow
+* Version number of the dataflow
+
+The relevance score depends on where the search term was found, which can be customised as documented [here](/dotstatsuite-documentation/configurations/search-config/#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties).
 
 ---
 
@@ -73,7 +77,7 @@ For each search result (dataflow), search hits found are displayed **highlighted
 ---
 
 ### Free text search reset
-*Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)*, performing a free text search from the search result page **after** a filter selection will reset the entire search request.
+*Since [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021)*, performing a free text search from the search result page **after** a filter selection will reset the entire search request.
 
 Example:
 * From the DE homepage, I browse by topic 'Health'
