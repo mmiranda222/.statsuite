@@ -95,12 +95,12 @@ The score will then affect the ranking of the dataflows (higher the score, highe
 Note that the scores are not probabilities in the strict sense of the mathematical definition (0\<x\>1). They can be any positive real number (0\<x) but are usually in the range between 1 and 10.   
 
 The search result score (relevance) can be influenced through changing the weights for the different indexed dataflow properties:
-- Localised name of the dataflow (`name`, default weight: 2)
-- ID of the dataflow (`dataflowId`, default weight: 1)
-- Localised description of the dataflow (`description`, default weight: 1)
-- Localised names of dimensions (concepts) used in the dataflow (`dimensions`, default weight: 1)
-- Version of the dataflow (`version`, default weight: 1)
-- Agency of the dataflow (`agencyId`, default weight: 1)
+- ID of the dataflow (`dataflowId`, default weight factor: 16)
+- Localised name of the dataflow (`name`, default weight factor: 12)
+- Localised names of dimensions (concepts) used in the dataflow (`dimensions`, default weight factor: 8)
+- Localised description of the dataflow (`description`, default weight factor: 4)
+- Agency of the dataflow (`agencyId`, default weight: 0.2)
+- Version of the dataflow (`version`, default weight: 0.1)
 
 A weight value should be smaller than 1 to decrease the score and higher than 1 to increase the score.
 
