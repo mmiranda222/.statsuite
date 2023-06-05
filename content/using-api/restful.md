@@ -103,9 +103,33 @@ For demonstration purposes, these examples use the SIS-CC demo SDMX web service 
 ---
 
 ### Supported formats
-“Parameter” in the tables below is used with the Accept HTTP header (see the Useful HTTP headers above)**  
+The content in the “Parameter” column in the table below is to be used as value for the HTTP `Accept` header (see the Useful HTTP headers above)
 
 ![API Restful](/dotstatsuite-documentation/images/api-resftul7.png)
+
+Alternatively, the NSI SDMX web service allows using pre-configured options for the non-standard URL parameter `format`, e.g.:
+
+- `format=structure` is equivalent to `application/vnd.sdmx.structure+xml`
+- `format=structurespecificdata` is equivalent to `application/vnd.sdmx.structurespecificdata+xml`
+- `format=genericdata` is equivalent to `application/vnd.sdmx.genericdata+xml`
+- `format=jsondata` is equivalent to `application/vnd.sdmx.data+json`
+- `format="csv` is equivalent to `application/vnd.sdmx.data+csv`
+- `format=csvfile` is equivalent to `application/vnd.sdmx.data+csv;file=true`
+
+This list can be customised per .Stat Suite data space. See [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#format-configuration) about the related configuration information.
+
+For **SDMX-CSV files**, using the [NSI SDMX web service configuration option `useCultureSpecificColumnAndDecimalSeparators`](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/src/NSIWebServiceCore/config/Properties.json#L17), the content can be localised. If this setting is set to `true`, then the information about the **culture-specific separators (column, decimal) already available in the .NET cultureInfo class** are applied in the CSV data message (all versions):
+
+| Language | cultureInfo.TextInfo.ListSeparator | cultureInfo.NumberFormat.NumberDecimalSeparator | 
+| -------- | ---------------------------------- | ----------------------------------------------- |
+| English  | ,                                  | .                                               |
+| French   | ;                                  | ,                                               |
+| German   | ;                                  | ,                                               |
+| Italian  | ;                                  | ,                                               |
+| Spanish  | ;                                  | ,                                               |
+
+These separators are applied as per the `Accept-Language` HTTP header. Otherwise there is a fall back to the NSI defaultCultureInfo setting: If the config option is set to `false` then comma (`,`) is used as column separator and dot (`.`) is used as decimal separator. In case that a configuration leads to a conflict (same character for both), then the NSI reverts to the 2 default characters.
+Note that the SDMX-CSV standard allows using any column separator character, and a standard decimal separator character. The transfer service automatically identifies the characters used in imported files.
 
 ---
 
