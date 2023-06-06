@@ -28,8 +28,8 @@ keywords: [
 ### Introduction
 Currently, the Data Lifecycle Manager does not include yet user-interface features to manage user access rights to the content of the .Stat Suite data spaces. Therefore, user permissions still need to be entered, updated or deleted using the AuthorisationManagement web service. The following pieces of information give more information on the usage and parameters of this API.
 
-Please see here a Demo version of the AuthorisationManagement web service: http://authz-demo.siscc.org/swagger/index.html
-User permissions managed in the user interface of the DLM are using the [Authorisation Management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management) web service. The following pieces of information provide more details on the permission definitions, and the usage of the API. You can also see a Demo version of the Authorisation Management web service: http://authz-demo.siscc.org/swagger/index.html
+Please see here a Demo version of the AuthorisationManagement web service: https://authz-demo.siscc.org/swagger/index.html
+User permissions managed in the user interface of the DLM are using the [Authorisation Management](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management) web service. The following pieces of information provide more details on the permission definitions, and the usage of the API. You can also see a Demo version of the Authorisation Management web service: https://authz-demo.siscc.org/swagger/index.html
 
 Access permissions can be defined individually for the following contexts:
  - per user (e-mail, e.g. user@domain.org), group of users (Project_Team) or any user (*)
