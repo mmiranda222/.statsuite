@@ -125,6 +125,8 @@ ToC
 > This **major** release includes a new version of all the javascript services, except for keycloak.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.15.1**.
 
+**Regression:** The introduction of the new DE configuration for 'configurable email logo email in share' in the `settings.json` file has broken the DE Share feature **only when** the config. parameter "mailHeader" is set to `null`/empty. This will be fixed with https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1009.
+
 major change:
 
 - As part of the newly introduced features related to synonyms (and stopwords), **a script must be run from the sdmx-faceted-search 'sfs'** before starting the service. As of now, **each change to Solr schema requires a restart of sfs as well as a full re-index** in order to avoid side-effects. **Note** that stopwords are currently disabled because the related behaviour is not yet fully satisfactory.  
