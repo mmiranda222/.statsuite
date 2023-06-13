@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 12, 2023](#june-12-2023)
 - [April 20, 2023](#april-20-2023)
 - [February 9, 2023](#february-9-2023)
 - [January 17, 2023](#january-17-2023)
@@ -117,6 +118,17 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### June 12, 2023
+**[Patch release .Stat Suite .NET "cinnamon"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/63#tab-issues)**
+> This release includes a **patch** version of the **core-transfer** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.13.0**.
+
+patch change:
+
+- [dotstatsuite-core-common#126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-common/-/issues/126) Log records from one transaction are found in two different dataspaces.
 
 ---
 
