@@ -315,6 +315,9 @@ This service is a .Stat-specific proxy to an SolR engine to index SDMX dataflows
 - [tagged search](https://de-demo.siscc.org/?locale=en&term=name%3Aenterprises): `name:enterprises`
 - [multiple tagged search with phrase](https://de-demo.siscc.org/?locale=en&term=name%3Aenterprises%20description%3A%22tourism%22): `name:enterprises description:"tourism"`
 - [negate search](https://de-demo.siscc.org/?locale=en&term=-seasonally): `-seasonally` 25/33 results ([witness](https://de-demo.siscc.org/?locale=en&term=seasonally): `seasonally` 8/33 results)
+- synonyms
+- stemming
+- ASCII-folding
 
 ##### architecture
 {{< mermaid align="left" >}}
@@ -340,14 +343,7 @@ graph LR
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-sdmx-faceted-search
-- a static schema is defined in the config
-- a dynamic schema is derived from dataflows
-
-##### limitations
-- reconciliate sdmx and search data (e.g. dataset order, facet value order) -> cache server
-- datasources & config
-- performance (benchmark to do)
-- how to index (e.g. individual dataset = SDMX dataflow)
+- schema auto-generation using dynamic fields
 
 #### Proxy Service
 ##### short description
@@ -507,7 +503,7 @@ end
 #### Data Data Lifecycle Manager app
 
 ##### short description
-This web app is the main GUI for statistical data teams to efficiently produce and disseminate high-quality statistical data and metadata.
+This web app is the main GUI for statistical data teams to efficiently produce and prepare high-quality statistical data and metadata for dissemination.
 
 ##### demo (light)
 1. go to https://dlm-qa.siscc.org/
@@ -560,7 +556,7 @@ id6 --> id8
 #### Transfer service
 
 ##### short description
-This web service is used for statistical data (and later referential metadata) for their upload, download and transfer between different .Stat Core Data Stores.
+This web service allows uploading statistical data and their referential metadata to a .Stat Core data space as well as transfering them between different .Stat Core data spaces.
 
 ##### demo (light)
 1. go to https://transfer-qa.siscc.org/swagger (tenant: oecd, env: qa)
@@ -572,9 +568,10 @@ This web service is used for statistical data (and later referential metadata) f
 
 #### SDMX service
 (also named SDMX-RI NSI web service (c) Eurostat)
+
 ##### short description
-This web service is used for statistical data structures for their upload and download to and from a .Stat Core Data Store.
-It is based on the SDMX compliant REST web service developed by Eurostat and (through a plugin - see below) enriched with an access to a .Stat Core data storage. The web service allows for retrieval of data structures and data and for submission of data structures. 
+This web service allows uploading data structures to a .Stat Core data space as well as retrieving data structures, data and their referential metadata from a .Stat Core data space.  
+This RESTful web service is developed by Eurostat and is fully SDMX compliant.
 
 ##### demo (light)
 1. go to http://nsi-stable-qa.siscc.org/ (tenant: oecd, env: qa)
@@ -588,7 +585,7 @@ It is based on the SDMX compliant REST web service developed by Eurostat and (th
 #### Authorisation service
 
 ##### short description
-This web service is used for managing user access rights to data structures and data in .Stat Core Data Stores.
+This web service allows managing user access rights for data structures and data/referential metadata in .Stat Core data spaces.
 
 ##### demo (light)
 1. go to http://authz-qa.siscc.org/swagger (tenant: oecd, env: qa)
@@ -602,7 +599,7 @@ This web service is used for managing user access rights to data structures and 
 ##### (Dependency) Data Access library to access the .Stat Core Data Store
 
 ##### short description
-This library is used by the Transfer service to retrieve or upload statistical data structures from and to a .Stat Core Data Store.
+This library is used by the Transfer service to upload and transfer statistical data structures to and between .Stat Core data spaces.
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access
