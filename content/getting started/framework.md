@@ -627,4 +627,4 @@ See: [.Stat DevOps implementation](https://sis-cc.gitlab.io/dotstatsuite-documen
 ---
 
 ### Contributing to an open source repository
-https://www.selketjah.com/oss/2018/02/06/flow-of-open-source/
+https://www.gienverschatse.com/oss/2018/02/06/flow-of-open-source/
