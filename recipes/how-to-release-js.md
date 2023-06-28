@@ -69,8 +69,8 @@
 1. [OECD-DEV] merge the hotfix (keep the hotfix branch to backpport in develop later), merge potential config MR required for testing
 1. [OECD-PM] test in staging (often*, staging can be ahead of what is deployed in production if the hotfix is done while creating a new release that is not yet deployed)
 1. [RP] update in pre-prod the kubernetes strategy (a hotfix will rarely concern several strategies) with the commit hash of the newly created docker image, merge potential config MR required for testing
-    - the release tag is not changed until full pre-prod validation
-    - to ease maintance, release tag is used in kubernetes stratgies of pre-prod and prod
+    - the release tag is not changed until pre-prod validation
+    - to ease maintenance, release tag is used in kubernetes stratgies of pre-prod and prod
     - updating the release tag before testing pre-prod may (in case of GCP/GKE restart) update both pre-prod and prod
 1. [OECD-PM] validates pre-prod
 1. [OECD-DEV] delete release tag and create release tag on master (move):
