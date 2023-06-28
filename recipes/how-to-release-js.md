@@ -66,7 +66,7 @@
     - an incident doesn't have a flow to follow
     - a task follows the flow (staging (often*), pre-prod (always), prod)
 1. [OECD-DEV] create a MR based on master (and targeting master)
-1. [OECD-DEV] merge the hotfix (keep the hotfix branch to backpport in develop later), merge potential config MR required for testing
+1. [OECD-DEV] merge the hotfix and bump the version in package.json (keep the hotfix branch to backport in develop later), merge potential config MR required for testing
 1. [OECD-PM] test in staging (often*, staging can be ahead of what is deployed in production if the hotfix is done while creating a new release that is not yet deployed)
 1. [RP] update in pre-prod the kubernetes strategy (a hotfix will rarely concern several strategies) with the commit hash of the newly created docker image, merge potential config MR required for testing
     - the release tag is not changed until pre-prod validation
