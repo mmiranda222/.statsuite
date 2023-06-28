@@ -60,23 +60,23 @@
 
 #### hotfix
 1. [OECD-PM] create a task in RedPelicans (RP) board (not an incident):
-  - an incident is a technical issue local to an env
-  - an incident should be fixed without code change because it has to be fast (ie, service(s) are interrupted)
-  - worse case scenario for an incident is the rollback
-  - an incident doesn't have a flow to follow
-  - a task follows the flow (staging (often*), pre-prod (always), prod)
+    - an incident is a technical issue local to an env
+    - an incident should be fixed without code change because it has to be fast (ie, service(s) are interrupted)
+    - worse case scenario for an incident is the rollback
+    - an incident doesn't have a flow to follow
+    - a task follows the flow (staging (often*), pre-prod (always), prod)
 1. [OECD-DEV] create a MR based on master (and targeting master)
 1. [OECD-DEV] merge the hotfix (keep the hotfix branch to backpport in develop later), merge potential config MR required for testing
 1. [OECD-PM] test in staging (often*, staging can be ahead of what is deployed in production if the hotfix is done while creating a new release that is not yet deployed)
 1. [RP] update in pre-prod the kubernetes strategy (a hotfix will rarely concern several strategies) with the commit hash of the newly created docker image, merge potential config MR required for testing
-  - the release tag is not changed until full pre-prod validation
-  - to ease maintance, release tag is used in kubernetes stratgies of pre-prod and prod
-  - updating the release tag before testing pre-prod may (in case of GCP/GKE restart) update both pre-prod and prod
+    - the release tag is not changed until full pre-prod validation
+    - to ease maintance, release tag is used in kubernetes stratgies of pre-prod and prod
+    - updating the release tag before testing pre-prod may (in case of GCP/GKE restart) update both pre-prod and prod
 1. [OECD-PM] validates pre-prod
 1. [OECD-DEV] delete release tag and create release tag on master (move):
-  - except if the hotfix is done while creating a new release that is not yet deployed
+    - except if the hotfix is done while creating a new release that is not yet deployed
 1. [RP] update in prod the kubernetes strategy with the release tag (rollout restart), merge potential config MR required
-  - except if the hotfix is done while creating a new release that is not yet deployed, apply the commit hash used in pre-prod
+    - except if the hotfix is done while creating a new release that is not yet deployed, apply the commit hash used in pre-prod
 
 #### hotfix aftermath
 1. [OECD-DEV] update release notes (milestone)
