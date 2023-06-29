@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 28, 2023](#june-28-2023)
 - [June 12, 2023](#june-12-2023)
 - [April 20, 2023](#april-20-2023)
 - [February 9, 2023](#february-9-2023)
@@ -118,6 +119,21 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### June 28, 2023
+**[Patch release .Stat Suite JS "unicorn"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/66#tab-issues)**
+> This release includes a **patch** version of the **data-explorer** service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.13.0**.
+
+patch change:
+
+- [dotstatsuite-data-explorer#1027](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1027) Wrongly use of `x-range` requests when `"hasCustomRangeHeader": false`. This concerns the queries for:
+  - microdata display
+  - available content constraint
+  - long `POST` requests
+  - number of observations in the 'Overview' tab
 
 ---
 
