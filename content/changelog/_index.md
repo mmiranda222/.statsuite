@@ -174,7 +174,7 @@ ToC
 
 major changes:
 
-- [dotstatsuite-core-transfer#552](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/552) Change **switched-off feature for reference metadata to use "~" instead of "-"**.
+- [dotstatsuite-core-transfer#552](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/552) Change **switched-off feature for reference metadata to use "~" instead of "-"**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/#supported-type-of-actions))
 - [dotstatsuite-core-sdmxri-nsi-ws#360](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/360) In SDMX-JSON, '~' resp. '*' for referential metadata to be reported in keys.
 - [dotstatsuite-core-transfer#490](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/490) Align 'Replace' with 'Merge' action for higher-level attributes.
 - [dotstatsuite-core-sdmxri-nsi-ws#348](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/348) Populate the action column of CSV v2 referential metadata responses.
