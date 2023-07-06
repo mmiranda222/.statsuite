@@ -4,10 +4,12 @@ subtitle:
 comments: false
 weight: 4900
 keywords: [
-  'Referential metadata implementation in the .Stat Suite', '#referential-metadata-implementation-in-the-stat-suite',
+  'Introduction', '#introduction',
+  'File format', '#file-format',
+  'More details about the SDMX-CSV format', '#more-details-about-the-sdmx-csv-format',
+  'Hierarchial referential metadata', '#hierarchial-referential-metadata',
   'Referential metadata upload and copy', '#referential-metadata-upload-and-copy',
   'Referential metadata download with the SDMX (restful) web service', '#referential-metadata-download-with-the-sdmx-restful-web-service',
-  'Hierarchial referential metadata', '#hierarchial-referential-metadata',
 ]
 
 ---
@@ -19,16 +21,22 @@ keywords: [
 ---
 
 #### Table of Content
-- [Referential metadata implementation in the .Stat Suite](#referential-metadata-implementation-in-the-stat-suite)
+- [Introduction](#introduction)
+- [File format](#file-format)
+  - [More details about the SDMX-CSV format](#more-details-about-the-sdmx-csv-format)
+  - [Hierarchial referential metadata](#hierarchial-referential-metadata)
 - [Referential metadata upload and copy](#referential-metadata-upload-and-copy)
 - [Referential metadata download with the SDMX (restful) web service](#referential-metadata-download-with-the-sdmx-restful-web-service)
-- [Hierarchial referential metadata](#hierarchial-referential-metadata)
 
 ---
 
-### Referential metadata implementation in the .Stat Suite
-The following features are supported:
+### Introduction
+.Stat Suite Core allows referential metadata to be uploaded, stored and retrieved.  
+The upload is done using the transfer web service. The SDMX-CSV 2.0 file format is supported. See below. 
+The download is done using the SDMX (NSI) web service. Two SDMX file formats are supported. See below.
 
+The following features are supported:
+- very long textual referential metadata (maximum 536,870,912 characters in total for all languages)
 - [hierarchial referential metadata](#hierarchial-referential-metadata) attributes
 - attach referential metadata to (at least) a time period value
 - embargoing referential metadata in the same way as for (and together with) the data
@@ -62,14 +70,70 @@ Referential metadata can be used in the .Stat Suite in the following way:
 
 ---
 
+### File format
+The .Stat Suite supports the following **file formats** for referential metadata:  
+- [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md)
+- [SDMX-JSON version 2.0](https://github.com/sdmx-twg/sdmx-json/tree/v2.0.0/data-message/docs/1-sdmx-json-field-guide.md) (download only)
+
+In .Stat Suite Core, data and referential metadata cannot be up- or downloaded together (at the same time). The main reason is that the attachment of referential metadata values to specific combinations of dimension is defined in the data message itself and must be preserved. Note that in contrary to referential metadata, the attachments for normal attributes are necessarily defined in the Data Structure Definition (DSD).  
+
+#### More details about the SDMX-CSV format
+The format of the .csv file for referential metadata must comply to the [SDMX-CSV version 2.0 format](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md), which can be summarised roughtly as follow (see the original specification for detailed information):
+- the first column: header row containing 'STRUCTURE' and each other row containing 'dataflow'
+- the second column: header row containing 'STRUCTURE_ID' and each other row containing the full dataflow identification 'agencyID:dataflowId(version)' e.g. 'AGENCY:DF_ID(1.0)'
+- the third column (optional): header row containing 'ACTION' and each other row containing either 'I' for Information, 'A' for Append, 'M' for Merge, 'R' for Replace or 'D' for Delete. For more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/#supported-type-of-actions).
+- one column for each dimension of the dataflow: header row containing the dimension IDs and each other row containing the dimension value IDs to which the attribute values of this row are attached. It is left empty in rows where the attribute doesn't attach to that dimension.
+- one column for each submitted referential metadata: header row containing the attribute ID and each other row containing the corresponding attribute values
+
+**Example:**
+
+```
+STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,DIM_3,METADATAATTR_1,METADATAATTR_2
+dataflow,AGENCY:DF_ID(1.0.0),I,A,B,,N,
+dataflow,AGENCY:DF_ID(1.0.0),A,A,B,,Y,
+dataflow,AGENCY:DF_ID(1.0.0),R,,,2014-01,,”Value X”
+dataflow,AGENCY:DF_ID(1.0.0),D,,,2014-02,,-
+```
+In spreadsheet format, this would look like:  
+![md-csv-logical-example](/dotstatsuite-documentation/images/md-csv-logical-example.png)
+
+The message for referential metadata values does not allow omitting dimension columns for referential metadata. All dimension columns must be present even if empty. Columns for referential metadata attributes that are not being transmitted can be omitted.
+
+All textual values containing commas need to be encapsulated within double-quotes. All double-quotes inside these values are to be escaped using doubled double-quotes. In addition, the doubled double-quotes inside localised values using JSON syntax are escaped using a preceeding backslash '\', e.g.:
+
+`"en: ""<a href=\""mailto:contact-en@my-org.org\"">contact-en@my-org.org</a>"",fr: ""<a href=\""mailto:contact-fr@my-org.org\"">contact-fr@my-org.org</a>"""`
+
+As can be seen in this example, the language codes in localised JSON snippets do not need to be put into (doubled) double quotes.
+
+For me details about the referential metadata types supported by the data explorer display, see [this topic](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#referential-metadata-types).
+
+See [here](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/content/OECD_SNA_TABLE1_1.0_-_AUS_metadata.csv) for an example of an SDMX-CSV file with referential metadata.
+
+![dlm upload referential metadata csv file headers](/dotstatsuite-documentation/images/dlm-upload-referential-metadata-csv.png)
+
+#### Hierarchial referential metadata
+The referential metadata attribute hierarchy is defined in the Metadata Structure Definition (MSD) through imbricated attributes.
+
+When referencing hierarchical metadata attributes in any data messages (whether SDMX-CSV or SDMX-JSON), the ID needs to contain all parent metadata attribute IDs separated by a dot '.', similarly to Categories in Categorisations or to sub-Agencies, e.g. `PARENT.CHILD1`.
+
+The .Stat Suite Data Explorer currently has the following limitations for hierarchical referential metadata:
+- Only one child level is supported
+- Only values at child level are supported
+- All parent attributes must have the isPresentational property set to true  
+
+Example:  
+
+![md-hierarchy-definition](/dotstatsuite-documentation/images/md-hierarchy-definition.png)
+
+---
+
 ### Referential metadata upload and copy
-Currently, referential metadata values can be uploaded only with the .Stat Core transfer service using the SDMX-CSV 2.0 format. 
+The .Stat Suite Transfer web service is used to upload or copy referential metadata from one data space to another. See for more details:
+- [Upload referential metadata from an SDMX-CSV 2.0 file](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/) 
 
-Note that attribute and observation values cannot be uploaded together with referential metadata at the same time (with the same file) yet. They need to be uploaded separately. However, no specific parameter is required to indicate the type of content (either attribute and observation values or referential metadata values) to be uploaded, because the Transfer service automatically recognises the type of content. Also, attribute and observation values still need to be uploaded using the Excel, SDMX-CSV 1.0, SDMX-ML 2.0 or SDMX-ML 2.1 formats.
+Note: As the referential metadata values cannot be uploaded together with attribute and observation values at the same time (with the same SDMX-CSV 2.0 file), they need to be uploaded separately. The Transfer service automatically recognises the type of content.
 
-For more information, see [upload referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/). 
-
-The .Stat Core transfer service also supports the transfer (copy) of referential metadata values between dataspaces, by using the API function `/transfer/dataflow`.  
+The .Stat Core Transfer service also supports the transfer (copy) of data between data spaces, by using the API function `/transfer/dataflow`.  
 The **`transferContent`** parameter of the `/transfer/dataflow` function allows:
 - transferring both data and referential metadata (0) *- default option -*,
 - transferring data only (1), or
@@ -85,9 +149,6 @@ The correcponding MIME-types are:
 - Accept=application/vnd.sdmx.data+csv;version=2.0.0
 - Accept=application/vnd.sdmx.data+json;version=2.0
 - Accept=application/vnd.sdmx.data+json;version=2.0.0
-
-The SDMX-CSV 2.0 message format is defined [here](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md).  
-The SDMX-JSON 2.0 message format is defined [here](https://github.com/sdmx-twg/sdmx-json/blob/v2.0.0/data-message/docs/1-sdmx-json-field-guide.md).
 
 The SDMX (restful) web service provides a new API version that starts implementing the new SDMX API features defined for the SDMX 3.0 standard. Therefore, the URLs need to specify the new version, e.g.
 
@@ -151,19 +212,12 @@ This web service implementation also supports the HTTP header option `X-Level=cu
 For instance, filtering for `AUS.*.A` would retrieve the attributes attached at the following level only:  
 - AUS..A
 
----
+The `updatedAfter` URL parameter is to be used with a date-time value (including the time zone) to retrieve only referential metadata that has been changed since that date-time.
 
-### Hierarchial referential metadata
-The referential metadata attribute hierarchy is defined in the Metadata Structure Definition (MSD) through imbricated attributes.
+**Example:**
 
-When referencing hierarchical metadata attributes in any data messages (whether SDMX-CSV or SDMX-JSON), the ID needs to contain all parent metadata attribute IDs separated by a dot '.', similarly to Categories in Categorisations or to sub-Agencies, e.g. `PARENT.CHILD1`.
+`updatedAfter=2023-04-28T15:45:00+01:00`
 
-The .Stat Suite currently has the following limitations for hierarchical referential metadata:
+For details, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data-synchronisation).
 
-- Only one child level is supported
-- Only values at child level are supported
-- All parent attributes must have the isPresentational property set to true  
-
-Example:  
-
-![md-hierarchy-definition](/dotstatsuite-documentation/images/md-hierarchy-definition.png)
+The HTTP `accept-language` header allows retrieving only specific locals.
