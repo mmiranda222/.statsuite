@@ -76,6 +76,8 @@ In case, the user has appropriate data edit permissions, the menu also shows the
 - ["Save to Database": "Selected Data"/"Entire Table"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#save-to-data-source): to save selected data or table to the data space
 - ["Referential metadata": "Edit"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#editing-string-and-html-values) (if the cursor is on a relevant value cell): to ease editing multi-lingual values (including HTML)
 
+ When the window is reduced and the menu narrowed, all ribbon groups have a defined icon with and arrow to invite the user to display the proposed information or actions.  
+![DLM Excel-Addin ribbon](/dotstatsuite-documentation/images/dlm-excel-addin-ribbon-narrowed.png)
 
 ---
 
