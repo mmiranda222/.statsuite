@@ -61,11 +61,11 @@ By default, the menu contains two features:
 Whenever the user is currently authenticated for one or several of the related data spaces, the menu add this feature:
 - ["Log out"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/#authentication) (if authenticated): to log out for a user account
 
-In addition, whenever the Excel cursor is located on a cell within a data or referential metadata table linked to a .Stat data space, the ribbon menu displays the following options:
+In addition, whenever the Excel cursor is located on a cell within a data or referential metadata table linked to a .Stat Suite data space, the ribbon menu displays the following options:
 - ["Get data": "Change Selection"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#change-selection): to change the selection of the current table
 - ["Refresh": "Current Sheet"/"All Sheets"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#refresh): to refresh the table data
 - The source information of the table data:
-  - "Dataset Code": the data identification, for SDMX-based data in the form `Agency:Id(Version)`, 
+  - "Name" or "ID" of the data (can be switched with a dropdown on the icon): the localised name according to the language chosen in step 2 of the wizard, or the data identification (for SDMX-based data in the form `Agency:Id(Version)`),
   - "Source": the data space name,
   - "Last extraction date": Date and time of last data retrieval
   This information automatically updates accordingly whenever the user moves the cursor to a different data or referential metadata table.
@@ -83,11 +83,11 @@ In case, the user has appropriate data edit permissions, the menu also shows the
 
 ### Authentication
 
-When extracting data for a new table, changing a selection, refreshing a table or saving data related to an internal data space, and if the user hasn't authenticated for that data space within the current Excel session yet, then the user will be redirected to user's default web browser in order to login through the configured identity provider.  
+When extracting data for a new table, changing a selection, refreshing a table or saving data related to an internal .Stat Suite data space, and if the user hasn't authenticated for that data space within the current Excel session yet, then the user will be redirected to user's default web browser in order to login through the configured identity provider.  
 
 ![DLM Excel-Addin authentication](/dotstatsuite-documentation/images/dlm-excel-addin-auth1.png)
 
-> Note that this is only required for internal data spaces that are secured through authentication. For more information, see [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/).
+> Note that this is only required for internal .Stat Suite data spaces that are secured through authentication. For more information, see [.Stat authentication configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/).
 
 Once successfully authenticated, the user can return from the web authentication to Excel. The Excel-Addin will automatically proceed executing the currently requested action on the data space. It will also regularly and automatically update the underlying authentication access token in order to always keep it valid. The access token is used for all subsequent data retrievals as well as for all data submissions for the relevant data sources until the underlying Excel workbook is closed.  
 
