@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [July 4, 2023](#july-4-2023)
 - [June 28, 2023](#june-28-2023)
 - [June 12, 2023](#june-12-2023)
 - [April 20, 2023](#april-20-2023)
@@ -119,6 +120,163 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### July 4, 2023
+**[Release .Stat Suite .NET "dragonfruit"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/59#tab-issues)**
+> This **major** release includes a new version of **core-transfer**, **sdmxri-nsi-ws**, **core-data-access**, **auth-management**, and **dlm-excel-addin** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.17.0**.
+
+> **Technical disclaimer:** With this release of dotstatsuite-core-transfer and the introduction of the **updatedAfter into the nsiws for data and referential metadata requests**, and in order for this feature to work as expected, **the mapping sets for all dataflows have to be reinitialized.** To do so, there are 3 options:  
+> - **Option 1:** Initialize all mappingsets - Right after the release upgrade, run the transfer service function `/init/allMappingsets`. **This should be done when no other users are using the transfer service**. The execution might take a long time depending on the number of dataflows.  
+> - **Option 2:** Initialize the mappingset of specific dataflow - The initialization can be done per dataflow using the transfer-service function `/init/dataflow` for a given dataflow. *This option does not require an exclusive usage of the transfer service.*  
+> - **Option 3:** Import data to initialize the mappingset of a specific dataflow - At the end of a data import, the mappingset will be initialized as part of the import process. *This option does not require an exclusive usage of the transfer service.*  
+> 
+> **Warning:** if the `/init/allMappingsets` method for "option 1" fails with a time out error, you can whether run the method a second time (previous successful initializations will be skipped), or increase the `DataImportTimeOutInMinutes` configuration.  
+> **Note** that if none of the above options is applied, then the `/rest/data/...` queries will continue to work, however the 'updatedAfter' feature will not function correctly.
+
+> **Disclaimer on the updatedAfter feature:** Until the ticket [dotstatsuite-core-sdmxri-nsi-ws#347](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/347) is released, when `updatedAfter` parameter has no time zone information then UTC time is assumed. It is the client's responsibility to provide its time zone to guarantee an appropriate response.
+
+**Performance evolutions**: Despite the availability of important new data management features, such as advanced deletions, merges and replacements, mixed actions and intentionally missing values, the performance of data imports as well as of data exports has **significantly increased** in this release compared to all previous .Stat Suite CORE releases:
+
+| .Stat Suite .NET | [v6.0.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/34) | [v6.1.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/37) | [v6.4.0](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/41) | [v8.0.1](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/51) | [v8.1.2](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/53) | [almond](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/55) | [blueberry](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/57) | [dragonfruit](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/59) |
+|---------------------------------|-------------------|-------------------|-----------------------|-----------------------|-----------------------|-----------------------|---------------------|---------------------|
+| Release date                    | Mar-21            | Apr-21            | May-21                | Mar-22                | May-22                | Aug-22                | Nov-22              | Jul-23              |
+| nsiws                           | -                 | -                 | v8.2.0                |  v8.9.2               | v8.9.2                | v8.9.2                | v8.12.2             | v8.17.0             |
+| transfer                        | v6.0.0            | v6.1.0            | -                     | v8.0.1 - v9.0.1       | v8.1.2 - v9.1.2       | -                     | v11.0.7             | v12.0.1             |
+|                                 |                   |                   |                       |                       |                       |                       |                     |                     |
+| Smoke-test data imports         | 85.71%  ✓ 6   ✗ 1 | 85.71%  ✓ 6   ✗ 1 | -                     | 71.42%  ✓ 5   ✗ 2     | 100.00% ✓ 13  ✗ 0     | -                     | 100.00% ✓ 13  ✗ 0   | 100.00% ✓ 13  ✗ 0   |
+| - data_import_time                | 13.13s            | 10.14s            | -                     | 12.68s                |  24.21s               | -                     | 20.73s              | 13.31s ✓             |
+| - datasetSize:extraSmall          | 2.42s             | 6.13s             | -                     | 2.19s                 |  2.37s                | -                     | 1.5s                | 1.14s ✓              |
+| - datasetSize:small               | 23.85s            | 18.17s            | -                     | 28.43s                |  25.48s               | -                     | 27.84s              | 16.63s ✓             |
+| - datasetSize:large               | -                 | -                 | -                     | 38.14s                | -                     | -                     | 29.99s              | 19.76s              |
+| Smoke-test data extractions | -                 | -                 | 99.41% ✓ 342 ✗ 2      | 100.00% ✓ 160 ✗ 0     | 100.00% ✓ 344 ✗ 0     | 100.00% ✓ 344 ✗ 0     | 100.00% ✓ 344 ✗ 0   | 100.00% ✓ 344 ✗ 0   |
+| - http_req_duration               | -                 | -                 | 311.59ms              | 304.54ms              | 269.97ms              | 304.54ms              | 400.56ms            | 221.76ms ✓           |
+| - datasetSize:extraSmall          | -                 | -                 | 222.77ms              | 260.97ms              | 219.58ms              | 260.97ms              | 208.65ms            | 179.3ms ✓            |
+| - datasetSize:small               | -                 | -                 | 238.1ms               | 244.05ms              | 209.68ms              | 244.05ms              | 224.02ms            | 171.31ms ✓           |
+| Load-test data extractions      | -                 | -                 | 93.58% ✓ 9971  ✗ 684  | 96.97% ✓ 11398 ✗ 356  | 92.81% ✓ 9303  ✗ 720  | 96.97% ✓ 11398 ✗ 356  | 99.90% ✓ 10256 ✗ 10 | 100.00% ✓ 15678 ✗ 0 |
+| - http_req_duration               | -                 | -                 | 2.46s                 | 2.12s                 | 2.67s                 | 2.12s                 | 2.58s               | 1.33s ✓              |
+| - datasetSize:extraSmall          | -                 | -                 | 2.21s                 | 2.40s                 | 2.71s                 | 2.4s                  | 2.17s               | 1.2s ✓               |
+| - datasetSize:small               | -                 | -                 | 2.19s                 | 1.93s                 | 2.41s                 | 1.93s                 | 2.12s               | 1.13s ✓              |
+| Stress-test data extractions    | -                 | -                 | 95.67% ✓ 8516  ✗ 385  | 85.74% ✓ 10428 ✗ 1734 | 97.91% ✓ 9464  ✗ 202  | 85.74% ✓ 10428 ✗ 1734 | 100.00% ✓ 10249 ✗ 0 | 100.00% ✓ 15613 ✗ 0 |
+| - http_req_duration               | -                 | -                 | 4.15s                 | 2.78s                 | 3.74s                 | 2.78s                 | 3.47s               | 1.93s ✓              |
+| - datasetSize:extraSmall          | -                 | -                 | 3.51s                 | 2.67s                 | 3.65s                 | 2.67s                 | 2.87s               | 1.77s ✓              |
+| - datasetSize:small               | -                 | -                 | 3.91s                 | 2.47s                 | 3.5s                  | 2.47s                 | 3.02s               | 1.69s ✓              |
+| - datasetSize:small_paginated     | -                 | -                 | 3.47s                 | 1.63s                 | 2.74s                 | 1.63s                 | 3.17s               | 1.76s               |
+| Spike-test data extractions     | -                 | -                 | 72.12% ✓ 2921  ✗ 1129 | 70.74% ✓ 3516  ✗ 1454 | 68.14% ✓ 3480  ✗ 1627 | 70.74% ✓ 3516  ✗ 1454 | 99.01% ✓ 5214  ✗ 52 | 99.21% ✓ 6064  ✗ 48 |
+| - http_req_duration               | -                 | -                 | 6.39s                 | 5.19s                 | 4.79s                 | 5.19s                 | 4.64s               | 3.82s ✓              |
+| - datasetSize:extraSmall          | -                 | -                 | 6.59s                 | 5.41s                 | 5.54s                 | 5.41s                 | 3.82s               | 3.67s ✓              |
+| - datasetSize:small               | -                 | -                 | 6.06s                 | 5.06s                 | 4.52s                 | 5.06s                 | 4.3s                | 3.36s ✓              |
+| - datasetSize:small_paginated     | -                 | -                 | 6.13s                 | 4.27s                 | 3.82s                 | 4.27s                 | 3.69s               | 3.04s ✓              |
+| Soak-test data extractions  | -                 | -                 | -                     | 100.00% ✓ 42590 ✗ 0   | 100.00% ✓ 46873 ✗ 0   | -                     | -                   | -                   |
+| - http_req_duration               | -                 | -                 | -                     | 1.34s                 | 1.13s                 | -                     | -                   | -                   |
+
+major changes:
+
+- [dotstatsuite-core-transfer#552](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/552) Change **switched-off feature for reference metadata to use "~" instead of "-"**.
+- [dotstatsuite-core-sdmxri-nsi-ws#360](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/360) In SDMX-JSON, '~' resp. '*' for referential metadata to be reported in keys.
+- [dotstatsuite-core-transfer#490](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/490) Align 'Replace' with 'Merge' action for higher-level attributes.
+- [dotstatsuite-core-sdmxri-nsi-ws#348](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/348) Populate the action column of CSV v2 referential metadata responses.
+- [dotstatsuite-core-transfer#515](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/515) *(Refactoring)* Change the **default action to Merge for SDMX-CSV version 1.0**. ([Updated documentation](xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx))
+
+documentation links to new/updated features related to this release:
+
+- [data actions (Merge, Replace, Delete) through upload and tranfer](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/)
+- [referential metadata actions (Merge, Replace, Delete) through upload and tranfer](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/)
+- [data and referential metadata synchronisation between data spaces with updatedAfter feature](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data-synchronisation/)
+
+significant and minor changes:
+
+- [dotstatsuite-core-transfer#352](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/352) **Referential metadata 'Delete' and 'Merge' operations**.
+- [dotstatsuite-core-sdmxri-nsi-ws#277](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/277) Extend SDMX-ML v2.0 readers to **support 'Delete' action features**.
+- [dotstatsuite-core-transfer#30](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/30) .Stat Core **transfer of deleted data between dataspaces**.
+- [dotstatsuite-core-transfer#258](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/258) **'UpdatedAfter feature** in transfer service for **dataspace transfers**.
+- [dotstatsuite-core-sdmxri-nsi-ws#57](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/57) **'UpdatedAfter' feature** (timestamp updated/inserted or deleted) for data operations.
+- [dotstatsuite-core-sdmxri-nsi-ws#300](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/300) **'UpdatedAfter' feature** (timestamp updated/inserted or deleted) **for referential metadata**.
+- [dotstatsuite-core-transfer#451](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/451) **'UpdatedAfter' feature** in transfer service for **dataspace transfers for referential metadata**.
+- [dotstatsuite-core-sdmxri-nsi-ws#248](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/248) Add a new **HTTP X-Level option** to get the referential metadata only at the current level. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#referential-metadata-download-with-the-sdmx-restful-web-service))
+- [dotstatsuite-core-transfer#466](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/466) **New action 'Replace'** for data and referential metadata imports.
+- [dotstatsuite-core-transfer#446](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/446) Store differently **intentionally missing numerical observation values** (only when requested).
+- [dotstatsuite-core-transfer#553](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/553) Change the value used to represent **intentionally missing values**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#intentionally-missing-values))
+- [dotstatsuite-core-sdmxri-nsi-ws#299](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/299) Retrieve **intentionally missing numerical measures**.
+- [dotstatsuite-core-sdmxri-nsi-ws#359](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/359) Change the NSIWS to report appropriately the **intentionally missing value**.
+- [dotstatsuite-core-transfer#447](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/447) Allow **combining Append/Merge and Delete actions** in CSV (allowing for a single transaction `Replace all` with rollback if issues occur during the upload).
+- [dotstatsuite-core-sdmxri-nsi-ws#244](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/244) In extractions, **allow configuring specific characters as SDMX-CSV column & decimal separators per locale**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/restful/#supported-formats))
+- [dotstatsuite-core-transfer#134](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/134) Attribute deletion not propagated by transfer for dimension-Level attributes.
+- [dotstatsuite-core-transfer#504](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/504) Do not update timestamp when there is no impact to the stored values.
+- [dotstatsuite-core-transfer#471](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/471) Auto-delete fully empty observations, attributes at partial keys, and referential metadata.
+- [dotstatsuite-core-transfer#469](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/469) Implement iterative 'Merge' per 'Delete' instruction.
+- [dotstatsuite-core-data-access#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/99) 'UpdatedAfter' feature for non-observation level attributes.
+- [dotstatsuite-core-sdmxri-nsi-ws#310](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/310) 'UpdatedAfter' feature to return 'Replace' dataset instead of 'Merge/Append'.
+- [dotstatsuite-core-transfer#470](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/470) Store and retrieve (through 'updatedAfter') original 'Delete' instructions.
+- [dotstatsuite-core-transfer#518](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/518) Harmonize the storage of the datetime to UTC format for the 'updatedAfter' parameter.
+- [dotstatsuite-core-sdmxri-nsi-ws#324](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/324) & [dotstatsuite-core-sdmxri-nsi-ws#339](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/339) **Return definition of parents when child items have data**.
+- [dotstatsuite-core-sdmxri-nsi-ws#358](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/358) Return definition of parents when child items have data (treatment of localised and non-localised HCL combinations).
+- [dotstatsuite-core-transfer#548](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/548) Return a more meaningful error message when uploading data file with duplicates with basic validations.
+- [dotstatsuite-core-sdmxri-nsi-ws#319](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/319) Modify the SDMXSource JSON writer to support 'Delete' instructions.
+- [dotstatsuite-core-sdmxri-nsi-ws#309](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/309) Split nsiws data retrieval queries for different tasks (normal, 'updatedAfter', 'includeHistory').
+- [dotstatsuite-core-sdmxri-nsi-ws#301](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/301) Modify CSV 2.0 writer to support multiple datasets with different actions.
+- [dotstatsuite-core-sdmxri-nsi-ws#349](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/349) JSON v2 referential metadata queries with the 'updatedAfter' parameter return only the 'Delete' dataset - 'Replace' is missing
+- [dotstatsuite-core-sdmxri-nsi-ws#341](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/341) The NSI web service should include 'nulls' when extracting deleted datasets for referential metadata.
+- [dotstatsuite-data-explorer#981](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/981) Download 'NaN' values from the Data Explorer.
+- [dotstatsuite-core-transfer#517](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/517) Transfer of filtered observation values must include attributes attached at all higher levels.
+- [dotstatsuite-core-sdmxri-nsi-ws#284](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/284) Check the Allowed Content Constraint for dimensions in referential metadata exports.
+- [dotstatsuite-quality-assurance#34](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/34) Transfer transactions should align the performance objectives.
+- [dotstatsuite-core-sdmxri-nsi-ws#335](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/335) Improve the performance of `ReadableDataLocationFactory.GetReadableDataLocation` function.
+- [dotstatsuite-core-sdmxri-nsi-ws#333](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/333) Improve the performance of the function to save the actual content constraint.
+- [dotstatsuite-core-data-access#106](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/106) Improve the performance of reading the time dimension.
+- [dotstatsuite-core-transfer#506](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/506) Wildcard deletions should respect the allowed content constraint.
+- [dotstatsuite-core-transfer#499](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/499) Avoid reading the dataflow info twice.
+- [dotstatsuite-core-sdmxri-nsi-ws#327](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/327) Retrieve empty string measure value in database as such in SDMX-ML.
+- [dotstatsuite-core-transfer#488](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/488) Write access should not be required on the website's folder.
+- [dotstatsuite-core-sdmxri-nsi-ws#323](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/323) Update `textType` count as numeric.
+- [dotstatsuite-core-transfer#483](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/483) Enhance the error message when trying to upload referential metadata to a structure without MSD reference.
+- [dotstatsuite-core-transfer#480](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/480) Apply a configurable max. file size when request body is too large upload.
+- [dotstatsuite-core-transfer#460](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/460) The `/init/dataflow` method of the transfer service should not regenerate actual content constraints of other dataflows.
+- [dotstatsuite-core-transfer#452](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/452) Return higher-level attributes in append dataset and normal data requests, even if the observation-level components have been deleted.
+- [dotstatsuite-core-sdmxri-nsi-ws#356](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/356) Support labels=both option in CSV downloads in unauthenticated mode.
+- [dotstatsuite-core-transfer#546](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/546) Practically **unlimit the currently allowed length (4k) of referential metadata values**.
+- [dotstatsuite-excel-addin#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/48) **DLM Excel-addin:** Default **localisation**. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#select-data))
+- [dotstatsuite-excel-addin#67](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/67) **DLM Excel-addin:** Display of the dataflow labels in the **DLM Excel-addin**.
+- [dotstatsuite-excel-addin#83](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/83) **DLM Excel-addin:** Set icons for ribbon groups when window is narrowed.
+- [dotstatsuite-core-transfer#510](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/510) *(Refactoring)* Harmonize and optimize how the datetime is stored and retrieved.
+- [dotstatsuite-core-data-access#105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/105) *(Refactoring)* Improve the performance of the observations' validation function.
+- [dotstatsuite-core-data-access#93](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/93) *(Refactoring)* Change SQL inline special values to execution parameters.
+- [dotstatsuite-core-transfer#335](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/335) *(Refactoring)* Wrap import/transfer steps with SQL transaction.
+- [dotstatsuite-core-transfer#531](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/531) *(Support)* Performances issues for Delete/Upload observations.
+- [dotstatsuite-docker-compose#70](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/issues/70) *(Support)* `Access-Control-Allow-Origin` header missing for health page.
+- [dotstatsuite-core-sdmxri-nsi-ws#325](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/325) *(DevOps)* Deploy NSI version 8.15.0.
+- [dotstatsuite-core-sdmxri-nsi-ws#331](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/331) *(DevOps)* Deploy NSI version 8.15.1. 
+- [dotstatsuite-core-sdmxri-nsi-ws#355](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/355) *(DevOps)* Deploy NSI version 8.16.0.
+- [dotstatsuite-core-sdmxri-nsi-ws#361](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/361) *(DevOps)* Deploy NSI version 8.17.0.
+- [dotstatsuite-core-transfer#513](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/513) *(DevOps)* Ignore `Dotstat.Transfer.Excel` from unit test coverage.
+- [dotstatsuite-core-transfer#263](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/263) *(DevOps)* Automated functional integration tests between the NSI & the transfer services.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#554](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/554) Mapping set in structure DB is not created if first upload fails due to validation.
+- [dotstatsuite-core-transfer#505](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/505) Higher-level attributes are to be deleted (instead of skipping them).
+- [dotstatsuite-core-transfer#484](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/484) Technical error when uploading a referential metadata file without 'TIME_PERIOD' dimension.
+- [dotstatsuite-core-transfer#465](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/465) "FATAL - Value cannot be null. (Parameter 'source')" error when transferring data for a dataflow with special characteristics (one dimension, no time period).
+- [dotstatsuite-core-transfer#464](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/464) Correct misleading dataflow (re-)init error message when there are backward-incompatible changes.
+- [dotstatsuite-core-transfer#454](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/454) "Object reference not set to an instance of an object." error when uploading referential metadata with missing dimensions.
+- [dotstatsuite-core-transfer#438](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/438) Return error or give clear warning message when importing csv data with mixed actions for attributes attached to the same coordinate/level.
+- [dotstatsuite-core-transfer#434](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/434) Issue when uploading (coded) reference metadata attribute values.
+- [dotstatsuite-core-transfer#427](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/427) Issue when uploading CSV files with French separators.
+- [dotstatsuite-core-transfer#144](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/144) Using a `MAXTEXTATTRIBUTELENGTH` annotation > 4000 wrongly results in an error when uploading data.
+- [dotstatsuite-data-lifecycle-manager#365](dotstatsuite-data-lifecycle-manager) The string length (4738) of an attribute value 'COMMENT_DSET' exceeds the current system limit (150).
+- [dotstatsuite-excel-addin#110](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/110) Label columns missing in referential metadata tables in the DLM Excel-addin.
+- [dotstatsuite-excel-addin#99](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/99) Single quotes in referential metadata texts (e.g. links) are doubled in the DLM EXcel-addin.
+- [dotstatsuite-core-data-access#95](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/95) Fix treatment of invalid codes of an allowed content constraint at actual content constraint creation.
+- [dotstatsuite-core-sdmxri-nsi-ws#338](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/338) Incorrect CSV response of the nsiws for deleted dataflow-level attributes.
+- [dotstatsuite-core-sdmxri-nsi-ws#330](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/330) Dataflow-level attributes are returned twice.
+- [dotstatsuite-core-sdmxri-nsi-ws#328](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/328) An 'Allowed' content constraint is wrongly returned as 'Actual' when retrieving as stub.
+- [dotstatsuite-core-sdmxri-nsi-ws#320](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/320) Properly handle uploaded content constraints with duplicated codes in a repeated concept.
+- [dotstatsuite-core-sdmxri-nsi-ws#317](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/317) Observations cannot be retrieved if they have no value for an optional constrained attribute.
+- [dotstatsuite-core-sdmxri-nsi-ws#314](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/314) SDMX-JSON data requests fail for dataflows without time period.
+- [dotstatsuite-core-sdmxri-nsi-ws#305](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/305) SDMX-JSON data response has an incomplete content for a dataflow with special characteristics (one dimension, no time period).
+- [dotstatsuite-core-sdmxri-nsi-ws#290](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/290) Incorrect time zone usage in Actual Content Constraint time range and in start & end dates of time periods (SDMX-JSON).
 
 ---
 
