@@ -178,25 +178,19 @@ major changes:
 - [dotstatsuite-core-sdmxri-nsi-ws#360](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/360) In SDMX-JSON, '~' resp. '*' for referential metadata to be reported in keys.
 - [dotstatsuite-core-transfer#490](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/490) Align 'Replace' with 'Merge' action for higher-level attributes.
 - [dotstatsuite-core-sdmxri-nsi-ws#348](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/348) Populate the action column of CSV v2 referential metadata responses.
-- [dotstatsuite-core-transfer#515](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/515) *(Refactoring)* Change the **default action to Merge for SDMX-CSV version 1.0**. ([Updated documentation](xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx))
-
-documentation links to new/updated features related to this release:
-
-- [data actions (Merge, Replace, Delete) through upload and tranfer](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/)
-- [referential metadata actions (Merge, Replace, Delete) through upload and tranfer](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/)
-- [data and referential metadata synchronisation between data spaces with updatedAfter feature](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data-synchronisation/)
+- [dotstatsuite-core-transfer#515](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/515) *(Refactoring)* Change the **default action to Merge for SDMX-CSV version 1.0**. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/#supported-type-of-actions))
 
 significant and minor changes:
 
-- [dotstatsuite-core-transfer#352](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/352) **Referential metadata 'Delete' and 'Merge' operations**.
+- [dotstatsuite-core-transfer#352](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/352) **Referential metadata 'Delete' and 'Merge' operations**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/))
 - [dotstatsuite-core-sdmxri-nsi-ws#277](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/277) Extend SDMX-ML v2.0 readers to **support 'Delete' action features**.
+- [dotstatsuite-core-transfer#466](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/466) **New action 'Replace'** for data and referential metadata imports. ([Documentation for data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/)) & ([Documentation for referential metadata](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/))
 - [dotstatsuite-core-transfer#30](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/30) .Stat Core **transfer of deleted data between dataspaces**.
-- [dotstatsuite-core-transfer#258](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/258) **'UpdatedAfter feature** in transfer service for **dataspace transfers**.
-- [dotstatsuite-core-sdmxri-nsi-ws#57](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/57) **'UpdatedAfter' feature** (timestamp updated/inserted or deleted) for data operations.
-- [dotstatsuite-core-sdmxri-nsi-ws#300](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/300) **'UpdatedAfter' feature** (timestamp updated/inserted or deleted) **for referential metadata**.
+- [dotstatsuite-core-transfer#258](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/258) **'UpdatedAfter feature** in transfer service for **dataspace transfers**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data-synchronisation/))
+- [dotstatsuite-core-sdmxri-nsi-ws#57](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/57) **'UpdatedAfter' feature** (timestamp updated/inserted or deleted) for **data operations**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data-synchronisation/))
+- [dotstatsuite-core-sdmxri-nsi-ws#300](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/300) **'UpdatedAfter' feature** (timestamp updated/inserted or deleted) **for referential metadata**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data-synchronisation/))
 - [dotstatsuite-core-transfer#451](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/451) **'UpdatedAfter' feature** in transfer service for **dataspace transfers for referential metadata**.
 - [dotstatsuite-core-sdmxri-nsi-ws#248](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/248) Add a new **HTTP X-Level option** to get the referential metadata only at the current level. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#referential-metadata-download-with-the-sdmx-restful-web-service))
-- [dotstatsuite-core-transfer#466](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/466) **New action 'Replace'** for data and referential metadata imports.
 - [dotstatsuite-core-transfer#446](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/446) Store differently **intentionally missing numerical observation values** (only when requested).
 - [dotstatsuite-core-transfer#553](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/553) Change the value used to represent **intentionally missing values**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#intentionally-missing-values))
 - [dotstatsuite-core-sdmxri-nsi-ws#299](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/299) Retrieve **intentionally missing numerical measures**.
