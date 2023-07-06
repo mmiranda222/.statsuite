@@ -26,7 +26,7 @@ The Data Lifecycle Manager allows uploading data stored in **Excel xlsx** files,
   - EDD: [EDD-example.xml](/dotstatsuite-documentation/using-dlm/manage-data/upload-data/EDD-example.xml)
 
 The "Upload data & referential metadata" feature supports **Excel xlsx** file format for data and **xml** file format for "EDD".  
-The file size limitation is set to 30MB by default which can be changed through the configuration of the application. Note that unlike SDMX files, this size limitation can't be bypass for Excel/EDD files **and** the use of a file path of a shared folder is not available for Excel/EDD files.
+The file size limitation is set to 30MB by default which can be changed through the configuration of the application. Note that unlike SDMX files, this size limitation can't be bypassed for Excel/EDD files **and** the use of a file path of a shared folder is not available for Excel/EDD files.
 
 ---
 

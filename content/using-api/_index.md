@@ -11,6 +11,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 
 * [Main APIs features](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/)
 * [.Stat Suite Core data model](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/)
+* [Data features](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/)
 * [Referential metadata features](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/)
 * [Typical use cases](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/typical-use-cases/)
 * [.Stat SDMX RESTful Web Service Cheat Sheet](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/restful/)

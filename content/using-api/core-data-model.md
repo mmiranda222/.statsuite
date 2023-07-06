@@ -10,8 +10,9 @@ keywords: [
   'Measures', '#data-structure-components',
   'Attributes', '#data-structure-components',
   'Data type definitions', '#data-type-definitions',
-  'Data querying', '#data-querying',
   'Referential metadata types', '#referential-metadata-types',
+  'Intentionally missing values', '#intentionally-missing-values',
+  'Data querying', '#data-querying',
   'Allowed Content Constraints', '#allowed-content-constraints',
   'Uniqueness of Observations', '#uniqueness-of-observations',
 ]
@@ -21,8 +22,9 @@ keywords: [
 #### Table of Content
 - [Data structure components](#data-structure-components)
 - [Data type definitions](#data-type-definitions)
-- [Data querying](#data-querying)
 - [Referential metadata types](#referential-metadata-types)
+- [Intentionally missing values](#intentionally-missing-values)
+- [Data querying](#data-querying)
 - [Allowed Content Constraints](#allowed-content-constraints)
 - [Uniqueness of Observations](#uniqueness-of-observations)
 
@@ -33,6 +35,11 @@ This section details the characteristics of the statistical data model described
 - authorisation management database
 
 This page concentrates on the data model features supported by the data database for the storage of observation values, attribute values and (later also) referential metadata values conforming to the SDMX information model.
+
+> *Version history:*  
+> Support of **intentionally missing values** since [July 4, 2023 Release .Stat Suite dragonfruit](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-4-2023)  
+> Referential metadata types support since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> .Stat Suite supports the use of **non-numeric and coded measure values** since [March 5, 2021 Release .Stat Suite .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-5-2021)
 
 ---
 
@@ -87,7 +94,7 @@ Codes in a Codelist can additionally be restrained through the following paramet
 ---
 
 ### Data type definitions
-> Since [March 5, 2021 Release .Stat Suite .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-5-2021), .Stat Suite supports the use of **non-numeric and coded measure values**. Following are the lists of the SDMX standard for possible data types (representations) for observation values.
+.Stat Suite supports the use of **non-numeric and coded measure values**. Following is the list of the SDMX standard for possible data types (representations) for observation values.
 
 The possible values for the optional TextFormat attribute **"textType"** are:
 - String: A string datatype corresponding to W3C XML Schema's xs:string datatype. **Note that `String` is the default data type** when it is not specified in the structure definition. [Example](https://de-qa.siscc.org/vis?lc=en&df%5Bds%5D=qa%3Astable&df%5Bid%5D=DF_TEST_STRING&df%5Bag%5D=OECD.CFE&df%5Bvs%5D=5.0&av=true&pd=2015%2C2018&dq=AU....A&lt%5Brw%5D=ACTIVITY&lt%5Bcl%5D=TIME_PERIOD)
@@ -164,16 +171,7 @@ The other optional TextFormat attributes and properties that .Stat Suite support
 
 ---
 
-### Data querying
-In SDMX 2.1, users can query for data by distinct values for the Dimensions, incl. MeasureDimension. However, the TimeDimension can only be queried through a time period range.
-
-In SDMX 3.0, it is expected to be able to query for data by distinct values for the Dimensions, Measures and Attributes. Likely, the TimeDimension can still only be queried through a time period range.
-
----
-
 ### Referential metadata types
-> Released in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
-
 .Stat Core supports the use and the interpretation of all types (representations) of referential metadata attributes, including coded, non-coded non-localised or non-coded multi-lingual values, except multi-valued values, but their values are not yet validated against the types during imports, and all values are stored in .Stat Core as simple strings. Currently, only the following types are specifically formatted by the Data Explorer for the online display:
 
 - `XHTML`: the value is interpreted as HTML and escaped as is;
@@ -192,6 +190,34 @@ In SDMX 3.0, it is expected to be able to query for data by distinct values for 
     </structure:LocalRepresentation>
 </structure:MetadataAttribute>
 ```
+
+---
+
+### Intentionally missing values
+Intentionally missing values are supported only when the DSD has the annotation of type **"SUPPORT_INTENT_MISS_VALUES"**. This is to prevent performance loss for DSDs that do not have this need. The feature is enabled by default in the .Stat Suite through the NSI web service configuration `useIntentionallyMissingMeasures=true`.
+
+The following special values indicate an **intentionally missing value**:
+
+| format | **`float` or `double` observation** value (measure) types | **textual observation** value (measure) and **attribute** value types | **referential metadata** |
+|--------|----------------|-------------|-------------|
+| XML | `NaN` | \<empty\> | (not supported) |
+| CSV | `#N/A` | `#N/A` | `#N/A` |
+| JSON (in extractions only) | `null` | `#N/A` | (not supported) | 
+
+They are stored in a specific way in the database and returned again using these special values in extractions. However, currently all referential metadata values are stored and retrieved AS IS (converted to string) to and from the .Stat Suite Core database, thus they do not have any.
+
+Due to limitations of the SDMX-ML schema, intentionally missing values are not supported for: 
+- numerical types other than `float` or `double`
+- textual types that have specific limitations not allowing for the string `#N/A` unless they do not have yet any type validation during the import.
+
+Intentionally missing values have not yet been implemented for attribute values types `float` or `double`.
+
+---
+
+### Data querying
+In SDMX 2.1, users can query for data by distinct values for the Dimensions, incl. MeasureDimension. However, the TimeDimension can only be queried through a time period range.
+
+In SDMX 3.0, it is expected to be able to query for data by distinct values for the Dimensions, Measures and Attributes. Likely, the TimeDimension can still only be queried through a time period range.
 
 ---
 
