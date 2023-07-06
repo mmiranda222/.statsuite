@@ -16,6 +16,7 @@ keywords: [
 ---
 
 > *Version history:*  
+> Configurable content language selector since [July 4, 2023 Release .Stat Suite dragonfruit / DLM Excel-addin v3.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-4-2023)  
 > Time period boundaries in the filter selector since [October 26, 2022 Release .Stat Suite DLM Excel-addin v3.2.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-26-2022)  
 > Data availability on dimension values since [April 28, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-28-2022)
 
@@ -50,6 +51,14 @@ The step 1 of the Selection wizard provides a dropdown selector of dataflows for
 - filter the dataflow list by keyword(s)
 
 ![DLM Excel-Addin select data](/dotstatsuite-documentation/images/dlm-excel-addin-select-data.png)
+
+**Languages**  
+The Excel-addin configuration allows defining a list of languages used for the display of the content in the selection wizard and the table. Each source has its own configuration. The first language in the list is used as the initial/default language (see more details [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin#languages) on how to setup the configuration).  
+The "Content language" option displays a dropdown list of available languages. Selecting a different language from the dropdown list will automatically update the content of the below dataflow selector. If a dataflow has no name in a selected content language, then only the dataflow ID is displayed. The same rule applies to all other localised contents in the "Edit filters" window.
+
+![DLM Excel-Addin select data](/dotstatsuite-documentation/images/dlm-excel-addin-content-language.png)
+
+Any change in the language selection by the user is memorised and maintained.
 
 **Favorites**  
 The user can add a dataflow to its favorites by clicking on the star icon once a dataflow is selected. Clicking on "EDIT FAVORITES" opens an extra window with the list of dataflows already flagged as favorites (with a yellow star) and all other dataflows from the same data source not flagged as favorites (with a grey star). Clicking on a grey star makes it yellow and thus the related dataflow is flagged as favorite, and vice-versa.  
@@ -87,6 +96,8 @@ The step 2 provides output options for the selected data or referential metadata
 - Choose in which Excel cell the output table should start;
 - Specify the output table layout as "Flat", "Time series down", or "Time series across";
 - Choose whether to return the localised names (labels) for dimensions and dimension members, with or without excluding the underlying codes (IDs). The language of the localised names can be picked from the ones that are available in the sourced data.
+
+**Note** that the content language selected in the initial step will also be pre-selected in this step, if it exists for the given dataflow. If it does not exist, then the first available language for that dataflow will be pre-selected. The list of available output languages is always ordered according to the order of name languages in the dataflow definition.
 
 **Content type**  
 The user can choose one of the following content type (combinations):
