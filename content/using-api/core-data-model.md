@@ -2,8 +2,9 @@
 title: ".Stat Suite Core data model"
 subtitle: 
 comments: false
-weight: 4700
+weight: 4200
 keywords: [
+  'Introduction', '#introduction',
   'Data structure components', '#data-structure-components',
   'Dimensions', '#data-structure-components',
   'Time dimension', '#data-structure-components',
@@ -20,6 +21,7 @@ keywords: [
 ---
 
 #### Table of Content
+- [Introduction](#introduction)
 - [Data structure components](#data-structure-components)
 - [Data type definitions](#data-type-definitions)
 - [Referential metadata types](#referential-metadata-types)
@@ -28,6 +30,14 @@ keywords: [
 - [Allowed Content Constraints](#allowed-content-constraints)
 - [Uniqueness of Observations](#uniqueness-of-observations)
 
+> *Version history:*  
+> Support of **intentionally missing values** since [July 4, 2023 Release .Stat Suite dragonfruit](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-4-2023)  
+> Referential metadata types support since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
+> .Stat Suite supports the use of **non-numeric and coded measure values** since [March 5, 2021 Release .Stat Suite .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-5-2021)
+
+---
+
+### Introduction
 This section details the characteristics of the statistical data model described by SDMX and implemented to large parts in the .Stat Suite Core database storage. This storage is composed of 4 parts:
 - (data) structure database - based on MappingStore (component of Eurostat's SDMX-RI solution)
 - data (values) database
@@ -35,13 +45,6 @@ This section details the characteristics of the statistical data model described
 - authorisation management database
 
 This page concentrates on the data model features supported by the data database for the storage of observation values, attribute values and (later also) referential metadata values conforming to the SDMX information model.
-
-> *Version history:*  
-> Support of **intentionally missing values** since [July 4, 2023 Release .Stat Suite dragonfruit](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-4-2023)  
-> Referential metadata types support since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> .Stat Suite supports the use of **non-numeric and coded measure values** since [March 5, 2021 Release .Stat Suite .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-5-2021)
-
----
 
 ### Data structure components
 

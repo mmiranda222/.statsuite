@@ -2,7 +2,7 @@
 title: "Upload referential metadata from an SDMX-CSV file"
 subtitle: 
 comments: false
-weight: 340
+weight: 4440
 keywords: [
  'Prerequisites', '#prerequisites',
  'Supported type of actions', '#supported-type-of-actions',

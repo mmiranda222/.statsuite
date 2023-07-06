@@ -2,7 +2,7 @@
 title: "Referential metadata features"
 subtitle: 
 comments: false
-weight: 4900
+weight: 4400
 keywords: [
   'Introduction', '#introduction',
   'File format', '#file-format',
@@ -14,12 +14,6 @@ keywords: [
 
 ---
 
->*Version history:*  
-> Supporting referential metadata value retrieval with SDMX-JSON 2.0 and transfer with [release .Stat Suite .NET 8.0.0 at March 23, 2022](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-23-2022)  
-> Supporting referential metadata value upload and retrieval with SDMX-CSV 2.0 with [release .Stat Suite .NET 7.2.0 at December 3, 2021](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-3-2021)
-
----
-
 #### Table of Content
 - [Introduction](#introduction)
 - [File format](#file-format)
@@ -27,6 +21,10 @@ keywords: [
   - [Hierarchial referential metadata](#hierarchial-referential-metadata)
 - [Referential metadata upload and copy](#referential-metadata-upload-and-copy)
 - [Referential metadata download with the SDMX (restful) web service](#referential-metadata-download-with-the-sdmx-restful-web-service)
+
+>*Version history:*  
+> Supporting referential metadata value retrieval with SDMX-JSON 2.0 and transfer with [release .Stat Suite .NET 8.0.0 at March 23, 2022](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-23-2022)  
+> Supporting referential metadata value upload and retrieval with SDMX-CSV 2.0 with [release .Stat Suite .NET 7.2.0 at December 3, 2021](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-3-2021)
 
 ---
 

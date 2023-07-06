@@ -2,7 +2,7 @@
 title: "Data features"
 subtitle: 
 comments: false
-weight: 310
+weight: 4300
 keywords: [
   'Introduction', '#introduction',
   'File formats', '#file-formats',
@@ -13,9 +13,6 @@ keywords: [
 ]
 ---
 
-> *Version history:*  
-> Data upload supported in SDMX-CSV version 2.0 file format, and including combined actions (Information, Append, Merge, Replace, Delete) since [September 22, 2022 Release .Stat Suite .NET 'blueberry'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-22-2022)
-
 #### Table of Content
 - [Introduction](#introduction)
 - [File formats](#file-formats)
@@ -24,11 +21,14 @@ keywords: [
   - [Auto-generation of Actual Content Constraints](#auto-generation-of-actual-content-constraints)
 - [Data download with the SDMX (restful) web service](#data-download-with-the-sdmx-restful-web-service)
 
+> *Version history:*  
+> Data upload supported in SDMX-CSV version 2.0 file format, and including combined actions (Information, Append, Merge, Replace, Delete) since [September 22, 2022 Release .Stat Suite .NET 'blueberry'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-22-2022)
+
 ---
 
 ### Introduction
 .Stat Suite Core allows Data (measure and attribute values) to be uploaded, stored and retrieved.  
-The upload is done using the transfer web service. SDMX and Excel file formats are supported. See below. 
+The upload is done using the transfer web service. SDMX and Excel file formats are supported. See below.  
 The download is done using the SDMX (NSI) web service. SDMX file formats are supported. See below.
 
 The following features are supported:
