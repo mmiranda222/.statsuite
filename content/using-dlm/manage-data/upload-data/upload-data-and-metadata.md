@@ -19,9 +19,9 @@ keywords: [
   - [Maximum upload file size](#maximum-upload-file-size)
   - [Successful, warning, multi-status, failure](#successful-warning-multi-status-failure)
 
----
-
 > Referential metadata support introduced in the DLM in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
+
+---
 
 ### Prerequisites
 In .Stat Suite Core, data and referential metadata cannot be uploaded together (at the same time). They have to be uploaded through separate import files.  
@@ -65,7 +65,7 @@ The "Upload data & referential metadata" feature supports uploading the followin
 - data: [SDMX-CSV version 1.0](https://github.com/sdmx-twg/sdmx-csv/tree/v1.0/data-message/docs/sdmx-csv-field-guide.md)
 - data & referential metadata: [SDMX-CSV version 2.0](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md)
 
-For more information about the supported SDMX formats and upload actions (Merge, Replace, Delete), please consult:
+**For more information about the supported SDMX formats and upload actions (Merge, Replace, Delete)**, please consult:
 - [Upload data from an SDMX-CSV or SDMX-ML file](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/).
 - [Upload referential metadata from an SDMX-CSV file](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/).
 

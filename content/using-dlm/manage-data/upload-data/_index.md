@@ -7,7 +7,7 @@ weight: 310
 ---
 
 > *Version history:*  
-> Data supported in SDMX-CSV version 2.0 file format, and including combined actions since [September 22, 2022 Release .Stat Suite .NET 'blueberry'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-22-2022)
+> Data supported in SDMX-CSV version 2.0 file format, and including combined actions since [September 22, 2022 Release .Stat Suite .NET 'blueberry'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-22-2022)  
 > Referential metadata upload introduced in DLM in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
 
 **Data** or **referential metadata** can be uploaded by using the main menu feature "Upload data & referential metadata" available from the top banner of the DLM.

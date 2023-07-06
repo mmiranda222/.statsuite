@@ -157,7 +157,7 @@ The main advantage of the Annotation is its flexibility as all properties can be
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">SUPPORT_INTENT_MISS_VALUES</td>
-<td style="height: 23px; width: 1471.44px;">Indication to support special numerical observation values indicated as intentionally missing values<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file.md#intentionally-missing-values">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication to support special numerical observation values indicated as intentionally missing values<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/#intentionally-missing-values">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>

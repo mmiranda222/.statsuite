@@ -2,7 +2,7 @@
 title: "Upload data from an SDMX-CSV or SDMX-ML (xml) file"
 subtitle: 
 comments: false
-weight: 320
+weight: 4320
 keywords: [
  'Prerequisites', '#prerequisites',
  'Supported type of actions', '#supported-type-of-actions',

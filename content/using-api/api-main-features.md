@@ -2,7 +2,7 @@
 title: "Main APIs features"
 subtitle: 
 comments: false
-weight: 4500
+weight: 4100
 keywords: [
   'Adding or replacing structures', '#adding-or-replacing-structures',
   'Deleting structures', '#deleting-structures',
