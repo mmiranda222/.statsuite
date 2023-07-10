@@ -4,6 +4,7 @@ subtitle:
 comments: false
 weight: 52
 keywords: [
+  'Docker image tag policy','#docker-image-tag-policy',
   '.Stat Data Explorer components', '#stat-data-explorer-components',
   'Data Explorer app', '#data-explorer-app',
   'Share service', '#share-service',
@@ -22,6 +23,7 @@ keywords: [
 ---
 
 #### Table of Content
+- [Docker image tag policy](#docker-image-tag-policy)
 - [.Stat Data Explorer components](#stat-data-explorer-components)
   - [Data Explorer app](#data-explorer-app)
   - [Share service](#share-service)
@@ -42,6 +44,28 @@ This section describes where to find and how to use the .Stat Suite Docker image
 All **.Stat Suite Docker images** are located under https://hub.docker.com/u/siscc. Please see each repository for detailed information on how to use these.
 
 > **Note**: Docker technology is a commonly used containerisation technology, and we will mainly list here our ready-to-use Docker images.
+
+---
+
+### Docker image tag policy
+
+We tag our releases with different tags, which have different purposes:
+![image](/dotstatsuite-documentation/images/docker-tags.png)
+
+- **`master`** tag: Currently latest available official release ('production-ready') version of a **component**. This constantly evolves, including in a non-backward-compatible manner.
+- **Name** tag, e.g., `dragonfruit`: Currently latest available version of a specific official release ('production-ready') across the components of _either_ .Stat CORE (.Net components) _or_ the .Stat JS-based components. This includes all subsequent backward-compatible **hotfix** versions of that release. 
+- **Semantic version number**, e.g., `v10.0.0`: Unique semantic identifier of a **component** version.
+- **Hex-number**, e.g. `6c6c64c5`: Unique numeric identifier of a **component** version.
+
+At release time, all these tags lead to the same digest number, e.g., `c067b78c99cc`. However, when new releases are added, some of these tags start to point to newer versions.
+
+Please consult the [changelog](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/) and the components' readme files for details on the content of releases and their versions.
+
+It is up to the installing organisation to decide the tags to use depending on the organisational needs and constraints.  
+- A fully static approach would be to use the hex-number per component.
+- The easier understandable but still static approach would be to use the semantic version number per component.
+- A compromise between stability and minimizing important issues (security, ...) would be to use the release name tag per release (per .Net and JS components). This makes also sure that all the component versions are compatible between each other. Hotfixes will be deployed automatically.
+- An opportunistic approach would be to use the `master` tag, which makes sure that the installation is always most up to date within the target environment. This might be useful for functional staging/quality assurance purposes.
 
 ---
 
