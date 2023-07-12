@@ -64,7 +64,7 @@ Make sure that the windows machine which will be used in this installation proce
 - **Microsoft .NET**      
 	- Microsoft .NET Core SDK 6.0.\* (x64 version) [download](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 	- Microsoft .NET Core 6.0.\* - Windows Server Hosting Bundle [download](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)  (IIS must be restarted after installation)
-	- (Optional) Visual studio 2022 is to compile solutions with .net core 6.0
+	- (Optional) Visual Studio 2022 is to compile solutions with .net core 6.0
 
 - **Git for windows** (x64 version) [download](https://git-scm.com/download/win).  
 
@@ -103,7 +103,8 @@ In this section we'll download the source code for the databases and for each of
 
 #### A word on versions
 
-The versions of the source code we download here need to work together. This means that we need to download compatible versions of all the various components, which is why none of the clone statements refer to branches such as "master" or "develop", but instead refer to tags we know to be compatible.
+The versions of the source code we download here need to work together. 
+This means that we need to download compatible versions of all the various components, which is why none of the clone statements refer to branches such as "master" or "develop", but instead refer to tags we know to be compatible.
 
   1 .  Open Git Bash with **admin rights** from the windows start menu
 
@@ -119,14 +120,14 @@ cd /c/git
 
   4 .  Clone the dotstatsuite-core-data-access repository.- *This repository contains the dotstatsuite-core-dbup tool, which will be used to create and initialize the common and data databases.*
 ```sh 
-git clone -b 13.0.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
+git clone -b dragonfruit --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access.git dotstatsuite-core-dbup
 ```
 
   5 .  Clone the maapi.net tool repository from the SIS-CC's mirror of Eurostat repository - *This tool will be used to initialize the structure databases.* 
 
 ```sh 
 
-git clone -b 8.5.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
+git clone -b 8.17.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/maapi.net.mirrored.git maapi.net
 ```
 
 > **WARNING!** - This repository has a git submodule (authdb.sql) that points to the original ESTAT's repository in the mirror repository. To change the url of the submodule and to clone it manually (from the SIS-CC's mirror of Eurostat repository) use the following commands:  
@@ -141,18 +142,18 @@ git clone -b 8.5.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/ma
   6 .  Clone the NSI web service repository from the SIS-CC's mirror of Eurostat repository.
 
 ```sh
-git clone -b 8.5.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
+git clone -b 8.17.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored.git nsiws.net
 ```
 
   7 .  Clone the authorization.net repository from the SIS-CC's mirror of Eurostat repository.- *For authorization plugin.* 
 
 ```sh
-git clone -b 8.5.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
+git clone -b 8.17.0 --single-branch https://gitlab.com/sis-cc/eurostat-sdmx-ri/authorization.net.mirrored.git authorization.net
 ```
 
   8 .  Clone the dotstatsuite-core-transfer repository
 ```sh
-git clone -b 8.0.1 --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
+git clone -b dragonfruit --single-branch https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer.git
 ```
 
 ---
@@ -206,7 +207,9 @@ This upgrade of pricing tier is done only at the first run of DbUp tool, at late
 After successful initialization of the databases the pricing tiers may be changed according to the needs, keeping in mind that the minimum required tier is *Standard S3* for .Stat *data* databases.
 
 #### Important note for Azure SQL
-Please ensure the **server role** _loginmanager_ is attached to user running DbUp. This role provides enough permission level to query _sys.sys_login_ table. For more information, please refer to [official documentation](https://learn.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sql-logins-transact-sql?view=sql-server-ver16).
+Please ensure the **server role** _loginmanager_ is attached to user running DbUp. 
+This role provides enough permission level to query _sys.sys_login_ table. 
+For more information, please refer to [official documentation](https://learn.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sql-logins-transact-sql?view=sql-server-ver16).
 
 
 #### Initialize the DotStatSuiteCore_Common database  
@@ -217,7 +220,7 @@ Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/net6.0/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=CommonDb;User=SA_USER;Password=SA_PASSWORD;" --commonDb --loginName testLoginCommon --loginPwd "testLogin(\!)Password" --force
 ```
 
 #### Initialize one Design DotStatSuiteCore_Data database  
@@ -228,7 +231,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ``` sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/net6.0/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb --loginName testLoginDesignData --loginPwd "testLogin(\!)Password" --force
 ```
 
 #### Initialize one Disseminate DotStatSuiteCore_Data database  
@@ -239,14 +242,16 @@ Execute the DbUp tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb  --loginName testLoginDisseminateData --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/net6.0/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateDataDb;User=SA_USER;Password=SA_PASSWORD;" --dataDb  --loginName testLoginDisseminateData --loginPwd "testLogin(\!)Password" --force
 ```
 
 #### Configure the maapi.net tool 
 
-The maapi.net tool is used to initialize DotStatSuiteCore_Struct (mappingStore) databases. In this example we will use it to initialize two DotStatSuiteCore_Struct databases (design and disseminate).
+The maapi.net tool is used to initialize DotStatSuiteCore_Struct (mappingStore) databases. 
+In this example we will use it to initialize two DotStatSuiteCore_Struct databases (design and disseminate).
 
-The  tool requires a pre-configured list of connection strings of each of the databases that will be created and/or updated. This information should be added to the Estat.Sri.Mapping.Tool.dll.config file, under the section "\<connectionStrings\>".  
+The  tool requires a pre-configured list of connection strings of each of the databases that will be created and/or updated. 
+This information should be added to the Estat.Sri.Mapping.Tool.dll.config file, under the section "\<connectionStrings\>".  
 
 ```xml
 ...
@@ -266,7 +271,7 @@ To simplify the process, we will use the configuration example [maapi-app.config
 
 -  Move to the maapi.net folder
 ```sh
-cd /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/bin/Debug/netcoreapp3.1/publish/
+cd /c/git/maapi.net/src/Estat.Sri.Mapping.Tool/bin/Debug/net6.0/publish/
 ```
 
 - From the dotstatsuite-core-sdmxri-nsi-ws repository, download the example configuration file `maapi-app.config` to the 
@@ -287,7 +292,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ``` sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDesignStruct --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/net6.0/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DesignStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDesignStruct --loginPwd "testLogin(\!)Password" --force
 ```
 
 **Step 2.**   Initialize the database using the maapi.net tool
@@ -308,7 +313,7 @@ Execute the Dbup tool (*DotStat.DbUp.dll*) with the parameters to create and ini
 
 `Replace SA_USER and SA_PASSWORD` with the Microsoft SQL sysadmin credentials.
 ```sh
-dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/netcoreapp3.1/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDisseminateStruct --loginPwd "testLogin(\!)Password" --force
+dotnet /c/git/dotstatsuite-core-dbup/DotStat.DbUp/bin/Debug/net6.0/publish/DotStat.DbUp.dll upgrade --connectionString "Server=localhost;Database=DisseminateStructDb;User=SA_USER;Password=SA_PASSWORD;" --mappingStoreDb --loginName testLoginDisseminateStruct --loginPwd "testLogin(\!)Password" --force
 ```
 
 **Step 2.**   Initialize the database using the maapi.net tool
@@ -338,13 +343,13 @@ icacls "C:\dotstatsuite-website\transfer-service" /grant:r "IIS_IUSRS":"(OI)(CI)
 **Step 3.** Copy the compiled binaries to the new folder 
 
 ```sh
-cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/transfer-service/
+cp -r /c/git/dotstatsuite-core-transfer/DotStatServices.Transfer/bin/Debug/net6.0/publish/* /c/dotstatsuite-website/transfer-service/
 ```
 
-**Step 4.** Create a new IIS application called **transfer-service** in port 83, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
+**Step 4.** Create a new IIS application called **transfer-service** in port 93, using [appcmd command](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe)
 >  Make sure git bash is running in admin mode.
 ```sh
-/c/Windows/System32/inetsrv/appcmd add site /name:transfer-service /physicalPath:C:\\dotstatsuite-website\\transfer-service /bindings:http/*:83:
+/c/Windows/System32/inetsrv/appcmd add site /name:transfer-service /physicalPath:C:\\dotstatsuite-website\\transfer-service /bindings:http/*:93:
 ```
 
 **Step 5.** Create a new IIS application pool (TransferServiceAppPool) 
@@ -409,7 +414,9 @@ For this example we will use the second option:
 /c/Windows/System32/inetsrv/appcmd set config "transfer-service" -section:system.webServer/aspNetCore /+"environmentVariables.[name='spacesInternal__1__AutoLog2DB',value='true']" /commit:apphost
 ```
 
-**NOTE** [AutoLog2DB](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#spacesinternal) is enabled for both dataspaces. This configuration allows the transfer service to store logs in the database. When this setting is enabled, the functions [/status/request](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12statusrequest-get-the-request-information-by-transaction-id-and-dataspace) and [/status/requests](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12allstatusrequests-query-the-status-all-the-requests-and-their-logs) can be used to retrieve logs.
+**NOTE** [AutoLog2DB](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#spacesinternal) is enabled for both dataspaces. 
+This configuration allows the transfer service to store logs in the database. 
+When this setting is enabled, the functions [/status/request](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12statusrequest-get-the-request-information-by-transaction-id-and-dataspace) and [/status/requests](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-12allstatusrequests-query-the-status-all-the-requests-and-their-logs) can be used to retrieve logs.
 
 **Step 7.** Start the new application
 ```sh
@@ -420,48 +427,92 @@ For this example we will use the second option:
 
 *  **Using curl**
 ```sh
-curl localhost:83/health
+curl localhost:93/health
 ```
 
 *  **Using a web browser**  
-Open a web browser and open the url localhost:83/health
+Open a web browser and open the url localhost:93/health
 
 **You should see similar result:**
 ```json
 {
-  "service": {
-    "status": "Healthy",
-    "details": {
-      "version": "5.0.96+dc43333a28",
-      "auth_enabled": false
-    },
-    "responseTime": 7.1725
-  },
-  "database": {
-    "status": "Healthy",
-    "details": {
-      "design": {
-        "structureDbVersion": "6.12",
-        "dataDbVersion": "3.6"
-      },
-      "disseminate": {
-        "structureDbVersion": "6.12",
-        "dataDbVersion": "3.6"
-      }
-    },
-    "responseTime": 243.1098
-  },
-  "memory": {
-    "status": "Healthy",
-    "details": {
-      "allocatedMb": 11.0912,
-      "gen0Collections": 1,
-      "gen1Collections": 0,
-      "gen2Collections": 0
-    },
-    "responseTime": 3.5734
-  },
-  "totalResponseTime": 250.5597
+	"service": {
+		"status": "Healthy",
+		"details": {
+			"version": "12.0.0+83c10b048d",
+			"auth_enabled": true,
+			"tz": "(UTC) Coordinated Universal Time",
+			"time": "10.07.2023 07:55:47"
+		},
+		"responseTime": 19.9126
+	},
+	"database": {
+		"status": "Healthy",
+		"details": {
+			"design": {
+				"structureDb": {
+					"version": "6.20",
+					"logs": "72.00 MB",
+					"data": "72.00 MB"
+				},
+				"dataDb": {
+					"version": "7.4",
+					"logs": "8.00 MB",
+					"data": "72.00 MB"
+				},
+				"supportedDbVersion": "7.4",
+				"isDataDbVersionCompatible": true
+			},
+			"disseminate": {
+				"structureDb": {
+					"version": "6.20",
+					"logs": "72.00 MB",
+					"data": "72.00 MB"
+				},
+				"dataDb": {
+					"version": "7.4",
+					"logs": "8.00 MB",
+					"data": "72.00 MB"
+				},
+				"supportedDbVersion": "7.4",
+				"isDataDbVersionCompatible": true
+			}
+		},
+		"responseTime": 232.1524
+	},
+	"memory": {
+		"status": "Healthy",
+		"details": {
+			"allocatedMb": 16.4213,
+			"gen0Collections": 0,
+			"gen1Collections": 0,
+			"gen2Collections": 0
+		},
+		"responseTime": 3.6066
+	},
+	"disk": {
+		"status": "Healthy",
+		"details": {
+			"tempPath": "/tmp/TransferService",
+			"totalSize": "250.92 GB",
+			"totalFreeSpace": "231.25 GB",
+			"availableFreeSpace": "218.44 GB",
+			"free": "87.1%",
+			"filesCount": 0
+		},
+		"responseTime": 6.8963
+	},
+	"queue": {
+		"status": "Healthy",
+		"details": {
+			"uptime": "00:00:55.6645698",
+			"tasksInQueue": 0,
+			"runningTasks": 0,
+			"takenTasks": 0
+		},
+		"responseTime": 3.6176
+	},
+	"totalResponseTime": 237.3245
 }
 ```
 
@@ -488,7 +539,7 @@ icacls "C:\dotstatsuite-website\nsiws-design" /grant:r "IIS_IUSRS":"(OI)(CI)F"
 
 **Step 3.** Copy the compiled binaries to the new folder 
 ```sh
-cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/nsiws-design/
+cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/net6.0/publish/* /c/dotstatsuite-website/nsiws-design/
 ```
 
 **Step 4.** Copy the following binaries from authorization.net to the *Plugins* folder. 
@@ -502,7 +553,7 @@ This will allow the NSI web service to retrieve authorization rules from .Stat c
 - estat.sri.ws.auth.dotstat.deps.json
 
 ```sh
-cp -r /c/git/authorization.net/src/estat.sri.ws.auth.dotstat/bin/Debug/netstandard2.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,estat.sri.ws.auth.dotstat.dll,estat.sri.ws.auth.dotstat.deps.json} /c/dotstatsuite-website/nsiws-design/Plugins
+cp -r /c/git/authorization.net/src/estat.sri.ws.auth.dotstat/bin/Debug/net6.0/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,estat.sri.ws.auth.dotstat.dll,estat.sri.ws.auth.dotstat.deps.json} /c/dotstatsuite-website/nsiws-design/Plugins
 ```
 
 **Step 5.** Configure the nsi web service 
@@ -637,34 +688,39 @@ Open a web browser and open the url localhost:81/health
   "service": {
     "status": "Healthy",
     "details": {
-      "version": "8.1.2",
+      "version": "8.17.0",
       "retriever": "MappingStoreRetrieversFactory",
-      "retriever-version": "8.1.2",
+      "retriever-version": "8.17.0",
       "middleware": "CorsMiddlewareBuilder,OpenIdMiddlewareBuilder,LoggingOptionsBuilder,UserAuthorizationRulesMiddlerwareBuilder",
-      "maxRequestBodySize": 30000000
+      "maxRequestBodySize": 52428800
     },
-    "responseTime": 6.1152
+    "responseTime": 0.3649
   },
   "db": {
     "status": "Healthy",
     "details": {
       "storeId": "design",
-      "version": "6.12",
+      "version": "6.20",
       "isLatest": true
     },
-    "responseTime": 252.2288
+    "responseTime": 4.1766
   },
   "memory": {
     "status": "Healthy",
     "details": {
-      "allocatedMb": 9.3896,
-      "gen0Collections": 1,
-      "gen1Collections": 0,
-      "gen2Collections": 0
+      "allocatedMb": 75.5947,
+      "gen0Collections": 22351,
+      "gen1Collections": 4900,
+      "gen2Collections": 1480
     },
-    "responseTime": 5.1278
+    "responseTime": 0.0096
   },
-  "totalResponseTime": 401.745
+  "disseminationDb": {
+    "status": "Healthy",
+    "details": {},
+    "responseTime": 0.0442
+  },
+  "totalResponseTime": 5.405
 }
 ```
 
@@ -691,7 +747,7 @@ icacls "C:\dotstatsuite-website\nsiws-disseminate" /grant:r "IIS_IUSRS":"(OI)(CI
 
 **Step 3.** Copy the compiled binaries to the new folder 
 ```sh
-cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/netcoreapp3.1/publish/* /c/dotstatsuite-website/nsiws-disseminate/
+cp -r /c/git/nsiws.net/src/NSIWebServiceCore/bin/Debug/net6.0/publish/* /c/dotstatsuite-website/nsiws-disseminate/
 ```
 
 **Step 4.** Copy the following binaries from authorization.net to the *Plugins* folder. 
@@ -705,7 +761,7 @@ This will allow the NSI web service to retrieve authorization rules from .Stat c
 - estat.sri.ws.auth.dotstat.deps.json
 
 ```sh
-cp -r /c/git/authorization.net/src/estat.sri.ws.auth.dotstat/bin/Debug/netstandard2.1/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,estat.sri.ws.auth.dotstat.dll,estat.sri.ws.auth.dotstat.deps.json} /c/dotstatsuite-website/nsiws-disseminate/Plugins
+cp -r /c/git/authorization.net/src/estat.sri.ws.auth.dotstat/bin/Debug/net6.0/publish/{DotStat.Common.dll,DotStat.DB.dll,DotStat.Domain.dll,DotStat.MappingStore.dll,estat.sri.ws.auth.dotstat.dll,estat.sri.ws.auth.dotstat.deps.json} /c/dotstatsuite-website/nsiws-disseminate/Plugins
 ```
 
 **Step 5.** Configure the nsi web service  
@@ -840,34 +896,39 @@ Open a web browser and open the url localhost:80/health
   "service": {
     "status": "Healthy",
     "details": {
-      "version": "8.1.2",
+      "version": "8.17.0",
       "retriever": "MappingStoreRetrieversFactory",
-      "retriever-version": "8.1.2",
+      "retriever-version": "8.17.0",
       "middleware": "CorsMiddlewareBuilder,OpenIdMiddlewareBuilder,LoggingOptionsBuilder,UserAuthorizationRulesMiddlerwareBuilder",
-      "maxRequestBodySize": 30000000
+      "maxRequestBodySize": 52428800
     },
-    "responseTime": 6.0177
+    "responseTime": 0.3649
   },
   "db": {
     "status": "Healthy",
     "details": {
       "storeId": "disseminate",
-      "version": "6.12",
+      "version": "6.20",
       "isLatest": true
     },
-    "responseTime": 245.2298
+    "responseTime": 4.1766
   },
   "memory": {
     "status": "Healthy",
     "details": {
-      "allocatedMb": 9.5320,
-      "gen0Collections": 1,
-      "gen1Collections": 0,
-      "gen2Collections": 0
+      "allocatedMb": 75.5947,
+      "gen0Collections": 22351,
+      "gen1Collections": 4900,
+      "gen2Collections": 1480
     },
-    "responseTime": 3.7186
+    "responseTime": 0.0096
   },
-  "totalResponseTime": 355.0478
+  "disseminationDb": {
+    "status": "Healthy",
+    "details": {},
+    "responseTime": 0.0442
+  },
+  "totalResponseTime": 5.405
 }
 ```
 
