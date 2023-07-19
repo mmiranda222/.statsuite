@@ -957,3 +957,20 @@ If value is set to zero, then the length is bounded by the maximum value of a UL
 Please note that other settings may still limit the entire url, e.g. maximum number of url segments or maximum url length.
 
 Please also note that after changing this value in registry, the **restart** of the Windows machine is **required**.
+
+
+---
+
+### 8. Authorization configuration
+
+Please note that with the current installation the NSI WS and transfer service instances will not use authentication, all requests are treated as anonymous.
+On the other hand, the authorization is turned on. 
+As the initial authorization configuration does not contain any authorization rule for anonymous user, the NSI WS instances will not allow any action, e.g. listing or manipulation of artefacts, retrieval of data. 
+In order to allow anonymous users do actions, specific authorization rule(s) should be created. 
+These are the generic rules that are applicable for any users, i.e. the user mask is `*`.
+For further info on the permissions please see the following page in the documentation: [Permission business rules](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions/permission-rules/)
+The simplest way to create such a rule is using the authorization management service via [Manage permissions page of DLM](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions/manage-permissions/) or directly on the swagger UI of the authorization management sevice.
+Please note that both cases require a working authorization management service. 
+**This installation manual does not contain (yet) the description of the installation of authorization management service.**
+Other way could be to apply the needed permissions directly in common database using an SQL tool.
+
