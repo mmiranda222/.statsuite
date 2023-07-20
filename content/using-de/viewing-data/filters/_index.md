@@ -12,7 +12,7 @@ keywords: [
   'Data availability', '#data-availability',
   'Local search', '#local-search',
   'Keyboard selection options', '#keyboard-selection-options',
-  'Frequency and time period filter', '#frequency-and-time-period-filter',
+  'Frequency and Time period filter', '#frequency-and-time-period-filter',
   'Used filters panel', '#used-filters-panel',
 ]
 ---
@@ -26,7 +26,7 @@ keywords: [
   - [Data availability](#data-availability)
   - [Local search](#local-search)
   - [Keyboard selection options](#keyboard-selection-options)
-- [Frequency and time period filter](#frequency-and-time-period-filter)
+- [Frequency and Time period filter](#frequency-and-time-period-filter)
 - [Applied filters panel](#applied-filters-panel)
 
 **General note**: All content related to the filter area is localised. For more information, go to the [general documentation about Languages](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#language).
@@ -149,7 +149,7 @@ As long as the mouse button is held, the data table is not updated.
 
 ---
 
-### Frequency and time period filter
+### Frequency and Time period filter
 
 See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) for details.
 

@@ -19,7 +19,6 @@ Use the following syntax when defining the annotation in the item definition of 
          }]
 ```
 
-
 Use the following syntax when defining the annotation in the Dataflow or DSD definition:  
 ```
         "annotations": [{
@@ -29,6 +28,16 @@ Use the following syntax when defining the annotation in the Dataflow or DSD def
 
         "annotations": [{
                  "title": "DIM3=CODE1+CODE2,DIM6=CODE,TIME_PERIOD_START=2013-01"  <-- open-ended time period span
+                 "type": "DEFAULT"
+        }]
+
+        "annotations": [{
+                 "title": "DIM3=CODE1+CODE2,DIM6=CODE,TIME_PERIOD_START=2013,TIME_PERIOD_END=2018,LASTNOBSERVATIONS=1"  <-- last 1 available value per time series within the provided time range
+                 "type": "DEFAULT"
+        }]
+
+        "annotations": [{
+                 "title": "DIM3=CODE1+CODE2,DIM6=CODE,LASTNPERIODS=5"  <-- last 5 time periods within the available time period range
                  "type": "DEFAULT"
         }]
 ```
