@@ -2,7 +2,7 @@
 title: "Google Tag Manager"
 subtitle: 
 comments: false
-weight: 77
+weight: 76
 keywords: [
 'How to configure Google Tag Manager', '#how-to-configure-google-tag-manager',
 'Pre-requisite', '#pre-requisite',
@@ -14,8 +14,10 @@ keywords: [
 'Configure your domains', '#configure-your-domains',
 'Configure Google Analytics with Google Tag Manager', '#configure-google-analytics-with-google-tag-manager',
 'Configure your cross domains', '#configure-your-cross-domains',
+'Add optional static data inside your dataLayer', '#add-optional-static-data-inside-your-datalayer',
 'Events tags and triggers', '#events-tags-and-triggers',
 ]
+
 ---
 
 #### Table of Content
@@ -29,10 +31,11 @@ keywords: [
   - [Configure your domains](#configure-your-domains)
   - [Configure Google Analytics with Google Tag Manager](#configure-google-analytics-with-google-tag-manager)
   - [Configure your cross domains](#configure-your-cross-domains)
+  - [Add optional static data inside your dataLayer](#add-optional-static-data-inside-your-datalayer)
 - [Events tags and triggers](#events-tags-and-triggers)
 
----
-
+> *Version history:*  
+> Migrating from UA to GA4 property with [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)  
 > Released in [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
 > Read the **[disclaimers](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/)** for a better understanding of the historical implementations of Google Analytics and Google Tag Manager in .Stat Suite.
 
@@ -104,24 +107,31 @@ From the "Workspace" of your data-explorer container, go to "Variables", then cl
 
 ![GTM - configure your domain](/dotstatsuite-documentation/images/gtm-ga-domain.png)  
 
-Keep the Variable type as "Constant", and change the Value to your domain URL (e.g. https://de-qa.siscc.org/).
-
-![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-token-next-step0.png)  
-
+Keep the Variable type as "Constant", and change the Value to your domain URL (e.g., https://de-qa.siscc.org/).  
 Repeat the same steps in the data-viewer container, the Value of your domain being the URL of the Data Viewer (e.g. https://dv-qa.siscc.org).
 
 #### Configure Google Analytics with Google Tag Manager
-The **GA Token** variable is necessary if you want Google Tag Manager to send data to Google Analytics.
+**Disclamier:** Since July 1st 2023, Universal Analytics (UA) standard has stopped processing data in Google Analytics and is being replaced by **Google Analytics 4 (GA4)** properties (see [more](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/#disclaimers)).
 
-**Pre-requisite**: Create a **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)**.
+The **"Google Analytics: GA4 configuration"** variable, where to define the **GA4 Google tag ID**, is necessary if you want Google Tag Manager to send data to Google Analytics.
 
-From the "Workspace" of your data-explorer container, go to "Variables", then click on the **"GA Token"** user-defined variable.
+**Pre-requisites**:
+1) Set up a Google Analytics account (see [how to](https://support.google.com/analytics/answer/1008080?hl=en#zippy=%2Cin-this-article))
+2) Define and retrieve your GA4 Google tag ID (see [how to](https://support.google.com/analytics/answer/9539598?sjid=17311917297012063958-EU#find-G-ID))
 
-![GTM - configure your GA Token](/dotstatsuite-documentation/images/gtm-ga-token.png)
+From the "Workspace" of your data-explorer container, go to "Tags", then click on **"New"**, select **"Tag Configuration"** and then **"Google Analytics: GA4 Configuration"**.
 
-Copy your **GA Tracking ID** in the "Tracking ID" field and save.
+![GTM - configure your GA4 ID](/dotstatsuite-documentation/images/gtm-ga4-configuration1.png)
 
-![GTM - configure your GA Token step 2](/dotstatsuite-documentation/images/gtm-ga-token-step2.png)
+Copy your **GA4 Google tag ID** in the "Measurement ID" field.
+
+![GTM - configure your GA4 ID](/dotstatsuite-documentation/images/gtm-ga4-configuration2.png)
+
+Click on the **"Triggering"** area below, and select **"All Pages"**, then save.
+
+![GTM - configure your GA4 ID](/dotstatsuite-documentation/images/gtm-ga4-configuration3.png)
+
+Repeat the same steps in your data-viewer container.
 
 #### Configure your cross domains
 The **Cross-domain** variable is necessary if you want to track events when a user clicks on a hyperlink from your website to another target (outbound links).
@@ -133,6 +143,26 @@ From the "Workspace" of your data-explorer container, go to "Variables", then cl
 Keep "Variable Type" to "Element URL", "Component Type" to "Is Outbound", and then change "Affiliated Domains" value by the comma-separated list your cross-domain hyperlink, then save.
 
 ![GTM - configure your domain next step](/dotstatsuite-documentation/images/gtm-ga-cross-domain-next-step0.png)  
+
+
+#### Add optional static data inside your dataLayer
+You can add custom static values inside your dataLayer (optional), in order to send additional events to be trakced by GTM.
+
+**Example:**  
+> in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json` under a key entry named `"analytics"`
+
+```json
+{
+  "analytics": {
+    "dataLayer": {
+      "is_global": "yes",
+      "is_directorates": "no",
+      "is_satellite": "no",
+      "template_name": "data explorer"
+    }
+  }
+}
+```
 
 ---
 
@@ -160,4 +190,4 @@ Another useful detailed view of GTM tags is the list of triggers under the **Tri
 ---
 
 ### Example of a Google Analytics monitoring dashboard
-*to be added soon*
+*to be completed*

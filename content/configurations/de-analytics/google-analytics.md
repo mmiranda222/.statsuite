@@ -2,22 +2,22 @@
 title: "Google Analytics"
 subtitle: 
 comments: false
-weight: 76
+weight: 77
 keywords: [
-  'Tracking ID', '#tracking-id',
+  'Measurement ID', '#measurement-id',
   'Google Analytics default events', '#google-analytics-default-events',
   'Events API', '#events-api',
   'Default overviews for audiences and behaviours', '#default-overviews-for-audiences-and-behaviours',
-  'How to create a custom dashboard', '#how-to-create-a-custom-dashboard',
+  'Customise reports', '#customise-reports',
 ]
 ---
 
 #### Table of Content
-- [Tracking ID](#tracking-id)
+- [Measurement ID](#measurement-id)
 - [Google Analytics default events](#google-analytics-default-events)
 - [Events API](#events-api)
 - [Default overviews for audiences and behaviours](#default-overviews-for-audiences-and-behaviours)
-- [How to create a custom dashboard](#how-to-create-a-custom-dashboard)
+- [Customise reports](#customise-reports)
 
 ---
 
@@ -27,15 +27,11 @@ keywords: [
 
 ![GA logo](/dotstatsuite-documentation/images/googleanalytics-logo.png)
 
-### Tracking ID
+### Measurement ID
 You can enable [Google Analytics](https://analytics.google.com/) to receive hits on audience and usages of a .Stat Data Explorer instance.  
-In order to activate the analytics functionality, you need to create your own **[Google Analytics Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en)** and use the value in env variable named **`GA_TOKEN`** in the scope of compliant service (ie data-explorer).  
-You can add the env variable in your **`.env`** file and start data-explorer service.  
+In order to activate the analytics functionality, you need to create your own **[Google Analytics 4 (GA4) property](https://support.google.com/analytics/answer/9304153?hl=en&ref_topic=9303319&sjid=18265954499742490560-EU)**. When completing the set up by "adding a data stream", you will be given a **"Measurement ID"** to be provided in the environment variable named **`GA_TOKEN`** in the scope of the compliant service (data-explorer or data-viewer).  
+You can add the env variable in your **`.env`** file and start the data-explorer or data-viewer service.  
 If you are using Docker-Compose, you have to declare the env variable at the service level in the compose file (see [example](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/js/docker-compose.yml#L82))
-
-To make sure that the tracking ID is well configured, the F12 console of your DE homepage instance should return the following:
-
-![DE Analytics Console](/dotstatsuite-documentation/images/de-analytics-5.png)
 
 ---
 
@@ -111,7 +107,7 @@ List of **Events** set up and applied to a Data Explorer instance:
 ---
 
 ### Default overviews for audiences and behaviours
-Once your tracking ID is set up to a deployed instance of .Stat Data Explorer, you should be able to view all event actions, categories and labels (dataflows) under **Reports > Behaviour > Events > Overview**.
+Once your Measurement ID is set up for a deployed instance of .Stat Data Explorer, you should be able to view all event actions, categories and labels (dataflows) under **Reports > Engagement > Events**.
 
 ![DE Analytics Overview](/dotstatsuite-documentation/images/de-analytics-1.png)
 
@@ -121,127 +117,5 @@ Once your tracking ID is set up to a deployed instance of .Stat Data Explorer, y
 
 ---
 
-### How to create a custom dashboard
-It is possible to pull all tracked events and audiences together into a single periodic dashboard. Here below is a set of examples for setting up metrics into custom dashboards, the only limitation in this example being that you can only create 12 widgets per dashboard.  
-Go to **Customisation > Dashboards** and click on **Create**.
-
-![DE Analytics Dashboard](/dotstatsuite-documentation/images/de-analytics-2.png)
-
-Once your dashboard is named and created, you can add up to 12 widgets and customise the general layout of the dashboard.  
-
-**+Add Widget**
-
-![DE Analytics Widget](/dotstatsuite-documentation/images/de-analytics-3.png)
-
-**Number of DE sessions per period**  
-- Standard: "METRIC"
-- Show the following metric:
-  - add a metric: "Number of Sessions per User"
-
-**Number of DE users per period**  
-- Standard: "METRIC"
-- Show the following metric:
-  - add a metric: "Users"
-
-**Number of DE sessions per dataflow per period**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Label"
-  - add metric: "Sessions"
-- Filter this data:
-  - only show | Event Category | containing | "DATAFLOW"
-
-**Number of DE users per dataflow per period**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Label"
-  - add metric: "Users"
-- Filter this data:
-  - only show | Event Category | containing | "DATAFLOW"
-
-**Number of DE downloads (separately by unfiltered csv, filtered csv, filtered excel, .png) per period**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Action"
-  - add metric: "Total Events"
-- Filter this data:
-  - only show | Event Category | containing | "DOWNLOAD"
-
-**Number of DE downloads (separately by unfiltered csv, filtered csv, filtered excel, .png) per dataflow per period**  
-**Filtered excel**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Label" 
-  - add metric: "Total Events"  
-- Filter this data:
-  - only show | Event Category | containing | "DOWNLOAD"
-  - only show | Event Action | containing | "EXCEL"
-
-**Filtered png**  
-- Standard: "TABLE"
-- Show the following metric: 
-  - add a Dimension: "Event Label" 
-  - add metric: "Total Events"
-- Filter this data:
-  - only show | Event Category | containing | "DOWNLOAD"
-  - only show | Event Action | containing | "PNG"
-
-**Filtered csv**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Label"
-  - add metric: "Total Events"
-- Filter this data:  
-  - only show | Event Category | containing | "DOWNLOAD"
-  - only show | Event Action | Exactly matching | "CSV"
-
-**Unfiltered csv**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Label"
-  - add metric: "Total Events"
-- Filter this data:
-  - only show | Event Category | containing | "DOWNLOAD"
-  - only show | Event Action | containing | "CSV_FULL"
-
-**Number of DE shared tables/charts per period**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Action"
-  - add metric: "Total Events"
-- Filter this data:
-  - only show | Event Category | Exactly matching | "SHARE"
-
-**Number of DE shared tables/charts per dataflow per period**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Label"
-  - add metric: "Total Events"
-- Filter this data:
-  - only show | Event Category | Exactly matching | "SHARE"
-
-**Number of VIEWER views of shared tables/charts per period**  
-- Standard: "METRIC"
-- Show the following metric:
-  - add a metric: "Total Events"
-- Filter this data:
-  - only show | Event Category | containing | "SHARE_VIEW"
-
-**Number of VIEWER views of shared tables/charts per dataflow per period**  
-- Standard: "TABLE"
-- Show the following metric:
-  - add a Dimension: "Event Label"
-  - add metric: "Total Events"
-- Filter this data:
-  - only show | Event Category | containing | "SHARE_VIEW"
-
-**Number of VIEWER users per period**  
-- Standard: "METRIC"
-- Show the following metric:
-  - add a metric: "Users"
-- Filter this data:
-  - only show | Event Category | containing | "SHARE_VIEW"
-
-**Example of a set of widgets**  
-
-![DE Analytics Dashboard example](/dotstatsuite-documentation/images/de-analytics-4.png)
+### Customise reports
+Create, customise and organise your reports under the "Library" of Google Analytics. [Learn how to](https://support.google.com/analytics/answer/10460557).
