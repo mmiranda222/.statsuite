@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [July 20, 2023](#july-20-2023)
 - [July 4, 2023](#july-4-2023)
 - [June 28, 2023](#june-28-2023)
 - [June 12, 2023](#june-12-2023)
@@ -120,6 +121,55 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### July 20, 2023
+**[Release .Stat Suite JS "virtual"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/67)**
+> This **major** release includes new versions of the **data-explorer** (v18.0.0), **data-viewer** (v18.0.0), and **data-lifecycle-manager** (v18.0.0) applications.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.17.0** and .Stat-Suite CORE release [dragonfruit](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/59).
+
+**Disclamer - currently known regressions:** 
+- Data Explorer: 'Combined Unit of Measure' (shortly 'UoM', now available through new generic 'combined concepts') items are displayed at cell level instead of in sub-header when all its non-hidden values are single-fixed. This will be fixed subsequently with [dotstatsuite-data-explorer#1055](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1055).
+- Data Explorer: The ref. metadata (i) icon is wrongly shown for empty (NULL) or to be hidden attribute values. This will be fixed subsequently with [dotstatsuite-data-explorer#1057](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1057).
+- Data Explorer: In certain cases, the ref. metadata (i) icon doesn't appear in the table. This will be fixed subsequently with [dotstatsuite-data-explorer#1059](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1059).
+
+major change:
+
+- [dotstatsuite-data-explorer#665](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/665) **GTM integration** & **migration from UA to GA4**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/google-tag-manager/))
+
+minor changes:
+
+- [dotstatsuite-data-explorer#873](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/873) Make **"Combined unit of measure"** a generic component combination feature. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/))
+- [dotstatsuite-data-explorer#942](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/942) Add a selection feature for **`Last [..] periods`** (based on the SDMX Actual Content Constraint). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period#last-period-s))
+- [dotstatsuite-data-explorer#1022](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1022) Put plural character in `Last [x] time series value(s)` and `Last [x] period(s)` in parentheses.
+- [dotstatsuite-data-explorer#697](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/697) Enhance the layout of the **flags and footnotes in the downloaded Excel files**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#table-in-excel))
+- [dotstatsuite-data-explorer#895](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/895) Download number of decimals in Excel as displayed in the Data Explorer.
+- [dotstatsuite-data-explorer#158](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/158) **Hide dimensions that only have specific values** on the visualisation page. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed#syntax))
+- [dotstatsuite-data-explorer#616](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/616) List related dataflows (same referenced DSD) in the Overview page. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/overview#overview-content))
+- [dotstatsuite-data-explorer#853](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/853) Instead of disabling the "Chart" tab, hide or disable currently non-available chart types in the "Chart" sub-menu. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/charts/))
+- [dotstatsuite-data-explorer#651](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/651) e2e tests integration (part 2).
+- [dotstatsuite-data-explorer#994](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/994) Support `labels=both` option in CSV downloads in unauthenticated mode. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar#filtered-or-unfiltered-data-in-tabular-text-csv))
+- [dotstatsuite-data-explorer#1004](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1004) Referential metadata at higher level now use `'~'` in keys.
+- [dotstatsuite-data-explorer#1045](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1045) The checkbox 'I agree to be contacted to help improving this web site' is not to be checked by default
+- [dotstatsuite-share#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/35) Enhance the responsiveness design of the visualisation page of the shared object.
+- [dotstatsuite-data-lifecycle-manager#305](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/305) Auto-refresh categorisation info after categorising a dataflow.
+
+patch changes:
+
+- [dotstatsuite-config-data#27](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/27) *(Support)* Typo in synonyms/en.json - empty string for "well-being"
+- [dotstatsuite-data-explorer#1033](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1033) Unsupported x-range hotfix backport to source code.
+- [dotstatsuite-data-explorer#1032](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1032) Number of observations not displayed in the overview page for some dataflows.
+- [dotstatsuite-data-explorer#1012](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1012) Broken Charts options for authenticated users.
+- [dotstatsuite-data-explorer#1009](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1009) Broken share button.
+- [dotstatsuite-data-explorer#1003](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1003) Lost sticky property on row section.
+- [dotstatsuite-data-explorer#998](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/998) Filter items incorrectly counted when a hierarchical codelist (HCL) is used with several parents for the same code.
+- [dotstatsuite-data-explorer#991](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/991) Visualisation page doesn't respect the "Fixed width container" with pre-defined width anymore.
+- [dotstatsuite-data-explorer#972](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/972) HTML tag not interpreted in the table layout row section.
+- [dotstatsuite-data-explorer#954](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/954) "There is no data for the current selection. Please change the selection" wrongly displayed.
+- [dotstatsuite-data-lifecycle-manager#360](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/360) Agency not found when filtering twice by agency from a lower level in the tree.
+- [dotstatsuite-data-lifecycle-manager#352](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/352) Apply the correct button behaviour for the "Add new permission" option of the DLM "Manage permissions" feature.
+- [dotstatsuite-data-explorer#860](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/860) *(Refactoring)* add tests e2e related to business rules.
 
 ---
 
