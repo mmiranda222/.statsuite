@@ -38,7 +38,8 @@
     - update the kubernetes column of the summary
 1. for each service/app:
     1. compare develop (or the latest acceptable commit for a release if QA is ahead) and master to define a semver (ie for [DE](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/compare/master...develop?from_project_id=10532325))
-    1. bump version in package.json in develop & update package-lock.json for vuln report (npm)
+    1. bump version in package.json in develop & **update package-lock.json for vuln report (npm)**
+    1. **run e2e in DE**
     1. add in the release the client impact
     1. create a release branch based on this commit following the name convention: `release-v<semver>`
     1. create a merge request from the release branch into master (default based on branch name is fine), bind it the the milestone, **no squash but rm branch afterwards**
