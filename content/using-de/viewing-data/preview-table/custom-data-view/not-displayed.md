@@ -11,7 +11,7 @@ keywords: [
   'Scenario 4: Hide attribute values', '#scenario-4-hide-attribute-values',
   'Syntax', '#syntax',
   'Example', '#example',
-  'Automatic hide of specific values', '#automatic-hide-of-specific-values',
+  'Automatic hide of special values', '#automatic-hide-of-special-values',
   'Example', '#example',
 ]
 ---
@@ -24,8 +24,11 @@ keywords: [
   - [Scenario 4: Hide attribute values](#scenario-4-hide-attribute-values)
   - [Syntax](#syntax)
   - [Example](#example)
-- [Automatic hide of specific values](#automatic-hide-of-specific-values)
+- [Automatic hide of special values](#automatic-hide-of-special-values)
   - [Example](#example)
+
+> *Version history:*  
+> Hiding dimensions fixed to a set of specific values: implemented [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
 
 ---
 
@@ -82,6 +85,23 @@ Use the following syntax in a dataflow, a DSD or a dataset definition to hide di
          }]
 ```
 
+Use **brackets** around a set of dimensions values to hide that set of values in the case that those values are the only ones currently available for this dimension, just like if the dimension was single-fixed.
+
+Example: Hide CODE1 and CODE2 when they are the only ones available. Hide CODE3 when it is the only one available.
+
+```
+        "annotations": [{
+                 "title": "DIM1=(CODE1+CODE2)+CODE3,DIM2=..."
+                 "type": "NOT_DISPLAYED",
+         }]
+```
+
+When using brackets, the Data Explorer behaves as follow:
+- The dimension filter, which would have only (parts of) the listed set of values, is hidden. The data query will contain either the value selected by DEFAULT, if set, otherwise the (partly) set of values.
+- In the data table/chart, whenever a dimension has only (parts of) the listed set of values, then the corresponding dimension is hidden. Note that potentially there could originally be different observations that only differ in their value of that dimension. In this case, all related cells are displayed like "doubled":  
+  ![Example of DE table with doubled cells](/dotstatsuite-documentation/images/DE_table_doubled_cells.png)  
+  It is the responsibility of the data owner to use the `NOT_DISPLAYED` annotation with care, so that such cases are avoided.
+
 #### Example
 The following example illustrates the above **[Scenario 2: Hide dimension values](#scenario-2-hide-dimension-values)**.
 
@@ -95,7 +115,7 @@ Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1
 
 ---
 
-### Automatic hide of specific values
+### Automatic hide of special values
 By default, the following special values (codes of a Codelist) are hidden in the dataflow sub-title in the Data Explorer visualisation page:
 * _L (Local extension)
 * _T (Total)
