@@ -320,7 +320,7 @@ Define, per DE scope, the landing tab of the visualisation page to be shown by d
 ---
 
 ### Default time period boundaries and default time period selection
-> Feature updated with [XXXXXXXXXXXXX Release .Stat Suite JS XXXXXXX](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#XXXXXXXX)
+> Feature updated with [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
 
 Default time period **`boundaries`** and/or a **`default`** time period **selection** are required in the configuration for cases when an actual content constraint containing the time period range of available data cannot be retrieved from the SDMX web service, and/or when the default time period **selection** is not defined in the dataflow **annotation** of type `DEFAULT`.  
 In such cases, the Time Period filter in the Data Explorer visualisation page uses the configured default time period **`boundaries`** to define which time periods should be shown in the _start and end period_ dropdowns. It uses the configured **`default`** or **`lastNPeriods`** time period **selection** to automatically pre-select the _start and end periods_, or the _last [..] period(s)_. 

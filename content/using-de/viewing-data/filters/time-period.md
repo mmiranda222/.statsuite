@@ -85,7 +85,7 @@ The **Frequency & Time Period** filter takes as title the concatenated, localise
 
 See the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/common-features/#how-special-dimensions-are-identified) on how time and frequency dimensions are identified.
 
-> Introduced in [XXXXXXXXXXXXXXXXXXX Release .Stat Suite JS XXXXXXXXXXXXXXXX](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#XXXXXXXXXXXXXXXXXXX)
+> Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
 
 The Data Explorer proposes two alternative (mutually exclusive) options for retrieving the latest available data within other filter criteria, either with a generic time span of a fixed number of latest available time periods ([Last [..] period(s)](#last-period-s)) or with a time-series-specific time span of a fixed number of latest available time periods ([Last [..] time series value(s)](#last-time-series-value-s)). Both options share the same number edit box.
 
