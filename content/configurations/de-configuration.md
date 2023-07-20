@@ -320,48 +320,41 @@ Define, per DE scope, the landing tab of the visualisation page to be shown by d
 ---
 
 ### Default time period boundaries and default time period selection
-> Feature updated with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+> Feature updated with [XXXXXXXXXXXXX Release .Stat Suite JS XXXXXXX](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#XXXXXXXX)
 
-Default time period boundaries and/or a default time period selection are required in the configuration for cases when an actual content constraint containing the time period range of available data cannot be retrieved from the SDMX web service, and/or when the default time period selection is not defined in the dataflow annotation of type "DEFAULT".  
-In such cases, the "Time Period" filter in the Data Explorer visualisation page uses the configured default time period boundaries to define which time periods should be shown in the start and end period dropdowns. It uses the configured default time period selection to automatically pre-select the start and end periods. 
+Default time period **`boundaries`** and/or a **`default`** time period **selection** are required in the configuration for cases when an actual content constraint containing the time period range of available data cannot be retrieved from the SDMX web service, and/or when the default time period **selection** is not defined in the dataflow **annotation** of type `DEFAULT`.  
+In such cases, the Time Period filter in the Data Explorer visualisation page uses the configured default time period **`boundaries`** to define which time periods should be shown in the _start and end period_ dropdowns. It uses the configured **`default`** or **`lastNPeriods`** time period **selection** to automatically pre-select the _start and end periods_, or the _last [..] period(s)_. 
 
-The start and end period boundaries finally applied in the "Time Period" filter in the Data Explorer visualisation page respect the following rules in this order of increasing priority:
-
-* The start period and end period take the current year.
-* The start period and end period take the default boundaries config settings, if available.
-* The start period and end period take the data availability, if available.
-* The start period must always be smaller than or equal to the end period.
-
-The initial start and end period selection finally applied in the "Time Period" filter in the Data Explorer visualisation page respects the following rules in this order of increasing priority:
-
-* The start period and end period take the above boundaries settings.
-* The start period and end period take the default selection config settings, if available and if within the final boundaries settings.
-* The start period and end period take the default selection annotation settings, if available and if within the final boundaries settings.
-* The start period must always be smaller than or equal to the end period.
-
-Therefore, if the default time period boundaries and the default time period selection are not defined, they will be based on the current year.  
-Any value of the time period boundaries and the default time period selection can be `null`ed or left empty  `""`.   
+Any value of the default time period boundaries and selection can be `null`ed or left empty  `""`.   
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
     "period": {
-        "boundaries": [1970, 2021]
+        "boundaries": [1970, 2021],
         "default": [2016, 2021]
     }
 ```
 ```json
     "period": {
-        "boundaries": [1970, null]
+        "boundaries": [1970, null],
         "default": [2016, null]
     }
 ```
 ```json
     "period": {
-        "boundaries": [1970, ""]
+        "boundaries": [1970, ""],
         "default": [2016, ""]
     }
 ```
+```json
+    "period": {
+        "boundaries": [1970, ""],
+        "lastNPeriods": 5
+    }
+```
+
+Note that the `default` time period selection is incompatible with the `lastNPeriods` configuration. In case both are present, the last one takes precedence over the first one.
 
 ---
 
@@ -398,10 +391,7 @@ in `dotstatsuite-config-data/<env>/configs/<tenant>/tenants.json`
         }
     }
 ```
-When set to `true`, then the **LastNPeriod** feature is displayed in the DataExplorer visualisation page (under the Time Period & Frequency filter). See the functional specifications of the feature described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/#last-n-periods). 
-The feature is set to `false` by default.
-
-![Time period default range](/dotstatsuite-documentation/images/lastnobs-config.png)
+When set to `true`, then the [**Last [..] time series value(s)** selector](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period#last-time-series-value-s) is displayed in the Data Explorer visualisation page (in the lower part of the **Time Period & Frequency** filter). By default, this setting is `false`.
 
 ---
 

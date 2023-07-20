@@ -4,99 +4,132 @@ subtitle:
 comments: false
 weight: 2130
 keywords: [
-  'Frequency & Time Period', '#frequency-and-time-period-selectors',
-  'Last N Periods', '#last-n-periods',
+  'Frequency and Time-Period selectors', '#frequency-and-time-period-selectors',
+  'Frequency', '#frequency',
+  'Time Periods', '#time-periods',
+  'Last [..] period(s)', '#last-period-s',
+  'Last [..] time series value(s)', '#last-time-series-value-s',
   'Hiding Frequeny & Time Period filters','#hiding-frequency-and-time-period-filters'
 ]
 ---
 
 #### Table of Content
-- [Frequency & Time Period](#frequency-and-time-period-selectors)
-- [Last N Periods](#last-n-periods)
+- [Frequency and Time-Period selectors](#frequency-and-time-period-selectors)
+  - [Frequency](#frequency)
+  - [Time Periods](#time-periods)
+  - [Last [..] period(s)](#last-period-s)
+  - [Last [..] time series value(s)](#last-time-series-value-s)
 - [Hiding Frequency & Time Period filters](#hiding-frequency-and-time-period-filters)
 
 ---
 
 ### Frequency and Time-Period selectors
-**Frequency & Time Period** is a combined set of selectors in the visualisation page, enabling to filter a data view for time-period range in the context of a pre-selected frequency. **Frequency** is a single-selection filter, and **Time Period** is a range selector.  
+**Frequency & Time Period** is a combined set of selectors in the visualisation page, enabling to filter a data view for time-period range in the context of a pre-selected frequency. **Frequency** is a single-selection dropdown, and **Time Period** is a range selector.  
 Most of the (*standard SDMX*) used frequencies are supported: Annual, biannual, quarterly, monthly, weekly, daily, daily (business week), hourly. Minutely and secondly are *nice to have* options.  
 
-**Frequencies**  
-The frequencies returned in the **Frequency** dimension of a data view are displayed in the filter, and only the frequencies returned for the given data view are displayed in it. If there is only one frequency, then the filter isn't displayed, and **Frequency** is shown only in the data view table/chart header.  
+Selectors without a selection show 2 or 4 dashes ('--' or '----'), depending on their purpose.
+
+#### Frequency  
+The frequencies returned in the **Frequency** dimension of a data view are displayed in the **Frequency** filter, and only the frequencies returned for the given data view are displayed in it. 
+
+If there is no **Frequency** dimension defined for the displayed data, then the **Frequency** filter isn't displayed and the **Time Period** selector uses an annual time format. See [here](/dotstatsuite-documentation/using-api/typical-use-cases#frequency-dimension) for how the Frequency dimension is recognised.
+
+If the data has only one **Frequency** value, then the **Frequency** filter isn't displayed, and the **Frequency** value is shown only in the data view table/chart header.  
 In any case, the **Time Period** range selector will dynamically update according to the **Frequency** selection.
 
 ![frequency](/dotstatsuite-documentation/images/time-period-1.png)
 
-**Time Periods**  
-As a general behavior, the **Time Period** selector layout is dynamic and updates according to the Frequency selection, e.g. *"I select Daily frequency, and the Time Period range selector displays the boxes for Year, Month and Day"*.  
-At this stage, if only Year is filled, or Year and Month, then it means that all available values in this range are returned. The selection field dropdown content automatically adapts to the corresponding date/time part displayed, e.g. "1" and "2" for semesters, and it should also take the actual data availability into account (see [this documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)).  
-In the **Time Period** selector, each box is a drop-down list of items corresponding to the selected **Frequency**.
+The user cannot remove the **Frequency** value in the 'Applied filters'. Thus there is no cross in the **Frequency** value.  
+
+#### Time Periods  
+The **Time Period** range selector layout is dynamic and updates according to the **Frequency** selection; only the necessary drop-down boxes with items corresponding to the selected **Frequency** are shown, e.g., when selecting a daily frequency, then the **Time Period** range selector displays appropriately filled dropdowns for the year, month and day. 
 
 ![time period](/dotstatsuite-documentation/images/time-period-2.png)
 
-**Configurations**  
-If there is no Frequency dimension returned for a data view, then the **Frequency** Annual is selected by default.  
-The configuration "vis.period.boundaries": [1970, 2020] is used to return the list of available years in the **Time Period** selector. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#time-period-boundaries)  
-The configuration "vis.period.default": [2008, 2018] is used to display the default range selected for a given data view. [Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#default-time-period)
+The **boundaries** applied in the **Time Period** filter are defined using the following rules in this order of increasing priority:
 
-**Exceptions**  
-If the content constraints are not defined (see [data availability](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)), then the DE relies on default boundaries and default period (defined in the settings of the instance).  
-If the content constraints are defined but do not have boundaries period, then the DE relies on the default boundaries and default period.  
-If the content constraints are defined and have boundaries, then the DE uses the default periods in order to fit to the boundaries of the content constraints.  
-*(since [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021))* It is **never possible** to select an end period that is before the start period, and vice-versa, a start period that is after the end period. This means that each dropdown box content takes into account the selection in the other dropdown.  
-Example: assuming that the start and end periods are open. When the user selects a start period then the dropdown content of the end period is automatically restricted to start only from the selected start period. Vice-versa, under the same assumption, when the user selects an end period, then the dropdown content of the start period is automatically restricted to end latest on the selected end period.  
-Last, when a date selector is **empty**, then selecting a start date will select the first available date, and selecting an end date will select the latest date available.
+* The _start boundary_ and _end boundary_ take the current year.
+* The _start boundary_ and _end boundary_ take the default boundaries defined in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection), if available.
+* The _start boundary_ and _end boundary_ take the **[data availability](/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)**, if available.
+* The _start boundary_ must always be smaller than or equal to the _end boundary_.
 
-**Specificities**  
-In the "Used filters" area, **Frequency** cannot be removed, but only replaced. Thus there is no cross in front of the selected **Frequency**.  
-For **Time Period** ranges, each start / end can be removed, and thus no filter will be applied for each.  
+The initial **selections** applied in the **Time Period** filter are defined using the following rules in this order of increasing priority:
+
+* The _start period_ and _end period_ selections take the above **boundaries** settings.
+* The _start period_ and _end period_ selections take the related default selection defined in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection), if available and if within the final boundaries settings.
+* The _last [..] period(s)_ selection take the related default selection defined in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection), if available, and the _start period_ is auto-calculated accordingly (see [here]()) and the _end period_ is non-selected.
+* The _start period_ and _end period_ selections take the related [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/), if available and if within the boundaries settings.
+* The _last [..] period(s)_ selection takes the related [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last-period-s)) and the _end period_ is non-selected.
+* The _start period_ and _end period_ selections take the related current [DE **URL**settings](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters), if available and if within the boundaries settings.
+* The _last [..] period(s)_ selection takes the related current [DE **URL** settings](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last-period-s)) and the _end period_ is non-selected.
+* If set, then the _start period_ must always be smaller than or equal to the the _end boundary_ and smaller than or equal to the _end period_, if that is also set.
+
+If there is no **Time** dimension defined for the displayed data, then the **Frequency and Time-Period** filter is hidden. See [here](/dotstatsuite-documentation/using-api/typical-use-cases#time-dimension) for how the **Time** dimension is recognised.
+
+> Introduced in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+
+The user can **never** select an _end period_ that is before the _start period_, and vice-versa, a _start period_ that is after the _end period_. This means that each dropdown box content takes into account the selection in the other dropdown.  
+Example: assuming that the _start and end periods_ are open. When the user selects a _start period_ then the dropdown content of the _end period_ is automatically restricted to start only from the selected _start period_. Vice-versa, under the same assumption, when the user selects an _end period_, then the dropdown content of the _start period_ is automatically restricted to end latest on the selected end period.  
+When a _start or end period_ has no selection, then selecting the year will automatically select the most appropriate values for the other time period date parts like quarter, month or day. E.g., selecting a start year will automatically set the corresponding first available quarter, month or day (as appropriate), selecting a end year will automatically set the corresponding last available quarter, month or day (as appropriate).  
+The _start and end periods_ can be deselected, in which case they will not be applied in the data request.  
+
 The *green* number of **selected values/total of values** is counting values for a given frequency. So for example, it will count the number of selected/total years when Yearly is selected, the number of selected/total months when Monthly is selcted, etc...
 
 ![number of values](/dotstatsuite-documentation/images/time-period-3.png)
 
 > Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
 
-In cases when the localised *SDMX* Concept names for Time Period and Frequency are different than the standard ones, then:
-- If the Time Period filter contains both dimensions Frequency and Time Period, then the filter title uses the localised concept name of the Frequency dimension instead of the current configured/localised "Frequency" label, and the localised concept name of the Time Period dimension instead of the current configured/localised "Time Period" label, and concatenated by the configured/localised " & " combination;
-- If the Time period filter contains only the Time Period dimension, then the title uses the localised concept name of the Time Period dimension instead of the current configured/localised "Time Period" label.
+The **Frequency & Time Period** filter takes as title the concatenated, localised *SDMX* concept names of the **Frequency** and **Time** dimensions (glued with the ' & ' term), depending on the presence of those dimensions. Also see the paragraph about [Hiding Frequency and Time Period filters](#hiding-frequency-and-time-period-filters).
 
 ![overriden time period & frenquency names](/dotstatsuite-documentation/images/time-period-4.png)
 
 See the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/common-features/#how-special-dimensions-are-identified) on how time and frequency dimensions are identified.
 
----
+> Introduced in [XXXXXXXXXXXXXXXXXXX Release .Stat Suite JS XXXXXXXXXXXXXXXX](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#XXXXXXXXXXXXXXXXXXX)
 
-### Last N Periods
->Pre-requisite: This feature is defined by the configuration and must supported by the web service. See [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#lastnobservations-support).
+The Data Explorer proposes two alternative (mutually exclusive) options for retrieving the latest available data within other filter criteria, either with a generic time span of a fixed number of latest available time periods ([Last [..] period(s)](#last-period-s)) or with a time-series-specific time span of a fixed number of latest available time periods ([Last [..] time series value(s)](#last-time-series-value-s)). Both options share the same number edit box.
 
-An edit box for "Last [xxx] periods" is visible under the "Frequency & Time period" filter in the DE visualisation page.  
-It implies that the equivalent number of latest time series observations per time series will be returned for table and chart views of a given data view.  
-Unless the LastNObservations value is defined by an `SDMX`-sourced default setting (see the example below) or by a URL parameter, at first display the edit box will show an empty value "--". Otherwise it shows the number retrieved from the default setting or the URL.
+#### Last [..] period(s)
 
-![Last N Periods](/dotstatsuite-documentation/images/last-n-periods.png)
+The shared edit box for **Last [..] period(s)** is displayed in the lower part of the **Frequency & Time period** filter. A mouse-over popup contains the localised text 'Latest available [e.g., 5] time periods within the other filter criteria'.  
 
-**Example**:  
-If a dataflow has yearly data and sparse observations within the default time period range from 2014 to 2018.  
-This dataflow has also an `SDMX` annotation of type "DEFAULT" that is defined at the dataflow level for `LASTNOBSERVATIONS=1` (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/default-layout/) how to define this `SDMX` annotation of type `DEFAULT`):  
-```
-        "annotations":[{
-                 "type": "DEFAULT"
-                 "title": "TIME_PERIOD_START=2013,TIME_PERIOD_END=2015,LASTNOBSERVATIONS"
-         }]
+![Last [..] period(s)](/dotstatsuite-documentation/images/de-filter-last-periods.png)
 
-```
-Then the default displayed table and chart view can contain data for:  
-* time period 2015 for time series 1 (--> if 2015 is the latest time period for this time series within the given new range 2013 to 2015)
-* time period 2015 for time series 2 (--> if 2015 is the latest time period for this time series within the given new range 2013 to 2015) and
-* time period 2014 for time series 3 (--> if 2014 is the latest time period for this time series within the given new range 2013 to 2015).
+If set, the time range returned by the SDMX web service with a [dynamic data availability query](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/typical-use-cases/#dynamic-data-availability-for-a-specific-data-selection) is used to calculate the appropriate _start period_ for the data request according to the selected number of time periods. The calculation respects the current frequency selection and is executed as follow: 
 
+* X = selected last [X] periods
+* A = dynamic data availability _end period_ obtained without time period selection (or if that is not available then the actual data availability _end period_)
+* B = dynamic data availability _start period_ obtained without time period selection (or if that is not available then the actual data availability _start period_)
+* If A-X+1 > B then _start period_ submitted to SDMX_WS := A-X+1  
+  Else _start period_ submitted to SDMX-WS := B
+* The SDMX-WS data request will not use an _end period_ parameter
+
+A generic default for this option for a given DE instance can be defined in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection).
+
+A data-specific default for this option can be defined in the [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/).
+
+The order of priority of these settings is explained in the paragrpah about [Time Periods](#time-periods).
+
+When entering a new value in the related edit box, then the **Last [..] period(s)** option is auto-selected. Vice-versa, when the user selects a new _start or end period_, then the value for the **Last [..] period(s)** is removed. 
+
+#### Last [..] time series value(s)
+
+>Pre-requisite: This feature is to be enabled per data space in the [DE **config** settings](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#support-of-last-n-observations-feature), and must be supported by the related SDMX web service.
+
+The shared edit box for **Last [..] time series value(s)** is displayed in the lower part of the **Frequency & Time period** filter. A mouse-over popup contains the localised text 'Latest available [e.g., 5] values per time series within the other filter criteria'.   
+
+If set, the selected number of latest time series observations per time series will be returned for table and chart views of a given data view.  
+
+![Last [..] time series value(s)](/dotstatsuite-documentation/images/de-filter-last-time-series-values.png)
+
+A data-specific default for this option can be defined in the [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/).
 
 ---
 
 ### Hiding Frequency and Time Period filters
 > The feature was enhanced with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
 
-The Frequency and Time-Period filters can be hidden in two cases: if the dataflow doesn't have a `TIME_PERIOD` time dimension, or if the dataflow has a `NOT_DISPLAYED` annotation containing the TIME_PERIOD time dimension.
+The Frequency and Time-Period filters are hidden in two cases: if the dataflow doesn't have a `TIME_PERIOD` time dimension, or if the dataflow has a `NOT_DISPLAYED` annotation containing the TIME_PERIOD time dimension.
 
 **Case 1: dataflow without `TIME_PERIOD` time dimension**
 
