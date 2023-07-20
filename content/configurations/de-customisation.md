@@ -25,6 +25,7 @@ keywords: [
   'Table and chart: footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
   'Chart: map configuration', '#chart-map-configuration',
   'Chart: override stacked charts palette', '#chart-override-stacked-charts-palette',
+  'Chart: layout and responsiveness', '#chart-layout-and-responsiveness',
 ]
 ---
 <!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
@@ -53,6 +54,8 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Table and chart: footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
 - [Chart: map configuration](#chart-map-configuration)
 - [Chart: override stacked charts palette](#chart-override-stacked-charts-palette)
+- [Chart: layout and responsiveness](#chart-layout-and-responsiveness)
+
 ---
 
 ### Introduction
@@ -724,7 +727,7 @@ This example, associated with the previous settings example will result with 2 o
 ### Chart: override stacked charts palette
 > Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
 
-By default, the Stacked (bar & row) charts take one color and compute shades to render the different stacks. You can override the default settings in order to apply multiple colors from the options, or compute shades if only one overriden color is provided.
+By default, the Stacked (column & row) charts take one color and compute shades to render the different stacks. You can override the default settings in order to apply multiple colors from the options, or compute shades if only one overriden color is provided.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
@@ -746,3 +749,11 @@ If there are more stacks in a chart than colors `"colors": []` are provided, the
 Don't forget to also configure the **`overColors`** palette, those are the colors to be displayed when the stack is hovered with the mouse, you can simply duplicate your palette or customize it for a nice shading effect.
 
 ![stacked color palette](/dotstatsuite-documentation/images/de-custom-chart-palette.png)
+
+---
+
+### Chart: layout and responsiveness
+
+Further information about chart configurations can be found here:
+- [chart layout configurations](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/README.md)
+- [chart responsiveness](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/docs/charts-responsiveness.md)

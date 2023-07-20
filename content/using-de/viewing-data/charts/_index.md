@@ -22,7 +22,11 @@ The following types of charts are supported:
 
 ![Toolbar](/dotstatsuite-documentation/images/de-toolbar-chart.jpg)
 
-More details about our set of configurable charts based on [d3](https://d3js.org/) to be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/README.md), and also [chart responsiveness](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/blob/master/docs/charts-responsiveness.md).
+While the 'Chart' tab stays always active/enabled, the dropdown menu items (chart types) dynamically adapt to the characteristics of the currently available data. They stay temporarily disabled until the data has been retrieved from the data space.
+
+- If the 'colour map' configuration is missing or if the data has no 'GEO' dimension, then the 'colour map' is hidden.
+- If the data has no 'TIME_PERIOD' dimension, then the 'timeline' chart is hidden.
+- Chart types are disabled if the current selection represents too few available data points to build a meaningful chart, e.g., if the data has only one 'TIME_PERIOD' value, then the 'timeline' chart is disabled, or if the filter selection doesn't allow for any value, then all displayed chart types are disabled until the selection changes and values become available.  
 
 ---
 
@@ -45,6 +49,8 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 
 ![stacked bar chart](/dotstatsuite-documentation/images/chart-stacked.png)
 
+**Note:** The colour palette for stacked column charts can be configured as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation#chart-override-stacked-charts-palette).
+
 ---
 
 ### Stacked row
@@ -53,6 +59,8 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 **Example**  
 
 ![stacked row chart](/dotstatsuite-documentation/images/chart-stacked-row.jpg)
+
+**Note:** The colour palette for stacked row charts can be configured as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation#chart-override-stacked-charts-palette).
 
 ---
 
@@ -82,6 +90,7 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 
 ![timeline chart](/dotstatsuite-documentation/images/chart-timeline.png)
 
+**Note:** Timeline charts are only shown for data that has a TIME_PERIOD dimension and at least 2 TIME_PERIOD values.
 ---
 
 ### Colour map
@@ -89,3 +98,4 @@ More details about our set of configurable charts based on [d3](https://d3js.org
 
 ![choropleth map](/dotstatsuite-documentation/images/chart-choropleth.png)
 
+**Note:** Colour maps need to be configured as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation#chart-map-configuration).
