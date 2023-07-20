@@ -14,12 +14,16 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 
 includes:
 
-* [Google Analytics](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/google-analytics/)
 * [Google Tag Manager](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/google-tag-manager/)
+* [Google Analytics](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-analytics/google-analytics/)
 
 ---
 
 ### DISCLAIMERS
+As of July 1st 2023, **Universal Analytics (UA) standard has stopped processing data in Google Analytics.** As a consequence, you will be able to see your Universal Analytics reports for a period of time after July 1, 2023. However, new data will only flow into **Google Analytics 4 properties**. [Read more](https://support.google.com/analytics/answer/11583528)
+
+Our documentation will explain how to set up GTM and GA based on the new **Google Analytics 4 properties**. For details about moving from UA to GA4, please read **[how to migrate to Google Analytics 4](https://support.google.com/analytics/answer/10759417)**.
+
 **Google Analytics** plugged to .Stat Data Explorer was first implemented with [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020).  
 **Google Tag Manager** directly plugged to .Stat Data Explorer (between DE and Google Analytics) was implemented with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021).
 
