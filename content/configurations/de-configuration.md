@@ -32,6 +32,7 @@ keywords: [
   'Disabled share option', '#disabled-share-option',
   'Disabled chart views', '#disabled-chart-views',
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
+  'Non-support of the `format` URL parameter by a data space', '#non-support-of-the-format-url-parameter-by-a-data-space',
   'Display of HTML content', '#display-of-html-content',
   'Support of long URLs', '#support-of-long-urls',
   '"Contact us" form: reCAPTCHA and email settings', '#contact-us-form-recaptcha-and-email-settings',
@@ -73,6 +74,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Disabled share option](#disabled-share-option)
 - [Disabled chart views](#disabled-chart-views)
 - [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
+- [Non-support of the `format` URL parameter by a data space](#non-support-of-the-format-url-parameter-by-a-data-space)
 - [Display of HTML content](#display-of-html-content)
 - [Support of long URLs](#support-of-long-urls)
 - ["Contact us" form: reCAPTCHA and email settings](#contact-us-form-recaptcha-and-email-settings)
@@ -381,12 +383,12 @@ If `"defaultSort"` is empty or not in the configuration file, then the default r
 
 Define, **per data space**, the support of the `LastNObservations` features from your SDMX web service.  
 
-in `dotstatsuite-config-data/<env>/configs/<tenant>/tenants.json`
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/tenants.json`
 
 ```json
     "spaces": {
-      "staging:SIS-CC-stable": {
-        "label": "staging:SIS-CC-stable",
+      "[space ID]": {
+        "label": "[space name]",
         "hasLastNObservations": true
         }
     }
@@ -709,6 +711,24 @@ When the configuration parameter `search.downloadableDataflowResults` is set to 
 ```
 
 By default, the configuration is disabled **`search.downloadableDataflowResults:false`**.
+
+### Non-support of the `format` URL parameter by a data space
+Since the [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023), the Data Explorer [**CSV download** feature](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar#filtered-or-unfiltered-data-in-tabular-text-csv) uses the _space-unlimited_ web browser's inbuilt file-download feature for _unauthenticated_ users instead of using the _space-limited_ JavaScript 'memory blob'. This requires that the underlying SDMX web service supports the `format=csvfile|csvfilewithlabels` URL parameter as alternative to the HTTP `Accept` header. 
+
+**Note:** In the current NSI web service version, the `format=csvfile` URL parameter resolves to the HTTP `Accept` header `application/vnd.sdmx.data+csv;file=true`. The `format=csvfilewithlabels` URL parameter resolves to `application/vnd.sdmx.data+csv;file=true;labels=both`.
+
+If a dataspace, e.g., with an older NSI web service version, doesn't support this `format` parameter, then the property `"supportsCsvFile": false` needs to be added for the data space in the `tenants.json` configuration file, because the support of the `format` URL parameter is assumed by default.   
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/tenants.json`
+
+```json
+    "spaces": {
+      "[space ID]": {
+        "label": "[space name]",
+        "supportsCsvFile": false 
+        }
+    }
+```
 
 ### Display of HTML content
 > Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)

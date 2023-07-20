@@ -10,8 +10,7 @@ keywords: [
   'Share', '#share',
   'Download', '#download',
   'Table in Excel', '#table-in-excel',
-  'Filter data in tabular text (CSV)', '#filter-data-in-tabular-text-csv',
-  'Unfiltered data in tabular text (CSV)', '#unfiltered-data-in-tabular-text-csv',
+  'Filtered or unfiltered data in tabular text (CSV)', '#filtered-or-unfiltered-data-in-tabular-text-csv',
   'Additional downloads of external resources', '#additional-downloads-of-external-resources',
   'Chart as picture (PNG)', '#chart-as-picture-png',
   'Notification of download', '#notification-of-download',
@@ -28,8 +27,7 @@ keywords: [
 - [Share](#share)
 - [Download](#download)
   - [Table in Excel](#table-in-excel)
-  - [Filter data in tabular text (CSV)](#filter-data-in-tabular-text-csv)
-  - [Unfiltered data in tabular text (CSV)](#unfiltered-data-in-tabular-text-csv)
+  - [Filtered or unfiltered data in tabular text (CSV)](#filtered-or-unfiltered-data-in-tabular-text-csv)
   - [Additional downloads of external resources](#additional-downloads-of-external-resources)
   - [Chart as picture (PNG)](#chart-as-picture-png)
   - [Notification of download](#notification-of-download)
@@ -80,12 +78,9 @@ The **Share** option allows sharing the data view in table or chart mode. For de
 
 ### Download
 There is an option to **download** data in a specific format and content according to the current data view, and accessible from both table and chart views.  
-The download feature is contextual, therefore the **Label** option will act accordingly:
-* If the table/chart option is "Identifier", then the downloaded file contains codes only;
-* If the table/chart option is "Name" or "Both" (Name + Identifier), then the downloaded file contains identifiers and names.  
-The **locale** used for names is the currently used language in the application.  
-
-The download options from the dropdown button are described below.  
+The downloaded content is contextualised by applying the **Label** option as follow:
+* If the table/chart option is 'Identifier', then the data in the downloaded file is presented with the related SDMX artefact IDs.
+* If the table/chart option is 'Name' or 'Both' (Name + Identifier), then the data in the downloaded file is presented with the related SDMX artefact IDs and localised names according to the current **locale** in the appplication. 
 
 ![Download](/dotstatsuite-documentation/images/de-download1.png)  
 
@@ -100,7 +95,9 @@ Example: For the dataflow OECD:SNA_TABLE1(1.0), according to the selected option
 * for **Table in Excel**: OECD,SNA_TABLE1,1.0,**filtered**,2023-02-21 17-22-55.**xlsx** 
 * for **Filter data in tabular text (CSV)**: OECD,SNA_TABLE1,1.0,**filtered**,2023-02-21 17-22-55.**csv**
 * for **Unfilter data in tabular text (CSV)**: OECD,SNA_TABLE1,1.0,**complete**,2023-02-21 17-22-55.**csv**
-   
+
+The details on the specific download formats accessible directly from within the Data Explorer are described in the sub-sections below.
+
 #### Table in Excel  
 Only the filtered data contained in the preview table (or chart) view is downloaded in **.xlsx** file format.  
 As much as possible, the preview table's layout, styles, cell and text formatting, and attributes presented as flags and notes are maintained in the downloaded Excel file and presented in its first and default sheet. 
@@ -132,13 +129,15 @@ Only lines (and separation lines) with available information are included. Note 
 
 ![Download](/dotstatsuite-documentation/images/de-download-overview2.png)
 
-#### Filter data in tabular text (CSV)
-Only the filtered data contained in the online table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
-This format does not contains header or footer, and the downloaded data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
+#### Filtered or unfiltered data in tabular text (CSV)
+Data is downloaded in **.csv** file format, wich is a flat tabular text format. This format does not contain the preview table header or footer. The downloaded file includes the *SDMX* dataflow identification.
 
-#### Unfiltered data in tabular text (CSV)
-The full (unfiltered) data contained in the online request behind a table (or chart) view is downloaded in **.csv** file format, wich is a flat tabular text format.  
-This format does not contains header or footer, and the downloaded full data view is identified by the *SDMX* Dataflow Agency:ID(Version). 
+- **Filtered** data: Only the data according to the current filter selection is downloaded.  
+- **Unfiltered** data: The full (unfiltered) data contained in the underlying dataflow is downloaded.  
+
+Instead of using a _space-limited_ JavaScript 'memory blob', the Data Explorer will use the _space-unlimited_ web browser's inbuilt file-download feature. This is however constrained to SDMX web service requests without specific HTTP header options, thus only possible for _unauthenticated_ requests and for data spaces with an SDMX service that supports the `format=csvfile|csvfilewithlabels` URL parameter (as alternative to the HTTP `Accept` header). 
+
+**Note:** Any data space using an SDMX web service (version) that doesn't support this `format` URL parameter, must be indicated in the `tenants.json` configuration file with the property `"supportsCsvFile": false`, see [the related documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#non-support-of-the-format-url-parameter-by-a-data-space), because the support of the `format` URL parameter is assumed by default. 
 
 #### Additional downloads of external resources
 > Released in [December 02, 2019 Release .Stat Suite JS milestone 7](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-02-2019)
