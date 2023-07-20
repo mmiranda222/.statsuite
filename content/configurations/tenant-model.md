@@ -179,7 +179,9 @@ Also, in this example, the ‘oecd’ tenant is the default one ("default": true
         "urlv3": "https://nsi-demo-reset.siscc.org/rest/V2",
         "hasRangeHeader": true,
         "supportsReferencePartial": true,
+        "supportsPostLongRequests": true,
         "hasLastNObservations": true,
+        "supportsCsvFile": false,
         "headers": {
           "data": {
             "csv": "application/vnd.sdmx.data+csv;version=2.0",
