@@ -99,7 +99,7 @@ When the preview-table is first displayed, the initial layout is determined in t
 4) If there is no Row dimension yet, then the Ref_Area dimension dimension, if it has no layout annotation, otherwise the first dimension without a layout annotation, except the Time_Period, is moved to the Rows axis.
 5) All other dimensions without a layout annotation are moved to the Row Section axis.
 
-The dimensions configured to be part of the "Unit of measure" concepts are, when possible, merged together with the attributes configured to be part of the "Unit of measure" concepts and displayed as a separate "virtual" dimension on an automaically defined axis. For more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/).
+The dimensions configured to be part of the combined virtual components are, when possible, merged together with the attributes configured to be part of the combined virtual components. These virtual components are displayed separately on automaically defined axes. For more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/).
 
 What happens when the user starts customising the layout is described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/).
 
@@ -119,7 +119,7 @@ What happens when the user starts customising the layout is described [here](htt
 ### Layout variations from changing user selections
 If the user changes the selection(s), then it can impact the data preview table if a dimension has now more than 1 or exactly one item, and so if it is displayed in the table grid or in the table subtitle. The following rules apply when the user makes **filter selection changes**:
 * The current layout positioning of dimensions, for which the number of available items (selected or returned) has not changed (between one and many), is not modified;
-* Any dimension, for which the number of available items (selected or returned) changes from many to one, moves from wherever it is in the table grid into the table sub-title or, if the "NOT_DISPLAYED" annotation requests so, is hidden;
+* Any dimension, for which the number of available items (selected or returned) changes from many to one, moves from wherever it is in the table grid into the table sub-title or, if the `NOT_DISPLAYED` annotation requests so, is hidden;
 * Any dimension, for which the number of available items (selected or returned) changes from one to many, moves from the table sub-title (or from the hidden status) into the table grid reapplying the rules for the initial layout:
   1) Move it back into its last previous table axis (if available).
   2) Otherwise move it to the axis defined by the layout annotation of the dimension.

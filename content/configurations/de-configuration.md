@@ -28,7 +28,7 @@ keywords: [
   'Coded and uncoded attributes returned as notes', '#coded-and-uncoded-attributes-returned-as-notes',
   'Localised observation values separators for thousands and decimals', '#localised-observation-values-separators-for-thousands-and-decimals',
   'Localised time period values for monthly frequency', '#localised-time-period-values-for-monthly-frequency',
-  'Combined unit of measure', '#combined-unit-of-measure',
+  'Default combined concepts', '#default-combined-concepts',
   'Disabled share option', '#disabled-share-option',
   'Disabled chart views', '#disabled-chart-views',
   'Enabled download option on the search result page', '#enabled-download-option-on-the-search-result-page',
@@ -70,7 +70,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Coded and uncoded attributes returned as notes](#coded-and-uncoded-attributes-returned-as-notes)
 - [Localised observation values separators for thousands and decimals](#localised-observation-values-separators-for-thousands-and-decimals)
 - [Localised time period values for monthly frequency](#localised-time-period-values-for-monthly-frequency)
-- [Combined unit of measure](#combined-unit-of-measure)
+- [Default combined concepts](#default-combined-concepts)
 - [Disabled share option](#disabled-share-option)
 - [Disabled chart views](#disabled-chart-views)
 - [Enabled download option on the search result page](#enabled-download-option-on-the-search-result-page)
@@ -625,31 +625,32 @@ By default, if no configuration for a given localised format is added, then the 
 
 ---
 
-### Combined unit of measure
-Define the rules for the (optional) special display of a (virtual) "combined unit of measure" (UoM) assembling different well-defined dimensions and/or attributes as one single preview table component. For more information see the [documentation here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/).
+### Default combined concepts
+> Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
+
+Possibility to define default rules for automatically assembling different specific dimensions and/or attributes into single combined components in the preview table. These default rules are fully superseeded by the instructions optionally provided in the DSD or dataflow annotation `COMBINED_CONCEPTS`. For more information see the [documentation here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/). 
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
 ```json
 {
   "sdmx": {
-    "units": {
-      "id": "UNIT",
-      "annotationsDefinitionCodes": {
-        "concepts": ["UNIT_MEASURE_CONCEPTS"]
-      },
-      "defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"],
-      "rejectedValueIds": ["_L", "_T", "_Z"]
+    "defaultCombinations": {
+      "concepts": "COMBINED_UNIT_MEASURE:UNIT_MEASURE,UNIT_MULT,BASE_PER;COMBINED_MEASURE:MEASURE,ADJUSTMENT,TRANSFORMATION",
+      "names": {
+        "en": "COMBINED_UNIT_MEASURE:Combined unit of measure;COMBINED_MEASURE:Combined measure",
+        "fr": "COMBINED_UNIT_MEASURE:Unité de mesure combinée;COMBINED_MEASURE:Mesure combinée"
+      } 
     }
   }
 }
 ```
 
-In the above template:
-* `"id": "UNIT"` is the *identifier* to be used for the virtual UoM component. It is displayed when the user switches the Data Explorer visualisation page's label setting to "Identifier" or "Both". Note that the *localised name* of the virtual UoM component is defined and overwritable in the Data Explorer i8n files (key: `units.of.measure`).
-* `"annotationsDefinitionCodes"/"concepts": ["UNIT_MEASURE_CONCEPTS"]` is the *type of the SDMX dataflow annotation* used to define the dimensions and/or attributes to be included in the virtual UoM component;
-* `"defaultCodes": ["UNIT_MEASURE", "UNIT_MULT", "BASE_PER"]` is the *list of default dimensions and/or attributes* to be included in the virtual UoM component in case the dataflow annotation is not set;
-* `"rejectedValueIds": ["_L", "_T", "_Z"]` is the list of dimension and/or attribute values to not display as part of the virtual UoM component value label.
+In the above configuration snippet:
+* `"concepts": "[identifier of the combined component]:[assembled concept ID[,]]"`: The *identifier* is displayed when the user switches the Data Explorer visualisation page's label setting to 'Identifier' or 'Both'. The *assembled concept ID*s list those dimensions and/or attributes that are to be combined together into one virtual component.  
+* Dimension and/or attribute values included in the `NOT_DISPLAYED` annotation are hidden and not displayed as part of the virtual combined concepts component value label.
+
+**Note**: This feature replaces the previous 'Combined unit of measure' feature in a generic manner. Previous configurations for 'Combined unit of measure' are now ignored.
 
 ---
 
