@@ -73,7 +73,9 @@ Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/d
 When a filter contains 8 items or more, then:
 - a vertical scrollbar is added to the filter
 - a [local search](#local-search) (spotlight feature) box is displayed,
-- an **advanced selection** button is displayed next to the local search box, which gives access to an [advanced selection popup](#advanced-selection-popup).
+- an **advanced selection** button is displayed next to the local search box, which gives access to an [advanced selection popup](#advanced-selection-popup). A localised tooltip with the text "Use advanced selection modes" is displayed on mouse-over.
+
+![Advanced selection button](/dotstatsuite-documentation/images/de-advanced-selection-button.png)
 
 Any filter selection change will automatically trigger the update of the data view (table/chart/API query), and these changes will also be reflected in the ['Applied filters' panel](#applied-filters-panel).  
 
