@@ -49,17 +49,17 @@ The subtitle is generated automatically and cannot be changed manually.
 
 #### Second subtitle
 
-The table second subtitle consists of the concatenated, comma-separated names of unique UNIT_MEASURE dimension or attribute items (and line-wrapped if required). The second subtitle is preceeded by the virtual dimension name "Unit of measure: ". The names are displayed in the currently selected language. If such names are not available, then they are replaced by the corresponding IDs. The names respond to the [label customisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#labels).
+The table's second subtitle contains the information about the unit of measure, if it is defined at a level that assures that it applies on all values shown in the table. It shows the IDs and/or names of the UNIT_MEASURE dimension or attribute and its corresponding value depending on the ['Label' option](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#labels). If the UNIT_MEASURE dimension or attribute is part of a set of combined concepts to be displayed at table level then the ID and/or name of the set together with the concatenated, comma-separated IDs and/or names of the underlying component values are shown (and line-wrapped if required). Names are displayed in the currently selected language. If such names are not available, then they are replaced by the corresponding IDs. Related components or their values that are to be hidden, are not displayed, except dimension IDs.
 
 **Example:**  
 
-***Unit of measure:*** US dollar, millions
+***Combined unit of measure:*** US dollar, millions
 
 #### Complete example
 
 **FDI financial flows - Main aggregates**  
 ***Measurement principle:*** Asset liability principle ● ***Type of entity:*** All resident units ● ***Type of FDI:*** FDI financial flows ● ***FDI component:*** Total direct investment ● ***Accounting entry:*** Assets  
-***Unit of measure:*** US dollar, millions  
+***Combined unit of measure:*** US dollar, millions  
 
 ---
 

@@ -121,11 +121,11 @@ The main advantage of the Annotation is its flexibility as all properties can be
 <td style="height: 23px; width: 106px;">&lt;concept Id&gt;,&lt;concept Id&gt;,...<br /><em>example:</em><br />OBS_STATUS,CONF_STATUS</td>
 </tr>
 <tr style="height: 23px;">
-<td style="height: 23px; width: 201px;">UNIT_MEASURE_CONCEPTS</td>
-<td style="height: 23px; width: 1471.44px;">List of dimensions (concept IDs) that are used to define the full unit of measure<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/unit-of-measure/#underlying-data-model">full specs</a></td>
+<td style="height: 23px; width: 201px;">COMBINED_CONCEPTS</td>
+<td style="height: 23px; width: 1471.44px;">Sets of dimensions and/or attributes to be combined and shown as single virtual components.<br />-&nbsp;<a href="https://sis-cc.gitlab.io/using-de/viewing-data/preview-table/combined-concepts">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
-<td style="height: 23px; width: 10px;">&nbsp;</td>
-<td style="height: 23px; width: 106px;">&lt;concept Id&gt;,&lt;concept Id&gt;,...<br /><em>example:</em><br />UNIT_MEASURE,UNIT_MULT,BASE_PER</td>
+<td style="height: 23px; width: 10px;">&lt;language&gt;:&lt;set ID&gt;:&lt;set name&gt;;&lt;set ID&gt;:&lt;set name&gt;;...<br /><em>example:</em><br />"en":"COMBINED_UNIT_MEASURE:Combined unit of measure;COMBINED_MEASURE:Combined measure","fr":"COMBINED_UNIT_MEASURE:Unité de mesure combinée;COMBINED_MEASURE:Mesure combinée"</td>
+<td style="height: 23px; width: 106px;">&lt;set ID&gt;:&lt;component ID&gt;,&lt;component ID&gt;,...;&lt;set ID&gt;:&lt;component ID&gt;,&lt;component ID&gt;,...;...<br /><em>example:</em><br />COMBINED_UNIT_MEASURE:UNIT_MEASURE,UNIT_MULT,BASE_PER; COMBINED_MEASURE:MEASURE,SEX,AGE</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">DRILLDOWN_CONCEPTS</td>
