@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [August 03, 2023](#august-03-2023)
 - [July 20, 2023](#july-20-2023)
 - [July 4, 2023](#july-4-2023)
 - [June 28, 2023](#june-28-2023)
@@ -121,6 +122,44 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### August 03, 2023
+**[Release .Stat Suite JS "wave"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/68)**
+> This **minor** release includes new versions of the **data-explorer** (v19.0.0), **data-viewer** (v19.0.0), and **data-lifecycle-manager** (v19.0.0) applications.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.17.0** and .Stat-Suite CORE release [dragonfruit](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/59).
+
+major changes:
+
+None.
+
+minor changes:
+
+- [dotstatsuite-data-explorer#1007](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1007) Feature to configure the integration of an externally hosted pop-up survey into the Data Explorer
+- [dotstatsuite-data-explorer#1069](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1069) Correct the Spanish translation
+- [dotstatsuite-data-explorer#974](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/974) Apply HTTP Accept header option 'labels=name' for CSV downloads including Names. Note: This feature will have no effect until the NSI supports this option.
+- [dotstatsuite-data-explorer#975](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/975) Apply annotation to align textual values on the right (or left) side of the data table cells.
+- [dotstatsuite-data-explorer#1023](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1023) Implement a config json validator (to make deployments smoother)
+- [dotstatsuite-data-explorer#1028](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1028) Add mouseover tooltip to 'advanced selections' icon
+- [data-lifecycle-manager#376](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/376) adfs userinfo update on gateway side
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1055](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1055) 'Combined Unit of Measure' (shortly 'UoM', now available through new generic 'combined concepts') items are displayed at cell level instead of in sub-header when all its non-hidden values are single-fixed.
+- [dotstatsuite-data-explorer#1057](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1057) The ref. metadata (i) icon is wrongly shown for empty (NULL) or to be hidden attribute values.
+- [dotstatsuite-data-explorer#1059](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1059) In certain cases, the ref. metadata (i) icon doesn't appear in the table.
+- [dotstatsuite-data-explorer#1071](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1071) Query for allcompletestubs of parents of DSD made without authentication token
+- [dotstatsuite-data-explorer#1074](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1074) The Related-DF links on the Overview must not include any current selections/layout
+- [dotstatsuite-data-explorer#1029](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1029) Boolean display not functioning correctly in the table
+- [dotstatsuite-data-explorer#1031](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1031) Incorrect horizontal scroll behaviour in rtl mode
+- [dotstatsuite-data-explorer#1049](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1049) Issue with metadata display and applied filter when no TIME dimension
+- [dotstatsuite-data-explorer#1080](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1080) Combined unit of measure in sub-title misses ':'
+- [dotstatsuite-data-explorer#1078](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1078) Page layout issue for 'Applied filters' in Viz page
+- [dotstatsuite-visions#43](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/43) Table re-render optimization
+- [dotstatsuite-visions#37](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/37) Refactoring (React router updating from v5.1)
+- [dotstatsuite-visions#38](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/38) Refactoring (rm sdmxjs dep from visions)
+- [dotstatsuite-visions#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/39) Refactoring (rm recompose)
 
 ---
 
