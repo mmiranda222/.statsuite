@@ -24,98 +24,105 @@ The main advantage of the Annotation is its flexibility as all properties can be
 </tr>
 <tr style="height: 23.5px;">
 <td style="height: 23.5px; width: 201px;">LAYOUT_ROW</td>
-<td style="height: 23.5px; width: 1471.44px;">Dimensions to be presented in rows of a DE table (concepts on y-axis)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
+<td style="height: 23.5px; width: 1471.44px;">Dimensions to be presented in rows of a DE table (concepts on y-axis)<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
 <td style="height: 23.5px; width: 397.562px;">-&nbsp;Dataflow, DSD<br />-&nbsp;Dimension</td>
 <td style="height: 23.5px; width: 10px;">&nbsp;</td>
 <td style="height: 23.5px; width: 106px;">- Attached to Dataflow or DSD: &lt;dimension Id&gt;,&lt;dimension Id &gt;,&hellip;<br />- Attached to Dimension: &lt;blank&gt;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">LAYOUT_COLUMN</td>
-<td style="height: 23px; width: 1471.44px;">Dimensions to be presented in columns of a DE table (concepts on x-axis)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Dimensions to be presented in columns of a DE table (concepts on x-axis)<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Dataflow, DSD<br />-&nbsp;Dimension</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Dataflow or DSD: &lt;dimension Id&gt;,&lt;dimension Id &gt;,&hellip;<br />-&nbsp;Attached to Dimension: &lt;blank&gt;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">LAYOUT_ROW_SECTION</td>
-<td style="height: 23px; width: 1471.44px;">Dimensions to be presented at the row section level of a DE table<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Dimensions to be presented at the row section level of a DE table<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Dataflow, DSD<br />-&nbsp;Dimension</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Dataflow or DSD: &lt;dimension Id&gt;,&lt;dimension Id &gt;,&hellip;<br />-&nbsp;Attached to Dimension: &lt;blank&gt;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">LAYOUT_TIME_PERIOD_DESC</td>
-<td style="height: 23px; width: 1471.44px;">Indication that the display of the TIME_PERIOD dimension for a dataflow, or all dataflows of the same DSD, is displayed the descending sort order.<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/reversed-time-period/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that the display of the TIME_PERIOD dimension for a dataflow, or all dataflows of the same DSD, is displayed the descending sort order.<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/reversed-time-period/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;<em></em></td>
 <td style="height: 23px; width: 106px;">example: <br> <common:AnnotationType>LAYOUT_TIME_PERIOD_DESC</common:AnnotationType></td>
 </tr>
 <tr style="height: 23px;">
+<td style="height: 23px; width: 201px;">LAYOUT_CELL_ALIGN</td>
+<td style="height: 23px; width: 1471.44px;">Indication to force the data cell alignment to the left or to the right. This can be defined generically for all locales or per locale.<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/custom-data-alignment/">full specs</a></td>
+<td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
+<td style="height: 23px; width: 10px;">RIGHT|LEFT<em></em></td>
+<td style="height: 23px; width: 106px;">RIGHT|LEFT</td>
+</tr>
+<tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">MAX_TABLE_DATA</td>
-<td style="height: 23px; width: 1471.44px;">Increase the maximum preview table size above the DE default maximum limits for the number of observations retrieved from the SDMX web service and for the number of table cells<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/increased-table-size/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Increase the maximum preview table size above the DE default maximum limits for the number of observations retrieved from the SDMX web service and for the number of table cells<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/increased-table-size/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;integer&gt;<br /><em>example:</em><br />15000</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">DEFAULT</td>
-<td style="height: 23px; width: 1471.44px;">Indication that an Item in an Item Scheme is to be selected by default in the DE visualisation filter, or is pre-selected when queried<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that an Item in an Item Scheme is to be selected by default in the DE visualisation filter, or is pre-selected when queried<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Item in an Item Scheme (e.g. code in a codelist)<br />-&nbsp;Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Item in Item scheme: &lt;blank&gt;<br />-&nbsp;Attached to Dataflow or DSD: &lt;concept&gt;=&lt;code&gt;+&lt;code&gt;+&hellip;,&lt;concept&gt;=&lt;code&gt;+&lt;code&gt;+&hellip;<br /><em>example:</em><br />FREQ=A+Q,TIME_PERIOD_START=20-13-01,TIME_PERIOD_END=2018-12</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">NOT_DISPLAYED</td>
-<td style="height: 23px; width: 1471.44px;">Indication that a component and/or its value (dimension, dimension value, attribute, attribute value) is hidden in a presentation<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that a component and/or its value (dimension, dimension value, attribute, attribute value) is hidden in a presentation<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">-&nbsp;Item in an Item Scheme (e.g. code in a codelist)<br />-&nbsp;Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">-&nbsp;Attached to Item in Item scheme: &lt;blank&gt;<br />-&nbsp;Attached to Dataflow or DSD: &lt;concept Id&gt;,&lt;concept Id&gt;... <em>or</em> &lt;concept&gt;=&lt;code&gt;+&lt;code&gt;+&hellip;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">ORDER</td>
-<td style="height: 23px; width: 1471.44px;">Explicit indication of localised order of items in items schemes<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/implicit-explicit-order">generic full specs</a><br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facet-items-ordered-by-explicit-order-annotation">DE search facets specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Explicit indication of localised order of items in items schemes<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/implicit-explicit-order">generic full specs</a><br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/searching-data/facets/#facet-items-ordered-by-explicit-order-annotation">DE search facets specs</a></td>
 <td style="height: 23px; width: 397.562px;">Item in an Item Scheme (e.g. code in a codelist)</td>
 <td style="height: 23px; width: 10px;">&lt;language&gt;:&lt;integer&gt;,...<br /><em>example:</em><br />"en": "5","fr": "7"</td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">EXT_RESOURCE</td>
-<td style="height: 23px; width: 1471.44px;">Indication of a localised link to an external resource associated to the annotated Dataflow<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/external-resources/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication of a localised link to an external resource associated to the annotated Dataflow<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/external-resources/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;">&lt;language&gt;:&lt;HTML containing URL to the resource&gt;,&hellip;<br /><em>example:</em><br />"en":"&lt;a href='http://www.ilo.org/_EN.xlsx'&gt;Explanatory information&lt;/a&gt;","fr":"&lt;a href='http://www.ilo.org/_FR.xlsx'&gt;Informations explicatives&lt;/a&gt;"</td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">MAXTEXTATTRIBUTELENGTH</td>
-<td style="height: 23px; width: 1471.44px;">Increase the maximum length for textual attribute values<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-structures/upload-structure/text-attribute-length/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Increase the maximum length for textual attribute values<br />-&nbsp;<a href="/dotstatsuite-documentation/using-dlm/manage-structures/upload-structure/text-attribute-length/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;integer&gt;<br /><em>example:</em><br />500</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">METADATA</td>
-<td style="height: 23px; width: 1471.44px;">Indication that referential metadata can be uploaded to a related DSD where the METADATA annotation is defined<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that referential metadata can be uploaded to a related DSD where the METADATA annotation is defined<br />-&nbsp;<a href="/dotstatsuite-documentation/using-dlm/manage-data/upload-data/upload-referential-metadata/">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;URN of the related Metadata Structure Definition (MSD)&gt;<br /><em>example:</em><br />urn:sdmx:org.sdmx.infomodel.<br />metadatastructure.MetadataStructure=<br />AGENCY:MSD_ID(1.0)</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">SEARCH_WEIGHT</td>
-<td style="height: 23px; width: 1471.44px;">Indication of localised boosted dataflows in the DE search results when ordered by relevance<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/search-results/#result-boosting">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication of localised boosted dataflows in the DE search results when ordered by relevance<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/searching-data/search-results/#result-boosting">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;"><em>optional</em><br />&lt;language&gt;:&lt;integer&gt;,...<br /><em>example:</em><br />"en":"3","es":"4","fr":"5"</td>
 <td style="height: 23px; width: 106px;">&lt;integer&gt;<br /><em>example:</em><br />10</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">LAYOUT_FLAG</td>
-<td style="height: 23px; width: 1471.44px;">Indication that an attribute and its atribute value can be presented as a flag<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that an attribute and its atribute value can be presented as a flag<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;concept Id&gt;,&lt;concept Id&gt;,...<br /><em>example:</em><br />OBS_STATUS,CONF_STATUS</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">LAYOUT_NOTE</td>
-<td style="height: 23px; width: 1471.44px;">Indication that an attribute and its attribute value can be presented as a note<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that an attribute and its attribute value can be presented as a note<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-additional-information">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;concept Id&gt;,&lt;concept Id&gt;,...<br /><em>example:</em><br />OBS_STATUS,CONF_STATUS</td>
@@ -129,35 +136,35 @@ The main advantage of the Annotation is its flexibility as all properties can be
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">DRILLDOWN_CONCEPTS</td>
-<td style="height: 23px; width: 1471.44px;">List of dimensions (concept IDs) to be displayed in a drilldown presentation<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/#microdata-preview-table">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">List of dimensions (concept IDs) to be displayed in a drilldown presentation<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/#microdata-preview-table">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;concept Id&gt;,&lt;concept Id&gt;,...<br /><em>example:</em><br />DONOR,RECIPIENT,YEAR,PROJECT_ID,<br />OBS_VALUE,DESCRIPTION</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">DRILLDOWN</td>
-<td style="height: 23px; width: 1471.44px;">Denotes the concept that specifies if observations are at the drilldown level (instead of aggregate level)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/#microdata-in-the-stat-suite">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Denotes the concept that specifies if observations are at the drilldown level (instead of aggregate level)<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/#microdata-in-the-stat-suite">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;</td>
 <td style="height: 23px; width: 106px;">&lt;concept Id&gt;<br /><em>example:</em><br />MD_DIM<br /><em>Note</em> that this "special" drilldown MD_DIM dimension is hidden in the data representation</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">SUPPORT_DATETIME</td>
-<td style="height: 23px; width: 1471.44px;">Indication that a DSD can support data with values for a frequency higher than daily (e.g. hours, minutes, seconds)<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#support-of-high-frequency-time-periods-using-sdmx-annotation">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication that a DSD can support data with values for a frequency higher than daily (e.g. hours, minutes, seconds)<br />-&nbsp;<a href="/dotstatsuite-documentation/using-api/api-main-features/#support-of-high-frequency-time-periods-using-sdmx-annotation">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">HIER_CONTEXT</td>
-<td style="height: 23px; width: 1471.44px;">Indication to use (a) specific hierarchy/ies (from Hierarchical Codelists (HCL)) for the display of (a) specific dimension(s) in the context of a dataflow or DSD<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication to use (a) specific hierarchy/ies (from Hierarchical Codelists (HCL)) for the display of (a) specific dimension(s) in the context of a dataflow or DSD<br />-&nbsp;<a href="h/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">&nbsp;&lt;component id&gt;:&lt;HCL agency&gt;:&lt;HCL id&gt;(&lt;HCL version&gt;).&lt;hierarchy id&gt;,&lt;component id&gt;:&lt;HCL agency&gt;:&lt;HCL id&gt;(&lt;HCL version&gt;).&lt;hierarchy id&gt;,...</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">SUPPORT_INTENT_MISS_VALUES</td>
-<td style="height: 23px; width: 1471.44px;">Indication to support special numerical observation values indicated as intentionally missing values<br />-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/#intentionally-missing-values">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication to support special numerical observation values indicated as intentionally missing values<br />-&nbsp;<a href="/dotstatsuite-documentation/using-api/data/upload-data-sdmx-file/#intentionally-missing-values">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
@@ -178,7 +185,7 @@ The main advantage of the Annotation is its flexibility as all properties can be
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 209px;">sdmx_metrics</td>
-<td style="height: 23px; width: 361px;">-&nbsp;if ID="obs_count" then current number of observations per dataflow<br/>-&nbsp;if ID="series_count" then number of time series series per dataflow<br/>-&nbsp;<a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#content-of-the-list">full specs</a></td>
+<td style="height: 23px; width: 361px;">-&nbsp;if ID="obs_count" then current number of observations per dataflow<br/>-&nbsp;if ID="series_count" then number of time series series per dataflow<br/>-&nbsp;<a href="/dotstatsuite-documentation/using-dlm/dlm_overview/#content-of-the-list">full specs</a></td>
 <td style="height: 23px; width: 185.891px;">Actual Content Constraint for Dataflow</td>
 <td style="height: 23px; width: 44.1094px;"></td>
 <td style="height: 23px; width: 106px;">&lt;integer&gt;<br/><br/><em>example:</em><br/>123456</td>
