@@ -36,6 +36,7 @@ keywords: [
   'Display of HTML content', '#display-of-html-content',
   'Support of long URLs', '#support-of-long-urls',
   '"Contact us" form: reCAPTCHA and email settings', '#contact-us-form-recaptcha-and-email-settings',
+  'User research: Pop-up survey','#user-research-pop-up-survey-feature',
   'Policies for external search engine crawlers', '#policies-for-external-search-engine-crawlers',
   'robots tags', '#robots-tags',
   'robots.txt file', '#robots-txt-file'
@@ -78,6 +79,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Display of HTML content](#display-of-html-content)
 - [Support of long URLs](#support-of-long-urls)
 - ["Contact us" form: reCAPTCHA and email settings](#contact-us-form-recaptcha-and-email-settings)
+- [User research: Pop-up survey](#user-research-pop-up-survey-feature)
 - [Policies for external search engine crawlers](#policies-for-external-search-engine-crawlers)
   - [robots tags](#robots-tags)
   - [robots.txt file](#robots-txt-file)
@@ -880,6 +882,33 @@ To be able to receive the emails generated through the "Contact us" form, the SM
 - For SMTP please see the similar [SMTP settings of the share service](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share#smtp)
 
 For more information see the [data-explorer readme](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer#how-to-use-the-contact-form).
+
+---
+
+### User Research: Pop-up survey feature
+> *Version history:*  
+> Introduced in [August 03, 2023 Release .Stat Suite JS 'Wave'](/dotstatsuite-documentation/changelog/#august-03-2023)  
+
+Configure the integration of an externally hosted pop-up survey in the Data Explorer.
+
+![pop-up survey](/dotstatsuite-documentation/images/pop-up-survey.JPG)
+
+To configure a popup survey, enter the HTTPS-URL to the related externally hosted survey and a custom picture to be used for the survey popup window in the Data Explorer's settings.json file:  
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+{
+  "app": {
+    "surveyLink": "https://fr.surveymonkey.com/r/QGYZC8P"
+  },
+  "assets": {
+    "surveyImage": "/assets/siscc/data-explorer/images/popup-survey.png"
+  }
+}
+```
+
+For more information see the [pop-up survey feature documentation](/dotstatsuite-documentation/using-de/popup-survey/).
 
 ---
 
