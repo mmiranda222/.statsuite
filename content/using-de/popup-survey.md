@@ -11,7 +11,7 @@ weight: 1000
 
 An externally hosted survey can be triggered from within a Data Explorer session to gather any user feedback, e.g., to track user satisfaction, to better know the users and their needs, and even to grow the user testing community through questions.  
 
-When the popup survey is defined, see the [DE configuration](/dotstatsuite-documentation/configurations/de-configuration/#user-research-pop-up-survey-feature), then the configured survey popup window appears (in the middle of the screen) once per user session after the first of the following events occurred: 
+When the popup survey is defined, see the [DE configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#user-research-pop-up-survey-feature), then the configured survey popup window appears (in the middle of the screen) once per user session after the first of the following events occurred: 
 - The user has created a shared view
 - The user has executed a download
 - The user has copied one of the developer API queries

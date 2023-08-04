@@ -891,7 +891,7 @@ For more information see the [data-explorer readme](https://gitlab.com/sis-cc/.s
 
 Configure the integration of an externally hosted pop-up survey in the Data Explorer.
 
-![pop-up survey](/dotstatsuite-documentation/images/pop-up-survey.JPG)
+![pop-up survey](/dotstatsuite-documentation/images/pop-up-survey.png)
 
 To configure a popup survey, enter the HTTPS-URL to the related externally hosted survey and a custom picture to be used for the survey popup window in the Data Explorer's settings.json file:  
 
