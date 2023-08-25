@@ -20,8 +20,8 @@ keywords: [
 
 ### Microdata in the .Stat Suite
 
-The .Stat Suite supports the storage and dissemination of microdata based on SDMX, with the current limitation that the microdata ID dimension needs to be coded.  
-Microdata and their aggregations are stored together in the same DSD and are exposed through the same dataflow.
+The .Stat Suite supports the storage and dissemination of disaggregated data (microdata) based on SDMX, with the technical limitation that if the microdata ID dimension is non-coded and textual, its values can't be longer than 4000 characters.  
+Microdata and their aggregations are defined by the same DSD and are accessed through the same dataflow.
 
 In order to distinguish microdata from their aggregated data, there need to be 2 dimensions present in the DSD:
 - a microdata identification dimension allowing to uniquely identify each microdata observation
