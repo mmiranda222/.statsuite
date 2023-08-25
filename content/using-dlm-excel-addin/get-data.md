@@ -16,6 +16,7 @@ keywords: [
 ---
 
 > *Version history:*  
+> Allow editing daily start and end time periods since [August 24, 2023 Release .Stat Suite elote / DLM Excel-addin v3.3.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-24-2023)  
 > Configurable content language selector since [July 4, 2023 Release .Stat Suite dragonfruit / DLM Excel-addin v3.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-4-2023)  
 > Time period boundaries in the filter selector since [October 26, 2022 Release .Stat Suite DLM Excel-addin v3.2.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-26-2022)  
 > Data availability on dimension values since [April 28, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-28-2022)
