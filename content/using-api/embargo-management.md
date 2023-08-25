@@ -1,5 +1,5 @@
 ---
-title: "Embargo management"
+title: "Embargo management (Point in Time)"
 subtitle: 
 comments: false
 weight: 7000
