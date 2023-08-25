@@ -9,6 +9,7 @@ keywords: [
   'Replacing data or reference metadata', '#replacing-data-or-reference-metadata',
   'Deleting data', '#deleting-data',
   'Deleting reference metadata', '#deleting-reference-metadata',
+  'Delete highlight and warning', '#delete-highlight-and-warning',
   'Add new rows', '#add-new-rows',
   'Edit STRING and XHTML values', '#edit-string-and-xhtml-values',
   'Save data to data space', '#save-data-to-data-space',
@@ -17,7 +18,7 @@ keywords: [
 ---
 
 > *Version history:*  
-> SDMX **actions** introduced with [August 24, 2023 Release .Stat Suite .NET 'elote' / DLM Excel-addin v3.3.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-24-2023)
+> SDMX **actions** introduced with [August 24, 2023 Release .Stat Suite .NET 'elote' / DLM Excel-addin v3.3.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-24-2023)  
 > Allow saving data also when only observation values are retrieved (without attributes) since [October 26, 2022 Release .Stat Suite DLM Excel-addin v3.2.3](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-26-2022)  
 
 #### Table of content
@@ -26,6 +27,7 @@ keywords: [
   - [Replacing data or reference metadata](#replacing-data-or-reference-metadata)
   - [Deleting data](#deleting-data)
   - [Deleting reference metadata](#deleting-reference-metadata)
+  - [Delete highlight and warning](#delete-highlight-and-warning)
 - [Add new rows](#add-new-rows)
 - [Edit STRING and XHTML values](#edit-string-and-xhtml-values)
 - [Save data to data space](#save-data-to-data-space)
