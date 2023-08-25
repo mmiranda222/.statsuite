@@ -15,8 +15,8 @@ keywords: [
   'Default data validations option', '#default-data-validations-option',
   'Upload size limit', '#upload-size-limit',
   'Logbook submission time boundaries', '#logbook-submission-time-boundaries',
-  'List of the standard roles for user permissisons', '#list-of-the-standard-roles-for-user-permissisons',
-  'Override the default authorization service URL', '#override-the-default-authorization-service-url',
+  'List of the standard roles for user permissions', '#list-of-the-standard-roles-for-user-permissions',
+  'Override the default Authorisation-Managementn service URL', '#override-the-default-authorisation-management-service-url',
 ]
 
 ---
@@ -36,8 +36,8 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Default data validations option](#default-data-validations-option)
 - [Upload size limit](#upload-size-limit)
 - [Logbook submission time boundaries](#logbook-submission-time-boundaries)
-- [List of the standard roles for user permissisons](#list-of-the-standard-roles-for-user-permissisons)
-- [Override the default authorization service URL](#override-the-default-authorization-service-url)
+- [List of the standard roles for user permissions](#list-of-the-standard-roles-for-user-permissions)
+- [Override the default Authorisation-Management service URL](#override-the-default-authorisation-management-service-url)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -277,15 +277,15 @@ Define the boundaries of the **submission time logbook filter**. Rules are:
 
 ---
 
-### List of the standard roles for user permissisons
+### List of the standard roles for user permissions
 > Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
 
-Define, per organisation, the **Standard roles** set for the 'DLM --> Manage permissions --> Add/View/Edit' form, based on any combination of the granular permissons as defined in the Authorizations Management Service.  
+Define, per organisation, the **Standard roles** set for the 'DLM --> Manage permissions --> Add/View/Edit' form, based on any combination of the granular permissons as defined in the Authorisation-Management Service.  
 By default, the below set of combinations is pre-defined as standard roles.
 
 References:
-- [Authorization APi's permissions rules](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/pemrission-rules)
-- [Functional specifications of the Basic permissions](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-user-access/manage-permissions)
+- [Authorisation-Management API features and granular permissions](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/permission-management)
+- [Functional specifications of the DLM GUI](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions)
 
 ![DLM config basic permissions](/dotstatsuite-documentation/images/dlm-config-basic-permissions.png)
 
@@ -322,16 +322,16 @@ References:
   }
 ```
 
-The `"permissionGroup"` lists the standard roles using per role a unique `"id"`, which represents the sum of the IDs of the underlying granular permissons as defined in the Authorization Management service, as well as the list of those IDs.
+The `"permissionGroup"` lists the standard roles using per role a unique `"id"`, which represents the **sum** of the IDs of the underlying granular permissons as defined in the Authorisation-Management service, as well as the list of those IDs.
 
 Each role ID also requires the definition of a localised label in an "override" `i18n` folder under `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/` with each language's translation file. For example, here are the English labels to add corresponding to the above set of roles: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/develop/configs/default/data-lifecycle-manager/i18n/en.json.
 
 ---
 
-### Override the default authorization service URL
+### Override the default Authorisation-Management service URL
 >Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
 
-Define an Authorization service URL at the DLM scope level that will override the one defined as an env. variable during the deployment. This override is made especially to allow for a specific Authorization service URL per DLM scope when a DLM instance has several scopes.
+Define an Authorisation-Management service URL at the DLM scope level that will override the one defined as an env. variable during the deployment. This override is made especially to allow for a specific Authorisation-Management service URL per DLM scope when a DLM instance has several scopes.
 
 * in `dotstatsuite-config-data/<env>/configs/tenants.json` file under a DLM `scope`
 
