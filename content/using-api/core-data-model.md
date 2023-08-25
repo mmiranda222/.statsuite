@@ -50,7 +50,7 @@ This page concentrates on the data model features supported by the data database
 
 The SDMX information model defines **5 main types of components** for data structures:
 
-1. **Dimensions**: Defined by Concepts. There must be at least one Dimension (incl. Time Dimension). Their allowed values (local Representation) can be coded (from a Codelist) or non-coded (see below). For the moment only coded dimensions are supported, but support for non-coded dimensions is already being worked on.  
+1. **Dimensions**: Defined by Concepts. There must be at least one Dimension (incl. Time Dimension). Their allowed values (local Representation) can be coded (from a Codelist) or non-coded (see below), e.g. any numerical or string values.    
 In opposite to Measures and Attributes, _Dimensions (incl. Time Dimension) are used to uniquely identify Observations_.
 2. **Time dimension**: Defined by Concept. Its allowed values (local Representation) are always non-coded but restricted to specific time period representations (ObservationalTimePeriod), which include also information about start and end time (or start and duration) for each time period.  
    **Note:** In order to optimise the database storage space and performance in .Stat Core, by default only time periods *without a time component* (hours, minutes, seconds, milli-seconds), e.g. day, week, month, quarter, year, etc., are supported. In case a DSD requires the usage of time periods including information about hours, minutes, seconds or milli-seconds, this needs to be communicated through the annotation of type `SUPPORT_DATETIME` in the DSD before any data are uploaded.
@@ -205,7 +205,7 @@ The following special values indicate an **intentionally missing value**:
 |--------|----------------|-------------|-------------|
 | XML | `NaN` | \<empty\> | (not supported) |
 | CSV | `#N/A` | `#N/A` | `#N/A` |
-| JSON (in extractions only) | `null` | `#N/A` | (not supported) | 
+| JSON (in extractions only) | `#N/A` | `#N/A` | (not supported) | 
 
 They are stored in a specific way in the database and returned again using these special values in extractions. However, currently all referential metadata values are stored and retrieved AS IS (converted to string) to and from the .Stat Suite Core database, thus they do not have any.
 
