@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [August 24, 2023](#august-24-2023)
 - [August 03, 2023](#august-03-2023)
 - [July 20, 2023](#july-20-2023)
 - [July 4, 2023](#july-4-2023)
@@ -122,6 +123,55 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### August 24, 2023
+**[Release .Stat Suite .NET "elote"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/70#tab-issues)**
+> This minor release includes a new version of **core-transfer**, **sdmxri-nsi-ws**, **core-data-access**, **auth-management**, and **dlm-excel-addin** services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2**.
+
+**Performance evolutions:** the performance of some of the data imports and data exports tests has slightly decreased in this release, when compared to the previous "dragonfruit". However, all performance results are significantly above the average of all last previous releases. Nonetheless, areas of improvements are already identified and prioritised for the next releases: see [dotstatsuite-core-sdmxri-nsi-ws#378](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/378) & [dotstatsuite-core-sdmxri-nsi-ws#111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/111).  
+A new **dashboard of the .Stat Suite Core performance results** is published [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#stat-suite-core-performance-results).
+
+major changes:
+
+*None*
+
+minor changes:
+
+- [dotstatsuite-core-sdmxri-nsi-ws#306](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/306) **Restricted access to confidential or embargoed** data. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/confidential-data/#restricted-data-access-with-embargo-time))
+- [dotstatsuite-core-transfer#126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/126) Allow for non-coded non-time dimensions in .Stat CORE: **microdata enhancement**.
+- [dotstatsuite-core-transfer#158](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/158) Add **advanced data validations for mandatory attributes** at observation level. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#data-validation-process))
+- [dotstatsuite-core-transfer#534](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/534) Efficient **data archiving** (data compression). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/core-configuration/#stat-suite-data-space-compression))
+- [dotstatsuite-core-transfer#313](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/313) Receive only emails on errors from the transfer service. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#loading-data-or-referential-metadata))
+- [dotstatsuite-core-sdmxri-nsi-ws#357](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/357) Implement the SDMX-CSV 2.0 `labels=name` option. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar/#filtered-or-unfiltered-data-in-tabular-text-csv))
+- [dotstatsuite-core-transfer#467](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/467) Enhance the error message for referential metadata duplicates submissions.
+- [dotstatsuite-core-transfer#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/46) Correct the DLM data uploading error message when attributes are miscoded in EDD.
+- [dotstatsuite-core-sdmxri-nsi-ws#280](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/280) `"Procedure or function 'INSERT_HCL_CODE' expects parameter '@p_lcd_id', which was not supplied."` error message to enhance when submitting a Hierarchical Codelist (HCL).
+- [dotstatsuite-excel-addin#54](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/54) **DLM Excel-addin:** Allow **deleting observations or referential metadata** with the Excel-addin. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#data-management-actions))
+- [dotstatsuite-excel-addin#120](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/120) **DLM Excel-addin:** Allow editing daily start and end time periods.
+- [dotstatsuite-excel-addin#124](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/124) **DLM Excel-addin:** Change the link about referential metadata definition for the DLM feature documentation.
+- [dotstatsuite-excel-addin#126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/126) **DLM Excel-addin:** Highlight Delete actions. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#delete-highlight-and-warning))
+- [dotstatsuite-excel-addin#127](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/127) **DLM Excel-addin:** Warn message for bulk delete actions. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/edit-data/#delete-highlight-and-warning))
+- [dotstatsuite-core-transfer#545](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/545) *(Refactoring)* Improve the approach for keeping the information about fully deleted observation values and referential metadata.
+- [dotstatsuite-core-sdmxri-nsi-ws#377](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/377) *(DevOps)* Deploy NSI version 8.18.2.
+- [dotstatsuite-core-sdmxri-nsi-ws#374](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/374) *(DevOps)* Deploy NSI version 8.18.0.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#587](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/587) Availability content constraint is not re-generated when data is uploaded.
+- [dotstatsuite-core-transfer#584](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/584) Merge of referential metadata wrongly does some Replace actions.
+- [dotstatsuite-core-transfer#580](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/580) Improve the error message of SDMX-ML data imports wrongly referencing a DSD.
+- [dotstatsuite-core-transfer#579](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/579) Transfer with basic data validations takes much too long time to complete.
+- [dotstatsuite-core-transfer#578](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/578) Transfer with advanced data validations falsely reports duplicated observations and fails.
+- [dotstatsuite-core-transfer#574](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/574) Adding attribute values at dataflow level is not working without dimensions.
+- [dotstatsuite-core-sdmxri-nsi-ws#365](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/365) Available content constraints wrongly restrain time range by time period selection.
+- [dotstatsuite-core-sdmxri-nsi-ws#350](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/350) Codes returned in a Hierarchical Codelist (HCL) are retruned in a different order than submitted.
+- [dotstatsuite-core-sdmxri-nsi-ws#332](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/332) Malformed 'smdx.org' URL on NSI WS (v8.13.0) using the `structurespecificdata` query parameter.
+- [dotstatsuite-core-sdmxri-nsi-ws#230](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/230) "500 Internal Server Error" for available content constraint query when there is no data.
+- [dotstatsuite-core-auth-management#22](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/issues/22) Permission `64:CanModifyStoreSettings` is not working in .Stat Suite context.
+- [dotstatsuite-excel-addin#125](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/125) **DLM Excel-addin:** "Edit" button is hidden for some XHTML-typed referential metadata attributes.
 
 ---
 
