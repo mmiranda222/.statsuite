@@ -30,6 +30,8 @@ This section describes the features of the .Stat Suite transfer API for the mana
 
 Each time the user performs an action over data (observation and attribute values) or referential metadata in .Stat DLM, or using the API, an acknowledgment message states that the request is being performed and registered with an ID of the request. Once the data request and associated action is complete, a meaningful message with appropriate details is sent in an email to the user's email address that is also used for its credentials. The content of the email is described below respecting the structure of the email content, its subject, and a summary of the action followed by the log details. 
 
+*(Since [August 24, 2023 Release .Stat Suite .NET 'elote'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-24-2023)*) An optional parameter `sendEmail` is available in all relevant transfer service methods that can send emails. This parameter allows the requester to decide to receive only emails only for unsuccessful requests (`ifError` (2)), `never` (1) or `always` (0). By default, the parameter is set to always send the email (0).
+
 ---
 
 ### Email subject
