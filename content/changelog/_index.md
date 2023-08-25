@@ -140,7 +140,7 @@ major changes:
 
 minor changes:
 
-- [dotstatsuite-core-sdmxri-nsi-ws#306](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/306) **Restricted access to confidential or embargoed** data. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/confidential-data/#restricted-data-access-with-embargo-time))
+- [dotstatsuite-core-sdmxri-nsi-ws#306](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/306) **Restricted access to confidential or embargoed** data. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/confidential-data/))
 - [dotstatsuite-core-transfer#126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/126) Allow for non-coded non-time dimensions in .Stat CORE: **microdata enhancement**.
 - [dotstatsuite-core-transfer#158](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/158) Add **advanced data validations for mandatory attributes** at observation level. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/#data-validation-process))
 - [dotstatsuite-core-transfer#534](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/534) Efficient **data archiving** (data compression). ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/core-configuration/#stat-suite-data-space-compression))
