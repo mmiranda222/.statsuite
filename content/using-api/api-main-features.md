@@ -240,23 +240,31 @@ In details, the API methods of the core-transfer service used for the data valid
 - Data file validations
   - Duplicated coordinate (same coordinate with diff. values)
      - Error msg: Duplicate coordinate [{1}], at row [{0}].	 
-  - Mandatory attribute with null value
-     - Error msg: Attribute {3} is mandatory but empty value is provided at key {1}.
   - Text (non-coded) attribute value length exceeds max limit
      - Error msg: Length of {3} attribute's value exceeds the limit ({5} > {6}) at coordinate {1}: {4}.
-  - Mandatory dimension/group attribute missing
-     - Error msg: Mandatory attribute {3} has no value provided but observation data is being loaded for coordinate: {1}.
   - Mandatory attribute with null value and related obs. data in database
      - Error msg: Mandatory {3} attribute value cannot be deleted due to related observation data existing in database for coordinate: {1}.
   - Mandatory attribute with null value and related obs. data in import file
      - Error msg: Mandatory {3} attribute value cannot be deleted due to observation data being loaded for the same coordinate: {1}.
-  - Duplicated attribute key (group attributes)
-     - Error msg: Values provided multiple times for attribute {3} at key {1}.	 
-  - TextAttributeValueLengthExceedsMaxLimitWithCoordinate
-     - Error msg: Length of {3} attribute's value exceeds the limit ({5} > {6}) at coordinate {1}: {4}.
+  - Mandatory observation attribute with null (empty) value
+     - Error msg: Attribute {3} is mandatory but empty value is provided.
+  - Mandatory observation attribute missing (from datafile and no value in DB either)
+     - Error msg: {3} is mandatory dataset attribute but has no value provided yet.
+  - Mandatory time-series attribute with null (empty) value
+     - Error msg: Attribute {3} is mandatory but empty value is provided.
+  - Mandatory time-series attribute missing (from datafile and no value in DB either)
+     - Error msg: {3} is mandatory dataset attribute but has no value provided yet.
+  - Mandatory dimension/group attribute with null (empty) value
+     - Error msg: Attribute {3} is mandatory but empty value is provided.
+  - Mandatory dimension/group attribute missing (from datafile and no value in DB either)
+     - Error msg: {3} is mandatory dataset attribute but has no value provided yet.
   - Mandatory dataset attribute with null (empty) value
      - Error msg: Attribute {3} is mandatory but empty value is provided.
   - Mandatory dataset attribute missing (from datafile and no value in DB either)
      - Error msg: {3} is mandatory dataset attribute but has no value provided yet.
+  - Duplicated attribute key (group attributes)
+     - Error msg: Values provided multiple times for attribute {3} at key {1}.	 
   - Duplicated dataset attribute
      - Error msg: Values provided multiple times for attribute {3}.
+  - TextAttributeValueLengthExceedsMaxLimitWithCoordinate
+     - Error msg: Length of {3} attribute's value exceeds the limit ({5} > {6}) at coordinate {1}: {4}.
