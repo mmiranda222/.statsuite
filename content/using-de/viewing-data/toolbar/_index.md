@@ -130,7 +130,7 @@ Only lines (and separation lines) with available information are included. Note 
 ![Download](/dotstatsuite-documentation/images/de-download-overview2.png)
 
 #### Filtered or unfiltered data in tabular text (CSV)
-Data is downloaded in **.csv** file format, wich is a flat tabular text format. This format does not contain the preview table header or footer. The downloaded file includes the *SDMX* dataflow identification.
+Data is downloaded in **.csv** file format, which is a flat tabular text format. This format does not contain the preview table header or footer. The downloaded file includes the *SDMX* dataflow identification.
 
 - **Filtered** data: Only the data according to the current filter selection is downloaded.  
 - **Unfiltered** data: The full (unfiltered) data contained in the underlying dataflow is downloaded.  
@@ -138,6 +138,21 @@ Data is downloaded in **.csv** file format, wich is a flat tabular text format. 
 Instead of using a _space-limited_ JavaScript 'memory blob', the Data Explorer will use the _space-unlimited_ web browser's inbuilt file-download feature. This is however constrained to SDMX web service requests without specific HTTP header options, thus only possible for _unauthenticated_ requests and for data spaces with an SDMX service that supports the `format=csvfile|csvfilewithlabels` URL parameter (as alternative to the HTTP `Accept` header). 
 
 **Note:** Any data space using an SDMX web service (version) that doesn't support this `format` URL parameter, must be indicated in the `tenants.json` configuration file with the property `"supportsCsvFile": false`, see [the related documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#non-support-of-the-format-url-parameter-by-a-data-space), because the support of the `format` URL parameter is assumed by default. 
+The labels parameter (id|name|both; default=id) applies to all Nameable SDMX Artefacts (dataflow, dimensions and their items (if coded), measures and their values (if coded), attributes and their values (if coded)) contained in the header and the body of the message. 
+If option labels=name: An additional column is added right after the component identification column containing the localised name of the component reported in the previous column. The labels option can be changed in the nsi configuration file, see [the related repository documentation](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#format-configuration).
+To be able to get SDMX-CSV extractions with separated columns for IDs and names, instead of using labels=both, set labels to name:   
+```xml
+  <FormatMapping>
+    <Mappings>
+      ...
+      <Mapping Format="csvfilewithlabels" AcceptHeader="application/vnd.sdmx.data+csv;version=2;file=true;labels=name"/>
+    </Mappings>
+  </FormatMapping>
+  ```
+![Set labels to name](/dotstatsuite-documentation/images/de-toolbar-download-data-with-labels-set-to-name.png)
+
+
+
 
 #### Additional downloads of external resources
 > Released in [December 02, 2019 Release .Stat Suite JS milestone 7](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-02-2019)
