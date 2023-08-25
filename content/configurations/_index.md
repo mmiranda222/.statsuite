@@ -2,7 +2,7 @@
 title: "Configuring and Customising"
 subtitle: 
 comments: false
-weight: 70
+weight: 65
 
 ---
 <!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
