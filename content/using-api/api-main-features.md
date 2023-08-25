@@ -116,6 +116,8 @@ Attribute, observation and referential metadata values can be loaded to a data s
 
 *(Since [April 28, 2022 Release .Stat Suite .NET 8.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-28-2022)*) Data imports from files of SDMX-ML 2.0, SDMX-ML 2.1 and SDMX-CSV 1.0 format support the usage of **`NaN` ("not a number") as missing** values for numerical data types. Those numbers are set to `Null` in the .Stat Core data database. They are only exported again as `NaN` if the corresponding SDMX NSI web service configuration is set.
 
+*(Since [August 24, 2023 Release .Stat Suite .NET 'elote''](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-24-2023)*) An optional parameter `sendEmail` is available in all relevant transfer service methods that can send emails. This parameter allows the requester to decide to receive only emails only for unsuccessful requests (`ifError` (2)), `never` (1) or `always` (0). By default, the parameter is set to always send the email (0).
+
 Data can be embargoed using the Point-In-Time parameters of these both methods. For more details see the readme or the Transfer web service swagger file.
 
 **Important:**  
