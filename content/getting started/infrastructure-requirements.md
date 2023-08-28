@@ -51,9 +51,11 @@ Although the requirements could vary depending on the size of your data and the 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
 - **nodejs 14.x** and **npm 6.14.x** installed
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
-- **solr 7.x** to **solr 8.7** (since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)) installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
-- **redis 5.x** downloaded and running on port 6379 (default)
-- **mongo 5.x** downloaded and running on port 27017 (default)
+- **solr** installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
+- **redis** downloaded and running on port 6379 (default)
+- **mongo** downloaded and running on port 27017 (default)
+
+The latest compatible versions of Solr, Redis and Mongo are mentioned and available in the [docker compose setup file](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/demo/docker-compose-demo-js.yml?ref_type=heads) from which the release history can be retrieved.
 
 *notes:*  
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
