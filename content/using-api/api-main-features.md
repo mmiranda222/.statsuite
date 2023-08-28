@@ -25,9 +25,9 @@ keywords: [
 - [Loading data or referential metadata](#loading-data-or-referential-metadata)
 - [Data and referential metadata upload queuing mechanism](#data-and-referential-metadata-upload-queuing-mechanism)
 - [Data validation process](#data-validation-process)
- - [Validations in both basic and advanced functions](#validations-in-both-basic-and-advanced-functions)
- - [Basic validations function](#basic-validations-function)
- - [Advanced validations function](#advanced-validations-function)
+  - [Validations in both basic and advanced functions](#validations-in-both-basic-and-advanced-functions)
+  - [Basic validations function](#basic-validations-function)
+  - [Advanced validations function](#advanced-validations-function)
 - [Management of embargoed data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management)
 
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
