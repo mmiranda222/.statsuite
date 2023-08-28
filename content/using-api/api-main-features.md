@@ -10,6 +10,9 @@ keywords: [
   'Loading data or referential metadata', '#loading-data-or-referential-metadata',
   'Data and referential metadata upload queuing mechanism', '#data-and-referential-metadata-upload-queuing-mechanism',
   'Data validation process', '#data-validation-process',
+  'Validations in both basic and advanced functions', '#validations-in-both-basic-and-advanced-functions',
+  'Basic validations function', '#basic-validations-function',
+  'Advanced validations function', '#advanced-validations-function',
   'Management of embargoed data', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management',
 ]
 
@@ -22,6 +25,9 @@ keywords: [
 - [Loading data or referential metadata](#loading-data-or-referential-metadata)
 - [Data and referential metadata upload queuing mechanism](#data-and-referential-metadata-upload-queuing-mechanism)
 - [Data validation process](#data-validation-process)
+ - [Validations in both basic and advanced functions](#validations-in-both-basic-and-advanced-functions)
+ - [Basic validations function](#basic-validations-function)
+ - [Advanced validations function](#advanced-validations-function)
 - [Management of embargoed data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management)
 
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
@@ -169,7 +175,7 @@ In details, the API methods of the core-transfer service used for the data valid
     - `/validate/transferDataflow`
   - These methods perform an advanced validation, as described above, **but without** merging the staging data into the existing one (meaning no data import).
 
-**Validations in both basic and advanced functions**  
+#### Validations in both basic and advanced functions
 - Attribute management
   - Consistency of dataset attributes maintained
   - Consistency of dimensions attributes maintained 
@@ -211,7 +217,7 @@ In details, the API methods of the core-transfer service used for the data valid
   - Wrong set of dimensions in key of keyable
      - Error msg: Attribute {3} is reported at a keyable where the partial keys are not matching the attribute definition in DSD. Key {4} reported but combination of {5} expected.
 
-**Basic validations function**  
+#### Basic validations function
 - Data file validations  
   - Duplicated coordinate (same coordinate with diff. values)
      - *Generic error about duplicated rows found in the import file*
@@ -236,7 +242,7 @@ In details, the API methods of the core-transfer service used for the data valid
   - Duplicated dataset attribute
      - *Generic error about duplicate dataset attributes found in the import*
 
-**Advanced validations function**  
+#### Advanced validations function
 - Attribute management
   - Consistency of group attributes maintained
 - Data file validations
