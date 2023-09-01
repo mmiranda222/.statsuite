@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [September 1, 2023](#september-1-2023)
 - [August 24, 2023](#august-24-2023)
 - [August 03, 2023](#august-03-2023)
 - [July 20, 2023](#july-20-2023)
@@ -123,6 +124,17 @@ ToC
 > **Upgrade Disclaimers:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
+
+---
+
+### September 1, 2023
+**[Patch release .Stat Suite .NET "elote"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/70#tab-issues)**
+> This release includes a **patch** version of the **core-transfer** *(v13.0.1)* and **core-data-access** *(v20.0.1)* services.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2**.
+
+patch change:
+
+- [dotstatsuite-core-transfer#587](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/587) Availability content constraint is not re-generated when data is uploaded. **Note:** it fixes the wrong data availability calculation for existing dataflows when (re-)uploading data with advanced validation option. For existing dataflows where the data availability was previsouly wrong, you need to re-upload new set(s) of data, or manually run the `init/dataflow` method (or "Activate" a dataflow from the DLM UI) for each single dataflow in order to update the data availability.
 
 ---
 
