@@ -134,7 +134,7 @@ ToC
 
 patch change:
 
-- [dotstatsuite-core-transfer#587](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/587) Availability content constraint is not re-generated when data is uploaded. **Note:** it fixes the wrong data availability calculation for existing dataflows when (re-)uploading data with advanced validation option. For existing dataflows where the data availability was previsouly wrong, you need to re-upload new set(s) of data, or manually run the `init/dataflow` method (or "Activate" a dataflow from the DLM UI) for each single dataflow in order to update the data availability.
+- [dotstatsuite-core-transfer#587](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/587) Availability content constraint is not re-generated when data is uploaded. **Note:** it fixes the wrong data availability calculation for existing dataflows when (re-)uploading data with advanced validation option. For existing dataflows where the data availability was previously wrong, you need to re-upload new set(s) of data, or manually run the `init/dataflow` method (or "Activate" a dataflow from the DLM UI) for each single dataflow in order to update the data availability.
 
 ---
 
