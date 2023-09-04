@@ -138,10 +138,9 @@ POST /init/dataflow
 ```
 
 #### Data and referential metadata upload queuing mechanism
-The transfer web service instance uses a simple queuing mechanism that allows for a limited parallelism of upload transactions as long as the uploads concern different Data Structure Definitions (DSDs). 
+The transfer web service instance uses a simple queuing mechanism that allows for a limited parallelism of upload transactions. 
 
-All upload requests are added to the queue from which up to a configurable maximum number (see `MaxConcurrentTransactions` parameter [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration), default: 10) of requests are executed in parallel.  
-However, only one upload per DSD is allowed at any time. Therefore, uploads concerning a DSD for which an import is currently already going on is canceled and marked as completed unsuccessfully.
+All data change requests (without any specific limitation) are added to the queue. A configurable maximum number of requests (see `MaxConcurrentTransactions` parameter [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration), default: 10) are automatically taken from the top of the queue and executed in parallel as long as they concern transactions for different Data Structure Definitions (DSDs) (fact tables). Requests for DSDs for which another transaction is currently already being executed are automatically re-queued.
 
 **Important:**  
 The import queue is currently managed in-memory and **not persisted**. All ongoing or queued requests are lost and need to be resubmitted in case the Transfer service stops.  
