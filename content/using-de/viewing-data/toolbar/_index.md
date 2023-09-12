@@ -11,9 +11,9 @@ keywords: [
   'Download', '#download',
   'Table in Excel', '#table-in-excel',
   'Filtered or unfiltered data in tabular text (CSV)', '#filtered-or-unfiltered-data-in-tabular-text-csv',
+  'Notification of download', '#notification-of-download',
   'Additional downloads of external resources', '#additional-downloads-of-external-resources',
   'Chart as picture (PNG)', '#chart-as-picture-png',
-  'Notification of download', '#notification-of-download',
   'Full screen', '#full-screen',
   'Developer API', '#developer-api',
 ]
@@ -28,9 +28,9 @@ keywords: [
 - [Download](#download)
   - [Table in Excel](#table-in-excel)
   - [Filtered or unfiltered data in tabular text (CSV)](#filtered-or-unfiltered-data-in-tabular-text-csv)
+  - [Notification of download](#notification-of-download)
   - [Additional downloads of external resources](#additional-downloads-of-external-resources)
   - [Chart as picture (PNG)](#chart-as-picture-png)
-  - [Notification of download](#notification-of-download)
 - [Full screen](#full-screen)
 - [Developer API](#developer-api)
 
@@ -53,7 +53,7 @@ The "Labels" option allows to display the information using names, identifiers (
 
 ![Toolbar](/dotstatsuite-documentation/images/de-toolbar3.png)
 
-This option applies to all the table and chart contents, including their header and footer. When the option `Both` is selected, then it shows the Identifer bewteen brakets, then a space, then the name. If there is no corresponding localised name, then the identifier is shown instead and displayed between squared brackets [].  
+This option applies to all the table and chart contents, including their header and footer, as well as to the Excel and CSV data downloads. When the option `Both` is selected, then it shows the Identifer between brakets, then a space, followed by the name. If there is no corresponding localised name, then the identifier is shown instead and displayed between squared brackets [].  
 
 Example with the dimension label `Reference area`:
 * with option **Name**, it displays **`Reference area`**
@@ -135,24 +135,24 @@ Data is downloaded in **.csv** file format, which is a flat tabular text format.
 - **Filtered** data: Only the data according to the current filter selection is downloaded.  
 - **Unfiltered** data: The full (unfiltered) data contained in the underlying dataflow is downloaded.  
 
-Instead of using a _space-limited_ JavaScript 'memory blob', the Data Explorer will use the _space-unlimited_ web browser's inbuilt file-download feature. This is however constrained to SDMX web service requests without specific HTTP header options, thus only possible for _unauthenticated_ requests and for data spaces with an SDMX service that supports the `format=csvfile|csvfilewithlabels` URL parameter (as alternative to the HTTP `Accept` header). 
+If the [Labels](#labels) option is set to **Identifier**, then the CSV download file will only contain the identifiers (ID) of nameable SDMX objects (dataflow, dimensions, measures, attributes, and their respective items/values if coded). For that purpose, the underlying SDMX HTTP `Accept` header is `application/vnd.sdmx.data+csv;file=true`.  
 
-**Note:** Any data space using an SDMX web service (version) that doesn't support this `format` URL parameter, must be indicated in the `tenants.json` configuration file with the property `"supportsCsvFile": false`, see [the related documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#non-support-of-the-format-url-parameter-by-a-data-space), because the support of the `format` URL parameter is assumed by default. 
-The labels parameter (id|name|both; default=id) applies to all Nameable SDMX Artefacts (dataflow, dimensions and their items (if coded), measures and their values (if coded), attributes and their values (if coded)) contained in the header and the body of the message. 
-If option labels=name: An additional column is added right after the component identification column containing the localised name of the component reported in the previous column. The labels option can be changed in the nsi configuration file, see [the related repository documentation](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#format-configuration).
-To be able to get SDMX-CSV extractions with separated columns for IDs and names, instead of using labels=both, set labels to name:   
-```xml
-  <FormatMapping>
-    <Mappings>
-      ...
-      <Mapping Format="csvfilewithlabels" AcceptHeader="application/vnd.sdmx.data+csv;version=2;file=true;labels=name"/>
-    </Mappings>
-  </FormatMapping>
-  ```
+If the [Labels](#labels) option is set to **Name** or **Both**, then the CSV download file contains additional columns with the localised names of the nameable SDMX objects. For that purpose, the underlying SDMX HTTP `Accept` header is `application/vnd.sdmx.data+csv;version=2;file=true;labels=name`. Here is an example of a CSV file that includes separate columns for localised names:   
 ![Set labels to name](/dotstatsuite-documentation/images/de-toolbar-download-data-with-labels-set-to-name.png)
 
+#### Notification of download
+> Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
 
+Instead of using a _space-limited_ JavaScript 'memory blob', for downloads of filtered and unfiltered data in tabular text (CSV) files with the underlying SDMX web service, the Data Explorer now uses the browser's inbuilt web resource download feature, which allows the user seeing the download start and progress in the browser's standard way. Since there may be a little delay between the service call and the start of the service response (download start) depending on the request size and the server performance, the DE displays a notification message: *"Download launched. Your download will start shortly. In the meantime, you can continue browsing."* Clicking on the right aligned cross closes the notification.  
 
+![Download notification](/dotstatsuite-documentation/images/de-download-notification.png)
+
+The browser's inbuilt download feature is however constrained to web requests without specific HTTP header options, thus only possible for _unauthenticated_ HTTP GET requests and for data spaces with an SDMX service that supports the `format=csvfile|csvfilewithlabels` URL parameter (as alternative to the above mentioned HTTP `Accept` header options). This feature is thus not used in the following situations:
+- when the SDMX web service doesn't support the `format=csvfile|csvfilewithlabels` URL parameter
+- for very large filter selections, when the DE needs to use POST requests instead of GET requests (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration#support-of-long-urls) for more information)
+- for authenticated users, when the DE needs to set the HTTP authorisation header.
+
+**Note:** The NSI SDMX web service supports the `format=csvfile|csvfilewithlabels` URL parameter, which can be configured as described [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#format-configuration). Any data space using an SDMX web service (version) that doesn't support this `format` URL parameter, must be indicated in the `tenants.json` configuration file with the property `"supportsCsvFile": false`, see [the related documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#non-support-of-the-format-url-parameter-by-a-data-space), because the support of the `format` URL parameter is assumed by default.
 
 #### Additional downloads of external resources
 > Released in [December 02, 2019 Release .Stat Suite JS milestone 7](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-02-2019)
@@ -207,27 +207,6 @@ All graphical reprensentations of a data view (chart types) are available for **
 
 The option is only available when viewing data in a chart representation. The application downloads the screenshot of the current chart together with its header and footer in a .png format. It is using the current chart size, highlights and baseline as provided or set by the user in the chart customisation.  
 The default chart's filename is consistent with the downloaded Excel's filename, being the `AgencyID.DataflowID_Version` combined with the filter selection(s) and the .png extension.
-
-#### Notification of download
-> Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
-
-For downloads of filtered and unfiltered data in tabular text (CSV) files using the underlying SDMX web service, the DE now uses the browser inbuilt web resource download feature, which allows the user seeing the download start and progress in the browser's standard way. Since there may be a little delay between the service call and the start of the service response (download start) depending on the request size and the server performance, the DE displays a notification message: *"Download launched. Your download will start shortly. In the meantime, you can continue browsing."* Clicking on the right aligned cross closes the notification.  
-
-![Download notification](/dotstatsuite-documentation/images/de-download-notification.png)
-
-This feature requires the configuration of the `format=csvfile` [URL option in the underlying NSI SDMX web service](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#format-configuration), so that GET requests can contain all necessary pieces of information in the URL. 
-
-```xml
-<FormatMapping>
-    <Mappings>
-      <Mapping Format="csvfile" AcceptHeader="application/vnd.sdmx.data+csv;file=true"/>
-    </Mappings>
-  </FormatMapping>
-```
-
-This feature is not used in the following 2 situations:
-- for very large filter selections, when the DE needs to use POST requests instead of GET requests (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration#support-of-long-urls) for more information)
-- for authenticated users, when the DE needs to set the HTTP authorisation header.
 
 ---
 
