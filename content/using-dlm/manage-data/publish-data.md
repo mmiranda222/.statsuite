@@ -21,7 +21,7 @@ keywords: [
 ---
 
 ### Categorise a data view (dataflow)
-> Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)
+> Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021) 
 #### General behavior
 When using the option **"Categorise structure"**, DLM users can **categorise a data view (*SDMX* dataflow)** in one or several of the categories in any of the available *SDMX* CategorySchemes of a dedicated data space. Users can thus avoid manually creating and uploading *SDMX* Categorisation artefacts in .xml files.  
 **Categorising dataflows is required for their index in the Data Explorer search** (see related functional specifications of [What is indexed](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed) in .Stat DE).
