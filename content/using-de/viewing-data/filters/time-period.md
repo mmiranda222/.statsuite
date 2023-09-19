@@ -1,5 +1,5 @@
 ---
-title: "Frequency & Time-Period"
+title: "Frequency & Time-Period" 
 subtitle: 
 comments: false
 weight: 2130
