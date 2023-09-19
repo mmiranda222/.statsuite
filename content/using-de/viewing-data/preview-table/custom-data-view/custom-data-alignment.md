@@ -38,8 +38,8 @@ You can use the following syntaxes either in the DSD definition or the dataflow:
 
 ```xml
 <common:Annotation>
+    <common:AnnotationTitle>RIGHT</common:AnnotationTitle>   
     <common:AnnotationType>LAYOUT_CELL_ALIGN</common:AnnotationType>
-    <common:AnnotationText xml:lang="en">RIGHT</common:AnnotationText>
     <common:AnnotationText xml:lang="ar">LEFT</common:AnnotationText>
 </common:Annotation>
 ```
