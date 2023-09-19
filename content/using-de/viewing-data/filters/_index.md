@@ -147,7 +147,7 @@ As long as the `ctrl` key is held, the data table is not updated.
 If you click on one item and hold the mouse button without releasing it, then moving the mouse cursor down/up to another item of the same list will select both items and all intermediate ones.  
 As long as the mouse button is held, the data table is not updated.
 
-*Note* that these keyboard selection options are not compatible with the web content accessibility support. 
+*Note* that these keyboard selection options are not compatible with the web content accessibility support.  
 
 ---
 
