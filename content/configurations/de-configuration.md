@@ -39,7 +39,8 @@ keywords: [
   'User research: Pop-up survey','#user-research-pop-up-survey-feature',
   'Policies for external search engine crawlers', '#policies-for-external-search-engine-crawlers',
   'robots tags', '#robots-tags',
-  'robots.txt file', '#robots-txt-file'
+  'robots.txt file', '#robots-txt-file',
+  'Third-party tools integration', '#third-party-tools-integration'
 ]
 ---
 <!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
@@ -83,6 +84,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Policies for external search engine crawlers](#policies-for-external-search-engine-crawlers)
   - [robots tags](#robots-tags)
   - [robots.txt file](#robots-txt-file)
+- [Third-party tools integration](#third-party-tools-integration)
 
 For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -944,3 +946,24 @@ docker run --mount type=bind,source=path/custom_robots.txt,target=/server/robots
 ```
 
 - redirect the route url `domain/robots.txt` to your own file
+
+---
+
+### Third-party tools integration
+> Introduced with [September 20, 2023 Release .Stat Suite JS 'xray'](/dotstatsuite-documentation/changelog/#september-20-2023)  
+
+Configure the integration of an external third-party tool by targetting the generated script tag of your tool.  
+*Note* that this configuration feature was tested and delivered with the monitoring tool "Pingdom", but it should be generic enough to be working with any other compatible third-party tool.
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+{
+  "app": {
+    "scriptTags": [
+      "https://rum-static.pingdom.net/pa-xxxxxxxxxxxxx.js"
+    ],
+  }
+}
+
+```
