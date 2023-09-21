@@ -893,7 +893,7 @@ Configure the integration of an externally hosted pop-up survey in the Data Expl
 
 ![pop-up survey](/dotstatsuite-documentation/images/pop-up-survey.png)
 
-To configure a popup survey, enter the HTTPS-URL to the related externally hosted survey and a custom picture to be used for the survey popup window in the Data Explorer's settings.json file:  
+To configure a pop-up survey, enter the HTTPS-URL of the related externally hosted survey and a custom picture to be used for the survey pop-up window in the Data Explorer's settings.json file:  
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
@@ -907,6 +907,7 @@ To configure a popup survey, enter the HTTPS-URL to the related externally hoste
   }
 }
 ```
+The pop-up survey is not displayed/activated if there is no surveyLink entries in the settings, or if the entries are empty.
 
 For more information see the [pop-up survey feature documentation](/dotstatsuite-documentation/using-de/popup-survey/).
 
