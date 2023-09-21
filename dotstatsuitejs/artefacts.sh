@@ -1,8 +1,13 @@
 #!/bin/bash
 
+# any common tag or branch is valid
+# ./artefacts.sh <your-token> wave
+# ./artefacts.sh <your-token> master
+
 set -o errexit
 
 TOKEN=$1
+TAG=$2
 
 if [ ! $TOKEN ]; then
   echo "Error: Missing token for download artefacts";
@@ -10,54 +15,28 @@ if [ ! $TOKEN ]; then
   exit 1;
 fi
 
-BRANCH=master;
-JOB=(setup build build-srv build-dist);
+JOBS=(setup build-srv build-dist);
+PROJECTS=(dotstatsuite-data-explorer dotstatsuite-data-viewer dotstatsuite-data-lifecycle-manager dotstatsuite-sdmx-faceted-search dotstatsuite-share dotstatsuite-config dotstatsuite-proxy);
 
-PROJECTS=(10537079 10283564 10532325 12189645 10631000 10822973);
-
-CONFIG=config; #10537079
-SEARCH=search; #10283564
-DATA_EXPLORER=explorer; #10532325
-DATA_VIEWER=viewer; #12189645
-SHARE=share; #10631000
-DLM=dlm; #10822973
-
-FOLDERS=(${CONFIG} ${SEARCH} ${DATA_EXPLORER} ${DATA_VIEWER} ${SHARE} ${DLM});
 trap "exit" INT
 
-echo ' -- Download artifacts -- ';
+for project in ${PROJECTS[*]}; do
+  echo "Processing $project..."
+  [ ! -d "$project" ] && mkdir $project
+  cd $project
 
-for index in `seq 0 5`; do
-  folder="${FOLDERS[index]}"
-  project="${PROJECTS[index]}"
-
-  [ ! -d "$folder" ] && mkdir $folder
-  cd $folder
-
-  for job in ${JOB[*]}; do
-    url="https://gitlab.com/api/v4/projects/$project/jobs/artifacts/$BRANCH/download?job=$job"
-    echo "Downloading $folder $job"
-    echo "$url"
-    if curl --insecure --fail -L -o $job.zip --header "PRIVATE-TOKEN: $TOKEN" $url; then
-      curl --insecure -L -o $job.zip --header "PRIVATE-TOKEN: $TOKEN" $url
+  for job in ${JOBS[*]}; do
+    id="$project-$TAG-$job"
+    url="https://gitlab.com/sis-cc/.stat-suite/$project/-/jobs/artifacts/$TAG/download?job=$job"
+    if curl --insecure --fail -s -L -o $id.zip --header "PRIVATE-TOKEN: $TOKEN" $url; then
+      echo "Downloading $id"
+      curl --insecure -s -L -o $id.zip --header "PRIVATE-TOKEN: $TOKEN" $url
     fi;
-    
+    if [ -f ./"$id".zip ]; then
+      echo "Unzipping $id"
+      unzip -qq $id
+    fi
   done
 
-  cd ..
-done
-
-echo ' -- Unzip artifacts -- ';
-
-for folder in ${FOLDERS[*]}; do
-  cd $folder
-  for job in ${JOB[*]}
-    do
-      if [ -f ./"$job".zip ]; then
-        echo unzip $folder $job...
-        unzip $job
-        echo unzipped
-      fi 
-    done
   cd ..
 done
