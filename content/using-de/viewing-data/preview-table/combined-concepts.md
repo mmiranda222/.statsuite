@@ -35,6 +35,8 @@ keywords: [
 
 ---
 
+> *Version history:*  
+> Enhanced rules for hiding of specific values in the combined concepts with [September 20, 2023 Release .Stat Suite JS "xray"](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)  
 > Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
 
 ### Introduction
@@ -101,7 +103,7 @@ If the `NOT_DISPLAYED` annotation (for a code in a codelist, for a dataflow or f
 
 Example: In all following example cases, we exclude the "Not applicable" item label (having ID "_Z") of the BaseYear attribute from the COMBINED_UNIT_MEASURE label.
 
-Note: This feature makes fully empty labels possible in case all items to be concatenated are marked as "NOT_DISPLAYED". When this happens at the dataset or observation level then the related footnote is omitted, otherwise the related cell is left empty.
+Whenever a set of combined concepts has **only hidden components**, then the first value the these hidden concepts is displayed in the table view instead of an empty cell.
 
 ---
 
