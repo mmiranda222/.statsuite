@@ -87,7 +87,7 @@ Table of version compatibility of the Eurostat **NSI Web Service** (nsiws.net [p
 
 | ESTAT nsiws | .Stat Suite .NET | .Stat Suite JS | ISTAT DMM | 
 |:-------------|:-------------|:-------------|:-------------|
-| nsiws.net v8.18.2 | .NET "elote" | . | . |
+| nsiws.net v8.18.2 | .NET "elote" | JS "xray" | . |
 | nsiws.net v8.17.0 | .NET "dragonfruit" | JS "wave" | . |
 | nsiws.net v8.15.1 | . | JS "unicorn" | . |
 | nsiws.net v8.13.0 | .NET "cinnamon" | JS "tachyon" | . |
