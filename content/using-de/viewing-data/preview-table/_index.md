@@ -212,7 +212,7 @@ If the value ID of an attribute that is defined as flag is longer than 4 charact
 
 ### Display of hierarchical dimensions
 >*Version history:*  
-> Single-item selection displayed in sub-header since [September 19, 2023 Release .Stat Suite JS 'xray'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-19-2023)  
+> Single-item selection displayed in sub-header since [September 20, 2023 Release .Stat Suite JS 'xray'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)  
 > Indentation on column headers since [December 5, 2022 Release .Stat Suite JS 'spin'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Extended to all dimensions + dots with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
 > Introduced in [October 8, 2019 Release .Stat Suite JS 2.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-8-2019) 
