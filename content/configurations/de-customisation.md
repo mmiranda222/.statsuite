@@ -21,6 +21,7 @@ keywords: [
   'Api documentation hyperlink', '#api-documentation-hyperlink',
   'Contact us hyperlink', '#contact-us-hyperlink',
   'Contact us and Share email: Header logo of the organisation', '#contact-us-and-share-email-header-logo-of-the-organisation',
+  'Share email: header, footer, body and confirm button color', '#share-email-header-footer-body-and-confirm-button-color',
   'Table and chart: footer logo', '#table-and-chart-footer-logo',
   'Table and chart: footer terms and conditions', '#table-and-chart-footer-terms-and-conditions',
   'Chart: map configuration', '#chart-map-configuration',
@@ -50,6 +51,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Api documentation hyperlink](#api-documentation-hyperlink)
 - [Contact us hyperlink](#contact-us-hyperlink)
 - [Contact us and Share email: Header logo of the organisation](#contact-us-and-share-email-header-logo-of-the-organisation)
+- [Share email: header, footer, body and confirm button color](#share-email-header-footer-body-and-confirm-button-color)
 - [Table and chart: footer logo](#table-and-chart-footer-logo)
 - [Table and chart: footer terms and conditions](#table-and-chart-footer-terms-and-conditions)
 - [Chart: map configuration](#chart-map-configuration)
@@ -595,6 +597,29 @@ Define the logo of the organisation in the header banner of the mail sent from t
     "mailHeader": "/assets/siscc/data-explorer/images/siscc-email-logo.png",
   },
 ```
+
+---
+
+### Share email: header, footer, body and confirm button color
+> [September 20, 2023 Release .Stat Suite JS "xray"](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)
+
+Define the colors used in the Share email:
+- tertiary/main color for the header and the footer
+- secondary/dark color for the body 
+- primary/dark color for the confirm email button.  
+
+* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+
+```json
+"theme": {
+    "palette": {
+        "primary":{"dark": "#ff19ab"},
+        "secondary": {"dark": "#ffffff"},
+        "tertiary": {"main": "#ff19ab"}
+    }
+}
+```
+
 ---
 
 ### Table and chart: footer logo
