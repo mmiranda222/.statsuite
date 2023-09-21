@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [September 20, 2023](#september-20-2023)
 - [September 1, 2023](#september-1-2023)
 - [August 24, 2023](#august-24-2023)
 - [August 03, 2023](#august-03-2023)
@@ -125,6 +126,49 @@ ToC
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
 
+
+---
+
+### September 20, 2023
+**[Release .Stat Suite JS "xray"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/69)**
+> This **minor** release includes a new version of all the JavaScript services and applications *(except keycloak)*.  
+**compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2** and .Stat-Suite CORE release [elote](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/70).
+
+major changes:
+
+*None*
+
+significant and minor changes:
+
+- [dotstatsuite-data-explorer#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/164) Support the display in data views of  **irregular time periods and distinct points in time**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/irregular-time-periods/))
+- [dotstatsuite-config#44](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/44) Add **Pingdom** code snippets, through using a **generic third-party tool integration config.**, for monitoring real users of the Data Explorer. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#third-party-tools-integration))
+- [dotstatsuite-data-explorer#1001](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1001) Use **configured colours and localisable texts** for the content of the **share confirmation emails**. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-customisation/#share-email-header-footer-body-and-confirm-button-color))
+- [dotstatsuite-data-explorer#1082](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1082) Localised alignment setting (defined by an *SDMX* annotation) should overwrite non-localised settings. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/custom-data-alignment/))
+- [dotstatsuite-data-explorer#1060](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1060) Display "Total" instead of an empty cell when concatenating _T/_Z labels of combined concepts. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/#hiding-of-specific-values-in-the-combined-concepts))
+- [dotstatsuite-data-explorer#1058](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1058) Single item dimension shown in the row section instead of sub-header. ([Updated documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-hierarchical-dimensions))
+- [dotstatsuite-data-explorer#989](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/989) Top-align row header cells in the table view.
+- [dotstatsuite-data-explorer#1066](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1066) Change the "advanced selection" and "fullscreen" icons.
+- [dotstatsuite-data-explorer#1067](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1067) Improve the "Selection Mode" button in the visualisation page's pop-up window.
+- [dotstatsuite-data-explorer#1050](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1050) Correct the counts for 'Last [..] period(s)|time series value(s)' features.
+- [dotstatsuite-data-explorer#1054](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1054) Improve "Share" labels.
+- [dotstatsuite-data-lifecycle-manager#358](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/358) Display IDs of categories in the DLM.
+- [dotstatsuite-data-explorer#1034](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1034), [dotstatsuite-visions#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/40), and [dotstatsuite-components#16](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/16) *(Refactoring)* **Migrate from React v16 to v18**.
+- [dotstatsuite-data-explorer#1021](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1021) *(Refactoring)* React router updating from v5.1.
+- [dotstatsuite-visions#42](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/42) *(Refactoring)* Migrate enzyme to `rtl` library.
+- [dotstatsuite-data-explorer#1065](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1065) *(Refactoring)* Remove `recompose`.
+- [dotstatsuite-components#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/15) *(Refactoring)* Remove `recompose`.
+- [dotstatsuite-data-lifecycle-manager#382](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/382) *(Refactoring)* Remove warnings in locale console.
+- [dotstatsuite-data-explorer#1084](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1084) *(Refactoring)* Snapshot tests.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1109](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1109) No data when clearing all filters (related to Last N period(s) parameter).
+- [dotstatsuite-data-explorer#1108](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1108) & [dotstatsuite-data-explorer#1087](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1087) "Whoops, something went wrong on our end" error when visualising some/specific dataflows.
+- [dotstatsuite-data-explorer#1092](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1092) "Not applicable" displayed in the combined concepts concatenation for subtitle only.
+- [dotstatsuite-data-explorer#1091](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1091) Incorrect labels displayed for combined concepts when different order is used in `AnnotationTitle`/`AnnotationText`.
+- [dotstatsuite-data-explorer#1086](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1086) Hide the popup survey window when there is no link in the settings.
+- [dotstatsuite-data-explorer#1070](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1070) Correct the Data Explorer colour banner.
+
 ---
 
 ### September 1, 2023
@@ -150,7 +194,7 @@ major changes:
 
 *None*
 
-minor changes:
+significant and minor changes:
 
 - [dotstatsuite-core-sdmxri-nsi-ws#306](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/306) **Restricted access to confidential or embargoed** data. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/confidential-data/))
 - [dotstatsuite-core-transfer#126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/126) Allow for non-coded non-time dimensions in .Stat CORE: **microdata enhancement**.
@@ -196,7 +240,7 @@ major changes:
 
 *None*
 
-minor changes:
+significant and minor changes:
 
 - [dotstatsuite-data-explorer#1007](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1007) Feature to configure the integration of an externally hosted **pop-up survey** into the Data Explorer. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/popup-survey/))
 - [dotstatsuite-data-explorer#1069](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1069) Correct the Spanish translation.
