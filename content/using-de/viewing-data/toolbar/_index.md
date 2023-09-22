@@ -186,8 +186,6 @@ Being a localised annotation, it is possible to define a different resource per 
 	}]
 ```
 
-See the [DLM documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/external-resources/) how to interactively define new external resources.
-
 **Example**
 
 In this example, the dataflow artefact contains 3 localised (English and French) `EXT_RESOURCE` annotations for 3 external resources, together with their labels and links to icons to be displayed.

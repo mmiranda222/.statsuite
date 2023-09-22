@@ -87,7 +87,7 @@ The main advantage of the Annotation is its flexibility as all properties can be
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px; width: 201px;">EXT_RESOURCE</td>
-<td style="height: 23px; width: 1471.44px;">Indication of a localised link to an external resource associated to the annotated Dataflow<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/external-resources/">full specs</a></td>
+<td style="height: 23px; width: 1471.44px;">Indication of a localised link to an external resource associated to the annotated Dataflow<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/toolbar/#additional-downloads-of-external-resources">full specs</a></td>
 <td style="height: 23px; width: 397.562px;">Dataflow</td>
 <td style="height: 23px; width: 10px;">&lt;language&gt;:&lt;HTML containing URL to the resource&gt;,&hellip;<br /><em>example:</em><br />"en":"&lt;a href='http://www.ilo.org/_EN.xlsx'&gt;Explanatory information&lt;/a&gt;","fr":"&lt;a href='http://www.ilo.org/_FR.xlsx'&gt;Informations explicatives&lt;/a&gt;"</td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
