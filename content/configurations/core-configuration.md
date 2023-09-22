@@ -4,6 +4,7 @@ subtitle:
 comments: false
 weight: 70
 keywords: [
+  'Authentication configuration', '#authentication-configuration',
   'Transfer web service configuration', '#transfer-web-service-configuration',
   'Authorisation-management web service configuration', '#authorisation-management-web-service-configuration',
   'SDMX (NSI) web service configuration', '#sdmx-nsi-web-service-configuration',
@@ -13,6 +14,7 @@ keywords: [
 
 ---
 #### Table of Content
+- [Authentication configuration](/dotstatsuite-documentation/configurations/authentication/#authentication-in-the-core-services)
 - [Transfer web service configuration](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration)
 - [Authorisation-management web service configuration](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management#configuration)
 - [SDMX (NSI) web service configuration](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md)

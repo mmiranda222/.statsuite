@@ -5,12 +5,12 @@ comments: false
 weight: 82
 keywords: [
 'Generic OpenID Compliance', '#generic-openid-compliance',
-'Optional authentication of DE', '#optional-authentication-of-de',
-'OpenID connect Middleware for NSIWS', '#openid-connect-middleware-for-nsiws',
-'Intro', '#intro',
-'Setup', '#setup',
-'Configuration', '#configuration',
-'Configuration settings', '#configuration-settings',
+'Authentication in the DE', '#authentication-in-the-de',
+'Authentication in the DLM', '#authentication-in-the-dlm',
+'Authentication in the CORE services', '#authentication-in-the-core-services',
+'SDMX (NSI) web service', '#sdmx-nsi-web-service',
+'Transfer web service', '#transfer-web-service',
+'Authorisation Management web service', '#authorisation-management-web-service',
 ]
 
 ---
@@ -20,31 +20,75 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 
 #### Table of Content
 - [Generic OpenID Compliance](#generic-openid-compliance)
-- [Optional authentication of DE](#optional-authentication-of-de)
-- [OpenID connect Middleware for NSIWS](#openid-connect-middleware-for-nsiws)
-  - [Intro](#intro)
-  - [Setup](#setup)
-  - [Configuration](#configuration)
-  - [Configuration settings](#configuration-settings)
+- [Authentication in the DE](#authentication-in-the-de)
+- [Authentication in the DLM](#authentication-in-the-dlm)
+- [Authentication in the CORE services](#authentication-in-the-core-services)
+  - [SDMX (NSI) web service](#sdmx-nsi-web-service)
+  - [Transfer web service](#transfer-web-service)
+  - [Authorisation Management web service](#authorisation-management-web-service)
 
 ---
 
 > *Version history:*  
-> New `authority_aliases` property in the `tenants.json` under oidc entry for any app since [January 11, 2023 Release .Stat Suite JS tachyon](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-11-2023)  
-> OpenID compliance fully empowered since [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
-> Allow to force DE authentication since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
-> Empower both anonymous and authenticated modes with [March 05, 2020 Release .Stat Suite JS 4.0.1](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2020)  
-> Make DE authentication optional with [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
+> New `authority_aliases` property in the `tenants.json` under oidc entry for any app since [January 11, 2023 Release .Stat Suite JS tachyon](/dotstatsuite-documentation/changelog/#january-11-2023)  
+> OpenID compliance fully empowered since [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
+> Allow to force DE authentication since [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021)  
+> Empower both anonymous and authenticated modes with [March 05, 2020 Release .Stat Suite JS 4.0.1](dotstatsuite-documentation/changelog/#march-05-2020)  
+> Make DE authentication optional with [November 30, 2020 Release .Stat Suite JS 6.1.0](/dotstatsuite-documentation/changelog/#november-30-2020)
 
 ### Generic OpenID Compliance
-.Stat Suite is based on OpenID-Connect authentication. Any OpenID-Connect compliant identity provider can be used. The DevOps environment uses Keycloak for that purpose as well as an identity provider proxy for GitHub/GitLab.
+.Stat Suite is based on OpenID-Connect authentication. Any OpenID-Connect compliant identity provider can be used. The .Stat Suite DevSecOps environment uses the third party tool **Keycloak** for that purpose. In that context, this tool also serves as a proxy for the GitHub and GitLab identity providers. These providers must be accessible through a secured **HTTPS** connection.
 
-example for a DLM scope in `tenants.json` :
+For information about how to configure Keycloak as identity provider, see [here](/dotstatsuite-documentation/configurations/authentication/keycloak-configuration). 
+For information about how to configure Keycloak as proxy to other identity providers, see [here](/dotstatsuite-documentation/configurations/authentication/third-party-providers).
+
+---
+
+### Authentication in the DE
+The Data Explorer can be configured to **whether support authentication or be fully public (anonymous mode)**. Authentication is made through an external dentity provider, see [here](#generic-openid-compliance).  
+
+The authentication is configured per tenant in the `tenants.json` file in the `config-data/configs` folder with the `oidc` object. Each application tenant, defined as `scopes`, can have a dedicated authentication configuration. **If `oidc` is not defined then the DE works without authentication (anonymous public access).**
+
+| `oidc` setting    | description |
+|------------|-------------|
+| required | `true`: the user is required to login before using the DE <br/> `false`: both anonymous and authenticated access are permitted |
+| authority | authority url of token issuer |
+| authority_aliases | array of alternative urls in addition to the main authority url |
+| client_id | client/application Id |
+
+**Example:**  
+in `tenants.json`:
+
+```json
+      "de": {
+        "oidc": {
+          "required": false,
+          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+          "authority_aliases": [],
+          "client_id": "app"
+        }
+```
+
+**Note** that, even if the DE is only accessible by authenticated users, the shared views generated from it will still be publicly accessible. It is thus possible to disable the share option: see [documentation](/dotstatsuite-documentation/configurations/de-configuration/#disabled-share-option).
+
+---
+
+### Authentication in the DLM
+The Data Lifecycle Manager requires an authentication configuration. Authentication is made through an external dentity provider, see [here](#generic-openid-compliance).  
+
+The authentication is configured per tenant in the `tenants.json` file in the `config-data/configs` folder with the `oidc` object. Each application tenant, defined as `scopes`, can have a dedicated authentication configuration.
+
+| `oidc` setting    | description |
+|------------|-------------|
+| authority | authority url of token issuer |
+| authority_aliases | array of alternative urls in addition to the main authority url |
+| client_id | client/application Id |
+
+**Example:**  
+in `tenants.json`:
 
 ```json
       "dlm": {
-        "type": "dlm",
-        "label": "dlm",
         "oidc": {
           "authority": "https://keycloak.siscc.org/auth/realms/OECD",
           "authority_aliases": [],
@@ -52,103 +96,30 @@ example for a DLM scope in `tenants.json` :
         }
 ```
 
-example for DE scope in `tenants.json` :
-
-```json
-      "de": {
-        "type": "de",
-        "label": "de",
-        "oidc": {
-          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
-          "authority_aliases": [],
-          "client_id": "app",
-          "required": false
-        }
-```
-
-**Notes:**
-- The Data Explorer (DE) is working in both anonymous and authenticated modes (sends JWT token or nothing).
-- The Data Lifecycle Manager (DLM) is working in authenticated mode (sends JWT token).
-- The original SDMX web service (NSI) openid-connect auth configuration manual can be found [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/openid-middleware.md). For convenience, the content has been replicated in this section.
-- `authority_aliases` as optional to configure frame CSP when there is more than the authority endpoint (ADFS for instance)
-
 ---
 
-### Optional authentication of DE
-The Data Explorer can be configured to **whether support authentication or be fully public (anonymous mode)**. Authentication requires a Provider and an URL (of the authentication server).  
-Today, the only tested and included provider to .Stat Suite is [Keycloak](https://www.keycloak.org/), but others can be added (OpenId compliant ones, and others can be tested too).
+### Authentication in the CORE services
 
-The authentication provider configuration is handled per tenant in `tenants.json` files in `config-data/configs` where each application, defined as `scopes`, can have a dedicated auth. configuration.
+The .Stat Suite CORE services do actually not allow authenticating a user, but simply expect a [JWT](https://jwt.io/introduction) token obtained from a previous independent authentication. The token is to sent as a [Bearer header](https://en.wikipedia.org/wiki/JSON_Web_Token#Use). The CORE services validate that the token was issued by the expected Authority for the expected Client and that it is not expired. In use-case where an HTTP request has no token or the token is not valid, **401 Unauthorized** http code is returned.
 
-**example:**  
-in `tenants.json`:
+Independently from the fact if the user is authenticated or not, the permissions defined with the Authorisation web service are being applied.
 
-```json
-      "de": {
-        "type": "de",
-        "label": "de",
-        "oidc": {
-          "authority": "https://keycloak.siscc.org/auth/realms/OECD",
-          "client_id": "app",
-          "required": false
-        }
-```
+#### SDMX (NSI) web service
 
-**Rules:**
-- no `oidc` entry means **public (anonymous) DE**
-- `oidc` entry & `required` to 'false' means that the DE has **both anonymous and authenticated** access (potentially public and private data)
-- `oidc` entry & `required` to 'true' means that you are **required to login before using the DE** (as in DLM)
+The complete documentation for the SDMX (NSI) web service openid-connect authentication configuration can be found [here](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/openid-middleware.md) (mirrored [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/openid-middleware.md)). 
 
-**Note** that, even if the DE is only accessible by authenticated users, the shared views generated from it will still be publicly accessible. It is thus possible to disable the share option: see [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#disabled-share-option).
+To enable OpenID middleware set **OpenIdMiddlewareBuilder** under `<appSettings>` in `middlewareImplementation` of the  [main configuration file](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/CONFIGURATION.md#main-configuration-file). Please see the [PLUGINS](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/PLUGINS.md) (mirrored [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/PLUGINS.md)) for more information regarding middleware configuration in the SDMX (NSI) web service.
 
----
-
-### OpenID connect Middleware for NSIWS
-
-> Please note that currently middleware implements only authentication, user authorization logic will be supported later.
-
-#### Intro
-
-Middleware can be used in scenarios where user is authenticated against 3-d party identity service, responsible for issue a [JWT](https://jwt.io/introduction) token which later is used with every request to NSIWS for user impersonation and enforcing local authorization rules.
-
-Middleware requires HTTPS connection to keep token secure.
-
-OpenId-connect middleware expects a [JWT](https://jwt.io/introduction) token sent as a [Bearer header](https://en.wikipedia.org/wiki/JSON_Web_Token#Use). Middleware validates that token is issued by expected Authority for expected Client and not expired.
-
-In use-case where HTTP request has no token or it is not valid **401 Unauthorized** http code is returned
-
-#### Setup
-
-To enable OpenID middleware set **OpenIdMiddlewareBuilder** under `<appSettings>` in `middlewareImplementation` of the  [main configuration file](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/CONFIGURATION.md#main-configuration-file).
-
-Example:
+**Example:**
+e.g. in `app.config` in the `config` folder:
 
 ```xml
 <add key="middlewareImplementation" value="OpenIdMiddlewareBuilder"/>
 ```
 
-Please see the [PLUGINS](https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/nsiws.net/browse/doc/PLUGINS.md) for more information regarding middleware configuration in NSIWS.
+The authentication details are then configured in the `auth.json` file in the `config` folder with the `auth` object.
 
-#### Configuration
-
-add auth.json file to a config directory with following contents:
-
-```json
-{
-    "auth": {
-        "enabled":true,
-        "allowAnonymous": false,
-        "authority": "AUTHORITY URL",
-        "clientId": "VALUE",
-        "requireHttps": true,
-        "validateIssuer": true
-    }
-}
-```
-
-#### Configuration settings
-
-| Setting    | Description |
+| `auth` setting    | Description |
 |------------|-------------|
 | enabled | Is openid authentication enabled|
 | allowAnonymous | Is anonymous access allowed (request without JWT token)|
@@ -157,12 +128,108 @@ add auth.json file to a config directory with following contents:
 | requireHttps | Is HTTPS connection to OpenId authority server required |
 | validateIssuer | Is iss (issuer) claim in JTW token should match configured authority |
 
------------------------------------------------------------
+**Example:**  
+in `auth.json`:
 
-Note that  
-- If NSI is configured to process sent JWT token then it's essential to configure it to `allowAnonymous=true` for the DE to work. 
-- *(since [release .NET 6.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-05-2021))*, NSI openid-connect authentication is turned ON by default. When the NSI openid-connect authentication is turned OFF, all users (necessarily unauthenticated) can get all (even non-public) data.
-- With NSI openid-connect authentication turned ON, on data retrieval, there is a check if user has a Data read permission in authorization DB (managed through the authorization service) even if request is anonymous (using the .Stat Suite AuthorizationManagement web service, there must be appropriate (probably read) permissions defined for anonymous users).
+```json
+{
+    "auth": {
+        "enabled":true,
+        "allowAnonymous": false,
+        "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+        "clientId": "app",
+        "requireHttps": true,
+        "validateIssuer": true
+    }
+}
+```
 
-**P.S.** If you setup your environment just for testing turning ON openid-connect, authentication is not a mandatory thing. DLM/DE will perfectly work with NSI without it. NSI will just ignore JWT token sent from DLM.
+**Notes:**    
+- Set `allowAnonymous=true` in case the SDMX (NSI) web service is configured to process the received JWT token and if the Data Explorer is configured to allow for anonymous access. 
+- *(Since [release .NET 6.0.0](/dotstatsuite-documentation/changelog/#march-05-2021))*, the openid-connect authentication is enabled by default.
+- When the openid-connect authentication is enabled, on data retrieval the permissions are checked if the user has a `data read` permissions even if request is anonymous.
+- When the openid-connect authentication is disabled, all users (necessarily unauthenticated) can get all (even non-public) data.
 
+#### Transfer web service
+
+The complete documentation for the transfer web service openid-connect authentication configuration can be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#auth-settings).  
+
+The authentication is configured in the `dataspaces.private.json` file in the `config` folder with the `auth` object.
+
+| `auth` setting    | Description |
+|------------|-------------|
+| enabled | Is openid authentication enabled
+| authority | Authority url of token issuer
+| clientId | Client/application Id
+| requireHttps | Is HTTPS connection to OpenId authority server required
+| validateIssuer | Is iss (issuer) claim in JWT token should match configured authority
+| claimsMapping | Key/value mapping of a key used in the C# code to JWT token claim.
+| authorizationUrl | Authorization url (used in swagger UI interface)
+| tokenUrl | Token url (used in swagger UI interface), optional, if not defined will be constructed based on authorizationUrl
+| scopes | Requested openId scopes (used as parameters for authorization url)
+
+**Example:**  
+in `dataspaces.private.json`:
+
+```json
+{
+    "auth": {
+        "enabled":true,
+        "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+        "clientId": "app",
+        "requireHttps": true,
+        "validateIssuer": true,
+        "claimsMapping": {
+            "email": "email",
+            "groups": "groups"
+        },
+        "authorizationUrl": "https://keycloak.siscc.org/auth/realms/OECD/protocol/openid-connect/auth",
+        "tokenUrl": "https://keycloak.siscc.org/auth/realms/OECD/protocol/openid-connect/token",
+        "scopes": [ "openid", "profile", "email" ]        
+    }
+}
+```
+
+**Note:** See the above linked transfer service documentation about **authorisation token claims mapping**. This is required in a scenario when the user's email address/groups not set as default claim keys in JWT token configuration contains a claims mapper.
+
+#### Authorisation Management web service
+
+The complete documentation for the authorisation management web service openid-connect authentication configuration can be found [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/-/blob/develop/README.md?ref_type=heads#auth-settings).  
+
+The authentication is configured in a `xxxxx.json` config file with the `auth` object.
+
+| `auth` settingg    | Description |
+|------------|-------------|
+| enabled | Is openid authentication enabled
+| authority | Authority url of token issuer
+| clientId | Client/application Id
+| requireHttps | Is HTTPS connection to OpenId authority server required
+| validateIssuer | Is iss (issuer) claim in JWT token should match configured authority
+| claimsMapping | Key/value mapping of a key used in the C# code to JWT token claim.
+| authorizationUrl | Authorization url (used in swagger UI interface)
+| tokenUrl | Token url (used in swagger UI interface), optional, if not defined will be constructed based on authorizationUrl
+| scopes | Requested openId scopes (used as parameters for authorization url)
+
+**Example:**  
+in `xxxxx.json`:
+
+```json
+{
+    "auth": {
+        "enabled":true,
+        "authority": "https://keycloak.siscc.org/auth/realms/OECD",
+        "clientId": "app",
+        "requireHttps": true,
+        "validateIssuer": true,
+        "claimsMapping": {
+            "email": "email",
+            "groups": "groups"
+        },
+        "authorizationUrl": "https://keycloak.siscc.org/auth/realms/OECD/protocol/openid-connect/auth",
+        "tokenUrl": "https://keycloak.siscc.org/auth/realms/OECD/protocol/openid-connect/token",
+        "scopes": [ "openid", "profile", "email" ]        
+    }
+}
+```
+
+**Note:** See the above linked authorisation management service documentation about **authorisation token claims mapping**. This is required in a scenario when the user's email address/groups not set as default claim keys in JWT token configuration contains a claims mapper.
