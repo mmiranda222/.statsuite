@@ -4,6 +4,7 @@ subtitle:
 comments: false
 weight: 79
 keywords: [
+  'Authentication', '#authentication',
   'Data space names', '#data-space-names',
   'Data space colors', '#data-space-colors',
   'Data space InsertNewItems parameter', '#data-space-insertnewitems-parameter',
@@ -25,6 +26,7 @@ keywords: [
 Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 #### Table of Content
+- [Authentication](#authentication)
 - [Data space names](#data-space-names)
 - [Data space colors](#data-space-colors)
 - [Data space InsertNewItems parameter](#data-space-insertnewitems-parameter)
@@ -39,7 +41,14 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [List of the standard roles for user permissions](#list-of-the-standard-roles-for-user-permissions)
 - [Override the default Authorisation-Management service URL](#override-the-default-authorisation-management-service-url)
 
-For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
+For the tenant and data space definitions please see [here](/dotstatsuite-documentation/configurations/tenant-model).
+
+---
+
+### Authentication
+The Data Lifecycle Manager requires an authentication configuration through an OpenID-Connect compliant identity provider.
+
+For more information, see [here](/dotstatsuite-documentation/configurations/authentication/#authentication-in-the-dlm). 
 
 ---
 
@@ -85,7 +94,7 @@ where `"color"` refers to the font color of the name, and `"backgroundColor"` re
 ---
 
 ### Data space InsertNewItems parameter
->Released in [March 29, 2020 Release .Stat Suite .NET 3.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-29-2020)  
+>Released in [March 29, 2020 Release .Stat Suite .NET 3.3.0](/dotstatsuite-documentation/changelog/#march-29-2020)  
 
 The **`InsertNewItems`** parameter located in the `app.config` of the NSI web service allows to update final or non-final SDMX artefacts (of ItemScheme types, e.g. codelist) without changing the version of it.  
 When the parameter is set to:  
@@ -98,7 +107,7 @@ Then it is possible for instance to add a new code in a codelist without modifyi
 ---
 
 ### Use data space as internal space or external space
->Changed in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
+>Changed in [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)
 
 Internal spaces in the DLM are those that allow for data imports or copies from other spaces. For this, a related transfer service is required and the  **`transferUrl`** parameter instructs the DLM to automatically show that data space as internal, automatically authenticate against that space with the common auth token and use the given transfer service instance for data imports. Otherwise, the data space is shown as external.
 
@@ -127,7 +136,7 @@ The **`transferUrl`** parameter is to be set in the `dotstatsuite-config-data/<e
 ---
 
 ### Auto-authenticate to external source
->Released in [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
+>Released in [August 3, 2022 Release .Stat Suite JS quark](/dotstatsuite-documentation/changelog/#august-3-2022)  
 
 In case a .Stat CORE data space is external because its definition doesn't define a transfer service to be used for imports, but it uses the same identity provider that is defined for the internal spaces, then the **`authenticateToRemoteURL`** parameter instructs the DLM to automatically authenticate against that source with the common auth token as well as to allow the transfer web service defined for an internal space (when called through one of the `/import/sdmxFile` or `/validate/sdmxFile` methods) to authenticate against that data source with that same auth token.
 
@@ -154,13 +163,13 @@ The **`authenticateToRemoteURL`** parameter is to be set to `true` in the `dotst
 ---
 
 ### Use native NSI WS authentication for external source
->Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
+>Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)
 
 In case an external data source is accessible through an SDMX web service based on Eurostat's SDMX-RI "NSI" component (so called NSI web service), with the **`hasExternalAuth`** parameter the DLM can be instructed to authenticate against that web service using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA).
 
-The user will have to enter the required credentials through a specific dialog box, as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication).
+The user will have to enter the required credentials through a specific dialog box, as described [here](/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication).
 
-For more information on how to set the **`hasExternalAuth`** parameter, please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model/#use-native-nsi-ws-authentication-for-external-source)
+For more information on how to set the **`hasExternalAuth`** parameter, please see [here](/dotstatsuite-documentation/configurations/tenant-model/#use-native-nsi-ws-authentication-for-external-source)
 
 ---
 
@@ -189,7 +198,7 @@ The **`dataExplorerUrl`** parameter is to be set in the `dotstatsuite-config-dat
 ---
 
 ### List of SDMX artefact types
-Define the types of SDMX structural artefacts selectable in the DLM 'Filter by type' selector (see [functional specs](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/dlm_overview/#types)). Only artefacts of those types can be displayed in the DLM user interface.
+Define the types of SDMX structural artefacts selectable in the DLM 'Filter by type' selector (see [functional specs](/dotstatsuite-documentation/using-dlm/dlm_overview/#types)). Only artefacts of those types can be displayed in the DLM user interface.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
 
@@ -215,7 +224,7 @@ Define the types of SDMX structural artefacts selectable in the DLM 'Filter by t
 ---
 
 ### Default data validations option
-> Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+> Introduced in [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)
 
 Define, in the 'Data upload' and 'Data transfer' menus, what is the **data validations type option** selected by default:
 - **"basic"** for Favour speed with basic validations
@@ -229,7 +238,7 @@ Define, in the 'Data upload' and 'Data transfer' menus, what is the **data valid
   }
 ```
 
-See more about the functional specifications of this feature [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/upload-data/data-validation/).
+See more about the functional specifications of this feature [here](/dotstatsuite-documentation/using-dlm/manage-data/upload-data/data-validation/).
 
 ---
 
@@ -254,7 +263,7 @@ More information on how to make this configuration in Kestrel (on the example of
 ---
 
 ### Logbook submission time boundaries
-> Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+> Released in [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)
 
 Define the boundaries of the **submission time logbook filter**. Rules are:
 - configuration applies to the tenant;
@@ -278,14 +287,14 @@ Define the boundaries of the **submission time logbook filter**. Rules are:
 ---
 
 ### List of the standard roles for user permissions
-> Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+> Introduced in [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)
 
 Define, per organisation, the **Standard roles** set for the 'DLM --> Manage permissions --> Add/View/Edit' form, based on any combination of the granular permissons as defined in the Authorisation-Management Service.  
 By default, the below set of combinations is pre-defined as standard roles.
 
 References:
-- [Authorisation-Management API features and granular permissions](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/permission-management)
-- [Functional specifications of the DLM GUI](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions)
+- [Authorisation-Management API features and granular permissions](/dotstatsuite-documentation/using-api/permission-management)
+- [Functional specifications of the DLM GUI](/dotstatsuite-documentation/using-dlm/manage-permissions)
 
 ![DLM config basic permissions](/dotstatsuite-documentation/images/dlm-config-basic-permissions.png)
 
@@ -329,7 +338,7 @@ Each role ID also requires the definition of a localised label in an "override" 
 ---
 
 ### Override the default Authorisation-Management service URL
->Released in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+>Released in [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)
 
 Define an Authorisation-Management service URL at the DLM scope level that will override the one defined as an env. variable during the deployment. This override is made especially to allow for a specific Authorisation-Management service URL per DLM scope when a DLM instance has several scopes.
 

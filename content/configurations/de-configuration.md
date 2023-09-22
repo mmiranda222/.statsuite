@@ -6,6 +6,7 @@ weight: 72
 keywords: [
   'Intro', '#intro',
   'Warning', '#warning',
+  'Optional authentication', '#optional-authentication',
   'Search: Homepage facets', '#search-homepage-facets',
   'Search: Homepage facets alignment', '#search-homepage-facets-alignment',
   'Search: Auto-expanded homepage facet', '#search-auto-expanded-homepage-facet',
@@ -50,6 +51,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 #### Table of Content
 - [Intro](#intro)
 - [Warning](#warning)
+- [Optional authentication](#optional-authentication)
 - [Search: Homepage facets](#search-homepage-facets)
 - [Search: Homepage facets alignment](#search-homepage-facets-alignment)
 - [Search: Auto-expanded homepage facet](#search-auto-expanded-homepage-facet)
@@ -86,7 +88,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
   - [robots.txt file](#robots-txt-file)
 - [Third-party tools integration](#third-party-tools-integration)
 
-For the tenant and data space definitions please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model).
+For the tenant and data space definitions please see [here](/dotstatsuite-documentation/configurations/tenant-model).
 
 ---
 
@@ -104,8 +106,15 @@ When editing the configuration .json file(s) of the .Stat Suite applications, th
 
 ---
 
+### Optional authentication
+The Data Explorer can be configured to **support authentication, work without authentication (anonymous public access) or both**. Authentication requires an OpenID-Connect compliant identity provider.
+
+For more information, see [here](/dotstatsuite-documentation/configurations/authentication/#authentication-in-the-de). 
+
+---
+
 ### Search: Homepage facets
-> Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
+> Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
 Define the facets that are displayed on the homepage below "browse by", by their names and in the order in which you want them to appear.  
 **Keep whitespace(s)** between words in your facet names.  
@@ -135,7 +144,7 @@ For instance, if you configure an instance of .Stat DE in both English and Frenc
 ---
 
 ### Search: Homepage facets alignment
-> Released in [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)
+> Released in [March 10, 2021 Release .Stat Suite JS 7.1.0](/dotstatsuite-documentation/changelog/#march-10-2021)
 
 The homepage facets alignment is configurable to centered or left-aligned. The alignment only concerns the facet buttons within the homepage screen. The text inside the buttons is always left-aligned.
 
@@ -156,7 +165,7 @@ By default, the homepage facets are left-aligned: `"homeFacetCentered": false`.
 ---
 
 ### Search: Auto-expanded homepage facet
-> Released in [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021)
+> Released in [January 21, 2021 Release .Stat Suite JS 7.0.0](/dotstatsuite-documentation/changelog/#january-21-2021)
 
 Define one of the homepage facet to be opened/expanded by default, by using the property `expandedHomeFacets`.  
 In the property `expandedHomeFacets`, you must provide the localised values of the facet to be expanded at page launch.  
@@ -175,7 +184,7 @@ If this property is missing or if the provided value does not match a facet loca
 ---
 
 ### Search: Selectable second-level homepage facet values
-> Released in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
+> Released in [August 25, 2020 Release .Stat Suite JS 5.3.0](/dotstatsuite-documentation/changelog/#august-25-2020)
 
 Make the individual second-level homepage facet values clickable. When a homepage facet returns a **hierarchical** CategoryScheme or ConceptScheme, then it is possible to make the second-level values (sub-level of a root) selectable, so that the search result applies the selection when browsing.   
 By default, the second-level homepage facet values are **not clickable** (`"homeFacetLevel2Clickable": false`).
@@ -193,7 +202,7 @@ By default, the second-level homepage facet values are **not clickable** (`"home
 ---
 
 ### Search: Hide facet values IDs in home and result pages
-> Released in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+> Released in [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)
 
 Always hide IDs of the facet values for a well-defined list of facets on the homepage, or on the homepage **and** the result page. By default, IDs are always displayed, unless it is specifically defined in this configuration to hide IDs of a localised *SDMX* Categoryscheme or Concept/codelist.
 
@@ -220,7 +229,7 @@ Always hide IDs of the facet values for a well-defined list of facets on the hom
 ---
 
 ### Search: Hide overcounting facets
-> Released in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
+> Released in [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
 
 Define a limited number of facets in the search result pages, after which all other facets are hidden under an expandable accordion dropdown menu called **"More filters"**.  
 
@@ -234,12 +243,12 @@ Define a limited number of facets in the search result pages, after which all ot
 
 ![de facets - more filters collapsed](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters.png) ![de facets - more filters expanded](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters-expanded.png)
 
-For more information see: [Facets on the search result page](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/facets/#facets-on-the-search-result-page).
+For more information see: [Facets on the search result page](/dotstatsuite-documentation/using-de/searching-data/facets/#facets-on-the-search-result-page).
 
 ---
 
 ### Search: Result page pinned facets
-> Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
+> Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
 Define the facets that are always displayed in the first position(s) in the search result page, when available.  
 These facets will be displayed always at first top positions and their labels are prefixed with a [**.**]. Replace spaces in your facet names by underline `_`.  
@@ -265,7 +274,7 @@ Facets are **localised**, thus you must add the translated name of the pinned fa
 ---
 
 ### Search: Result page excluded facets
-> Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
+> Since the [February 28, 2020 Release .Stat Suite JS 4.0.0](/dotstatsuite-documentation/changelog/#february-28-2020), facets' names are indexed instead of their IDs. Therefore, this configuration now uses facets' names instead of IDs.  
 
 Define the facets that will always be excluded from the search result page. Replace spaces in your facet names by underline `_`.  
 
@@ -300,9 +309,9 @@ Define the number of results displayed per page in the search result pages.
 ---
 
 ### Visualisation: default landing tab
-> Introduced in [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+> Introduced in [April 11, 2022 Release .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)
 
-Define, per DE scope, the landing tab of the visualisation page to be shown by default, unless a different [`vw` parameter](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters) is used in a direct visualisation URL. Any of the currently existing tabs, whether for overview, data table, micro data table or graphical representations, can be set, e.g.:
+Define, per DE scope, the landing tab of the visualisation page to be shown by default, unless a different [`vw` parameter](/dotstatsuite-documentation/using-de/general-layout/#url-parameters) is used in a direct visualisation URL. Any of the currently existing tabs, whether for overview, data table, micro data table or graphical representations, can be set, e.g.:
 - overview (default)
 - table
 - microdata
@@ -326,7 +335,7 @@ Define, per DE scope, the landing tab of the visualisation page to be shown by d
 ---
 
 ### Default time period boundaries and default time period selection
-> Feature updated with [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
+> Feature updated with [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documentation/changelog/#july-20-2023)
 
 Default time period **`boundaries`** and/or a **`default`** time period **selection** are required in the configuration for cases when an actual content constraint containing the time period range of available data cannot be retrieved from the SDMX web service, and/or when the default time period **selection** is not defined in the dataflow **annotation** of type `DEFAULT`.  
 In such cases, the Time Period filter in the Data Explorer visualisation page uses the configured default time period **`boundaries`** to define which time periods should be shown in the _start and end period_ dropdowns. It uses the configured **`default`** or **`lastNPeriods`** time period **selection** to automatically pre-select the _start and end periods_, or the _last [..] period(s)_. 
@@ -365,7 +374,7 @@ Note that the `default` time period selection is incompatible with the `lastNPer
 ---
 
 ### Time period sort order override
->Introduced in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)
+>Introduced in [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)
 
 Allow to **override the default Time Period dimension sort order** from the initial ascending order to **descending order**.
 
@@ -383,7 +392,7 @@ If `"defaultSort"` is empty or not in the configuration file, then the default r
 ---
 
 ### Support of Last-N-Observations feature
->Released in [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)
+>Released in [May 18, 2020 Release .Stat Suite JS 5.0.0](/dotstatsuite-documentation/changelog/#may-18-2020)
 
 Define, **per data space**, the support of the `LastNObservations` features from your SDMX web service.  
 
@@ -397,7 +406,7 @@ Define, **per data space**, the support of the `LastNObservations` features from
         }
     }
 ```
-When set to `true`, then the [**Last [..] time series value(s)** selector](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period#last-time-series-value-s) is displayed in the Data Explorer visualisation page (in the lower part of the **Time Period & Frequency** filter). By default, this setting is `false`.
+When set to `true`, then the [**Last [..] time series value(s)** selector](/dotstatsuite-documentation/using-de/viewing-data/filters/time-period#last-time-series-value-s) is displayed in the Data Explorer visualisation page (in the lower part of the **Time Period & Frequency** filter). By default, this setting is `false`.
 
 ---
 
@@ -419,7 +428,7 @@ If the data space parameter `supportsReferencePartial` is set to `true`, it mean
 ---
 
 ### Maximum number of observations in tables and charts (deprecated)
-> The `range` parameter is **unused** since [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022). **Instead, the [`cellsLimit` parameter](#maximum-number-of-observations-in-tables-and-charts-and-of-cells-in-tables) is used to auto-generate the range header, e.g. [0, 2999] if the web service supports this header.**
+> The `range` parameter is **unused** since [August 3, 2022 Release .Stat Suite JS quark](/dotstatsuite-documentation/changelog/#august-3-2022). **Instead, the [`cellsLimit` parameter](#maximum-number-of-observations-in-tables-and-charts-and-of-cells-in-tables) is used to auto-generate the range header, e.g. [0, 2999] if the web service supports this header.**
 
 0-based range of observations returned by the SDMX web service for the display in the tables and charts.  
 The purpose of this configuration is to protect from too large selections and consequent unavoidable freezing of the .Stat Data Explorer application in the client's web browser.  
@@ -453,7 +462,7 @@ This configuration also impacts the EXCEL download but does not impact the CSV d
 
 In order to limit the number of observations returned by the SDMX web service, the `cellsLimit` parameter is used by the DE to auto-generate the 0-based range header, e.g. [0, 2999], if the web service supports this header. If it doesn't then the number of observations is obtained from the response data message content.  
 
-Note that the Data Explorer displays a special warning message whenever the limit is exceeded. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data).
+Note that the Data Explorer displays a special warning message whenever the limit is exceeded. For more information see [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data).
 
 ---
 
@@ -531,12 +540,12 @@ You can define more than one type of attribute to be displayed as flags.<br>
 
 ### Coded and uncoded attributes returned as notes
 >*Version history:*  
-> *footnotes* is replaced by *notes* in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Re-introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
-> Deprecated in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)  
-> Introduced in [Release 28.09.2018](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#release-28-09-2018)
+> *footnotes* is replaced by *notes* in [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Re-introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](/dotstatsuite-documentation/changelog/#february-21-2022)  
+> Deprecated in [August 25, 2020 Release .Stat Suite JS 5.3.0](/dotstatsuite-documentation/changelog/#august-25-2020)  
+> Introduced in [Release 28.09.2018](/dotstatsuite-documentation/changelog/#release-28-09-2018)
 
-A **note** is a star '*' icon shown next to the observation value, or at a higher-level (see business rules [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed on mouse-over in a tooltip bubble.  
+A **note** is a star '*' icon shown next to the observation value, or at a higher-level (see business rules [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed on mouse-over in a tooltip bubble.  
 You can define more than one type of attributes to be displayed as notes. In the following example, the supported coded or uncoded attributes are set for a single instance of the data explorer (DE).
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
@@ -574,7 +583,7 @@ Define the localised thousands and decimals separators of the observation values
     }
 ```
 
-> Since the [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020), the default thousand separator is set to non-breaking space for all locales:
+> Since the [May 18, 2020 Release .Stat Suite JS 5.0.0](/dotstatsuite-documentation/changelog/#may-18-2020), the default thousand separator is set to non-breaking space for all locales:
 ```json
     "i18n": {
         "localeId": "en",
@@ -630,9 +639,9 @@ By default, if no configuration for a given localised format is added, then the 
 ---
 
 ### Default combined concepts
-> Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
+> Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documentation/changelog/#july-20-2023)
 
-Possibility to define default rules for automatically assembling different specific dimensions and/or attributes into single combined components in the preview table. These default rules are fully superseeded by the instructions optionally provided in the DSD or dataflow annotation `COMBINED_CONCEPTS`. For more information see the [documentation here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/). 
+Possibility to define default rules for automatically assembling different specific dimensions and/or attributes into single combined components in the preview table. These default rules are fully superseeded by the instructions optionally provided in the DSD or dataflow annotation `COMBINED_CONCEPTS`. For more information see the [documentation here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/). 
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
@@ -659,7 +668,7 @@ In the above configuration snippet:
 ---
 
 ### Disabled share option
->Released in [October 7, 2020 Release .Stat Suite JS 5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020)
+>Released in [October 7, 2020 Release .Stat Suite JS 5.4.0](/dotstatsuite-documentation/changelog/#october-7-2020)
 
 The **share** option in the Data Explorer visualisation pages can be hidden from the end-user, so it is not possible to use the share table and chart features.  
 This configuration simply works by removing the **share endpoint URL** from the configuration settings.json file of the application: when the **`share endpoint`** is left blank (or the `"endpoint"` entry is entirely removed), then the share option button is hidden from the DE visualisation toolbar. 
@@ -678,7 +687,7 @@ This configuration simply works by removing the **share endpoint URL** from the 
 ---
 
 ### Disabled chart views
->Released in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+>Released in [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)
 
 The **Chart** views in the Data Explorer visualisation pages can be hidden from the end-user, for a given instance of the DE, so there is no option to display data in any of the supported chart representations.  
 *Note* that the chart feature will only be hidden, and previous links that were displaying chart views will still work.
@@ -700,9 +709,9 @@ By default, the chart tab is available in the visualisation pages (`"isVisible":
 ---
 
 ### Enabled download option on the search result page
-Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021) release, the option to **download** the unfiltered dataflow data in tabular text (SDMX-CSV format) **from the search result page is optional**.  
+Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](/dotstatsuite-documentation/changelog/#january-21-2021) release, the option to **download** the unfiltered dataflow data in tabular text (SDMX-CSV format) **from the search result page is optional**.  
 When the configuration parameter `search.downloadableDataflowResults` is set to **true**, then the download option is available in the search result for each result item/dataflow.  
-**Note** that, for dataflows that are externally defined/stored (see related [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows)), this option will not work with the current verison of the DE, even though the download option in any format will work on the visualisation page for those dataflows too.
+**Note** that, for dataflows that are externally defined/stored (see related [specifications](/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows)), this option will not work with the current verison of the DE, even though the download option in any format will work on the visualisation page for those dataflows too.
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
@@ -718,7 +727,7 @@ When the configuration parameter `search.downloadableDataflowResults` is set to 
 By default, the configuration is disabled **`search.downloadableDataflowResults:false`**.
 
 ### Non-support of the `format` URL parameter by a data space
-Since the [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023), the Data Explorer [**CSV download** feature](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/toolbar#filtered-or-unfiltered-data-in-tabular-text-csv) uses the _space-unlimited_ web browser's inbuilt file-download feature for _unauthenticated_ users instead of using the _space-limited_ JavaScript 'memory blob'. This requires that the underlying SDMX web service supports the `format=csvfile|csvfilewithlabels` URL parameter as alternative to the HTTP `Accept` header. 
+Since the [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documentation/changelog/#july-20-2023), the Data Explorer [**CSV download** feature](/dotstatsuite-documentation/using-de/viewing-data/toolbar#filtered-or-unfiltered-data-in-tabular-text-csv) uses the _space-unlimited_ web browser's inbuilt file-download feature for _unauthenticated_ users instead of using the _space-limited_ JavaScript 'memory blob'. This requires that the underlying SDMX web service supports the `format=csvfile|csvfilewithlabels` URL parameter as alternative to the HTTP `Accept` header. 
 
 **Note:** In the current NSI web service version, the `format=csvfile` URL parameter resolves to the HTTP `Accept` header `application/vnd.sdmx.data+csv;file=true`. The `format=csvfilewithlabels` URL parameter resolves to `application/vnd.sdmx.data+csv;file=true;labels=both`.
 
@@ -736,7 +745,7 @@ If a dataspace, e.g., with an older NSI web service version, doesn't support thi
 ```
 
 ### Display of HTML content
-> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
+> Released with [April 11, 2022 .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)
 
 Data of `String` type containing HTML content, descriptions as well as referential metadata of `XHTML` type are displayed by the Data Explorer according to the HTML formatting instructions. However, for security and compatibility reasons, all HTML code is sanitized before it is displayed. The following section explains how this HTML sanitization can be configured.
 
@@ -807,7 +816,7 @@ For more information please consult https://github.com/apostrophecms/sanitize-ht
 ---
 
 ### Support of long URLs
-> Released with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+> Released with [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)
 
 When using the SDMX-RI NSI SDMX web service for a given data space, define the support of (NSI-specific non-SDMX-standard) `POST` requests when large filter selections lead to too long data query URLs that are not supported by the SDMX-standard `GET` requests.  
 
@@ -835,9 +844,9 @@ If the parameter **"`supportsPostLongRequests`" is set to `false`**, then if the
 ---
 
 ### "Contact us" form: reCAPTCHA and email settings 
-> Released with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+> Released with [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)
 
-It is possible to enable/disable the "**Contact us**" form and the included **reCAPTCHA** feature (see [functional specs](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#contact-us-form)).
+It is possible to enable/disable the "**Contact us**" form and the included **reCAPTCHA** feature (see [functional specs](/dotstatsuite-documentation/using-de/general-layout/#contact-us-form)).
 
 * in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
 
