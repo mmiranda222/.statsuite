@@ -9,8 +9,6 @@ weight: 4000
 * https://academy.siscc.org/using-dotstat-suite/
 Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
-![Core logo](/dotstatsuite-documentation/images/core_logo.png)
-
 * [Main APIs features](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/api-main-features/)
 * [.Stat Suite Core data model](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/)
 * [Data features](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/)

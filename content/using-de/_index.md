@@ -9,8 +9,6 @@ weight: 1000
 * https://academy.siscc.org/using-dotstat-suite/
 Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
-![DE logo](/dotstatsuite-documentation/images/de_logo.png)
-
 * [Design principles & functional vision](/dotstatsuite-documentation/using-de/design-principles/)
 * [General layout and common features](/dotstatsuite-documentation/using-de/general-layout/)
 * [Searching data](/dotstatsuite-documentation/using-de/searching-data/)
