@@ -289,6 +289,4 @@ Our **scheduled backlog** represents our short-term delivery strategy for the up
 The full list of recorded feature requests and feature enhancements can be found in the prioritized **[wish list](https://gitlab.com/groups/sis-cc/-/issues?label_name%5B%5D=wish+list&scope=all&sort=weight_desc&state=opened&utf8=%E2%9C%93)**.
 
 #### Milestones board
-**Disclaimer:** this view of the progress of delivery of the milestones is a snapshot at a specific point in time, which is updated every 2 months or more frequently if relevant.
-
-![Milestones](/dotstatsuite-documentation/images/iterations-progress.png)
+The **Milestones board** view displays the in-progress milestones for each .NET and JavaScripts releases: https://gitlab.com/groups/sis-cc/.stat-suite/-/boards/7061159
