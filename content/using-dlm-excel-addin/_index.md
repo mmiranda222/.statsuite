@@ -1,11 +1,11 @@
 ---
-title: "Using .Stat DLM Excel-Addin"
+title: "Using .Stat DLM Excel Add-in"
 subtitle: 
 comments: false
 weight: 800
 keywords: [
   'Introduction', '#introduction',
-  'DLM Excel-Addin in the Excel ribbon', '#dlm-excel-addin-in-the-excel-ribbon',
+  'DLM Excel Add-in in the Excel ribbon', '#dlm-excel-add-in-in-the-excel-ribbon',
   'Authentication', '#authentication'
 ]
 ---
@@ -13,21 +13,23 @@ keywords: [
 * https://academy.siscc.org/using-dotstat-suite/
 Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
+![DLM logo](/dotstatsuite-documentation/images/dlm-excel-add-in_logo.png)
+
 #### Table of Content
 - [Introduction](#introduction)
-- [DLM Excel-Addin in the Excel ribbon](#dlm-excel-addin-in-the-excel-ribbon)
+- [DLM Excel Add-in in the Excel ribbon](#dlm-excel-add-in-in-the-excel-ribbon)
 - [Authentication](#authentication)
 
 ---
 
 ### Introduction
 
-![Watch this video](/dotstatsuite-documentation/images/movie-logo.png)**<a href="https://www.youtube.com/watch?v=vbDJiXTQiIs" target="_blank">Watch this video</a>** on how to get started with .Stat DLM Excel-addin.
+![Watch this video](/dotstatsuite-documentation/images/movie-logo.png)**<a href="https://www.youtube.com/watch?v=vbDJiXTQiIs" target="_blank">Watch this video</a>** on how to get started with .Stat DLM Excel Add-in.
 
 
-**.Stat DLM Excel-Addin** is an Excel facilitator for data and referential metadata retrieval and editing. Directly within Excel it gives access to in-progress or published data, from internal or external SDMX data sources, as well as from legacy .Stat V7 systems.  
+**.Stat DLM Excel Add-in** is an Excel facilitator for data and referential metadata retrieval and editing. Directly within Excel it gives access to in-progress or published data, from internal or external SDMX data sources, as well as from legacy .Stat V7 systems.  
 
-The DLM Excel-Addin is packaged as a **ClickOnce** application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).  
+The DLM Excel Add-in is packaged as a **ClickOnce** application and is deployed using the common procedure for [deployment of ClickOnce applications](https://msdn.microsoft.com/en-us/library/t71a733d.aspx).  
 The installation files are accessible from [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin) along with more information about deployment, set up and configuration.  
 
 A best practice is to store the installation files on a shared network folder, to update the configuration to reference required SDMX data sources and to change the application title, to re-sign the installation package with an organisation's own certificate, and to allow all users running the installation locally. Whenever the installation package on the shared folder is updated (and re-signed), the ClickOnce technology will automatically upgrade all local users' installations the next time that they open Excel.
@@ -38,7 +40,7 @@ A ready-made (.zip) demo version can also be downloaded from [here](https://gitl
 Also included in the zipped package is a short manual to ease the installation.
 
 **Main features**  
-The DLM Excel-addin allows:
+The DLM Excel Add-in allows:
 - [Authenticating](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/#authentication) to access-restricted internal .Stat Suite data spaces
 - [Browsing](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#select-data) through a list of dataflows in SDMX-enabled internal and external data spaces (and of datasets in legacy .Stat V7 systems)
 - [Retrieving](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data/#table-contents) data or referential metadata from these spaces into various flavours of Excel tables
@@ -49,14 +51,14 @@ The DLM Excel-addin allows:
 
 ---
 
-### DLM Excel-Addin in the Excel ribbon
-Once installed, the .Stat DLM Excel-Addin menu will appear in the user's Excel ribbon.
+### DLM Excel Add-in in the Excel ribbon
+Once installed, the .Stat DLM Excel Add-in menu will appear in the user's Excel ribbon.
 
 ![DLM Excel-Addin ribbon](/dotstatsuite-documentation/images/dlm-excel-addin-ribbon.png)
 
 By default, the menu contains two features:
 - ["Get data": "New table"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/get-data): to retrieve data from a data space into a new Excel table 
-- The version menu, indicating the semantic version number of the DLM Excel-addin currently in use, together with a question mark icon linking to the functional specifications of the DLM Excel-addin.
+- The version menu, indicating the semantic version number of the DLM Excel Add-in currently in use, together with a question mark icon linking to the functional specifications of the DLM Excel Add-in.
 
 Whenever the user is currently authenticated for one or several of the related data spaces, the menu add this feature:
 - ["Log out"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm-excel-addin/#authentication) (if authenticated): to log out for a user account
@@ -91,6 +93,6 @@ When extracting data for a new table, changing a selection, refreshing a table o
 
 Once successfully authenticated, the user can return from the web authentication to Excel. The Excel-Addin will automatically proceed executing the currently requested action on the data space. It will also regularly and automatically update the underlying authentication access token in order to always keep it valid. The access token is used for all subsequent data retrievals as well as for all data submissions for the relevant data sources until the underlying Excel workbook is closed.  
 
-Whenever the user is authenticated with at least one user identity, the Excel-addin ribbon will display a "Log out" button with a dropdown menu showing the list of user's email addresses corresponding to the different user identities for which the user has authenticated. Clicking on an email address will automatically trigger the log out for the corresponding user identity. When being logged out for all user identities, then the "Log out' button is hidden again.  
+Whenever the user is authenticated with at least one user identity, the Excel Add-in ribbon will display a "Log out" button with a dropdown menu showing the list of user's email addresses corresponding to the different user identities for which the user has authenticated. Clicking on an email address will automatically trigger the log out for the corresponding user identity. When being logged out for all user identities, then the "Log out' button is hidden again.  
 
 ![DLM Excel-Addin authentication](/dotstatsuite-documentation/images/dlm-excel-addin-auth2.png)
