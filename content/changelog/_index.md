@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 2, 2023](#october-2-2023)
 - [September 20, 2023](#september-20-2023)
 - [September 1, 2023](#september-1-2023)
 - [August 24, 2023](#august-24-2023)
@@ -126,6 +127,17 @@ ToC
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-disclaimer)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-disclaimer)
 
+
+---
+
+### October 2, 2023
+**[Patch release .Stat Suite JS "xray"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/69)**
+> This release includes a **patch** version of the **data-viewer** *(v20.0.1)* service.  
+**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2**.
+
+patch change:
+
+- [dotstatsuite-data-viewer#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/41) Fix data-viewer Docker image to run with `node v16`.
 
 ---
 
