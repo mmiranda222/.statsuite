@@ -135,7 +135,7 @@ ToC
   - [.Stat Suite JS "spin"](#december-5-2022)
   - [.Stat Suite JS "radio"](#october-31-2022)
 - Core module (incl. DLM Excel add-in):
-  - [.Stat Suite .NET "funfetti](#october-11-2023)
+  - [.Stat Suite .NET "funfetti"](#october-11-2023)
   - [.Stat Suite .NET "elote"](#september-1-2023)
   - [.Stat Suite .NET "dragonfruit"](#july-4-2023)
   - [.Stat Suite .NET "cinnamon"](#june-12-2023)
