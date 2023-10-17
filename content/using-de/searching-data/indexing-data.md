@@ -284,13 +284,11 @@ Examples:
 
 #### Get in-memory indexing statuses
 
-`GET /admin/config`
+`GET /admin/report`
 
 This request returns the in-memory indexing statuses
 
 Example:  
-`GET https://sfs.myorg.org/admin/config`  
+`GET https://sfs.myorg.org/admin/report`  
 `x-api-key=xxx`
-
-![GET search sfs config](/dotstatsuite-documentation/images/de-index-get-config.png)
 
