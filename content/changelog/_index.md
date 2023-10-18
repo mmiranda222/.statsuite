@@ -125,22 +125,22 @@ ToC
 
 ![Subscribe](/dotstatsuite-documentation/images/subscribe-logo.png)**<a href="http://eepurl.com/h6T5Z9" target="_blank">Subscribe!</a>**
 
-**Latest release versions within the last 12 months:**
+**Release versions of the last 12 months:**
 
 - Data Explorer and Data Lifecycle Manager modules:
-  - [.Stat Suite JS "xray"](#october-18-2023)
-  - [.Stat Suite JS "wave"](#august-03-2023)
-  - [.Stat Suite JS "virtual"](#july-20-2023)
-  - [.Stat Suite JS "unicorn"](#june-28-2023)
-  - [.Stat Suite JS "tachyon"](#january-17-2023)
-  - [.Stat Suite JS "spin"](#december-5-2022)
-  - [.Stat Suite JS "radio"](#october-31-2022)
+  - [.Stat Suite JS "xray"](#october-18-2023) - 18 October 2023 (latest)
+  - [.Stat Suite JS "wave"](#august-03-2023) - 03 August 2023
+  - [.Stat Suite JS "virtual"](#july-20-2023) - 20 July 2023
+  - [.Stat Suite JS "unicorn"](#june-28-2023) - 28 June 2023
+  - [.Stat Suite JS "tachyon"](#january-17-2023) - 17 January 2023
+  - [.Stat Suite JS "spin"](#december-5-2022) - 5 December 2022
+  - [.Stat Suite JS "radio"](#october-31-2022) - 31 October 2022
 - Core module (incl. DLM Excel add-in):
-  - [.Stat Suite .NET "funfetti"](#october-11-2023)
-  - [.Stat Suite .NET "elote"](#september-1-2023)
-  - [.Stat Suite .NET "dragonfruit"](#july-4-2023)
-  - [.Stat Suite .NET "cinnamon"](#june-12-2023)
-  - [.Stat Suite .NET "blueberry"](#november-11-2022)
+  - [.Stat Suite .NET "funfetti"](#october-11-2023) - 11 October 2023 (latest)
+  - [.Stat Suite .NET "elote"](#september-1-2023) - 1 September 2023
+  - [.Stat Suite .NET "dragonfruit"](#july-4-2023) - 4 July 2023
+  - [.Stat Suite .NET "cinnamon"](#june-12-2023) - 12 June 2023
+  - [.Stat Suite .NET "blueberry"](#november-11-2022) - 11 November 2022
 
 > **Warnings for earlier upgrades:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-warning)
