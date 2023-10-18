@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [October 18, 2023](#october-18-2023)
 - [October 11, 2023](#october-11-2023)
 - [October 2, 2023](#october-2-2023)
 - [September 20, 2023](#september-20-2023)
@@ -127,7 +128,7 @@ ToC
 **Latest release versions within the last 12 months:**
 
 - Data Explorer and Data Lifecycle Manager modules:
-  - [.Stat Suite JS "xray"](#october-2-2023)
+  - [.Stat Suite JS "xray"](#october-18-2023)
   - [.Stat Suite JS "wave"](#august-03-2023)
   - [.Stat Suite JS "virtual"](#july-20-2023)
   - [.Stat Suite JS "unicorn"](#june-28-2023)
@@ -144,6 +145,17 @@ ToC
 > **Warnings for earlier upgrades:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-warning)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-warning)
+
+---
+
+### October 18, 2023
+**[Patch release .Stat Suite JS "xray"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/69)**  
+> This release includes a **patch** version of the **data-explorer** and **data-viewer** *(v20.1.0)* applications.  
+**.Stat CORE compatibility:** tested and released in compatibility with [.Stat Suite .NET "funfetti"](#october-11-2023).
+
+patch change:
+
+- [dotstatsuite-data-explorer#1140](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1140) Fix display issue for irregular time periods.
 
 ---
 
@@ -199,7 +211,7 @@ patch changes:
 
 ### October 2, 2023
 **[Patch release .Stat Suite JS "xray"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/69)**
-> This release includes a **patch** version of the **data-viewer** *(v20.0.1)* service.  
+> This release includes a **patch** version of the **data-viewer** *(v20.0.1)* application.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2**.
 
 patch change:
