@@ -157,7 +157,7 @@ DSD+MSD components:  <br/>
 | - all time series ref metadata                                                 | dataflow  | AGENCY:ID(1.0.0) | D      | *     | *     | ~           |           |           |
 | - observation-level ref metadata for time series DIM_1=A,DIM_2=B               | dataflow  | AGENCY:ID(1.0.0) | D      | A     | B     | *           |           |           |
 
-Excel version: [Delete_action_examples_ref_metadata.xlsx](/uploads/56ebf0cd1d79b6b60d6feebface7f0ac/Delete_action_examples_ref_metadata.xlsx)
+Excel version: [Delete_action_examples_ref_metadata.xlsx](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/uploads/56ebf0cd1d79b6b60d6feebface7f0ac/Delete_action_examples_ref_metadata.xlsx)
 
 ##### 1) delete all ref metadata of the dataflow
 ```
