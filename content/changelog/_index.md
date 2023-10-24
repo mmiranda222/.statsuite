@@ -151,7 +151,7 @@ ToC
 ### October 18, 2023
 **[Patch release .Stat Suite JS "xray"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/69)**  
 > This release includes a **patch** version of the **data-explorer** and **data-viewer** *(v20.1.0)* applications.  
-**.Stat CORE compatibility:** tested and released in compatibility with [.Stat Suite .NET "funfetti"](#october-11-2023).
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2** and .Stat-Suite CORE release [elote](#september-1-2023). It is **not** compatible with .Stat Suite CORE release [funfetti](#october-11-2023).
 
 patch change:
 
@@ -160,8 +160,8 @@ patch change:
 ---
 
 ### October 11, 2023
-**[Release .Stat Suite .NET "funfetti"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/71#tab-issues)**
-> This minor release includes a new version of **core-transfer**, **sdmxri-nsi-ws**, and **core-data-access** services.  
+**[Release .Stat Suite .NET "funfetti"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/71#summary)**
+> This major release includes a new version of **core-transfer**, **sdmxri-nsi-ws**, and **core-data-access** services.  
 **nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.4**.
 
 **Performance evolutions:** see the [.Stat Suite Core: performance results](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#stat-suite-core-performance-results)
@@ -171,14 +171,12 @@ patch change:
   - **Option 1:** Initialize all mappingsets - Right after the release upgrade, run the transfer service function `/init/allMappingsets`. **This should be done when no other users are using the transfer service.** The execution might take a long time depending on the number of dataflows.
   - **Option 2:** Initialize the mappingset of specific dataflow - The initialization can be done per dataflow using the transfer-service function `/init/dataflow` for a given dataflow. This option does not require an exclusive usage of the transfer service.
   - **Option 3:** Import data to initialize the mappingset of a specific dataflow - At the end of a data import, the mappingset will be initialized as part of the import process. This option does not require an exclusive usage of the transfer service.
-
-**Important note:** If the logs of the `/init/allMappingsets` method contain "deadlocked" errors, run the method again.
-
+- If the logs of the `/init/allMappingsets` method contain SQL 'deadlock' errors due to its performance-improved but parallelised execution, then run the method again.
 - Data versioning ("Time Machine") with the new `includeHistory` and `asOf` parameters are not fully implemented and do not yet match the expected end-user use cases. The features will be fully functional once [dotstatsuite-core-sdmxri-nsi-ws#393](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/393) & [dotstatsuite-core-sdmxri-nsi-ws#394](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/394) are delivered.
 
 non-backward-compatible changes:
 
-*None*
+- [dotstatsuite-core-sdmxri-nsi-ws#303](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/303) Only the value property should be used for non-coded components in the structure part of SDMX-JSON v2.0 data messages.
 
 backward-compatible enhancements and new features:
 
@@ -187,11 +185,8 @@ backward-compatible enhancements and new features:
 - [dotstatsuite-core-transfer#576](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/576) Introduce "temporal tables" to support `includeHistory` and `asOf` features.
 - [dotstatsuite-core-transfer#603](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/603) Improve the performance of the `init/allMappingsets` transfer method.
 - [dotstatsuite-core-transfer#457](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/457) Improve the performance of the `cleanup/mappingsets` transfer method.
-- [dotstatsuite-core-sdmxri-nsi-ws#303](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/303) Only the value property should be used for non-coded components in the structure part of SDMX-JSON v2.0 data messages.
-- [dotstatsuite-core-data-access#115](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/115) Change the logic of the integration tests to reuse the same database whenever possible.
 - [dotstatsuite-core-transfer#456](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/456) Unclear error messages when uploading an erroneous csv file with data and/or metadata.
 - [dotstatsuite-core-transfer#375](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/375) Advanced data validation should not block data uploads because of invalid DB contents.
-- [dotstatsuite-core-sdmxri-nsi-ws#386](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/386) Invalid partyId: `Stable - DotStat v8` replaced with `Stable-DotStatV8`.
 
 patch changes:
 
@@ -205,14 +200,16 @@ patch changes:
 - [dotstatsuite-quality-assurance#51](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/51) *(DevOps)* Change performance import tests to use URLs to static files.
 - [dotstatsuite-quality-assurance#49](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/49) *(DevOps)* Extend performance tests to allow choosing the release version.
 - [dotstatsuite-quality-assurance#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/48) *(DevOps)* Test consistency of gitlab runners for performance tests.
+- [dotstatsuite-core-data-access#115](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/115) Change the logic of the integration tests to reuse the same database whenever possible.
 - [dotstatsuite-core-sdmxri-nsi-ws#392](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/392) *(DevOps)* Deploy NSI version 8.18.4.
+- [dotstatsuite-core-sdmxri-nsi-ws#386](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/386) Invalid partyId: `Stable - DotStat v8` replaced with `Stable-DotStatV8`.
 
 ---
 
 ### October 2, 2023
 **[Patch release .Stat Suite JS "xray"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/69)**
 > This release includes a **patch** version of the **data-viewer** *(v20.0.1)* application.  
-**nsiws compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2**.
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2** and .Stat-Suite CORE release [elote](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/70).
 
 patch change:
 
@@ -223,7 +220,7 @@ patch change:
 ### September 20, 2023
 **[Release .Stat Suite JS "xray"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/69)**
 > This **minor** release includes a new version of all the JavaScript services and applications *(except keycloak)*.  
-**compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2** and .Stat-Suite CORE release [elote](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/70).
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.2** and .Stat-Suite CORE release [elote](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/70).
 
 non-backward-compatible changes:
 
