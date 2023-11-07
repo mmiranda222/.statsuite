@@ -254,9 +254,14 @@ Provided in number of bites, the upload file size limit is usually set to 30MB b
   }
 ```
 
-This configuration parameter only concerns the JavaScript front-end part of the DLM application. 
-
 Specific configurations are also necessary also for the underlying .Stat CORE services (transfer and NSI). The hosting web server(s) (e.g. IIS, Kestrel, ..) need(s) to be configured to accept http requests with bodies of the required size. All web servers have their own defaults, e.g. the .Net Core builtin web server, called Kestrel, has a default maximum request body size of 30,000,000 bytes, which is approximately 28.6 MB.
+
+In order to change the `MaxRequestBodySize` parameter in the **transfer service**, it will depend on the installation mode of back-end services:
+- in case of a docker installation an environment variable of the container should be used to specify the max. size, e.g.:
+
+> Kestrel__Limits__MaxRequestBodySize: 52428800
+
+- if you have source code installation, then the config file you created should be moved into the `config` folder of transfer service. Please note that if you also use IIS, then IIS may also have limitations on the maximum file size.
 
 More information on how to make this configuration in Kestrel (on the example of the NSI web service) can be found [here](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored/-/blob/master/doc/CONFIGURATION.md#maximum-size-of-the-submited-sdmx-messages). For other web server technologies, please consult their specific documentation.
 
