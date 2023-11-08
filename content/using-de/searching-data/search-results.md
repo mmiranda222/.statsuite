@@ -155,12 +155,10 @@ Example with searching terms "GDP current prices France":
  
 ![de search result content visualisation page](/dotstatsuite-documentation/images/de-search-result-free-text.png)  
   
-* In the dataflow "SDMX-CountryData" visualisation:
-  * The "Series" dimension will only be filtered on the value "GDP (current prices)";
+* In the visualisations of all 3 displayed result dataflows:
+  * The "Prices" dimension will only be filtered on the value "Current prices";
   * The "Reference Area" dimension will only be filtered on the value "France";
   * The DEFAULT selections -if any- will apply on the other dimensions not concerned by the hit of the free-text search.   
-* In the dataflow "SDMX_-CountryData_UIS_UNData" visualisation:
-  * The "Reference Area" dimension will only be filtered on the value "France".
 
 
 
