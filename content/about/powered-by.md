@@ -6,13 +6,19 @@ weight: 14
 
 ---
 
-List of organisations or initiatives platforms built with and powered by the .Stat Suite:
+List of organisations and initiatives built with and powered by the .Stat Suite platform:
 
 ---
 
 ![Australian Bureau of Statistics (ABS)](/dotstatsuite-documentation/images/logo-abs.png)
 
 **Australian Bureau of Statistics (ABS)** [Data Explorer](https://www.abs.gov.au/about/data-services/explore/data-explorer)
+
+---
+
+![INE Chile](/dotstatsuite-documentation/images/ine_logo.png)
+
+**Ministerio del Trabajo y Previsiòn Social SIMEL Chile** [INE DE](https://de.ine.gob.cl/)
 
 ---
 
@@ -28,6 +34,12 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ---
 
+![FAO](/dotstatsuite-documentation/images/fao_logo.png)
+
+**Food and Agriculture Organization of the United Nations (FAO)** [FAO Data](https://de-public-statsuite.fao.org/)
+
+---
+
 ![Federal Competitiveness and Statistics Centre (FCSC)](/dotstatsuite-documentation/images/logo-fcsc.png)
 
 **Federal Competitiveness and Statistics Centre (FCSC)** [UAE.Stat](https://uaestat.fcsc.gov.ae/en)
@@ -40,9 +52,21 @@ List of organisations or initiatives platforms built with and powered by the .St
 
 ---
 
+![LMIS](/dotstatsuite-documentation/images/logo-ilo.png)
+
+**Labour Market Information Systems (LMIS)** [LMIS](https://ilostat.ilo.org/resources/labour-market-information-systems/)
+
+---
+
 ![National Institute of Statistics and Economic Studies of the Grand Duchy of Luxembourg (STATEC)](/dotstatsuite-documentation/images/logo-statec.png)
 
 **Luxembourg Statistics Portal powered by STATEC** [Data Explorer](https://lustat.statec.lu/)
+
+---
+
+![Maldives](/dotstatsuite-documentation/images/maldives_logo.png)
+
+**Maldives Bureau of Statistics** [Maldives DE](https://data.statisticsmaldives.gov.mv/)
 
 ---
 
@@ -79,5 +103,11 @@ List of organisations or initiatives platforms built with and powered by the .St
 ![United Nations Inter-agency Group](/dotstatsuite-documentation/images/logo-igme.png)
 
 **United Nations Inter-agency Group** [Child Mortality Estimation](https://childmortality.org/)
+
+---
+
+![SIMEL.uy](/dotstatsuite-documentation/images/Simel_uy_Logo.png)
+
+**Sistema de Información del Mercado Laboral (SIMEL) en Uruguay** [SIMEL.uy](https://de-mtss.simel.mtss.gub.uy/)
 
 ---
