@@ -45,7 +45,9 @@ At first usage or whenever the user completely empties the field, a default exam
 
 ![copy data](/dotstatsuite-documentation/images/dlm-copy-data-3.png)
 
-When several dataflows are selected from the list as inputs for transfer, then the partial data query option is not available.  
+When copying data between data spaces make intensive usage of the `updatedAfter=[date-time]` parameter with a (non-URL-encoded) date-time value, e.g., `all/?updatedAfter=2023-11-30T12:00:00+01:00`. Only those observations (or reference metadata) will be transferred that were inserted, updated or deleted in the source data space since that point in time. This will significantly reduce the amount of information to be transferred.
+
+In case several dataflows were selected in the source data space, then the partial data query option is not available.  
 
 ![copy data](/dotstatsuite-documentation/images/dlm-copy-data-4.png)  
 
