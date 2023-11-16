@@ -11,7 +11,7 @@ You can find out more about the Community on our [web site](https://siscc.org). 
 <div>
     <img decoding="async" src="/.stat-suite/design/demo/logos-svg/images/statsuite-base.svg" alt=".Stat Suite logo" style="width:285px;height:118px" width="285" height="118">
 </div>
-<p>The <strong>.Stat Suite</strong> is a standard-based, componentised, open-source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (<a rel="noreferrer noopener" aria-label="GSBPM (opens in a new tab)" href="http://www1.unece.org/stat/platform/display/GSBPM/GSBPM+v5.0" target="_blank">GSBPM</a>) and the Statistical Data and Metadata eXchange (<a rel="noreferrer noopener" aria-label="SDMX (opens in a new tab)" href="https://sdmx.org" target="_blank">SDMX</a>) standards. </p>
+<p>The <strong>.Stat Suite</strong> is a standard-based, componentised, open-source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (<a rel="noreferrer noopener" aria-label="GSBPM (opens in a new tab)" href="http://www1.unece.org/stat/platform/display/GSBPM/GSBPM+v5.0" target="_blank">GSBPM</a>) and the Statistical Data and Metadata eXchange (<a rel="noreferrer noopener" aria-label="SDMX (opens in a new tab)" href="https://sdmx.org" target="_blank">SDMX</a>) standards and is driven by the Statistical Information System Collaboration Community (<a rel="noreferrer noopener" aria-label="SIS-CC (opens in a new tab)" href="https://siscc.org" target="_blank">SIS-CC</a>). </p>
 
 <p><br>The .Stat Suite has three&nbsp;<strong>main modules</strong>: </p>
 
@@ -19,7 +19,7 @@ You can find out more about the Community on our [web site](https://siscc.org). 
 <div>
     <img decoding="async" loading="lazy" src="/.stat-suite/design/demo/logos-svg/images/dotstat-de-base.svg" alt=".Stat Suite Data Explorer logo" style="width:285px;height:97px" width="285" height="97">
 </div>
-<p>The <strong>.Stat Suite Data Explorer</strong>, a web-based application to easily find, access, and share data through a well-tuned navigation. Powered by the open-source platform .Stat Suite for the dissemination of official statistics. <a href="/dotstatsuite-documentation/using-de/">Read more…</a></p>
+<p>The <strong>.Stat Suite Data Explorer</strong>, a web-based front-office application for easy finding, understanding and using of data through an efficient well-tuned navigation and search approach, appropriate data previews and contextual metadata, and download in standard formats, APIs or share features. <a href="/dotstatsuite-documentation/using-de/">Read more…</a></p>
 </blockquote>
 
 <blockquote>

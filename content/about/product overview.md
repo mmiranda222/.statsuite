@@ -4,46 +4,33 @@ subtitle:
 comments: false
 weight: 12
 keywords: [
-  'introduction', '#introduction',
-  'details about the main .Stat Suite modules', '#details-about-the-main-stat-suite-modules',
+  'Product overview', '#product-overview',
   '.Stat Data Explorer (DE)', '#stat-data-explorer-de',
   '.Stat Data Lifecycle Manager (DLM)', '#stat-data-lifecycle-manager-dlm',
   '.Stat Core', '#stat-core',
-  'flight planner', '#flight-planner',
+  'Flight planner', '#flight-planner',
   'Milestones board', '#milestones-board',
 ]
 ---
 
 #### Table of Content
-- [introduction](#introduction)
-- [details about the main .Stat Suite modules](#details-about-the-main-stat-suite-modules)
+- [Product overview](#product-overview)
   - [.Stat Data Explorer (DE)](#stat-data-explorer-de)
   - [.Stat Data Lifecycle Manager (DLM)](#stat-data-lifecycle-manager-dlm)
   - [.Stat Core](#stat-core)
-- [flight planner](#flight-planner)
-- [Milestones board](#milestones-board)
+- [Flight planner](#flight-planner)
+  - [Milestones board](#milestones-board)
 
 ---
 
-### Introduction
-
-The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
-
-The .Stat Suite has three **main modules**: 
-
-* **.Stat Data Explorer**: A front-office application for easy finding, understanding and using of data through an efficient well-tuned navigation and search approach, appropriate data previews and contextual metadata, and download in standard formats, APIs or share features.
-
-* **.Stat Data Lifecycle Manager**: A set of adaptive back-office modules to efficiently and timely produce and (re-)use high quality statistical data by defining, running, automating, controlling and evaluating the underlying data processes.
- 
-* **.Stat Core**: A highly performing, secure SDMX Data Store based on standard protocols, to store and retrieve statistical data, structural and referential metadata, data process information and security settings.
- 
-![3 main modules](/dotstatsuite-documentation/images/home_splash.png)
-
----
-
-### Details about the main .Stat Suite modules
+### Product overview
 
 #### .Stat Data Explorer (DE)
+
+<div>
+    <img decoding="async" loading="lazy" src="/.stat-suite/design/demo/logos-svg/images/dotstat-de-base.svg" alt=".Stat Suite Data Explorer logo" style="width:285px;height:97px" width="285" height="97">
+</div>
+<p></p>
 
 **Functional vision from the user's perspective**: *“Let me easily access the organisation’s statistical data. Let me find, understand and use the data I need.”*
 
@@ -84,6 +71,11 @@ The .Stat Suite has three **main modules**:
 ---
 
 #### .Stat Data Lifecycle Manager (DLM)
+
+<div>
+    <img decoding="async" loading="lazy" src="/.stat-suite/design/demo/logos-svg/images/dotstat-dlm-base.svg" alt=".Stat Suite Data Lifecycle Manager logo" style="width:285px;height:98px" width="285" height="98">
+</div>
+<p></p>
 
 **Functional vision from the user's perspective**: *“Let me easily produce the organisation’s statistical data. Let me define, run, automate, control and evaluate the data processes I need.”*
 
@@ -214,7 +206,7 @@ The .Stat Suite has three **main modules**:
 
 **The .Stat Data Lifecycle Manager will consist of several functional modules**:
 
-##### **Model** of SDMX data structures
+##### **Model** of SDMX data structures (not implemented yet)
 
 * Multi-dimensional cubes (DSDs)
 * Dimension names (Concepts)
@@ -228,20 +220,20 @@ Requires features for import, create, edit, transfer & export of data structures
 
 ##### **Get**
 
-* Data import, transfer & export with and without structure mappings from various sources
-* Data capture (surveys/collection/scraping; online/offline)
+* Data import, transfer & export with and without structure mappings from various sources (mappings through BIS-FMR)
+* Data capture (surveys/collection/scraping; online/offline) (not implemented yet)
 
-##### **Edit**
+##### **Edit** (in the DLM Excel Add-in)
 
 * data grid data editing
 * referential metadata edting
 
-##### **Calculate**
+##### **Calculate** (not implemented yet)
 
 * Data validations and reports
 * Data calculations (conversions, aggregations, estimations, indicator calculations) with VTL
 
-##### **Analyse**
+##### **Analyse** (not implemented yet)
 
 * find, understand, reuse data (internal)
 
@@ -251,22 +243,26 @@ Requires features for import, create, edit, transfer & export of data structures
 
 ##### **Flow**
 
-* Workflows
+* Workflows (not implemented yet)
 * Data embargo
 
 ##### **Script**
 
-* Task automation
+* Task automation (not implemented yet)
 
-##### **Track**
+##### **Track** (not implemented yet)
 
 * Monitoring of processes
 * Overall production evaluation
 
 ---
 
-
 #### .Stat Core
+
+<div >
+    <img decoding="async" loading="lazy" src="/.stat-suite/design/demo/logos-svg/images/dotstat-core-base.svg" alt=".Stat Suite CORE logo" style="width:285px;height:97px" width="285" height="97">
+</div>
+<p></p>
 
 Fast and secure [SDMX](http://sdmx.org/) Data Store leveraging Eurostat’s ([NSI Web Service implementation](https://ec.europa.eu/eurostat/web/sdmx-web-services) within its SDMX Reference Infrastructure
 * **Stores and retrieves** statistical data & attribute values, localizable structural & referential metadata, data process information & user roles and permissions
@@ -275,7 +271,6 @@ Fast and secure [SDMX](http://sdmx.org/) Data Store leveraging Eurostat’s ([NS
 * Allows managing separate physical versions of data as it goes through the statistical production life cycle (raw input data, processed data, data prepared for dissemination/reporting, disseminated/reported data, archived data, ...) by using **multiple instances** of the Data Store facilitated with a specific data transfer service
 
 ---
-
 
 ### Flight planner
 **This flight planner allows travellers [*implementers*] getting a better understanding of the foreseen flight stops [*availability of features*] and their approximate timing according to the current fuel level [*resource capacity*] and Community priorities, and so to plan their own flight boarding [*deployment strategy*] as best as possible.**
