@@ -59,7 +59,7 @@ More topologies will be added in the future.
 #### Installing the .Stat Suite full stack with one tenant
 This topology contains the full stack of .Stat Suite.
 
-![.Stat Suite full stack](/dotstatsuite-documentation/images/full_architecture.png)
+![Stat Suite high-level architecture](/dotstatsuite-documentation/images/statsuite-technical-architecture.png)
 
 The installation must performed in the following order:  
 
