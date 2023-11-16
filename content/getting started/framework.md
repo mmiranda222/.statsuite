@@ -4,7 +4,7 @@ subtitle:
 comments: false
 weight: 25
 keywords: [
-  'Introduction', '#introduction',
+  'Component-based technical architecture', '#component-based-technical-architecture',
   'Technical stack', '#technical-stack',
   '.Stat Data Explorer module', '#stat-data-explorer-module',
   'Non-technical overview', '#non-technical-overview',
@@ -34,7 +34,7 @@ keywords: [
 Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 #### Table of Content
-- [Introduction](#introduction)
+- [Component-based technical architecture](#component-based-technical-architecture)
 - [Technical stack](#technical-stack)
 - [.Stat Data Explorer module](#stat-data-explorer-module)
   - [Non-technical overview](#non-technical-overview)
@@ -59,25 +59,13 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 
 ---
 
-### Introduction
-The .Stat Suite is a standard-based, componentised, open source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM) and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
+### Component-based technical architecture
 
-The .Stat Suite has three **main modules**: 
+**The high-level technical architecture can be schematised as follow with a topology example (with two .Stat Suite SDMX data spaces):**
 
-* **.Stat Core**: A highly performing, secure SDMX back-end based on standard protocols, to store, process and retrieve statistical data, structural and referential metadata, data process information and security settings.
- 
-* **.Stat Data Lifecycle Manager**: A set of adaptive back-office modules to efficiently and timely produce and (re-)use high quality statistical data by defining, running, automating, controlling and evaluating the underlying data processes.
- 
-* **.Stat Data Explorer**: A front-office application for easy finding, understanding and using of data through an efficient well-tuned navigation and search approach, appropriate data previews and contextual metadata, and download in standard formats, APIs or share features.
+![Stat Suite high-level architecture](/dotstatsuite-documentation/images/statsuite-technical-architecture.png)
 
-![3 main modules](/dotstatsuite-documentation/images/home_splash.png)
-
-
-**The high-level technical architecture can be schematised as follow:**
-
-![Stat Suite high-level architecture](/dotstatsuite-documentation/images/high-level-technical-architecture.drawio.svg)
-
-Each main module (as well as their components) can be used together or separately.
+Each .Stat Suite main module (as well as their components) can be used together or separately.
 
 **In the following are a few **typical use cases** on how an organisation can make use of these modules:**
 
@@ -188,6 +176,11 @@ The following technologies are used for the development of the **.Stat Core** co
 ---
 
 ### .Stat Data Explorer module
+
+<div>
+    <img decoding="async" loading="lazy" src="/.stat-suite/design/demo/logos-svg/images/dotstat-de-base.svg" alt=".Stat Suite Data Explorer logo" style="width:285px;height:97px" width="285" height="97">
+</div>
+<p></p>
 
 #### Non-technical overview
 
@@ -500,6 +493,11 @@ end
 
 ### .Stat Data Lifecycle Manager module
 
+<div>
+    <img decoding="async" loading="lazy" src="/.stat-suite/design/demo/logos-svg/images/dotstat-dlm-base.svg" alt=".Stat Suite Data Lifecycle Manager logo" style="width:285px;height:98px" width="285" height="98">
+</div>
+<p></p>
+
 #### Data Data Lifecycle Manager app
 
 ##### short description
@@ -515,6 +513,11 @@ This web app is the main GUI for statistical data teams to efficiently produce a
 ---
 
 ### .Stat Core module
+
+<div >
+    <img decoding="async" loading="lazy" src="/.stat-suite/design/demo/logos-svg/images/dotstat-core-base.svg" alt=".Stat Suite CORE logo" style="width:285px;height:97px" width="285" height="97">
+</div>
+<p></p>
 
 #### technical overview
 
