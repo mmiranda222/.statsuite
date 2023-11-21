@@ -38,7 +38,7 @@ You can find out more about the Community on our [web site](https://siscc.org). 
 
 <p></p>
 
-<p>You can also check out a number of publicly available examples of the <a rel="noreferrer noopener" href="/dotstatsuite-documentation/about/powered-by/" data-type="URL" data-id="/dotstatsuite-documentation/about/powered-by/" target="_blank">.Stat Suite implementations</a>, and find out on the many features of the .Stat Suite from the <a rel="noreferrer noopener" href="/dotstatsuite-documentation/about/product-overview/" data-type="URL" data-id="/dotstatsuite-documentation/about/product-overview/" target="_blank">detailed product overview</a> and the <a rel="noreferrer noopener" href="/dotstatsuite-documentation/about/product-overview/#flight-planner" data-type="URL" data-id="/dotstatsuite-documentation/about/product-overview/#flight-planner" target="_blank">flight planner</a>.</p>
+<p>You can also check out a number of publicly available examples of the <a rel="noreferrer noopener" href="/dotstatsuite-documentation/about/powered-by/" data-type="URL" data-id="/dotstatsuite-documentation/about/powered-by/" target="_blank">.Stat Suite implementations</a>, and find out on the many features of the .Stat Suite from the <a rel="noreferrer noopener" href="/dotstatsuite-documentation/about/product-overview/" data-type="URL" data-id="/dotstatsuite-documentation/about/product-overview/" target="_blank">detailed product overview</a> and the <a rel="noreferrer noopener" href="/dotstatsuite-documentation/about/product-overview/#flight-planner" data-type="URL" data-id="/dotstatsuite-documentation/about/flight-planner/" target="_blank">flight planner</a>.</p>
 					
 </div>
 
