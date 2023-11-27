@@ -169,7 +169,7 @@ In case an explicit "ORDER" annotation is provided for an item or items of a cod
 
 In case of hierarchical facets, hierarchy always prevails over the explicit "ORDER" annotation, and explicit order is then applied in each level of the hierarchy independently from the other levels.
 
-In case any two or more facet items have the same "ORDER" value, then these items are ordered 'naturally' based on hits. Note that the same "ORDER" values for different facet items are likely when several codelists are merged into the same facet (when the concept name is the same). Logically, the facet items are always first ordered by "ORDER" and then by hits.
+In case any two or more facet items have the same "ORDER" value, then these items are ordered 'naturally' based on hits. Note that the same "ORDER" values for different facet items are likely when several codelists are merged into the same facet (when the concept name is the same). Logically, the facet items are first ordered by "ORDER" and then the items with the same "ORDER" value are ordered by hits.
 
 In case an explicit "ORDER" annotation is not provided for an item, then this item is ordered as "0" value, and thus displayed first in the facet, before the ordered items.
 
