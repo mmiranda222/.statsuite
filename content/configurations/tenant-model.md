@@ -22,13 +22,13 @@ keywords: [
 - [Additional specifications](#additional-specifications)
 
 > *Version history:*  
-> `hasRangeHeader` added in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
-> **"default": true** is required **(mandatory)** since [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Introduction of additional `urlv3` space parameter to enable the referential metadata feature with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)  
-> `keycloak` is replaced by **`oidc`** entry with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
-> New tenant model introduced with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+> `hasRangeHeader` added in [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
+> **"default": true** is required **(mandatory)** since [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Introduction of additional `urlv3` space parameter to enable the referential metadata feature with [February 21, 2022 Release .Stat Suite JS 12.1.0](/dotstatsuite-documentation/changelog/#february-21-2022)  
+> `keycloak` is replaced by **`oidc`** entry with [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
+> New tenant model introduced with [July 8, 2021 Release .Stat Suite JS 9.0.0](/dotstatsuite-documentation/changelog/#july-8-2021)
 
-> Disclaimer: The *New!* tenant model described below is aligned with [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021) and above versions of the .Stat Suite.
+> Disclaimer: The *New!* tenant model described below is aligned with [July 8, 2021 Release .Stat Suite JS 9.0.0](/dotstatsuite-documentation/changelog/#july-8-2021) and above versions of the .Stat Suite.
 
 *Recorded presentation at the SIS-CC ATF meeting on Tue 29-Jun-2021: [online video](https://oecdtv.webtv-solution.com/embed/8262/en/video)*
 
@@ -264,7 +264,7 @@ Define a specific **http accept header** for a given dataspace that will overrid
 ### Use native NSI WS authentication for external source
 In case an external data source is accessible through an SDMX web service based on Eurostat's SDMX-RI "NSI" component (so called NSI web service), with the **`hasExternalAuth`** parameter the DLM and the DE can be instructed to authenticate against that web service using the native NSI authentication mechanism (implemented by Eurostat) based on HTTP basic access authentication (BA).
 
-The user will have to enter the required credentials through a specific dialog box, as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication).
+The user will have to enter the required credentials through a specific dialog box, as described [here](/dotstatsuite-documentation/using-dlm/log-in-dlm/#connect-to-external-sources-using-the-native-nsi-authentication).
 
 The **`hasExternalAuth`** parameter is to be set to `true` in the `dotstatsuite-config-data/<env>/configs/tenants.json` file for a given tenant `space`.
 
@@ -285,7 +285,7 @@ The **`hasExternalAuth`** parameter is to be set to `true` in the `dotstatsuite-
 ### Example of complete tenant configuration
 Example of a `tenant.json` file inside which `organisations`, `scopes`, `data spaces` and `data sources` are defined.  
 
-**Authentication** is defined at the scope level, allowing thus different providers’ `clientId` or `authority` across your application for a `organisation` as long as it is OpenID compliant (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance)).  
+**Authentication** is defined at the scope level, allowing thus different providers’ `clientId` or `authority` across your application for a `organisation` as long as it is OpenID compliant (see more details [here](/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance)).  
 Also, in this example, the ‘oecd’ `organisation` is the default one ("default": true), even though there is only one `organisation` defined.
 
 ```json

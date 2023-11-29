@@ -5,7 +5,7 @@ comments: false
 weight: 1600
 keywords: [
   'Before indexing data', '#before-indexing-data',
-  'How to create a collection', '#how-to-create-a-collection',
+  'How to create a SOLR collection', '#how-to-create-a-solr-collection',
   'What is indexed', '#what-is-indexed',
   'Conditions and exceptions', '#conditions-and-exceptions',
   'Indexing externally defined dataflows', '#indexing-externally-defined-dataflows',
@@ -23,16 +23,16 @@ keywords: [
 ---
 
 > *Version history:*  
-> 'GET sfs report' query is replaced by 'Get sfs logs' query with [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
-> Index an individual dataflow since [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)  
-> Introduction of the **Collection** concept with Solr with [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)  
-> Indexation of externally defined dataflows since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)  
-> Rules of indexations enhanced with [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
-> Delete an individual dataflow since [February 28, 2020 Release .Stat Suite JS 4.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-28-2020)
+> 'GET sfs report' query is replaced by 'Get sfs logs' query with [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)  
+> Index an individual dataflow since [July 8, 2021 Release .Stat Suite JS 9.0.0](/dotstatsuite-documentation/changelog/#july-8-2021)  
+> Introduction of the **Collection** concept with Solr with [May 19, 2021 Release .Stat Suite JS 8.0.0](/dotstatsuite-documentation/changelog/#may-19-2021)  
+> Indexation of externally defined dataflows since [November 30, 2020 Release .Stat Suite JS 6.1.0](/dotstatsuite-documentation/changelog/#november-30-2020)  
+> Rules of indexations enhanced with [June 23, 2020 Release .Stat Suite JS 5.1.0](/dotstatsuite-documentation/changelog/#june-23-2020)  
+> Delete an individual dataflow since [February 28, 2020 Release .Stat Suite JS 4.0.0](/dotstatsuite-documentation/changelog/#february-28-2020)
 
-#### Table of Content
+#### Table of content
 - [Before indexing data](#before-indexing-data)
-  - [How to create a collection](#how-to-create-a-collection)
+  - [How to create a SOLR collection](#how-to-create-a-solr-collection)
 - [What is indexed](#what-is-indexed)
   - [Conditions and exceptions](#conditions-and-exceptions)
   - [Indexing externally defined dataflows](#indexing-externally-defined-dataflows)
@@ -49,20 +49,14 @@ keywords: [
 ---
 
 ### Before indexing data
-Before indexing your data for the first time, if you are using Docker or on-premise installation strategy, then **you must create a collection for each tenant**.  
-Those collections allow to separate data between tenants.
+Before indexing your data for the first time, SOLR collection(s) need to be created. See below how to do this. 
 
-#### How to create a collection
-Creating a collection is easy, you just need to copy the url below and replace the name with your tenant.  
-For example, this url allows to create a collection that will be used by the **XXXXXXX** tenant.
+#### How to create a SOLR collection
+SFS requires **one SOLR collection per `organisation`** (see [new tenant model](/dotstatsuite-documentation/configurations/tenant-model/)). The collection names must match the `organisation` names. Those SOLR collections allow to separate the searchable data between `organisations`.
 
-```
-http://localhost:8983/solr/admin/collections?action=CREATE&name=XXXXXX&numShards=1&collection.configName=_default
-```
+Creating your SOLR collections is easy, you just need to execute the **setup script** documented [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search#script). It will automatically create the SOLR collections for all your `organisations` as previously defined in your `tenants.json` file.
 
-Create as many collections as you have tenants. If you are in a mono-tenant installation, then create only one collection and name it '**default**'.
-
-**Important note:** Always remember that your collection name must match your tenant name.
+If you are in a mono-tenant installation mode using the 'default' `organisation`, then only one '**default**' collection is created.
 
 ---
 
@@ -95,7 +89,7 @@ If the same dataflow (same ID, whatever Agency or Version) is retrieved from dif
   The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:  
   - a *non-empty* Actual Content Constraint
   - no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
-* A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
+* A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
 
 #### Indexing externally defined dataflows
 It is possible to index externally defined dataflows for browsing and searching in .Stat DE, in the case when the dataflow is stored only as stubs (without content, e.g. without the link to its DSD), meaning that the full definition and content of the corresponding dataflow is stored externally.  

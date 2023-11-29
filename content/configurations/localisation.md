@@ -50,7 +50,7 @@ The following describes how locales are set and maintained in these .Stat Suite 
 1) Each locale has one **default**, application-independent and tenantless language version of all static UI element labels/texts. 
    They are stored in the corresponding `<locale>.json` file in the `./i18n/` folder of the [config data](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data).  
    The file contains the complete list of keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Browse by"`).  
-   One single localised file contains all translations for **.Stat DE, .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)) and **.Stat DV** (since [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order and finaly by DV used elements. 
+   One single localised file contains all translations for **.Stat DE, .Stat DLM** UI elements (since [November 30, 2020 Release .Stat Suite JS 6.1.0](/dotstatsuite-documentation/changelog/#november-30-2020)) and **.Stat DV** (since [May 19, 2021 Release .Stat Suite JS 8.0.0](/dotstatsuite-documentation/changelog/#may-19-2021)). For ease of readibility, they are dinamically listed first by alphabetically DE used elements, then by DLM used elements in a second alphabetic order and finaly by DV used elements. 
 
 2) If for an application an `organisation` needs an **alternative** localised value that is different from the default, then this value can be entered in the corresponding `<locale>.json` file in the `./configs/<organisation>/<app>/i18n/` folder of the [config repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config).  
    The file contains only those keys and their corresponding localised values (e.g. `"de.search.topics.browse": "Select a"`) that should be used to overwrite the above mentioned default values.
@@ -114,7 +114,7 @@ For the other currently included locales, we can only rely on the users and stak
 
 The process to contribute with translations is as follow:
 
-1. as soon as possible in our [development process](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/issue-process/), the product managers identify when a new translation key is created for one of the .Stat Suite applications;
+1. as soon as possible in our [development process](/dotstatsuite-documentation/contribution/issue-process/), the product managers identify when a new translation key is created for one of the .Stat Suite applications;
 1. any new key is added by the developer to the default `./i18n/<locale>.json` files for all supported locales, and translation values are left blank *(1)*. See [Management of the complete list of keys for default translations](#management-of-the-complete-list-of-keys-for-default-translations);
 1. for any new key, the product managers enter translation values for both international English and international French. The values are either provided in the description of the corresponding GitLab ticket, or directly in the default `./i18n/[en|fr].json` files (new branch + new merge request) - see [Management of translations](#management-of-translations). In the first case, the implementing developer makes the updates in these files;
 1. the product managers contact and ask the stakeholders for each supported locale to provide the translation values for all new keys. The communication with the stakeholders is done at best through GitLab by submitting a merge request, or simply through comments in the related ticket;
@@ -136,8 +136,8 @@ The alternative translations always overwrite the corresponding default translat
 ---
 
 ### Rich-text translations
-> Enhanced with supporting the `<a>` tag for hyperlinks in [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)   
-> Introduced in [October 7, 2020 Release .Stat Suite JS 5.4.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-7-2020)
+> Enhanced with supporting the `<a>` tag for hyperlinks in [September 15, 2022 Release .Stat Suite JS radio](/dotstatsuite-documentation/changelog/#september-15-2022)   
+> Introduced in [October 7, 2020 Release .Stat Suite JS 5.4.0](/dotstatsuite-documentation/changelog/#october-7-2020)
 
 All translations can be formatted using whitelisted **rich text elements**.  This allows using basic formatting syntax in the `<locale>.json` translation files.
 
@@ -170,7 +170,7 @@ The currently defined format whitelist is:
 ---
 
 ### Adding a new locale
-Adding a new locale (language) to the .Stat Suite is a code change. It is therefore necessary to create a ticket in [GitLab](https://gitlab.com/groups/sis-cc/-/issues) for such a request by following the [contribution process](https://sis-cc.gitlab.io/dotstatsuite-documentation/contribution/report-an-issue/). Within your ticket you will need to provide:
+Adding a new locale (language) to the .Stat Suite is a code change. It is therefore necessary to create a ticket in [GitLab](https://gitlab.com/groups/sis-cc/-/issues) for such a request by following the [contribution process](/dotstatsuite-documentation/contribution/report-an-issue/). Within your ticket you will need to provide:
 * The name and id ([IETF language tag](https://tools.ietf.org/html/bcp47)) of the newly requested locale,
 * A translation file with all the translation keys and their localised values. Always complete and up-to-date references for this work are the English and the French translations that can be retrieved from the **`master`** branch in https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/i18n;
 * As a technical contributor, you can also refer to the [developer how to](#management-of-the-complete-list-of-keys-for-default-translations) for additionally submitting a merge request to the codebase for the new language by linking it to the related ticket.
@@ -185,7 +185,7 @@ Locales to be used in an `organisation` for a .Stat Suite application are config
 The following rules are to be considered when setting up locales in an `organisation` for an application:
 * It is mandatory to define **at least one locale**;
 * The default locale (locale used by the application UI when the URL has no language parameter) is defined by the property `localeId` of `i18n` in the `settings.json` file (see the example below);
-* Some of the configurations for a given application, e.g. the Data Explorer, are localised. You will thus need to replicate those configurations for each required locale. You can refer to the [.Stat DE configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) for more details;
+* Some of the configurations for a given application, e.g. the Data Explorer, are localised. You will thus need to replicate those configurations for each required locale. You can refer to the [.Stat DE configuration](/dotstatsuite-documentation/configurations/de-configuration/) for more details;
 * Some languages, such as Arabic, are read from right to left. You thus need to add the property `"isRtl": true` for those locales, so that the application UI adapts accordingly.
 
 Example:
