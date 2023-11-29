@@ -172,7 +172,8 @@ Files:    <br/>
 | - whole time series DIM_1=A,DIM_2=B                                                                | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             |           |          |         |         |         |
 | - the attributes attached to time series DIM_1=A,DIM_2=B                                               | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             |           |          | n       |         |         |
 | - observation values & observation-level attributes for time series DIM_1=A,DIM_2=B                | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             | n         | n        |         |         |         |
-| - observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021 | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     |           |          |         |         |         |
+| - observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021 - approach 1 | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     |           |          |         |         |         |
+| - observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021 - approach 2 | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     | n         | n        |         |         |         |
 | - observation value attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021                                  | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     | n         |          |         |         |         |
 
 Excel version: [Delete_action_examples.xlsx](/https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/uploads/9b35d5972474f354e6fdc9e86cd1f402/Delete_action_examples.xlsx)
@@ -280,12 +281,20 @@ dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,,n,n,,,
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml?inline=false)  <br/>
 
-##### 13) delete observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021
+##### 13 A) delete observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
 dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,2021,,,,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv?inline=false)  <br/>
+XML File: [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml?inline=false)  <br/>
+
+##### 13 B) delete observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021
+```
+STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
+dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,2021,*,*,,,
+```
+CSV File: [OECD-DF_TEST_DELETE-1.0-case_13B__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13B__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml?inline=false)  <br/>
 
 ##### 14) delete observation value attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021
