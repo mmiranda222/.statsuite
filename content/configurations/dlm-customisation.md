@@ -31,11 +31,11 @@ When editing the configuration .json file(s) of the .Stat Suite applications, th
 ---
 
 ### Site logo
-> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name of the application (*`"title": "OECD Data Lifecycle Manager"`*) is moved to its natural behavior in the [localisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
+> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name of the application (*`"title": "OECD Data Lifecycle Manager"`*) is moved to its natural behavior in the [localisation](/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
 
 Define your website name and logo.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecyle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecyle-manager/settings.json`
 
 ```json
   "app": {
@@ -48,7 +48,7 @@ Define your website name and logo.
 ### Common site logos
 Define the common logos in the header and footer of the website.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecyle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecyle-manager/settings.json`
 
 ```json
   "assets": {

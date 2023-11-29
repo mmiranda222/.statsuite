@@ -86,10 +86,11 @@ The Visions demo site has additional options in the top-right header that are ap
 ---
 
 ### General theme settings
->The format and default theme was changed with the release [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020)  
+>The format and default theme was changed with the release [May 18, 2020 Release .Stat Suite JS 5.0.0](/dotstatsuite-documentation/changelog/#may-18-2020)  
 
 It is possible to **override** the default **layout theme** of the application.  
-The **default theme** is stored under `dotstatsuite-visions/src/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`.  
+The **default theme** is stored under `dotstatsuite-visions/src/theme.js`. You can **override** the default theme by adding new entries in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`.  See [here](/dotstatsuite-documentation/configurations/tenant-model) for more information about the `organisation`.
+
 The default theme is applied if there is no theme added to the settings.json file.<br>
 
 ```json
@@ -289,7 +290,7 @@ To override the first loader (spinner) color, when the application is not yet lo
 ---
 
 ### Theme settings: custom fonts
-> Since [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022), DE fonts are not hardcoded anymore.
+> Since [August 3, 2022 Release .Stat Suite JS quark](/dotstatsuite-documentation/changelog/#august-3-2022), DE fonts are not hardcoded anymore.
 
 **Disclaimer:** DE fonts are not harcoded, you need to use the settings **'linkTags'** to load explicitely the fonts. By default, the fonts of the browser will be used.
 
@@ -337,7 +338,7 @@ We recommend using a dynamic provider like 'Google WebFonts' for the following r
 ### Favicon
 Define your website's favicon (short for favorite icon), also known as a shortcut icon, website icon, tab icon, URL icon, or bookmark icon.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "app": {
@@ -354,10 +355,10 @@ Define your website's favicon (short for favorite icon), also known as a shortcu
 
 > **Disclaimer**: Since release of [May 18, 2020 Release .Stat Suite JS 5.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-18-2020), the **class** object to overide the default background is replaced by a **unique ID** called **ID_HOME_PAGE**.
 
-**Go to** `dotstatsuite/data/<env>/configs/assets/<tenant>/data-explorer/styles/styles.css`.  
+**Go to** `dotstatsuite/data/<env>/configs/assets/<organisation>/data-explorer/styles/styles.css`.  
 
 **Add** a new entry called `#id_home_page` in the file in order to overide the default background.  
-Add the url of a publicly available image, or the path of an image stored in `/assets/<tenant>/data-explorer/images`:  
+Add the url of a publicly available image, or the path of an image stored in `/assets/<organisation>/data-explorer/images`:  
 
 ```css
 #id_home_page {
@@ -388,11 +389,11 @@ ID_AUTH_PAGE = 'id_auth_page';
 
 ### Page header, footer and splash
 
-Since [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022), the DE header contains a **localised text field** `de.header.message` that supports rich text elements (line break, italic text, bold text, hyperlinks opening in a new web browser tab) as described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#rich-text-translations). By default, this localised field is empty, but it can be overwriten per DE tenant (see [how to](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)).
+Since [September 15, 2022 Release .Stat Suite JS radio](/dotstatsuite-documentation/changelog/#september-15-2022), the DE header contains a **localised text field** `de.header.message` that supports rich text elements (line break, italic text, bold text, hyperlinks opening in a new web browser tab) as described [here](/dotstatsuite-documentation/configurations/localisation/#rich-text-translations). By default, this localised field is empty, but it can be overwriten per `organisation` (see [how to](/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations)).
 
 Example configuration of a customised DE header with additional hyperlinks:
 
-config file: `configs/<tenant>/<app>/i18n/<locale>.json`
+config file: `configs/<organisation>/<app>/i18n/<locale>.json`
 ```json
   "de.header.message": "<a>Privacy policy|https://www.myorg.org/privacy/</a> | <a>Terms and conditions|https://www.myorg.org/termsandconditions/</a> | <a>Contact us|https://myorg.org/contact/</<a>"
 ```
@@ -403,7 +404,7 @@ Similarly, the **localised text fields** in the DE footer (`de.footer.descriptio
 
 Example configuration of a customised DE footer with an additional hyperlink:
 
-config file: `configs/<tenant>/<app>/i18n/<locale>.json`
+config file: `configs/<organisation>/<app>/i18n/<locale>.json`
 ```json
   "de.footer.author": ".Stat Suite",
   "de.footer.description": "{icon} Powered by the {link}",
@@ -425,9 +426,9 @@ For a live example, see [here](https://stats.pacificdata.org/?locale=en).
 
 #### Localised common site logos
 Define the common logos in the header, subheader, footer and homepage of the website.<br>
-Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021), assets are localised, meaning that, if switching the locale of the DE, it will change the logo source depending on the corresponding language. This can be applied to all assets. If a localised asset is defined but a locale does not match any source image, then it will display a broken link. 
+Since [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021), assets are localised, meaning that, if switching the locale of the DE, it will change the logo source depending on the corresponding language. This can be applied to all assets. If a localised asset is defined but a locale does not match any source image, then it will display a broken link. 
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "assets": {
@@ -462,13 +463,13 @@ Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/d
 
 #### Add hyperlink on header and footer logos
 > *Version history:*  
-> Moved the definition of the hypelrink from `assets` to `app` in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)  
-> Hyperlink is made localised with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
-> Intorduced in [July 23, 2020 Release .Stat Suite JS 5.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-23-2020) (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
+> Moved the definition of the hypelrink from `assets` to `app` in [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)  
+> Hyperlink is made localised with [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021)  
+> Intorduced in [July 23, 2020 Release .Stat Suite JS 5.2.0](/dotstatsuite-documentation/changelog/#july-23-2020) (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
 
 Hyperlinks/URLs can be added to the logos of the common site header and footer. This feature might be useful when the Data Explorer is part of a web portal, within which users browse from one application to another. The URL is also localisable.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {
@@ -511,7 +512,7 @@ This is a new entry of the configuration, and is supporting the **SVG path segme
 SVG paths are to be considered as a best practice and solution for websites auto-layout and accessibility.  
 The SVG images must be scaled to fit into a 24 x 24px viewport in order to be fully visible.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 "sdmx": {
@@ -553,7 +554,7 @@ The result is as follows:
 ### API documentation hyperlink
 Define the hyperlink for the API documentation.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
   "viewer": {
@@ -570,7 +571,7 @@ Define the hyperlink for the API documentation.<br>
 ### Contact us hyperlink
 Define the hyperlink for the "Contact us" feature.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
   "viewer": {
@@ -585,11 +586,11 @@ Define the hyperlink for the "Contact us" feature.<br>
 ---
 
 ### Contact us and Share email: Header logo of the organisation   
-> [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
+> [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
 
 Define the logo of the organisation in the header banner of the mail sent from the `Share` or the `Contact us` features. The source can be a binary image or a link.   
    
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
   "assets": {
@@ -601,14 +602,14 @@ Define the logo of the organisation in the header banner of the mail sent from t
 ---
 
 ### Share email: header, footer, body and confirm button color
-> [September 20, 2023 Release .Stat Suite JS "xray"](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)
+> [September 20, 2023 Release .Stat Suite JS "xray"](/dotstatsuite-documentation/changelog/#september-20-2023)
 
 Define the colors used in the Share email:
 - tertiary/main color for the header and the footer
 - secondary/dark color for the body 
 - primary/dark color for the confirm email button.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 "theme": {
@@ -624,9 +625,9 @@ Define the colors used in the Share email:
 
 ### Table and chart: footer logo
 Define the logo of the organisation in the footer of the table and chart views. The source can be a binary image or a link.  
-Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-21-2021), the table and chart footer logo is **localised**. When .Stat DE is configured with several languages, then you can also have a table and chart footer logo different for each language *(e.g. "OECD" logo in English and "OCDE" logo in French)*.
+Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](/dotstatsuite-documentation/changelog/#january-21-2021), the table and chart footer logo is **localised**. When .Stat DE is configured with several languages, then you can also have a table and chart footer logo different for each language *(e.g. "OECD" logo in English and "OCDE" logo in French)*.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
   "assets": {
@@ -647,11 +648,11 @@ Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](https://sis-cc.gitlab.
 
 ### Table and chart: footer terms and conditions
 
-> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name displayed on top of the hyperlink (*`"label": "Terms & Conditions"`*) is moved to its natural behavior in the [localisation](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
+> Deprecation: since [November 30, 2020 Release .Stat Suite JS 6.1.0](/dotstatsuite-documentation/changelog/#november-30-2020), the configuration for setting up the name displayed on top of the hyperlink (*`"label": "Terms & Conditions"`*) is moved to its natural behavior in the [localisation](/dotstatsuite-documentation/configurations/localisation/) management, enabling to translate it by any supported language of the application UI.
 
 Define the hyperlink in the footer of the table and chart views behind the "c" copyright icon.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 "viewer": {
@@ -667,8 +668,8 @@ Define the hyperlink in the footer of the table and chart views behind the "c" c
 
 ### Chart: map configuration
 >*Version history:*  
-> Map projection renamed mercator -> `geoMercator`, and `scale` attribute removed with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
-> Introduced in [November 19, 2019 Release JS v3.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-19-2019)
+> Map projection renamed mercator -> `geoMercator`, and `scale` attribute removed with [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
+> Introduced in [November 19, 2019 Release JS v3.0.0](/dotstatsuite-documentation/changelog/#november-19-2019)
 
 Displaying data in a geographical map representation in the Data Explorer visualisation pages, will rely on the providing of one or several maps (regarding the needs) to the application.  
 
@@ -713,9 +714,9 @@ The `properties` entry serves as the metadata entry of the area.
 The engine only requires an `id` entry (**Note** that any other entry will be ignored, and it is strongly suggested to not overload the file -in case of a large number of areas- for performance purpose).  
 It is highly important that `id` perfectly matches the corresponding SDMX id defined in the areas codelist, for the mapping between SDMX datas and geographical data to work.  
 
-**Second step** The `topojson` file needs to be added in the following path `dotstatsuite-config-data/<env>/assets/<tenant>/data-explorer/maps/world_map.json`<br>
+**Second step** The `topojson` file needs to be added in the following path `dotstatsuite-config-data/<env>/assets/<organisation>/data-explorer/maps/world_map.json`<br>
 
-**Third step** Then it needs to be referenced in Data Explorer settings in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`:
+**Third step** Then it needs to be referenced in Data Explorer settings in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`:
 ```json
 {
     "chart": {
@@ -723,7 +724,7 @@ It is highly important that `id` perfectly matches the corresponding SDMX id def
             "world_map": {
                 "id": "world_map",
                 "projection": "geoMercator",
-                "path": "/assets/<tenant>/data-explorer/maps/world_map.json",
+                "path": "/assets/<organisation>/data-explorer/maps/world_map.json",
                 "levels": [
                   { "id": "continents", "names": { "en": "World Continents", "fr": "Continents du Monde" } },
                   { "id": "countries", "names": { "en": "World Countries", "fr": "Pays du Monde" } }
@@ -750,11 +751,11 @@ This example, associated with the previous settings example will result with 2 o
 ---
 
 ### Chart: override stacked charts palette
-> Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
+> Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)
 
 By default, the Stacked (column & row) charts take one color and compute shades to render the different stacks. You can override the default settings in order to apply multiple colors from the options, or compute shades if only one overriden color is provided.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {

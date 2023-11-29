@@ -79,7 +79,7 @@ id15(mssql)
 id1 --> id2
 id2 --> id3
 subgraph oecd cluster on GCP
-id3 -->|app & tenant| id11
+id3 -->|app & organisation & scope| id11
 id3 -->|assets| id7
 id11 --> id4
 id11 --> id5
@@ -106,7 +106,7 @@ end
 1. update list of tenants: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/blob/develop/data/dev/configs/tenants.json
 1. add tenant config (data-explorer & sdmx): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/configs
 1. add tenant referenced assets (data-explorer): https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/tree/develop/data/dev/assets
-1. check the tenant at https://de-qa.siscc.org/?tenant= `tenant`
+1. check the tenant at https://de-qa.siscc.org/?tenant= `tenant` (Note: this feature does currently not work, see: )
 1. update something in the configuration and check the update
 
 #### Demo of adding/updating an app for the tenant
@@ -115,7 +115,7 @@ end
 1. fork from webapp
 1. inject pre-coded app (to create)
 1. declare it somewhere
-1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
+1. check the app at `http://<app+env+organisation+scope>.<domain>`
 1. update the app
-1. check the app at `http://<app>.staging.<tenant>.redpelicans.com`
+1. check the app at `http://<app+env+organisation+scope>.<domain>`
 

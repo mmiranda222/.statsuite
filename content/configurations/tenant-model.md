@@ -5,20 +5,20 @@ comments: false
 weight: 71
 keywords: [
   'Tenant model definition', '#tenant-model-definition',
+  'Tenant deployment', '#tenant-deployment',
   'Specific accept header per data space', '#specific-accept-header-per-data-space',
   'Use native NSI WS authentication for external source', '#use-native-nsi-ws-authentication-for-external-source',
-  'Example of a tenant', '#example-of-a-tenant',
-  'Example of a tenant deployment strategy', '#example-of-a-tenant-deployment-strategy',
+  'Example of complete tenant configuration', '#example-of-complete-tenant-configuration',
   'Additional specifications', '#additional-specifications',
 ]
 ---
 
 #### Table of content
 - [Tenant model definition](#tenant-model-definition)
+- [Tenant deployment](#tenant-deployment)
 - [Specific accept header per data space](#specific-accept-header-per-data-space)
 - [Use native NSI WS authentication for external source](#use-native-nsi-ws-authentication-for-external-source)
-- [Example of a tenant](#example-of-a-tenant)
-- [Example of a tenant deployment strategy](#example-of-a-tenant-deployment-strategy)
+- [Example of complete tenant configuration](#example-of-a-tenant)
 - [Additional specifications](#additional-specifications)
 
 > *Version history:*  
@@ -35,24 +35,162 @@ keywords: [
 ---
 
 ### Tenant model definition
-Allow for multi-tenant deployments of the .Stat Suite JS components
+The .Stat Suite tenant model allows for multiple varying configurations, customisations and brandings of a single instance (deployment) of the .Stat Suite JS components (Data Explorer, Data Viewer and Data Lifecycle Manager).
 
-**Tenant** (now also called **organisation**) is the root definition of an organisation's configuration, for which `data space(s)` and application `scope(s)` can be defined.  
-**Data space** is an SDMX endpoint with a URL and optional configuration parameters, such as supported headers and functions (e.g. `hasLastNObservations`).  
-Application **scopes** are custom configurations for the DLM and DE applications:
-- the `DE scope` defines which `data spaces` can be accessed and how they are to be indexed (or not) --> See `data sources` below.
-- the `DLM scope` defines which `data spaces` are listed and how they are to be accessed (or not, e.g. what is the URL of the transfer service to be used for data and referential metadata imports into that space).
-**Data source** is a virtual container defining a set of unique SDMX dataflows returned by the execution of `data queries` from one `data space`. `Data queries` are a list of SDMX CategoryScheme(s) with Categories into which dataflows to be indexed by the *sfs* search service are categorised.  
+There are 2 configuration levels for tenants in this model:  
+- **Organisation**: It allows for defining a specific configuration, customisation and branding of the JS components. 
+  - **Scope**: It (only) allows for defining specific **data spaces** (1), the indexation rules and the **OpenID-Connect-compatible (OIDC) authentication provider** per JS application for an organisation.   
+    A `DE scope` defines which `data spaces` can be accessed and how they are to be indexed (or not) --> See `data sources` (2) below.  
+    A `DLM scope` defines which `data spaces` are listed and how they are to be accessed (or not, e.g. what is the URL of the transfer service to be used for data and referential metadata imports into that space).
 
-![New Tenant Model diagram](/dotstatsuite-documentation/images/new-tenant-model.png)
+There can be several organisations and each organisation can have several scopes per JS application.
 
-**Data spaces example diagram for an installation at the OECD:** 
+(1) A **data space** is an SDMX endpoint with a URL and optional configuration parameters, such as supported headers and functions (e.g. `hasLastNObservations`).  
+  - Example diagram:  
+     <img src="/dotstatsuite-documentation/images/data-space-diagram.png"  width="633" height="264" alt="data space diagram">
 
-![data space diagram](/dotstatsuite-documentation/images/data-space-diagram.png)
+(2) A **data source** is a virtual container defining a set of unique SDMX dataflows returned by the execution of `data queries` from one `data space`. `Data queries` are a list of SDMX CategoryScheme(s) with Categories into which dataflows to be indexed by the *sfs* search service are categorised.  
+  - Example diagram:  
+    <img src="/dotstatsuite-documentation/images/data-source-diagram.png"  width="633" height="203" alt="data source diagram">
 
-**Data sources example diagram for an installation at the OECD and an external data source using an ILO SDMX API:** 
+<img src="/dotstatsuite-documentation/images/new-tenant-model.png"  width="645" height="408" alt="New Tenant Model diagram">
 
-![data source diagram](/dotstatsuite-documentation/images/data-source-diagram.png)
+#### Example configuration
+
+tenants.json
+
+```json
+{
+  "org-1": {
+    "id": "org-1",
+    "label": "org-1-name",
+    "spaces": {
+      "space-1": {
+        "label": "space-1-name",
+        ...
+      },
+      "space-2": {
+        "label": "space-2-name",
+        ...
+      },
+    },
+    "datasources": {
+      "ds:space-1": {
+        "dataSpaceId": "space-1",
+        "dataqueries": [...]
+      }
+    },
+    "scopes": {
+      "dlm-scope-1": {
+        "type": "dlm",
+        "label": "dlm-scope-1-name",
+        "oidc": {
+          ...
+        },
+        "spaces": [
+          {
+            "id": "space1",
+            ...
+          },
+          {
+            "id": "space2",
+            ...
+          }
+        ]
+      },
+      "dlm-scope-1": {
+        ...
+      },
+      "de-scope-1": {
+        "type": "de",
+        "label": "de-scope-1-name",
+        "oidc": {
+          ...
+        },
+        "spaces": [
+          "space1",
+          "space2"
+        ],
+        "datasources": [
+          "ds:space1",
+          "ds:space2"
+        ]
+      },
+      "de-scope-2": {
+        ...
+      }
+    }
+  },
+  "org-2": {
+    ...
+  }
+}
+```
+
+---
+
+### Tenant deployment
+In order to allow users to reach the different `organisations` and their `scopes`, each `scope` in each `organisation` needs its own web application URL (host) `https://<app+env+organisation+scope>.<domain>`, which could be replaced by a dedicated DNS entry, e.g.,`https://<app>.<env>.<organisation>.<scope>.<domain>`.  
+
+The .Stat [**'proxy' service**](/dotstatsuite-documentation/getting-started/framework/#proxy-service) is used to route the requests from those individual URLs to to appropriate underlying target application. By setting the `organisation:scope` headers depending on host it instructs the target application to inject the related configurations, customisations and brandings stored in the configurations and served by the .Stat [**config service**](/dotstatsuite-documentation/getting-started/framework/#config-service). 
+
+The mapping from the web application URL (host) to the target application and `organisation` and scope is configured in the `routes.json` file of the proxy service:
+
+```json
+[
+  {"host": "<app+env+organisation+scope>.<domain>", "target": "http://<application>", "tenant": "<organisation>[:<scope>]"},  
+  ...
+]
+```
+The `scope` part is optional and not required when an application has no specific scopes.
+
+The organisation-wide configurations, customisations and brandings (not those defined in the scopes) are configured per application (Data Explorer, Data Viewer and Data Lifecycle Manager) in a `settings.json` file served by the [config service](/dotstatsuite-documentation/getting-started/framework/#config-service):
+
+`/<env>/configs/<organisation>/<app>/settings.json`
+
+#### Example
+
+See the tenants definition [here](#example-of-complete-tenant-configuration).
+
+See the `routes.json` file example of a deployment strategy using a proxy: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/blob/master/qa/proxy/routes.json
+
+```json
+[
+  {"host": "keycloak.siscc.org", "target": "http://keycloak-http"},
+
+  {"host": "sdmxjs-qa.siscc.org", "target": "http://sdmxjs"},
+  {"host": "visions-qa.siscc.org", "target": "http://visions"},
+  {"host": "sfs-qa.siscc.org", "target": "http://sfs" },
+  {"host": "share-qa.siscc.org", "target": "http://share" },
+  {"host": "dv-qa.siscc.org", "target": "http://data-viewer", "tenant": "oecd" },
+  {"host": "dlm-qa.siscc.org", "target": "http://data-lifecycle-manager", "tenant": "oecd:dlm" },
+  {"host": "dlm2-qa.siscc.org", "target": "http://data-lifecycle-manager", "tenant": "oecd:dlm2" },
+  {"host": "de-qa.siscc.org", "target": "http://data-explorer", "tenant": "oecd:de" }
+]
+```
+
+**Related organisation-wide configurations, customisations and brandings:**
+
+```
+└── siscc-config-data\configs
+    ├── oecd
+    │   ├── data-explorer
+    │   │   ├── i18n
+    │   │   │   └── ??.json         # DE internationalisation (translations) **overwrites** - one file per locale with ??=locale code, e.g. "en"
+    │   │   └── settings.json       # DE configuration
+    │   ├── data-viewer
+    │   │   ├── i18n
+    │   │   │   └── ??.json         # Data Viewer internationalisation (translations) **overwrites** - one file per locale with ??=locale code, e.g. "en"
+    │   │   └── settings.json       # Data Viewer configuration
+    │   ├── data-lifecycle-manager
+    │   │   ├── i18n
+    │   │   │   └── ??.json         # DLM internationalisation (translations) **overwrites** - one file per locale with ??=locale code, e.g. "en"
+    │   │   └── settings.json       # DLM configuration
+    │   └── sfs
+    │       └── settings.json       # Organisation- and search-specific settings overwriting general settings in /configs/tenants.json 
+    ├── sfs.json                    # Instance-specific search fields configuration overwriting application-defaults
+    └── tenants.json                # General configuration for all .Stat JS components; at least 1 organisation is required
+```
 
 ---
 
@@ -67,8 +205,8 @@ Define a specific **http accept header** for a given dataspace that will overrid
     "id": "xxxx",
     "label": "xxxx",
     "spaces": {
-      "XXXX-prod": {
-        "label": "XXXX-prod",
+      "space-X": {
+        "label": "space-X-name",
         "url": "https://service-root/rest/",
         "urlv3": "https://service-root/rest/V2",
         "headers": {
@@ -111,8 +249,8 @@ Define a specific **http accept header** for a given dataspace that will overrid
     "id": "xxxx",
     "label": "xxxx",
     "spaces": {
-      "myspace": {
-        "label": "myspace-name",
+      "space-X": {
+        "label": "space-X-name",
         "hasRangeHeader": true,
         "hasCustomRangeHeader": false
       }
@@ -144,12 +282,11 @@ The **`hasExternalAuth`** parameter is to be set to `true` in the `dotstatsuite-
 
 ---
 
-### Example of a tenant
-Example of a `tenant.json` file inside which spaces, data sources, and scopes are defined.  
-The DLM scope contains a list of spaces.  
-The DE scope contains a space and data sources (only IDs): data sources are used for search index, and space is an additional source for enabling visualisation (without index).  
-**Authentication** is defined at the scope level, allowing thus different providers’ `clientId` or `authority` across your application for a tenant as long as it is OpenID compliant (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance)).  
-Also, in this example, the ‘oecd’ tenant is the default one ("default": true), even though there is only one tenant defined.
+### Example of complete tenant configuration
+Example of a `tenant.json` file inside which `organisations`, `scopes`, `data spaces` and `data sources` are defined.  
+
+**Authentication** is defined at the scope level, allowing thus different providers’ `clientId` or `authority` across your application for a `organisation` as long as it is OpenID compliant (see more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/authentication/#generic-openid-compliance)).  
+Also, in this example, the ‘oecd’ `organisation` is the default one ("default": true), even though there is only one `organisation` defined.
 
 ```json
 {
@@ -297,30 +434,10 @@ Also, in this example, the ‘oecd’ tenant is the default one ("default": true
 
 ---
 
-### Example of a tenant deployment strategy
-`routes.json` file example of a deployment strategy using a proxy: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/blob/master/qa/proxy/routes.json
-
-```json
-[
-  {"host": "keycloak.siscc.org", "target": "http://keycloak-http"},
-
-  {"host": "sdmxjs-qa.siscc.org", "target": "http://sdmxjs"},
-  {"host": "visions-qa.siscc.org", "target": "http://visions"},
-  {"host": "sfs-qa.siscc.org", "target": "http://sfs" },
-  {"host": "share-qa.siscc.org", "target": "http://share" },
-  {"host": "dv-qa.siscc.org", "target": "http://data-viewer", "tenant": "oecd" },
-  {"host": "dlm-qa.siscc.org", "target": "http://data-lifecycle-manager", "tenant": "oecd:dlm" },
-  {"host": "dlm2-qa.siscc.org", "target": "http://data-lifecycle-manager", "tenant": "oecd:dlm2" },
-  {"host": "de-qa.siscc.org", "target": "http://data-explorer", "tenant": "oecd:de" }
-]
-```
-
----
-
 ### Additional specifications
 
 **Multi-tenant index**  
-If you want 2 different Solr search indexations, you need **2 tenant definitions** in your `tenants.json` file, following the above example.
+If you want 2 different Solr search indexations, you need **2 organisation definitions** in your `tenants.json` file, following the above example.
 
 **`searchUrl` override**  
 The `searchUrl` parameter can be used in some cases to override the url of the space when requested by the search service. If you have a request limiter for your web services (e.g. NSIWS), you may want to bypass this limit when indexing (because there will be a lot of requests and they won't be from a malicious origin). In that case, `searchUrl` is a temporary solution to address this issue, where the `sfs` search service uses `searchUrl` instead of `url` for the space definition.

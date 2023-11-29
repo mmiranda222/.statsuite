@@ -41,7 +41,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [List of the standard roles for user permissions](#list-of-the-standard-roles-for-user-permissions)
 - [Override the default Authorisation-Management service URL](#override-the-default-authorisation-management-service-url)
 
-For the tenant and data space definitions please see [here](/dotstatsuite-documentation/configurations/tenant-model).
+For the tenant (`organisation` and `scope`) and data space definitions please see [here](/dotstatsuite-documentation/configurations/tenant-model).
 
 ---
 
@@ -200,7 +200,7 @@ The **`dataExplorerUrl`** parameter is to be set in the `dotstatsuite-config-dat
 ### List of SDMX artefact types
 Define the types of SDMX structural artefacts selectable in the DLM 'Filter by type' selector (see [functional specs](/dotstatsuite-documentation/using-dlm/dlm_overview/#types)). Only artefacts of those types can be displayed in the DLM user interface.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecycle-manager/settings.json`
 
 ```json
   "sdmx": {
@@ -230,7 +230,7 @@ Define, in the 'Data upload' and 'Data transfer' menus, what is the **data valid
 - **"basic"** for Favour speed with basic validations
 - **"advanced"** for Apply advanced validations
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecycle-manager/settings.json`
 
 ```json
   "app": {
@@ -246,7 +246,7 @@ See more about the functional specifications of this feature [here](/dotstatsuit
 Define the file size limitation when uploading data or strutures files **applied by the DLM user interface** as follow:    
 Provided in number of bites, the upload file size limit is usually set to 30MB by default (like in the example below).  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecycle-manager/settings.json`
 
 ```json
   "sdmx": {
@@ -271,12 +271,12 @@ More information on how to make this configuration in Kestrel (on the example of
 > Released in [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)
 
 Define the boundaries of the **submission time logbook filter**. Rules are:
-- configuration applies to the tenant;
+- configuration applies to the organisation;
 - valid values for start and end param. are "now" or any [ISO date string](https://en.wikipedia.org/wiki/ISO_8601);
 - by default it is set to `"start": "2019-01-01"` and `"end": "now"`;
 - if settings are not set, or invalid, then default boundaries are [30 days - now].
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecycle-manager/settings.json`
 
 ```json
  "logs": {
@@ -303,7 +303,7 @@ References:
 
 ![DLM config basic permissions](/dotstatsuite-documentation/images/dlm-config-basic-permissions.png)
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecycle-manager/settings.json`
 
 ```json
   "sdmx": {
@@ -338,7 +338,7 @@ References:
 
 The `"permissionGroup"` lists the standard roles using per role a unique `"id"`, which represents the **sum** of the IDs of the underlying granular permissons as defined in the Authorisation-Management service, as well as the list of those IDs.
 
-Each role ID also requires the definition of a localised label in an "override" `i18n` folder under `dotstatsuite-config-data/<env>/configs/<tenant>/data-lifecycle-manager/` with each language's translation file. For example, here are the English labels to add corresponding to the above set of roles: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/develop/configs/default/data-lifecycle-manager/i18n/en.json.
+Each role ID also requires the definition of a localised label in an "override" `i18n` folder under `dotstatsuite-config-data/<env>/configs/<organisation>/data-lifecycle-manager/` with each language's translation file. For example, here are the English labels to add corresponding to the above set of roles: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/develop/configs/default/data-lifecycle-manager/i18n/en.json.
 
 ---
 

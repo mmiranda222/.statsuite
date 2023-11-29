@@ -36,7 +36,7 @@ The below diagram shows how the configuration files of the .Stat JS components a
     │   └── sfs
     │       └── settings.json       # Organisation- and search-specific settings overwriting general settings in /configs/tenants.json 
     ├── sfs.json                    # Instance-specific search fields configuration overwriting application-defaults
-    └── tenants.json                # General configuration for all .Stat JS components; at least 1 organisation(=tenant) is required
+    └── tenants.json                # General configuration for all .Stat JS components; at least 1 organisation is required
 ```
 
 **Default configurations (or default overwrites) for .Stat JS components**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/configs
@@ -94,7 +94,7 @@ The below diagram shows how the default internationalisation files of the .Stat 
 |---|---|---|
 | [Multi-tenant deployments of .Stat JS components](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model)| | | 
 | |Tenants definition|[tenants.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)|
-| |Tenant's datasources definition|[tenants.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)|
+| |Organisation's datasources definition|[tenants.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)|
 | .Stat Core TRANSFER Service| | | 
 | |Connection string + parameters|[dataspace.pivate.json](hhttps://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/master/DotStatServices.Transfer/config/dataspaces.private.json.sample)|
 | |Authorisation config|[auth.private.json](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/blob/master/DotStatServices.Transfer/config/auth.private.json.sample)|

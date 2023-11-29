@@ -7,7 +7,7 @@ keywords: [
   'intro', '#intro',
   'Source code of each component of the main .Stat Suite modules', '#source-code-of-each-component-of-the-main-stat-suite-modules',
   'Example of topologies', '#example-of-topologies',
-  'Installing the .Stat Suite full stack with one tenant', '#installing-the-stat-suite-full-stack-with-one-tenant',
+  'Installing the .Stat Suite full stack', '#installing-the-stat-suite-full-stack',
   'Best practice when updating an installation', '#best-practice-when-updating-an-installation',
 ]
 ---
@@ -16,7 +16,7 @@ keywords: [
 - [intro](#intro)
 - [Source code of each component of the main .Stat Suite modules](#source-code-of-each-component-of-the-main-stat-suite-modules)
 - [Example of topologies](#example-of-topologies)
-  - [Installing the .Stat Suite full stack with one tenant](#installing-the-stat-suite-full-stack-with-one-tenant)
+  - [Installing the .Stat Suite full stack](#installing-the-stat-suite-full-stack)
 - [Best practice when updating an installation](#best-practice-when-updating-an-installation)
 
 ---
@@ -56,7 +56,7 @@ Installations for frequent usages of the .Stat Suite are described below.
 More topologies will be added in the future.
 
 
-#### Installing the .Stat Suite full stack with one tenant
+#### Installing the .Stat Suite full stack
 This topology contains the full stack of .Stat Suite.
 
 ![Stat Suite high-level architecture](/dotstatsuite-documentation/images/statsuite-technical-architecture.png)
