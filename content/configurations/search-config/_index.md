@@ -9,7 +9,7 @@ keywords: [
  'Exclude specific CategorySchemes from the search index', '#exclude-categoryschemes-from-the-search-index',
  'Relevance of free-text search results: How to tweak the weights of specific dataflow properties', '#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties',
  'Manage synonyms', '#manage-synonyms',
- 'Overwrite search-specific settings defined in the general organisations configuration', '#overwrite-search-specific-settings-defined-in-the-general-organisations-configuration',
+ 'Overwrite search-specific settings defined in the general `organisation` configuration', '#overwrite-search-specific-settings-defined-in-the-general-organisation-configuration',
 ]
 ---
 <!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
@@ -22,7 +22,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Exclude specific CategorySchemes from the search index](#exclude-categoryschemes-from-the-search-index)
 - [Relevance of free-text search results: How to tweak the weights of specific dataflow properties](#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties)
 - [Manage synonyms](#manage-synonyms)
-- [Overwrite search-specific settings defined in the general organisations configuration](#overwrite-search-specific-settings-defined-in-the-general-organisations-configuration)
+- [Overwrite search-specific settings defined in the general `organisation` configuration](#overwrite-search-specific-settings-defined-in-the-general-organisation-configuration)
 
 For information about the location of search configuration files, please consult the documentation [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/#overview-of-the-different-configuration-files).
 
@@ -169,7 +169,7 @@ Added in [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.i
 
 Synonyms can now be provided in .Stat through configuration files. They are applied on the search query terms, e.g. a `the mages of the United Kingdom` query would be expanded to: `the (mages OR sorcerer OR sorceress) of the (United Kingdon OR Great Britain OR England)`. Synonyms are automatically ASCII-folded by the script.
 
-The configuration files are located are located in the config data `configs/{tenant}/sfs/synonyms/{language}.json` using the same convention as locale files.
+The configuration files are located are located in the config data `/configs/<organisation>/sfs/synonyms/<language>.json` using the same convention as locale files.
 
 Each file contains a language-specific JSON Map where the value of each entry is a set of synonyms for a term, such as "happy" has synonyms "glad" and "joyful" in the example below. Note that the mapping is one-directional. If "happy" and "joyful" are also synonyms of "glad", then that needs to be entered separately, and so on. The initial term needs to be in the list of its synonyms (A -> B should be A -> [A,B]), otherwise it will not be searched on.
 
@@ -192,25 +192,25 @@ Each file contains a language-specific JSON Map where the value of each entry is
     ],
     ...
 ```
-There are two helper JS scripts to generate the `{language}.json` file:
+There are two helper JS scripts to generate the `<language>.json` file:
 - from a flat, non-symmetric CSV file: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/scripts/solr-synonyms-txt-to-json.js
-- from an non-symmetric `{language}.json` file to complement missing combinations: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/scripts/solr-synonyms-symetry.js
+- from an non-symmetric `<language>.json` file to complement missing combinations: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/tree/master/scripts/solr-synonyms-symetry.js
 
-To load the synonyms or reload updated synonyms from the `{language}.json` configuration files into SOLR, you can use the installation script ([src/server/manageSchema](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md#script)).
+To load the synonyms or reload updated synonyms from the `<language>.json` configuration files into SOLR, you can use the installation script ([src/server/manageSchema](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md#script)).
 
 ---
 
-### Overwrite search-specific settings defined in the general organisations configuration
-The [`/configs/[organisationID]/sfs/settings.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/sfs/settings.json) file, which is defined for a specific organisation (tenant), allows overwriting search-specific settings in the general [`/configs/tenants.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json) configuration.
+### Overwrite search-specific settings defined in the general `organisation` configuration
+The [`/configs/<organisation>/sfs/settings.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/sfs/settings.json) file, which is defined for a specific `organisation`, allows overwriting search-specific settings in the general [`/configs/tenants.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json) configuration.
 
-At boot time, the search-specific settings pre-defined in this [`/configs/[organisationID]/sfs/settings.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/sfs/settings.json) file are merged with related settigs defined in the instance-specific [`/configs/tenants.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)) configuration file.
+At boot time, the search-specific settings pre-defined in this [`/configs/<organisation>/sfs/settings.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/default/sfs/settings.json) file are merged with related settigs defined in the instance-specific [`/configs/tenants.json`](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/blob/master/configs/tenants.json)) configuration file.
 
-The default content of the `/configs/[organisationID]/sfs/settings.json` is an empty object:  
+The default content of the `/configs/<organisation>/sfs/settings.json` is an empty object:  
 ```json
 {
 }
 ```
-Use this file to set search-specific settings for this organisation. If left empty, then the original configuration from the `/configs/tenants.json` file is applied.
+Use this file to set search-specific settings for this `organisation`. If left empty, then the original configuration from the `/configs/tenants.json` file is applied.
 
 #### Example
 Use case: Make the search service call a different NSI endpoint in order to bypass a request limiter:
@@ -227,7 +227,7 @@ Considering that in the `/configs/tenants.json` configuration file the `url` is 
   }
 }
 ```
-we need set (only for the search service used by the organisation) in the `/configs/[organisationID]/sfs/settings.json` configuration file the `url` from that space to a different one (e.g. "http://nsi-url/rest"):  
+we need set (only for the search service used by the `organisation`) in the `/configs/<organisation>/sfs/settings.json` configuration file the `url` from that space to a different one (e.g. "http://nsi-url/rest"):  
 ```json
 {
   "spaces": {

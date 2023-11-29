@@ -47,7 +47,7 @@ For information about how to configure Keycloak as proxy to other identity provi
 ### Authentication in the DE
 The Data Explorer can be configured to **whether support authentication or be fully public (anonymous mode)**. Authentication is made through an external dentity provider, see [here](#generic-openid-compliance).  
 
-The authentication is configured per tenant in the `tenants.json` file in the `config-data/configs` folder with the `oidc` object. Each application tenant, defined as `scopes`, can have a dedicated authentication configuration. **If `oidc` is not defined then the DE works without authentication (anonymous public access).**
+The authentication is configured per `organisation:scope` in the `tenants.json` file in the `config-data/configs` folder with the `oidc` object. This means that each `scope` of a DE can have a dedicated authentication configuration. **If `oidc` is not defined then the DE works without authentication (anonymous public access).**
 
 | `oidc` setting    | description |
 |------------|-------------|
@@ -76,7 +76,7 @@ in `tenants.json`:
 ### Authentication in the DLM
 The Data Lifecycle Manager requires an authentication configuration. Authentication is made through an external dentity provider, see [here](#generic-openid-compliance).  
 
-The authentication is configured per tenant in the `tenants.json` file in the `config-data/configs` folder with the `oidc` object. Each application tenant, defined as `scopes`, can have a dedicated authentication configuration.
+The authentication is configured per `organisation:scope` in the `tenants.json` file in the `config-data/configs` folder with the `oidc` object. This means that each `scope` of a DLM can have a dedicated authentication configuration.
 
 | `oidc` setting    | description |
 |------------|-------------|
