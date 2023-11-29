@@ -340,14 +340,14 @@ graph LR
 
 #### Proxy Service
 ##### short description
-The Proxy service handles route request depending on urls (`https://<app>.<env>.<tenant>.siscc.org`), and sets tenant headers depending on host to instruct target application. `<tenant>.siscc.org` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.oecd.org`.
+The Proxy service handles route request depending on urls (`https://<app+env+organisation+scope>.<domain>`), and sets tenant headers depending on host to instruct target application. `<app+env+organisation+scope>.<domain>` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.<organisation>.<scope>.<domain>`.
 
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-kube-proxy
-- handles route request depending on urls (`https://<app>.<env>.<tenant>.siscc.org`)
+- handles route request depending on urls (`https://<app+env+organisation+scope>.<domain>`)
 - set tenant headers depending on host to instruct target application
-- `<tenant>.siscc.org` could be replaced by a dedicated DNS entry, ie `https://<app>.<env>.oecd.org`
+- `<app+env+organisation+scope>.<domain>` could be replaced by a dedicated DNS entry, e.g. `https://<app>.<env>.<organisation>.<scope>.<domain>`
 
 #### Config Service
 
@@ -451,7 +451,7 @@ id15(mssql)
 id1 --> id2
 id2 --> id3
 subgraph oecd cluster on GCP
-id3 -->|app & tenant| id11
+id3 -->|app & organisation & scope| id11
 id3 -->|assets| id7
 id11 --> id4
 id11 --> id5

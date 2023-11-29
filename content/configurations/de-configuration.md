@@ -88,7 +88,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
   - [robots.txt file](#robots-txt-file)
 - [Third-party tools integration](#third-party-tools-integration)
 
-For the tenant and data space definitions please see [here](/dotstatsuite-documentation/configurations/tenant-model).
+For the tenant (`organisation` and `scope`) and data space definitions please see [here](/dotstatsuite-documentation/configurations/tenant-model).
 
 ---
 
@@ -122,7 +122,7 @@ In the property "homeFacetIds", you must enter the localised name of an indexed 
 If the setting exists but is **empty**, then no facet is displayed on the homepage.  
 If it is **missing**, then all available (indexed) facets are displayed on the homepage.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -152,7 +152,7 @@ The homepage facets alignment is configurable to centered or left-aligned. The a
 
 In order to change the alignment from left-aligned to centered, the configuration must be as such:  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`  
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`  
   
 ```json
     "search": {
@@ -171,7 +171,7 @@ Define one of the homepage facet to be opened/expanded by default, by using the 
 In the property `expandedHomeFacets`, you must provide the localised values of the facet to be expanded at page launch.  
 If this property is missing or if the provided value does not match a facet localised name, then no facet is expanded at launch.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "search": {  
@@ -189,7 +189,7 @@ If this property is missing or if the provided value does not match a facet loca
 Make the individual second-level homepage facet values clickable. When a homepage facet returns a **hierarchical** CategoryScheme or ConceptScheme, then it is possible to make the second-level values (sub-level of a root) selectable, so that the search result applies the selection when browsing.   
 By default, the second-level homepage facet values are **not clickable** (`"homeFacetLevel2Clickable": false`).
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -206,7 +206,7 @@ By default, the second-level homepage facet values are **not clickable** (`"home
 
 Always hide IDs of the facet values for a well-defined list of facets on the homepage, or on the homepage **and** the result page. By default, IDs are always displayed, unless it is specifically defined in this configuration to hide IDs of a localised *SDMX* Categoryscheme or Concept/codelist.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 **Hide IDs of facet values in homepage only**
 
@@ -233,7 +233,7 @@ Always hide IDs of the facet values for a well-defined list of facets on the hom
 
 Define a limited number of facets in the search result pages, after which all other facets are hidden under an expandable accordion dropdown menu called **"More filters"**.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -254,7 +254,7 @@ Define the facets that are always displayed in the first position(s) in the sear
 These facets will be displayed always at first top positions and their labels are prefixed with a [**.**]. Replace spaces in your facet names by underline `_`.  
 In addition, a help [**?**] tooltip is shown right next to the Filters header title, which will display the following information (localised): *"Filters marked with **.** are, when available, always listed first."*
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -278,7 +278,7 @@ Facets are **localised**, thus you must add the translated name of the pinned fa
 
 Define the facets that will always be excluded from the search result page. Replace spaces in your facet names by underline `_`.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -298,7 +298,7 @@ Facets are **localised**, thus you must add the translated name of the excluded 
 ### Search: Number of results per result page
 Define the number of results displayed per page in the search result pages.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "search": {
@@ -325,7 +325,7 @@ Define, per DE scope, the landing tab of the visualisation page to be shown by d
 - stackedrowchart
 - choroplethchart
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "app": {
@@ -342,7 +342,7 @@ In such cases, the Time Period filter in the Data Explorer visualisation page us
 
 Any value of the default time period boundaries and selection can be `null`ed or left empty  `""`.   
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "period": {
@@ -378,7 +378,7 @@ Note that the `default` time period selection is incompatible with the `lastNPer
 
 Allow to **override the default Time Period dimension sort order** from the initial ascending order to **descending order**.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "period": {
@@ -396,7 +396,7 @@ If `"defaultSort"` is empty or not in the configuration file, then the default r
 
 Define, **per data space**, the support of the `LastNObservations` features from your SDMX web service.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/tenants.json`
+* in `dotstatsuite-config-data/<env>/configs/tenants.json`
 
 ```json
     "spaces": {
@@ -436,7 +436,7 @@ If set to [0, 0], then only the first observation is returned. If set to [0, 249
 Standard browser performance tests revealed that numbers of observations above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
 This configuration also impacts the EXCEL download but does not impact the CSV download options.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "sdmx": {
@@ -452,7 +452,7 @@ The number of table cells required is always above the number of observations re
 Standard browser performance tests revealed that number of table cells above 8000 are likely to result in sub-optimal or insufficient user experience. Note that many client machines are not the most recent and powerful ones.  
 This configuration also impacts the EXCEL download but does not impact the CSV download options.  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
   "table": {
@@ -479,7 +479,7 @@ The Preferred scale attribute (with the Concept ID or Attribute ID `PREF_SCALE`)
 **Configurable parameter**  
 It applies the calculation over the observation values when the Preferred scale attribute is used in the data source.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
@@ -499,7 +499,7 @@ The Decimals attribute (with the Concept ID or Attribute ID `DECIMALS`) is used 
 **Configurable parameter**  
 It applies the Decimals attribute value when defined in the data source, and thus adapts the observation value display.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
@@ -524,7 +524,7 @@ You can define more than one type of attribute to be displayed as flags.<br>
 
 > **Warning**: if the value ID of an attribute that is defined as flag is **longer than 4 characters**, then this value will not be displayed as a flag but as a **footnote**.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
@@ -548,7 +548,7 @@ You can define more than one type of attribute to be displayed as flags.<br>
 A **note** is a star '*' icon shown next to the observation value, or at a higher-level (see business rules [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/)), and the attribute value is displayed on mouse-over in a tooltip bubble.  
 You can define more than one type of attributes to be displayed as notes. In the following example, the supported coded or uncoded attributes are set for a single instance of the data explorer (DE).
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
    "sdmx": {
@@ -565,7 +565,7 @@ You can define more than one type of attributes to be displayed as notes. In the
 ### Localised observation values separators for thousands and decimals
 Define the localised thousands and decimals separators of the observation values when required in the table and chart views.<br>
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
     "i18n": {
@@ -618,7 +618,7 @@ Examples:
 
 By default, if no configuration for a given localised format is added, then the default applied date format is 'YYYY MMM', e.g. in English '2010 Jan'.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
   "i18n": {
@@ -643,7 +643,7 @@ By default, if no configuration for a given localised format is added, then the 
 
 Possibility to define default rules for automatically assembling different specific dimensions and/or attributes into single combined components in the preview table. These default rules are fully superseeded by the instructions optionally provided in the DSD or dataflow annotation `COMBINED_CONCEPTS`. For more information see the [documentation here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/). 
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {
@@ -673,7 +673,7 @@ In the above configuration snippet:
 The **share** option in the Data Explorer visualisation pages can be hidden from the end-user, so it is not possible to use the share table and chart features.  
 This configuration simply works by removing the **share endpoint URL** from the configuration settings.json file of the application: when the **`share endpoint`** is left blank (or the `"endpoint"` entry is entirely removed), then the share option button is hidden from the DE visualisation toolbar. 
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 "share": {
@@ -692,7 +692,7 @@ This configuration simply works by removing the **share endpoint URL** from the 
 The **Chart** views in the Data Explorer visualisation pages can be hidden from the end-user, for a given instance of the DE, so there is no option to display data in any of the supported chart representations.  
 *Note* that the chart feature will only be hidden, and previous links that were displaying chart views will still work.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {
@@ -713,7 +713,7 @@ Since the [January 21, 2021 Release .Stat Suite JS 7.0.0](/dotstatsuite-document
 When the configuration parameter `search.downloadableDataflowResults` is set to **true**, then the download option is available in the search result for each result item/dataflow.  
 **Note** that, for dataflows that are externally defined/stored (see related [specifications](/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexing-externally-defined-dataflows)), this option will not work with the current verison of the DE, even though the download option in any format will work on the visualisation page for those dataflows too.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 "search": {
@@ -733,7 +733,7 @@ Since the [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documenta
 
 If a dataspace, e.g., with an older NSI web service version, doesn't support this `format` parameter, then the property `"supportsCsvFile": false` needs to be added for the data space in the `tenants.json` configuration file, because the support of the `format` URL parameter is assumed by default.   
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/tenants.json`
+* in `dotstatsuite-config-data/<env>/configs/tenants.json`
 
 ```json
     "spaces": {
@@ -782,7 +782,7 @@ The list of allowed/disallowed html features is configurable in the Data Explore
 
 For instance, to allow the tag "img", you must change the `allowedTags` key. To do so, copy the default allowed tags and add "img" to the list. In the below example, only, the `allowedTags` and `allowedAttributes` keys differ from the default settings, the others remain as in the default configuration.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {
@@ -848,7 +848,7 @@ If the parameter **"`supportsPostLongRequests`" is set to `false`**, then if the
 
 It is possible to enable/disable the "**Contact us**" form and the included **reCAPTCHA** feature (see [functional specs](/dotstatsuite-documentation/using-de/general-layout/#contact-us-form)).
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```js
 {
@@ -906,7 +906,7 @@ Configure the integration of an externally hosted pop-up survey in the Data Expl
 
 To configure a pop-up survey, enter the HTTPS-URL of the related externally hosted survey and a custom picture to be used for the survey pop-up window in the Data Explorer's settings.json file:  
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {
@@ -964,7 +964,7 @@ docker run --mount type=bind,source=path/custom_robots.txt,target=/server/robots
 Configure the integration of an external third-party tool by targetting the generated script tag of your tool.  
 *Note* that this configuration feature was tested and delivered with the monitoring tool "Pingdom", but it should be generic enough to be working with any other compatible third-party tool.
 
-* in `dotstatsuite-config-data/<env>/configs/<tenant>/data-explorer/settings.json`
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {
