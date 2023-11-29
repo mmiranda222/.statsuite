@@ -81,7 +81,7 @@ The following SDMX actions are supported by the .Stat Suite when uploading data 
 **`D`(elete)** actions are assumed to take place at the lowest level of detail provided in the message.
 - When dimension values are **omitted** then the values of those dimensions don't matter (SQL notion: any incl. NULL) to define the scope of the deletion. With this, a whole dataset, any slice of whole observations for dimension groups such as time series or individual whole observations can be deleted.
 - Dimension values can be **switched-off** when deleting higher-level attribute values that are not attached at these dimensions. Note that the attachment level of attributes is always predefined.
-- Measure and attribute values can be **omitted**: Apart from dimensions, whenever only specific values for measures or attributes are provided then only these values are deleted (within the given dimensional scope), otherwise (=when all non-dimension components are omitted) all non-dimension component values related to the given dimensional scope are deleted. Instead of real values for non-dimensional components, it is sufficient to use any valid place-holder or an intentionally missing value value.
+- Measure and attribute values can be **omitted**: Apart from dimensions, whenever only specific values for measures or attributes are provided then only these values are deleted (within the given dimensional scope), otherwise (=when all non-dimension components are omitted) all non-dimension component values related to the given dimensional scope are deleted. Instead of real values for non-dimensional components, it is sufficient to use any valid place-holder value or an intentionally missing value. **The .Stat Suite also accepts the star charcter '\*' as a place-holder for to be deleted measure and attribute values**.
 - When all measure or observation-level attribute values of an onservation have been set to NULL through multiple partial `D`(elete) actions, then the full observation is deleted.
 - When all higher-level attribute values of a specific partial key have been set to NULL through multiple partial `D`(elete) actions, then the partial key is deleted.
 - Deleting a non-existing observation or attribute is not resulting in an error.
@@ -94,15 +94,15 @@ The following SDMX actions are supported by the .Stat Suite when uploading data 
 
 |  | Format | Dimension value is                                           | | Measure or attribute value is   |                                          |
 |--|--------|--------------------------------------------------------------|-|--------------------------------|------------------------------------------|
-|  |        | omitted                                                      | switched-off\* | omitted                         | present                                  |
-| Action | `M`(erge) | Bulk merge is not permitted | Only for higher-level attributes that are **not** attached to this dimension (SQL notion: IS NULL).\* | Not to be changed. | To be updated/inserted. |
-| | `R`(eplace) | Bulk replace is not permitted | Only for higher-level attributes that are **not** attached to this dimension (SQL notion: IS NULL).\* | Obs.value/attr: To be *nulled*. Higher-level attr.: Not to be changed. | To be updated/inserted. |
-| | `D`(elete) | Dimension value doesn't matter (SQL notion: any incl. NULL). | Only for higher-level attributes that are **not** attached to this dimension (SQL notion: IS NULL).\* | To be deleted only if **all** non-dimension component values related to the given dimensional scope are omitted. | To be deleted. |
-| Format | XML    | xml element/attribute is absent | Higher-level attributes presented at dataflow, group or time-series level\* | xml element/attribute is absent | Any valid or intentionally missing value |
-| | JSON (in extractions only) | \<empty\>                              | Higher-level attributes presented at dataflow, group or time-series level\* | NULL or absent | Any valid or intentionally missing value |
+|  |        | omitted                                                      | switched-off<upper>\*</upper> | omitted                         | present                                  |
+| Action | `M`(erge) | Bulk merge is not permitted | Only for higher-level attributes that are **not** attached to this dimension (SQL notion: IS NULL).<upper>\*</upper> | Not to be changed. | To be updated/inserted. |
+| | `R`(eplace) | Bulk replace is not permitted | Only for higher-level attributes that are **not** attached to this dimension (SQL notion: IS NULL).<upper>\*</upper> | Obs.value/attr: To be *nulled*. Higher-level attr.: Not to be changed. | To be updated/inserted. |
+| | `D`(elete) | Dimension value doesn't matter (SQL notion: any incl. NULL). | Only for higher-level attributes that are **not** attached to this dimension (SQL notion: IS NULL).<upper>\*</upper> | To be deleted only if **all** non-dimension component values related to the given dimensional scope are omitted. | To be deleted. |
+| Format | XML    | xml element/attribute is absent | Higher-level attributes presented at dataflow, group or time-series level<upper>\*</upper> | xml element/attribute is absent | Any valid or intentionally missing value |
+| | JSON (in extractions only) | \<empty\>                              | Higher-level attributes presented at dataflow, group or time-series level<upper>\*</upper> | NULL or absent | Any valid or intentionally missing value |
 | | CSV    | \<empty\> or column is absent                                | `~` |\<empty\> or column is absent   | Any valid (incl. empty string enclosed in double quotation marks "") or intentionally missing value |
 
-\***Important note: In the current release and until [this ticket](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/491) is implemented, it is still allowed and required to _omit_ dimension values instead of _switching_ them _off_ with '`~`' in order to merge, replace or delete higher-level attribute values.**
+<upper>\*</upper>**Important note: In the current release and until [this ticket](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/491) is implemented, it is still allowed and required to _omit_ dimension values instead of _switching_ them _off_ with '`~`' in order to merge, replace or delete higher-level attribute values.**
 
 #### Intentionally missing values
 Intentionally missing values are currently actively supported only for **observation** values (measure).  
@@ -133,6 +133,7 @@ OECD:DF_TEST_DELETE(1.0),A,A,2020,A,AA,DF                       --> Skip OBS_VAL
 
 SDMX-CSV v2.0:
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,,,,                     --> Delete all data of that dataflow
 dataflow,OECD:DF_TEST_DELETE(1.0),I,A,A,2020,,A,AA,,DF          --> Skip OBS_VALUE and GR_ATTR
 dataflow,OECD:DF_TEST_DELETE(1.0),A,A,A,2020,,A,AA,,DF          --> Skip OBS_VALUE and GR_ATTR
 dataflow,OECD:DF_TEST_DELETE(1.0),M,A,A,2020,,A,AA,,DF          --> Skip OBS_VALUE and GR_ATTR
@@ -141,6 +142,7 @@ dataflow,OECD:DF_TEST_DELETE(1.0),R,A,A,2021,,A,AA,,DF          --> Set OBS_VALU
 dataflow,OECD:DF_TEST_DELETE(1.0),R,A,A,2021,,,AA,A,DF          --> Set OBS_VALUE and OBS_ATTR to NULL
 
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_ATTR,TS_ATTR,DF_ATTR
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,,\*                     --> Delete DF_ATTR
 dataflow,OECD:DF_TEST_DELETE(1.0),A,A,A,2020,A,AA,DF            --> Skip OBS_VALUE and GR_ATTR
 ```
 
@@ -155,26 +157,26 @@ Files:    <br/>
 - structures: [OECD-DF_TEST_DELETE-1.0-all_structures.xml](/https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/uploads/f75130ef03435b9229c63b5f0d013724/OECD-DF_TEST_DELETE-1.0-all_structures.xml)  <br/>
 - all data: [OECD-DF_TEST_DELETE-1.0-all_data.csv](/https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/uploads/bcb0d564baecaf28806865214709eadf/OECD-DF_TEST_DELETE-1.0-all_data.csv)  <br/>
 
-**Note:** in the following examples, 'n' represents any (valid) value for the given column (observation or attribute)
+**Note:** As the .Stat Suite also accepts the star charcter '\*' as a place-holder for to be deleted measure and attribute values, this approach is used in this example.
 
 | Delete                                                                                             | STRUCTURE | STRUCTURE_ID     | ACTION | DIM_1 | DIM_2 | TIME_PERIOD | OBS_VALUE | OBS_ATTR | TS_ATTR | GR_ATTR | DF_ATTR |
 |----------------------------------------------------------------------------------------------------|-----------|------------------|--------|-------|-------|-------------|-----------|----------|---------|---------|---------|
 | - whole content of the dataflow                                                                    | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             |           |          |         |         |         |
-| - all observations of the dataflow and the observation-level attributes                            | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             | n         | n        |         |         |         |
-| - all observation values of the dataflow                                                           | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             | n         |          |         |         |         |
-| - all attributes of the dataflow                                                                   | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             |           | n        | n       | n       | n       |
-| - attributes attached at dataflow level                                                            | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             |           |          |         |         | n       |
+| - all observations of the dataflow and the observation-level attributes                            | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             | \*         | \*        |         |         |         |
+| - all observation values of the dataflow                                                           | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             | \*         |          |         |         |         |
+| - all attributes of the dataflow                                                                   | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             |           | \*        | \*       | \*       | \*       |
+| - attributes attached at dataflow level                                                            | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             |           |          |         |         | \*       |
 | - everything related to DIM_2=B                                                                    | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       | B     |             |           |          |         |         |         |
-|                                                                                                    | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       | B     |             | n         | n        | n       | n       |         |
-| - everything attached to DIM_2=B                                                                   | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       | B     |             |           |          |         | n       |         |
-| - all observations (and its observation-level attributes) related to DIM_2=B                       | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       | B     |             | n         | n        |         |         |         |
-| - all time series attributes                                                                       | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             |           |          | n       |         |         |
+|                                                                                                    | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       | B     |             | \*         | \*        | \*       | \*       |         |
+| - everything attached to DIM_2=B                                                                   | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       | B     |             |           |          |         | \*       |         |
+| - all observations (and its observation-level attributes) related to DIM_2=B                       | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       | B     |             | \*         | \*        |         |         |         |
+| - all time series attributes                                                                       | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      |       |       |             |           |          | \*       |         |         |
 | - whole time series DIM_1=A,DIM_2=B                                                                | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             |           |          |         |         |         |
-| - the attributes attached to time series DIM_1=A,DIM_2=B                                               | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             |           |          | n       |         |         |
-| - observation values & observation-level attributes for time series DIM_1=A,DIM_2=B                | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             | n         | n        |         |         |         |
+| - the attributes attached to time series DIM_1=A,DIM_2=B                                               | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             |           |          | \*       |         |         |
+| - observation values & observation-level attributes for time series DIM_1=A,DIM_2=B                | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     |             | \*         | \*        |         |         |         |
 | - observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021 - approach 1 | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     |           |          |         |         |         |
-| - observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021 - approach 2 | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     | n         | n        |         |         |         |
-| - observation value attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021                                  | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     | n         |          |         |         |         |
+| - observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021 - approach 2 | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     | \*         | \*        |         |         |         |
+| - observation value attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021                                  | dataflow  | OECD:DF_TEST_DELETE(1.0) | D      | A     | B     | 2021     | \*         |          |         |         |         |
 
 Excel version: [Delete_action_examples.xlsx](/https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/uploads/9b35d5972474f354e6fdc9e86cd1f402/Delete_action_examples.xlsx)
 
@@ -189,7 +191,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_1__delete_whole_content_of_the_dataflow.
 ##### 2) delete all observations (obs.value and observation-level attribute) of the dataflow
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,n,n,,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,\*,\*,,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_2__delete_all_observations_of_the_dataflow_and_the_observation-level_attributes.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_2__delete_all_observations_of_the_dataflow_and_the_observation-level_attributes.csv?inline=false)  <br/>
 XML File: NOT POSSIBLE  <br/>
@@ -197,7 +199,7 @@ XML File: NOT POSSIBLE  <br/>
 ##### 3) delete all observation values of the dataflow
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,n,,,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,\*,,,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_3__delete_all_observation_values_of_the_dataflow.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_3__delete_all_observation_values_of_the_dataflow.csv?inline=false)  <br/>
 XML File: NOT POSSIBLE  <br/>
@@ -205,7 +207,7 @@ XML File: NOT POSSIBLE  <br/>
 ##### 4) delete all attributes of the dataflow
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,n,n,n,n
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,\*,\*,\*,\*
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_4__delete_all_attributes_of_the_dataflow.csv](/https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_4__delete_all_attributes_of_the_dataflow.csv?inline=false)  <br/>
 XML File: NOT POSSIBLE  <br/>
@@ -213,7 +215,7 @@ XML File: NOT POSSIBLE  <br/>
 ##### 5) delete attributes attached at dataflow level
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,,,,n
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,,,,\*
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_5__delete_attributes_attached_at_dataflow_level.xml?inline=false)  <br/>
@@ -228,7 +230,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_6-1__delete_everything_related_to_DIM_2_
 or
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,B,,n,n,n,n,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,B,,\*,\*,\*,\*,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_B_way2.xml?inline=false)  <br/>
@@ -236,7 +238,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_6-2__delete_everything_related_to_DIM_2_
 ##### 7) delete everything attached to DIM_2=B
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,B,,,,,n,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,B,,,,,\*,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B.xml?inline=false)  <br/>
@@ -244,7 +246,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_7__delete_everything_attached_to_DIM_2_B
 ##### 8) delete all observations (and its observation-level attributes) related to DIM_2=B
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,B,,n,n,,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,B,,\*,\*,,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_observation-level_attributes__related_to_DIM_2_B.xml?inline=false)  <br/>
@@ -252,7 +254,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_8__delete_all_observations__and_its_obse
 ##### 9) delete all time series attributes
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,,n,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,,,,,,\*,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_9__delete_all_time_series_attributes.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_9__delete_all_time_series_attributes.csv?inline=false)  <br/>
 XML File: NOT POSSIBLE  <br/>
@@ -268,7 +270,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_10__delete_whole_time_series_DIM_1_A_DIM
 ##### 11) delete the attributes attached to time series DIM_1=A,DIM_2=B
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,,,,n,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,,,,\*,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_time_series_DIM_1_A_DIM_2_B.xml?inline=false)  <br/>
@@ -276,7 +278,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_11__delete_the_attributes_attached_to_ti
 ##### 12) delete observation values & observation-level attributes for time series DIM_1=A,DIM_2=B
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,,n,n,,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,,\*,\*,,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_12__delete_observation_values___observation-level_attributes_for_time_series_DIM_1_A_DIM_2_B.xml?inline=false)  <br/>
@@ -292,7 +294,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observat
 ##### 13 B) delete observation (and its observation-level attributes) attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,2021,*,*,,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,2021,\*,\*,,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_13B__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13B__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observation-level_attributes__attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml?inline=false)  <br/>
@@ -300,7 +302,7 @@ XML File: [OECD-DF_TEST_DELETE-1.0-case_13__delete_observation__and_its_observat
 ##### 14) delete observation value attached to key DIM_1=A,DIM_2=B,TIME_PERIOD=2021
 ```
 STRUCTURE,STRUCTURE_ID,ACTION,DIM_1,DIM_2,TIME_PERIOD,OBS_VALUE,OBS_ATTR,TS_ATTR,GR_ATTR,DF_ATTR
-dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,2021,n,,,,
+dataflow,OECD:DF_TEST_DELETE(1.0),D,A,B,2021,\*,,,,
 ```
 CSV File: [OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.csv?inline=false)  <br/>
 XML File: [OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/static/OECD-DF_TEST_DELETE-1.0-case_14__delete_observation_value_attached_to_key_DIM_1_A_DIM_2_B_TIME_PERIOD_2021.xml?inline=false)  <br/>
