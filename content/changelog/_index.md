@@ -214,7 +214,6 @@ patch changes:
 patch change:
 
 - [dotstatsuite-data-viewer#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/41) Fix data-viewer Docker image to run with `node v16`.
-- [dotstatsuite-data-explorer#1099](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1099) Layout issues for microdata view fixed columns.
 
 ---
 
