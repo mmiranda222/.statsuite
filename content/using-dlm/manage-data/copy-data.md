@@ -61,6 +61,8 @@ When requesting to initiate a transfer between data spaces, it is possible to ei
 - Data only
 - Referential metadata only
 
+**Note** that, for referential metadata, this option will only transfer all referential metadata referencing the dataflow, and not the "generic" referential metadata values referencing the DSD. For transferring referential metadata referencing the DSD, see [here](/dotstatsuite-documentation/using-api/ref-metadata/#copy-of-referential-metadata-referencing-a-dsd).
+
 ![dlm copy data validation ](/dotstatsuite-documentation/images/dlm-copydata-content-type1.png)
 
 ---

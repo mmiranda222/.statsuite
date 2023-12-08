@@ -6,9 +6,11 @@ weight: 4400
 keywords: [
   'Introduction', '#introduction',
   'File format', '#file-format',
+  'Dataflow or DSD reference', '#dataflow-or-dsd-reference',
   'More details about the SDMX-CSV format', '#more-details-about-the-sdmx-csv-format',
   'Hierarchial referential metadata', '#hierarchial-referential-metadata',
   'Referential metadata upload and copy', '#referential-metadata-upload-and-copy',
+  'Copy of referential metadata referencing a DSD', '#copy-of-referential-metadata-referencing-a-dsd',
   'Referential metadata download with the SDMX (restful) web service', '#referential-metadata-download-with-the-sdmx-restful-web-service',
 ]
 
@@ -17,14 +19,17 @@ keywords: [
 #### Table of Content
 - [Introduction](#introduction)
 - [File format](#file-format)
+  - [Dataflow or DSD reference](#dataflow-or-dsd-reference)
   - [More details about the SDMX-CSV format](#more-details-about-the-sdmx-csv-format)
   - [Hierarchial referential metadata](#hierarchial-referential-metadata)
 - [Referential metadata upload and copy](#referential-metadata-upload-and-copy)
+  - [Copy of referential metadata referencing a DSD](#copy-of-referential-metadata-referencing-a-dsd)
 - [Referential metadata download with the SDMX (restful) web service](#referential-metadata-download-with-the-sdmx-restful-web-service)
 
 >*Version history:*  
-> Supporting referential metadata value retrieval with SDMX-JSON 2.0 and transfer with [release .Stat Suite .NET 8.0.0 at March 23, 2022](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-23-2022)  
-> Supporting referential metadata value upload and retrieval with SDMX-CSV 2.0 with [release .Stat Suite .NET 7.2.0 at December 3, 2021](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-3-2021)
+> Link referential metadata to either dataflow or DSD, and copy DSD-level referential metadata since [December 6, 2023 release .Stat Suite .NET "gingerbread"](/dotstatsuite-documentation/changelog/#december-6-2023)  
+> Supporting referential metadata value retrieval with SDMX-JSON 2.0 and transfer with [release .Stat Suite .NET 8.0.0 at March 23, 2022](/dotstatsuite-documentation/changelog/#march-23-2022)  
+> Supporting referential metadata value upload and retrieval with SDMX-CSV 2.0 with [release .Stat Suite .NET 7.2.0 at December 3, 2021](/dotstatsuite-documentation/changelog/#december-3-2021)
 
 ---
 
@@ -34,6 +39,7 @@ The upload is done using the transfer web service. The SDMX-CSV 2.0 file format 
 The download is done using the SDMX (NSI) web service. Two SDMX file formats are supported. See below.
 
 The following features are supported:
+- link referential metadata to either a dataflow or a Data Structure Definition (DSD)
 - very long textual referential metadata (maximum 536,870,912 characters in total for all languages)
 - [hierarchial referential metadata](#hierarchial-referential-metadata) attributes
 - attach referential metadata to (at least) a time period value
@@ -75,12 +81,21 @@ The .Stat Suite supports the following **file formats** for referential metadata
 
 In .Stat Suite Core, data and referential metadata cannot be up- or downloaded together (at the same time). The main reason is that the attachment of referential metadata values to specific combinations of dimension is defined in the data message itself and must be preserved. Note that in contrary to referential metadata, the attachments for normal attributes are necessarily defined in the Data Structure Definition (DSD).  
 
+#### Dataflow or DSD reference
+It is possible to upload and transfer referential metadata values either generically for a whole DSD, or specifically for a dataflow. Using the SDMX-CSV format (see details in the [section below](#more-details-about-the-sdmx-csv-format)), users can define referential metadata values tagertting a dataflow ID or a DSD ID.  
+Referential metadata referencing the DSD will be retrieved and displayed for all dataflows referencing that same DSD.  
+Referential metadata referencing the dataflow will be retrieved and displayed only for that particular dataflow, even if other dataflows are referencing the same DSD.  
+**Exception:** For highest-level referential metadata (without any dimension attachment), if there are 2 different values referencing both the DSD and the Dataflow, then it is the value refrencing the Dataflow that will take precedence and be retrieved and displayed. 
+
+**Current limitations:**
+- Supports imports in SDMX-CSV either for datastructure or dataflow, but not both in the same file.
+
 #### More details about the SDMX-CSV format
 The format of the .csv file for referential metadata must comply to the [SDMX-CSV version 2.0 format](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md), which can be summarised roughtly as follow (see the original specification for detailed information):
-- the first column: header row containing 'STRUCTURE' and each other row containing 'dataflow'
-- the second column: header row containing 'STRUCTURE_ID' and each other row containing the full dataflow identification 'agencyID:dataflowId(version)' e.g. 'AGENCY:DF_ID(1.0)'
+- the first column: header row containing 'STRUCTURE' and each other row containing 'DATAFLOW' or 'DATASTRUCTURE'
+- the second column: header row containing 'STRUCTURE_ID' and each other row containing the full dataflow identification 'agencyID:dataflowId(version)' e.g. 'AGENCY:DF_ID(1.0)', or the full DSD identification 'agencyID:datastructureId(version)' e.g. 'AGENCY:DSD_ID(1.0)'
 - the third column (optional): header row containing 'ACTION' and each other row containing either 'I' for Information, 'A' for Append, 'M' for Merge, 'R' for Replace or 'D' for Delete. For more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/#supported-type-of-actions).
-- one column for each dimension of the dataflow: header row containing the dimension IDs and each other row containing the dimension value IDs to which the attribute values of this row are attached. It is left empty in rows where the attribute doesn't attach to that dimension.
+- one column for each dimension of the dataflow/datastructure: header row containing the dimension IDs and each other row containing the dimension value IDs to which the attribute values of this row are attached. It is left empty in rows where the attribute doesn't attach to that dimension.
 - one column for each submitted referential metadata: header row containing the attribute ID and each other row containing the corresponding attribute values
 
 **Example:**
@@ -101,10 +116,8 @@ All textual values containing commas need to be encapsulated within double-quote
 
 `"en: ""<a href=\""mailto:contact-en@my-org.org\"">contact-en@my-org.org</a>"",fr: ""<a href=\""mailto:contact-fr@my-org.org\"">contact-fr@my-org.org</a>"""`
 
-As can be seen in this example, the language codes in localised JSON snippets do not need to be put into (doubled) double quotes.
-
-For me details about the referential metadata types supported by the data explorer display, see [this topic](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#referential-metadata-types).
-
+As can be seen in this example, the language codes in localised JSON snippets do not need to be put into (doubled) double quotes.  
+For more details about the referential metadata types supported by the data explorer display, see [this topic](/dotstatsuite-documentation/using-api/core-data-model/#referential-metadata-types).  
 See [here](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/blob/master/content/OECD_SNA_TABLE1_1.0_-_AUS_metadata.csv) for an example of an SDMX-CSV file with referential metadata.
 
 ![dlm upload referential metadata csv file headers](/dotstatsuite-documentation/images/dlm-upload-referential-metadata-csv.png)
@@ -127,7 +140,7 @@ Example:
 
 ### Referential metadata upload and copy
 The .Stat Suite Transfer web service is used to upload or copy referential metadata from one data space to another. See for more details:
-- [Upload referential metadata from an SDMX-CSV 2.0 file](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/) 
+- [Upload referential metadata from an SDMX-CSV 2.0 file](/dotstatsuite-documentation/using-api/ref-metadata/upload-referential-metadata/) 
 
 Note: As the referential metadata values cannot be uploaded together with attribute and observation values at the same time (with the same SDMX-CSV 2.0 file), they need to be uploaded separately. The Transfer service automatically recognises the type of content.
 
@@ -136,6 +149,12 @@ The **`transferContent`** parameter of the `/transfer/dataflow` function allows:
 - transferring both data and referential metadata (0) *- default option -*,
 - transferring data only (1), or
 - transferring referential metadata only (2).
+
+Note that this method will transfer all referential metadata related to a dataflow, and not those referencing the DSD. For transferring only referential metadata referencing the DSD, see the section below.
+
+#### Copy of referential metadata referencing a DSD
+It is possible to transfer (copy) referential metadata referencing the DSD, by using the API function `/transfer/dsd`.  
+Note that currently, this method is only accessible using the Swagger user interface of the transfer service (*https://transfer-env.domain.org/swagger/*). See more details [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-21transferdsd-transfer-referential-metadata-changes-of-a-dsd-from-one-space-to-another) about the supported parameters of this method.
 
 ---
 
@@ -216,6 +235,6 @@ The `updatedAfter` URL parameter is to be used with a date-time value (including
 
 `updatedAfter=2023-04-28T15:45:00+01:00`
 
-For details, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data-synchronisation).
+For details, see [here](/dotstatsuite-documentation/using-api/data-synchronisation).
 
 The HTTP `accept-language` header allows retrieving only specific locals.

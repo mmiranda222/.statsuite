@@ -30,16 +30,16 @@ keywords: [
 - [Maximum upload file size](#maximum-upload-file-size)
 
 > *Version history:*  
-> SDMX-CSV version 2.0 format to support new action types with [July 4, 2023 Release .Stat Suite dragonfruit](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-4-2023)
+> SDMX-CSV version 2.0 format to support new action types with [July 4, 2023 Release .Stat Suite dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023)
 
 ---
 
 ### Prerequisites
 In .Stat Suite Core, data and referential metadata cannot be uploaded together (at the same time). They have to be uploaded through separate import files.  
 
-Referential metadata can be uploaded **only after** having uploaded the targeted dataflow in the same data space.  
+Referential metadata can be uploaded **only after** having uploaded the targeted DSD or dataflow in the same data space.  
 
-According to the SDMX standard formats, the referential metadata file must contain the full identification of the dataflow (agency, id, version) for which referential metadata are uploaded. Therefore it is not necessary to indicate the target dataflow in the DLM. Only the target data space needs to be selected.
+According to the SDMX standard formats, the referential metadata file must contain the full identification of the dataflow or the DSD (agency, id, version) for which referential metadata are uploaded. Therefore it is not necessary to indicate the target dataflow or DSD in the DLM. Only the target data space needs to be selected.
 
 Referential metadata can be uploaded **only after** having uploaded the related Metadata Structure Definition (MSD) and its concepts (in one or more Concept Schemes) in the same data space and having linked the underlying Data Structure Definition (DSD) to that MSD by adding the annotation of type **`METADATA`** with the appropriate MSD-URN to the DSD, e.g.
 
@@ -255,6 +255,6 @@ The size of files uploaded through the request message body is limited by defaul
 
 It is possible also to compress the data file using the 'zip' format, and submit the compressed file in the message body. In this case the limitation applies on the zipped file size.
 
-The file size limit is configurable by an administrator. Please see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#upload-size-limit) for more information.
+The file size limit is configurable by an administrator. Please see [here](/dotstatsuite-documentation/configurations/dlm-configuration/#upload-size-limit) for more information.
 
 Files submitted through their path or URL do not have a specific size limit. However, the data upload engine always has internal hardware-related limitations.
