@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [December 6, 2023](#december-6-2023)
 - [October 18, 2023](#october-18-2023)
 - [October 11, 2023](#october-11-2023)
 - [October 2, 2023](#october-2-2023)
@@ -136,7 +137,8 @@ ToC
   - [.Stat Suite JS "spin"](#december-5-2022) - 5 December 2022
   - [.Stat Suite JS "radio"](#october-31-2022) - 31 October 2022
 - Core module (incl. DLM Excel add-in):
-  - [.Stat Suite .NET "funfetti"](#october-11-2023) - 11 October 2023 (latest)
+  - [.Stat Suite .NET "gingerbread"](#december-6-2023) - 6 December 2023 (latest)
+  - [.Stat Suite .NET "funfetti"](#october-11-2023) - 11 October 2023
   - [.Stat Suite .NET "elote"](#september-1-2023) - 1 September 2023
   - [.Stat Suite .NET "dragonfruit"](#july-4-2023) - 4 July 2023
   - [.Stat Suite .NET "cinnamon"](#june-12-2023) - 12 June 2023
@@ -145,6 +147,47 @@ ToC
 > **Warnings for earlier upgrades:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-warning)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-warning)
+
+---
+
+### December 6, 2023
+**[Release .Stat Suite .NET "gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues)**
+> This release includes a new version of **core-transfer**, **sdmxri-nsi-ws**, and **core-data-access** services.  
+**Compatibilities:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite JavaScript release [wave](#august-03-2023). It is **not compatible** with .Stat Suite JavaScript release [xray](#october-18-2023).
+
+**Performance evolutions:** check our new dashboard [.Stat Suite Core: performance results](https://siscc.grafana.net/public-dashboards/f98021df13744e65a21168df8c99e597)
+
+non-backward-compatible changes:
+
+*None*
+
+backward-compatible enhancements and new features:
+
+- [dotstatsuite-core-transfer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/596) Allow storing **referential metadata linked to either a DF or a DSD**. ([Documentation](/dotstatsuite-documentation/using-api/ref-metadata/#dataflow-or-dsd-reference)). **Note** that this feature is introduced with a new version 2.1 of the transfer API with the new `/transfer/dsd` method (more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#copy-of-referential-metadata-referencing-a-dsd)).
+- [dotstatsuite-core-sdmxri-nsi-ws#384](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/384) Extend the SDMX CSV 2.0 readers to support DSD reference.
+- [dotstatsuite-core-sdmxri-nsi-ws#357](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/357) Implement the SDMX-CSV 2.0 **`labels=name` option**.
+- [dotstatsuite-core-sdmxri-nsi-ws#314](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/394) The `includeHistory` parameter should return extra columns for 'validFrom' and 'validTo' values in CSV v2.0. ([Documentation](/dotstatsuite-documentation/using-api/data/#time-machine-features))
+- [dotstatsuite-core-sdmxri-nsi-ws#393](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/393) The `asOf` parameter should return a unique *SDMX* dataset. ([Documentation](/dotstatsuite-documentation/using-api/data/#time-machine-features))
+- [dotstatsuite-core-transfer#628](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/628) Automatically unblock queue by properly closing yet unfinished own jobs when the transfer service instance restarts.
+- [dotstatsuite-core-sdmxri-nsi-ws#382](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/382) Make IEntity (mappingsets) management asynchronous.
+- [dotstatsuite-core-sdmxri-nsi-ws#378](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/378) Avoid duplicate calls for mappingsets info in data requests with range header.
+- [dotstatsuite-core-sdmxri-nsi-ws#410](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/410) *(DevOps)* Deploy NSI version 8.18.7.
+- [dotstatsuite-core-sdmxri-nsi-ws#402](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/402) *(DevOps)* Deploy NSI version 8.18.6.
+- [dotstatsuite-core-transfer#568](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/568) *(DevOps)* Set up a schedule run of Postman integration tests in gitlab pipelines.
+- [dotstatsuite-quality-assurance#53](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/53) *(DevOps)* Postman integration tests job fails when dataDb requires migration.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#652](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/652) Migration script errors.
+- [dotstatsuite-core-transfer#646](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/646) Unable to make a `POST STATUS` request in Azure using service principal account.
+- [dotstatsuite-core-transfer#634](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/634) Some test cases of `LastUpdatedUtcDataQueryTest` of transfer service are failing (local dev. env.)
+- [dotstatsuite-core-transfer#632](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/632) Extraction of data for dataflow with non-coded dimension doesn't work after data upload.
+- [dotstatsuite-core-transfer#631](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/631) `init/allMappingsets` method wrongly fails for external dataflows.
+- [dotstatsuite-core-transfer#625](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/625) Transfer of dataflow with non-coded dimension fails.
+- [dotstatsuite-core-transfer#624](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/624) Embargo failed once updating data.
+- [dotstatsuite-core-data-access#126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/126) Simplify the logic of mappingset creation to always regenerate mappingsets.
+- [dotstatsuite-core-sdmxri-nsi-ws#404](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/404) Exports in xml (default) with `includeHistory=true` return references to DSD instead of DF.
+- [dotstatsuite-data-lifecycle-manager#407](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/407) The SQL types used for 'Float' and 'Double' observations with intentionally missing values are too small (+ enhance the error message).
 
 ---
 
