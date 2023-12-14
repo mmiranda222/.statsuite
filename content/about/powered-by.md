@@ -111,3 +111,9 @@ List of organisations and initiatives built with and powered by the .Stat Suite 
 **Sistema de Información del Mercado Laboral (SIMEL) en Uruguay** [SIMEL.uy](https://de-mtss.simel.mtss.gub.uy/)
 
 ---
+
+![Statcan CCEI](/dotstatsuite-documentation/images/logo_statcan-energy.png)
+
+**Canadian Centre for Energy Information (CCEI) data portal** [Statcan CCEI](https://de-ccei.statcan.gc.ca/)
+
+---
