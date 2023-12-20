@@ -13,7 +13,7 @@ keywords: [
   'Local search', '#local-search',
   'Keyboard selection options', '#keyboard-selection-options',
   'Frequency and Time period filter', '#frequency-and-time-period-filter',
-  'Used filters panel', '#used-filters-panel',
+  'Applied filters panel', '#applied-filters-panel',
 ]
 ---
 
@@ -152,29 +152,9 @@ As long as the mouse button is held, the data table is not updated.
 ---
 
 ### Frequency and Time period filter
-
 See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) for details.
 
 ---
 
 ### Applied filters panel
-
-Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), the 'Used filters' panel has been renamed to 'Applied filters' and moved above the data table.   
-   
-The 'Applied filters' panel displays all currently selected items per dimension of the data table. 
-
-This panel provides an overview of the current selection and an easy mean to unselect individual dimension items or whole dimension selections:
-* one single item by clicking on the `x` next to the item label, or
-* all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
-* all selections by clicking on `Clear all filters`.  
-
-Selected root items are displayed ordinarily. Selected child items are displayed prefixed with `...>` and the details of the full parent hierarchy are shown in a tooltip.
-
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent-used-filters-1.png)    
-
-To ease the readibility of the applied filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number being the number of selected items for the specific facet.
-
-![Applied filters](/dotstatsuite-documentation/images/de-filters5.png)  
-![Applied filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
-
-When viewing the microdata table, the 'Applied filters' panel is not displayed.
+See [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/applied-filters)
