@@ -22,12 +22,15 @@ keywords: [
 
 ---
 
+> *Version history:*  
+> Allow to manage permissions on specific external spaces since [December 20, 2023 Release .Stat Suite JS yay](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
 
 ### Manage permissions overview
 The Data Lifecycle Manager provides a user-friendly graphical interface to **manage user access rights** to the content of the .Stat Suite data spaces. The related **'Manage permissions'** page is accessible from the DLM main menu. Behind the scenes, the DLM communicates with the AuthorisationManagement web service, which allows retrieving, inserting, updating and deleted user permissions. For more information about the usage and parameters of this API, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/permission-management).
 
-The DLM 'Manage permissions' menu item is shown only when the authenticated user has any "Manage permissions" rights for at least one internal data space.  
+The DLM 'Manage permissions' menu item is shown only when the authenticated user has any "Manage permissions" rights for at least one internal data space. It is also possible to allow managing permission for a specific externally defined data space: see [how to configure the option](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#allow-managing-permissions-on-a-specific-external-space).
+
 The 'Manage permissions' page shows a list of user permissions that the authenticated user is allowed to view and/or manage.
 
 Permissions are listed with the following information in columns:
