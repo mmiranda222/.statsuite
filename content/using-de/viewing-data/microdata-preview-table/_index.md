@@ -6,6 +6,7 @@ weight: 2975
 keywords: [
   'Microdata in the .Stat Suite', '#microdata-in-the-stat-suite',
   'Microdata preview-table', '#microdata-preview-table',
+  'Dimension order and indentation', '#dimension-order-and-indentation',
 ]
 
 ---
@@ -13,13 +14,15 @@ keywords: [
 #### Table of Content
 - [Microdata in the .Stat Suite](#microdata-in-the-stat-suite)
 - [Microdata preview-table](#microdata-preview-table)
+  - [Dimension order and indentation](#dimension-order-and-indentation)
 
 ---
 
+> *Version history:*  
+> Order and indented dimensions since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Released in [March 10, 2021 Release .Stat Suite JS 7.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-10-2021)
 
 ### Microdata in the .Stat Suite
-
 The .Stat Suite supports the storage and dissemination of disaggregated data (microdata) based on SDMX, with the technical limitation that if the microdata ID dimension is non-coded and textual, its values can't be longer than 4000 characters.  
 Microdata and their aggregations are defined by the same DSD and are accessed through the same dataflow.
 
@@ -52,7 +55,6 @@ Also note that in a future version of the .Stat Suite, it is intended to allow t
 ---
 
 ### Microdata preview-table
-
 The microdata preview-table is displayed first when the user clicks on an aggregated data value which has a link. By clicking the link, the microdata tab becomes 'active', and the microdata preview-table is constructed out of the data resulting from the SDMX query that corresponds to the data selection (**including also all respective child dimension values**) of the related aggregated data value, but by replacing the selection "**_T**" for the *DRILLDOWN* dimension by "**DD**". It thus only displays microdata, and no aggregated data.
 
 Note: The microdata preview-table is only meant to provide a quick mean for users to validate that they have found the microdata that they were looking for.  
@@ -89,4 +91,13 @@ Additional rules:
 - The microdata tab is muted (greyed out) and inaccessible whenever there is currently no active microdata selection. This is the case when the visualisation page opens or whenever the user changes the filter selection. Thus whenever the user changes the filter selection, then the microdata tab becomes muted as the previous microdata selection is not valid anymore.
 - As long as the selection is not changed and thus the microdata tab is not muted, the user can (using the menu tabs) navigate forth and back between the original data table and the last displayed microdata table.
 
+#### Dimension order and indentation
+Similarly to the "regular" data table views, the rows of the microdata table are sorted for all dimensions in the order listed in the data table view's columns according to their (in priority order):
+- explicit order through a *SDMX* Hierarchical Codelist (HCL)
+- explicit order through the *SDMX* `ORDER` annotations
+- implicit order in codelist
+
+In addition, the dimension value are intended according to their level in the displayed hierarchy.
+
+![de-microdata-3](/dotstatsuite-documentation/images/de-microdata-3.png)
 
