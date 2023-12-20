@@ -42,7 +42,7 @@ The overview provides the following localised pieces of information related to a
 - when a listed dimension or attribute has a description, then the corresponding text is displayed in a bubble tooltip.
 - the list of **categories** in which the dataflow is categorised and which are configured as homepage facet with the associated category names and its (optional) parent hierarchy, e.g. *'Topic: Industry > Tourism'*
 - the **data source** information (if configured as homepage facet), e.g. *'Data source: UNSD-Hub'*
-- the **total number of available data points** (obtained from the Actual or Available content constraints)
+- the **number of unfiltered data points** (obtained from the Actual or Available content constraints)
 - the **last updated** date (obtained from the Actual content constraint validity dates)
 - the **related files** with a list of hyperlinks to (optional) external resources (as listed in the dataflow's EXTERNAL_RESOURCE annotations) and similar to the 'download' option.
 - the alphabetically ordered list of localised names (current user locale) of all other dataflows that share the same DSD with the current dataflow. They are displayed under the title **'You might also be interested by this data'** and link to their corresponding data visualisation pages (in new web-browser tabs).
