@@ -959,12 +959,16 @@ docker run --mount type=bind,source=path/custom_robots.txt,target=/server/robots
 ---
 
 ### Third-party tools integration
-> Introduced with [September 20, 2023 Release .Stat Suite JS 'xray'](/dotstatsuite-documentation/changelog/#september-20-2023)  
+> Introduced with [September 20, 2023 Release .Stat Suite JS 'xray'](/dotstatsuite-documentation/changelog/#september-20-2023)
 
-Configure the integration of an external third-party tool by targetting the generated script tag of your tool.  
-*Note* that this configuration feature was tested and delivered with the monitoring tool "Pingdom", but it should be generic enough to be working with any other compatible third-party tool.
+Configure the integration of an external third-party tool by targetting its generated script tag. It can be configured **per tenant** (in the `settings.json` file of an app), or per **tenant scope** (in the `tenants.json` file).  
+*Note* that this configuration feature was tested and delivered with existing monitoring tool such as Pingdom and Matomo, but it should be generic enough to be working with any other compatible third-party tool.
 
 * in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
+
+Example:
+
+**Pingdom**
 
 ```json
 {
@@ -975,4 +979,39 @@ Configure the integration of an external third-party tool by targetting the gene
   }
 }
 
+```
+
+**Matomo**  
+Because Matomo does not host the script behind a unique URL, you need to host it somewhere else safe. you can use the DE config as an hosted server, and put your script under the assets folder, so your `scriptTags` will then target your script under the asset path (see example below).  
+Also note that, if you edit your `index.html` to embed your script, you'll need to maintain your own modified config. between each .Stat Suite release. 
+
+```json
+{
+  "app": {
+    "scriptTags": [
+      "https://de-qa.siscc.org/assets/siscc/data-explorer/scripts/matomo.js"
+    ],
+  }
+}
+
+```
+
+* in `dotstatsuite-config-data/<env>/configs/settings.json`
+
+Example:
+
+**Pingdom**
+
+```json
+    "scopes": {
+      "dlm": {
+        "type": "dlm",
+        "label": "dlm",
+        "oidc": {
+          "authority": "https://.../auth/realms/OECD",
+          "client_id": "app"
+        },
+        "scriptTags": ["https://rum-static.pingdom.net/pa-xxxxxxxxxxxxx.js"],
+      }
+    }
 ```
