@@ -27,3 +27,7 @@ The DLM displays in a popup all the listed artefacts using a tree control with v
 The current selected artefact is displayed in bold, and when clicking on any artefact, it opens a new tab/window displaying the content of the artefact, the same way it is currently done for the artefacts' list on the homepage overview.
 
 The popup can be closed using the window close cross icon.
+
+Note: When the Metadata annotation type is defined in a data structure definition while the metadata structure definition is not available in the space, the DLM list related structures displays a warning next to the metadata strutcutre definition . (see more about attachment of the metadata structure definition [here](/dotstatsuite-documentation/using-api/ref-metadata/)).  
+
+![DLM list related structures](/dotstatsuite-documentation/images/dlm-list-related-structures-msd-warning.png) 
