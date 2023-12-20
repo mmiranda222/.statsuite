@@ -35,7 +35,8 @@ When users perform a free text search or browse by a facet from the .Stat DE hom
 ---
 
 ### Result content  
-The total number of search hits is displayed on top of the search result page content, followed by the first set of the most relevant search results.  
+The total number of search hits is displayed on top of the search result page content above the thick grey line, followed by the first set of the most relevant search results. In reduced (responsive) mode, the [x] results moves right to Applied filters.
+
 The search results page is paginated and lists all result hits.   
  
 Each search result is divided into three parts:   
@@ -43,7 +44,7 @@ Each search result is divided into three parts:
 2. The second part displays extended information in the expanded mode;
 3. third part is the set of options on the right side.   
 
-![de search result content](/dotstatsuite-documentation/images/de-result-1.png)  
+![de facet result](/dotstatsuite-documentation/images/de-result-1.png) 
 
 The following information is displayed for each search result:  
 1. Default display of **basic information** (collapsed mode)  
