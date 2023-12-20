@@ -29,9 +29,13 @@ keywords: [
 ---
 
 >*Version history:*  
-> Fully refactored and enhanced in order to introduce a better management of all shared objects in a single page with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
-> Added the email option to list and delete with [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)  
-> Introduced in [June 4, 2019 Release](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-4-2019) 
+> Database migration from Redis to Mongo produces longer unique IDs of shared views; in consequence, removal of the ID column from the list of active shared views with [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
+> Warning of sharing non-public data introduced with [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)  
+> Fully refactored and enhanced in order to introduce a better management of all shared objects in a single page with [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
+> Prefilling of email addresses since [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021)  
+> Added the email option to list and delete with [April 1, 2021 Release .Stat Suite JS 7.2.0](/dotstatsuite-documentation/changelog/#april-1-2021)  
+> Cleanup outdated shared views introduced with [November 30, 2020 Release .Stat Suite JS 6.1.0](/dotstatsuite-documentation/changelog/#november-30-2020)  
+> Introduced in [June 4, 2019 Release](/dotstatsuite-documentation/changelog/#june-4-2019)
 
 ![Watch this video](/dotstatsuite-documentation/images/movie-logo.png)**<a href="https://youtu.be/KIckUFL5ins" target="_blank">Watch this video</a>** on how to manage shared data views of the Data Explorer.
 
@@ -46,7 +50,7 @@ There are two options for sharing the data visualisation:
 
 In order to obtain the URL and the embed code for sharing the visualisation, the user must provide his/her **email address** and initiate the request by clicking on the button "Request URL and embed code".  
 
-Since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021), the following behaviors are also applied to the email address field:
+The following behaviors are also applied to the email address field:
 * If the user is authenticated, then it is prefilled with the email address used during the authentication. The email address is prefilled as long as the user stays authenticated during his/her DE journey;
 * If not authenticated, then the email address used during the first shared request will stay prefilled, even when changing the data view selection(s), or even when viewing a different data view (dataflow).
 
@@ -54,7 +58,7 @@ Once clicked on "Request URL and embed code", the user gets the following messag
 
 ![DE Share request](/dotstatsuite-documentation/images/de-share2.png)
 
-**Note** that, since [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022), when the user is authenticated and requests to share a snapshot of data that are not publicly available (e.g. a private dataflow triggered from the DLM preview), then a localised warning message indicates that those data will be publicly accessible even though potentially not yet officially and publicly released.
+**Note** that, when the user is authenticated and requests to share a snapshot of data that are not publicly available (e.g. a private dataflow triggered from the DLM preview), then a localised warning message indicates that those data will be publicly accessible even though potentially not yet officially and publicly released.
 
 ![DE Share warning snapshot](/dotstatsuite-documentation/images/de-share-snapshot-warning.png)
  
@@ -86,7 +90,6 @@ The shared view contains the data table or chart view, including the header (tit
 The DE share page that lists the shared active data views of the user is accessible through a web link with a token provided to the user in the email confirmation email. Once this token is expired (by default after a 4 hours' period of time), the user must request a new web link (see the process to [request a new link](#request-a-new-link-to-access-own-shared-visualisations)). 
 
 The DE share page is localised and lists all the active visualisations of the user with the following information:
-- **ID** of the shared visualisation
 - **Title** with the chart type or table icon, and its localised title (the title is wrapped when too long to fit into one line)
 - **Created** for the date and time when the visualisation was activated
 - **Last viewed** for the date and time when the visualisation was last viewed
@@ -121,8 +124,6 @@ Clicking on "Delete" permanently removes the shared visualisation from the datab
 ---
 
 ### Delete all own shared visualisations
-> Introduced in [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)
-
 When the list of shared visualisations contains more than one element, then a "Delete all" button is displayed at the bottom of the list. Clicking on it opens a popup message requesting to cancel or confirm the deletion of all shared visualisations of the user.
 
 ![Share delete all](/dotstatsuite-documentation/images/de-share26.png)
@@ -147,8 +148,6 @@ Note that the token expires (by default after 4 hours) independently from whethe
 ---
 
 ### Cleanup feature for all outdated shared visualisations
-> Introduced in [November 30, 2020 Release .Stat Suite JS 6.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#november-30-2020)
-
 In order to keep infrastructure needs minimal and performance high, an *admin* API feature of the Share service allows manually deleting all outdated shared visualisations of any user.
 
 e.g.  
