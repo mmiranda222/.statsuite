@@ -34,6 +34,7 @@ keywords: [
 - [Pinned facets](#pinned-facets)
 
 > *Version history:*  
+> 'Applied filters' area is moved in the page header since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Simplify datasource facet rules to make it "almost" as a normal facet with [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
 > Bypass search result page exception with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
 > Improved the design of selectable second-level with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
@@ -93,11 +94,16 @@ If a facet value contains **only one single indexed dataflow**, then selecting t
 ---
 
 ### Facets on the search result page
-The facets shown in the search result page are fully dependent on the current search context. Only those facets are included, for which the dataflows listed as search results have values.  
+The facets shown in the search result page are fully dependent on the current search context. Only those facets are included, for which the dataflows listed as search results have values.   
 
-When browsing and filtering the search result content, only one facet can be expanded at a time. This also includes the 'Applied filters' panel which is behaving as a facet.
+When browsing and filtering the search result content, only one facet can be expanded at a time.  
+ 
+Since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023), the ‘Applied filters’ moved above the search results area. 
+The 'Applied filters' panel is then always visible and can be expanded if there are more than 2 lines of applied filters. The last line always refers to the "Clear all filters" option.  
 
-![de facet result](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage.png)
+Note: The menu buttons (currently only Sort) are positioned below the thick grey line and are separated from the search results through a light line, similarly to the menu on the data visualisation page.  
+
+![de facet result](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage.png) 
 
 When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.  
 
@@ -110,7 +116,7 @@ Facets can be removed (hidden) from the search result page when specifically def
 Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
 To not overwhelm the facet list, by default only a limited number of search facets (defined in the [DE configuration under the key `defaultFacetsNumber`](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-hide-lower-search-result-facets)) are displayed while the other facets are hidden under a **`More Filters`** accordion expandable on demand. The accordion title is complemented by the number of hidden facets within brackets. If a search returns less facets than the defined limit, then the accordion is not displayed.
 
-![de facet - more filters](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters.png) ![de facet - more filters](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters-expanded.png)
+![de facet - more filters](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters.png)  
 
 #### Facet type
 All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values). However, only one new facet value can be selected at any time, as this automatically triggers the refreshing of the search results, facets and the ['Applied filters' panel](#applied-filters). This is necessary to assure that the user doesn't combine selections of facet values for which no search result exists.   
