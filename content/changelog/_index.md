@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [December 20, 2023](#december-20-2023)
 - [December 6, 2023](#december-6-2023)
 - [October 18, 2023](#october-18-2023)
 - [October 11, 2023](#october-11-2023)
@@ -129,7 +130,8 @@ ToC
 **Release versions of the last 12 months:**
 
 - Data Explorer and Data Lifecycle Manager modules:
-  - [.Stat Suite JS "xray"](#october-18-2023) - 18 October 2023 (latest)
+  - [.Stat Suite JS "yay"](#december-20-2023) - 20 December 2023 (latest)
+  - [.Stat Suite JS "xray"](#october-18-2023) - 18 October 2023
   - [.Stat Suite JS "wave"](#august-03-2023) - 03 August 2023
   - [.Stat Suite JS "virtual"](#july-20-2023) - 20 July 2023
   - [.Stat Suite JS "unicorn"](#june-28-2023) - 28 June 2023
@@ -147,6 +149,78 @@ ToC
 > **Warnings for earlier upgrades:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-warning)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-warning)
+
+---
+
+### December 20, 2023
+**[Release .Stat Suite JS "yay"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/73#tab-issues)**
+> This **major** release includes a new version of all the JavaScript services and applications *(except keycloak)*.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite CORE [gingerbread](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72) release.
+
+non-backward-compatible changes:
+
+- [dotstatsuite-share#62](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/62) *(Refactoring)* **Migrate the share database from Redis to MongoDB**. Redis database is no longer required in .Stat Suite architecture, a script is provided for migrating the share content to the new Mongo database (see the [operational changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/73#mandatory-operational-changelog)). It is adviced to keep Redis database in parallel for safety at least for this current release.
+
+backward-compatible enhancements and new features:
+
+- [dotstatsuite-data-explorer#1043](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1043) **New rules for hierarchical dimension display in the table view**. ([Documentation](/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-hierarchical-dimensions))
+- [dotstatsuite-data-explorer#1041](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1041) **Allow selecting parents without data** when their children are selected in the filters of the visualisation page. ([Documentation](/dotstatsuite-documentation/using-de/viewing-data/filters/#selectable-empty-parent-in-hierarchical-filters))
+- [dotstatsuite-data-explorer#414](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/414) **Automated parent selection** in filters with hierarchical contents of the visualisation page for specific data views (through *SDMX* annotation). ([Documentation](/dotstatsuite-documentation/using-de/viewing-data/filters/#automated-selected-parents))
+- [dotstatsuite-data-explorer#641](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/641) **Limit the time-period and frequency values** according to the current data availability and to the current selection. ([Documentation](/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/))
+- [dotstatsuite-data-explorer#962](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/962) By default, sort home page facet values alphabetically. ([Updated documentation](/dotstatsuite-documentation/using-de/searching-data/facets/#home-page-facets))
+- [dotstatsuite-data-explorer#984](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/984) Alphabetical order of facets in search result pages. ([Updated documentation](/dotstatsuite-documentation/using-de/searching-data/facets/#facets-on-the-search-result-page))
+- [dotstatsuite-data-explorer#1075](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1075) Change the **display of "Applied filters" in the search result page**. ([Documentation](/dotstatsuite-documentation/using-de/searching-data/facets/#applied-filters))
+- [dotstatsuite-data-explorer#1081](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1081) Add the number of **current data points** to the 'Applied filter' area of the visualisation page. ([Documentation](/dotstatsuite-documentation/using-de/viewing-data/filters/applied-filters/#data-points))
+- [dotstatsuite-data-explorer#1052](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1052) Only show indexed dataflows in the list of related dataflows in the Overview page. 
+- [dotstatsuite-data-explorer#1010](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1010) Order alphabetically the related dataflows in the Overview page. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/overview/#overview-content))
+- [dotstatsuite-data-explorer#1111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1111) Support SDMX-Json 2.0 data format with **non-coded components in DE display**.
+- [dotstatsuite-data-explorer#1160](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1160) **Wrap textual observation values** in the table view. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/preview-table/#display-of-qualitative-observations))
+- [dotstatsuite-data-explorer#987](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/987) Improve titles in the DE side panel (hide special values and `NOT_DISPLAYED` dimension + add separators). ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/))
+- [dotstatsuite-data-explorer#922](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/922) Microdata preview should display dimension values in specified order and indented according to their hierarchy. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/#dimension-order-and-indentation))
+- [dotstatsuite-share#65](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/65) Remove the ID column from the active shared views list. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/share/))
+- [dotstatsuite-config#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/45) Add **Pingdom** code snippets for monitoring real users of Data Viewer and DLM. ([Documentation](/dotstatsuite-documentation/configurations/de-configuration/#third-party-tools-integration))
+- [dotstatsuite-config#47](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/47) Add **Pingdom** code snippets per tenant scope for monitoring real users of web apps. ([Documentation](/dotstatsuite-documentation/configurations/de-configuration/#third-party-tools-integration))
+- [dotstatsuite-data-lifecycle-manager#373](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/373) Add an option in the **DLM** to **create a new permission for a group**. ([Updated documentation](/dotstatsuite-documentation/using-dlm/manage-permissions/))
+- [dotstatsuite-data-lifecycle-manager#371](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/371) Allow managing permissions for specific external spaces in the **DLM**. ([Documentation](/dotstatsuite-documentation/configurations/dlm-configuration/#allow-managing-permissions-on-a-specific-external-space))
+- [dotstatsuite-data-lifecycle-manager#364](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/364) Enhance the message in the **DLM** when the related structures list fails to display because of a missing *SDMX* Metadata Structure Definition (MSD).
+- [dotstatsuite-data-explorer#1128](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1128) Adapt to the new share API.
+- [dotstatsuite-config#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/46) Add an "AWS S3" bucket storage option for config files.
+- [dotstatsuite-data-explorer#1175](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1175) *(Refactoring)* Fix DE boilerplate.
+- [dotstatsuite-data-explorer #1165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1165) *(Refactoring)* Bad handling of unknown space.
+- [dotstatsuite-data-explorer#1143](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1143) *(Refactoring)* Merge back 'xray' patch into develop.
+- [dotstatsuite-data-explorer#1124](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1124) *(Refactoring)* Topology syntax check.
+- [dotstatsuite-proxy#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/issues/7) *(Refactoring)* Check redirection.
+- [dotstatsuite-data-lifecycle-manager#384](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/384) *(Refactoring)* Migrate React from v16 to v18.
+- [dotstatsuite-data-explorer#1064](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1064) *(Refactoring)* Plural polyfill inspection.
+- [dotstatsuite-visions#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/41) *(Refactoring)* Fix some Visions tests.
+- [dotstatsuite-data-explorer#1018](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1018) *(Refactoring)* Table performances benchmark.
+- [dotstatsuite-data-explorer#1114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1114) *(DevOps)* Enhance the script [`artefacts.sh`](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/dotstatsuitejs?ref_type=heads) to support tags instead of master branch only.
+- [dotstatsuite-data-explorer#1129](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1129) *(DevOps)* gitops -> e2e/perf auto for master & develop.
+- [dotstatsuite-data-explorer#1123](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1123) *(DevOps)* Enhance CI pipeline with **code quality**. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#code-quality))
+- [dotstatsuite-data-explorer#1122](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1122) *(DevOps)* Enhance CI pipeline with **a11y**. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#accessibility))
+- [dotstatsuite-data-explorer#1121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1121) *(DevOps)* Enhance CI pipeline with **browser performance**.
+- [dotstatsuite-data-explorer#428](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/428) *(DevOps)* `.githash` for Docker builds.
+- [dotstatsuite-sdmx-faceted-search#109](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/109) *(Documentation)* Review sdmx-faceted-search (sfs) ([documentation](/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md?ref_type=heads)).
+- [dotstatsuite-data-explorer#1105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1105) *(Documentation)* **Matomo** integration in data-explorer. ([Documentation](/dotstatsuite-documentation/configurations/de-analytics/matomo/))
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1181](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1181) Search flow bug.
+- [dotstatsuite-data-explorer#1183](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1183) referential metadata query for DE panel is wrongly generated with an empty dimension member.
+- [dotstatsuite-data-explorer#1187](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1187) Some 4-level categories are missing in the Topic facet on the search results.
+- [dotstatsuite-data-explorer#1161](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1161) Data Explorer caching issue when browsing by categories with single results.
+- [dotstatsuite-data-explorer#1151](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1151) *"Whoops, something went wrong"* when filtering by "Counterpart area".
+- [dotstatsuite-data-explorer#1147](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1147) Moving quarter reference period problems in the Chart functionalities.
+- [dotstatsuite-data-explorer#1142](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1142) Fix Captcha (CSP).
+- [dotstatsuite-data-explorer#1126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1126) Broken "Data availability" button in (DLM) DE preview.
+- [dotstatsuite-data-explorer#1117](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1117) Hierarchy from HCL (*SDMX* Hierarchical Code List) incorrectly displayed in the table view.
+- [dotstatsuite-data-explorer#1112](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1112) Choropleth map returns "No data" in some cases, but then displays contents after switching tabs.
+- [dotstatsuite-data-explorer#1102](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1102) Topic facet on the search result page doesn't show (in some cases) the third-level categories.
+- [dotstatsuite-data-explorer#1100](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1100) Microdata view wrongly shows combined unit measure title in the sub-header.
+- [dotstatsuite-data-explorer#1099](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1099) Layout issues for microdata view fixed columns.
+- [dotstatsuite-data-explorer#1020](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1020) Issues with selecting items in facets & filters.
+- [dotstatsuite-share#63](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/63) Undefined content in the mail sent to request a new shared token.
+- [dotstatsuite-share#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/64) Some shared views return a "reading 'count'" error.
 
 ---
 
