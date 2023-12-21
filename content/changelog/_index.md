@@ -200,7 +200,7 @@ backward-compatible enhancements and new features:
 - [dotstatsuite-data-explorer#1122](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1122) *(DevOps)* Enhance CI pipeline with **a11y**. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#accessibility))
 - [dotstatsuite-data-explorer#1121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1121) *(DevOps)* Enhance CI pipeline with **browser performance**.
 - [dotstatsuite-data-explorer#428](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/428) *(DevOps)* `.githash` for Docker builds.
-- [dotstatsuite-sdmx-faceted-search#109](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/109) *(Documentation)* Review sdmx-faceted-search (sfs) ([documentation](/.stat-suite/dotstatsuite-sdmx-faceted-search/-/blob/develop/README.md?ref_type=heads)).
+- [dotstatsuite-sdmx-faceted-search#109](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/109) *(Documentation)* Review sdmx-faceted-search (sfs). ([Updated documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search))
 - [dotstatsuite-data-explorer#1105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1105) *(Documentation)* **Matomo** integration in data-explorer. ([Documentation](/dotstatsuite-documentation/configurations/de-analytics/matomo/))
 
 patch changes:
