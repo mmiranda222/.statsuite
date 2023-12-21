@@ -275,12 +275,12 @@ See https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/fi
 ---
 
 ### Management of empty columns
-Whenever a column is empty, it is automatically excluded from the table, **except** for selected empty parent(s) of a hierarchical dimension (see [this section](#display-of-additional-information) above).
+Whenever a column is empty, it is automatically excluded from the table, **except** for selected empty parent(s) of a hierarchical dimension (see [this section](#display-of-hierarchical-dimensions) above).
 
 ---
 
 ### Management of empty rows
-Whenever a row is empty, it is automatically excluded from the table, **except** for selected empty parent(s) of a hierarchical dimension (see [this section](#display-of-additional-information) above).
+Whenever a row is empty, it is automatically excluded from the table, **except** for selected empty parent(s) of a hierarchical dimension (see [this section](#display-of-hierarchical-dimensions) above).
 
 ---
 
