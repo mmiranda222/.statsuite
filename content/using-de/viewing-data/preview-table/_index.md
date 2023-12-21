@@ -63,7 +63,7 @@ For performance reasons, the maximum number of table rows, columns and cells are
 Because the SDMX API does not allow yet for pro-active pagination, only the first page of data can currently be previewed.
 
 The following specific preview-table actions are proposed:  
-- download as-is preview-table as Excel file (xslx)
+- [download](/dotstatsuite-documentation/using-de/viewing-data/toolbar/#table-in-excel) as-is preview-table as Excel file (xslx)
 
 ---
 
@@ -76,14 +76,14 @@ The preview-table has a **header** (title, first subtitle, second subtitle (unit
 Note that the **row section** is meant to help and enhance the table readability by avoiding (too many) repeated or imbricated row header cells.  
 The classical feature of the pivot table 'filter' axis (like in Excel pivot tables) is assured by the visualisation page [filters](/dotstatsuite-documentation/using-de/viewing-data/filters/). Therefore, the table grid does not have its own additional 'filter' selector.
 
-The dimensions on the **Column axis** are shown completely flattened into **1 header row per dimension**. It means that each child cell is shown without the hierarchy of its parents. "FULL_NAME" annotations might later be an alternative to provide necessary hierarchical information.
+The dimensions on the **Column axis** are shown flattened into **1 header row per dimension**, or vertically indented for dimensions with hierarchies (see more details in [this section](#display-of-hierarchical-dimensions)). It means that each child cell is shown without the hierarchy of its parents. "FULL_NAME" annotations might later be an alternative to provide necessary hierarchical information.
 
 The dimensions on the **Row axis** are shown with **1 header column per dimension**. Hierarchies are represented through indentation of dimension values (see [this section](#display-of-hierarchical-dimensions) for more details).
 
 Unless all dimensions have single(-fixed) values, there must always be **at least one dimension on the Row axis**. This is required in order to avoid the *strange* layout case when there are dimensions on the Row section axis but none on the Row axis.  
 There is no vertical cell merging when vertically neighboured row header cells have the same value. It is rather encouraged to use more than 1 row dimension only in cases when statistically absolutely necessary. Otherwise, the Row axis should always contain one single dimension and all other (non-Column-axis) dimensions should be positioned on the Row section axis.
 
-The dimensions on the **Row section axis** are shown completely flattened, which means each child value within the concatenated row section dimensions is shown without the hierarchy of its parents. "FULL_NAME" annotations might later be an alternative to provide necessary hierarchical information.  
+The dimensions on the **Row section axis** are shown flattened, and for hierarchical dimensions, each child value within the concatenated row section is shown its parent(s) in a breadcrumb feature (see [this section](#display-of-hierarchical-dimensions) for more details).  
 Because Row section rows do not include the dimensions in the Row axis and thus the resulting coordinates/combinations are always incomplete, there are no data value cells in these rows. These Row section rows thus span horizontally over the complete table width.  
 The Row Section content is constructed with each dimension on a distinct line.
 
@@ -224,7 +224,8 @@ If the value ID of an attribute that is defined as flag is longer than 4 charact
 ---
 
 ### Display of hierarchical dimensions
->*Version history:*  
+>*Version history:*
+> Display empty parents as empty rows and columns since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Single-item selection displayed in sub-header since [September 20, 2023 Release .Stat Suite JS 'xray'](/dotstatsuite-documentation/changelog/#september-20-2023)  
 > Indentation on column headers since [December 5, 2022 Release .Stat Suite JS 'spin'](/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Extended to all dimensions + dots with [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
@@ -233,16 +234,38 @@ If the value ID of an attribute that is defined as flag is longer than 4 charact
 **On the row axis:**
 - All **dimensions with hierarchies** on the row axis are **indented** (one middle dot `"·"` and figure space `" "` per level of indentation) according to the level of hierarchy.
 - In case of long titles (two lines or more), then all lines are indented (all lines would start at the same place as the first one).
-- In cases when a child with an observation value is displayed in the table without its contextual parent, meaning e.g. when the parent has no data for the same selection, then the parent name (if the data message is not constrainted to exclude this parent) is displayed as prefix of the child followed by `">" 'greater than'`, e.g. **·  Seeland > Kallnach**
-- In case a single-selection item of a hierarchical dimension has non-selected parent(s), then the selection item is displayed in the table sub-header.
+**Hierarchies on row axis with empty parents:**
+- Selected parents without observations are displayed in the table as a separate empty rows. Their value cells are empty (instead of .. which is used for observations without observation values).
 
-![Table with hierarchical dimensions](/dotstatsuite-documentation/images/DE_table_hierarchy.png)
+![Table with hierarchical dimensions](/dotstatsuite-documentation/images/de-table-empty-parent-rows.png)
   
 **On the column axis:**
 - All column header cells are top-aligned including the dimension label cell
 - All **dimensions with hierarchies** on the column axis are **vertically indented** (middle dot `"·"` with a line break per per level of indentation)
 
 ![Table with hierarchical dimensions](/dotstatsuite-documentation/images/DE_table_hierarchy_column.PNG)
+
+**Hierarchies on column axis with empty parents:**
+- Selected parents without observations are displayed in the table as a separate empty columns. Their value cells are empty (instead of .. which is used for observations without observation values).
+- Each parent with empty observations is still vertically indented. 
+
+![Table with hierarchical dimensions](/dotstatsuite-documentation/images/de-table-empty-parent-columns.png)
+
+**On the row section axis:**
+- In case when a child with an observation value is displayed in the table along with its selected parent, then the parent name is displayed as prefix of the child followed by ">" 'greater than'.
+- In case of multiple parents' levels, then only the direct parent of a child is displayed as a breadcrumb (as prefix).
+
+**Hierarchies on row section axis with empty parents:**
+- When a hierarchical dimension is displayed on the row section axis, and a parent of a selected child is also selected and has no data, then the display is the same as when the parent has data.
+
+**Additional rules for empty parents:**
+- `NOT_DISPLAYED` (see [Hide information of a data view](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/#hide-information-of-a-data-view)) continues to be applied only to single fixed dimensions or with the (`CODE1+CODE2`) syntax. Those values remain hidden.
+- If a parent (of a selected child) is marked as `NOT_DISPLAYED` but is selected, then both parent and child are displayed.
+- However, independently from the selections, `NOT_DISPLAYED` continues to be always applied within combined dimensions (see [Combined concepts](/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/)).
+- In general for Combined dimensions, whenever an empty hierarchical parent is added, then it is added only once and all following dimensions in the combination are omitted from that combination.
+- Rows of combinations at root level are omitted if they have no data. The (grand-)parent(s) row without data are also omitted if there are no child rows to be displayed.
+
+See more details about [Selectable empty parent in hierarchical filters](/dotstatsuite-documentation/using-de/viewing-data/filters/#hierarchical-content/selectable-empty-parent-in-hierarchical-filters) and [Automated selected parents](/dotstatsuite-documentation/using-de/viewing-data/filters/#hierarchical-content/automated-selected-parents)
 
 ---
 
@@ -252,15 +275,12 @@ See https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/fi
 ---
 
 ### Management of empty columns
-Whenever a column is empty, it is automatically excluded from the table. 
+Whenever a column is empty, it is automatically excluded from the table, **except** for selected empty parent(s) of a hierarchical dimension (see [this section](#display-of-additional-information) above).
 
 ---
 
 ### Management of empty rows
-Whenever a row is empty, it is automatically excluded from the table.  
-If a row with a higher-level hierarchy parent in any row dimension is removed, then all related child rows are displayed one level up in the hierarchical indentation.
-
-**Note**: The future, planned "FULL_NAME" name alternative implementation will replace names of children for which the complete parent hierachy is not displayed.
+Whenever a row is empty, it is automatically excluded from the table, **except** for selected empty parent(s) of a hierarchical dimension (see [this section](#display-of-additional-information) above).
 
 ---
 
