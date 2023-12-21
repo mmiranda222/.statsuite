@@ -10,6 +10,7 @@ keywords: [
   'Custom (default) table settings', '#custom-default-table-settings',
   'Layout variations from changing user selections', '#layout-variations-from-changing-user-selections',
   'Display of observations values', '#display-of-observations-values',
+  'Display of qualitative observations', '#display-of-qualitative-observations',
   'Display of additional information', '#display-of-additional-information',
   'Display of hierarchical dimensions', '#display-of-hierarchical-dimensions',
   'Display of advanced hierarchies', '#display-of-advanced-hierarchies',
@@ -33,6 +34,7 @@ keywords: [
 - [Custom (default) table settings](#custom-default-table-settings)
 - [Layout variations from changing user selections](#layout-variations-from-changing-user-selections)
 - [Display of observations values](#display-of-observations-values)
+- [Display of qualitative observations](#display-of-qualitative-observations)
 - [Display of additional information](#display-of-additional-information)
 - [Display of hierarchical dimensions](#display-of-hierarchical-dimensions)
 - [Display of advanced hierarchies](#display-of-advanced-hierarchies)
