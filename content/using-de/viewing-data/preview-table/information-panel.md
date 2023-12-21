@@ -7,9 +7,9 @@ weight: 2800
 ---
 
 > *Version history:*  
-> 'i' icon is centered in the row sections since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
-> Referential metadata hierarchy display with [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)  
-> Introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
+> 'i' icon is centered in the row sections since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
+> Referential metadata hierarchy display with [April 11, 2022 Release .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)  
+> Introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](/dotstatsuite-documentation/changelog/#february-21-2022)
 
 The values of attributes not already shown in flags or notes and referential metadata are displayed in table views with an information icon '(i)' that opens on click the **information side panel**.
 
@@ -37,6 +37,8 @@ Attributes or referential metadata are titled by their attachment:
 - dataflow: dataflow title
 - partial coordinate: similar to fixed dimensions in table sub-title  
 
+Note that for partial coordinates titles, the list of dimensions will not display dimensions and dimension values for which there is a specific 'Hide' rule: see more details [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/#).
+
 Interface labels and coded values are displayed according to the current "Labels" option: 'Name', 'Identifier' or 'Both'.  
 Each (group of) attribute or referential metadata can be expanded or collapsed individually.
 
@@ -46,7 +48,7 @@ The side panel closes when clicking the overlay, clicking the 'close' icon or pr
 
 Attributes are grouped under the parent "Data Characteristics", which can be configured and localised.
 
-Referential metadata can be represented with a hierarchy if such is defined in the corresponding *SDMX* Metadata Structure Definition (MSD). Note that currently only one child level is supported, and that the parent metadata of child metadata cannot have data themselves, the parents being "presentational-only" elements. For details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#hierarchial-referential-metadata).
+Referential metadata can be represented with a hierarchy if such is defined in the corresponding *SDMX* Metadata Structure Definition (MSD). Note that currently only one child level is supported, and that the parent metadata of child metadata cannot have data themselves, the parents being "presentational-only" elements. For details see [here](/dotstatsuite-documentation/using-api/ref-metadata/#hierarchial-referential-metadata).
 
 The hierarchy is expressed in the information side panel using a tree structure and all tree branches are expanded by default.
 

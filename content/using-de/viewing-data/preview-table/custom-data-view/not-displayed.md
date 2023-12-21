@@ -28,7 +28,8 @@ keywords: [
   - [Example](#example)
 
 > *Version history:*  
-> Hiding dimensions fixed to a set of specific values: implemented [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
+> Hide special values and `NOT_DISPLAYED` dimensions from the Information side panel [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
+> Hiding dimensions fixed to a set of specific values: implemented [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documentation/changelog/#july-20-2023)
 
 ---
 
@@ -116,7 +117,7 @@ Once this structure (and data) is uploaded into .Stat DLM (or any other SDMX 2.1
 ---
 
 ### Automatic hide of special values
-By default, the following special values (codes of a Codelist) are hidden in the dataflow sub-title in the Data Explorer visualisation page:
+By default, the following special values (codes of a Codelist) are hidden in the dataflow sub-title AND from the information side panel in the Data Explorer visualisation page:
 * _L (Local extension)
 * _T (Total)
 * _Z (Not applicable)
