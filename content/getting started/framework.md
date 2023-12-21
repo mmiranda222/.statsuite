@@ -128,7 +128,6 @@ The following technologies are used for the development of the **.Stat Data Expl
 <td align="center"><a href="https://cloud.google.com">gcp</a></td>
 <td align="center"><a href="https://www.docker.com">docker</a></td>
 <td align="center"><a href="http://lucene.apache.org/solr">solr</a></td>
-<td align="center"><a href="https://redis.io">redis</a></td>
 <td align="center"><a href="https://www.mongodb.com/">mongo</a></td>
 <td align="center"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">es6</a></td>
 <td align="center"><a href="https://nodejs.org">nodejs</a></td>
@@ -143,7 +142,6 @@ The following technologies are used for the development of the **.Stat Data Expl
 <td align="center"><img src="https://www.pinclipart.com/picdir/middle/54-541486_google-cloud-platform-svg-clipart.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://www.usine-digitale.fr/mediatheque/5/3/8/000277835_homePageUne/docker.jpg" style="height: 40px;" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Surface1.png" style="height: 40px;" /></td>
-<td align="center"><img src="https://cdn-images-1.medium.com/max/1200/1*ngGAAMf8Sw4jCJ_nP2Qt5A.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress" style="height: 40px;" /></td>
 <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" style="height: 40px;" /></td>
 <td align="center"><img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" style="height: 40px;" /></td>
@@ -239,11 +237,6 @@ This web app is the main GUI for (external) users to find, understand and use th
 
 ##### short description
 This service (and related database) is used to store and retrieve user-defined data tables and charts as small JSON objects containing the related configurations.
-A Redis database is used to store shared objects (tables or charts). Share server is not auth protected, so any robot can spam it. In order to avoid it, many mechanisms are in place:
-
-* tables/charts are only temporarily stored for `redisChartTTL` seconds before being deleted unless confirmed via email link
-* share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
-* POST bodies are limited in size to `maxChartSize`
 
 ##### demo
 1. go to any visualisation page (table view or chart view) of https://de-demo.siscc.org/ 
@@ -278,9 +271,9 @@ id2 -->|7. redirect user|id4
 ##### technical aspects
 - **repository**: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share
 - **docker**: https://cloud.docker.com/u/siscc/repository/docker/siscc/dotstatsuite-share
-- a redis database is used to store shared charts
+- a Mongo database is used to store shared charts
 - share server is not auth protected, so any robot can spam it; to avoid that, many mechanisms are in place:
-  - charts are only temporarily stored for `redisChartTTL` seconds before being deleted unless confirmed via email link
+  - charts are only temporarily stored for `chartTTL` seconds before being deleted unless confirmed via email link
   - share server checks POST calls rates. Over `maxRatePerIP` POST calls per second, per IP, are rejected with a 419 HTTP code
   - POST bodies are limited in size to `maxChartSize`
 
@@ -449,7 +442,7 @@ id6[share]
 id7[config]
 id8[solr]
 id9(mongo)
-id10(redis)
+id10(mongo)
 id11((x))
 id13[sdmx/nsi]
 id14[transfer]

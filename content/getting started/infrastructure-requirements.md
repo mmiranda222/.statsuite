@@ -55,7 +55,7 @@ Although the requirements could vary depending on the size of your data and the 
 - **redis** downloaded and running on port 6379 (default)
 - **mongo** downloaded and running on port 27017 (default)
 
-The latest compatible versions of Solr, Redis and Mongo are mentioned and available in the [docker compose setup file](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/demo/docker-compose-demo-js.yml?ref_type=heads) from which the release history can be retrieved.
+The latest compatible versions of Solr and Mongo are mentioned and available in the [docker compose setup file](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-docker-compose/-/blob/master/demo/docker-compose-demo-js.yml?ref_type=heads) from which the release history can be retrieved.
 
 *notes:*  
 - solr core name can be freely picked, default configuration targets sdmx-facet-search
