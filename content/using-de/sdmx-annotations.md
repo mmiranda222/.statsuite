@@ -169,6 +169,12 @@ The main advantage of the Annotation is its flexibility as all properties can be
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">&nbsp;</td>
 </tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 201px;">ALWAYS_DISPLAY_PARENTS</td>
+<td style="height: 23px; width: 1471.44px;">Automatic display (in the DE visualisaiton filters and table views) of **specified** parent hierarchy levels (whether they have data or not) or of **all** parent hierarchy levels when a child with data is selected<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/filters/#selectable-empty-parent-in-hierarchical-filters">full specs</a></td>
+<td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
+<td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
+<td style="height: 23px; width: 106px;">`<concept id>=LEVEL<level #>+`<br/>`LEVEL<level #>+…,<concept id>,…` <br/> example: <br/> `REF_AREA,ANALYTICAL_CATEGORIES:`<br/>`LEVEL1+LEVEL3`</td>
 </tbody>
 </table>
 

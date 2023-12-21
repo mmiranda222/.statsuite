@@ -35,6 +35,7 @@ keywords: [
 
 > *Version history:*  
 > 'Applied filters' area is moved in the page header since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
+> Facets values count numbers in search result also count values with no data since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Facets alphabetically ordered on search results since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Simplify datasource facet rules to make it "almost" as a normal facet with [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
 > Bypass search result page exception with [August 3, 2022 Release .Stat Suite JS quark](/dotstatsuite-documentation/changelog/#august-3-2022)  
@@ -137,7 +138,8 @@ When a facet contains 8 items or more, then:
 - a [local search](#local-search) (spotlight feature) box is displayed
 
 #### Facet information
-The facet title contains the number of facet values available, and the number of currently selected facets (numbers surrounded by a frame). Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, the number of selected values is displayed instead, e.g. `"38/38"`.   
+The facet title contains the number of facet values available, and the number of currently selected facets (numbers surrounded by a frame). These counts also include facets values with no data (greyed out).  
+Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, the number of selected values is displayed instead, e.g. `"38/38"`.   
 When there is no facet value selection, the items are not listed in the "applied filters" area because no filtering is requested by the end-user.  
 
 The facet values themselves show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
