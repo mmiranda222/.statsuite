@@ -54,7 +54,7 @@ The preview-tables are not meant to be publication-ready statistical tables. The
 Therefore, larger online table displays (and the related Excel table downloads) are not supported in order to assure high performance. However, larger amounts of selected data can still be downloaded using the native SDMX formats (SDMX-CSV, SDMX-ML, SDMX-JSON).  
 If publication-ready statistical tables are required, then they should be implemented using the feature to download external resources (e.g. ready-made data extractions or tables) based on the "EXT_RESOURCE" dataflow annotation. 
 
-The preview-table is constructed out of the data resulting from the SDMX query that corresponds to the curent data selection in the filters. In order to prevent too large tables to be built and the web browser to freeze due to memory overload, the SDMX query includes a predefined, configurable range limit, e.g. 2500 observations. If the range limitation needed to be used because the unlimited result would have exceeded the limit, then a warning message is displayed in the second table sub-title. For more details see [this section](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/). 
+The preview-table is constructed out of the data resulting from the SDMX query that corresponds to the curent data selection in the filters. In order to prevent too large tables to be built and the web browser to freeze due to memory overload, the SDMX query includes a predefined, configurable range limit, e.g. 2500 observations. If the range limitation needed to be used because the unlimited result would have exceeded the limit, then a warning message is displayed in the second table sub-title. For more details see [this section](/dotstatsuite-documentation/using-de/viewing-data/preview-table/incomplete-data/). 
 
 For performance reasons, the maximum number of table rows, columns and cells are also limited through configuration.
 
@@ -66,13 +66,13 @@ The following specific preview-table actions are proposed:
 ---
 
 ### Preview-table components
-The preview-table has a **header** (title, first subtitle, second subtitle (unit)), a **footer** (source, logo, copyright) that are common with the charts - for more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/common-header-and-footer/) - and a **table grid**. This table grid is a three-dimensional pivot table with the following axes:  
+The preview-table has a **header** (title, first subtitle, second subtitle (unit)), a **footer** (source, logo, copyright) that are common with the charts - for more details see [here](/dotstatsuite-documentation/using-de/viewing-data/common-header-and-footer/) - and a **table grid**. This table grid is a three-dimensional pivot table with the following axes:  
 - **Column**
 - **Row section** (groupings of rows with the same partial dimension selection)
 - **Row**
 
 Note that the **row section** is meant to help and enhance the table readability by avoiding (too many) repeated or imbricated row header cells.  
-The classical feature of the pivot table 'filter' axis (like in Excel pivot tables) is assured by the visualisation page [filters](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/). Therefore, the table grid does not have its own additional 'filter' selector.
+The classical feature of the pivot table 'filter' axis (like in Excel pivot tables) is assured by the visualisation page [filters](/dotstatsuite-documentation/using-de/viewing-data/filters/). Therefore, the table grid does not have its own additional 'filter' selector.
 
 The dimensions on the **Column axis** are shown completely flattened into **1 header row per dimension**. It means that each child cell is shown without the hierarchy of its parents. "FULL_NAME" annotations might later be an alternative to provide necessary hierarchical information.
 
@@ -93,26 +93,26 @@ The distribution of the different data dimensions over the pivot table axes is c
 When the preview-table is first displayed, the initial layout is determined in the following ordered way:
 
 1) Independently from default layouts defined in the annotations, all dimensions with exactly one item (selected or returned) are excluded from the table axis and displayed instead in the first table *subtitle*. Only those single-fixed dimensions normally displayed in the subtitle can be hidden through the "NOT_DISPLAYED" annotation.
-2) The default table layout options defined by annotations (for more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/)) are then applied to the remaining dimensions.  
+2) The default table layout options defined by annotations (for more details see [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/)) are then applied to the remaining dimensions.  
   *Not implemented (yet): If the configurable maximum number of dimensions to be shown in Columns is exceeded, then the last over-counting dimensions (but not the Time_Period dimension) are moved to the Row Section axis. If the configurable maximum number of dimensions to be shown in Rows is exceeded, then the last over-counting dimensions (but not the Ref_Area dimension) are moved to the Row Section axis.*
 3) If there is no Column dimension yet, then the Time_Period dimension, if it has no layout annotation, otherwise the first dimension without a layout annotation, except the Ref_Area dimension, is moved to the Column axis.
 4) If there is no Row dimension yet, then the Ref_Area dimension dimension, if it has no layout annotation, otherwise the first dimension without a layout annotation, except the Time_Period, is moved to the Rows axis.
 5) All other dimensions without a layout annotation are moved to the Row Section axis.
 
-The dimensions configured to be part of the combined virtual components are, when possible, merged together with the attributes configured to be part of the combined virtual components. These virtual components are displayed separately on automaically defined axes. For more details see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/).
+The dimensions configured to be part of the combined virtual components are, when possible, merged together with the attributes configured to be part of the combined virtual components. These virtual components are displayed separately on automaically defined axes. For more details see [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/).
 
-What happens when the user starts customising the layout is described [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/).
+What happens when the user starts customising the layout is described [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/customise-feature/).
 
 ---
 
 ### Custom (default) table settings
 
-* [Default layout](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/)
-* [Increased table size](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/increased-table-size)
-* [Default filter selections](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/)
-* [Hide information of a data view](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/)
-* [Implicit and explicit orders](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/implicit-explicit-order/)
-* [Additional downloads of external resources](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/external-resources/)
+* [Default layout](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-layout/)
+* [Increased table size](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/increased-table-size)
+* [Default filter selections](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/)
+* [Hide information of a data view](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/not-displayed/)
+* [Implicit and explicit orders](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/implicit-explicit-order/)
+* [Additional downloads of external resources](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/external-resources/)
 
 ---
 
@@ -135,35 +135,46 @@ If the user changes the selection(s), then it can impact the data preview table 
 **Example:**   
 3 512 032.00
 
-Other **non-numeric** and **coded measure values formats** are supported and detailed (with example) [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/core-data-model/#data-type-definitions).
+Other **non-numeric** and **coded measure values formats** are supported and detailed (with example) [here](/dotstatsuite-documentation/using-api/core-data-model/#data-type-definitions).
+
+---
+
+### Display of qualitative observations
+> *Version history:*  
+> Wrapped textual values since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)
+
+Observations values in textual formats can be displayed in the table view when the *SDMX* representation of the measure is of textual type, e.g. 'String' (see the list of supported representation types [here](/dotstatsuite-documentation/using-api/core-data-model/#data-type-definitions)).  
+When the textual values are too long, then the text is wrapped so that the table length fits to the length of the web-browser page.
+
+![Table with qualitative observations](/dotstatsuite-documentation/images/de-table-qualitative.png)
 
 ---
 
 ### Display of additional information
 > *Version history:*  
-> *footnotes* replaced by *notes* in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Enhanced with [February 21, 2022 Release .Stat Suite JS 12.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#february-21-2022)
+> *footnotes* replaced by *notes* in [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Enhanced with [February 21, 2022 Release .Stat Suite JS 12.1.0](/dotstatsuite-documentation/changelog/#february-21-2022)
 
 Data attributes and referential metadata can be displayed for preview tables and charts in different ways: through flags, notes, or icons with a link to information displayed in a side panel. 
 
 **Flags**  
 Directly displays the IDs of related coded attribute values (with maximal 4 characters) next to the observation value. The localised names of the attribute values are displayed on mouse-over in a tooltip bubble.  
 Attributes are displayed through flags only if the code ID of the attribute value is not longer than 4 characters and only when requested by configuration:
-- per dataflow in its annotation, see [LAYOUT_FLAG entry here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations), otherwise
-- per Data Explorer scope in its settings, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)
+- per dataflow in its annotation, see [LAYOUT_FLAG entry here](/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations), otherwise
+- per Data Explorer scope in its settings, see [here](/dotstatsuite-documentation/configurations/de-configuration/#coded-attributes-returned-as-flags)
 
 **Notes**  
-Displays a star icon `*` at the appropriate places as documented [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/). The related attribute values are displayed on mouse-over in a tooltip bubble.  
+Displays a star icon `*` at the appropriate places as documented [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/footnotes/). The related attribute values are displayed on mouse-over in a tooltip bubble.  
 Attributes are displayed through notes only if they should have been displayed through flags but could not because the code ID of the attribute value is longer than 4 characters or when requested by configuration:
-- per dataflow in its annotation, see [LAYOUT_NOTE entry here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations), otherwise
-- per Data Explorer scope in its settings, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes)
+- per dataflow in its annotation, see [LAYOUT_NOTE entry here](/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations), otherwise
+- per Data Explorer scope in its settings, see [here](/dotstatsuite-documentation/configurations/de-configuration/#coded-and-uncoded-attributes-returned-as-notes)
 
 **Information icon and side panel**  
-Displays an information icon `(i)` at the appropriate places and the related attribute and referential metadata values are displayed on mouse-over in an information side panel as documented [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel).  
+Displays an information icon `(i)` at the appropriate places and the related attribute and referential metadata values are displayed on mouse-over in an information side panel as documented [here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel).  
 All attributes and referential metadata are displayed with an information icon `(i)` unless:
 - they are already displayed through flags (see above),
 - they are already displayed through notes (see above) or
-- they are defined to not to be displayed through the related dataflow annotation, see [NOT_DISPLAYED entry here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations).  
+- they are defined to not to be displayed through the related dataflow annotation, see [NOT_DISPLAYED entry here](/dotstatsuite-documentation/using-de/sdmx-annotations/#user-managed-annotations).  
 
 
 *Configuration examples:* 
@@ -212,10 +223,10 @@ If the value ID of an attribute that is defined as flag is longer than 4 charact
 
 ### Display of hierarchical dimensions
 >*Version history:*  
-> Single-item selection displayed in sub-header since [September 20, 2023 Release .Stat Suite JS 'xray'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)  
-> Indentation on column headers since [December 5, 2022 Release .Stat Suite JS 'spin'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
-> Extended to all dimensions + dots with [December 14, 2021 Release .Stat Suite JS 11.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-14-2021)  
-> Introduced in [October 8, 2019 Release .Stat Suite JS 2.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-8-2019) 
+> Single-item selection displayed in sub-header since [September 20, 2023 Release .Stat Suite JS 'xray'](/dotstatsuite-documentation/changelog/#september-20-2023)  
+> Indentation on column headers since [December 5, 2022 Release .Stat Suite JS 'spin'](/dotstatsuite-documentation/changelog/#december-5-2022)  
+> Extended to all dimensions + dots with [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
+> Introduced in [October 8, 2019 Release .Stat Suite JS 2.0.0](/dotstatsuite-documentation/changelog/#october-8-2019) 
 
 **On the row axis:**
 - All **dimensions with hierarchies** on the row axis are **indented** (one middle dot `"·"` and figure space `" "` per level of indentation) according to the level of hierarchy.
@@ -258,14 +269,14 @@ Whenever a complete row section is empty, it is automatically excluded from the 
 
 ### Horizontal scroll
 >*Version history:*  
-> Optimized in order to simplify the general page behavior with [August 3, 2022 Release .Stat Suite JS 'quark'](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
-> Enhanced with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Introduced in [January 13, 2022 Release .Stat Suite JS 12.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#january-13-2022)
+> Optimized in order to simplify the general page behavior with [August 3, 2022 Release .Stat Suite JS 'quark'](/dotstatsuite-documentation/changelog/#august-3-2022)  
+> Enhanced with [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Introduced in [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)
 
 If the table cannot horizontally fit on the available screen, then the screen allows horizontal scrolling.  
 When scrolling horizontally, only the filter area and the table move. The page header, page footer and the toolbar menu positions are frozen. The table header (title and subtitle), row header column(s) and the row section header(s) move only until reaching the edge of the browser window (they are defined as "css-sticky"), unless there is not enough space for the remaining data columns, in which case it/they keep(s) individually scrolling as much as possible. The table footer position is frozen.
 
-Freezing table parts is not available when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+Freezing table parts is not available when [Accessibility support](/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
 
 ![DE table horizontal scrolling](/dotstatsuite-documentation/images/de-table-horizontal-scroll.GIF)
 
@@ -275,14 +286,14 @@ Freezing table parts is not available when [Accessibility support](https://sis-c
 If the table cannot vertically fit on the available screen, then the screen allows vertical scrolling (but infinite dynamic scroll is not implemented).  
 When scrolling vertically, the whole page content scrolls but the column header row(s) and the row section header(s) move only until reaching the edge of the browser window (as they are defined as "css-sticky") and the row section header row(s) stop(s) scrolling before covering the column header row(s).
 
-Freezing table parts is not available when [Accessibility support](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
+Freezing table parts is not available when [Accessibility support](/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support) is enabled.
 
 ![DE table vertical scrolling](/dotstatsuite-documentation/images/de-table-vertical-scroll.GIF)
 
 ---
 
 ### Scroll back arrows
-> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)
 
 A "fast-forward left" button and a "fast-forward top" button appear when the user has started scrolling whther horizontally or vertically. Using one of these buttons, the user can quickly go back to the initial horizontal or vertical scroll position.  
 Once the user is back to the initial horizontal scroll position, then the "fast-forward left" button disappears.  
@@ -293,7 +304,7 @@ Once the user is back to the initial vertical scroll position, then the "fast-fo
 ---
 
 ### Horizontal merged column header cells
-> Released in [May 19, 2021 Release .Stat Suite JS 8.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-19-2021)
+> Released in [May 19, 2021 Release .Stat Suite JS 8.0.0](/dotstatsuite-documentation/changelog/#may-19-2021)
 
 When 2 or more dimensions are positioned on the Column axis, and if 2 or more horizontally neighboured cells have the same value (dimension item), then **these cells are merged**.  
 Merging is not applied to cells that have different cells in rows above them, thus never to cells in the last (lowest) column header row.  
@@ -301,12 +312,12 @@ The merged column header labels are centered by default, but whenever the table 
 
 ![DE table merged header cells](/dotstatsuite-documentation/images/de-table-merged-cells.PNG)
 
-**Note** that this feature doesn't apply to the [html WCAG table](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support).
+**Note** that this feature doesn't apply to the [html WCAG table](/dotstatsuite-documentation/using-de/general-layout/#web-content-accessibility-support).
 
 ---
 
 ### Highlighted cells, rows and columns
-> Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-1-2021)
+> Released in [April 1, 2021 Release .Stat Suite JS 7.2.0](/dotstatsuite-documentation/changelog/#april-1-2021)
 
 A table cell is highlighted with a blue border when mouse-hovered or selected.    
 Cells can be selected and deselected through double-click.  
@@ -318,7 +329,6 @@ The highlight remains when switching the representation from table to chart and 
 ---
 
 ### Extreme cases of layout
-
 When all dimensions have **single(-fixed) values**, in which case there are no Column, Row section and Row dimensions and thus only one single value is to be displayed, then the special attribute row and column are hidden and flags/footnotes is shown directly in the single cell:
 
 ![DE_table_scrolling](/dotstatsuite-documentation/images/DE_table_single_value.png)
@@ -334,9 +344,8 @@ Since there must always be at least one dimension in the Row axis (unless all di
 ---
 
 ### Links to underlying microdata
-
 For any DSD and dataflow fulfilling the conditions for microdata, the Data Explorer will add a hyperlink to each table value cell that allows (through clicking the link) opening the microdata viewer tab which displays those microdata that are linked to that aggregated data value.
 
 ![de-microdata-1](/dotstatsuite-documentation/images/de-microdata-1.png)
 
-For more information, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/).
+For more information, see [here](/dotstatsuite-documentation/using-de/viewing-data/microdata-preview-table/).
