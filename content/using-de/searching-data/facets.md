@@ -247,13 +247,12 @@ The top right *green* numbering feature counts the total number of selected item
 Applied filters are ranked and displayed by facet.  
 Users can unselected:
 * one single item by clicking on the `x` next to the item label, or
-* all items for a given dimension by clicking on the `x` next to the dimension label, or finally 
+* all items for a given filter by clicking on the `x` next to the filter label, or finally 
 * all selections by clicking on `Clear all filters`. When all filters are unselected, then the user is brought back to the home page.
 
-To ease the readibility of the applied filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number, the number of selected items of this facet.  
+To ease the readibility of the applied filters when 15 or more items are selected in a facet, the display of the individual selected items is replaced by a number, the number of selected items of this facet. Here below an example in responsive mode (mobile phone view):
 
-![Applied filters](/dotstatsuite-documentation/images/de-filters5.png)
-![Applied filters](/dotstatsuite-documentation/images/de-viewingdata-filters-usedfilters-selecteditemsmorethan15-1.png)
+![Applied filters responsive](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-responsive.png)
 
 
 ---
