@@ -35,15 +35,16 @@ keywords: [
 
 > *Version history:*  
 > 'Applied filters' area is moved in the page header since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
-> Simplify datasource facet rules to make it "almost" as a normal facet with [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
-> Bypass search result page exception with [August 3, 2022 Release .Stat Suite JS quark](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-3-2022)  
-> Improved the design of selectable second-level with [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)  
-> Selectable second-level introduced in [August 25, 2020 Release .Stat Suite JS 5.3.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#august-25-2020)
+> Facets alphabetically ordered on search results since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
+> Simplify datasource facet rules to make it "almost" as a normal facet with [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
+> Bypass search result page exception with [August 3, 2022 Release .Stat Suite JS quark](/dotstatsuite-documentation/changelog/#august-3-2022)  
+> Improved the design of selectable second-level with [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)  
+> Selectable second-level introduced in [August 25, 2020 Release .Stat Suite JS 5.3.0](/dotstatsuite-documentation/changelog/#august-25-2020)
 
 ---
 
 ### What information is presented as facets
-**Data source**: If configured so (see [*installation/configuration*](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#)), one facet is auto-generated for the **data source** (from SDMX endpoints used to retrieve dataflow information).  
+**Data source**: If configured so (see [*installation/configuration*](/dotstatsuite-documentation/configurations/de-configuration/#)), one facet is auto-generated for the **data source** (from SDMX endpoints used to retrieve dataflow information).  
 
 **One facet per localised CategoryScheme**: The localised CategoryScheme(s) in which the dataflow is categorised.  
 **Note** that each dataflow can be attached to one or more than one category.  
@@ -70,19 +71,19 @@ The data availability check is based on the `Actual Content Constraint` attached
 - a non-empty Actual Content Constraint
 - no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
 
-A particular dimension of a dataflow is indexed only if the dimension values with available data do not exceed the limit defined in the SFS configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to 1000. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).  
+A particular dimension of a dataflow is indexed only if the dimension values with available data do not exceed the limit defined in the SFS configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to 1000. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).  
 
 Dimension values of a dataflow are indexed only if there are data available for the values or, if those values are hierarchical parents in case their children values have data. For that purpose, the search indexing takes the current `Actual Content Constraint` of the dataflow, if available, into account.
 
 ---
 
 ### Home page facets
-The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service. By configuration (see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-auto-expanded-homepage-facet)), one facet can be automatically expanded by default at page launch.
+The localised .Stat DE home page presents a combination of a free text search box and a list of any few facets specifically defined in the [configuration](/dotstatsuite-documentation/configurations/de-configuration/) (in the currently chosen language) of the faceted search service. By configuration (see [here](/dotstatsuite-documentation/configurations/de-configuration/#search-auto-expanded-homepage-facet)), one facet can be automatically expanded by default at page launch.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-2.png)
 
 Each facet, when opened, presents a selectable root-level of facet values together with a non-selectable second-level facet values. The root-level and second-level facet values represent the available values for all dataflows currently being indexed.  
-It is possible to make the individual second-level homepage facet values clickable by configuration (See more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values)). In this case, each selectable second-level facet value is presented on a new line as a bullet list.
+It is possible to make the individual second-level homepage facet values clickable by configuration (See more details [here](/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values)). In this case, each selectable second-level facet value is presented on a new line as a bullet list.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-bullet-list.png)
 
@@ -107,21 +108,24 @@ Note: The menu buttons (currently only Sort) are positioned below the thick grey
 
 When refreshing the web browser, or when sharing a search result web page, the state of the currently expanded facet is kept in the URL.  
 
+**Alphabetically ordered**  
+Facets are ordered alphabetically ascending by their localised title, except for the top "pinned facets" that are ordered according to their configuration (see more details [here](#pinned-facets)).
+
 **Completely hiding specific facets**
-Facets can be removed (hidden) from the search result page when specifically defined so in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).  
+Facets can be removed (hidden) from the search result page when specifically defined so in the [configuration](/dotstatsuite-documentation/configurations/de-configuration/).  
 
 **Impactless facets** (i.e. all the facet values of a facet have a number of the related search results equal to the number of currently already available search results) are automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.  
 The same rule will apply to **impactless facet values**, meaning that, when a facet value has a number of the related search results equal to the number of currently already available search results, then this value is automatically hidden in the facet.
 
 **Hide overcounting facets**  
-Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
-To not overwhelm the facet list, by default only a limited number of search facets (defined in the [DE configuration under the key `defaultFacetsNumber`](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-hide-lower-search-result-facets)) are displayed while the other facets are hidden under a **`More Filters`** accordion expandable on demand. The accordion title is complemented by the number of hidden facets within brackets. If a search returns less facets than the defined limit, then the accordion is not displayed.
+Since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
+To not overwhelm the facet list, by default only a limited number of search facets (defined in the [DE configuration under the key `defaultFacetsNumber`](/dotstatsuite-documentation/configurations/de-configuration/#search-hide-lower-search-result-facets)) are displayed while the other facets are hidden under a **`More Filters`** accordion expandable on demand. The accordion title is complemented by the number of hidden facets within brackets. If a search returns less facets than the defined limit, then the accordion is not displayed.
 
 ![de facet - more filters](/dotstatsuite-documentation/images/de-searchingdata-facets-searchresultpage-morefilters.png)  
 
 #### Facet type
 All facets are **multi-selection** facets (an existing facet value selection does not prevent selecting other still available facet values). However, only one new facet value can be selected at any time, as this automatically triggers the refreshing of the search results, facets and the ['Applied filters' panel](#applied-filters). This is necessary to assure that the user doesn't combine selections of facet values for which no search result exists.   
-*(since [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021))* Each item of a facet is displayed with a **checkbox** on the left side in the facet list:
+*(since [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021))* Each item of a facet is displayed with a **checkbox** on the left side in the facet list:
 - when the item is not selected, the checkbox is empty;
 - when the item is not selected and the mouse hovers it, the checkbox stays empty and the background is blue;
 - when the item is selected, the checkbox is changed into a tick mark.
@@ -141,7 +145,7 @@ The facet values themselves show a number indicating the number of corresponding
 ![de facet information](/dotstatsuite-documentation/images/de-searchingdata-facets-facetinformation.png)
 
 #### Hierarchical content
-New behaviour since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023).
+New behaviour since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023).
 
 In case of a hierarchy in the items, they are shown as 'a tree', which means that the filter will display all the items with indentations according to the item level in the tree. A blue arrow next to an item indicates that this item is a parent of child item(s). Clicking this blue arrow switches its up/down direction and the related child items will respectively be hidden or become visible. By default, the tree is fully expanded so that all the items of all tree levels are visible (through scrolling if needed). 
 
@@ -159,16 +163,16 @@ Typing some characters in the local search box dynamically reduces the displayed
 
 ![Local search example](/dotstatsuite-documentation/images/de-filters3.png)
 
-Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023), whenever the content of the local search box is changed, the items in hierarchical lists are fully expanded. When a local search terms has a hit in a child item, then all its above parent items will automatically be displayed, even if the search term was not found in these parent items. 
+Since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023), whenever the content of the local search box is changed, the items in hierarchical lists are fully expanded. When a local search terms has a hit in a child item, then all its above parent items will automatically be displayed, even if the search term was not found in these parent items. 
 
 ![Local search example with hierarchy](/dotstatsuite-documentation/images/de-filters4.png)
 
 ---
 
 ### Facet items ordered by explicit ORDER annotation
-> Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+> Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](/dotstatsuite-documentation/changelog/#july-8-2021)
 
-Facet items displayed on the home and search result pages can be ordered according to the **explicit order** of the codes and categories using the *SDMX* **"ORDER" annotation** of data type integer, and according to the current locale: see more information **[here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/implicit-explicit-order/)** about creating an ItemScheme with localised order(s).
+Facet items displayed on the home and search result pages can be ordered according to the **explicit order** of the codes and categories using the *SDMX* **"ORDER" annotation** of data type integer, and according to the current locale: see more information **[here](/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/implicit-explicit-order/)** about creating an ItemScheme with localised order(s).
 
 In case an explicit "ORDER" annotation is provided for an item or items of a codelist returned as a facet of the DE, then this explicit order is applied to the home and search result facets.
 
@@ -254,4 +258,4 @@ In addition, a help [**?**] tooltip is shown right next to the Filters header ti
 
 ![Pinned facets](/dotstatsuite-documentation/images/de-pinned-facets.png)
 
-The list of **pinned facets** is to be configured per DE tenant. For more information see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#search-results-page-pinned-facets).
+The list of **pinned facets** is to be configured per DE tenant. For more information see [here](/dotstatsuite-documentation/configurations/de-configuration/#search-results-page-pinned-facets).
