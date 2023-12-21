@@ -90,6 +90,10 @@ It is possible to make the individual second-level homepage facet values clickab
 
 The free text search and the navigation through pre-defined facets are exclusive and result systematically in a new search discarding any previously made search selections.
 
+**Order of facet values:**
+- the first-level and second-level homepage facets values are ordered alphabetically and according to the current locale.
+- If facet values have an *SDMX* `ORDER` annotation (see [specs](/dotstatsuite-documentation/using-de/sdmx-annotations/)), then this order takes precedence over the alphabetical one.
+
 **Exception**  
 If a facet value contains **only one single indexed dataflow**, then selecting that facet value will bypass the search result and directly display the data viualisation page. 
 
