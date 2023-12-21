@@ -9,7 +9,8 @@ keywords: [
   'Time Periods', '#time-periods',
   'Last [..] period(s)', '#last-period-s',
   'Last [..] time series value(s)', '#last-time-series-value-s',
-  'Hiding Frequeny & Time Period filters','#hiding-frequency-and-time-period-filters'
+  'Hiding Frequeny & Time Period filters','#hiding-frequency-and-time-period-filters',
+  'Data availability', '#data-availability'
 ]
 ---
 
@@ -20,6 +21,7 @@ keywords: [
   - [Last [..] period(s)](#last-period-s)
   - [Last [..] time series value(s)](#last-time-series-value-s)
 - [Hiding Frequency & Time Period filters](#hiding-frequency-and-time-period-filters)
+- [Data availability](#data-availability)
 
 ---
 
@@ -60,13 +62,13 @@ The initial **selections** applied in the **Time Period** filter are defined usi
 * The _last [..] period(s)_ selection take the related default selection defined in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection), if available, and the _start period_ is auto-calculated accordingly (see [here]()) and the _end period_ is non-selected.
 * The _start period_ and _end period_ selections take the related [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/), if available and if within the boundaries settings.
 * The _last [..] period(s)_ selection takes the related [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last-period-s)) and the _end period_ is non-selected.
-* The _start period_ and _end period_ selections take the related current [DE **URL**settings](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters), if available and if within the boundaries settings.
-* The _last [..] period(s)_ selection takes the related current [DE **URL** settings](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/general-layout/#url-parameters), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last-period-s)) and the _end period_ is non-selected.
+* The _start period_ and _end period_ selections take the related current [DE **URL**settings](/dotstatsuite-documentation/using-de/general-layout/#url-parameters), if available and if within the boundaries settings.
+* The _last [..] period(s)_ selection takes the related current [DE **URL** settings](/dotstatsuite-documentation/using-de/general-layout/#url-parameters), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last-period-s)) and the _end period_ is non-selected.
 * If set, then the _start period_ must always be smaller than or equal to the the _end boundary_ and smaller than or equal to the _end period_, if that is also set.
 
 If there is no **Time** dimension defined for the displayed data, then the **Frequency and Time-Period** filter is hidden. See [here](/dotstatsuite-documentation/using-api/typical-use-cases#time-dimension) for how the **Time** dimension is recognised.
 
-> Introduced in [July 8, 2021 Release .Stat Suite JS 9.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-8-2021)
+> Introduced in [July 8, 2021 Release .Stat Suite JS 9.0.0](/dotstatsuite-documentation/changelog/#july-8-2021)
 
 The user can **never** select an _end period_ that is before the _start period_, and vice-versa, a _start period_ that is after the _end period_. This means that each dropdown box content takes into account the selection in the other dropdown.  
 Example: assuming that the _start and end periods_ are open. When the user selects a _start period_ then the dropdown content of the _end period_ is automatically restricted to start only from the selected _start period_. Vice-versa, under the same assumption, when the user selects an _end period_, then the dropdown content of the _start period_ is automatically restricted to end latest on the selected end period.  
@@ -77,15 +79,15 @@ The *green* number of **selected values/total of values** is counting values for
 
 ![number of values](/dotstatsuite-documentation/images/time-period-3.png)
 
-> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-4-2022)
+> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)
 
 The **Frequency & Time Period** filter takes as title the concatenated, localised *SDMX* concept names of the **Frequency** and **Time** dimensions (glued with the ' & ' term), depending on the presence of those dimensions. Also see the paragraph about [Hiding Frequency and Time Period filters](#hiding-frequency-and-time-period-filters).
 
 ![overriden time period & frenquency names](/dotstatsuite-documentation/images/time-period-4.png)
 
-See the [documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/common-features/#how-special-dimensions-are-identified) on how time and frequency dimensions are identified.
+See the [documentation](/dotstatsuite-documentation/using-de/viewing-data/common-features/#how-special-dimensions-are-identified) on how time and frequency dimensions are identified.
 
-> Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
+> Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documentation/changelog/#july-20-2023)
 
 The Data Explorer proposes two alternative (mutually exclusive) options for retrieving the latest available data within other filter criteria, either with a generic time span of a fixed number of latest available time periods ([Last [..] period(s)](#last-period-s)) or with a time-series-specific time span of a fixed number of latest available time periods ([Last [..] time series value(s)](#last-time-series-value-s)). Both options share the same number edit box.
 
@@ -95,7 +97,7 @@ The shared edit box for **Last [..] period(s)** is displayed in the lower part o
 
 ![Last [..] period(s)](/dotstatsuite-documentation/images/de-filter-last-periods.png)
 
-If set, the time range returned by the SDMX web service with a [dynamic data availability query](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/typical-use-cases/#dynamic-data-availability-for-a-specific-data-selection) is used to calculate the appropriate _start period_ for the data request according to the selected number of time periods. The calculation respects the current frequency selection and is executed as follow: 
+If set, the time range returned by the SDMX web service with a [dynamic data availability query](/dotstatsuite-documentation/using-api/typical-use-cases/#dynamic-data-availability-for-a-specific-data-selection) is used to calculate the appropriate _start period_ for the data request according to the selected number of time periods. The calculation respects the current frequency selection and is executed as follow: 
 
 * X = selected last [X] periods
 * A = dynamic data availability _end period_ obtained without time period selection (or if that is not available then the actual data availability _end period_)
@@ -114,7 +116,7 @@ When entering a new value in the related edit box, then the **Last [..] period(s
 
 #### Last [..] time series value(s)
 
->Pre-requisite: This feature is to be enabled per data space in the [DE **config** settings](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/#support-of-last-n-observations-feature), and must be supported by the related SDMX web service.
+>Pre-requisite: This feature is to be enabled per data space in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#support-of-last-n-observations-feature), and must be supported by the related SDMX web service.
 
 The shared edit box for **Last [..] time series value(s)** is displayed in the lower part of the **Frequency & Time period** filter. A mouse-over popup contains the localised text 'Latest available [e.g., 5] values per time series within the other filter criteria'.   
 
@@ -127,7 +129,7 @@ A data-specific default for this option can be defined in the [`DEFAULT` **annot
 ---
 
 ### Hiding Frequency and Time Period filters
-> The feature was enhanced with [October 5, 2021 Release .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
+> The feature was enhanced with [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021)
 
 The Frequency and Time-Period filters are hidden in two cases: if the dataflow doesn't have a `TIME_PERIOD` time dimension, or if the dataflow has a `NOT_DISPLAYED` annotation containing the TIME_PERIOD time dimension.
 
@@ -140,7 +142,7 @@ If your dataflow doesn't contain a TIME_PERIOD, then you won't see the Frequency
 **Case 2: dataflow with "NOT_DISPLAYED" annotation containing the `TIME_PERIOD` time dimension**
 
 You can decide to hide the Frequency and Time-Period filter even if your dataflow contains a TIME_PERIOD dimension.  
-To do so, you can define the SDMX annotation of type `NOT_DISPLAYED` (see [specifications](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/custom-data-view/not-displayed/)) to be used for hiding the filter. 
+To do so, you can define the SDMX annotation of type `NOT_DISPLAYED` (see [specifications](/dotstatsuite-documentation/using-dlm/custom-data-view/not-displayed/)) to be used for hiding the filter. 
 
 ![NOT_DISPLAYED annotation](/dotstatsuite-documentation/images/NOT_DISPLAYED-annotation-containing-TIME_PERIOD.png) 
 
@@ -153,4 +155,7 @@ To do so, you can define the SDMX annotation of type `NOT_DISPLAYED` (see [speci
 If the `NOT_DISPLAYED` annotation contains the frequency dimension (FREQ or FREQUENCY) but does not contain the TIME_PERIOD time dimension:
 Only the frequency filter should be hidden. The start/end date filter and the last N periods filter should remain.
 
+---
 
+### Data availability
+See [this page](/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/)
