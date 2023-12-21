@@ -104,7 +104,8 @@ When refreshing the web browser, or when sharing a search result web page, the s
 **Completely hiding specific facets**
 Facets can be removed (hidden) from the search result page when specifically defined so in the [configuration](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/de-configuration/).  
 
-**Impactless facets** (i.e. all of the facet values have a number of the related search results equal to the number of currently already available search results) are automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.
+**Impactless facets** (i.e. all the facet values of a facet have a number of the related search results equal to the number of currently already available search results) are automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.  
+The same rule will apply to **impactless facet values**, meaning that, when a facet value has a number of the related search results equal to the number of currently already available search results, then this value is automatically hidden in the facet.
 
 **Hide overcounting facets**  
 Since [April 20, 2023 Release .Stat Suite JS unicorn](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-20-2023)  
