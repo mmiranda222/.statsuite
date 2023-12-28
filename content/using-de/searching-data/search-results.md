@@ -9,7 +9,7 @@ keywords: [
   'Optional download feature', '#optional-download-feature',
   'Result ordering', '#result-ordering',
   'Result boosting', '#result-boosting',
-  'Weight value and Solr search engine score', '#Weight-value-and-Solr-search-engine-score',
+  'Weight value and Solr search engine score', '#weight-value-and-solr-search-engine-score',
   'Result pagination', '#result-pagination',
   'Result page URL', '#result-page-url',
   'Navigation towards the DE visualisation page', '#navigation-towards-the-de-visualisation-page',
@@ -22,7 +22,7 @@ keywords: [
     - [Optional download feature](#optional-download-feature)
 - [Result ordering](#result-ordering)
 - [Result boosting](#result-boosting)
-    - [Weight value and Solr search engine score](#Weight-value-and-Solr-search-engine-score)
+    - [Weight value and Solr search engine score](#weight-value-and-solr-search-engine-score)
 - [Result pagination](#result-pagination)
 - [Result page URL](#result-page-url)
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
