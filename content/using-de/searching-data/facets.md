@@ -178,7 +178,7 @@ Since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentatio
 ### Facet items ordered by explicit ORDER annotation
 > Released in [July 8, 2021 Release .Stat Suite JS 9.0.0](/dotstatsuite-documentation/changelog/#july-8-2021)
 
-Facet items displayed on the home and search result pages can be ordered according to the **explicit order** of the codes and categories using the *SDMX* **"ORDER" annotation** of data type integer, and according to the current locale: see more information **[here](/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/implicit-explicit-order/)** about creating an ItemScheme with localised order(s).
+Facet items displayed on the home and search result pages can be ordered according to the **explicit order** of the codes and categories using the *SDMX* **"ORDER" annotation** of data type integer, and according to the current locale: see more information **[here](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/implicit-explicit-order/)** about creating an ItemScheme with localised order(s).
 
 In case an explicit "ORDER" annotation is provided for an item or items of a codelist returned as a facet of the DE, then this explicit order is applied to the home and search result facets.
 
@@ -190,7 +190,7 @@ In case any two or more facet items have the same "ORDER" value, then these item
 
 In case an explicit "ORDER" annotation is not provided for an item, then this item is ordered as "0" value, and thus displayed first in the facet, before the ordered items.
 
-**Example of an item of a codleisty with a localised "ORDER" value:**
+**Example of an item of a codelist with a localised "ORDER" value:**
 
 ```xml
   <structure:Code id="Y5-14">
