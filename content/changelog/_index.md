@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 10, 2024](#january-10-2024)
 - [December 20, 2023](#december-20-2023)
 - [December 6, 2023](#december-6-2023)
 - [October 18, 2023](#october-18-2023)
@@ -130,7 +131,7 @@ ToC
 **Release versions of the last 12 months:**
 
 - Data Explorer and Data Lifecycle Manager modules:
-  - [.Stat Suite JS "yay"](#december-20-2023) - 20 December 2023 (latest)
+  - [.Stat Suite JS "yay"](#january-10-2024) - 20 December 2023 (latest)
   - [.Stat Suite JS "xray"](#october-18-2023) - 18 October 2023
   - [.Stat Suite JS "wave"](#august-03-2023) - 03 August 2023
   - [.Stat Suite JS "virtual"](#july-20-2023) - 20 July 2023
@@ -149,6 +150,18 @@ ToC
 > **Warnings for earlier upgrades:**
 > - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-warning)
 > - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-warning)
+
+---
+
+### January 10, 2024
+**[Patch release .Stat Suite JS "yay"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/73#tab-issues)**  
+> This release includes a **patch** version of the **data-explorer** *(v21.0.2)* application.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite CORE release [gingerbread](#december-6-2023).
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1193"](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1193) "Whoops" error page when enabling web accessibility.
+- [dotstatsuite-data-explorer#1172](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1172) When authenticated, CSV download returns "Unexpected token 'S'" error.
 
 ---
 
