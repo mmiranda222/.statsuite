@@ -7,7 +7,7 @@ keywords: [
   '.stat core data store', '#stat-core-data-store',
   '.stat data explorer', '#stat-data-explorer',
   '.stat data lifecycle manager', '#stat-data-lifecycle-manager',
-  'ESTAT NSIWS version compatibility', '#estat-nsiws-version-compatibility',
+  'release compatibilities', '#release-compatibilities',
 ]
 ---
 <!-- This page (or a sub-page or sub-section of this page) of the documentation is referenced as an external resource in the .Stat Academy:
@@ -15,14 +15,14 @@ keywords: [
 Any change affecting its URL must be communicated to the .Stat Academy content admin in advance. -->
 
 #### Table of Content
-- [.stat core data store](#stat-core-data-store)
-- [.stat data explorer](#stat-data-explorer)
-- [.stat data lifecycle manager](#stat-data-lifecycle-manager)
-- [ESTAT NSIWS version compatibility](#estat-nsiws-version-compatibility)
+- [.Stat CORE data store](#stat-core-data-store)
+- [.Stat Data Explorer](#stat-data-explorer)
+- [.Stat Data Lifecycle Manager](#stat-data-lifecycle-manager)
+- [Release compatibilities](#release-compatibilities)
 
 ---
 
-### .Stat Core Data Store
+### .Stat CORE data store
 **Software requirements**
 
 - **SQL Server** 
@@ -82,30 +82,30 @@ The latest compatible versions of Solr and Mongo are mentioned and available in 
 
 ---
 
-### ESTAT NSIWS version compatibility
-Table of version compatibility of the Eurostat **NSI Web Service** (nsiws.net [public mirrored source-code](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored)) with the **.Stat Suite** .NET and JavaScript services, and the **ISTAT Data and Meta Manager DMM** *- previously MDM -* ([public mirrored source-code](https://gitlab.com/sis-cc/istat-dmm)):
+### Release compatibilities
+Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer and Data Lifecycle Manager) with **.Stat Suite CORE** releases and the underlying Eurostat **NSI Web Service** (nsiws.net [public mirrored source-code](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored)):
 
-| ESTAT nsiws | .Stat Suite .NET | .Stat Suite JS | ISTAT DMM | 
-|:-------------|:-------------|:-------------|:-------------|
-| nsiws.net v8.18.7 | .NET "gingerbread" | JS "yay" | . |
-| nsiws.net v8.18.4 | .NET "funfetti" | . | . |
-| nsiws.net v8.18.2 | .NET "elote" | JS "xray" | . |
-| nsiws.net v8.17.0 | .NET "dragonfruit" | JS "wave" | . |
-| nsiws.net v8.15.1 | . | JS "unicorn" | . |
-| nsiws.net v8.13.0 | .NET "cinnamon" | JS "tachyon" | . |
-| nsiws.net v8.12.2 | .NET "blueberry" | JS "spin" | . |
-| nsiws.net v8.9.2 | .NET 8.0.0, .NET 8.0.1, .NET 8.1.0, .NET "almond" | JS 13.0.0, JS 13.0.1, JS 14.0.0, JS "photon", JS "quark", JS "radio" | . |
-| nsiws.net v8.8.0 | .NET 7.2.0 | JS 11.0.0, JS 12.0.0 | . |
-| nsiws.net v8.7.1 | .NET 7.1.0 | . | . |
-| nsiws.net v8.5.0 | .NET 7.0.0 | JS 9.0.2, JS 10.0.0 | . |
-| nsiws.net v8.4.1 | . | . | MDM v.1.7.3 |
-| nsiws.net v8.3.0 | . | JS 9.0.0 | . |
-| nsiws.net v8.2.0 | .NET 6.4.0 | JS 8.0.0, JS 8.0.1 | . |
-| nsiws.net v8.1.3 | .NET 6.3.0 | JS 8.0.0 | . |
-| nsiws.net v8.1.2 | .NET 5.0.0, .NET 6.0.0,.NET 6.1.0, .NET 6.2.0 | JS 7.0.0, JS 7.1.0, JS 7.1.1, JS 7.2.0, JS 7.2.1, JS 8.0.0 | . |
-| nsiws.net v7.13.2 | .NET 4.4.0 | JS 6.0.0, JS 6.1.0 | MDM v.1.4.0, MDM v.1.4.1, MDM v.1.5.0, MDM v.1.5.1, MDM v.1.5.6 |
-| nsiws.net v7.13.1 | .NET 4.3.0  | JS 5.4.0 | . |
+<div style="display: inline-block; width: 100%; height: 31em; border: 1px solid #888; overflow-y: auto; overflow-x: auto;" markdown="block">
 
----
+| Release <br/>&nbsp;<br/>&nbsp;**DE/DLM** | CORE<br/>NSI<br/>Date | gingerbread <br/> 8.18.7 <br/> 06‑Dec‑23 | <font color="Orange">funfetti <br/> 8.18.4 <br/> 11‑Oct‑23</font> | elote <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">dragonfruit <br/> 8.17.0 <br/> 04‑Jul‑23</font> | cinnamon <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
+|:-----------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+| **yay**     | **20‑Dec‑23** | ok          | (ok)      |           |           |           |           |           |
+| **xray**    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
+| **wave**    | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
+| **virtual** | **20‑Jul‑23** |             |           | (ok)      | ok        |           |           |           |
+| **unicorn** | **28‑Jun‑23** |             |           |           |           | ok&nbsp;(NSI&nbsp;8.15.1) | (ok)      | (ok)      |
+| **tachyon** | **17‑Jan‑23** |             |           |           |           | ok        | (ok)      | (ok)      |
+| **spin**    | **05‑Dec‑22** |             |           |           |           | (ok)      | ok        | (ok)      |
+| **radio**   | **31‑Oct‑22** |             |           |           |           | (ok)      | ok        | ok        |
+| **quark**   | **16‑Aug‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
+| **photon**  | **12‑May‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
 
-> **Disclaimer on ISTAT DMM**: This table is filled with information publicly available regarding the ISTAT DMM application (see source [here](https://github.com/SDMXISTATTOOLKIT/META-DATA.MANAGER)). No test has taken place, especially for checking compatibility in the configurations of the nsiws in .Stat Suite and DMM. These additional tests to take place under the aegis of the SIS-CC DMM User Group (see corresponding kanban board *- to be created soon -* to follow issues or file requests).
+</div>
+
+Legend:
+- <font color="Orange">Orange release</font>: Includes a non-backward-compatible change
+- ok: Has been tested by .Stat Suite core dev team
+- (ok): Is supposed to be compatble, but has not been tested by the .Stat Suite core dev team
+
+Note:  
+According to our release policies, hotfixes for critical issues in releases made up to one year in the past maybe be requested by SIS-CC member organisations.
