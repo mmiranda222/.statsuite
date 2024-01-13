@@ -7,8 +7,8 @@ keywords: [
   'Frequency and Time-Period selectors', '#frequency-and-time-period-selectors',
   'Frequency', '#frequency',
   'Time Periods', '#time-periods',
-  'Last [..] period(s)', '#last-period-s',
-  'Last [..] time series value(s)', '#last-time-series-value-s',
+  'Last [..] period(s)', '#last--periods',
+  'Last [..] time series value(s)', '#last--time-series-values',
   'Hiding Frequeny & Time Period filters','#hiding-frequency-and-time-period-filters',
   'Data availability', '#data-availability'
 ]
@@ -18,8 +18,8 @@ keywords: [
 - [Frequency and Time-Period selectors](#frequency-and-time-period-selectors)
   - [Frequency](#frequency)
   - [Time Periods](#time-periods)
-  - [Last [..] period(s)](#last-period-s)
-  - [Last [..] time series value(s)](#last-time-series-value-s)
+  - [Last [..] period(s)](#last--periods)
+  - [Last [..] time series value(s)](#last--time-series-values)
 - [Hiding Frequency & Time Period filters](#hiding-frequency-and-time-period-filters)
 - [Data availability](#data-availability)
 
@@ -61,9 +61,9 @@ The initial **selections** applied in the **Time Period** filter are defined usi
 * The _start period_ and _end period_ selections take the related default selection defined in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection), if available and if within the final boundaries settings.
 * The _last [..] period(s)_ selection take the related default selection defined in the [DE **config** settings](/dotstatsuite-documentation/configurations/de-configuration/#default-time-period-boundaries-and-default-time-period-selection), if available, and the _start period_ is auto-calculated accordingly (see [here]()) and the _end period_ is non-selected.
 * The _start period_ and _end period_ selections take the related [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/), if available and if within the boundaries settings.
-* The _last [..] period(s)_ selection takes the related [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last-period-s)) and the _end period_ is non-selected.
+* The _last [..] period(s)_ selection takes the related [`DEFAULT` **annotation** settings](/dotstatsuite-documentation/using-de/viewing-data/preview-table/custom-data-view/default-selection/), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last--periods)) and the _end period_ is non-selected.
 * The _start period_ and _end period_ selections take the related current [DE **URL**settings](/dotstatsuite-documentation/using-de/general-layout/#url-parameters), if available and if within the boundaries settings.
-* The _last [..] period(s)_ selection takes the related current [DE **URL** settings](/dotstatsuite-documentation/using-de/general-layout/#url-parameters), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last-period-s)) and the _end period_ is non-selected.
+* The _last [..] period(s)_ selection takes the related current [DE **URL** settings](/dotstatsuite-documentation/using-de/general-layout/#url-parameters), the _start period_ is then auto-calculated accordingly (see [Last [..] period(s)](#last--periods)) and the _end period_ is non-selected.
 * If set, then the _start period_ must always be smaller than or equal to the the _end boundary_ and smaller than or equal to the _end period_, if that is also set.
 
 If there is no **Time** dimension defined for the displayed data, then the **Frequency and Time-Period** filter is hidden. See [here](/dotstatsuite-documentation/using-api/typical-use-cases#time-dimension) for how the **Time** dimension is recognised.
@@ -89,7 +89,7 @@ See the [documentation](/dotstatsuite-documentation/using-de/viewing-data/common
 
 > Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documentation/changelog/#july-20-2023)
 
-The Data Explorer proposes two alternative (mutually exclusive) options for retrieving the latest available data within other filter criteria, either with a generic time span of a fixed number of latest available time periods ([Last [..] period(s)](#last-period-s)) or with a time-series-specific time span of a fixed number of latest available time periods ([Last [..] time series value(s)](#last-time-series-value-s)). Both options share the same number edit box.
+The Data Explorer proposes two alternative (mutually exclusive) options for retrieving the latest available data within other filter criteria, either with a generic time span of a fixed number of latest available time periods ([Last [..] period(s)](#last--periods)) or with a time-series-specific time span of a fixed number of latest available time periods ([Last [..] time series value(s)](#last--time-series-values)). Both options share the same number edit box.
 
 #### Last [..] period(s)
 
