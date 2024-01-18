@@ -36,6 +36,7 @@ keywords: [
 
 ### Prerequisites
 In .Stat Suite Core, data and referential metadata cannot be uploaded together (at the same time). They have to be uploaded through separate import files.  
+We currently also do not support imports for different dataflows in the same import file.  
 
 Data can be uploaded **only after** having uploaded the targeted dataflow in the same data space.  
 
