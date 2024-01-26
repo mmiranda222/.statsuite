@@ -85,7 +85,11 @@ dataflow,AGENCY:DF_ID(1.0.0),R,A,B,2014-01,12345,Y,”Value X”     <--Replace 
 dataflow,AGENCY:DF_ID(1.0.0),D,,,2014-02,,-                      <--Wildcard deletion of specified measures and/or attributes
 ```
 
-The message for data values allows omitting columns for dimensions, measures and attributes that are not needed. All textual values containing commas need to be encapsulated within double-quotes. All double-quotes inside these values are to be escaped using doubled double-quotes, e.g.:  
+The message for data values allows omitting columns for dimensions, measures and attributes that are not needed. However:
+- There needs to be **at least one column for measures and/or attributes** or **at least one column for reference metadata attributes**. This allows the transfer service to know if data or reference metadata are concerned.
+- The columns for all dimensions used in the attachment of any of the presented measure, attribute or reference metadata columns need to be present. E.g., if the OBS_VALUE column is present then all dimension columns are required. If only a time-series-level attribute is present then the TIME_PERIOD dimension column doesn't need to be present. If only a dataflow-level attribute column is present then none of the dimension columns are required. 
+
+All textual values containing commas need to be encapsulated within double-quotes. All double-quotes inside these values are to be escaped using doubled double-quotes, e.g.:  
 `"This is an ""example"", and this one ""too"""`
 
 ---
