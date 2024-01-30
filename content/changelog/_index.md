@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [January 30, 2024](#january-30-2024)
 - [January 10, 2024](#january-10-2024)
 - [December 20, 2023](#december-20-2023)
 - [December 6, 2023](#december-6-2023)
@@ -128,28 +129,57 @@ ToC
 
 ![Subscribe](/dotstatsuite-documentation/images/subscribe-logo.png)**<a href="http://eepurl.com/h6T5Z9" target="_blank">Subscribe!</a>**
 
-**Release versions of the last 12 months:**
+### Release compatibilities
+Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer and Data Lifecycle Manager) with **.Stat Suite CORE** releases and the underlying Eurostat **NSI Web Service** (nsiws.net [public mirrored source-code](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored)):
 
-- Data Explorer and Data Lifecycle Manager modules:
-  - [.Stat Suite JS "yay"](#january-10-2024) - 20 December 2023 (latest)
-  - [.Stat Suite JS "xray"](#october-18-2023) - 18 October 2023
-  - [.Stat Suite JS "wave"](#august-03-2023) - 03 August 2023
-  - [.Stat Suite JS "virtual"](#july-20-2023) - 20 July 2023
-  - [.Stat Suite JS "unicorn"](#june-28-2023) - 28 June 2023
-  - [.Stat Suite JS "tachyon"](#january-17-2023) - 17 January 2023
-  - [.Stat Suite JS "spin"](#december-5-2022) - 5 December 2022
-  - [.Stat Suite JS "radio"](#october-31-2022) - 31 October 2022
-- Core module (incl. DLM Excel add-in):
-  - [.Stat Suite .NET "gingerbread"](#december-6-2023) - 6 December 2023 (latest)
-  - [.Stat Suite .NET "funfetti"](#october-11-2023) - 11 October 2023
-  - [.Stat Suite .NET "elote"](#september-1-2023) - 1 September 2023
-  - [.Stat Suite .NET "dragonfruit"](#july-4-2023) - 4 July 2023
-  - [.Stat Suite .NET "cinnamon"](#june-12-2023) - 12 June 2023
-  - [.Stat Suite .NET "blueberry"](#november-11-2022) - 11 November 2022
+<div style="display: inline-block; width: 100%; height: 31em; border: 1px solid #888; overflow-y: auto; overflow-x: auto;" markdown="block">
 
-> **Warnings for earlier upgrades:**
-> - From .Stat Suite .NET v6.4.0 (structure db v6.14) to .Stat Suite .NET v7.1.0 (structure db v6.17) directly: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#net-upgrade-warning)
-> - From a .Stat Suite .NET version below 5.0.0 to .Stat Suite .NET v5.0.0 or higher: [link](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#general-upgrade-warning)
+| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | [gingerbread](/dotstatsuite-documentation/changelog/#january-30-2024) <br/> 8.18.7 <br/> 30‑Jan‑24 | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
+|:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+| [**yay**](/dotstatsuite-documentation/changelog/#january-10-2024)     | **10‑Jan‑23** | ok          | (ok)      |           |           |           |           |           |
+| [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
+| [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
+| [**virtual**](/dotstatsuite-documentation/changelog/#july-20-2023)    | **20‑Jul‑23** |             |           | (ok)      | ok        |           |           |           |
+| [**unicorn**](/dotstatsuite-documentation/changelog/#june-28-2023)    | **28‑Jun‑23** |             |           |           |           | ok(NSI 8.15.1) | (ok)      | (ok)      |
+| [**tachyon**](/dotstatsuite-documentation/changelog/#january-17-2023) | **17‑Jan‑23** |             |           |           |           | ok        | (ok)      | (ok)      |
+| **spin**    | **05‑Dec‑22** |             |           |           |           | (ok)      | ok        | (ok)      |
+| **radio**   | **31‑Oct‑22** |             |           |           |           | (ok)      | ok        | ok        |
+| **quark**   | **16‑Aug‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
+| **photon**  | **12‑May‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
+
+</div>
+
+*Legend:*
+- <font color="Orange">Orange release</font>: Includes a non-backward-compatible change
+- ok: Has been tested by .Stat Suite core dev team
+- (ok): Is supposed to be compatble, but has not been tested by the .Stat Suite core dev team
+
+> **Note:**  
+According to our release policies, hotfixes for critical issues in releases made up to one year in the past may be requested by SIS-CC member organisations.
+
+---
+
+### January 30, 2024
+**[Patch release .Stat Suite .NET "gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues)**  
+> This release includes a **patch** version of the **core-transfer** *(v15.0.2)* and **core-data-access** *(v22.0.2)* services.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite JavaScript release [yay](#january-10-2024).
+
+patch changes:
+
+- [dotstatsuite-core-transfer#528](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/528) *(Refactoring)* Harmonize to UTC the storage of datetime for transfer logs. **Note:** From now on, regarding '/status/requests' and '/status/request' API methods, the values of all the datetime fields, will change from the MSSQL server's time to UTC. See more details in the [technical config. changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#soft-config-changelog)
+- [dotstatsuite-core-transfer#673](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/673) Issues with wildcard data deletions.
+- [dotstatsuite-core-transfer#669](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/669) Transfer error when a dataflow has no dataset attribute values provided yet.
+- [dotstatsuite-core-transfer#665](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/665) Error "The temporary file could not be deleted at the end of the import process. Make sure that the transfer-service is authorized to delete this file.".
+- [dotstatsuite-core-transfer#664](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/664) The given `ColumnMapping` does not match up with any column in the source or destination error when uploading data.
+- [dotstatsuite-core-transfer#660](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/660) Invalid column name `'VALUE'` when submitting data file without `OBS_VALUE` column.
+- [dotstatsuite-core-transfer#659](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/659) `"Incorrect syntax near ','."` when replacing attribute values.
+- [dotstatsuite-core-transfer#658](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/658) Not able to add missing mandatory dataset attribute with R or M action and advanced validation.
+- [dotstatsuite-core-transfer#655](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/655) Mandatory `OBS_STATUS` values disappeared while transferring data from one space to another.
+- [dotstatsuite-core-transfer#653](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/653) Uploading data to .Stat Suite using the file path fails when the first attempt has failed.
+- [dotstatsuite-core-transfer#650](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/650) Not able to delete observations from a structure with mandatory dataset attributes with advanced validation.
+- [dotstatsuite-core-transfer#638](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/638) Transfer of data produces an error "An 'allowed content constraint' is violated".
+- [dotstatsuite-core-transfer#633](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/633) "Object reference not set to an instance of an object" error when uploading data targetting multiple dataflows related to the same DSD with a non-coded dimension.
+- [dotstatsuite-core-transfer#686](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/686) Improper error message when a transfer request is re-queued.
 
 ---
 
@@ -160,7 +190,7 @@ ToC
 
 patch changes:
 
-- [dotstatsuite-data-explorer#1193"](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1193) "Whoops" error page when enabling web accessibility.
+- [dotstatsuite-data-explorer#1193](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1193) "Whoops" error page when enabling web accessibility.
 - [dotstatsuite-data-explorer#1172](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1172) When authenticated, CSV download returns "Unexpected token 'S'" error.
 
 ---
