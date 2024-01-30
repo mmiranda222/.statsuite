@@ -83,29 +83,4 @@ The latest compatible versions of Solr and Mongo are mentioned and available in 
 ---
 
 ### Release compatibilities
-Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer and Data Lifecycle Manager) with **.Stat Suite CORE** releases and the underlying Eurostat **NSI Web Service** (nsiws.net [public mirrored source-code](https://gitlab.com/sis-cc/eurostat-sdmx-ri/nsiws.net.mirrored)):
-
-<div style="display: inline-block; width: 100%; height: 31em; border: 1px solid #888; overflow-y: auto; overflow-x: auto;" markdown="block">
-
-| Release <br/>&nbsp;<br/>&nbsp;DE/DLM | CORE<br/>NSI<br/>Date | [gingerbread](/dotstatsuite-documentation/changelog/#december-6-2023) <br/> 8.18.7 <br/> 06‑Dec‑23 | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
-|:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [**yay**](/dotstatsuite-documentation/changelog/#january-10-2024)     | **10‑Jan‑23** | ok          | (ok)      |           |           |           |           |           |
-| [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
-| [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
-| [**virtual**](/dotstatsuite-documentation/changelog/#july-20-2023)    | **20‑Jul‑23** |             |           | (ok)      | ok        |           |           |           |
-| [**unicorn**](/dotstatsuite-documentation/changelog/#june-28-2023)    | **28‑Jun‑23** |             |           |           |           | ok&nbsp;(NSI&nbsp;8.15.1) | (ok)      | (ok)      |
-| [**tachyon**](/dotstatsuite-documentation/changelog/#january-17-2023) | **17‑Jan‑23** |             |           |           |           | ok        | (ok)      | (ok)      |
-| **spin**    | **05‑Dec‑22** |             |           |           |           | (ok)      | ok        | (ok)      |
-| **radio**   | **31‑Oct‑22** |             |           |           |           | (ok)      | ok        | ok        |
-| **quark**   | **16‑Aug‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
-| **photon**  | **12‑May‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
-
-</div>
-
-Legend:
-- <font color="Orange">Orange release</font>: Includes a non-backward-compatible change
-- ok: Has been tested by .Stat Suite core dev team
-- (ok): Is supposed to be compatble, but has not been tested by the .Stat Suite core dev team
-
-Note:  
-According to our release policies, hotfixes for critical issues in releases made up to one year in the past maybe be requested by SIS-CC member organisations.
+*Moved to the [changelog section](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/)*
