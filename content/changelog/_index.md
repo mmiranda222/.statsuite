@@ -251,7 +251,6 @@ patch changes:
 - [dotstatsuite-data-explorer#1181](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1181) Search flow bug.
 - [dotstatsuite-data-explorer#1183](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1183) referential metadata query for DE panel is wrongly generated with an empty dimension member.
 - [dotstatsuite-data-explorer#1187](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1187) Some 4-level categories are missing in the Topic facet on the search results.
-- [dotstatsuite-data-explorer#1161](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1161) Data Explorer caching issue when browsing by categories with single results.
 - [dotstatsuite-data-explorer#1151](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1151) *"Whoops, something went wrong"* when filtering by "Counterpart area".
 - [dotstatsuite-data-explorer#1147](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1147) Moving quarter reference period problems in the Chart functionalities.
 - [dotstatsuite-data-explorer#1142](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1142) Fix Captcha (CSP).
