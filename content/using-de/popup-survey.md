@@ -19,7 +19,7 @@ When the pop-up survey is configured, see the [DE configuration](/dotstatsuite-d
   
 ![pop-up survey](/dotstatsuite-documentation/images/pop-up-survey.png)  
   
-In addition to the configurable picture, the survey pop-up window shows 3 localisable elements:
+In addition to the configurable picture (size: width '700px', height '550px), the survey pop-up window shows 3 localisable elements:
 - A text button (i18n key: `de.survey.button`), which opens the externally hosted survey in a new browser tab
 - A title (i18n key: `de.survey.subtitle`)
 - A subtitle (i18n key: `de.survey.title`)
