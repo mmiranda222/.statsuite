@@ -134,17 +134,17 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 <div style="display: inline-block; width: 100%; height: 31em; border: 1px solid #888; overflow-y: auto; overflow-x: auto;" markdown="block">
 
-| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | [gingerbread](/dotstatsuite-documentation/changelog/#january-30-2024) <br/> 8.18.7 <br/> 30‑Jan‑24 | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
+| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#january-30-2024) <br/> 8.18.7 <br/> 30‑Jan‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [**yay**](/dotstatsuite-documentation/changelog/#january-10-2024)     | **10‑Jan‑23** | ok          | (ok)      |           |           |           |           |           |
+| [**yay**](/dotstatsuite-documentation/changelog/#january-10-2024)     | <font color="Orange">**10‑Jan‑23**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
 | [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
-| [**virtual**](/dotstatsuite-documentation/changelog/#july-20-2023)    | **20‑Jul‑23** |             |           | (ok)      | ok        |           |           |           |
-| [**unicorn**](/dotstatsuite-documentation/changelog/#june-28-2023)    | **28‑Jun‑23** |             |           |           |           | ok(NSI 8.15.1) | (ok)      | (ok)      |
+| [**virtual**](/dotstatsuite-documentation/changelog/#july-20-2023)    | <font color="Orange">**20‑Jul‑23**</font> |             |           | (ok)      | ok        |           |           |           |
+| [**unicorn**](/dotstatsuite-documentation/changelog/#june-28-2023)    | <font color="Orange">**28‑Jun‑23**</font> |             |           |           |           | ok(NSI 8.15.1) | (ok)      | (ok)      |
 | [**tachyon**](/dotstatsuite-documentation/changelog/#january-17-2023) | **17‑Jan‑23** |             |           |           |           | ok        | (ok)      | (ok)      |
 | **spin**    | **05‑Dec‑22** |             |           |           |           | (ok)      | ok        | (ok)      |
 | **radio**   | **31‑Oct‑22** |             |           |           |           | (ok)      | ok        | ok        |
-| **quark**   | **16‑Aug‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
+| **quark**   | <font color="Orange">**16‑Aug‑22**</font> |             |           |           |           | (ok)      | (ok)      | ok        |
 | **photon**  | **12‑May‑22** |             |           |           |           | (ok)      | (ok)      | ok        |
 
 </div>
@@ -269,17 +269,27 @@ patch changes:
 ### December 6, 2023
 **[Release .Stat Suite .NET "gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues)**
 > This release includes a new version of **core-transfer**, **sdmxri-nsi-ws**, and **core-data-access** services.  
-**Compatibilities:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite JavaScript release [wave](#august-03-2023). It is **not compatible** with .Stat Suite JavaScript release [xray](#october-18-2023).
+**Compatibilities:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and (with one exception) .Stat-Suite JavaScript release [wave](#august-03-2023). It is **not compatible** with .Stat Suite JavaScript release [xray](#october-18-2023).
 
 **Performance evolutions:** check our new dashboard [.Stat Suite Core: performance results](https://siscc.grafana.net/public-dashboards/f98021df13744e65a21168df8c99e597)
 
+**Warnings:**
+- **The DLM Excel Add-in does currently not allow anymore editing higher-level reference metadata attached to the DSD.** (See [dotstatsuite-excel-addin#135](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/135).)
+- **The DLM does currently not allow anymore transferring higher-level reference metadata attached to the DSD.**  (See [dotstatsuite-data-lifecycle-manager#430](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/430).)
+
 non-backward-compatible changes:
 
-*None*
+- [dotstatsuite-core-transfer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/596) Allow storing **higher-level reference metadata linked to either a DF or the DSD**. ([Documentation](/dotstatsuite-documentation/using-api/ref-metadata/#dataflow-or-dsd-reference)). The database upgrade will not change the scope of existing reference metadata:  
+  - Top-level reference metadata is maintained per dataflow.
+  - Other higher-level reference metadata is maintained as attached to the data structure and thus reused for all dataflows until they get uploaded their own reference metadata.  
+
+  
+  The Transfer API version 2.1 introduces a new `/transfer/dsd` method to only copy the reference metadata attached to the DSD.  
+  **The existing `/transfer/dataflow` method is modified to only copy reference metadata referencing the dataflow.**  
+  (See more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#copy-of-referential-metadata-referencing-a-dsd).)        
 
 backward-compatible enhancements and new features:
 
-- [dotstatsuite-core-transfer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/596) Allow storing **referential metadata linked to either a DF or a DSD**. ([Documentation](/dotstatsuite-documentation/using-api/ref-metadata/#dataflow-or-dsd-reference)). **Note** that this feature is introduced with a new version 2.1 of the transfer API with the new `/transfer/dsd` method (more details [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/ref-metadata/#copy-of-referential-metadata-referencing-a-dsd)).
 - [dotstatsuite-core-sdmxri-nsi-ws#384](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/384) Extend the SDMX CSV 2.0 readers to support DSD reference.
 - [dotstatsuite-core-sdmxri-nsi-ws#357](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/357) Implement the SDMX-CSV 2.0 **`labels=name` option**.
 - [dotstatsuite-core-sdmxri-nsi-ws#314](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/394) The `includeHistory` parameter should return extra columns for 'validFrom' and 'validTo' values in CSV v2.0. ([Documentation](/dotstatsuite-documentation/using-api/data/#time-machine-features))

@@ -39,7 +39,7 @@ The upload is done using the transfer web service. The SDMX-CSV 2.0 file format 
 The download is done using the SDMX (NSI) web service. Two SDMX file formats are supported. See below.
 
 The following features are supported:
-- link referential metadata to either a dataflow or a Data Structure Definition (DSD)
+- attach higher-level referential metadata to either a dataflow or a data structure definition (DSD)
 - very long textual referential metadata (maximum 536,870,912 characters in total for all languages)
 - [hierarchial referential metadata](#hierarchial-referential-metadata) attributes
 - attach referential metadata to (at least) a time period value
@@ -81,14 +81,13 @@ The .Stat Suite supports the following **file formats** for referential metadata
 
 In .Stat Suite Core, data and referential metadata cannot be up- or downloaded together (at the same time). The main reason is that the attachment of referential metadata values to specific combinations of dimension is defined in the data message itself and must be preserved. Note that in contrary to referential metadata, the attachments for normal attributes are necessarily defined in the Data Structure Definition (DSD).  
 
-#### Dataflow or DSD reference
-It is possible to upload and transfer referential metadata values either generically for a whole DSD, or specifically for a dataflow. Using the SDMX-CSV format (see details in the [section below](#more-details-about-the-sdmx-csv-format)), users can define referential metadata values tagertting a dataflow ID or a DSD ID.  
-Referential metadata referencing the DSD will be retrieved and displayed for all dataflows referencing that same DSD.  
-Referential metadata referencing the dataflow will be retrieved and displayed only for that particular dataflow, even if other dataflows are referencing the same DSD.  
-**Exception:** For highest-level referential metadata (without any dimension attachment), if there are 2 different values referencing both the DSD and the Dataflow, then it is the value refrencing the Dataflow that will take precedence and be retrieved and displayed. 
+#### Higher-level referential metadata for dataflow or DSD
+It is possible to upload and transfer higher-level referential metadata values either generically related to the whole DSD, or specifically to a dataflow. To upload those using the SDMX-CSV format see details in the [section below](#more-details-about-the-sdmx-csv-format)).
+
+Depending on availability, querying higher-level referential metadata for a dataflow https://root/V2/data/dataflow/{agencyID}/{DF_ID}/{version}/ will return that attached to the dataflow and if not available instead the one attached to the datastructure.
 
 **Current limitations:**
-- Supports imports in SDMX-CSV either for datastructure or dataflow, but not both in the same file.
+- Imports using SDMX-CSV 2.0 can be done either for higher-level referential metadata related to a datastructure or for any referential metadata related to a dataflow, but not both in the same file.
 
 #### More details about the SDMX-CSV format
 The format of the .csv file for referential metadata must comply to the [SDMX-CSV version 2.0 format](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md), which can be summarised roughtly as follow (see the original specification for detailed information):
