@@ -6,7 +6,7 @@ weight: 4400
 keywords: [
   'Introduction', '#introduction',
   'File format', '#file-format',
-  'Dataflow or DSD reference', '#dataflow-or-dsd-reference',
+  'Higher-level referential metadata for dataflow or DSD', '#higher-level-referential-metadata-for-dataflow-or-dsd',
   'More details about the SDMX-CSV format', '#more-details-about-the-sdmx-csv-format',
   'Hierarchial referential metadata', '#hierarchial-referential-metadata',
   'Referential metadata upload and copy', '#referential-metadata-upload-and-copy',
@@ -19,7 +19,7 @@ keywords: [
 #### Table of Content
 - [Introduction](#introduction)
 - [File format](#file-format)
-  - [Dataflow or DSD reference](#dataflow-or-dsd-reference)
+  - [Higher-level referential metadata for dataflow or DSD](#higher-level-referential-metadata-for-dataflow-or-dsd)
   - [More details about the SDMX-CSV format](#more-details-about-the-sdmx-csv-format)
   - [Hierarchial referential metadata](#hierarchial-referential-metadata)
 - [Referential metadata upload and copy](#referential-metadata-upload-and-copy)
@@ -88,6 +88,7 @@ Depending on availability, querying higher-level referential metadata for a data
 
 **Current limitations:**
 - Imports using SDMX-CSV 2.0 can be done either for higher-level referential metadata related to a datastructure or for any referential metadata related to a dataflow, but not both in the same file.
+- In the case when the only import(s) of referential metadata are done using the DSD reference, then there will not be any initialization of mappingsets. This implies that, in this case, the referential metadata cannot be downloaded using the NSIWS. Such requests throw an error, saying that there are no mappingsets found for that dataflow. Make at least one upload referencing a dataflow.
 
 #### More details about the SDMX-CSV format
 The format of the .csv file for referential metadata must comply to the [SDMX-CSV version 2.0 format](https://github.com/sdmx-twg/sdmx-csv/tree/v2.0.0/data-message/docs/sdmx-csv-field-guide.md), which can be summarised roughtly as follow (see the original specification for detailed information):
