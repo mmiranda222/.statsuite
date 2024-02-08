@@ -8,6 +8,8 @@
 |-|-|-|-|
 |oecd-core|BE|qa|35.244.176.154|
 |oecd-core|BE|staging|34.102.193.227|
+|oecd-core|BE|qa-mariadb|34.117.95.57|
+|oecd-core|BE|staging-mariadb|34.110.219.24|
 |oecd|FE|qa|35.186.222.13|
 |oecd|FE|staging|35.244.225.85|
 
