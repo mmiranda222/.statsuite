@@ -15,19 +15,20 @@ if [ ! $TOKEN ]; then
   exit 1;
 fi
 
-JOBS=(setup build-srv build-dist);
-PROJECTS=(dotstatsuite-data-explorer dotstatsuite-data-viewer dotstatsuite-data-lifecycle-manager dotstatsuite-sdmx-faceted-search dotstatsuite-share dotstatsuite-config dotstatsuite-proxy);
+JOBS=(yarn-dependencies build-srv build-dist);
+PROJECTS=(dotstatsuite-data-explorer:explorer dotstatsuite-data-viewer:viewer dotstatsuite-data-lifecycle-manager:dlm dotstatsuite-sdmx-faceted-search:search dotstatsuite-share:share dotstatsuite-config:config dotstatsuite-proxy:proxy);
 
 trap "exit" INT
 
 for project in ${PROJECTS[*]}; do
-  echo "Processing $project..."
-  [ ! -d "$project" ] && mkdir $project
-  cd $project
+  readarray -d ":" -t projectdir <<< "$project"
+  echo "Processing ${projectdir[0]}..."
+  [ ! -d "${projectdir[1]}" ] && mkdir ${projectdir[1]}
+  cd ${projectdir[1]}
 
   for job in ${JOBS[*]}; do
-    id="$project-$TAG-$job"
-    url="https://gitlab.com/sis-cc/.stat-suite/$project/-/jobs/artifacts/$TAG/download?job=$job"
+    id="${projectdir[0]}-$TAG-$job"
+    url="https://gitlab.com/sis-cc/.stat-suite/${projectdir[0]}/-/jobs/artifacts/$TAG/download?job=$job"
     if curl --insecure --fail -s -L -o $id.zip --header "PRIVATE-TOKEN: $TOKEN" $url; then
       echo "Downloading $id"
       curl --insecure -s -L -o $id.zip --header "PRIVATE-TOKEN: $TOKEN" $url
