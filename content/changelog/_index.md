@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [February 26, 2024](#february-26-2024)
 - [January 30, 2024](#january-30-2024)
 - [January 10, 2024](#january-10-2024)
 - [December 20, 2023](#december-20-2023)
@@ -136,7 +137,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 | Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#january-30-2024) <br/> 8.18.7 <br/> 30‑Jan‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [**yay**](/dotstatsuite-documentation/changelog/#january-10-2024)     | <font color="Orange">**10‑Jan‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
+| [**yay**](/dotstatsuite-documentation/changelog/#february-26-2024)     | <font color="Orange">**26‑Feb‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
 | [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
 | [**virtual**](/dotstatsuite-documentation/changelog/#july-20-2023)    | <font color="Orange">**20‑Jul‑23**</font> |             |           | (ok)      | ok        |           |           |           |
@@ -156,6 +157,22 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 According to our release policies, hotfixes for critical issues in releases made up to one year in the past may be requested by SIS-CC member organisations.
+
+---
+### February 26, 2024
+**[Patch release .Stat Suite JS "yay"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/73#tab-issues)**  
+> This release includes a **patch** version of the **data-explorer** *(v21.1.0)* application.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite CORE release [gingerbread](#december-6-2023).
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1232](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1232) *(Performance improvement)* Remove the 'blank data' query.
+- [dotstatsuite-data-explorer#1231](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1231) *"Whoops something went wrong"* when no data returned after the search selection (temporarily disabling [dotstatsuite-data-explorer#1165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1165)).
+- [dotstatsuite-data-explorer#1230](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1230) Search topic facet filter issue.
+- [dotstatsuite-data-explorer#1220](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1220) Code descriptions in DE tooltips have disappeared.
+- [dotstatsuite-data-explorer#1193](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1193) *"Whoops"* error page when enabling web accessibility.
+- [dotstatsuite-data-explorer#1111](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1111) *(introduced regression)* Support SDMX-Json 2.0 data format with non-coded components (value property) in DE display.
+- [dotstatsuite-data-explorer#1052](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1052) *(introduced regression)* Only show indexed dataflows in the list of related dataflows in the Overview page.
 
 ---
 
