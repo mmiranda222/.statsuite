@@ -152,11 +152,11 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 *Legend:*
 - <font color="Orange">Orange release</font>: Includes a non-backward-compatible change
-- ok: Has been tested by .Stat Suite core dev team
-- (ok): Is supposed to be compatble, but has not been tested by the .Stat Suite core dev team
+- ok: Tested by the .Stat Suite core development team
+- (ok): Compatibility cannot be guaranteed. Not tested by the .Stat Suite core development team
 
 > **Note:**  
-According to our release policies, hotfixes for critical issues in releases made up to one year in the past may be requested by SIS-CC member organisations.
+Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
 
 ---
 ### February 26, 2024
