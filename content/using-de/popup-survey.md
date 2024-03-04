@@ -24,4 +24,6 @@ In addition to the configurable picture (size: width '700px', height '550px), th
 - A title (i18n key: `de.survey.subtitle`)
 - A subtitle (i18n key: `de.survey.title`)
 
+Note that you need to fill the above localised elements in your own DE instance by following the [overwriting translations process](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/localisation/#overwriting-default-translations).
+
 Any online survey tool can be used to create the survey, which must be accessible through a URL. Some tools propose real-time tracking, which allows easily analysing the results.
