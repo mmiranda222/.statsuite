@@ -87,8 +87,8 @@ If the same dataflow (same ID, whatever Agency or Version) is retrieved from dif
 #### Conditions and exceptions
 * A dataflow is indexed **only if** there is data associated to it.  
   The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:  
-  - a *non-empty* Actual Content Constraint
-  - no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
+  - a *non-empty currently valid* Actual Content Constraint or 
+  - (if there is no Actual Content Constraint) the data query for the first observation (range 0:0) returns an observation.
 * A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
 
 #### Indexing externally defined dataflows
