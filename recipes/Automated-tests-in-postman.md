@@ -66,6 +66,9 @@ Scripts in JavaScript are used at different levels of the test collections for:
 - Requires environment variables `keycloak.token_url`, `keycloak.client_id`, `keycloak.token`, `keycloak.refresh_token`
 
 ```javascript
+var chai = require('chai');
+chai.config.truncateThreshold = 0;
+
 var token_url = pm.environment.get("keycloak.token_url");
 var client_id = pm.environment.get("keycloak.client_id");
 var token = pm.environment.get("keycloak.token");
@@ -147,6 +150,9 @@ function setTokenVars(tokenObj)
 - script defined in the "Collection" under "Pre-request Script"
 
 ```javascript
+var chai = require('chai');
+chai.config.truncateThreshold = 0;
+
 utils = {
 sdmxCsvEqualityCheck:function(expected, content){
       expected = expected.trim().split('\r\n').sort().join('|');
@@ -308,6 +314,9 @@ pm.test("XML body is correct", function () {
 ##### Compare structure query results (XML)
 - Comparing **Content Constraint** result: script defined in the "Collection" under "Pre-request Script"
 ```javascript
+var chai = require('chai');
+chai.config.truncateThreshold = 0;
+
 utils = {
   sdmxXmlStructureEqualityCheck(expected, content){
     var expectedJson = this.sdmxXmlStructureCleanup(xml2Json(expected));
@@ -330,7 +339,7 @@ utils = {
 }
 ```
 
-- Script for **Structure XML format** defined in the data query under "Tests"
+- Script for **Structure XML format** defined in the structure query under "Tests"
 
 ```javascript
 const XMLtoCompare = ' /* add all Xml content as joined lines */ ';
@@ -347,6 +356,9 @@ pm.test("XML body is correct", function () {
 - Script defined in the "Collection" under "Pre-request Script"
 
 ```javascript
+var chai = require('chai');
+chai.config.truncateThreshold = 0;
+
  const moment = require('moment');
  let requestTime = moment().format('YYYY-MM-DDTHH:mm:ss.SSSZ');
 
