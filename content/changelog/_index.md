@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 8, 2024](#march-8-2024)
 - [March 5, 2024](#march-5-2024)
 - [February 26, 2024](#february-26-2024)
 - [January 30, 2024](#january-30-2024)
@@ -136,9 +137,9 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 <div style="display: inline-block; width: 100%; height: 31em; border: 1px solid #888; overflow-y: auto; overflow-x: auto;" markdown="block">
 
-| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#january-30-2024) <br/> 8.18.7 <br/> 30‑Jan‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
+| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#march-8-2024) <br/> 8.18.7 <br/> 8‑March‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [**yay**](/dotstatsuite-documentation/changelog/#february-26-2024)     | <font color="Orange">**5‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
+| [**yay**](/dotstatsuite-documentation/changelog/#march-5-2024)     | <font color="Orange">**5‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
 | [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
 | [**virtual**](/dotstatsuite-documentation/changelog/#july-20-2023)    | <font color="Orange">**20‑Jul‑23**</font> |             |           | (ok)      | ok        |           |           |           |
@@ -158,6 +159,37 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
+
+---
+
+### March 8, 2024
+**[Patch release .Stat Suite .NET "gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues)**  
+> This release includes a **patch** version of the **core-transfer** *(v16.0.0)* and **core-data-access** *(v23.0.1)* services.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite JavaScript release [yay](#march-5-2024).
+
+**Warning:**  
+In the first release of ["gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues), the implementation of [transfer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/596) including the new `/transfer/dsd` transfer method, and the **modification** of the existing `/transfer/dataflow` transfer method, should have led to upgrading the transfer API version to a new major one. Instead, we have wrongly upgarded from version 2 to version 2.1.  
+For  consistency and transparency, we are correcting the API version with the following approach:
+- Upgrade of transfer API v2 with the newly introduce `/transfer/dsd` method implemented in API v2.1
+- Deletion of API v2.1
+- Mark API v2 as deprecated
+- Creation of a new API v3 as an exact replica of API v2
+
+**API v2 is marked as deprecated, but both API version 2 and version 3 are kept available** until all organisations can migrate to the new API v3 by updating their configuration (mainly [DLM config. tenant](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#use-data-space-as-internal-space-or-external-space)) or any programmatic solution using the transfer API.
+
+*Note* that the introduce of a wrong minor version of the transfer API has **only impacted** the behavior of the `transfer/dataflow` method for referential metadata transaction.
+
+patch changes:
+
+- [dotstatsuite-core-transfer#705](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/705) Transfer API v2 refacto (deleting v2.1) and new v3.
+- [dotstatsuite-core-transfer#700](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/700) By configuration, do not include values in Actual content constraints for non-coded dimension. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration))
+- [dotstatsuite-core-transfer#699](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/699) Change transfer message from 'Warning' to 'Error' in case of wrong data upload (minimum of one non-dim component).
+- [dotstatsuite-core-transfer#698](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/698) Data upload fails for structures containing non-coded dimensions.
+- [dotstatsuite-core-transfer#696](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/696) Avoid `SELECT COUNT(*)` SQL queries to reduce usage of infra resources.
+- [dotstatsuite-core-transfer#695](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/695) Inconsistent upload outcomes for different users.
+- [dotstatsuite-core-transfer#692](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/692) Data upload error "Arithmetic overflow error converting expression to data type int." when the dataflow contains more than ~2,105,671,680 observation values.
+- [dotstatsuite-core-transfer#683](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/683) Do not get the same Delete records multiple times during transfer of data with the 'updatedAfter' parameter option.
+- [dotstatsuite-core-data-access#127](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/127) Referential metadata table migration of DSDs having uncoded dimension fails.
 
 ---
 
