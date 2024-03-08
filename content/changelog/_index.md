@@ -168,7 +168,7 @@ Our release policy extends to hotfixes for critical issues found by SIS-CC Membe
 **Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite JavaScript release [yay](#march-5-2024).
 
 **Warning:**  
-In the first release of ["gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues), the implementation of [transfer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/596) including the new `/transfer/dsd` transfer method, and the **modification** of the existing `/transfer/dataflow` transfer method, should have led to upgrading the transfer API version to a new major one. Instead, we have wrongly upgarded from version 2 to version 2.1.  
+In the first release of ["gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues), the implementation of [transfer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/596) including the new `/transfer/dsd` transfer method, and the **modification** of the existing `/transfer/dataflow` transfer method, should have led to upgrading the transfer API version to a new major one. Instead, we have wrongly upgraded from version 2 to version 2.1.  
 For  consistency and transparency, we are correcting the API version with the following approach:
 - Upgrade of transfer API v2 with the newly introduced `/transfer/dsd` method implemented in API v2.1
 - Deletion of API v2.1
@@ -239,7 +239,7 @@ patch changes:
 - [dotstatsuite-core-transfer#653](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/653) Uploading data to .Stat Suite using the file path fails when the first attempt has failed.
 - [dotstatsuite-core-transfer#650](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/650) Not able to delete observations from a structure with mandatory dataset attributes with advanced validation.
 - [dotstatsuite-core-transfer#638](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/638) Transfer of data produces an error "An 'allowed content constraint' is violated".
-- [dotstatsuite-core-transfer#633](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/633) "Object reference not set to an instance of an object" error when uploading data targetting multiple dataflows related to the same DSD with a non-coded dimension.
+- [dotstatsuite-core-transfer#633](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/633) "Object reference not set to an instance of an object" error when uploading data targeting multiple dataflows related to the same DSD with a non-coded dimension.
 - [dotstatsuite-core-transfer#686](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/686) Improper error message when a transfer request is re-queued.
 
 ---
