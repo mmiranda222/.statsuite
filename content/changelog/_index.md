@@ -170,25 +170,25 @@ Our release policy extends to hotfixes for critical issues found by SIS-CC Membe
 **Warning:**  
 In the first release of ["gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues), the implementation of [transfer#596](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/596) including the new `/transfer/dsd` transfer method, and the **modification** of the existing `/transfer/dataflow` transfer method, should have led to upgrading the transfer API version to a new major one. Instead, we have wrongly upgarded from version 2 to version 2.1.  
 For  consistency and transparency, we are correcting the API version with the following approach:
-- Upgrade of transfer API v2 with the newly introduce `/transfer/dsd` method implemented in API v2.1
+- Upgrade of transfer API v2 with the newly introduced `/transfer/dsd` method implemented in API v2.1
 - Deletion of API v2.1
 - Mark API v2 as deprecated
 - Creation of a new API v3 as an exact replica of API v2
 
 **API v2 is marked as deprecated, but both API version 2 and version 3 are kept available** until all organisations can migrate to the new API v3 by updating their configuration (mainly [DLM config. tenant](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/dlm-configuration/#use-data-space-as-internal-space-or-external-space)) or any programmatic solution using the transfer API.
 
-*Note* that the introduce of a wrong minor version of the transfer API has **only impacted** the behavior of the `transfer/dataflow` method for referential metadata transaction.
+*Note* that the introduction of a wrong minor version of the transfer API has **only impacted** the behavior of the `transfer/dataflow` method for referential metadata transaction.
 
 patch changes:
 
 - [dotstatsuite-core-transfer#705](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/705) Transfer API v2 refacto (deleting v2.1) and new v3.
-- [dotstatsuite-core-transfer#700](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/700) By configuration, do not include values in Actual content constraints for non-coded dimension. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration))
-- [dotstatsuite-core-transfer#699](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/699) Change transfer message from 'Warning' to 'Error' in case of wrong data upload (minimum of one non-dim component).
+- [dotstatsuite-core-transfer#700](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/700) By configuration, do not include values in Actual Content Constraints for non-coded dimension. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration))
+- [dotstatsuite-core-transfer#699](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/699) Change transfer message from 'Warning' to 'Error' in case of wrong data upload (minimum of one non-dimension component).
 - [dotstatsuite-core-transfer#698](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/698) Data upload fails for structures containing non-coded dimensions.
 - [dotstatsuite-core-transfer#696](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/696) Avoid `SELECT COUNT(*)` SQL queries to reduce usage of infra resources.
 - [dotstatsuite-core-transfer#695](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/695) Inconsistent upload outcomes for different users.
 - [dotstatsuite-core-transfer#692](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/692) Data upload error "Arithmetic overflow error converting expression to data type int." when the dataflow contains more than ~2,105,671,680 observation values.
-- [dotstatsuite-core-transfer#683](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/683) Do not get the same Delete records multiple times during transfer of data with the 'updatedAfter' parameter option.
+- [dotstatsuite-core-transfer#683](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/683) Do not get the same `DELETE` records multiple times during transfer of data with the 'updatedAfter' parameter option.
 - [dotstatsuite-core-data-access#127](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/127) Referential metadata table migration of DSDs having uncoded dimension fails.
 
 ---
