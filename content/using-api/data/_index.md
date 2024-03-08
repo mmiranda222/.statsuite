@@ -24,7 +24,7 @@ keywords: [
   - [Time-machine features](#time-machine-features)
 
 > *Version history:*  
-> `ExcludeNonCodedDimensionsDuringConstraintCalculation` transfer configuration introduced with [MMMMMM XX, 2024 Release .Stat Suite .NET "gingerbread"](/dotstatsuite-documentation/changelog/#mmmmmmmmmmm-XX-2024)  
+> `ExcludeNonCodedDimensionsDuringConstraintCalculation` transfer configuration introduced with [March 8, 2024 Release .Stat Suite .NET "gingerbread"](/dotstatsuite-documentation/changelog/#march-8-2024)  
 > 'asOf' and 'includeHistory' parameters introduced with [December 6, 2023 Release .Stat Suite .NET "gingerbread"](/dotstatsuite-documentation/changelog/#december-6-2023)  
 > Data upload supported in SDMX-CSV version 2.0 file format, and including combined actions (Information, Append, Merge, Replace, Delete) since [September 22, 2022 Release .Stat Suite .NET 'blueberry'](/dotstatsuite-documentation/changelog/#september-22-2022)
 
