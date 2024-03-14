@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [March 14, 2024](#march-14-2024)
 - [March 8, 2024](#march-8-2024)
 - [March 5, 2024](#march-5-2024)
 - [February 26, 2024](#february-26-2024)
@@ -137,7 +138,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 <div style="display: inline-block; width: 100%; height: 31em; border: 1px solid #888; overflow-y: auto; overflow-x: auto;" markdown="block">
 
-| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#march-8-2024) <br/> 8.18.7 <br/> 8‑March‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
+| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#march-14-2024) <br/> 8.18.7 <br/> 14‑March‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 | [**yay**](/dotstatsuite-documentation/changelog/#march-5-2024)     | <font color="Orange">**5‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
@@ -162,6 +163,18 @@ Our release policy extends to hotfixes for critical issues found by SIS-CC Membe
 
 ---
 
+### March 14, 2024
+**[Patch release .Stat Suite .NET "gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues)**  
+> This release includes a **patch** version of the **core-transfer** *(v16.0.1)* and **core-data-access** *(v23.0.2)* services.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite JavaScript release [yay](#march-5-2024).
+
+patch changes:
+
+- [dotstatsuite-core-transfer#709](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/709) **`ERROR`** in the transaction logs after the latest 'gingerbread' patch upgrade.
+- [dotstatsuite-core-transfer#677](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/677) Incorrect disk space availability calculation on very large disks (Exabytes).
+- [dotstatsuite-core-transfer#393](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/393) Allow setting the configuration **[MinPercentageDiskSpace](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#keys)** to 0.
+
+---
 ### March 8, 2024
 **[Patch release .Stat Suite .NET "gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues)**  
 > This release includes a **patch** version of the **core-transfer** *(v16.0.0)* and **core-data-access** *(v23.0.1)* services.  
