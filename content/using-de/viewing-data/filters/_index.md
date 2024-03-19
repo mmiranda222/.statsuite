@@ -7,8 +7,8 @@ keywords: [
   'Filter area', '#filter-area',
   'Multi-selection filters', '#multi-selection-filters',
   'Hierarchical content', '#hierarchical-content',
-  'Selectable empty parent in hierarchical filters', '#selectable-empty-parent-in-hierarchical-filters',
-  'Automated selected parents', '#automated-selected-parents',
+  'Selection of parents without data in hierarchical filters', '#selection-of-parents-without-data-in-hierarchical-filters',
+  'Forced parent selection', '#forced-parent-selection',
   'Display of code descriptions', '#display-of-code-descriptions',
   'Advanced selection popup', '#advanced-selection-popup',
   'Data availability', '#data-availability',
@@ -23,8 +23,8 @@ keywords: [
 - [Filter area](#filter-area)
 - [Multi-selection filters](#multi-selection-filters)
   - [Hierarchical content](#hierarchical-content)
-  - [Selectable empty parent in hierarchical filters](#selectable-empty-parent-in-hierarchical-filters)
-  - [Automated selected parents](#automated-selected-parents)
+  - [Selection of parents without data in hierarchical filters](#selection-of-parents-without-data-in-hierarchical-filters)
+  - [Forced parent selection](#forced-parent-selection)
   - [Display of code descriptions](#display-of-code-descriptions)
   - [Advanced selection popup](#advanced-selection-popup)
   - [Data availability](#data-availability)
@@ -34,7 +34,7 @@ keywords: [
 - [Applied filters panel](#applied-filters-panel)
 
 > *Version history:*  
-> Selectable empty parent in hierarchical filters and automated selected parents since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
+> Selection of parents without data in hierarchical filters and forced parent selection since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Facets values count numbers also count values with no data since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Change display of the 'Applied filters' area with [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
 > Bulk selection option is replaced by the 'advanced selection popup' feature since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
@@ -103,27 +103,28 @@ If for a parent (at any level) there are no data available (according to the Act
 
 For more information on how advanced hierarchies can be applied (using the *SDMX* Hierarchical Codelist), see [Advanced hierarchies](/dotstatsuite-documentation/using-de/viewing-data/filters/advanced-hierarchies).
 
-#### Selectable empty parent in hierarchical filters
-By default, if a parent at any level of a hierarchical codelist has no data available (according to the *SDMX* Actual ContentConstraint related to the Dataflow), then the parent item is marked in light grey and is not selectable. Then, when the user starts filtering, or according to a default selection, the following rules apply:
-- When a (grand-)child of a parent item without data has data and is selected, then the user can (de)select the parent item (thus it is shown/hidden in the table view together with the (grand)child);
-- When none of the (grand-)children of a parent item has data and is selected, then the parent item remains deselected, and the user cannot (de)select the parent item (avoiding ending up with an empty table view).
+#### Selection of parents without data in hierarchical filters
+By default, if a parent at any level of a hierarchical codelist has no data available (according to the *SDMX* Actual ContentConstraint related to the Dataflow), then the parent item is marked in light grey and is not selectable. However, the following additional rules apply:
+- When a parent item without data has at least one selected (grand-)child with data, then the user can (de)select this parent item (thus it is shown/hidden in the table view together with the (grand)child);
+- When a parent item without data has no selected (grand-)children with data, then the parent item remains not selectable (to avoid ending up with an empty table view).
 
-Selecting a parent with empty data will result in adding the parent item in the 'Applied filters' area, however it is impossible to deselect an empty parent without deselecting its child(ren) first.
+Selecting a parent without data will result in adding the parent item in the 'Applied filters' area. To deselect a parent without data its child(ren) need to be deselected first.
 
 ![Selectable empty parent](/dotstatsuite-documentation/images/de-filter-select-empty-parent.png)
 
-These behaviors also apply to the relevant **advanced selection modes** of the ['Advanced selection popup'](#advanced-selection-popup)
+These rules also apply to the relevant **advanced selection modes** in the ['Advanced selection popup'](#advanced-selection-popup).
 
-#### Automated selected parents
-When defined by the *SDMX* [`ALWAYS_DISPLAY_PARENTS` annotation](/dotstatsuite-documentation/using-de/sdmx-annotations/), specific parent level(s) can be always automatically selected whenever a child with data is selected.
+#### Forced parent selection
+Through defining the *SDMX* [`ALWAYS_DISPLAY_PARENTS` annotation](/dotstatsuite-documentation/using-de/sdmx-annotations/) for a dataflow, specific parent level(s) can be set to be automatically selected and displayed whenever a (grand)child with data is selected.
 
 **Example:**  
-For a dataflow with a hierarchical dimension named "ANALYTICAL_CATEGORIES", the data owner has defined the following rule of automated selection: `ANALYTICAL_CATEGORIES=LEVEL1+LEVEL2+LEVEL3+LEVEL4`.  
-Whenever the end-user will select in the filter a child of any of these levels, then automatically all the levels above will be selected, whatever there is data or not for those parents.  
-It will not be possible to deselect those parents unless the child is deselected first.  
-The advanced selection modes also take this auto-selection feature into account.
+For a dataflow with a hierarchical dimension named "ANALYTICAL_CATEGORIES", the data owner has defined the following forced selection of parents: `ANALYTICAL_CATEGORIES=LEVEL1+LEVEL2+LEVEL3+LEVEL4`.  
+Whenever a child of any parent in these levels is selected in the filter, then automatically all the parents in the specified levels will be selected too, whether there is data or not for those parents.  
+It will not be possible to deselect those parents unless all (grand)children are deselected first.  
 
-![Automated selected parent](/dotstatsuite-documentation/images/de-filter-automated-selected-parent.png)
+![Forced parent selection](/dotstatsuite-documentation/images/de-filter-automated-selected-parent.png)
+
+This behavior also applies to the relevant **advanced selection modes** in the ['Advanced selection popup'](#advanced-selection-popup).
 
 #### Display of code descriptions
 The localised descriptions of codes defined in a codelist of a dimension are displayed on mouse-over on the related filter items using a tooltip. These items are underlined with dots in order to inform the user of the availability of the description.
