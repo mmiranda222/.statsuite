@@ -20,13 +20,13 @@ keywords: [
 - [Edit a permission](#edit-a-permission)
 - [Delete a permission](#delete-a-permission)
 
----
-
 > *Version history:*  
-> Filters are alphabetically ordered since [MMMMMMMMMMMM XX, 2024 Release .Stat Suite JS NAME](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmmmmm-XX-2024)  
+> Filters are alphabetically ordered since [March 21, 2024 Release .Stat Suite JS zoo](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-21-2024)  
 > Allow to manage permissions on specific external spaces since [December 20, 2023 Release .Stat Suite JS yay](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Create of new Group since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
+
+---
 
 ### Manage permissions overview
 The Data Lifecycle Manager provides a user-friendly graphical interface to **manage user access rights** to the content of the .Stat Suite data spaces. The related **'Manage permissions'** page is accessible from the DLM main menu. Behind the scenes, the DLM communicates with the AuthorisationManagement web service, which allows retrieving, inserting, updating and deleted user permissions. For more information about the usage and parameters of this API, see [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/permission-management).
