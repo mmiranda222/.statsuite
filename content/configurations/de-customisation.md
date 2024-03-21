@@ -12,6 +12,7 @@ keywords: [
   'Theme settings: palette', '#theme-settings-palette',
   'Theme settings: first loader', '#theme-settings-first-loader',
   'Theme settings: custom fonts', '#theme-settings-custom-fonts',
+  'Theme settings: dataflow description un/muted colors', '#theme-settings-dataflow-description-un-muted-colors',
   'Favicon', '#favicon',
   'Homepage background image', '#homepage-background-image',
   'Page header, footer and splash', '#page-header-footer-and-splash',
@@ -335,8 +336,11 @@ We recommend using a dynamic provider like 'Google WebFonts' for the following r
   - The API provides a transparent update.
 
 ---
-### Dataflow description un/muted colors
-> Since [XXX XXX, 2024 Release .Stat Suite JS XXX](/dotstatsuite-documentation/changelog/####), DE dataflow description muted and unmuted colors are configurable. To apply new colors for the muted or unmuted colors of the DE dataflow description, follow the example below which is part of the DE configuration file settings.json under the topologies repository:  
+
+### Theme settings: dataflow description un/muted colors
+> Since [March 21, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#march-21-2024), the colors of the un/muted dataflow description in the search result list are configurable. To apply new (override) colors for the muted or unmuted state of the dataflow description, follow the example below:
+
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
  "theme": {
