@@ -172,7 +172,7 @@ Our release policy extends to hotfixes for critical issues found by SIS-CC Membe
 
 patch change:
 
-- **REVERT of** [dotstatsuite-core-transfer#696](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/696) Avoid `SELECT COUNT(*)` SQL queries to reduce usage of infra resources. **Note:** This previous implementation caused an unexpected and unwanted numerous amount of **SQL locking issues**. As a short-term solution, it was decided to revert its implementation, and improving these SQL queries will be provided later with a more robust solution.
+- **REVERT of** [dotstatsuite-core-transfer#696](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/696) Avoid `SELECT COUNT(*)` SQL queries to reduce usage of infra resources. **Note:** This previous implementation caused an unexpected and unwanted numerous amount of **SQL locking issues**. As a short-term solution, it was decided to revert its implementation, and improving these SQL queries will be provided later with  [dotstatsuite-core-data-access#134](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/134).
 
 ---
 
