@@ -56,7 +56,8 @@ Since [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/cha
 ---
 
 ### Web Content Accessibility Support
-> Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#june-23-2020)  
+> Enhancements based on [DE Accessibility Audit WCAG 2.1 level AA compliance - October 2021](https://gitlab.com/groups/sis-cc/.stat-suite/-/epics/29) and delivered with [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024)  
+> Released in [June 23, 2020 Release .Stat Suite JS 5.1.0](/dotstatsuite-documentation/changelog/#june-23-2020)
 
 The Data Explorer endorses [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) 2.1 to Level AA, in order to make its content **accessible to people with disabilities**.  
 The WCAG 2.1 accessibility standards are made of prioritised criteria improving the accessibility. While all the technical content of the Data Explorer meets WCAG 2.1 criteria at Level AA, large parts also already meet Level AAA criteria.  
