@@ -49,6 +49,10 @@ The Data Explorer header is common to all pages of the application, and consists
 
 ![DE Header](/dotstatsuite-documentation/images/de-header.png)
 
+Since [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024), in responsive mode (on mobile phone view), all header options are grouped and displayed under a hamburger menu button that expands on click:
+
+![DE Responsive Header](/dotstatsuite-documentation/images/de-responsive-header.png)
+
 ---
 
 ### Web Content Accessibility Support
