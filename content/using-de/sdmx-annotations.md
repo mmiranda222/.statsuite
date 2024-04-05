@@ -175,6 +175,15 @@ The main advantage of the Annotation is its flexibility as all properties can be
 <td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">`<concept id>=LEVEL<level #>+`<br/>`LEVEL<level #>+…,<concept id>,…` <br/> example: <br/> `REF_AREA,ANALYTICAL_CATEGORIES:`<br/>`LEVEL1+LEVEL3`</td>
+
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 201px;">RELATED_DATA</td>
+<td style="height: 23px; width: 1471.44px;"> Override the default list of related dataflows (sharing the same DSD) in the DE overview page with a custom list defined by an SDMX structure query<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/viewing-data/overview/#custom-list-of-related-dataflows">full specs</a></td>
+<td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
+<td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
+<td style="height: 23px; width: 106px;">` examples: <br/> `V2/structure/categoryscheme/OECD/OECDCS1/*/ENV,ENV.ENV_AC?references=dataflow`<br/>`categoryscheme/OECD/OECDCS1/1.0/ENV?references=dataflow`</td>
+
 </tbody>
 </tr>
 <tr style="height: 23px;">

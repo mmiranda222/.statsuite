@@ -6,11 +6,13 @@ weight: 2300
 keywords: [
   'Role of the overview', '#role-of-the-overview',
   'Overview content', '#overview-content',
+  'Custom list of related dataflows', '#custom-list-of-related-dataflows',
   'Interactions', '#interactions',
 ]
 ---
 
 > *Version history:*  
+> Override the list of related dataflows since [April 4, 2024 Release .Stat Suite JS zoo](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-4-2024)  
 > List the related dataflows - same referenced DSD - since [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)  
 > Overview page is included in the Excel download and enhanced with an exception on displayed content with [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)  
 > Introduced in [April 11, 2022 Release .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
@@ -18,6 +20,7 @@ keywords: [
 #### Table of content
 - [Role of the overview](#role-of-the-overview)
 - [Overview content](#overview-content)
+  - [Custom list of related dataflows](#custom-list-of-related-dataflows)
 - [Interactions](#interactions)
 
 ---
@@ -45,9 +48,25 @@ The overview provides the following localised pieces of information related to a
 - the **number of unfiltered data points** (obtained from the Actual or Available content constraints)
 - the **last updated** date (obtained from the Actual content constraint validity dates)
 - the **related files** with a list of hyperlinks to (optional) external resources (as listed in the dataflow's EXTERNAL_RESOURCE annotations) and similar to the 'download' option.
-- the alphabetically ordered list of localised names (current user locale) of all other dataflows that share the same DSD with the current dataflow, and that are only indexed within the same instance of the Data Explorer. The list is displayed under the title **'You might also be interested by this data'** and each link to a single corresponding data visualisation page (in new web-browser tab).
+- the alphabetically ordered list of localised names (current user locale) of **all other dataflows that share the same DSD with the current dataflow**, and that are only indexed within the same instance of the Data Explorer. The list is displayed under the title **'You might also be interested by this data'** and each link to a single corresponding data visualisation page (in new web-browser tab).
 
 ![DE overview tab with related files](/dotstatsuite-documentation/images/de-overview-related-files.png)
+
+#### Custom list of related dataflows
+Data owners can override the default list of related dataflows (same DSD) in order to display instead a custom list by using a specific *SDMX* structure query defined in an annotation called `RELATED_DATA`, e.g. dataflows that are categorized within the same topic (or sub-topic) as the current dataflow, whatever their DSD, or dataflows catagorized with the same *SDMX* Agency ID (use for instance as a project or sub-project ID), etc.
+
+The annotation is of type `RELATED_DATA` and the annotation title contains the SDMX structure query without the service root, for example:
+V2/structure/categoryscheme/OECD/OECDCS1/*/ENV,ENV.ENV_AC?references=dataflow
+- categoryscheme/OECD/OECDCS1/1.0/ENV?references=dataflow
+- datastructure/OECD/DSD_TEST/1.0?references=dataflow
+- dataflow/OECD.DIR.PROJECT/all/all
+
+```xml
+<common:Annotation>
+	<common:AnnotationTitle>V2/structure/categoryscheme/OECD/OECDCS1/*/ENV,ENV.ENV_AC?references=dataflow</common:AnnotationTitle>
+	<common:AnnotationType>RELATED_DATA</common:AnnotationType>
+</common:Annotation>
+```
 
 ---
 
