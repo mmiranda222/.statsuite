@@ -5,7 +5,6 @@ comments: false
 weight: 1800
 keywords: [
   'What information is presented as facets', '#what-information-is-presented-as-facets',
-  'Indexation content restrictions', '#indexation-content-restrictions',
   'Home page facets', '#home-page-facets',
   'Facets on the search result page', '#facets-on-the-search-result-page',
   'Facet type', '#facet-type',
@@ -21,7 +20,6 @@ keywords: [
 
 #### Table of Content
 - [What information is presented as facets](#what-information-is-presented-as-facets)
-  - [Indexation content restrictions](#indexation-content-restrictions)
 - [Home page facets](#home-page-facets)
 - [Facets on the search result page](#facets-on-the-search-result-page)
   - [Facet type](#facet-type)
@@ -66,15 +64,7 @@ Dataflows do not have a codelist for the time period dimension (time dimension).
 For practical reasons, the search only allows a filter by **ANNUAL** time periods. All non-annual time periods are converted to annual time period facet values. The time period facet is built as a range facet, because the facet filtering is done through a start year and an end year.  
 **Note** that if a dataflow has no time dimension, then it will also not have values for the time period facet.  
 
-#### Indexation content restrictions
-A dataflow is indexed **only if** there is data associated to it.  
-The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:
-- a non-empty Actual Content Constraint
-- no Actual Content Constraint (for compatibility with SDMX web services not based on .Stat Suite).
-
-A particular dimension of a dataflow is indexed only if the dimension values with available data do not exceed the limit defined in the SFS configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to 1000. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).  
-
-Dimension values of a dataflow are indexed only if there are data available for the values or, if those values are hierarchical parents in case their children values have data. For that purpose, the search indexing takes the current `Actual Content Constraint` of the dataflow, if available, into account.
+See [here](/dotstatsuite-documentation/using-de/searching-data/indexing-data#indexation-rules) for the detailed search indexation rules.
 
 ---
 
