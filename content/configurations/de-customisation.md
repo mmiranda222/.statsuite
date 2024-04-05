@@ -16,7 +16,7 @@ keywords: [
   'Homepage background image', '#homepage-background-image',
   'Page header, footer and splash', '#page-header-footer-and-splash',
   'Localised common site logos', '#localised-common-site-logos',
-  'Add hyperlink on header and footer logos', '#add-hyperlink-on-header-and-footer-logos',
+  'Add hyperlink on header, subheader and footer logos', '#add-hyperlink-on-header-subheader-and-footer-logos',
   'Add icons to specific facet values', '#add-icons-to-specific-facet-values',
   'Api documentation hyperlink', '#api-documentation-hyperlink',
   'Contact us hyperlink', '#contact-us-hyperlink',
@@ -46,7 +46,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Homepage background image](#homepage-background-image)
 - [Page header, footer and splash](#page-header-footer-and-splash)
   - [Localised common site logos](#localised-common-site-logos)
-  - [Add hyperlink on header and footer logos](#add-hyperlink-on-header-and-footer-logos)
+  - [Add hyperlink on header, subheader and footer logos](#add-hyperlink-on-header-subheader-and-footer-logos)
 - [Add icons to specific facet values](#add-icons-to-specific-facet-values)
 - [Api documentation hyperlink](#api-documentation-hyperlink)
 - [Contact us hyperlink](#contact-us-hyperlink)
@@ -461,42 +461,46 @@ Since [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentatio
 
 ---
 
-#### Add hyperlink on header and footer logos
+#### Add hyperlink on header, subheader and footer logos
 > *Version history:*  
-> Moved the definition of the hypelrink from `assets` to `app` in [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)  
+> Subheader link introduced in [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024)
+> Moved the definition of the hyperlink from `assets` to `app` in [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)  
 > Hyperlink is made localised with [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021)  
-> Intorduced in [July 23, 2020 Release .Stat Suite JS 5.2.0](/dotstatsuite-documentation/changelog/#july-23-2020) (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
+> Introduced in [July 23, 2020 Release .Stat Suite JS 5.2.0](/dotstatsuite-documentation/changelog/#july-23-2020) (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
 
-Hyperlinks/URLs can be added to the logos of the common site header and footer. This feature might be useful when the Data Explorer is part of a web portal, within which users browse from one application to another. The URL is also localisable.
+Hyperlinks can be added to the logos of the common site header, suheader and footer. This feature might be useful when the Data Explorer is part of a web portal, within which users browse from one application to another.
 
 * in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
 ```json
 {
   "app": {
-    "headerLink": "http://siscc.org"
-  }
+    "headerLink": "http://siscc.org/link4header",
+    "footer": {
+      "link": "https://siscc.org/link4footer",
+    "logoLink": "https://siscc.org/link4subheader"
+    }
+  },
 }
 ```
 
-Localised example:
-
+The URLs are also localisable:  
 ```json
 {
   "app": {
     "headerLink": {
-      "fr": "http://siscc.fr",
-      "en": "http://siscc.org"
-    }
-  }
-}
-```
-
-```json
-{
-  "app": {
+      "fr": "http://siscc.org/link4headerFR",
+      "en": "http://siscc.org/link4headerEN"
+    },
     "footer": {
-      "link": "https://siscc.org/"
+      "link": {
+        "fr": "https://siscc.org/link4footerFR",
+        "en": "https://siscc.org/link4footerEN"
+      }
+    },
+    "logoLink": {
+      "fr": "https://siscc.org/link4subheaderFR",
+      "en": "https://siscc.org/link4subheaderEN"
     }
   }
 }
