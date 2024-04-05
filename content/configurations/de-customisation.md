@@ -12,7 +12,7 @@ keywords: [
   'Theme settings: palette', '#theme-settings-palette',
   'Theme settings: first loader', '#theme-settings-first-loader',
   'Theme settings: custom fonts', '#theme-settings-custom-fonts',
-  'Theme settings: dataflow description un/muted colors', '#theme-settings-dataflow-description-un-muted-colors',
+  'Theme settings: dataflow description muted colors', '#theme-settings-dataflow-description-muted-colors',
   'Favicon', '#favicon',
   'Homepage background image', '#homepage-background-image',
   'Page header, footer and splash', '#page-header-footer-and-splash',
@@ -43,7 +43,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Theme settings: palette](#theme-settings-palette)
 - [Theme settings: first loader](#theme-settings-first-loader)
 - [Theme settings: custom fonts](#theme-settings-custom-fonts)
-- [Theme settings: dataflow description un/muted colors](#theme-settings-dataflow-description-un-muted-colors)
+- [Theme settings: dataflow description muted colors](#theme-settings-dataflow-description-muted-colors)
 - [Favicon](#favicon)
 - [Homepage background image](#homepage-background-image)
 - [Page header, footer and splash](#page-header-footer-and-splash)
@@ -337,8 +337,8 @@ We recommend using a dynamic provider like 'Google WebFonts' for the following r
 
 ---
 
-### Theme settings: dataflow description un/muted colors
-> Since [March 21, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#march-21-2024), the colors of the un/muted dataflow description in the search result list are configurable. To apply new (override) colors for the muted or unmuted state of the dataflow description, follow the example below:
+### Theme settings: dataflow description muted colors
+Since [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024), the colors of the un/muted dataflow description in the search result list are configurable. To apply new (override) colors for the muted or unmuted state of the dataflow description, follow the example below:
 
 * in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
 
