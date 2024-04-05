@@ -129,7 +129,7 @@ API requests can be constructed as follow
 * additional parameters depending on the request in a raw JSON-formatted request body
   ```json
   {
-    "spaceId": "disseminate",
+    "dataspaceID": "disseminate",
     "agencyId": "XYZ",
     "id": "DF_ABC",
     "version": "1.0",
@@ -139,7 +139,7 @@ API requests can be constructed as follow
 
 **Notes**  
 - If you are using the default tenant collection, then all calls without a tenant will use the value of `DEFAULT_TENANT` as a tenant, and thus specifying the tenant becomes optional.
-- Instead of HTTP headers and parameters in a raw JSON-formatted request body, it is still possible to use the corresponding URL query parameters for development of testing purposes in isolated environments, e.g., `api-key`, `tenant`, `spaceId`, `agencyId`, `id` and `version`. However, for greater security, it is recommended to use the HTTP header parameters and (encrypted) body in all other circumstances.
+- Instead of HTTP headers and parameters in a raw JSON-formatted request body, it is still possible to use the corresponding URL query parameters for development of testing purposes in isolated environments, e.g., `api-key`, `tenant`, `dataspaceID`, `agencyId`, `id` and `version`. However, for greater security, it is recommended to use the HTTP header parameters and (encrypted) body in all other circumstances.
 
 For more details please see [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search#admin-api-http-test-api-to-insert-update-or-delete-dataflows-in-the-search-index-or-to-get-logs).
 
@@ -175,7 +175,7 @@ Example:
 `tenant=XXXXXX`  
 ```json
 {
-  "spaceId": "staging:SIS-CC-reset",
+  "dataspaceID": "staging:SIS-CC-reset",
   "agencyId": "OECD",
   "id": "AIR_EMISSIONS_DF",
   "version": "1.0"
@@ -213,7 +213,7 @@ Example:
 `tenant=XXXXXX`  
 ```json
 {
-  "spaceId": "staging:SIS-CC-reset",
+  "dataspaceID": "staging:SIS-CC-reset",
   "agencyId": "OECD",
   "id": "AIR_EMISSIONS_DF",
   "version": "1.0"
@@ -234,7 +234,7 @@ API requests for logs and reports can be constructed as explained in [API format
   {
     "id": 1669717223969,
     "userEmail": "test@siscc.org",
-    "spaceId": "disseminate",
+    "dataspaceID": "disseminate",
     "agencyId": "XYZ",
     "submissionStart": "2021-11-29T10:20:23.985Z",
     "submissionEnd": "2023-11-29T10:20:23.985Z",
