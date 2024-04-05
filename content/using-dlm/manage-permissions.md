@@ -21,7 +21,7 @@ keywords: [
 - [Delete a permission](#delete-a-permission)
 
 > *Version history:*  
-> Filters are alphabetically ordered since [March 21, 2024 Release .Stat Suite JS zoo](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#march-21-2024)  
+> Filters are alphabetically ordered since [April 4, 2024 Release .Stat Suite JS zoo](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-4-2024)  
 > Allow to manage permissions on specific external spaces since [December 20, 2023 Release .Stat Suite JS yay](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Create of new Group since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Introduced in [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)
