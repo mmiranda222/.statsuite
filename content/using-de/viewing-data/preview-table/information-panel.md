@@ -7,6 +7,7 @@ weight: 2800
 ---
 
 > *Version history:*  
+> Enhanced order of display with [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024)  
 > 'i' icon is centered in the row sections since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
 > Referential metadata hierarchy display with [April 11, 2022 Release .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)  
 > Introduced in [February 21, 2022 Release .Stat Suite JS 12.1.0](/dotstatsuite-documentation/changelog/#february-21-2022)
@@ -47,6 +48,9 @@ The side panel closes when clicking the overlay, clicking the 'close' icon or pr
 ![Information side panel](/dotstatsuite-documentation/images/de-side-panel.png)
 
 Attributes are grouped under the parent "Data Characteristics", which can be configured and localised.
+
+**Exception rule of display:**  
+When clicking on the **dataflow-level 'i' icon**, then referential metadata is displayed **in descending order of attachment** e.g., dataflow-level referential metadata first, followed by the fixed dimensions displayed in the sub-title, respecting the same order. 
 
 Referential metadata can be represented with a hierarchy if such is defined in the corresponding *SDMX* Metadata Structure Definition (MSD). Note that currently only one child level is supported, and that the parent metadata of child metadata cannot have data themselves, the parents being "presentational-only" elements. For details see [here](/dotstatsuite-documentation/using-api/ref-metadata/#hierarchial-referential-metadata).
 
