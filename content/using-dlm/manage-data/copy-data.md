@@ -22,6 +22,13 @@ keywords: [
 - [Point in Time release](#point-in-time-release)
 - [Notifications](#notifications)
 
+> *Version history:*  
+> Option to transfer specific referential metadata attachement since [April 4, 2024 .Stat Suite JS zoo](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-4-2024)  
+> Content type option released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)  
+> Data validations option always visible and default selection made configurable since [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
+> Data validation option released with [October 5, 2021 .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)  
+> Released with [October 5, 2021 .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
+
 ---
 
 ### Transfer data option
@@ -54,24 +61,21 @@ In case several dataflows were selected in the source data space, then the parti
 ---
 
 ### Content type
-> Released with [April 11, 2022 .Stat Suite JS 14.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-11-2022)
 
 When requesting to initiate a transfer between data spaces, it is possible to either transfer data only, referential metadata only or both. Therefore, one of the following options can be selected:  
 - Both data and referential metadata (default)
 - Data only
 - Referential metadata only
 
-**Note** that, for referential metadata, this option will only transfer all referential metadata referencing the dataflow, and not the "generic" referential metadata values referencing the DSD. For transferring referential metadata referencing the DSD, see [here](/dotstatsuite-documentation/using-api/ref-metadata/#copy-of-referential-metadata-referencing-a-dsd).
+
+For referential metadata, the option will transfer referential metadata **referencing the dataflow** and **referencing the DSD** (if any).  
+**Note** that this option to transfer all referential metadata, including referential metadata referencing the DSD, must use the version 2.1 of the transfer service. This is supported by the configuration of the DLM defined [here](https://sis-cc.gitlab.io/dotstatsuite-documentation/configurations/tenant-model/).
 
 ![dlm copy data validation ](/dotstatsuite-documentation/images/dlm-copydata-content-type1.png)
 
 ---
 
 ### Data validations
-> *Version history:*  
-> Data validations option always visible and default selection made configurable since [December 5, 2022 Release .Stat Suite JS spin](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#december-5-2022)  
-> Released with [October 5, 2021 .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
-
 Advanced options allow the user to choose the validation process type for data copy. The user is given with three options:  
 a) **Favour speed with basic validations**: basic validations are performed upon data copy for *SDMX* compliance, allowed/complete dimensions values, or representation requirements. It provides simplified error explanations.
 
@@ -97,8 +101,6 @@ The full details of the validation process methods can be found [here](https://s
 ---
 
 ### Point in Time release
-> Released with [October 5, 2021 .Stat Suite JS 10.0.0](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#october-5-2021)
-
 Advanced transfer options allow the user to use the **"Embargo (point-in-time) release management"** features.  
 Using a **Point-in-Time (PIT)** date, the copied data can be kept under embargo in parallel to the previously available data until the embargo date is reached and the embargo data fully replace the previously available data. The following scenarios are supported:
 - Source version –> Target version
