@@ -5,7 +5,7 @@ comments: false
 weight: 71
 keywords: [
   'Tenant model definition', '#tenant-model-definition',
-  'Tenant deployment', '#tenant-deployment',
+  'Tenant deployment and route management', '#tenant-deployment-and-route-management',
   'Specific accept header per data space', '#specific-accept-header-per-data-space',
   'Use native NSI WS authentication for external source', '#use-native-nsi-ws-authentication-for-external-source',
   'Example of complete tenant configuration', '#example-of-complete-tenant-configuration',
@@ -15,7 +15,7 @@ keywords: [
 
 #### Table of content
 - [Tenant model definition](#tenant-model-definition)
-- [Tenant deployment](#tenant-deployment)
+- [Tenant deployment and route management](#tenant-deployment-and-route-management)
 - [Specific accept header per data space](#specific-accept-header-per-data-space)
 - [Use native NSI WS authentication for external source](#use-native-nsi-ws-authentication-for-external-source)
 - [Example of complete tenant configuration](#example-of-a-tenant)
@@ -129,10 +129,10 @@ tenants.json
 
 ---
 
-### Tenant deployment
+### Tenant deployment and route management
 In order to allow users to reach the different `organisations` and their `scopes`, each `scope` in each `organisation` needs its own web application URL (host) `https://<app+env+organisation+scope>.<domain>`, which could be replaced by a dedicated DNS entry, e.g.,`https://<app>.<env>.<organisation>.<scope>.<domain>`.  
 
-The .Stat [**'proxy' service**](/dotstatsuite-documentation/getting-started/framework/#proxy-service) is used to route the requests from those individual URLs to to appropriate underlying target application. By setting the `organisation:scope` headers depending on host it instructs the target application to inject the related configurations, customisations and brandings stored in the configurations and served by the .Stat [**config service**](/dotstatsuite-documentation/getting-started/framework/#config-service). 
+The .Stat [**'proxy' service**](/dotstatsuite-documentation/getting-started/framework/#proxy-service) is used to route the requests from those individual URLs to appropriate underlying target application. By setting the `organisation:scope` headers depending on host it instructs the target application to inject the related configurations, customisations and brandings stored in the configurations and served by the .Stat [**config service**](/dotstatsuite-documentation/getting-started/framework/#config-service). 
 
 The mapping from the web application URL (host) to the target application and `organisation` and scope is configured in the `routes.json` file of the proxy service:
 
@@ -148,8 +148,9 @@ The organisation-wide configurations, customisations and brandings (not those de
 
 `/<env>/configs/<organisation>/<app>/settings.json`
 
-#### Example
+See more details about route management and more examples [here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy#routes-management).
 
+#### Example
 See the tenants definition [here](#example-of-complete-tenant-configuration).
 
 See the `routes.json` file example of a deployment strategy using a proxy: https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp/-/blob/master/qa/proxy/routes.json
