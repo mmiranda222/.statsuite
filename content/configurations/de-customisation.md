@@ -463,7 +463,7 @@ Since [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentatio
 
 #### Add hyperlink on header, subheader and footer logos
 > *Version history:*  
-> Subheader link introduced in [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024)
+> Subheader link introduced in [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024)  
 > Moved the definition of the hyperlink from `assets` to `app` in [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)  
 > Hyperlink is made localised with [October 5, 2021 Release .Stat Suite JS 10.0.0](/dotstatsuite-documentation/changelog/#october-5-2021)  
 > Introduced in [July 23, 2020 Release .Stat Suite JS 5.2.0](/dotstatsuite-documentation/changelog/#july-23-2020) (thanks to [Dhanya Chandrasekharan](https://gitlab.com/dhanya.sreekant) for the contribution!)
