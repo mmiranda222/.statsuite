@@ -7,7 +7,7 @@ keywords: [
   'Before indexing data', '#before-indexing-data',
   'How to create a SOLR collection', '#how-to-create-a-solr-collection',
   'What is indexed', '#what-is-indexed',
-  'Conditions and exceptions', '#conditions-and-exceptions',
+  'Indexation rules', '#indexation-rules',
   'Indexing externally defined dataflows', '#indexing-externally-defined-dataflows',
   'When and how to index', '#when-and-how-to-index',
   'API format', '#api-format',
@@ -23,6 +23,7 @@ keywords: [
 ---
 
 > *Version history:*  
+> `NOT_INDEXED` annotation for dimensions and dimension values introduced with [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024)  
 > 'GET sfs report' query is replaced by 'Get sfs logs' query with [December 5, 2022 Release .Stat Suite JS spin](/dotstatsuite-documentation/changelog/#december-5-2022)  
 > Index an individual dataflow since [July 8, 2021 Release .Stat Suite JS 9.0.0](/dotstatsuite-documentation/changelog/#july-8-2021)  
 > Introduction of the **Collection** concept with Solr with [May 19, 2021 Release .Stat Suite JS 8.0.0](/dotstatsuite-documentation/changelog/#may-19-2021)  
@@ -34,7 +35,7 @@ keywords: [
 - [Before indexing data](#before-indexing-data)
   - [How to create a SOLR collection](#how-to-create-a-solr-collection)
 - [What is indexed](#what-is-indexed)
-  - [Conditions and exceptions](#conditions-and-exceptions)
+  - [Indexation rules](#indexation-rules)
   - [Indexing externally defined dataflows](#indexing-externally-defined-dataflows)
 - [When and how to index](#when-and-how-to-index)
   - [API format](#api-format)
@@ -79,17 +80,62 @@ The following pieces of information are retrieved for each dataflow:
 * ID and localised names and hierarchy position of the categories in which the dataflow is categorised
 * IDs and localised names of the concepts used as dimensions, as well as the dimension IDs
 * IDs, localised names and hierarchy position of the codes used as dimension values constrained by the Actual Content Constraints defined for the dataflow. **Note** that this Content Constraint also contains information about the Time Periods (Time dimension values) available for the dataflow. It allows defining a specific “Time Period” range facet.
+* Last update date taken from the validFrom property of the **currently valid** actual content constraint (ActualCC) of the dataflow. 'Currently valid' means that the datetime is in the past and the corresponding validTo property is in the future or absent. If a valid validFrom property is not available then the datetime value is taken from the actual LAST_UPDATE annotation of the dataflow. Only if that is not available then it is the last dataflow indexing time.
 
 In SDMX, dataflows are **uniquely** identified by data source, Agency, ID and Version. However, to avoid user confusion, the **search does not distingish dataflows per Agency or per Version**. Thus if there are dataflows, categorised for search indexing, with the same ID, but with different Agencies or different Versions, then only one of them is indexed (first version retrieved through `dataflow/all/ID/latest`). In such a case, it is needed to create and categorise separate dataflows with different IDs.  
 
 If the same dataflow (same ID, whatever Agency or Version) is retrieved from different data sources, then they are indexed separately and appear in the search results as different dataflows, and the are **distinguished by the data source** which is visible when the dataflow information is expanded (according to the configuration settings).
 
-#### Conditions and exceptions
-* A dataflow is indexed **only if** there is data associated to it.  
-  The data availability check is based on the `Actual Content Constraint` attached to the dataflow. The dataflow is indexed only if there is:  
-  - a *non-empty currently valid* Actual Content Constraint or 
-  - (if there is no Actual Content Constraint) the data query for the first observation (range 0:0) returns an observation.
-* A particular dimension of a dataflow is indexed only if the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
+#### Indexation rules
+* Dataflows are indexed **only if**  
+  - there is data associated to them. The data availability check is based on the `Actual Content Constraint` attached to the dataflow. It must be:  
+    * *non-empty* or
+    * non-present (for compatibility with SDMX web services not based on .Stat Suite).
+  - they have an appropriate localised name
+* Dataflow descriptions are indexed **only if**  
+  - they have an appropriate localised name
+* Dimensions of a dataflow are indexed **only if**  
+  - the dimension values *with available data* do not exceed the limit defined in the `SFS` configuration parameter `DIMENSION_VALUES_LIMIT`, which is by default set to `1000`. It protects the search engine from too big codelists and prevents performance impacts. For more information see [here](/dotstatsuite-documentation/configurations/de-configuration/#limit-for-indexing-dimensions-per-dataflow).
+  - the dimensions are not explicitely excluded from indexation by a `NOT_INDEXED` annotation set either
+    * in the dimension definition of the DSD:  
+      ```javascript  
+        "annotations": [{
+            "type": "NOT_INDEXED"
+         }]
+      ```  
+      or  
+    * in the dataflow definition:  
+      ```javascript  
+        "annotations": [{
+            "type": "NOT_INDEXED",
+            "title": "DIM3,DIM6,ATTR5,ATTR6"   <-- These are the related dimension and attribute IDs
+         }]
+      ```  
+  - they have an appropriate localised name
+* Dimension values of a dataflow are indexed **only if**  
+  - there are data available for these values or, if the values are hierarchical parents in case their children values have data. For that purpose, the search indexing takes the current `Actual Content Constraint` of the dataflow, if available, into account.
+  - the dimension values are not explicitely excluded from indexation by a `NOT_INDEXED` annotation set either
+    * in the definition of the code in the underlying codelist:   
+      ```javascript
+        "annotations": [{  
+            "type": "NOT_INDEXED"  
+        }]  
+      ```  
+       Note that in this case, the concept's facet could still have this value indexed for other dataflows if those use a different codelist where the code is not marked with annotation `NOT_INDEXED`.  
+    or  
+    * in the dataflow definition:  
+      ```javascript
+        "annotations": [{
+            "type": "NOT_INDEXED",
+            "title": "DIM3=VALUE2+VALUE9,DIM6=VALUE_X+VALUE_Y"   <-- These are the related dimension IDs and dimension value IDs
+         }]
+      ```  
+      Note that in this case, the concept's facet could still have this value indexed for other dataflows if the corresponding dimension values were not marked with annotation `NOT_INDEXED`.
+  - they have an appropriate localised name
+* CategorySchemes are indexed **only if**  
+  - they have an appropriate localised name
+* Categories are indexed **only if**  
+  - they have an appropriate localised name
 
 #### Indexing externally defined dataflows
 It is possible to index externally defined dataflows for browsing and searching in .Stat DE, in the case when the dataflow is stored only as stubs (without content, e.g. without the link to its DSD), meaning that the full definition and content of the corresponding dataflow is stored externally.  

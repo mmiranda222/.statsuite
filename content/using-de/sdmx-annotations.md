@@ -176,6 +176,14 @@ The main advantage of the Annotation is its flexibility as all properties can be
 <td style="height: 23px; width: 10px;">&nbsp;<em>optional</em></td>
 <td style="height: 23px; width: 106px;">`<concept id>=LEVEL<level #>+`<br/>`LEVEL<level #>+…,<concept id>,…` <br/> example: <br/> `REF_AREA,ANALYTICAL_CATEGORIES:`<br/>`LEVEL1+LEVEL3`</td>
 </tbody>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 201px;">ALWAYS_DISPLAY_PARENTS</td>
+<td style="height: 23px; width: 1471.44px;"> Exclude from the search indexing of a dataflow the dimensions and/or the dimension values<br />-&nbsp;<a href="/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexation-rules">full specs</a></td>
+<td style="height: 23px; width: 397.562px;">Dataflow, DSD</td>
+<td style="height: 23px; width: 10px;">&nbsp;<em></em></td>
+<td style="height: 23px; width: 106px;"> dimension exclusion `"title": "DIM3,DIM6,ATTR5,ATTR6"` <br/> dimension value exclusion : `"title": "DIM3=VALUE2+VALUE9,DIM6=VALUE_X+VALUE_Y"`</td>
+</tbody>
 </table>
 
 #### Automatically generated annotations
