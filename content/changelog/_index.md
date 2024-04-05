@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 4, 2024](#april-4-2024)
 - [March 22, 2024](#march-22-2024)
 - [March 21, 2024](#march-21-2024)
 - [March 14, 2024](#march-14-2024)
@@ -142,6 +143,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 | Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#march-22-2024) <br/> 8.18.7 <br/> 22‑March‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+| [**zoo**](/dotstatsuite-documentation/changelog/#april-4-2024)     | **4‑April‑24** | ok | (ok) |           |           |           |           |           |
 | [**yay**](/dotstatsuite-documentation/changelog/#march-21-2024)     | <font color="Orange">**21‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
 | [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
@@ -162,6 +164,67 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
+
+---
+
+### April 4, 2024
+**[Release .Stat Suite JS "zoo"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/75#tab-issues)**
+> This **major** release includes a new version of all the JavaScript services and applications *(except keycloak)*.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite CORE [gingerbread](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72) release.
+
+non-backward-compatible change:
+
+**mandatory operational action:** sfs schema **script** has been updated (sfs schema remains unchanged), run `yarn dist:schema` from *live* sfs.  
+It is **strongly recommended to re-index** after sfs schema run ends without error(s).
+
+backward-compatible enhancements and new features:
+
+- [dotstatsuite-data-explorer#1206](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1206) **Change the list of related dataflows in the Overview page** using an ad-hoc *SDMX* query defined by an annotation. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/overview/#custom-list-of-related-dataflows))
+- [dotstatsuite-data-explorer#401](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/401) Make the DE **logo link configurable** (allowing to bypass the DE homepage redirection). ([Documentation](/dotstatsuite-documentation/configurations/de-customisation/#add-hyperlink-on-header-subheader-and-footer-logos))
+- [dotstatsuite-data-explorer#1116](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1116) Dataflow-level's referential metadata displayed in descending order in the DE side panel. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel/#))
+- [dotstatsuite-sdmx-faceted-search#128](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/128) and [dotstatsuite-data-explorer#1213](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1213) **Improve value of 'Last updated'** field in order to display, in the DE, the value that represents the date-time when data has actually been last updated by the data owner. ([Updated documentation](/dotstatsuite-documentation/using-de/searching-data/indexing-data/#what-is-indexed))
+- [dotstatsuite-sdmx-faceted-search#160](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/160) Delete DE facet orders upon deleting SFS configuration.
+- [dotstatsuite-sdmx-faceted-search#59](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/59) Don't index dataflows (or their characteristics) that do not have the localised name. ([Updated documentation](/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexation-rules))
+- [dotstatsuite-sdmx-faceted-search#39](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/39) **Limitations for the indexing of dimensions and/or dimension values** according to the `NOT_INDEXED` annotation. ([Documentation](/dotstatsuite-documentation/using-de/searching-data/indexing-data/#indexation-rules))
+- [dotstatsuite-sdmx-faceted-search#114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/114) Enhance the search error message for failed dataflow (re-)indexation (when no datasources match).
+- [dotstatsuite-visions#45](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/45) Configurable color of muted/unmuted description of a dataflow in DE search result list. ([Documentation](/dotstatsuite-documentation/configurations/de-customisation/#theme-settings-dataflow-description-un-muted-colors))
+- [dotstatsuite-data-explorer#1192](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1192) Allow bookmarking visualisation pages without time dimension filter.
+- [dotstatsuite-data-explorer#1155](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1155) Mobile view optimization of the NOTE message in DE header.
+- [dotstatsuite-data-explorer#1118](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1118) Make the visualisation page without margins as it is made for the search result page. ([Updated documentation](/dotstatsuite-documentation/using-de/general-layout/#header))
+- [dotstatsuite-data-explorer#1097](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1097) Make the toolbar of the visualisation page responsive and hide the 'Applied filters' in fullscreen mode.
+- [dotstatsuite-data-explorer#830](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/830) **Web Accessibility *WCAG* improvement** : Content on Hover or Focus.
+- [dotstatsuite-data-explorer#827](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/827) **Web Accessibility *WCAG* improvement** : Use the aria-live attribute for the drag and drop customisation feature.
+- [dotstatsuite-data-explorer#825](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/825) **Web Accessibility *WCAG* improvement** : Improve the aria-label attribute of used_filters panel button and accessibility support.
+- [dotstatsuite-data-explorer#823](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/823) **Web Accessibility *WCAG* improvement** : Use the aria-expanded attributes for the menu items, button.
+- [dotstatsuite-data-explorer#821](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/821) **Web Accessibility *WCAG* improvement** : Nested interactive elements.
+- [dotstatsuite-data-explorer#815](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/815) **Web Accessibility *WCAG* improvement** : Lists incorrectly marked up.
+- [dotstatsuite-data-explorer#814](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/814) **Web Accessibility *WCAG* improvement** : Elements not marked up (Table, List, Headings).
+- [dotstatsuite-data-lifecycle-manager#430](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/430) Allow **transferring referential metadata referencing DSD with DLM**. ([Documentation](/dotstatsuite-documentation/using-dlm/manage-data/copy-data/#content-type))
+- [dotstatsuite-data-lifecycle-manager#393](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/393) Sort items alphabetically and add spotlight in the filters of the DLM 'Manage permissions' page. ([Updated documentation](/dotstatsuite-documentation/using-dlm/manage-permissions/#manage-permissions-overview))
+- [dotstatsuite-data-lifecycle-manager#381](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/381) Enhance the DLM 'Select all' option of the 'Delete related artefacts' feature.
+- [dotstatsuite-proxy#11](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/issues/11) Clarify and document the feature for defining a tenant through a URL parameter. ([Updated documentation](/dotstatsuite-documentation/configurations/tenant-model/#tenant-deployment-and-route-management))
+- [dotstatsuite-config#48](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/48) Issue with `aws-config` settings.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1120](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1120) Fix config. of GTM/GA tracking and events.
+- [dotstatsuite-data-explorer#1243](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1243) Chart of type 'Map' display is broken: 'Whoops something went wrong on our side'.
+- [dotstatsuite-data-explorer#1240](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1240) Unwanted request for available constraint (acc /all).
+- [dotstatsuite-data-explorer#1218](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1218) Changing frequency looses the current 'Last N periods' selection.
+- [dotstatsuite-data-explorer#1198](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1198) Language of labels in CSV download doesn't match the selected locale in DE.
+- [dotstatsuite-data-explorer#1189](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1189) Avoid highlighting italic styled elements in descriptions as search hits on the search result page.
+- [dotstatsuite-sdmx-faceted-search#152](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/152) DE perfect-match free-text isn't applied to visualisation page when it's a child item.
+- [dotstatsuite-sdmx-faceted-search#149](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/149) Search weight annotation value with number decimals fails to index.
+- [dotstatsuite-sdmx-faceted-search#125](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/125) Correct SFS responses when (an) error(s) occur(s).
+- [dotstatsuite-sdmx-faceted-search#102](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/102) SFS returns 500 error when dataflows have not yet been indexed.
+- [dotstatsuite-data-lifecycle-manager#433](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/433) Impossible to list or delete some related artefacts in DLM.
+- [dotstatsuite-data-lifecycle-manager#420](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/420) Not all selected options are applied when transferring data from/to several dataflows at the same time.
+- [dotstatsuite-data-lifecycle-manager#411](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/411) Properly escape names in generated SDMX-ML message for categorisations.
+- [dotstatsuite-sdmx-faceted-search#164](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/164) *(Refactoring)* backport uncoded test.
+- [dotstatsuite-visions#44](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/44) *(Refactoring)* refactor accessibility *a11y* snippet. 
+- [dotstatsuite-data-viewer#40](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-viewer/-/issues/40) *(Refactoring)* Migrate React for data-viewer from v16 to v18.
+- [dotstatsuite-sdmx-faceted-search#127](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/127) *(Refactoring)* Harmonise organisationId/tenant and dataspaceID/spaceId.
+- [dotstatsuite-data-explorer#1199](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1199) *(DevOps)* Links artifacts in release.
 
 ---
 
@@ -326,21 +389,6 @@ backward-compatible enhancements and new features:
 - [dotstatsuite-data-lifecycle-manager#364](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/364) Enhance the message in the **DLM** when the related structures list fails to display because of a missing *SDMX* Metadata Structure Definition (MSD).
 - [dotstatsuite-data-explorer#1128](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1128) Adapt to the new share API.
 - [dotstatsuite-config#46](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/46) Add an "AWS S3" bucket storage option for config files.
-- [dotstatsuite-data-explorer#1175](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1175) *(Refactoring)* Fix DE boilerplate.
-- [dotstatsuite-data-explorer #1165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1165) *(Refactoring)* Bad handling of unknown space.
-- [dotstatsuite-data-explorer#1143](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1143) *(Refactoring)* Merge back 'xray' patch into develop.
-- [dotstatsuite-data-explorer#1124](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1124) *(Refactoring)* Topology syntax check.
-- [dotstatsuite-proxy#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/issues/7) *(Refactoring)* Check redirection.
-- [dotstatsuite-data-lifecycle-manager#384](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/384) *(Refactoring)* Migrate React from v16 to v18.
-- [dotstatsuite-data-explorer#1064](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1064) *(Refactoring)* Plural polyfill inspection.
-- [dotstatsuite-visions#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/41) *(Refactoring)* Fix some Visions tests.
-- [dotstatsuite-data-explorer#1018](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1018) *(Refactoring)* Table performances benchmark.
-- [dotstatsuite-data-explorer#1114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1114) *(DevOps)* Enhance the script [`artefacts.sh`](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/dotstatsuitejs?ref_type=heads) to support tags instead of master branch only.
-- [dotstatsuite-data-explorer#1129](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1129) *(DevOps)* gitops -> e2e/perf auto for master & develop.
-- [dotstatsuite-data-explorer#1123](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1123) *(DevOps)* Enhance CI pipeline with **code quality**. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#code-quality))
-- [dotstatsuite-data-explorer#1122](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1122) *(DevOps)* Enhance CI pipeline with **a11y**. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#accessibility))
-- [dotstatsuite-data-explorer#1121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1121) *(DevOps)* Enhance CI pipeline with **browser performance**.
-- [dotstatsuite-data-explorer#428](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/428) *(DevOps)* `.githash` for Docker builds.
 - [dotstatsuite-sdmx-faceted-search#109](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/109) *(Documentation)* Review sdmx-faceted-search (sfs). ([Updated documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search))
 - [dotstatsuite-data-explorer#1105](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1105) *(Documentation)* **Matomo** integration in data-explorer. ([Documentation](/dotstatsuite-documentation/configurations/de-analytics/matomo/))
 
@@ -361,6 +409,21 @@ patch changes:
 - [dotstatsuite-data-explorer#1020](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1020) Issues with selecting items in facets & filters.
 - [dotstatsuite-share#63](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/63) Undefined content in the mail sent to request a new shared token.
 - [dotstatsuite-share#64](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-share/-/issues/64) Some shared views return a "reading 'count'" error.
+- [dotstatsuite-data-explorer#1175](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1175) *(Refactoring)* Fix DE boilerplate.
+- [dotstatsuite-data-explorer #1165](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1165) *(Refactoring)* Bad handling of unknown space.
+- [dotstatsuite-data-explorer#1143](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1143) *(Refactoring)* Merge back 'xray' patch into develop.
+- [dotstatsuite-data-explorer#1124](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1124) *(Refactoring)* Topology syntax check.
+- [dotstatsuite-proxy#7](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-proxy/-/issues/7) *(Refactoring)* Check redirection.
+- [dotstatsuite-data-lifecycle-manager#384](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/384) *(Refactoring)* Migrate React from v16 to v18.
+- [dotstatsuite-data-explorer#1064](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1064) *(Refactoring)* Plural polyfill inspection.
+- [dotstatsuite-visions#41](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-visions/-/issues/41) *(Refactoring)* Fix some Visions tests.
+- [dotstatsuite-data-explorer#1018](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1018) *(Refactoring)* Table performances benchmark.
+- [dotstatsuite-data-explorer#1114](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1114) *(DevOps)* Enhance the script [`artefacts.sh`](https://gitlab.com/sis-cc/dotstatsuite-documentation/-/tree/master/dotstatsuitejs?ref_type=heads) to support tags instead of master branch only.
+- [dotstatsuite-data-explorer#1129](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1129) *(DevOps)* gitops -> e2e/perf auto for master & develop.
+- [dotstatsuite-data-explorer#1123](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1123) *(DevOps)* Enhance CI pipeline with **code quality**. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#code-quality))
+- [dotstatsuite-data-explorer#1122](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1122) *(DevOps)* Enhance CI pipeline with **a11y**. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance#accessibility))
+- [dotstatsuite-data-explorer#1121](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1121) *(DevOps)* Enhance CI pipeline with **browser performance**.
+- [dotstatsuite-data-explorer#428](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/428) *(DevOps)* `.githash` for Docker builds.
 
 ---
 
@@ -395,10 +458,6 @@ backward-compatible enhancements and new features:
 - [dotstatsuite-core-transfer#628](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/628) Automatically unblock queue by properly closing yet unfinished own jobs when the transfer service instance restarts.
 - [dotstatsuite-core-sdmxri-nsi-ws#382](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/382) Make IEntity (mappingsets) management asynchronous.
 - [dotstatsuite-core-sdmxri-nsi-ws#378](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/378) Avoid duplicate calls for mappingsets info in data requests with range header.
-- [dotstatsuite-core-sdmxri-nsi-ws#410](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/410) *(DevOps)* Deploy NSI version 8.18.7.
-- [dotstatsuite-core-sdmxri-nsi-ws#402](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/402) *(DevOps)* Deploy NSI version 8.18.6.
-- [dotstatsuite-core-transfer#568](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/568) *(DevOps)* Set up a schedule run of Postman integration tests in gitlab pipelines.
-- [dotstatsuite-quality-assurance#53](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/53) *(DevOps)* Postman integration tests job fails when dataDb requires migration.
 
 patch changes:
 
@@ -412,6 +471,10 @@ patch changes:
 - [dotstatsuite-core-data-access#126](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-data-access/-/issues/126) Simplify the logic of mappingset creation to always regenerate mappingsets.
 - [dotstatsuite-core-sdmxri-nsi-ws#404](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/404) Exports in xml (default) with `includeHistory=true` return references to DSD instead of DF.
 - [dotstatsuite-data-lifecycle-manager#407](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/407) The SQL types used for 'Float' and 'Double' observations with intentionally missing values are too small (+ enhance the error message).
+- [dotstatsuite-core-sdmxri-nsi-ws#410](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/410) *(DevOps)* Deploy NSI version 8.18.7.
+- [dotstatsuite-core-sdmxri-nsi-ws#402](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/402) *(DevOps)* Deploy NSI version 8.18.6.
+- [dotstatsuite-core-transfer#568](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/568) *(DevOps)* Set up a schedule run of Postman integration tests in gitlab pipelines.
+- [dotstatsuite-quality-assurance#53](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/53) *(DevOps)* Postman integration tests job fails when dataDb requires migration.
 
 ---
 
