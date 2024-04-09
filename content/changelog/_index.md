@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [April 8, 2024](#april-8-2024)
 - [April 4, 2024](#april-4-2024)
 - [March 22, 2024](#march-22-2024)
 - [March 21, 2024](#march-21-2024)
@@ -143,7 +144,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 | Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#march-22-2024) <br/> 8.18.7 <br/> 22‑March‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [**zoo**](/dotstatsuite-documentation/changelog/#april-4-2024)     | **4‑April‑24** | ok | (ok) |           |           |           |           |           |
+| [**zoo**](/dotstatsuite-documentation/changelog/#april-8-2024)     | <font color="Orange">**8‑April‑24**</font> | ok | (ok) |           |           |           |           |           |
 | [**yay**](/dotstatsuite-documentation/changelog/#march-21-2024)     | <font color="Orange">**21‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
 | [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
@@ -167,6 +168,17 @@ Our release policy extends to hotfixes for critical issues found by SIS-CC Membe
 
 ---
 
+### April 8, 2024
+**[Patch release .Stat Suite JS "zoo"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/75#tab-issues)**  
+> This release includes a **patch** version of the **data-explorer** *(v22.0.2)* application.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.18.7** and .Stat-Suite CORE release [gingerbread](#december-14-2023).
+
+patch change:
+
+- [dotstatsuite-data-explorer#1270](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1270) Allow empty dataflow version number in the DE URLs in order to use the latest dataflow version. ([Updated documentation](/dotstatsuite-documentation/using-de/general-layout/#url-parameters))
+
+---
+
 ### April 4, 2024
 **[Release .Stat Suite JS "zoo"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/75#tab-issues)**
 > This **major** release includes a new version of all the JavaScript services and applications *(except keycloak)*.  
@@ -175,7 +187,7 @@ Our release policy extends to hotfixes for critical issues found by SIS-CC Membe
 non-backward-compatible change:
 
 **mandatory operational action:** sfs schema **script** has been updated (sfs schema remains unchanged), run `yarn dist:schema` from *live* sfs.  
-It is **strongly recommended to re-index** after sfs schema run ends without error(s).
+It is also **mandatory to re-index** after sfs schema run ends without error(s) in order to apply the new **'Last Updated'** date-time as part of [dotstatsuite-sdmx-faceted-search#128](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/128).
 
 backward-compatible enhancements and new features:
 
@@ -436,7 +448,7 @@ patch changes:
 
 **Warnings:**
 - **The DLM Excel Add-in does currently not allow anymore editing higher-level reference metadata attached to the DSD.** (See [dotstatsuite-excel-addin#135](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-excel-addin/-/issues/135).)
-- **The DLM does currently not allow anymore transferring higher-level reference metadata attached to the DSD.**  (See [dotstatsuite-data-lifecycle-manager#430](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/430).)
+- **The DLM allows transferring reference metadata attached to the DSD** only starting with **[JS zoo release](/dotstatsuite-documentation/changelog/#april-8-2024).**
 
 non-backward-compatible changes:
 
