@@ -21,16 +21,24 @@
 </thead>
 <body>
 <tr>
-<td rowspan="6">[nsiws](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws)</td>
-<td rowspan="2">qa/develop</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/pipeline.svg?style=flat-square)</td>
-<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="8">[nsiws](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws)</td>
+<td rowspan="4">qa/develop</td>
+<td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/badges/develop/coverage.svg?style=flat-square)</td>
 <td>https://nsi-qa-stable.siscc.org</td>
 <td>:ambulance: [health](https://nsi-qa-stable.siscc.org/health) - :clipboard: [swagger](https://nsi-qa-stable.siscc.org/swagger)</td>
 <td>-</td>
 <tr>
 <td>https://nsi-qa-reset.siscc.org</td>
 <td>:ambulance: [health](https://nsi-qa-reset.siscc.org/health) - :clipboard: [swagger](https://nsi-qa-reset.siscc.org/swagger)</td>
+<td>-</td>
+<tr>
+<td>https://nsi-m-qa-stable.siscc.org</td>
+<td>:ambulance: [health](https://nsi-m-qa-stable.siscc.org/health) - :clipboard: [swagger](https://nsi-m-qa-stable.siscc.org/swagger)</td>
+<td>-</td>
+<tr>
+<td>https://nsi-m-qa-reset.siscc.org</td>
+<td>:ambulance: [health](https://nsi-m-qa-reset.siscc.org/health) - :clipboard: [swagger](https://nsi-m-qa-reset.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -58,12 +66,17 @@
 </tr>
 <tr><td colspan="7"></td></tr>
 <tr>
-<td rowspan="2">[transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)</td>
-<td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/pipeline.svg?style=flat-square)</td>
-<td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="3">[transfer](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/badges/develop/coverage.svg?style=flat-square)</td>
 <td>https://transfer-qa.siscc.org/health</td>
 <td>:ambulance: [health](https://transfer-qa.siscc.org/health) - :clipboard: [swagger](https://transfer-qa.siscc.org/swagger)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>https://transfer-m-qa.siscc.org/health</td>
+<td>:ambulance: [health](https://transfer-m-qa.siscc.org/health) - :clipboard: [swagger](https://transfer-m-qa.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -76,12 +89,17 @@
 </tr>
 <tr><td colspan="7"></td></tr>
 <tr>
-<td rowspan="2">[authz](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)</td>
-<td>qa/develop</td>
-<td>![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/pipeline.svg?style=flat-square)</td>
-<td>![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="3">[authz](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management)</td>
+<td rowspan="2">qa/develop</td>
+<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-auth-management/badges/develop/coverage.svg?style=flat-square)</td>
 <td>https://authz-qa.siscc.org/health</td>
 <td>:ambulance: [health](https://authz-qa.siscc.org/health) - :clipboard: [swagger](https://authz-qa.siscc.org/swagger)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>https://authz-m-qa.siscc.org/health</td>
+<td>:ambulance: [health](https://authz-m-qa.siscc.org/health) - :clipboard: [swagger](https://authz-m-qa.siscc.org/swagger)</td>
 <td>-</td>
 </tr>
 <tr>
