@@ -168,7 +168,12 @@ The Data Explorer footer is common to all pages of the application, and consists
 ---
 
 ### URL parameters
-The Data Explorer pages let the user drive the page content through URL parameters. This allows bookmarking and URL sharing of DE pages. 
+The Data Explorer pages let the user drives the page content through URL parameters. This allows bookmarking and URL sharing of DE pages.  
+**Note** that the URL options allow using the web browser's `Going Back` option to roll back to the corresponding previous state and user selections.
+
+**Since [April 8, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-8-2024)**, the dataflow version number key **df[vs]=1.0** can be omitted or emptied, in order to query for the always latest version of a published datafow. Both following formats are accepted:
+- omitted version `df[id]=DF_HEALTH_STAT&df[ag]=OECD`
+- emptied version `df[id]=DF_HEALTH_STAT&df[ag]=OECD&df[vs]=`
 
 | key | legacy key (for backward-compatibility) | type | definition | exemple |
 | ------ | ------ | ------ | ------ | ------ |
@@ -195,5 +200,3 @@ The Data Explorer pages let the user drive the page content through URL paramete
 As part of this refactoring work, the following keys have also been removed:
 > * filter (open box in side in viz)
 > * frequency (frequency of the app)
-
-**Note** also that these URL options allow using the web browser's `Going Back` option to roll back to the corresponding previous state and user selections.
