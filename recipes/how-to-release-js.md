@@ -1,5 +1,23 @@
 # how to release (JS)
 
+## release condensed todolist
+1. check kubernetes diff in [kube-rp repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp) between the immediate commit after the due date of the milestone and master
+   - put the compare link in the milestone (useful for other deployments, ie OECD PP & P
+   - put kubernetes impact (gives an idea of deployment complexity)
+   - put an icon for each apps and services (in summary table) concerned (helps operator to know where to pay attention)
+2. for each apps/svcs (except keycloak):
+   - locally, git pull develop and run `rm -rf node_modules/ && rm package-lock.json && rm yarn.lock && yarn && npm i --legacy-peer-deps` (vulnerability report)
+   - bump version in `package.json` and git push
+   - make sure there is no critical vulnerability
+   - create a release branch based on this commit following the name convention: `release-v<semver>`
+   - create a merge request from the release branch into master, bind it the the milestone, **no squash but rm branch afterwards**
+   - upon merge, the pipeline will create a docker image with the following tags: `master` & `<commithash>`
+   - create a tag `v<semver>` on master, pipeline will add the `v<semver>` tag to the previously created docker image (identified with the `<commithash>`)
+   - create a tag `<release name>` on master, pipeline will add the `<release name>` tag to the previously created docker image (identified with the `<commithash>`)
+3. run `node ./scripts/i18n-changelog.js <current tag> <previous tag>` in the repo config-data to have the i18n changelog
+4. compare latest commit to previous comment in siscc qa topologies (tenants & settings)
+5. handle keycloak like an app but pipeline is different (double-check)
+
 ## conventions
 - a release (gitab milestone) is used to centralize information about .Stat Suite states
 - a release should includes 4 entries:
