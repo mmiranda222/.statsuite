@@ -35,11 +35,11 @@
 <tr>
 <td>https://nsi-m-qa-stable.siscc.org</td>
 <td>:ambulance: [health](https://nsi-m-qa-stable.siscc.org/health) - :clipboard: [swagger](https://nsi-m-qa-stable.siscc.org/swagger)</td>
-<td>-</td>
+<td> MariaDB </td>
 <tr>
 <td>https://nsi-m-qa-reset.siscc.org</td>
 <td>:ambulance: [health](https://nsi-m-qa-reset.siscc.org/health) - :clipboard: [swagger](https://nsi-m-qa-reset.siscc.org/swagger)</td>
-<td>-</td>
+<td> MariaDB </td>
 </tr>
 <tr>
 <td rowspan="4">staging/master</td>
@@ -77,7 +77,7 @@
 <tr>
 <td>https://transfer-m-qa.siscc.org/health</td>
 <td>:ambulance: [health](https://transfer-m-qa.siscc.org/health) - :clipboard: [swagger](https://transfer-m-qa.siscc.org/swagger)</td>
-<td>-</td>
+<td> MariaDB </td>
 </tr>
 <tr>
 <td>staging/master</td>
@@ -100,7 +100,7 @@
 <tr>
 <td>https://authz-m-qa.siscc.org/health</td>
 <td>:ambulance: [health](https://authz-m-qa.siscc.org/health) - :clipboard: [swagger](https://authz-m-qa.siscc.org/swagger)</td>
-<td>-</td>
+<td> MariaDB </td>
 </tr>
 <tr>
 <td>staging/master</td>
