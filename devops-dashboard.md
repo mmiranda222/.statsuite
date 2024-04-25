@@ -235,10 +235,10 @@
 </tr>
 <tr><td colspan="7"></td></tr>
 <tr>
-<td rowspan="5">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
-<td rowspan="2">qa/develop</td>
-<td rowspan="2">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
-<td rowspan="2">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
+<td rowspan="7">[data-lifecycle-manager](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager)</td>
+<td rowspan="4">qa/develop</td>
+<td rowspan="4">![status](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/pipeline.svg?style=flat-square)</td>
+<td rowspan="4">![coverage](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/badges/develop/coverage.svg?style=flat-square)</td>
 <td>https://dlm-qa.siscc.org</td>
 <td>:globe_with_meridians: [website](https://dlm-qa.siscc.org) - :ambulance: [health](https://dlm-qa.siscc.org/api/healthcheck)</td>
 <td>-</td>
@@ -246,7 +246,16 @@
 <tr>
 <td>https://dlm2-qa.siscc.org</td>
 <td>:globe_with_meridians: [website](https://dlm2-qa.siscc.org) - :ambulance: [health](https://dlm2-qa.siscc.org/api/healthcheck)</td>
-<td>-</td>
+<td> MariaDB internal spaces </td>
+</tr>
+<td>https://dlm-qa.siscc.org/?tenant=siscc:staging</td>
+<td>:globe_with_meridians: [website](https://dlm-qa.siscc.org/?tenant=siscc:staging) - :ambulance: [health](https://dlm-qa.siscc.org/api/healthcheck)</td>
+<td> Staging internal spaces </td>
+</tr>
+<tr>
+<td>https://dlm-qa.siscc.org/?tenant=oecd</td>
+<td>:globe_with_meridians: [website](https://dlm-qa.siscc.org/?tenant=oecd) - :ambulance: [health](https://dlm-qa.siscc.org/api/healthcheck)</td>
+<td> Oecd public external spaces </td>
 </tr>
 <tr>
 <td rowspan="3">staging/master</td>
