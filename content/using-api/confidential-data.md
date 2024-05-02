@@ -34,7 +34,7 @@ An observation (with all its measure and attribute values) is considered SDMX-co
 
 For more information about the available values, consult the related *SDMX* standard guidelines [Guidelines for Confidentiality and Embargo in SDMX](https://sdmx.org/wp-content/uploads/Guidelines_on_Confidentiality_and_Embargo.docx) as well as the full *SDMX* standard codelist [CL_CONF_STATUS](https://sdmx.org/wp-content/uploads/CL_CONF_STATUS_1_2_2018.docx).
 
-The *SDMX* Confidential and Embargoed data can only be accessed by users with permission to read Point-in-Time (PIT) data: `2048`-"CanReadPitData" (see more about [permission business rules](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions/permission-rules/#)).
+The *SDMX* Confidential and Embargoed data can only be accessed by users with permission to read Point-in-Time (PIT) data: `2048`-"CanReadPitData" (see more about [permission business rules](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/permission-management)).
 
 ---
 
