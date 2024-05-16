@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 15, 2024](#may-15-2024)
 - [April 8, 2024](#april-8-2024)
 - [April 4, 2024](#april-4-2024)
 - [March 22, 2024](#march-22-2024)
@@ -142,7 +143,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 <div style="display: inline-block; width: 100%; height: 31em; border: 1px solid #888; overflow-y: auto; overflow-x: auto;" markdown="block">
 
-| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#march-22-2024) <br/> 8.18.7 <br/> 22‑March‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
+| Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#may-15-2024) <br/> 8.19.0 <br/> 15‑May‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 | [**zoo**](/dotstatsuite-documentation/changelog/#april-8-2024)     | <font color="Orange">**8‑April‑24**</font> | ok | (ok) |           |           |           |           |           |
 | [**yay**](/dotstatsuite-documentation/changelog/#march-21-2024)     | <font color="Orange">**21‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
@@ -165,6 +166,39 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
+
+---
+
+### May 15, 2024
+**[Patch release .Stat Suite .NET "gingerbread"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72#tab-issues)**  
+> This release includes a **patch** version of the **core-transfer** *(v16.1.1)*, **sdmxri-nsi-ws** *(v8.19.0)*, **core-auth-management** *(v10.1.1)*, and **core-data-access** *(v24.0.1)* services.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.19.0** and .Stat-Suite JavaScript release [zoo](#april-8-2024).
+
+**Performance evolutions:** [.Stat Suite Core: performance results](https://siscc.grafana.net/public-dashboards/f98021df13744e65a21168df8c99e597)
+
+patch changes and improvements:
+
+- [dotstatsuite-core-transfer#710](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/710) New **transfer method** to tune table index type per DSD and **improve data storage performance**. ([Documentation](/dotstatsuite-documentation/using-api/api-main-features/#data-storage-performance-improvement/))
+- [dotstatsuite-core-transfer#711](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/711) New transfer configuration `SDMXFilePathAllowedExtensions` to restrict the list of allowed file formats through data upload using URL path parameter. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration))
+- [dotstatsuite-core-sdmxri-nsi-ws#440](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/440) Remove `ORDER BY` for non-paginated data requests.
+- [dotstatsuite-core-sdmxri-nsi-ws#389](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/389) Avoid multiple re-readings of the config. file to increase performance.
+- [dotstatsuite-core-sdmxri-nsi-ws#444](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/444) Improve query performance for Cleanup Mappingsets.
+- [dotstatsuite-core-sdmxri-nsi-ws#430](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/430) Do not include values in dynamic availability constraints for non-coded dimensions.
+- [dotstatsuite-core-sdmxri-nsi-ws#424](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/424) Properly escape tabs in text values in SDMX-JSON exports.
+- [dotstatsuite-core-sdmxri-nsi-ws#408](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/408) `app.config` missing `X-Range` in allowed headers.
+- [dotstatsuite-core-transfer#640](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/640) Improve "non-backward-compatible change" error message.
+- [dotstatsuite-core-transfer#268](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/268) Warning message when uploading data on a Live version when there is already a PIT version of the data.
+- [dotstatsuite-core-transfer#399](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/399) *(Refactoring)* Analyse and prevent SQL timeout issue in DSD Cleanup.
+- [dotstatsuite-core-sdmxri-nsi-ws#451](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/451) *(DevOps)* Deploy NSI version 8.18.10.
+- [dotstatsuite-core-sdmxri-nsi-ws#426](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/426) *(DevOps)* Deploy NSI version 8.18.8 and 8.18.9.
+- [dotstatsuite-core-sdmxri-nsi-ws#447](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/447) Dataflow is returning more data than allowed with the constraints.
+- [dotstatsuite-core-sdmxri-nsi-ws#445](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/445) SDMX-JSON returns dots instead of commas for textual values.
+- [dotstatsuite-core-sdmxri-nsi-ws#438](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/438) Remove '*' and '~' SQL filters on NSIWS data queries.
+- [dotstatsuite-core-sdmxri-nsi-ws#418](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/418) Incorrect labels returned for some codes in a codelist / hierarchical codelist.
+- [dotstatsuite-core-sdmxri-nsi-ws#412](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/412) Json error "409 : Could not find code '' in codelist" when querying with 'asOf' and 'includeHistory' parameters.
+- [dotstatsuite-core-sdmxri-nsi-ws#406](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/406) Properly escape double quotes in text values in SDMX-JSON exports.
+- [dotstatsuite-core-transfer#704](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/704) Transaction says 'successfully completed' instead of 'cancelled', even after the transfer service has recycled.
+- [dotstatsuite-core-transfer#680](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/680) DbUp migration errors.
 
 ---
 
