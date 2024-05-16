@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [May 16, 2024](#may-16-2024)
 - [May 15, 2024](#may-15-2024)
 - [April 8, 2024](#april-8-2024)
 - [April 4, 2024](#april-4-2024)
@@ -145,7 +146,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 | Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#may-15-2024) <br/> 8.19.0 <br/> 15‑May‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [**zoo**](/dotstatsuite-documentation/changelog/#april-8-2024)     | <font color="Orange">**8‑April‑24**</font> | ok | (ok) |           |           |           |           |           |
+| [**zoo**](/dotstatsuite-documentation/changelog/#may-16-2024)     | <font color="Orange">**16‑May‑24**</font> | ok | (ok) |           |           |           |           |           |
 | [**yay**](/dotstatsuite-documentation/changelog/#march-21-2024)     | <font color="Orange">**21‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
 | [**wave**](/dotstatsuite-documentation/changelog/#august-03-2023)     | **03‑Aug‑23** |             |           | (ok)      | ok        |           |           |           |
@@ -166,6 +167,17 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
+
+---
+
+### May 16, 2024
+**[Patch release .Stat Suite JS "zoo"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/75#tab-issues)**  
+> This release includes a **patch** version of the **data-explorer** *(v22.0.3)* application.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.19.0** and .Stat-Suite CORE release [gingerbread](#may-15-2023).
+
+patch change:
+
+- [dotstatsuite-data-explorer#1304](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1304) The Data Explorer does not respect the default `lastNPeriods` configuration parameter.
 
 ---
 
