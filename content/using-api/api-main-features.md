@@ -14,6 +14,7 @@ keywords: [
   'Basic validations function', '#basic-validations-function',
   'Advanced validations function', '#advanced-validations-function',
   'Management of embargoed data', 'https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management',
+  'Data storage performance improvement', '#data-storage-performance-improvement',
 ]
 
 ---
@@ -29,6 +30,7 @@ keywords: [
   - [Basic validations function](#basic-validations-function)
   - [Advanced validations function](#advanced-validations-function)
 - [Management of embargoed data](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/embargo-management)
+- [Data storage performance improvement](#data-storage-performance-improvement)
 
 This section describes the main features of the .Stat Suite data APIs for people who want to directly interact with the services behind the applications.  
 
@@ -275,3 +277,25 @@ In details, the API methods of the core-transfer service used for the data valid
      - Error msg: Values provided multiple times for attribute {3}.
   - TextAttributeValueLengthExceedsMaxLimitWithCoordinate
      - Error msg: Length of {3} attribute's value exceeds the limit ({5} > {6}) at coordinate {1}: {4}.
+
+---
+
+### Data storage performance improvement
+> Released with [May 15, 2024 Release .Stat Suite .NET gingerbread](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-15-2024)
+
+The method **{API_VERSION}/tune/dsd** allows to apply a specific index to **tune the performance of the DSD tables** storing the data and referential metadata.  
+2 types of index with a different type of improvement, can be defined for a given DSD:
+- `CLUSTERED_COLUMNSTORE` improves performance for **data extractions** for DSDs with large amounts of observations;
+- `CLUSTERED_COLUMNSTORE_ARCHIVE` applies high compression of data to **save disk space**; however it makes **data imports and exports slower**.
+
+**Important:**
+- The usage of the method requires the manage structures permission on the DSD;
+- This new function will replace all existing indexes in all tables belonging to the DSD, by a single clustered columnstore index with the default or archive data compression option (according to the `indexType`);
+- Once moved to one of the clustered columnstore index types, this feature does not allow reverting back to rowstore and nonclustered columnstore indexes.
+
+The method **{API_VERSION}/tune/info** allows to return the information about the currently applied index type for a given DSD:
+- rowstore and nonclustered columnstore indexes `NONCLUSTERED_COLUMNSTORE`
+- clustered columnstore index with the default data compression option `CLUSTERED_COLUMNSTORE`
+- clustered columnstore index with the archive data compression option `CLUSTERED_COLUMNSTORE_ARCHIVE`
+
+More details about `/tune/dsd` and `/tune/info` methods **[here](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#post-versiontunedsd--tune-the-dsd-with-the-selected-indextype)**.
