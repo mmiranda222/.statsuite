@@ -178,7 +178,7 @@ Our release policy extends to hotfixes for critical issues found by SIS-CC Membe
 
 patch changes and improvements:
 
-- [dotstatsuite-core-transfer#710](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/710) New **transfer method** to tune table index type per DSD and **improve data storage performance**. ([Documentation](/dotstatsuite-documentation/using-api/api-main-features/#data-storage-performance-improvement/))
+- [dotstatsuite-core-transfer#710](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/710) New **transfer method** to tune table index type per DSD and **improve data storage performance**. ([Documentation](/dotstatsuite-documentation/using-api/api-main-features/#data-storage-performance-improvement))
 - [dotstatsuite-core-transfer#711](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/711) New transfer configuration `SDMXFilePathAllowedExtensions` to restrict the list of allowed file formats through data upload using URL path parameter. ([Documentation](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration))
 - [dotstatsuite-core-sdmxri-nsi-ws#440](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/440) Remove `ORDER BY` for non-paginated data requests.
 - [dotstatsuite-core-sdmxri-nsi-ws#389](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/389) Avoid multiple re-readings of the config. file to increase performance.
