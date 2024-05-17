@@ -24,6 +24,7 @@ keywords: [
   - [Time-machine features](#time-machine-features)
 
 > *Version history:*  
+> `ExcludeNonCodedDimensionsDuringConstraintCalculation` nsiws configuration introduced with [May 15, 2024 Release .Stat Suite .NET "gingerbread"](/dotstatsuite-documentation/changelog/#may-15-2024)  
 > `ExcludeNonCodedDimensionsDuringConstraintCalculation` transfer configuration introduced with [March 8, 2024 Release .Stat Suite .NET "gingerbread"](/dotstatsuite-documentation/changelog/#march-8-2024)  
 > 'asOf' and 'includeHistory' parameters introduced with [December 6, 2023 Release .Stat Suite .NET "gingerbread"](/dotstatsuite-documentation/changelog/#december-6-2023)  
 > Data upload supported in SDMX-CSV version 2.0 file format, and including combined actions (Information, Append, Merge, Replace, Delete) since [September 22, 2022 Release .Stat Suite .NET 'blueberry'](/dotstatsuite-documentation/changelog/#september-22-2022)
@@ -118,7 +119,9 @@ When data are uploaded or copied, then the .Stat Core system automatically (re-)
    * When there is not a PIT version: There will be only one actual content constraint, for the currently active version, with *no start date* and *no end date*
    * When there is a PIT version with PIT date: The actual content constraint for the pre-PIT version will have *no start date* and ***(1 second before) the PIT date as end date***, the actual content constraint for the PIT version will have the ***PIT date as start date*** and *no end date*
    * When there is a PIT version without user PIT date: The actual content constraint for the pre-PIT version will have *no start date* and *no end date*, the actual content constraint for the PIT version will have the *max value in C# and MS SQL/Oracle/MySQL db servers (9999-12-31 23:59:59) as start date* and *no end date*.
-- **Note** that, based on [configuration](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration), the actual content constraint can be returned without the values found for non-coded dimensions (same during the calculation of the constraint) in order to improve performance; by default, this option called `ExcludeNonCodedDimensionsDuringConstraintCalculation` is set to false.
+- **Notes:**
+  - Based on a transfer-service [configuration](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer#configuration), the **actual content constraint** can be returned without the values found for non-coded dimensions (same during the calculation of the constraint) in order to improve performance; by default, this option called `ExcludeNonCodedDimensionsDuringConstraintCalculation` is set to false;
+  - Based on a nsiws [configuration](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws#other-configuration-options), the **available constraint** can be returned without the values for non-coded dimensions in order to improve performance; by default, this option also called `ExcludeNonCodedDimensionsDuringConstraintCalculation` is set to false.
 
 ---
 
