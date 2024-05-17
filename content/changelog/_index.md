@@ -195,7 +195,7 @@ patch changes and improvements:
 - [dotstatsuite-core-sdmxri-nsi-ws#440](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/440) **Remove `ORDER BY` for non-paginated data requests**.
 - [dotstatsuite-core-sdmxri-nsi-ws#389](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/389) Avoid multiple re-readings of the config. file to increase performance.
 - [dotstatsuite-core-sdmxri-nsi-ws#444](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/444) Improve query performance for Cleanup Mappingsets.
-- [dotstatsuite-core-sdmxri-nsi-ws#430](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/430) Do not include values in dynamic availability constraints for non-coded dimensions.
+- [dotstatsuite-core-sdmxri-nsi-ws#430](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/430) Do not include values in dynamic availability constraints for non-coded dimensions. ([Documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/))
 - [dotstatsuite-core-sdmxri-nsi-ws#424](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/424) Properly escape tabs in text values in SDMX-JSON exports.
 - [dotstatsuite-core-sdmxri-nsi-ws#408](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-sdmxri-nsi-ws/-/issues/408) `app.config` missing `X-Range` in allowed headers.
 - [dotstatsuite-core-transfer#640](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-core-transfer/-/issues/640) Improve "non-backward-compatible change" error message.
