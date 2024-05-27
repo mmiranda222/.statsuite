@@ -92,28 +92,30 @@ In order to easier find specific dataflows, the user can change the sort order b
 
 The default relevance score used to order the search results depends on where the search term was found, which can be customised as documented [here](/dotstatsuite-documentation/configurations/search-config/#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties).
 
+#### Weight value and Solr search engine score
+
 The .Stat faceted search allows using the dataflow annotation of type `SEARCH_WEIGHT` to boost dataflows in the search result order when ordered by "Relevance".  
 
-The `SEARCH_WEIGHT` annotation needs to be of type "SEARCH_WEIGHT". The weight value is an integer or number and should be set:
+The weight value is a positive number and should be set:
 - in the localised Annotation Text, in case the boost is language-dependent, otherwise
 - in the non-localised Annotation Title
 
 ```xml
 <common:Annotations>
   <common:Annotation>
-    <common:AnnotationTitle>2</common:AnnotationTitle>
+    <common:AnnotationTitle>1.0000001</common:AnnotationTitle>
     <common:AnnotationType>SEARCH_WEIGHT</common:AnnotationType>
-    <common:AnnotationText xml:lang="en">3</common:AnnotationText>
-    <common:AnnotationText xml:lang="es">4</common:AnnotationText>
-    <common:AnnotationText xml:lang="fr">5</common:AnnotationText>
+    <common:AnnotationText xml:lang="en">1.0000001</common:AnnotationText>
+    <common:AnnotationText xml:lang="es">0.9999998</common:AnnotationText>
+    <common:AnnotationText xml:lang="fr">1.0000008</common:AnnotationText>
   </common:Annotation>
 </common:Annotations>
 ```
 
-The localised boost value, if available, or alternatively the non-localised boost value is used to **multiply** the dataflow score calculated by Solr and thus influences accordingly the ordering by relevance. The bigger the calculated score value, the higher is the listing of the dataflow in the search results.  
-  
-#### Weight value and Solr search engine score
-The Solr search engine determines the score per dataflow automatically depending on the count and location of search hits in the different dataflow properties (searched fields), before it multiplies that score with the dataflow's **`SEARCH_WEIGHT`** annotation value, if present. The `SEARCH_WEIGHT` boost value should be smaller than 1 to decrease the score and higher than 1 to increase the score. The value has no limits other than the ones defined by the internal number type.  
+The localised boost value, if available, or alternatively the non-localised boost value is used to **multiply** the dataflow **score** calculated by the Solr search engine automatically depending on the count and location of search hits in the different dataflow properties (searched fields). The bigger the so calculated overall score value, the higher is the listing of the dataflow in the search results.
+
+The `SEARCH_WEIGHT` should be between 0 and 1 to decrease the score, and it should be greater than 1 to increase the score. The value has no limits other than the ones defined by the internal number type. **However, it is strongly recommended to not use too high numbers to avoid overboosting, which means pushing dataflows too strongly in irrelevant contexts.** E.g., if the sole goal of the boosting is to achieve a specific ordering of dataflows when browsing through a categoryscheme, like for displaying a list of dataflows categorised under a topic, then the boost values should be extremely close to 1, e.g. `1.0000001` in order to **not impact** the order of results from free-text searches, see above example annotation.
+
 The "developer tools" of the web browser (accessibly through the F12 key) allow seeing the current final Solr score per dataflow for a specific query in the response message of the search requests (look out for queries to https://example.org/api/search?tenant=xxxxx). This analysis can be used to determine the optimal `SEARCH_WEIGHT` boost values.  
   
  ![de search result Solr score](/dotstatsuite-documentation/images/de-serach-result-boosting-solrscore.png)  
