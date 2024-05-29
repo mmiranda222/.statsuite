@@ -284,9 +284,9 @@ In details, the API methods of the core-transfer service used for the data valid
 > Released with [May 15, 2024 Release .Stat Suite .NET gingerbread](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#may-15-2024)
 
 There are 3 possible index types available to **tune the performance of the tables for a DSD** used to store the observations, attributes and reference metadata attributes *according to the data volume and data usage (amount of read/write operations)* as follow:
-- **.Stat default**: Rowstore and nonclustered columnstore indexes `NONCLUSTERED_COLUMNSTORE`: optimal for smaller datasets (less than 1 million observations) or very frequently updated data (once per day or more). The import speed is the best possible. Performance of extractions is similar to the second option for these dataset sizes.
-- Clustered columnstore index `CLUSTERED_COLUMNSTORE`: optimal for large datasets (more than 1 million observations) and not frequently updated data (at most  once per day). The import speed is reduced but the extraction speed is significantly better for these dataset sizes.
-- Clustered columnstore index with "archive" compression `CLUSTERED_COLUMNSTORE_ARCHIVE`: optimal for datasets that are not updated anymore, are rarely accessed and when import and extraction speed are not critical since that may be decreased. This option significantly reduced the necessary disk space. 
+- **.Stat default**: Rowstore and nonclustered columnstore indexes `NONCLUSTERED_COLUMNSTORE`: optimal for smaller datasets (less than 1 million observations) or very frequently updated data (more than once per day). The import speed is the best possible. Performance of extractions is similar to the second option for these dataset sizes.
+- Clustered columnstore index `CLUSTERED_COLUMNSTORE`: optimal for large datasets (more than 1 million observations) and not frequently updated data (at most once per day). The import speed is reduced but the extraction speed is significantly better for these dataset sizes.
+- Clustered columnstore index with "archive" compression `CLUSTERED_COLUMNSTORE_ARCHIVE`: optimal for datasets that are not updated anymore, are rarely accessed and when import and extraction speed are not critical since that may be decreased. This option significantly reduces the necessary disk space. 
 
 The method **{API_VERSION}/tune/dsd** allows applying the `CLUSTERED_COLUMNSTORE` index type or the `CLUSTERED_COLUMNSTORE_ARCHIVE` index type to a DSD in a .Stat CORE data space.   
 
