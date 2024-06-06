@@ -98,7 +98,6 @@ Note: When a non-mandatory attribute used in a virtual component is attached at 
 ---
 
 ### Hiding of specific values in the combined concepts
-
 If the `NOT_DISPLAYED` annotation (for a code in a codelist, for a dataflow or for a DSD) requires to hide an item of a dimension or an attribute listed used for a virtual component, then this item is excluded from the concatenated label of the virtual component value. 
 
 Example: In all following example cases, we exclude the "Not applicable" item label (having ID "_Z") of the BaseYear attribute from the COMBINED_UNIT_MEASURE label.
