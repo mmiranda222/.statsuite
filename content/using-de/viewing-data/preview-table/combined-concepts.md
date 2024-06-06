@@ -83,7 +83,7 @@ The virtual components will be displayed at the highest possible _level_ in the 
 3) Row or Column  
 4) Cell = Row/Row Section and Column  
 
-Exception: Any dimension that would normally be part of a virtual component, but that has been placed through the table customisation feature (by default or by the user) into a specific axis (Row Section, Row or Column), which is different from that calculated for the virtual component, will be excluded from the virtual component and be displayed separately/normally. This functional choice has been made to not disturb users who see and place dimensions in the table customisation panel in specific axes. 
+The layout selector will display the combined concept in an axis only if one of its dimensions has multiple values selected.
 
 Based on the original placement of all dimensions that are finally combined into the virtual component, the highest possible _level_, at which the virtual component will be displayed, is the:
 
