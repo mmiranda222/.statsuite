@@ -36,6 +36,7 @@ keywords: [
 ---
 
 > *Version history:*  
+> Use of combined concepts in the table layout configuration since [MMMMMMMMMM XX, 2024 Release .Stat Suite JS NAME](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmmmmmmmmm-XX-2024)  
 > Enhanced rules for hiding of specific values in the combined concepts with [September 20, 2023 Release .Stat Suite JS "xray"](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)  
 > Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
 
@@ -83,7 +84,9 @@ The virtual components will be displayed at the highest possible _level_ in the 
 3) Row or Column  
 4) Cell = Row/Row Section and Column  
 
-The layout selector will display the combined concept in an axis only if one of its dimensions has multiple values selected.
+The layout configuration feature will display the combined concept in an axis only if one of its dimensions has multiple values selected.
+
+![Combined concepts and layout](/dotstatsuite-documentation/images/de-combined-concepts-layout.png)
 
 Based on the original placement of all dimensions that are finally combined into the virtual component, the highest possible _level_, at which the virtual component will be displayed, is the:
 
