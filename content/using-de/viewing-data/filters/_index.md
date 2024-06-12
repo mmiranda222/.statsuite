@@ -144,7 +144,7 @@ The user has different modes of selection:
 Once the user clicked on one selection mode, all following filter selections apply the chosen selection mode.
 
 
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-multiselection-bulkselectionmenu-1.png)  
+![Hierarchical contents](/dotstatsuite-documentation/images/AdvancedSelectedModeWindow.png)  
 
 Additional features in the popup propose
 - to `Expand all` items or to `Collapse all` items keeping only the root item(s) when the items are hierarchical;
