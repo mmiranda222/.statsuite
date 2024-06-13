@@ -4,8 +4,9 @@
 1. check kubernetes diff in [kube-rp repo](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-kube-rp) between the immediate commit after the due date of the milestone and master
    - put the compare link in the milestone (useful for other deployments, ie OECD PP & P
    - put kubernetes impact (gives an idea of deployment complexity)
-   - put an icon for each apps and services (in summary table) concerned (helps operator to know where to pay attention)
+   - put devops commit link(s) for each apps and services (in summary table) concerned (helps operator to know where to pay attention)
 2. for each apps/svcs (except keycloak):
+   - check if code change since last release (and reject unchanged)
    - locally, git pull develop and run `rm -rf node_modules/ && rm package-lock.json && rm yarn.lock && yarn && npm i --legacy-peer-deps` (vulnerability report)
    - bump version in `package.json` and git push
    - make sure there is no critical vulnerability
