@@ -115,7 +115,7 @@ The values of **attributes presented as flags and notes** are now stored in Exce
 
 **RTL** (Right-to-Left) mode is supported, allowing to programmatically switching the layout of a downloaded Excel data table between left-to-right and right-to-left. Depending on the version viewed online (e.g. in Arabic language) and the user's localised preferences in Excel, the downloaded Excel table will automatically be displayed in RTL mode.
 
-![Excel download - flags and notes - rtl](/dotstatsuite-documentation/images/de-excel-download-flags-rtl.png)
+![Excel download - flags and notes - rtl](/dotstatsuite-documentation/images/de-excel-download-flags-rtl1.png)
 
 **Overview page content**  
 > Introduced with [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)
