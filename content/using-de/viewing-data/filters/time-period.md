@@ -75,17 +75,15 @@ Example: assuming that the _start and end periods_ are open. When the user selec
 When a _start or end period_ has no selection, then selecting the year will automatically select the most appropriate values for the other time period date parts like quarter, month or day. E.g., selecting a start year will automatically set the corresponding first available quarter, month or day (as appropriate), selecting a end year will automatically set the corresponding last available quarter, month or day (as appropriate).  
 The _start and end periods_ can be deselected, in which case they will not be applied in the data request.  
 
-The *green* number of **selected values/total of values** is counting values for a given frequency. So for example, it will count the number of selected/total years when Yearly is selected, the number of selected/total months when Monthly is selcted, etc...
-
-![number of values](/dotstatsuite-documentation/images/time-period-3.png)
-
-> Introduced in [March 4, 2022 Release .Stat Suite JS 13.0.0](/dotstatsuite-documentation/changelog/#march-4-2022)
-
 The **Frequency & Time Period** filter takes as title the concatenated, localised *SDMX* concept names of the **Frequency** and **Time** dimensions (glued with the ' & ' term), depending on the presence of those dimensions. Also see the paragraph about [Hiding Frequency and Time Period filters](#hiding-frequency-and-time-period-filters).
 
 ![overriden time period & frenquency names](/dotstatsuite-documentation/images/time-period-4.png)
 
 See the [documentation](/dotstatsuite-documentation/using-de/viewing-data/common-features/#how-special-dimensions-are-identified) on how time and frequency dimensions are identified.
+
+In case the filter has a selection, then the number of currently selected time period items (surrounded by a frame) is added to the title. So, for example, it will count the number of selected years when Yearly is selected, the number of selected months when Monthly is selcted, etc...
+
+![number of values](/dotstatsuite-documentation/images/time-period-3.png)
 
 > Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](/dotstatsuite-documentation/changelog/#july-20-2023)
 

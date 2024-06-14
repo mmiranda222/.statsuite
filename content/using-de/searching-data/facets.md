@@ -32,6 +32,8 @@ keywords: [
 - [Pinned facets](#pinned-facets)
 
 > *Version history:*  
+> Revert the hiding of facet items when not all item counts are matching the search result count since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
+> Remove the display of total number of facet items as well as the 'all'-selection information since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Arrange facet content vertically since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > 'Applied filters' area is moved in the page header since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Facets values count numbers in search result also count values with no data since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
@@ -111,8 +113,7 @@ Facets are ordered alphabetically ascending by their localised title, except for
 **Completely hiding specific facets**
 Facets can be removed (hidden) from the search result page when specifically defined so in the [configuration](/dotstatsuite-documentation/configurations/de-configuration/).  
 
-**Impactless facets** (i.e. all the facet values of a facet have a number of the related search results equal to the number of currently already available search results) are automatically hidden in order to not confuse users with selections that have no immediate effect on the number of search results.  
-The same rule will apply to **impactless facet values**, meaning that, when a facet value has a number of the related search results equal to the number of currently already available search results, then this value is automatically hidden in the facet.
+**Impactless facets**, i.e. **all** the facet values of a facet have a number of the related search results equal to the current number of search results, are **automatically hidden** in order to not confuse users with selection options that have no immediate effect on the number of search results. Hiding is thus not applied on items with a full count if other items in the same facet do not have the same count.
 
 **Hide overcounting facets**  
 Since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
@@ -134,8 +135,8 @@ When a facet contains 8 items or more, then:
 - a [local search](#local-search) (spotlight feature) box is displayed
 
 #### Facet information
-The facet title contains the number of facet values available, and the number of currently selected facets (numbers surrounded by a frame). These counts also include facets values with no data (greyed out).  
-Whenever there is no facet value selection, then it is indicated by "all", e.g. `"all/38"`. When all the facet values are selected, the number of selected values is displayed instead, e.g. `"38/38"`.   
+The facet title contains the localised name of the facet. In case the facet has at least one selected item, then the number of currently selected facet items (surrounded by a frame) is added to the title.
+
 When there is no facet value selection, the items are not listed in the "applied filters" area because no filtering is requested by the end-user.  
 
 The facet values themselves show a number indicating the number of corresponding search results. Parent values contain the number of results valid for themselves and for all of their children.  
@@ -155,7 +156,10 @@ In hierarchical search facets, parent values, for which any of the resulting dat
 ![Greyed parent item without data](/dotstatsuite-documentation/images/de-viewingdata-filters-hierarchicalcontent.png) 
 
 #### Local search 
-The local search (spotlight feature) helps to find specific items.
+The local search (spotlight feature) helps to find specific items.  
+Its hint text includes the number of facet items: "Search in all [XX] items below".
+
+ 
 
 Typing some characters in the local search box dynamically reduces the displayed items to the ones containing the given set of characters. If the local search term has no hit in any item then the list is empty. 
 
