@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 13, 2024](#june-13-2024)
 - [June 11, 2024](#june-11-2024)
 - [May 27, 2024](#may-27-2024)
 - [May 16, 2024](#may-16-2024)
@@ -148,6 +149,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 | Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#june-11-2024) <br/> 8.19.2 <br/> 11‑June‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+| [**arc**](/dotstatsuite-documentation/changelog/#june-13-2024)     | <font color="Orange">**13‑June‑24**</font> | ok | (ok) |           |           |           |           |           |
 | [**zoo**](/dotstatsuite-documentation/changelog/#may-16-2024)     | <font color="Orange">**16‑May‑24**</font> | ok | (ok) |           |           |           |           |           |
 | [**yay**](/dotstatsuite-documentation/changelog/#march-21-2024)     | <font color="Orange">**21‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
@@ -169,6 +171,65 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
+
+---
+
+### June 13, 2024
+**[Release .Stat Suite JS "arc"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/78#tab-issues)**
+> This release includes a new version of all the JavaScript services and applications *(except keycloak)*, and it introduces a new (optional) service **[dotstatsuite-url-shortener](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-url-shortener)**.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.19.2** and .Stat-Suite CORE [gingerbread](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72) release.
+
+non-backward-compatible changes:
+
+- **For source code installation only**: migration to **nodejs v18** introduces a new entry in the table with node version used (see [technical changelog](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/78#changelogs)). ([Source code installation pre-requisites](/dotstatsuite-documentation/install-source-code/monotenant-install-from-artifacts/#pre-requisites)) are also updated.  
+
+backward-compatible enhancements and new features:
+
+- [dotstatsuite-data-explorer#1278](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1278) and [dotstatsuite-data-explorer#1307](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1307) **Short URLs generator** for the Data Explorer. (Documentation for [search page](/dotstatsuite-documentation/using-de/searching-data/search-results/#short-url) and [view pages](/dotstatsuite-documentation/using-de/viewing-data/share/#short-url-generation))
+- [dotstatsuite-data-lifecycle-manager#351](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/351) **FMR Workbench integration with .Stat DLM**. ([Documentation](/dotstatsuite-documentation/using-dlm/manage-structures/fmr-workbench/))
+- [dotstatsuite-data-explorer#1141](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1141) **Improvements of the user experience** and layouts in the **advanced selection window**. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/filters/#advanced-selection-popup))
+- [dotstatsuite-data-explorer#1104](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1104) Limit the `LastNPeriod` and the Start and End Time Periods according to the current data availability and to the current selection. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/#frequency-and-time-period-selections))
+- [dotstatsuite-data-explorer#1036](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1036) Use **combined concepts in the table layout** configuration. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/preview-table/combined-concepts/#display-rules))
+- [dotstatsuite-data-explorer#1290](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1290) Remove the list of dimensions from the DE overview tab.
+- [dotstatsuite-data-explorer#1011](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1011) Limit, by configuration, the initially displayed list of related dataflows in the Overview page. ([Functional documentation](/dotstatsuite-documentation/using-de/viewing-data/overview/#limited-default-view-of-related-dataflow) and [Configuration documentation](/dotstatsuite-documentation/configurations/de-configuration/#overview-default-limit-of-related-dataflows-display))
+- [dotstatsuite-data-explorer#1248](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1248) Arrange home page facet content vertically. ([Updated documentation](/dotstatsuite-documentation/using-de/searching-data/facets/#home-page-facets))
+- [dotstatsuite-data-explorer#1214](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1214) When opening the home page, automatically activate the search box.
+- [dotstatsuite-data-explorer#1267](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1267) **Improve the facet/filter selection** information. (Updated documentation of [search facets](/dotstatsuite-documentation/using-de/searching-data/facets/#) and [visualisation filters](/dotstatsuite-documentation/using-de/viewing-data/filters/#))
+- [dotstatsuite-data-explorer#1013](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1013) Rtl (right-to-left) for Web and Excel table in Arabic locale.
+- [dotstatsuite-data-explorer#676](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/676) In timeline charts, treat 'null' observations as such rather than as zero. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/charts/#timeline))
+- [dotstatsuite-data-explorer#1223](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1223) Allow **enlarging the DE side panel** to read voluminous metadata. ([Updated documentation](/dotstatsuite-documentation/using-de/viewing-data/preview-table/information-panel/))
+- [dotstatsuite-data-explorer#1234](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1234) Change the full screen icon in the visualisation menu bar.
+- [dotstatsuite-data-explorer#1245](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1245) Data request triggered twice when time range changes in the available content constraints.
+- [dotstatsuite-data-explorer#1311](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1311) Share feature should avoid triggering full data query.
+- [dotstatsuite-data-lifecycle-manager#445](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-lifecycle-manager/-/issues/445) tenant injection in DLM eye.
+- [dotstatsuite-config-data#35](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config-data/-/issues/35) *(Documentation)* Update labels to reflect the repair of 'manage permission' role.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1314](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1314) Broken 'Last N Periods' computation when no frequency codelist is present.
+- [dotstatsuite-data-explorer#1310](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1310) Broken data points limit display in table/chart header disclaimer.
+- [dotstatsuite-data-explorer#1308](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1308) Bug in hiding impact-less search facets.
+- [dotstatsuite-data-explorer#1306](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1306) DE category item URLs return no search result in a new browser when it includes comma.
+- [dotstatsuite-data-explorer#1299](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1299) Microdata preview says there is no data for Hierarchical Codelist parent item selection.
+- [dotstatsuite-data-explorer#1298](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1298) "Woops" error page on single selection view.
+- [dotstatsuite-data-explorer#1283](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1283) Uncoded attributes not hidden with `NOT_DISPLAYED`.
+- [dotstatsuite-data-explorer#1273](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1273) Fix appliance of default 'last 5 periods' configured in the DE settings.
+- [dotstatsuite-data-explorer#1268](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1268) DE URL with the exact search phrase with comma doesn't return any search results.
+- [dotstatsuite-data-explorer#1247](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1247) Single-selected unit of measure goes to cell footnotes instead of table subheader.
+- [dotstatsuite-data-explorer#1228](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1228) Bug with nunmber of datapoints display.
+- [dotstatsuite-data-explorer#1166](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1166) DE hangs in a specific scenario.
+- [dotstatsuite-data-explorer#1083](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1083) RTL (right-to-left) overflow bug.
+- [dotstatsuite-sdmx-faceted-search#147](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/147) Crash (http 500) upon delete all dataflows query.
+- [dotstatsuite-sdmx-faceted-search#154](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-sdmx-faceted-search/-/issues/154) Dataflow name not fully displayed when search-highlighted.
+- [dotstatsuite-components#17](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-components/-/issues/17) Layout related crash.
+- [dotstatsuite-d3-charts#15](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-d3-charts/-/issues/15) Choropleth map wrongly generates the same request 3 times.
+- [dotstatsuite-quality-assurance#78](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-quality-assurance/-/issues/78) *(DevOps)* Errored pipelines triggered/spawn on merge request.
+- [dotstatsuite-data-explorer#1272](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1272) *(DevOps)* e2e env. is failing locally in debug/UI mode.
+- [dotstatsuite-data-explorer#1250](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1250) *(DevOps)* Enhance linter with million.
+- [dotstatsuite-config#50](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-config/-/issues/50) *(Refactoring)* build & test issue with node version related to Azure dependency.
+- [dotstatsuite-data-explorer#1182](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1182) *(Refactoring)* Remove saga.
+- [dotstatsuite-data-explorer#1017](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1017) *(Refactoring)* Table E2E tests completion.
+
 
 ---
 
