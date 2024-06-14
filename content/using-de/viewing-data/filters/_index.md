@@ -34,6 +34,7 @@ keywords: [
 - [Applied filters panel](#applied-filters-panel)
 
 > *Version history:*  
+> Remove the display of total number of facet items as well as the 'all'-selection information since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Selection of parents without data in hierarchical filters and forced parent selection since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Facets values count numbers also count values with no data since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Change display of the 'Applied filters' area with [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
@@ -49,7 +50,6 @@ keywords: [
 ---
 
 ### Filter area
-
 The left-hand side (right-hand in rtl mode) of the visualisation page shows a set of dimension filters that allow **dynamically filtering the dimension values** to be displayed in the preview table or chart, to be extracted through the download feature 'Filtered data in tabular text (CSV)' or to be applied in the auto-generated data query in 'Developer API' menu.
 
 The current filters selection is summarised in the ['Applied filters' area](#applied-filters-panel), and displayed above the table/chart data representation.
@@ -58,15 +58,11 @@ A filter is created for each of the dimensions of the currently displayed datafl
 
 The order of the filters respects the order of the dimensions as defined in the underlying data structure definition (DSD), except the ['Frequency & Time Period' filter](/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/) panel, which is displayed second after the ['Applied filters' panel](#applied-filters-panel). 
 
-The **number of currently selected items** against the **number of available items** (`selected/available`) is displayed next to each filter name.
+The filter title contains the localised name of the dimension's concept. In case the filter has at least one selected item, then the number of currently selected filter items (surrounded by a frame) is added to the title.
 
 ![Multi selection filters](/dotstatsuite-documentation/images/de-filters12.png)
 
 If the user has made selection(s) in the previous search result page, if a default selection is applied from an *SDMX* annotation (see [documentation](/dotstatsuite-documentation/using-dlm/custom-data-view/default-selection/)), or if the URL contains dimension selections, then these selections are automatically pre-applied in the filters.
-
-Whenever there is no filter item selection, then it is indicated in the filter title by **"all"**, e.g. `"all/39"`. When all filter items are selected, the number of selected items is displayed instead `"39/39"`. The numbers also include facets values with no data (greyed out).  
-Because making **no selections and complete selections return the same data**, the usage of "all" should help to clarify this effect, while there remains a visual distinction for the fact that a saved selection is static while the items concerned by no selection may evolve over time. Indeed, as a generic behavior, when no element of a filter is selected, then it acts as if all items were selected. However, if a corresponding query is saved (e.g. bookmarked page, saved API query or shared dynamic table/chart), then the results may defer later in case the available dimension items evolve.  
-Therefore, while a full selection would always correspond to 39 items, for no filter selection the number of actually considered dimension items might increase, e.g. 40, 41 etc.
 
 ---
 
@@ -157,7 +153,7 @@ To apply the selection in the *Filters* area and refresh the data view, it is ne
 In filters with hierarchical dimensions, parent values, for which no data exist, are still shown but marked specifically. For more information, see [Data availability](/dotstatsuite-documentation/using-de/viewing-data/filters/data-availability/).
 
 #### Local search 
-The local search (spotlight feature) helps to find specific items.
+The local search (spotlight feature) helps to find specific items. Its hint text includes the number of filter items: "Search in all [XX] items below".
 
 Typing some characters in the local search box dynamically reduces the displayed items to the ones containing the given set of characters. If the local search term has no hit in any item then the list is empty. 
 
