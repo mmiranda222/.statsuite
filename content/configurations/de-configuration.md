@@ -17,6 +17,7 @@ keywords: [
   'Search: Result page excluded facets', '#search-result-page-excluded-facets',
   'Search: Result page: number of results per page', '#search-result-page-number-of-results-per-page',
   'Visualisation: default landing tab', '#visualisation-default-landing-tab',
+  'Overview: default limit of related dataflows display', '#overview-default-limit-of-related-dataflows-display',
   'Default time period boundaries and default time period selection', '#default-time-period-boundaries-and-default-time-period-selection',
   'Time period sort order override', '#time-period-sort-order-override',
   'Support of Last-N-Observations feature', '#support-of-last-n-observations-feature',
@@ -62,6 +63,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [Search: Result page excluded facets](#search-result-page-excluded-facets)
 - [Search: Number of results per result page](#search-number-of-results-per-result-page)
 - [Visualisation: default landing tab](#visualisation-default-landing-tab)
+- [Overview: default limit of related dataflows display](#overview-default-limit-of-related-dataflows-display)
 - [Default time period boundaries and default time period selection](#default-time-period-boundaries-and-default-time-period-selection)
 - [Time period sort order override](#time-period-sort-order-override)
 - [Support of Last-N-Observations feature](#support-of-last-n-observations-feature)
@@ -332,6 +334,24 @@ Define, per DE scope, the landing tab of the visualisation page to be shown by d
         defaultView: "overview"
     }
 ```
+---
+
+### Overview: default limit of related dataflows display
+> Configuration released with [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)
+
+Define, per DE scope, the number of related dataflows to be displayed initially. Above this defined number, all additional related dataflows are displayed under a collapsed accordion feature. See functional specs [here](/dotstatsuite-documentation/using-de/viewing-data/overview/#limited-default-view-of-related-dataflow).
+
+The default value is set to 4.  
+If the value is set to less or equal to 0, then there is no accordion, and all the related dataflows are displayed immediately.
+
+* in `dotstatsuite-config-data/<env>/configs/<organisation>/data-explorer/settings.json`
+
+```json
+    "overview": {
+        "defaultRelatedDataflowsNumber": 4
+    }
+```
+
 ---
 
 ### Default time period boundaries and default time period selection

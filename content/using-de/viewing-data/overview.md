@@ -6,12 +6,14 @@ weight: 2300
 keywords: [
   'Role of the overview', '#role-of-the-overview',
   'Overview content', '#overview-content',
-  'Custom list of related dataflows', '#custom-list-of-related-dataflows',
+    'Limited default view of related dataflow', '#limited-default-view-of-related-dataflow',
+    'Custom list of related dataflows', '#custom-list-of-related-dataflows',
   'Interactions', '#interactions',
 ]
 ---
 
 > *Version history:*  
+> Introduced a configurable collapsable section for related dataflows with [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Override the list of related dataflows since [April 4, 2024 Release .Stat Suite JS zoo](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#april-4-2024)  
 > List the related dataflows - same referenced DSD - since [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)  
 > Overview page is included in the Excel download and enhanced with an exception on displayed content with [September 15, 2022 Release .Stat Suite JS radio](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-15-2022)  
@@ -20,6 +22,7 @@ keywords: [
 #### Table of content
 - [Role of the overview](#role-of-the-overview)
 - [Overview content](#overview-content)
+  - [Limited default view of related dataflow](#limited-default-view-of-related-dataflow)
   - [Custom list of related dataflows](#custom-list-of-related-dataflows)
 - [Interactions](#interactions)
 
@@ -51,6 +54,12 @@ The overview provides the following localised pieces of information related to a
 - the alphabetically ordered list of localised names (current user locale) of **all other dataflows that share the same DSD with the current dataflow**, and that are only indexed within the same instance of the Data Explorer. The list is displayed under the title **'You might also be interested by this data'** and each link to a single corresponding data visualisation page (in new web-browser tab).
 
 ![DE overview tab with related files](/dotstatsuite-documentation/images/de-overview-related-files.png)
+
+#### Limited default view of related dataflow
+By default, only a limited number of related dataflows are displayed, and the user can expand a list with more dataflows, if any, under an accordion section labelled *"As well as in these data..."*. The label is supplemented with the number of related dataflows remaining in the collapsed section part.  
+The number of immediately displayed related dataflows is configurable (see more details [here](/dotstatsuite-documentation/configurations/de-configuration/#overview-default-limit-of-related-dataflows-display)). By default, it is set to 4. 
+
+![DE overview tab with more related dataflows](/dotstatsuite-documentation/images/de-overview-related-dataflows.png)
 
 #### Custom list of related dataflows
 Data owners can override the default list of related dataflows (same DSD) in order to display instead a custom list by using a specific *SDMX* structure query defined in an annotation called `RELATED_DATA`, e.g. dataflows that are categorized within the same topic (or sub-topic) as the current dataflow, whatever their DSD, or dataflows catagorized with the same *SDMX* Agency ID (use for instance as a project or sub-project ID), etc.
