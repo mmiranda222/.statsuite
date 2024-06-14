@@ -19,6 +19,7 @@ keywords: [
   'List of the standard roles for user permissions', '#list-of-the-standard-roles-for-user-permissions',
   'Override the default Authorisation-Managementn service URL', '#override-the-default-authorisation-management-service-url',
   'Allow managing permissions on a specific external space', '#allow-managing-permissions-on-a-specific-external-space',
+  'FMR Workbench integration', '#fmr-workbench-integration',
 ]
 
 ---
@@ -42,6 +43,7 @@ Any change affecting its URL must be communicated to the .Stat Academy content a
 - [List of the standard roles for user permissions](#list-of-the-standard-roles-for-user-permissions)
 - [Override the default Authorisation-Management service URL](#override-the-default-authorisation-management-service-url)
 - [Allow managing permissions on a specific external space](#allow-managing-permissions-on-a-specific-external-space)
+- [FMR Workbench integration](#fmr-workbench-integration)
 
 For the tenant (`organisation` and `scope`) and data space definitions please see [here](/dotstatsuite-documentation/configurations/tenant-model).
 
@@ -367,7 +369,7 @@ Define an Authorisation-Management service URL at the DLM scope level that will 
 ### Allow managing permissions on a specific external space
 >Released in [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)
 
-Allow, for a specific data space that is defined as external, to manage the users' permissions through the DLM UI [Manage Pemrissions feature](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-dlm/manage-permissions/#). When the config. parameter **`"allowPermissionMgmt"`** is set to 'true' (default: false) for an external data space, then the data space appears in the DLM "Manage Permissions" tab and users with succifient rights are allowed to manage user access accordingly.
+Allow, for a specific data space that is defined as external, to manage the users' permissions through the DLM UI [Manage Pemrissions feature](dotstatsuite-documentation/using-dlm/manage-permissions/#). When the config. parameter **`"allowPermissionMgmt"`** is set to 'true' (default: false) for an external data space, then the data space appears in the DLM "Manage Permissions" tab and users with succifient rights are allowed to manage user access accordingly.
 
 * in `dotstatsuite-config-data/<env>/configs/tenants.json` file under a DLM `tenant > spaces`
 
@@ -379,3 +381,49 @@ Allow, for a specific data space that is defined as external, to manage the user
         },
     }
 ```
+
+---
+
+### FMR Workbench integration
+>Released in [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)
+
+**[FMR Workbench](https://www.sdmx.io/tools/fwb/)** can be integrated with .Stat DLM to manage SDMX structures in synchronisation. See details functionalities [here](/dotstatsuite-documentation/using-dlm/manage-structures/fmr-workbench/).
+
+* in `dotstatsuite-config-data/<env>/configs/tenants.json` file under a DLM `scope`
+
+```json
+{
+  "tenant":
+    (...)
+    "scope": {
+      "dlm": {
+        (...)
+        "linkFMR": "https://fwb.sdmxcloud.org"
+      }
+    }
+}
+```
+
+In FMR Workbench configuration, provide the necessary information in the .json configuration file about .Stat DLM dataspaces and authentication.  
+Example:
+
+```json
+        "qa:reset" : {
+            "api" : {
+                "query" : https://nsi-qa-reset.siscc.org/rest,
+                "delete" : https://nsi-qa-reset.siscc.org/rest,
+                "persist" : https://nsi-qa-reset.siscc.org/rest/structure,
+                "version" : "1.5.0",
+                "timeout" : 600
+            },
+            "auth" : "OIDC_PKCE",
+            "oidc" : {
+                "config" : https://keycloak.siscc.org/auth/realms/OECD/.well-known/openid-configuration,
+                "clientId" : "app"
+            },
+            "locale" : ["en", "fr"],
+            "format" : "mlv2.1"
+        },
+```
+
+More details about FMR Workbench in [Getting started](https://fmrwiki.sdmxcloud.org/FMR_Workbench).
