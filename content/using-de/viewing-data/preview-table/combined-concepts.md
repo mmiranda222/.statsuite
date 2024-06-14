@@ -84,7 +84,7 @@ The virtual components will be displayed at the highest possible _level_ in the 
 3) Row or Column  
 4) Cell = Row/Row Section and Column  
 
-The layout configuration feature will display the combined concept in an axis only if one of its dimensions has multiple values selected. Single concepts of a conbined concept are not displayed separately in the layout configuration feature to avoid confusion.
+The layout configuration feature will display the combined concept in an axis only if one of its dimensions has multiple values selected. Single concepts of a combined concept are not displayed separately in the layout configuration feature in order to avoid confusion.
 
 ![Combined concepts and layout](/dotstatsuite-documentation/images/de-combined-concepts-layout.png)
 
