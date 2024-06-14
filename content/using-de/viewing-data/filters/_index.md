@@ -34,6 +34,7 @@ keywords: [
 - [Applied filters panel](#applied-filters-panel)
 
 > *Version history:*  
+> Improvements of the advanced selection window with [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Remove the display of total number of facet items as well as the 'all'-selection information since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Selection of parents without data in hierarchical filters and forced parent selection since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Facets values count numbers also count values with no data since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
