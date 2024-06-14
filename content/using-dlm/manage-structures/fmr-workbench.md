@@ -20,8 +20,7 @@ keywords: [
 ---
 >Released in [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)
 
-**[FMR Workbench](https://www.sdmx.io/tools/fwb/)** can be integrated with .Stat DLM to manage SDMX structures in synchronisation.  
-Find more details about FMR Workbench:
+**[FMR Workbench](https://www.sdmx.io/tools/fwb/)** can be integrated with .Stat DLM to manage SDMX structures in synchronisation. Find more details about FMR Workbench:
 - [Getting started](https://fmrwiki.sdmxcloud.org/FMR_Workbench)
 - [General guidance](https://fmrwiki.sdmxcloud.org/Main_Page)
 
@@ -47,10 +46,10 @@ Clicking on it expands a list of all SDMX artefact types enabled to be created. 
 
 ![DLM FMR integration](/dotstatsuite-documentation/images/dlm-fmr2.png)
 
-Any newly created structures in FMR are automatically synchronised with .Stat DLM.
-
 **Create structure in FMR:**  
 ![DLM FMR integration](/dotstatsuite-documentation/images/dlm-fmr-create.png)
+
+Any newly created structures in FMR are **automatically synchronised with .Stat DLM**.
 
 ---
 
@@ -65,10 +64,10 @@ Only when FMR is integrated with an instance of the DLM, then each contextual me
 Any changes made in FMR are automatically synchronised with .Stat DLM.
 
 **View stucture in FMR:**  
-![DLM FMR integration](/dotstatsuite-documentation/images/dlm-view.png)
+![DLM FMR integration](/dotstatsuite-documentation/images/dlm-fmr-view.png)
 
 **Edit stucture in FMR:**  
-![DLM FMR integration](/dotstatsuite-documentation/images/dlm-edit.png)
+![DLM FMR integration](/dotstatsuite-documentation/images/dlm-fmr-edit.png)
 
 **Edit annotations in FMR:**  
-![DLM FMR integration](/dotstatsuite-documentation/images/dlm-edit-annotations.png)
+![DLM FMR integration](/dotstatsuite-documentation/images/dlm-fmr-edit-annotations.png)
