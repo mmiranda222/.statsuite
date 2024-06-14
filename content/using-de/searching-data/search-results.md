@@ -8,6 +8,7 @@ keywords: [
   'Result content', '#result-content',
   'Optional download feature', '#optional-download-feature',
   'Result ordering', '#result-ordering',
+  'Short URL', '#short-url',
   'Result boosting', '#result-boosting',
   'Weight value and Solr search engine score', '#weight-value-and-solr-search-engine-score',
   'Result pagination', '#result-pagination',
@@ -21,6 +22,7 @@ keywords: [
 - [Result content](#result-content)
     - [Optional download feature](#optional-download-feature)
 - [Result ordering](#result-ordering)
+- [Short URL](#short-url)
 - [Result boosting](#result-boosting)
     - [Weight value and Solr search engine score](#weight-value-and-solr-search-engine-score)
 - [Result pagination](#result-pagination)
@@ -28,6 +30,12 @@ keywords: [
 - [Navigation towards the DE visualisation page](#navigation-towards-the-de-visualisation-page)
 
 ---
+
+>*Version history:*  
+> Introduction of the short URL generation with [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
+> Result ordering introduced with [April 11, 2022 .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)  
+> Result boosting introduced with [April 11, 2022 .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)  
+> Download additional files through the SDMX `EXT_RESOURCE` annotation since [March 10, 2021 Release .Stat Suite JS 7.1.0](/dotstatsuite-documentation/changelog/#march-10-2021)  
 
 ### Introduction
 When users perform a free text search or browse by a facet from the .Stat DE homepage, then a page with the results of the search is presented. The search result page displays a list of all the corresponding hits from the search, along with the associated facets depending on the current search context (see documentation on [Facets](/dotstatsuite-documentation/using-de/searching-data/facets/)). 
@@ -67,15 +75,13 @@ The following information is displayed for each search result:
 #### Optional download feature
 When this option is enabled (see the [configuration documentation](/dotstatsuite-documentation/configurations/de-configuration/#enabled-download-option-on-the-search-result-page)), then two options of download are made available in the search result objects:
 * Download of the complete unfiltered dataflow data in tabular text (**SDMX-CSV** format) using the current language;
-* (since [March 10, 2021 Release .Stat Suite JS 7.1.0](/dotstatsuite-documentation/changelog/#march-10-2021)) Download any additional files that are attached to the dataflow through the **SDMX `EXT_RESOURCE` annotation** (see the related [specifications](/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/external-resources/)).
+* Download any additional files that are attached to the dataflow through the **SDMX `EXT_RESOURCE` annotation** (see the related [specifications](/dotstatsuite-documentation/using-dlm/manage-data/custom-data-view/external-resources/)).
 
 ![de search result content highlight](/dotstatsuite-documentation/images/de-search-result-download.png)
 
 ---
 
 ### Result ordering
-> Released with [April 11, 2022 .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)
-
 By default, the search result dataflows are sorted in this order:
  1. Descending relevance (where the free-text was found, dataflow boost)
  2. Ascending alphabetical (localised dataflow name)
@@ -87,9 +93,19 @@ In order to easier find specific dataflows, the user can change the sort order b
 
 ---
 
-### Result boosting
-> Released with [April 11, 2022 .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)
+### Short URL
+The search result page URL can be shortened, allowing users to easily share the search results with others.  
+The "Share" option is displayed in the search result header next to the "Sort" option, and **only when users are logged in**.
 
+![de search result short url](/dotstatsuite-documentation/images/de-search-short-url-1.png)
+
+Clicking on "Share" expands a drawer with a button "Generate short URL" and an empty text field. Clicking on the button generates a short URL and copies it to the clipboard. The button text is changed to "Copied". Generating a new short URL will be possible only if the content of the search result page is altered (e.g., when filtering the result, or when searching for new content).
+
+![de search result short url](/dotstatsuite-documentation/images/de-search-short-url-2.png)
+
+---
+
+### Result boosting
 The default relevance score used to order the search results depends on where the search term was found, which can be customised as documented [here](/dotstatsuite-documentation/configurations/search-config/#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties).
 
 #### Weight value and Solr search engine score

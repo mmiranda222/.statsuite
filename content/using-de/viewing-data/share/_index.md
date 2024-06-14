@@ -4,6 +4,7 @@ subtitle:
 comments: false
 weight: 3600
 keywords: [
+ 'Short URL generation', '#short-url-generation',
  'Visualisation share request', '#visualisation-share-request',
  'Email confirmation', '#email-confirmation',
  'Shared view generation', '#shared-view-generation',
@@ -17,6 +18,7 @@ keywords: [
 ---
 
 #### Table of Content
+- [Short URL generation](#short-url-generation)
 - [Visualisation share request](#visualisation-share-request)
   - [Email confirmation](#email-confirmation)
   - [Shared view generation](#shared-view-generation)
@@ -29,6 +31,7 @@ keywords: [
 ---
 
 >*Version history:*  
+> Introduction of the short URL generation with [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Warning message of potential linkage always displayed when authenticated since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Database migration from Redis to Mongo produces longer unique IDs of shared views; in consequence, removal of the ID column from the list of active shared views with [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Warning of sharing non-public data introduced with [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)  
@@ -39,6 +42,19 @@ keywords: [
 > Introduced in [June 4, 2019 Release](/dotstatsuite-documentation/changelog/#june-4-2019)
 
 ![Watch this video](/dotstatsuite-documentation/images/movie-logo.png)**<a href="https://youtu.be/KIckUFL5ins" target="_blank">Watch this video</a>** on how to manage shared data views of the Data Explorer.
+
+### Short URL generation
+The short URL generation feature allows users to create a shortened URL for the current data visualization. This can be useful for easily sharing the visualization with others.  
+This option is available **only when users are logged in**, and from any view option of the Data Explorer: overview, table, chart.
+
+![de viz short url](/dotstatsuite-documentation/images/de-viz-short-url-1.png)
+
+To generate a short URL, the user can click the "Generate short URL" button in the share panel. Clicking on the button generates a short URL and copies it to the clipboard, this short URL being unique and be used to access the visualization.  
+The button text is changed to "Copied". Generating a new short URL will be possible only if the content of the visualisaiton page is altered (e.g., when filtering the data view, or when going from a table view to a chart view).
+
+![de viz short url](/dotstatsuite-documentation/images/de-viz-short-url-2.png)
+
+---
 
 ### Visualisation share request
 The **Share** option allows sharing the data view in table or chart mode.
