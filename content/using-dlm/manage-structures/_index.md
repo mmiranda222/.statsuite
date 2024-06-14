@@ -11,4 +11,4 @@ weight: 232
 * [Copy data structures](/dotstatsuite-documentation/using-dlm/manage-structures/copy-data-structures/)
 * [Edit data structures](/dotstatsuite-documentation/using-dlm/manage-structures/edit-structure/)
 * [Define referential metadata attributes for a data structure](/dotstatsuite-documentation/using-dlm/manage-structures/link-dsd-msd/)
-µ [FMR Workbench integration](/dotstatsuite-documentation/using-dlm/manage-structures/fmr-workbench/)
+* [FMR Workbench integration](/dotstatsuite-documentation/using-dlm/manage-structures/fmr-workbench/)
