@@ -49,7 +49,7 @@ Although the requirements could vary depending on the size of your data and the 
 **pre-requisites**  
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
-- **nodejs 14.x** and **npm 6.14.x** installed
+- **nodejs 18.x** installed (https://nodejs.org/en/download/)
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
 - **solr** installed and running on port 8983 (default) with a core created with `solr create -c sdmx-facet-search` from solr console
 - **redis** downloaded and running on port 6379 (default)
@@ -69,7 +69,7 @@ The latest compatible versions of Solr and Mongo are mentioned and available in 
 **pre-requisites**
 
 - (reminder) an accessible (CORS-enabled, anonymous access enabled) **SDMX v7.x** endpoint
-- **nodejs 14.x** and **npm 6.14.x** installed
+- **nodejs 18.x** installed (https://nodejs.org/en/download/)
 - **git** installed (https://gitforwindows.org/); only to use git bash instead of cmd.exe for process variables
 - **keycloak v7.x (minimum) - v12.0.4 (latest tested and recommended)** installed and running on port 8080 (default)
 - **postgres 12.x** installed and running on port 5432 (default) or any other relational database usable by keycloak (for more information see [here](https://www.keycloak.org/docs/4.8/server_installation/#_database))
