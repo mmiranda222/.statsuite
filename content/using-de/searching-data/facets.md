@@ -32,6 +32,7 @@ keywords: [
 - [Pinned facets](#pinned-facets)
 
 > *Version history:*  
+> Arrange facet content vertically since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > 'Applied filters' area is moved in the page header since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Facets values count numbers in search result also count values with no data since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Facets alphabetically ordered on search results since [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
@@ -73,7 +74,8 @@ The localised .Stat DE home page presents a combination of a free text search bo
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-2.png)
 
-Each facet, when opened, presents a selectable root-level of facet values together with a non-selectable second-level facet values. The root-level and second-level facet values represent the available values for all dataflows currently being indexed.  
+Each facet, when opened, presents a selectable root-level of facet values together with a non-selectable second-level facet values. The root-level and second-level facet values represent the available values for all dataflows currently being indexed. Facet values are arranged vertically (first down within the column and then downwards in the adjacent columns) in a maximum of 3 columns.
+
 It is possible to make the individual second-level homepage facet values clickable by configuration (See more details [here](/dotstatsuite-documentation/configurations/de-configuration/#selectable-second-level-homepage-facet-values)). In this case, each selectable second-level facet value is presented on a new line as a bullet list.
 
 ![de homepage facet](/dotstatsuite-documentation/images/de-facet-bullet-list.png)
