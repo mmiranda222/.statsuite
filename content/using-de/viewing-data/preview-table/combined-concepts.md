@@ -36,6 +36,7 @@ keywords: [
 ---
 
 > *Version history:*  
+> Use of combined concepts in the table layout configuration since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Enhanced rules for hiding of specific values in the combined concepts with [September 20, 2023 Release .Stat Suite JS "xray"](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)  
 > Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
 
@@ -83,7 +84,9 @@ The virtual components will be displayed at the highest possible _level_ in the 
 3) Row or Column  
 4) Cell = Row/Row Section and Column  
 
-Exception: Any dimension that would normally be part of a virtual component, but that has been placed through the table customisation feature (by default or by the user) into a specific axis (Row Section, Row or Column), which is different from that calculated for the virtual component, will be excluded from the virtual component and be displayed separately/normally. This functional choice has been made to not disturb users who see and place dimensions in the table customisation panel in specific axes. 
+The layout configuration feature will display the combined concept in an axis only if one of its dimensions has multiple values selected.
+
+![Combined concepts and layout](/dotstatsuite-documentation/images/de-combined-concepts-layout.png)
 
 Based on the original placement of all dimensions that are finally combined into the virtual component, the highest possible _level_, at which the virtual component will be displayed, is the:
 
@@ -98,7 +101,6 @@ Note: When a non-mandatory attribute used in a virtual component is attached at 
 ---
 
 ### Hiding of specific values in the combined concepts
-
 If the `NOT_DISPLAYED` annotation (for a code in a codelist, for a dataflow or for a DSD) requires to hide an item of a dimension or an attribute listed used for a virtual component, then this item is excluded from the concatenated label of the virtual component value. 
 
 Example: In all following example cases, we exclude the "Not applicable" item label (having ID "_Z") of the BaseYear attribute from the COMBINED_UNIT_MEASURE label.
