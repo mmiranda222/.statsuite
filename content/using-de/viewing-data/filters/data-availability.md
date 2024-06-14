@@ -9,6 +9,7 @@ keywords: [
   'The dataflow has some data : Display only filter values for which data exists', '#the-dataflow-has-some-data-display-only-filter-values-for-which-data-exists', 
   'Limit the selectable filter values according to the current data availability and to the current selection', '#limit-the-selectable-filter-values-according-to-the-current-data-availability-and-to-the-current-selection',
   'The dataflow has no data : there are no filter values', '#the-dataflow-has-no-data-there-are-no-filter-values',
+  'Frequency and time period selections', '#frequency-and-time-period-selections',
   'DLM data preview : allow displaying all filter values (whether there are data or not)', '#dlm-data-preview-allow-displaying-all-filter-values-whether-there-are-data-or-not',
   'Technical notes', '#technical-notes',
 ]
@@ -20,10 +21,12 @@ keywords: [
   - [The dataflow has some data : Display only filter values for which data exists](#the-dataflow-has-some-data-display-only-filter-values-for-which-data-exists)
   - [Limit the selectable filter values according to the current data availability and to the current selection](#limit-the-selectable-filter-values-according-to-the-current-data-availability-and-to-the-current-selection)
   - [The dataflow has no data : there are no filter values](#the-dataflow-has-no-data-there-are-no-filter-values)
+  - [Frequency and time period selections](#frequency-and-time-period-selections)
 - [DLM data preview : allow displaying all filter values (whether there are data or not)](#dlm-data-preview-allow-displaying-all-filter-values-whether-there-are-data-or-not)
 - [Technical notes](#technical-notes)
 
 > *Version history:*  
+> Limit the LastNPeriod and the Start and End Time Periods according to the current data availability and to the current selection [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Apply the limit of selectable filter values to Time and Frequency with [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Limit of selectable filter values introduced with [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
 
@@ -50,6 +53,13 @@ Note that the data availability is applied to all filters including *Frequency* 
 
 #### The dataflow has no data : there are no filter values
 When navigating directly to the DE visualisation page (maybe from a saved link) of a dataflow that has no data, which is indicated by the fact that the actual content constraints are empty, then the filters are also empty (without values) and the data table/view is replaced with the text "There is no data available.". In this case default item selections (from search, SDMX annotations, URL or in-built defaults) are not applied.
+
+#### Frequency and time period selections
+In general, according to and in addition to the rules for the ["Frequency and Time-Period selectors"](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/viewing-data/filters/time-period/#frequency-and-time-period-selectors), to determine the content of this filter, including availability, the following steps are executed:
+1. Get the time periods to be included in the start and end period selectors with the `references=all` structure query to retrieve the **actual content constraint** together with all other structures;
+2. *Only if frequency is not already pre-selected*: Define the Frequency to be used, only if the actual content constraint contains several possible frequencies, and then execute the `availableconstraint` query with `.../availableconstraint/[flowRef]/[key]/ALL/[frequency dim ID]` including all current selections in the key and with start/end time period `startPeriod`/`endPeriod` parameters;
+3. *Only if lastNPeriods is selected*: Get the last available time period for the selected frequency with **`availableconstraint` query** with `.../availableconstraint/[flowRef]/[key]/ALL/TIME_PERIOD` including all current selections in the key but without start/end time period;
+4. Get availability for all dimensions: `availableconstraint` query with `.../availableconstraint/[flowRef]/[key]?mode=available` including all current selections in the key. If `lastNPeriods` is selected, then also set the calculated start time period, else if start/end periods are selected, then also set those.
 
 ---
 
