@@ -29,6 +29,7 @@ keywords: [
 ---
 
 >*Version history:*  
+> Warning message of potential linkage always displayed when authenticated since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Database migration from Redis to Mongo produces longer unique IDs of shared views; in consequence, removal of the ID column from the list of active shared views with [December 20, 2023 Release .Stat Suite JS yay](/dotstatsuite-documentation/changelog/#december-20-2023)  
 > Warning of sharing non-public data introduced with [January 13, 2022 Release .Stat Suite JS 12.0.0](/dotstatsuite-documentation/changelog/#january-13-2022)  
 > Fully refactored and enhanced in order to introduce a better management of all shared objects in a single page with [December 14, 2021 Release .Stat Suite JS 11.0.0](/dotstatsuite-documentation/changelog/#december-14-2021)  
@@ -58,7 +59,7 @@ Once clicked on "Request URL and embed code", the user gets the following messag
 
 ![DE Share request](/dotstatsuite-documentation/images/de-share2.png)
 
-**Note** that, when the user is authenticated and requests to share a snapshot of data that are not publicly available (e.g. a private dataflow triggered from the DLM preview), then a localised warning message indicates that those data will be publicly accessible even though potentially not yet officially and publicly released.
+**Note** that, when the user is authenticated and requests to share a snapshot of data, then a localised warning message indicates that those data will be publicly accessible even though potentially not yet officially and publicly released.
 
 ![DE Share warning snapshot](/dotstatsuite-documentation/images/de-share-snapshot-warning.png)
  
