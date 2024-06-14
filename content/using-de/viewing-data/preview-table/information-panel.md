@@ -7,6 +7,7 @@ weight: 2800
 ---
 
 > *Version history:*  
+> Allow enlarging the side panel for voluminous metadata reading since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Enhanced order of display with [April 4, 2024 Release .Stat Suite JS zoo](/dotstatsuite-documentation/changelog/#april-4-2024)  
 > 'i' icon is centered in the row sections since [April 20, 2023 Release .Stat Suite JS unicorn](/dotstatsuite-documentation/changelog/#april-20-2023)  
 > Referential metadata hierarchy display with [April 11, 2022 Release .Stat Suite JS 14.0.0](/dotstatsuite-documentation/changelog/#april-11-2022)  
@@ -33,6 +34,7 @@ The header of the side panel contains:
 - the localised panel title 'Information'
 - a button to expand or collapse all grouped attribute or referential metadata values (expanded by default)
 - a button to download the current referential metadata contents with the SDMX-CSV (.csv) file format (the download of attributes will be added later)
+- a button to enlarge the width of the side panel
 
 Attributes or referential metadata are titled by their attachment:
 - dataflow: dataflow title
@@ -46,6 +48,10 @@ Each (group of) attribute or referential metadata can be expanded or collapsed i
 The side panel closes when clicking the overlay, clicking the 'close' icon or pressing the Esc key. This cancels also the highlight state of the '(i)' icon.
 
 ![Information side panel](/dotstatsuite-documentation/images/de-side-panel.png)
+
+Clikcing the "enlarge" button will extend the witdh of the panel to better read voluminous metadata information:
+
+![Information side panel](/dotstatsuite-documentation/images/de-side-panel-enlarge.png)
 
 Attributes are grouped under the parent "Data Characteristics", which can be configured and localised.
 
