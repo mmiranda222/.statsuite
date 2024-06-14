@@ -36,7 +36,7 @@ keywords: [
 ---
 
 > *Version history:*  
-> Use of combined concepts in the table layout configuration since [MMMMMMMMMM XX, 2024 Release .Stat Suite JS NAME](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#mmmmmmmmmmmmmmmm-XX-2024)  
+> Use of combined concepts in the table layout configuration since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)  
 > Enhanced rules for hiding of specific values in the combined concepts with [September 20, 2023 Release .Stat Suite JS "xray"](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#september-20-2023)  
 > Introduced in [July 20, 2023 Release .Stat Suite JS Virtual](https://sis-cc.gitlab.io/dotstatsuite-documentation/changelog/#july-20-2023)
 
