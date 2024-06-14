@@ -131,18 +131,21 @@ The localised descriptions of codes defined in a codelist of a dimension are dis
 Clicking the **advanced selection modes** button triggers the display of an **advanced selection popup**. It provides more advanced selection options especially for a longer or hierarchical list and refreshes the data view only once the new selection is validated by the user.  
 The popup always provides a [local search](#local-search) (spotlight feature) box.  
 
-Clicking the `Selection mode` button located next to the local search box opens a drawer with tiles for the different modes of selection:
+The user has different modes of selection:
 - Single item
 - Item and all items directly below
 - Whole branch
 - All items at the same level
-- All items  
 
-Once the user clicked one of the tiles, the drawer closes again upwards. All following filter selections apply the chosen selection mode.
+Once the user clicked on one selection mode, all following filter selections apply the chosen selection mode.
 
-![Hierarchical contents](/dotstatsuite-documentation/images/de-viewingdata-filters-multiselection-bulkselectionmenu-1.png)  
 
-Additional features in the popup propose to `Expand all` items or to `Collapse all` items keeping only the root item(s) when the items are hierarchical.  
+![Hierarchical contents](/dotstatsuite-documentation/images/AdvancedSelectedModeWindow.png)  
+
+Additional features in the popup propose
+- to `Expand all` items or to `Collapse all` items keeping only the root item(s) when the items are hierarchical;
+- to `Select all` items or to `Delete all` items 
+
 To apply the selection in the *Filters* area and refresh the data view, it is necessary to click on the `Apply` button, which closes the advanced selection popup.  
 
 **Note** that, for all advanced selection modes, when relevant and aligned with the rules described [here](#selectable-empty-parent-in-hierarchical-filters), empty parents of child(ren) with data in a hierarchical filter can be (de)selected.
