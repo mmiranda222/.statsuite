@@ -3,9 +3,35 @@ title: "Charts"
 subtitle: 
 comments: 
 weight: 3000
+keywords: [
+  'General behavior', '#general-behavior',
+  'Column', '#column',
+  'Row', '#row',
+  'Stacked column', '#stacked-column',
+  'Stacked row', '#stacked-row',
+  'Scatter plot', '#scatter-plot',
+  'Horizontal symbol', '#horizontal-symbol',
+  'Vertical symbol', '#vertical-symbol',
+  'Timeline', '#timeline',
+  'Colour map', '#colour-map',
+]
+---
+
+#### Table of Content
+- [General behavior](#general-behavior)
+- [Column](#column)
+- [Row](#row)
+- [Stacked column](#stacked-column)
+- [Stacked row](#stacked-row)
+- [Scatter plot](#scatter-plot)
+- [Horizontal symbol](#horizontal-symbol)
+- [Vertical symbol](#vertical-symbol)
+- [Timeline](#timeline)
+- [Colour map](#colour-map)
 
 ---
 
+### General behavior
 All charts use the current selection, which can be modified using the filters.  
 All charts are customisable, using the common Customise menu.  
 All charts are downloadable in png format.  
@@ -90,7 +116,12 @@ While the 'Chart' tab stays always active/enabled, the dropdown menu items (char
 
 ![timeline chart](/dotstatsuite-documentation/images/chart-timeline.png)
 
-**Note:** Timeline charts are only shown for data that has a TIME_PERIOD dimension and at least 2 TIME_PERIOD values.
+Timeline charts are only shown for data that has a TIME_PERIOD dimension and at least 2 TIME_PERIOD values.
+
+**Note** that, *since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)*, in timeline charts, **null values** are not treated as zero ('0') but treated as nulls, which leads to a break in the line.
+
+![timeline chart](/dotstatsuite-documentation/images/chart-timeline-null.png)
+
 ---
 
 ### Colour map
