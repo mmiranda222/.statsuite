@@ -40,6 +40,10 @@ The free text search of the Data Explorer looks for a specific language in the f
 
 The relevance score depends on where the search term was found, which can be customised as documented [here](/dotstatsuite-documentation/configurations/search-config/#relevance-of-free-text-search-results-how-to-tweak-the-weights-of-specific-dataflow-properties).
 
+**Note** that, since [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024), when opening the home page, the focus is automatically made on the search box and gets highlighted.
+
+![DE Free text search](/dotstatsuite-documentation/images/de-free-text-search-focus.png)
+
 ---
 
 ### How to search
