@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [June 26, 2024](#june-26-2024)
 - [June 24, 2024](#june-24-2024)
 - [June 13, 2024](#june-13-2024)
 - [June 11, 2024](#june-11-2024)
@@ -150,7 +151,7 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 | Release <br/><br/>DE/DLM | CORE<br/>NSI<br/>Date | <font color="Orange">[gingerbread](/dotstatsuite-documentation/changelog/#june-11-2024) <br/> 8.19.2 <br/> 11‑June‑24</font> | <font color="Orange">[funfetti](/dotstatsuite-documentation/changelog/#october-11-2023) <br/> 8.18.4 <br/> 11‑Oct‑23</font> | [elote](/dotstatsuite-documentation/changelog/#september-1-2023) <br/> 8.18.2 <br/> 01‑Sep‑23 | <font color="Orange">[dragonfruit](/dotstatsuite-documentation/changelog/#july-4-2023) <br/> 8.17.0 <br/> 04‑Jul‑23</font> | [cinnamon](/dotstatsuite-documentation/changelog/#june-12-2023) <br/> 8.13.0 <br/> 12‑Jun‑23 | blueberry <br/> 8.12.2 <br/> 11‑Nov‑22 | almond <br/> 8.9.2 <br/> 02‑Aug‑22 |
 |:---------------------------------------------------------------------:|:-------------:|:-----------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| [**arc**](/dotstatsuite-documentation/changelog/#june-24-2024)     | <font color="Orange">**24‑June‑24**</font> | ok | (ok) |           |           |           |           |           |
+| [**arc**](/dotstatsuite-documentation/changelog/#june-26-2024)     | <font color="Orange">**26‑June‑24**</font> | ok | (ok) |           |           |           |           |           |
 | [**zoo**](/dotstatsuite-documentation/changelog/#may-16-2024)     | <font color="Orange">**16‑May‑24**</font> | ok | (ok) |           |           |           |           |           |
 | [**yay**](/dotstatsuite-documentation/changelog/#march-21-2024)     | <font color="Orange">**21‑March‑24**</font> | ok (w.exc.) | (ok)      |           |           |           |           |           |
 | [**xray**](/dotstatsuite-documentation/changelog/#october-18-2023)    | **18‑Oct‑23** |             |           | ok        | (ok)      |           |           |           |
@@ -172,6 +173,19 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
+
+---
+
+### June 26, 2024
+**[Patch release .Stat Suite JS "arc"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/78#tab-issues)**  
+> This release includes a **patch** version of the **data-explorer** *(v23.0.2)* application.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.19.2** and .Stat-Suite **CORE** [gingerbread](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72) release.
+
+patch changes:
+
+- [dotstatsuite-data-explorer#1353](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1353) Navigation issue between table view and search facet (back & forth).
+- [dotstatsuite-data-explorer#1275](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1275) Applied filters not always visible when dataflow found from the search result.
+- [dotstatsuite-data-explorer#1358](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1358) Microdata count issue for external dataflows.
 
 ---
 
