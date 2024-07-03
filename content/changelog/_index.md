@@ -8,6 +8,7 @@ weight: 120
 
 <!-- 
 ToC
+- [July 3, 2024](#july-3-2024)
 - [June 26, 2024](#june-26-2024)
 - [June 24, 2024](#june-24-2024)
 - [June 13, 2024](#june-13-2024)
@@ -173,6 +174,17 @@ Table of version compatibility of the **.Stat Suite JS** releases (Data Explorer
 
 > **Note:**  
 Our release policy extends to hotfixes for critical issues found by SIS-CC Member organisations in releases that are no more than one year in the past from the date of the release in which the issue is found.
+
+---
+
+### July 3, 2024
+**[Patch release .Stat Suite JS "arc"](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/78#tab-issues)**  
+> This release includes a **patch** version of the **data-explorer** *(v23.0.3)* application.  
+**Compatibility:** tested and released in compatibility with the Eurostat **nsiws.net v8.19.2** and .Stat-Suite **CORE** [gingerbread](https://gitlab.com/groups/sis-cc/.stat-suite/-/milestones/72) release.
+
+patch change:
+
+- [dotstatsuite-data-explorer#1361](https://gitlab.com/sis-cc/.stat-suite/dotstatsuite-data-explorer/-/issues/1361) "Send" button is not working in the “Contact us” form.
 
 ---
 
