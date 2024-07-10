@@ -48,15 +48,15 @@ The relevance score depends on where the search term was found, which can be cus
 
 ### How to search
 #### Exact single match word or multiword
-Return all dataflows that have the exact match single word of one of the search words in the indexed information. The usage of search hints like `AND`, `+` and `-` are not required but allowed. The terms `euro AND dollar AND "exchange rate"` and `euro dollar "exchange rate"` are syntactically the same and bring the same results.
+Return all dataflows that have the exact match single word of **all** the search words in the indexed information. The usage of search hints like `AND`, `+` and `-` are not supported, as currently all words must always be matched.
 
 #### Exact phrase
 Return all dataflows that have the exact match phrase in the indexed information. Exact phrases are entered by using quotes, e.g. `"exchange rate"`.
 
 #### Partial match of a word
-Apply the same rules as for exact single match word or multiword for partial matching of words, e.g. `key` is found in `keys` and `keywords`.  
-It is not used for exact phrases.  
-See reference [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/partial-matching.html).
+Apply the same rules as for exact single match word or multiword for partial matching of words based on **stems** or **synonyms**, e.g. `keys` is found through `key`.  
+Example: A stemmer for English operating on the stem `cat` should identify such strings as `cats`, `catlike`, and `catty`. A stemming algorithm might also reduce the words `fishing`, `fished`, and `fisher` to the stem `fish`.  
+Note: It is not used for exact phrases.  
 
 ---
 
