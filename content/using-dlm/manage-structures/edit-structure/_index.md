@@ -1,24 +1,32 @@
 ---
-title: "Edit data structures"
+title: "Create or edit data structures"
 subtitle: 
 comments: false
 weight: 265
 keywords: [
-  'Generic DSD Matrix SDMX-ML generator', '#generic-dsd-matrix-sdmx-ml-generator',
-  'SDMX ISTAT Framework', '#sdmx-istat-framework',
-  'SDMX Data Structure Wizard (DSW)', '#sdmx-data-structure-wizard',
-  'Fusion Registry Community Edition', '#fusion-registry-community-edition',
+  'FMR Workbench', '#fmr-workbench',
+  'SDMX Matrix Generator', '#sdmx-matrix-generator',
+  'SDMX Constructor', '#sdmx-constructor',
+  'Fusion Metadata Registry (FMR)', '#fusion-metadata-registry-fmr',
 ]
 
 ---
 
-Currently, the Data Lifecycle Manager itself doesn't directly offer data structure editing features. Data structures need to be edited using other tools outside of the DLM and be uploaded once readily prepared as xml file.
+The Data Lifecycle Manager application itself doesn't directly offer data structure creation or editing features. However, there are a number of solutions that provide such functionality. While some are closely integrating with the .Stat Suite, others require to create or edit data structures outside of the .Stat DLM and its data spaces. In this case, the data structures are to be downloaded and/or (re-)uploaded in the .Stat Suite in SDMX-ML format.
 
-We recommend the **SDMX Matrix Generator** introduced below, or any of the open-source companion software listed here: https://siscc.org/stat-suite/companion-software/. More SDMX tools that might allow creating and editing SDMX data structures are listed on the official [SDMX web site](https://sdmx.org/?page_id=4500).
+In addition to the tools listed below, please consult the list of software on the official [SDMX web site](https://sdmx.org/?page_id=4500).
+
+### FMR Workbench
+
+The FMR Workbench web application (developed by the BIS) can be **integrated seamlessly with the .Stat DLM**. This provides structures creation and editing with just one mouse click within the DLM. It includes almost all UI features that are available in the Fusion Metadata Registry (FMR) application (see below). 
+
+See [here](/dotstatsuite-documentation/using-dlm/manage-structures/edit-structures/fmr-workbench/) for more details. 
 
 ---
 
-### Generic DSD Matrix SDMX-ML generator
+### SDMX Matrix Generator
+
+We recommend using the SDMX Matrix Generator Excel add-in d(eveloped by SIS-CC) to **model statitical data based on high-quality modelling guidelines** and for generating the related new SDMX structures in SDMX-ML format, which will then need to be uploaded, e.g., using the DLM. All within Excel, the "SDMX Matrix" approach especially supports the hard work of **concept and code harmonisation across a data domain**, as well as the optimisation of the number of DSDs and dataflows.
 
 - technology: Excel macro [.xlsm file]
 - source code: https://gitlab.com/sis-cc/sdmx-tools/sdmx-matrix-generator
@@ -37,3 +45,24 @@ This tool maps to these GSBPM sub-processes:
   - 3.3 Reuse or build dissemination instruments (generating SDMX-ML for dissemination Dataflows)
 
 A video record of a demo of the tool is available from [here online](https://oecdtv.webtv-solution.com/embed/6650/en/video).
+
+---
+
+### SDMX Constructor
+
+The SDMX Constructor Windows application (developed by ILO) allows easily creating and editing data structures (following the SDMX standards) **directly stored in .Stat Suite data spaces**. It offers a **very user-friendly interface** that eases the structure creation and editing.
+
+See [here](https://ilostat.github.io/dsdc/) for more details. 
+
+The documentation also describes how the SDMX Constructor connects with the .Stat Suite: https://dingshutong.github.io/sdmxc/connecting-to.html.
+
+---
+
+### Fusion Metadata Registry (FMR)
+
+Fusion Metadata Registry (FMR) (developed by the BIS) is a **fully fletched software platform for managing SDMX structures**. It provides:
+- a controlled repository for SDMX structural metadata (SDMX metadata registry) independent from the .Stat data spaces
+- 3 integrated metadata-driven data processing services: data validation, data transformation (mapping data between structures) and conversion of data between SDMX data formats. They are usable through the web UI or integrated into data automation processes using the REST API.
+- data structure authoring and maintenance web application
+
+See [here](https://www.sdmx.io/tools/fmr/) for more details. 

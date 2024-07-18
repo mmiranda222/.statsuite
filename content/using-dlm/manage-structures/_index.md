@@ -9,6 +9,5 @@ weight: 232
 * [Delete data structures](/dotstatsuite-documentation/using-dlm/manage-structures/delete-data-structures/)
 * [List related data structures](/dotstatsuite-documentation/using-dlm/manage-structures/list-related-data-structures/)
 * [Copy data structures](/dotstatsuite-documentation/using-dlm/manage-structures/copy-data-structures/)
-* [Edit data structures](/dotstatsuite-documentation/using-dlm/manage-structures/edit-structure/)
+* [Create or edit data structures](/dotstatsuite-documentation/using-dlm/manage-structures/edit-structure/)
 * [Define referential metadata attributes for a data structure](/dotstatsuite-documentation/using-dlm/manage-structures/link-dsd-msd/)
-* [FMR Workbench integration](/dotstatsuite-documentation/using-dlm/manage-structures/fmr-workbench/)

@@ -1,11 +1,10 @@
 ---
-title: "FMR Workbench integration"
+title: "FMR Workbench"
 subtitle: 
 comments: false
 weight: 280
 keywords: [
   'Configuration', '#configuration',
-  'Synchronisation', '#synchronisation',
   'Create structure', '#create-structure',
   'View and edit structure', '#view-and-edit-structure',
 ]
@@ -13,27 +12,23 @@ keywords: [
 
 #### Table of Content
 - [Configuration](#configuration)
-- [Synchronisation](#synchronisation)
 - [Create structure](#create-structure)
 - [View and edit structure](#view-and-edit-structure)
 
 ---
 >Released in [June 13, 2024 Release .Stat Suite JS arc](/dotstatsuite-documentation/changelog/#june-13-2024)
 
-**[FMR Workbench](https://www.sdmx.io/tools/fwb/)** can be integrated with .Stat DLM to manage SDMX structures in synchronisation. Find more details about FMR Workbench:
+The **[FMR Workbench](https://www.sdmx.io/tools/fwb/)** developed by BIS can be integrated seamlessly with .Stat DLM to allow users to create or edit SDMX structures directly in .Stat Suite data spaces. Find more details about the FMR Workbench:
 - [Getting started](https://fmrwiki.sdmxcloud.org/FMR_Workbench)
 - [General guidance](https://fmrwiki.sdmxcloud.org/Main_Page)
 
 ### Configuration
 To integrate FMR Workbench with .Stat DLM, you need to configure both applications: see details [here](/dotstatsuite-documentation/configurations/dlm-configuration/#fmr-workbench-integration).
 
----
-
-### Synchronisation
-The following rules apply to a FMR Workbench successful synchronisation with.Stat DLM:
-1. A .Stat **DLM dataspace"** corresponds to a **Workbench "environment"**.
-2. Authentication is managed at the environment level in Workbench, therefore users need to log in each time they work inside a new environment/dataspace. The authentication mechanism, and the permission management, is the one defined and used by the .Stat Suite.
-3. In order to be able to create and edit SDMX structures in Workbench, a list of allowed Agency IDs must be configured first in Workbench configuration. The Agency IDs must correspond to the ones used in .Stat DLM. The best pratice is to used the same Agency Scheme in both applications.
+The integration between the FMR Workbench and .Stat DLM entails:
+1. A .Stat **data space"** corresponds to a **Workbench "environment"**.
+2. Authentication is managed at the environment level in Workbench, therefore users need to log in each time they switch the environment/dataspace. The authentication service and the permission management service are the ones defined and used by the .Stat Suite.
+3. In order to be able to create and edit SDMX structures with the FMR Workbench, a list of allowed Agency IDs must be configured first in the FMR Workbench configuration. The Agency IDs must correspond to the ones used in .Stat DLM. The best pratice is to use the same Agency Scheme in both applications.
 
 ---
 
