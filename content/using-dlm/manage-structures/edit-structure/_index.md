@@ -26,23 +26,10 @@ See [here](/dotstatsuite-documentation/using-dlm/manage-structures/edit-structur
 
 ### SDMX Matrix Generator
 
-We recommend using the SDMX Matrix Generator Excel add-in d(eveloped by SIS-CC) to **model statitical data based on high-quality modelling guidelines** and for generating the related new SDMX structures in SDMX-ML format, which will then need to be uploaded, e.g., using the DLM. All within Excel, the "SDMX Matrix" approach especially supports the hard work of **concept and code harmonisation across a data domain**, as well as the optimisation of the number of DSDs and dataflows.
+We recommend using the SDMX Matrix Generator Excel add-in (developed by SIS-CC) to **model statistical data based on high-quality modelling guidelines** and for generating the related new SDMX structures in SDMX-ML format, which will then need to be uploaded, e.g., using the DLM. All within Excel, the "SDMX Matrix" approach especially supports the hard work of **concept and code harmonisation across a data domain**, as well as the optimisation of the number of DSDs and dataflows. The tool is intended for statisticians with basic (non-technical) SDMX data modelling knowledge.
 
-- technology: Excel macro [.xlsm file]
 - source code: https://gitlab.com/sis-cc/sdmx-tools/sdmx-matrix-generator
 - documentation: https://sis-cc.gitlab.io/sdmx-tools/documentation/using-matrix-gen/
-- developed by: OECD
-- target audience: statisticians with basic (non-technical) SDMX data modelling knowledge
-
-This tool is used to visually model and design SDMX data artefacts, and generate the SDMX-ML markup for implementation. It is an enhancement of the Generic SDMX Design Matrix which has proven to be successful as a collaborative design tool for non-SDMX experts. 
-
-The primary goal of the tool is to be able to create the artefacts without a lot of SDMX technical knowledge, and to put the focus on the statistical aspects of the data model. 
-
-This tool maps to these GSBPM sub-processes:
-  - 2.1 Design outputs (Dataflows design in Dataflows and DSD-Concept Matrix worksheets)
-  - 2.2 Design variable descriptions (decomposition and creation of indicators in Indicator-Concept Matrix worksheet)
-  - 3.1 Reuse or build collection instruments (generating SDMX-ML for reporting Dataflows)
-  - 3.3 Reuse or build dissemination instruments (generating SDMX-ML for dissemination Dataflows)
 
 A video record of a demo of the tool is available from [here online](https://oecdtv.webtv-solution.com/embed/6650/en/video).
 
@@ -50,7 +37,7 @@ A video record of a demo of the tool is available from [here online](https://oec
 
 ### SDMX Constructor
 
-The SDMX Constructor Windows application (developed by ILO) allows easily creating and editing data structures (following the SDMX standards) **directly stored in .Stat Suite data spaces**. It offers a **very user-friendly interface** that eases the structure creation and editing.
+The SDMX Constructor Windows application (developed by ILO) allows easily creating and editing data structures (following the SDMX standards) **directly stored in .Stat Suite data spaces**. It offers a **very user-friendly interface** that eases the structure creation and editing. The tool is intended for statisticians with basic (non-technical) SDMX data modelling knowledge.
 
 See [here](https://ilostat.github.io/dsdc/) for more details. 
 
