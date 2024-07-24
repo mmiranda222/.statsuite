@@ -1,4 +1,4 @@
-baseurl = "https://j3an-baptiste.gitlab.io/dotstatsuite-documentation-manuela-test"
+baseurl = "https://j3an-baptiste.gitlab.io/dotstatsuite-documentation"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
@@ -13,7 +13,7 @@ defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
 [params]
-    favicon = "/dotstatsuite-documentation-manuela-test/favicon.ico"
+    favicon = "/dotstatsuite-documentation/favicon.ico"
 
     # Source Code repository section
     # description = "put your description"
@@ -23,7 +23,7 @@ enableMissingTranslationPlaceholders = false
     linkedin_link = "https://www.linkedin.com/groups/8614136"
     mail = "mailto:contact@siscc.org"
     website_link = "https://siscc.org/"
-    header_logo = "/dotstatsuite-documentation-manuela-test/images/sis-cc-logo-bw.png"
+    header_logo = "/dotstatsuite-documentation/images/sis-cc-logo-bw.png"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
