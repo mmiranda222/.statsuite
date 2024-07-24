@@ -1,4 +1,4 @@
-baseurl = "https://sis-cc.gitlab.io/dotstatsuite-documentation"
+baseurl = "https://j3an-baptiste.gitlab.io/dotstatsuite-documentation-manuela-test"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
@@ -13,7 +13,7 @@ defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
 [params]
-    favicon = "/dotstatsuite-documentation/favicon.ico"
+    favicon = "j3an-baptiste.gitlab.io/dotstatsuite-documentation/favicon.ico"
 
     # Source Code repository section
     # description = "put your description"
