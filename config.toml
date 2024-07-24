@@ -45,7 +45,7 @@ enableMissingTranslationPlaceholders = false
     # Theme color
     # See color value reference https://developer.mozilla.org/en-US/docs/Web/CSS/color
     custom_font_color = "white"
-    custom_background_color = "#0c4265"
+    custom_background_color = "#e6ad3c"
 
     # Documentation Menu section
     # Menu style settings
