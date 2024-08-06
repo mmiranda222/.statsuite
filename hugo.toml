@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://j3an-baptiste.gitlab.io/dotstatsuite-documentation/"
 languageCode = 'en-us'
 title = '.Stat Suite Documentation'
 
