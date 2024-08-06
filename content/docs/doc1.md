@@ -2,7 +2,7 @@
 title: ".Stat Suite Open Source Framework"
 comments: false
 weight: 25
-draft: true
+draft: false
 keywords: [
   'Component-based technical architecture', '#component-based-technical-architecture',
   'Technical stack', '#technical-stack',
