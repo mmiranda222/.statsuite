@@ -1,10 +1,13 @@
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
 image: 
-  name: klakegg/hugo:0.114.0-ext-alpine
+  name: klakegg/hugo:ext-alpine
   entrypoint: [""]
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+
+before_script:
+  - hugo version
 
 # Test job for branches other than master
 test:
