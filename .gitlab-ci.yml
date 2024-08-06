@@ -1,23 +1,22 @@
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
 image: klakegg/hugo:ext-alpine
 
-before_script:
-  - apt-get update && apt-get install -y golang-go
-
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+# Test job for branches other than master
 test:
   script:
-  - hugo
+    - hugo
   except:
-  - master
+    - master
 
+# Pages job for building and deploying the site on master branch
 pages:
   script:
-  - hugo
+    - hugo --minify
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master
