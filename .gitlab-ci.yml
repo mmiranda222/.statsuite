@@ -1,5 +1,7 @@
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
-image: klakegg/hugo:ext-alpine
+image: 
+  name: klakegg/hugo:ext-alpine
+  entrypoint: [""]
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
