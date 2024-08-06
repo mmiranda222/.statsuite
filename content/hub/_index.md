@@ -6,8 +6,8 @@ layout: "get-started"
 Thank you for your interest in our project. We welcome your interest and you can explore further to know if you would like to engage with our open-source Community. You can find out more about the Community on our [website](#). To help us continuously improve this documentation site, you can send suggestions by email to [contact@siscc.org](mailto:contact@siscc.org).
 
 ## Technical Information
-- [.Stat Suite Open Source Framework](/docs/doc1/)
-- [.Stat DevOps Implementation](/docs/doc2/)
+- [.Stat Suite Open Source Framework](/dotstatsuite-documentation/docs/doc1/)
+- [.Stat DevOps Implementation](/dotstatsuite-documentation/docs/doc2/)
 - [Production Setup Recommendations](#)
 - [Semantic Versioning of CORE Services](#)
 - [Infrastructure Requirements](#)

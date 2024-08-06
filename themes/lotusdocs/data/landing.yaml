@@ -31,7 +31,7 @@ hero:
   cta2Button:
     icon: rocket_launch
     btnText: "Get Started"
-    url: "/hub/"
+    url: "/dotstatsuite-documentation/hub/"
 
   info: "**Open Source** MIT Licensed."
 
