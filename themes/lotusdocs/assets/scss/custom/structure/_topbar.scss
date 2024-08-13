@@ -16,6 +16,19 @@
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
     font-family: 'IBM Plex Sans', sans-serif;
+    height: 100px; // Increase the height of the nav bar
+    display: flex;
+    align-items: center; // Vertically center the content
+    justify-content: space-between;
+    padding: 0 20px;
+
+    .site-title {
+        color: #ffffff !important; // Change the site title color to white
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 42px; // Adjust as needed
+        font-weight: 500;
+        margin: 0; // Adjust margins if necessary
+    }
 
     .logo {
         float: left;
@@ -31,6 +44,9 @@
         &:focus {
             outline: none;
         }
+    }
+    .logo img {
+        height: 70px; // Adjust this value to make the logo smaller
     }
     #navigation {
         &.toggle-menu {
