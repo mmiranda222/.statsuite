@@ -19,7 +19,7 @@ title = '.Stat Suite Documentation'
         disable = false
 
 [params]
-  title = ".Stat Suite Documentation"  # Set your site title
+  title = ".Stat Suite"  # Set your site title
   logoLinkURL = "/"  # Set a custom URL destination for the top header logo link
   customCSS = ["css/custom.css"]
 
