@@ -11,6 +11,7 @@
    * Copyright 2011-2023 The Bootstrap Authors
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #0066ff;
@@ -9437,7 +9438,7 @@ textarea.form-control-lg {
   src: local("Material Icons"), local("MaterialIcons-Outlined"), url("../docs/fonts/material-symbols-outlined.woff2") format("woff2"); }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Ubuntu";
+  font-family: 'IBM Plex Sans', sans-serif;
   overflow-x: hidden !important;
   font-size: 1rem;
   color: #3C4257;
@@ -9473,11 +9474,12 @@ p {
   right: 0;
   left: 0;
   top: 0;
-  background-color: transparent;
+  background-color: #023047;
   z-index: 999;
   border: 0;
   -webkit-transition: all .5s ease;
-  transition: all .5s ease; }
+  transition: all .5s ease;
+  font-family: 'IBM Plex Sans', sans-serif; }
   #topnav .logo {
     float: left;
     color: #3c4858 !important; }
@@ -9560,7 +9562,7 @@ p {
         font-weight: 700;
         letter-spacing: 1px;
         line-height: 24px;
-        font-family: var(--bs-font-sans-serif);
+        font-family: 'IBM Plex Sans', sans-serif;
         padding-left: 15px;
         padding-right: 15px;
         align-items: center; }

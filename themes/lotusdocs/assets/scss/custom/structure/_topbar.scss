@@ -2,16 +2,20 @@
 // menu.scss
 //
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+
 #topnav {
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
-    background-color: transparent;
+    background-color: #023047;
     z-index: 999;
     border: 0;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
+    font-family: 'IBM Plex Sans', sans-serif;
 
     .logo {
         float: left;
@@ -128,7 +132,7 @@
                 letter-spacing: 1px;
                 line-height: 24px;
                 // text-transform: uppercase;
-                font-family: $font-family-base;
+                font-family: 'IBM Plex Sans', sans-serif;
                 padding-left: 15px;
                 padding-right: 15px;
                 align-items: center;
