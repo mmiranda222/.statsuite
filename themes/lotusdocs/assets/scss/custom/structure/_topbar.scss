@@ -23,12 +23,86 @@
     padding: 0 20px;
 
     .site-title {
-        color: #ffffff !important; // Change the site title color to white
+        color: #ffffff;
         font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 42px; // Adjust as needed
+        font-size: 42px;
         font-weight: 500;
-        margin: 0; // Adjust margins if necessary
+        margin: 0;
+        text-align: center; // Ensure text is centered
+        flex: 1; // Allow title to take up remaining space
     }
+
+    .cta-button {
+        background-color: #F26524;
+        color: #ffffff;
+        padding: 10px 20px; // Consistent padding
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 25px; // Match the search bar’s border radius
+        text-decoration: none;
+        margin-right: 20px;
+        height: 45px; // Set the height to match the search bar
+        display: flex;
+        align-items: center; // Center text vertically
+        justify-content: center; // Center text horizontally
+        transition: background-color 0.3s ease;
+        border: none !important;
+    
+        &:hover {
+            background-color: #FF4500; // Darker shade on hover
+        }
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff; // Background color for the search bar
+        border-radius: 25px; // Rounded corners
+        overflow: hidden;
+        padding: 0; // Remove extra padding from the container
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+        height: 45px; // Set the height to match the CTA button
+    
+        form {
+            display: flex;
+            width: 100%;
+            height: 100%; // Ensure the form takes the full height
+        }
+    
+        .search-input {
+            border: none;
+            outline: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            flex: 1; // Take up the remaining space
+            border-radius: 25px 0 0 25px; // Rounded corners on the left side
+            height: 100%; // Match the height of the parent container
+        }
+    
+        .search-button {
+            background-color: #F26524; // Match CTA button color
+            color: #ffffff;
+            border: none;
+            outline: none;
+            padding: 0 15px; // Adjust padding for consistency
+            cursor: pointer;
+            border-radius: 0 25px 25px 0; // Rounded corners on the right side
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%; // Match the height of the parent container
+            transition: background-color 0.3s ease;
+    
+            &:hover {
+                background-color: #FF4500; // Darken on hover
+            }
+    
+            i.material-icons {
+                font-size: 25px; // Adjust the size of the icon
+                line-height: 1; // Ensure the icon is centered vertically
+            }
+        }
+    }    
 
     .logo {
         float: left;

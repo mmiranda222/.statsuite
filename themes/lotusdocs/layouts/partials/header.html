@@ -18,23 +18,25 @@
                 <img src="{{ $logo.Permalink }}" alt="SIS-CC Logo" height="70px"> <!-- Adjusted logo size -->
             </a>
         </div>
-        
+
         <!-- Center: Site Title -->
-        <h1 class="site-title ms-3 me-3">{{ .Site.Params.title }}</h1>
-        
+        <h1 class="site-title mx-auto">{{ .Site.Params.title }}</h1>
+
         <!-- Right-side: CTA Button, Search Bar, and Social Icons -->
         <div class="d-flex align-items-center">
             <!-- CTA Button -->
-            <a href="{{ .Site.Params.ctaLinkURL }}" class="btn btn-primary cta-button me-3">
-                {{ .Site.Params.ctaText }}
+            <a href="/content/docs/changelog.md" class="btn btn-primary cta-button me-3">
+                Changelog
             </a>
 
             <!-- Search Bar -->
             {{ if .Site.Params.flexsearch.enable }}
-            <div class="search-bar me-3">
+            <div class="search-bar">
                 <form action="/search" method="get">
-                    <input type="text" name="q" placeholder="{{ .Site.Params.search.placeholder }}">
-                    <button type="submit"><i class="material-icons">search</i></button>
+                    <input type="text" name="q" placeholder="{{ .Site.Params.search.placeholder }}" class="search-input">
+                    <button type="submit" class="search-button">
+                        <i class="material-icons">search</i>
+                    </button>
                 </form>
             </div>
             {{ end }}
