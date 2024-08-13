@@ -1,5 +1,3 @@
-# Note: Template blocks require a 'weight' parameter so they're correctly ordered on the landing page
-
 # Hero
 hero:
   enable: true
@@ -62,4 +60,3 @@ featureGrid:
       ctaLink: # 6
         text: learn more
         url: /docs/
-
