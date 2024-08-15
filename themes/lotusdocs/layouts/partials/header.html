@@ -3,13 +3,23 @@
         <!-- Left-side: Hamburger Menu and Logo -->
         <div class="d-flex align-items-center">
             <!-- Mobile menu toggle-->
-            <button class="navbar-toggle btn btn-icon btn-soft-light me-3" id="isToggle" aria-label="toggleMenu" onclick="toggleMenu()">
+            <!-- <button class="dropdown-menu" id="isToggle" aria-label="toggleMenu" onclick="toggleMenu()">
                 <div class="lines">
-                    <span></span>
+                    <span>abc</span>
                     <span></span>
                     <span></span>
                 </div>
-            </button>
+            </button> -->
+            <div class="dropdown">
+                <button onclick="toggleMenu()" class="btn btn-secondary dropdown-toggle" type="button" id="isToggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="navigation">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
             <!-- End mobile menu toggle-->
 
             <!-- Logo container-->
