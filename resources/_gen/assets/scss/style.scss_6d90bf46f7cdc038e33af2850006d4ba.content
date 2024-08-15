@@ -9477,14 +9477,59 @@ p {
   background-color: #023047;
   z-index: 999;
   border: 0;
-  -webkit-transition: all .5s ease;
   transition: all .5s ease;
   font-family: 'IBM Plex Sans', sans-serif;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px; }
+  padding: 0 20px;
+  width: 100%;
+  /* Ensures full width */ }
+  #topnav .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center; }
+  #topnav .hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px; }
+  #topnav .hamburger-lines span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    /* Adjust color to match your theme */
+    border-radius: 3px; }
+  #topnav .navigation-links {
+    position: absolute !important;
+    top: 60px !important;
+    left: 0 !important;
+    background-color: #00324b;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    padding: 10px 0;
+    display: none;
+    /* Ensure it's initially hidden */ }
+  #topnav .navigation-links.show {
+    max-height: 300px !important;
+    display: block !important;
+    /* Show the menu when 'show' class is applied */ }
+  #topnav .site-title-container {
+    flex-grow: 1;
+    /* Allows the title container to take available space */
+    display: flex;
+    justify-content: center;
+    /* Centers the title */ }
   #topnav .site-title {
     color: #ffffff;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -9550,6 +9595,8 @@ p {
         font-size: 25px;
         line-height: 1; }
   #topnav .logo {
+    margin-right: 20px;
+    margin-left: 0;
     float: left;
     color: #3c4858 !important; }
     #topnav .logo .l-dark,
@@ -9774,6 +9821,38 @@ p {
 
 .social-link > li {
   line-height: initial; }
+
+#navigation {
+  position: absolute;
+  top: 100px;
+  /* Adjust based on your header height */
+  left: 0;
+  background-color: #00324b;
+  width: 250px;
+  /* Adjust the width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, display 0.3s ease;
+  display: none;
+  /* Initially hidden */
+  padding: 10px 0; }
+
+#navigation.show {
+  max-height: 300px;
+  display: block;
+  /* Show the menu when 'show' class is applied */ }
+
+.dropdown-item {
+  color: #ffffff;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease; }
+
+.dropdown-item:hover {
+  background-color: #0071a1; }
 
 .footer {
   background: #202942;

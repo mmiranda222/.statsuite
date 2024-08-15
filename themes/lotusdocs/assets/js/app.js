@@ -19,12 +19,27 @@ window.addEventListener('scroll', (ev) => {
 })
 
 // Toggle menu
-function toggleMenu() {
-    document.getElementById('isToggle').classList.toggle('open');
-    var isOpen = document.getElementById('navigation')
-    if (isOpen.style.display === "block") {
-        isOpen.style.display = "none";
-    } else {
-        isOpen.style.display = "block";
+document.addEventListener("DOMContentLoaded", function() {
+    function toggleMenu() {
+        var menu = document.getElementById('navigation');
+        var toggleButton = document.getElementById('isToggle');
+
+        if (!menu) {
+            console.error('Menu element not found');
+            return;
+        }
+
+        toggleButton.classList.toggle('open');
+        menu.classList.toggle('show');
+
+        if (menu.classList.contains('show')) {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
     }
-};
+
+    document.getElementById('isToggle').addEventListener('click', toggleMenu);
+});
+
+

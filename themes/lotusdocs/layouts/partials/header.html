@@ -1,27 +1,22 @@
 <header id="topnav">
-    <div class="container d-flex justify-content-between align-items-center" width="100%">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
         <!-- Left-side: Hamburger Menu and Logo -->
         <div class="d-flex align-items-center">
-            <!-- Mobile menu toggle-->
-            <!-- <button class="dropdown-menu" id="isToggle" aria-label="toggleMenu" onclick="toggleMenu()">
-                <div class="lines">
-                    <span>abc</span>
+            <!-- Mobile menu toggle -->
+            <button class="hamburger" id="isToggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+                <div class="hamburger-lines">
+                    <span></span>
                     <span></span>
                     <span></span>
                 </div>
-            </button> -->
-            <div class="dropdown">
-                <button onclick="toggleMenu()" class="btn btn-secondary dropdown-toggle" type="button" id="isToggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="navigation">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-            <!-- End mobile menu toggle-->
-
+            </button>
+            
+            <!-- Navigation menu (initially hidden) -->
+            <div id="navigation" class="navigation-links">
+                <a href="#" class="dropdown-item">Action</a>
+                <a href="#" class="dropdown-item">Another action</a>
+                <a href="#" class="dropdown-item">Something else here</a>
+        </div>
             <!-- Logo container-->
             <a class="logo" aria-label="Home" href="{{ .Site.Params.logoLinkURL }}">
                 {{ $logo := resources.Get "images/logo-color.png" }}
@@ -29,18 +24,17 @@
             </a>
         </div>
 
-        <div>
         <!-- Center: Site Title -->
+        <div class="site-title-container">
             <h1 class="site-title mx-auto">{{ .Site.Params.title }}</h1>
         </div>
 
-        <!-- Right-side: CTA Button, Search Bar, and Social Icons -->
+        <!-- Right-side: CTA Button, Search Bar -->
         <div class="d-flex align-items-center">
             <!-- CTA Button -->
             <a href="/content/docs/changelog.md" class="btn btn-primary cta-button me-3">
                 Changelog
             </a>
-
             <!-- Search Bar -->
             {{ if .Site.Params.flexsearch.enable }}
             <div class="search-bar">
@@ -52,9 +46,6 @@
                 </form>
             </div>
             {{ end }}
-
-            <!-- Social Icons (Optional) -->
-            <!-- Add your social icons here if needed -->
         </div>
-    </div><!--end container-->
-</header><!--end header-->
+    </div>
+</header>
