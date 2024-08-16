@@ -46,17 +46,17 @@ featureGrid:
     - description: "A web-based application to easily find, access, and share data through a well-tuned navigation. Powered by the open-source platform .Stat Suite for the dissemination of official statistics."
       image: "images/de.png"
       ctaLink: # 6
-        text: learn more
+        text: Learn More
         url: /docs/
 
     - description: A set of adaptive back-office modules to efficiently and timely produce and (re-)use high quality statistical data by defining, running, automating, controlling and evaluating the underlying data processes.
       image: "images/dlm.png"
       ctaLink: # 6
-        text: learn more
+        text: Learn More
         url: /docs/
 
     - description: A highly performing, secure SDMX-native Data Store based on standard protocols, to store and retrieve statistical data, structural and referential metadata, data process information and security settings.
       image: "images/sc.png"
       ctaLink: # 6
-        text: learn more
+        text: Learn More
         url: /docs/

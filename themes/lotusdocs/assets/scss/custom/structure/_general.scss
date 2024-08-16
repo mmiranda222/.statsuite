@@ -33,3 +33,87 @@ p {
         min-height: calc(100vh - 241px);
     }
 }
+
+/* Custom Styles for the Get Started Section */
+#get-started {
+    padding: 50px 20px; /* Padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#get-started .container {
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensure it takes up the full width */
+    max-width: 1200px; /* Set a max width if needed */
+}
+
+#get-started h1.title {
+    font-size: 2.5rem;
+    font-weight: 500 !important;
+    margin-bottom: 30px;
+    color: #333; /* Darker text color */
+}
+
+#get-started p {
+    font-size: 1rem;
+    color: #666; /* Muted text color */
+    margin-bottom: 30px;
+}
+
+#get-started .nav-tabs {
+    border-bottom: none; /* Remove the line under tabs */
+    justify-content: center; /* Center the tabs more accurately */
+    background-color: #F26524; /* Tab container background color */
+    padding: 10px 15px; /* Increased padding for better spacing */
+    border-radius: 30px; /* Rounded corners around all tabs */
+}
+
+#get-started .nav-tabs .nav-item {
+    margin: 0 10px; /* Adjust margin to add space between each tab */
+}
+
+#get-started .nav-tabs .nav-link {
+    color: #ffffff; /* White text color */
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 25px; /* Increased padding for more space within tabs */
+    border-radius: 25px; /* Rounded individual tabs */
+    background-color: transparent; /* Transparent background for inactive tabs */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+}
+
+#get-started .nav-tabs .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Active tab background color */
+    color: #ffffff; /* Active tab text color */
+}
+
+#get-started .nav-tabs .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Hover background color */
+    color: #ffffff; /* Hover text color */
+}
+
+#get-started .list-group-item {
+    border: none; /* Remove borders from list items */
+    background-color: #f7f7f7; /* Light background for list items */
+    padding: 15px 20px;
+    border-radius: 10px; /* Rounded list items */
+    margin-bottom: 10px; /* Space between list items */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#get-started .list-group-item:hover {
+    background-color: #E5E5E5; /* Slightly darker background on hover */
+}
+
+#get-started .list-group-item a {
+    text-decoration: none;
+    color: #333; /* Darker link color */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between text and arrow */
+}
+
+#get-started .list-group-item a i.material-icons {
+    font-size: 1.5rem;
+    color: #F26524; /* Arrow color */
+}

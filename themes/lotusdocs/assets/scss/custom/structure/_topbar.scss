@@ -4,6 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
+.site-title-container {
+    flex-grow: 1; /* This allows the container to take up all available space */
+    display: flex;
+    justify-content: center; /* Centers the title inside this container */
+    text-align: center; /* Ensures the text inside is centered */
+}
 
 #topnav {
     position: -webkit-sticky; /* For Safari */
@@ -80,8 +86,7 @@
         font-size: 42px;
         font-weight: 500;
         margin: 0;
-        text-align: center; // Ensure text is centered
-        flex: 1; // Allow title to take up remaining space
+        text-align: center;
     }
 
     .cta-button {
