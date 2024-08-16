@@ -10268,31 +10268,31 @@ footer {
   --btn-modal-hover-bg: var(--gray-800); }
 
 .btn-soft {
-  background-color: var(--btn-soft-bg) !important;
-  border: 1px solid var(--btn-soft-border) !important;
-  color: var(--btn-soft-color) !important; }
+  background-color: var(--btn-soft-bg);
+  border: 1px solid var(--btn-soft-border);
+  color: var(--btn-soft-color); }
   .btn-soft:hover, .btn-soft:active, .btn-soft.active, .btn-soft.focus {
     background: var(--btn-soft-bg);
-    border-color: var(--btn-soft-border) !important;
-    color: var(--btn-soft-color) !important; }
+    border-color: var(--btn-soft-border);
+    color: var(--btn-soft-color); }
 
 .btn-primary {
-  background-color: var(--btn-primary-bg) !important;
-  border: 1px solid var(--btn-primary-border) !important;
-  color: var(--btn-primary-color) !important; }
+  background-color: var(--btn-primary-bg);
+  border: 1px solid var(--btn-primary-border);
+  color: var(--btn-primary-color); }
   .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.focus {
     background: var(--btn-primary-bg);
-    border-color: var(--btn-primary-border) !important;
-    color: var(--btn-primary-color) !important; }
+    border-color: var(--btn-primary-border);
+    color: var(--btn-primary-color); }
 
 .btn-default {
-  background-color: var(--btn-default-bg) !important;
-  border: 1px solid var(--btn-default-border) !important;
-  color: var(--btn-default-color) !important; }
+  background-color: var(--btn-default-bg);
+  border: 1px solid var(--btn-default-border);
+  color: var(--btn-default-color); }
   .btn-default:hover, .btn-default:active, .btn-default.active, .btn-default.focus {
     background: var(--btn-default-bg);
-    border-color: var(--btn-default-border) !important;
-    color: var(--btn-default-hover-color) !important; }
+    border-color: var(--btn-default-border);
+    color: var(--btn-default-hover-color); }
 
 .btn-link-modal {
   --bs-btn-font-weight: 600;
@@ -10347,13 +10347,13 @@ body .toggle-light {
   .btn.btn-pills {
     border-radius: 30px; }
   .btn.btn-outline-light {
-    border-color: var(--gray-200) !important; }
+    border-color: var(--gray-200); }
   .btn.btn-soft-light {
-    color: var(--gray-500) !important;
-    border-color: var(--gray-200) !important; }
+    color: var(--gray-500);
+    border-color: var(--gray-200); }
   .btn.btn-soft-dark:hover, .btn.btn-soft-dark:focus, .btn.btn-soft-dark:active, .btn.btn-soft-dark.active, .btn.btn-soft-dark.focus {
-    color: var(--gray-400) !important;
-    border-color: var(--gray-200) !important; }
+    color: var(--gray-400);
+    border-color: var(--gray-200); }
   .btn.btn-dark, .btn.btn-secondary {
     color: var(--gray-200); }
   .btn.btn-outline-light {
@@ -10384,6 +10384,45 @@ body .toggle-light {
 
 button:not(:disabled) {
   outline: none; }
+
+.my-custom-class {
+  background-color: #F26524;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease; }
+
+.my-custom-class:hover {
+  background-color: #FF4500; }
+
+.btn-primary.my-custom-class {
+  background-color: #F26524 !important;
+  /* Override default background color */
+  color: #ffffff !important;
+  /* Override text color */
+  padding: 10px 20px !important;
+  /* Apply custom padding */
+  font-size: 16px !important;
+  /* Custom font size */
+  font-weight: 400 !important;
+  /* Ensure font weight is applied */
+  border-radius: 25px !important;
+  /* Custom border radius */
+  text-decoration: none !important;
+  transition: background-color 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important; }
+
+.btn-primary.my-custom-class:hover {
+  background-color: #FF4500 !important;
+  /* Hover background color */ }
+
+.btn-primary.my-custom-class .material-icons {
+  margin-right: 8px !important;
+  /* Space between icon and text */ }
 
 :root {
   --breadcrumb-item-color: var(--primary); }

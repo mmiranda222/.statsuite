@@ -9470,7 +9470,10 @@ p {
     .four-oh-four {
       min-height: calc(100vh - 241px); } }
 #topnav {
-  position: fixed;
+  position: -webkit-sticky;
+  /* For Safari */
+  position: sticky;
+  /* Keeps it sticky */
   right: 0;
   left: 0;
   top: 0;
@@ -9824,25 +9827,31 @@ p {
 
 #navigation {
   position: absolute;
+  /* Keep it positioned absolutely within the header */
   top: 100px;
-  /* Adjust based on your header height */
+  /* Adjust this to align with your header height */
   left: 0;
-  background-color: #00324b;
+  /* Ensure it's aligned to the left side */
   width: 250px;
-  /* Adjust the width as needed */
+  /* Set a width that works for your menu */
+  background-color: #00324b;
+  z-index: 1000;
+  /* Ensure it appears above other elements */
+  padding-top: 10px;
+  /* Space above the first item */
+  padding-left: 10px;
+  /* Ensure there's space on the left */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 999;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, display 0.3s ease;
   display: none;
-  /* Initially hidden */
-  padding: 10px 0; }
+  /* Hidden by default */ }
 
 #navigation.show {
   max-height: 300px;
   display: block;
-  /* Show the menu when 'show' class is applied */ }
+  /* Show the menu when the 'show' class is applied */ }
 
 .dropdown-item {
   color: #ffffff;
@@ -10089,9 +10098,9 @@ button:not(:disabled) {
   background-color: #0066ff !important; }
 
 .bg-soft-primary {
-  background-color: rgba(0, 102, 255, 0.1) !important;
-  border: 1px solid rgba(0, 102, 255, 0.1) !important;
-  color: #0066ff !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-secondary {
   background-color: rgba(108, 117, 125, 0.04) !important; }
@@ -10100,9 +10109,9 @@ button:not(:disabled) {
   background-color: #6c757d !important; }
 
 .bg-soft-secondary {
-  background-color: rgba(108, 117, 125, 0.1) !important;
-  border: 1px solid rgba(108, 117, 125, 0.1) !important;
-  color: #6c757d !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-success {
   background-color: rgba(46, 202, 139, 0.04) !important; }
@@ -10111,9 +10120,9 @@ button:not(:disabled) {
   background-color: #2eca8b !important; }
 
 .bg-soft-success {
-  background-color: rgba(46, 202, 139, 0.1) !important;
-  border: 1px solid rgba(46, 202, 139, 0.1) !important;
-  color: #2eca8b !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-info {
   background-color: rgba(23, 162, 184, 0.04) !important; }
@@ -10122,9 +10131,9 @@ button:not(:disabled) {
   background-color: #17a2b8 !important; }
 
 .bg-soft-info {
-  background-color: rgba(23, 162, 184, 0.1) !important;
-  border: 1px solid rgba(23, 162, 184, 0.1) !important;
-  color: #17a2b8 !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-warning {
   background-color: rgba(241, 116, 37, 0.04) !important; }
@@ -10133,9 +10142,9 @@ button:not(:disabled) {
   background-color: #f17425 !important; }
 
 .bg-soft-warning {
-  background-color: rgba(241, 116, 37, 0.1) !important;
-  border: 1px solid rgba(241, 116, 37, 0.1) !important;
-  color: #f17425 !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-danger {
   background-color: rgba(228, 63, 82, 0.04) !important; }
@@ -10144,9 +10153,9 @@ button:not(:disabled) {
   background-color: #e43f52 !important; }
 
 .bg-soft-danger {
-  background-color: rgba(228, 63, 82, 0.1) !important;
-  border: 1px solid rgba(228, 63, 82, 0.1) !important;
-  color: #e43f52 !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-light {
   background-color: rgba(248, 249, 250, 0.04) !important; }
@@ -10155,9 +10164,9 @@ button:not(:disabled) {
   background-color: #f8f9fa !important; }
 
 .bg-soft-light {
-  background-color: rgba(248, 249, 250, 0.1) !important;
-  border: 1px solid rgba(248, 249, 250, 0.1) !important;
-  color: #f8f9fa !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-dark {
   background-color: rgba(60, 72, 88, 0.04) !important; }
@@ -10166,9 +10175,9 @@ button:not(:disabled) {
   background-color: #3c4858 !important; }
 
 .bg-soft-dark {
-  background-color: rgba(60, 72, 88, 0.1) !important;
-  border: 1px solid rgba(60, 72, 88, 0.1) !important;
-  color: #3c4858 !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-footer {
   background-color: rgba(32, 41, 66, 0.04) !important; }
@@ -10177,9 +10186,9 @@ button:not(:disabled) {
   background-color: #202942 !important; }
 
 .bg-soft-footer {
-  background-color: rgba(32, 41, 66, 0.1) !important;
-  border: 1px solid rgba(32, 41, 66, 0.1) !important;
-  color: #202942 !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-muted {
   background-color: rgba(107, 118, 134, 0.04) !important; }
@@ -10188,9 +10197,9 @@ button:not(:disabled) {
   background-color: #6b7686 !important; }
 
 .bg-soft-muted {
-  background-color: rgba(107, 118, 134, 0.1) !important;
-  border: 1px solid rgba(107, 118, 134, 0.1) !important;
-  color: #6b7686 !important; }
+  background-color: rgba(242, 101, 36, 0.1) !important;
+  border: 1px solid rgba(242, 101, 36, 0.1) !important;
+  color: #F26524 !important; }
 
 .bg-white-color {
   background-color: #fff !important; }

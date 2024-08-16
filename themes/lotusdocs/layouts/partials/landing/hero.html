@@ -31,7 +31,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="title-heading">
                     {{ with .badge }}
-                    <span class="badge {{ if eq .pill true }}rounded-pill{{ end }} bg-{{ if eq .soft true }}soft-{{ else }}hard-{{ end }}{{ .color }} mb-1">{{ .text }}</span>
+                    <span class="badge {{ if eq .pill true }}rounded-pill{{ end }} bg-{{ if eq .soft true }}soft-{{ else }}hard-{{ end }}{{ .color }} mb-1" style="background-color: rgba(242, 101, 36, 0.1); border: 1px solid rgba(242, 101, 36, 0.1); color: #F26524;">{{ .text }}</span>
                     {{ end }}
                     <h4 class="heading mt-0 mb-3">
                         {{ with .titleLogo }}
@@ -62,7 +62,7 @@
 
                     <div class="mt-3">
                         {{ with .ctaButton }}
-                            <a href="{{ relLangURL .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-primary me-2 mt-2">
+                            <a href="{{ relLangURL .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-primary my-custom-class">
                                 {{ with .icon }}
                                     <span class="material-icons align-middle">{{ . }}</span>
                                 {{ end }}
@@ -72,7 +72,7 @@
                             </a>
                         {{ end }}
                         {{ with .cta2Button }}
-                        <a href="{{ relLangURL .url }}" class="btn btn-lg btn-outline-primary mt-2">
+                        <a href="{{ relLangURL .url }}" class="btn btn-lg btn-primary my-custom-class" style="background-color: #F26524; color: #ffffff; padding: 15px 25px; font-size: 17px; font-weight: 500; border-radius: 20px; text-decoration: none; border: 2px solid #ffffff;">
                             {{ with .icon }}
                                 <span class="material-icons align-middle">{{ . }}</span>
                             {{ end }}
@@ -81,6 +81,7 @@
                             {{ end }}
                         </a>
                         {{ end }}
+
                     </div>
 
                     {{ with .info }}
