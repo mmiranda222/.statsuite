@@ -17,10 +17,11 @@
                 <a href="#" class="dropdown-item">Something else here</a>
         </div>
             <!-- Logo container-->
-            <a class="logo" aria-label="Home" href="{{ .Site.Params.logoLinkURL }}">
+            <a class="logo" aria-label="Home" href="{{ relLangURL "" }}">
                 {{ $logo := resources.Get "images/logo-color.png" }}
                 <img src="{{ $logo.Permalink }}" alt="SIS-CC Logo" height="70px"> <!-- Adjusted logo size -->
             </a>
+            
         </div>
 
         <!-- Center: Site Title -->
