@@ -9846,7 +9846,7 @@ i.title-icon {
     .page-wrapper .sidebar-wrapper .sidebar-content:hover::-webkit-scrollbar-thumb {
       background: var(--sidebar-scrollbar-thumb-color); }
     .page-wrapper .sidebar-wrapper .sidebar-brand {
-      background: var(--sidebar-bg);
+      background: #023047;
       padding: 10px 20px;
       border-bottom: 1px solid var(--sidebar-border-color);
       display: flex;
@@ -10018,6 +10018,9 @@ i.title-icon {
     padding-left: 0px;
     transition: all 0.3s ease; }
     .page-wrapper .page-content .top-header {
+      background-color: #023047 !important;
+      opacity: 1 !important;
+      background-blend-mode: normal;
       position: fixed;
       right: 0;
       top: 0;
@@ -10026,7 +10029,7 @@ i.title-icon {
       left: 0px;
       transition: all 0.3s; }
       .page-wrapper .page-content .top-header .header-bar {
-        background: var(--top-header-bg);
+        background: #023047;
         backdrop-filter: saturate(180%) blur(5px);
         height: 72px;
         border-bottom: 1px solid var(--sidebar-border-color);
@@ -10270,16 +10273,27 @@ footer {
 .btn-soft {
   background-color: var(--btn-soft-bg);
   border: 1px solid var(--btn-soft-border);
-  color: var(--btn-soft-color); }
+  color: #FFFFFF !important; }
   .btn-soft:hover, .btn-soft:active, .btn-soft.active, .btn-soft.focus {
     background: var(--btn-soft-bg);
     border-color: var(--btn-soft-border);
     color: var(--btn-soft-color); }
 
 .btn-primary {
-  background-color: var(--btn-primary-bg);
-  border: 1px solid var(--btn-primary-border);
-  color: var(--btn-primary-color); }
+  background-color: #F26524;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 25px !important;
+  text-decoration: none;
+  margin-right: 20px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  border: none !important; }
   .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.focus {
     background: var(--btn-primary-bg);
     border-color: var(--btn-primary-border);
@@ -10288,7 +10302,7 @@ footer {
 .btn-default {
   background-color: var(--btn-default-bg);
   border: 1px solid var(--btn-default-border);
-  color: var(--btn-default-color); }
+  color: #ffffff; }
   .btn-default:hover, .btn-default:active, .btn-default.active, .btn-default.focus {
     background: var(--btn-default-bg);
     border-color: var(--btn-default-border);
@@ -11390,7 +11404,7 @@ h4:hover a,
 
 .flexsearch-button-cmd-key {
   align-items: center;
-  background: var(--flexsearch-key-bg-color);
+  background: #F26524;
   border-radius: 3px;
   color: var(--flexsearch-key-color);
   display: flex;
@@ -11403,7 +11417,7 @@ h4:hover a,
 
 .flexsearch-button-key {
   align-items: center;
-  background: var(--flexsearch-key-bg-color);
+  background: #F26524;
   border-radius: 3px;
   color: var(--flexsearch-key-color);
   display: flex;

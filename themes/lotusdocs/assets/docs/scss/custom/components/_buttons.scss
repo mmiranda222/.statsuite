@@ -16,7 +16,7 @@
 .btn-soft {
     background-color: var(--btn-soft-bg);
     border: 1px solid var(--btn-soft-border);
-    color: var(--btn-soft-color);
+    color: #FFFFFF !important;
     // box-shadow: 0 3px 5px 0 hsl(var(--primary-hsl), 0.1);
 
     &:hover,
@@ -32,10 +32,20 @@
 }
 
 .btn-primary {
-    background-color: var(--btn-primary-bg);
-    border: 1px solid var(--btn-primary-border);
-    color: var(--btn-primary-color);
-    // box-shadow: 0 3px 5px 0 hsl(var(--primary-hsl), 0.1);
+    background-color: #F26524;
+    color: #ffffff;
+    padding: 10px 20px; // Consistent padding
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 25px !important; // Match the search bar’s border radius
+    text-decoration: none;
+    margin-right: 20px;
+    height: 45px; // Set the height to match the search bar
+    display: flex;
+    align-items: center; // Center text vertically
+    justify-content: center; // Center text horizontally
+    transition: background-color 0.3s ease;
+    border: none !important;
 
     &:hover,
     // &:focus,
@@ -52,7 +62,7 @@
 .btn-default {
     background-color: var(--btn-default-bg);
     border: 1px solid var(--btn-default-border);
-    color: var(--btn-default-color);
+    color: #ffffff;
     // box-shadow: 0 3px 5px 0 hsl(var(--primary-hsl), 0.1);
 
     &:hover,

@@ -9449,7 +9449,7 @@ body {
     scroll-padding-top: 80px; } }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif !important;
   line-height: 1.4;
   font-weight: 600; }
 
@@ -9572,6 +9572,8 @@ p {
   /* Arrow color */ }
 
 .site-title-container {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
   /* This allows the container to take up all available space */
   display: flex;
@@ -9645,12 +9647,12 @@ p {
     justify-content: center;
     /* Centers the title */ }
   #topnav .site-title {
-    color: #ffffff;
+    color: #ffffff !important;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 42px;
-    font-weight: 500;
-    margin: 0;
-    text-align: center; }
+    font-size: 42px !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    text-align: center !important; }
   #topnav .cta-button {
     background-color: #F26524;
     color: #ffffff;

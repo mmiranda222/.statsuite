@@ -68,7 +68,7 @@
             background: var(--sidebar-scrollbar-thumb-color);
         }
         .sidebar-brand {
-            background: var(--sidebar-bg);
+            background: #023047;
             padding: 10px 20px;
             border-bottom: 1px solid var(--sidebar-border-color);
             display: flex;
@@ -343,6 +343,9 @@
         // overflow-x: hidden;
         transition: all 0.3s ease;
         .top-header {
+            background-color: #023047 !important;
+            opacity: 1 !important;
+            background-blend-mode: normal;
             position: fixed;
             right: 0;
             top: 0;
@@ -351,7 +354,7 @@
             left: 0px;
             transition: all 0.3s;
             .header-bar {
-                background: var(--top-header-bg);
+                background: #023047;
                 backdrop-filter: saturate(180%) blur(5px);
                 height: 72px;
                 // box-shadow: $shadow;
